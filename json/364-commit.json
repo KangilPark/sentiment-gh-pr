@@ -1,0 +1,239 @@
+[
+  {
+    "sha": "4e9740242945cd60ed10c71203db75369d8fc4b9",
+    "node_id": "MDY6Q29tbWl0MTc0OTYxOTQ6NGU5NzQwMjQyOTQ1Y2Q2MGVkMTBjNzEyMDNkYjc1MzY5ZDhmYzRiOQ==",
+    "commit": {
+      "author": {
+        "name": "brentschmaltz",
+        "email": "brentschmaltz@hotmail.com",
+        "date": "2016-04-05T02:21:11Z"
+      },
+      "committer": {
+        "name": "BrentSchmaltz",
+        "email": "brentschmaltz@hotmail.com",
+        "date": "2016-04-05T03:11:42Z"
+      },
+      "message": "SecurityTokenDescriptor.Claims changed to ClaimsIdentity.\nFixed WriteToken",
+      "tree": {
+        "sha": "a01b76e3007154bddf727bcbbd799a5867f594de",
+        "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/git/trees/a01b76e3007154bddf727bcbbd799a5867f594de"
+      },
+      "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/git/commits/4e9740242945cd60ed10c71203db75369d8fc4b9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/4e9740242945cd60ed10c71203db75369d8fc4b9",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commit/4e9740242945cd60ed10c71203db75369d8fc4b9",
+    "comments_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/4e9740242945cd60ed10c71203db75369d8fc4b9/comments",
+    "author": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f8168c6658ceb06c0688136c5d92d3609945f890",
+        "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/f8168c6658ceb06c0688136c5d92d3609945f890",
+        "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commit/f8168c6658ceb06c0688136c5d92d3609945f890"
+      }
+    ]
+  },
+  {
+    "sha": "2a40497cd08c781228329c9450289261128466fe",
+    "node_id": "MDY6Q29tbWl0MTc0OTYxOTQ6MmE0MDQ5N2NkMDhjNzgxMjI4MzI5Yzk0NTAyODkyNjExMjg0NjZmZQ==",
+    "commit": {
+      "author": {
+        "name": "BrentSchmaltz",
+        "email": "brentschmaltz@hotmail.com",
+        "date": "2016-04-05T20:05:17Z"
+      },
+      "committer": {
+        "name": "BrentSchmaltz",
+        "email": "brentschmaltz@hotmail.com",
+        "date": "2016-04-05T20:05:17Z"
+      },
+      "message": "Added override for CreateToken.\nUse C#6 syntax.",
+      "tree": {
+        "sha": "1f7ecb45addd1f9d53191e7c306793dab6061280",
+        "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/git/trees/1f7ecb45addd1f9d53191e7c306793dab6061280"
+      },
+      "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/git/commits/2a40497cd08c781228329c9450289261128466fe",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/2a40497cd08c781228329c9450289261128466fe",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commit/2a40497cd08c781228329c9450289261128466fe",
+    "comments_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/2a40497cd08c781228329c9450289261128466fe/comments",
+    "author": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4e9740242945cd60ed10c71203db75369d8fc4b9",
+        "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/4e9740242945cd60ed10c71203db75369d8fc4b9",
+        "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commit/4e9740242945cd60ed10c71203db75369d8fc4b9"
+      }
+    ]
+  },
+  {
+    "sha": "0500bbc77df2c12bddef0539e365346370dd3cc1",
+    "node_id": "MDY6Q29tbWl0MTc0OTYxOTQ6MDUwMGJiYzc3ZGYyYzEyYmRkZWYwNTM5ZTM2NTM0NjM3MGRkM2NjMQ==",
+    "commit": {
+      "author": {
+        "name": "BrentSchmaltz",
+        "email": "brentschmaltz@hotmail.com",
+        "date": "2016-04-06T15:01:56Z"
+      },
+      "committer": {
+        "name": "BrentSchmaltz",
+        "email": "brentschmaltz@hotmail.com",
+        "date": "2016-04-06T15:01:56Z"
+      },
+      "message": "Use 'nameof'\nAdd negative tests",
+      "tree": {
+        "sha": "4978849f8b8c6b323e1c4a5ee649b28b83062051",
+        "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/git/trees/4978849f8b8c6b323e1c4a5ee649b28b83062051"
+      },
+      "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/git/commits/0500bbc77df2c12bddef0539e365346370dd3cc1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/0500bbc77df2c12bddef0539e365346370dd3cc1",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commit/0500bbc77df2c12bddef0539e365346370dd3cc1",
+    "comments_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/0500bbc77df2c12bddef0539e365346370dd3cc1/comments",
+    "author": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "2a40497cd08c781228329c9450289261128466fe",
+        "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/2a40497cd08c781228329c9450289261128466fe",
+        "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commit/2a40497cd08c781228329c9450289261128466fe"
+      }
+    ]
+  }
+]

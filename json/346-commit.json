@@ -1,0 +1,318 @@
+[
+  {
+    "sha": "4aa6f378ac690e747eb286df54a8b67d5e70cd61",
+    "node_id": "MDY6Q29tbWl0NDI4NzA2Njo0YWE2ZjM3OGFjNjkwZTc0N2ViMjg2ZGY1NGE4YjY3ZDVlNzBjZDYx",
+    "commit": {
+      "author": {
+        "name": "Shane McCarron",
+        "email": "halindrome@gmail.com",
+        "date": "2014-10-07T20:05:19Z"
+      },
+      "committer": {
+        "name": "Shane McCarron",
+        "email": "halindrome@gmail.com",
+        "date": "2014-10-07T20:05:19Z"
+      },
+      "message": "Added handling to only define used rfc2119 terms\n\nAddresses the issues presented in #345",
+      "tree": {
+        "sha": "1befe6bf5dc08d2168c52b226dce8c61b98e4784",
+        "url": "https://api.github.com/repos/w3c/respec/git/trees/1befe6bf5dc08d2168c52b226dce8c61b98e4784"
+      },
+      "url": "https://api.github.com/repos/w3c/respec/git/commits/4aa6f378ac690e747eb286df54a8b67d5e70cd61",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/w3c/respec/commits/4aa6f378ac690e747eb286df54a8b67d5e70cd61",
+    "html_url": "https://github.com/w3c/respec/commit/4aa6f378ac690e747eb286df54a8b67d5e70cd61",
+    "comments_url": "https://api.github.com/repos/w3c/respec/commits/4aa6f378ac690e747eb286df54a8b67d5e70cd61/comments",
+    "author": {
+      "login": "halindrome",
+      "id": 520688,
+      "node_id": "MDQ6VXNlcjUyMDY4OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/520688?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/halindrome",
+      "html_url": "https://github.com/halindrome",
+      "followers_url": "https://api.github.com/users/halindrome/followers",
+      "following_url": "https://api.github.com/users/halindrome/following{/other_user}",
+      "gists_url": "https://api.github.com/users/halindrome/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/halindrome/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/halindrome/subscriptions",
+      "organizations_url": "https://api.github.com/users/halindrome/orgs",
+      "repos_url": "https://api.github.com/users/halindrome/repos",
+      "events_url": "https://api.github.com/users/halindrome/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/halindrome/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "halindrome",
+      "id": 520688,
+      "node_id": "MDQ6VXNlcjUyMDY4OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/520688?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/halindrome",
+      "html_url": "https://github.com/halindrome",
+      "followers_url": "https://api.github.com/users/halindrome/followers",
+      "following_url": "https://api.github.com/users/halindrome/following{/other_user}",
+      "gists_url": "https://api.github.com/users/halindrome/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/halindrome/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/halindrome/subscriptions",
+      "organizations_url": "https://api.github.com/users/halindrome/orgs",
+      "repos_url": "https://api.github.com/users/halindrome/repos",
+      "events_url": "https://api.github.com/users/halindrome/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/halindrome/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "3356c8417c94dfc90548d0a201dbc43747d4693a",
+        "url": "https://api.github.com/repos/w3c/respec/commits/3356c8417c94dfc90548d0a201dbc43747d4693a",
+        "html_url": "https://github.com/w3c/respec/commit/3356c8417c94dfc90548d0a201dbc43747d4693a"
+      }
+    ]
+  },
+  {
+    "sha": "b722d7ddeec483a2b7364e8aef014a18751bcdba",
+    "node_id": "MDY6Q29tbWl0NDI4NzA2NjpiNzIyZDdkZGVlYzQ4M2EyYjczNjRlOGFlZjAxNGExODc1MWJjZGJh",
+    "commit": {
+      "author": {
+        "name": "Shane McCarron",
+        "email": "halindrome@gmail.com",
+        "date": "2014-10-08T11:40:46Z"
+      },
+      "committer": {
+        "name": "Shane McCarron",
+        "email": "halindrome@gmail.com",
+        "date": "2014-10-08T11:40:46Z"
+      },
+      "message": "Fixed formatting of else clauses",
+      "tree": {
+        "sha": "ffed18eac4fbeb1c71dbda8199392d8db499bdb7",
+        "url": "https://api.github.com/repos/w3c/respec/git/trees/ffed18eac4fbeb1c71dbda8199392d8db499bdb7"
+      },
+      "url": "https://api.github.com/repos/w3c/respec/git/commits/b722d7ddeec483a2b7364e8aef014a18751bcdba",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/w3c/respec/commits/b722d7ddeec483a2b7364e8aef014a18751bcdba",
+    "html_url": "https://github.com/w3c/respec/commit/b722d7ddeec483a2b7364e8aef014a18751bcdba",
+    "comments_url": "https://api.github.com/repos/w3c/respec/commits/b722d7ddeec483a2b7364e8aef014a18751bcdba/comments",
+    "author": {
+      "login": "halindrome",
+      "id": 520688,
+      "node_id": "MDQ6VXNlcjUyMDY4OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/520688?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/halindrome",
+      "html_url": "https://github.com/halindrome",
+      "followers_url": "https://api.github.com/users/halindrome/followers",
+      "following_url": "https://api.github.com/users/halindrome/following{/other_user}",
+      "gists_url": "https://api.github.com/users/halindrome/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/halindrome/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/halindrome/subscriptions",
+      "organizations_url": "https://api.github.com/users/halindrome/orgs",
+      "repos_url": "https://api.github.com/users/halindrome/repos",
+      "events_url": "https://api.github.com/users/halindrome/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/halindrome/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "halindrome",
+      "id": 520688,
+      "node_id": "MDQ6VXNlcjUyMDY4OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/520688?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/halindrome",
+      "html_url": "https://github.com/halindrome",
+      "followers_url": "https://api.github.com/users/halindrome/followers",
+      "following_url": "https://api.github.com/users/halindrome/following{/other_user}",
+      "gists_url": "https://api.github.com/users/halindrome/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/halindrome/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/halindrome/subscriptions",
+      "organizations_url": "https://api.github.com/users/halindrome/orgs",
+      "repos_url": "https://api.github.com/users/halindrome/repos",
+      "events_url": "https://api.github.com/users/halindrome/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/halindrome/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4aa6f378ac690e747eb286df54a8b67d5e70cd61",
+        "url": "https://api.github.com/repos/w3c/respec/commits/4aa6f378ac690e747eb286df54a8b67d5e70cd61",
+        "html_url": "https://github.com/w3c/respec/commit/4aa6f378ac690e747eb286df54a8b67d5e70cd61"
+      }
+    ]
+  },
+  {
+    "sha": "5eedc570bc15e6848ad22382eca936c54663c52d",
+    "node_id": "MDY6Q29tbWl0NDI4NzA2Njo1ZWVkYzU3MGJjMTVlNjg0OGFkMjIzODJlY2E5MzZjNTQ2NjNjNTJk",
+    "commit": {
+      "author": {
+        "name": "Shane McCarron",
+        "email": "halindrome@gmail.com",
+        "date": "2014-10-08T19:05:57Z"
+      },
+      "committer": {
+        "name": "Shane McCarron",
+        "email": "halindrome@gmail.com",
+        "date": "2014-10-08T19:05:57Z"
+      },
+      "message": "Added braces to scope if clauses.",
+      "tree": {
+        "sha": "d48022a065694eb60d261179ed9e668d5ba1ead2",
+        "url": "https://api.github.com/repos/w3c/respec/git/trees/d48022a065694eb60d261179ed9e668d5ba1ead2"
+      },
+      "url": "https://api.github.com/repos/w3c/respec/git/commits/5eedc570bc15e6848ad22382eca936c54663c52d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/w3c/respec/commits/5eedc570bc15e6848ad22382eca936c54663c52d",
+    "html_url": "https://github.com/w3c/respec/commit/5eedc570bc15e6848ad22382eca936c54663c52d",
+    "comments_url": "https://api.github.com/repos/w3c/respec/commits/5eedc570bc15e6848ad22382eca936c54663c52d/comments",
+    "author": {
+      "login": "halindrome",
+      "id": 520688,
+      "node_id": "MDQ6VXNlcjUyMDY4OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/520688?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/halindrome",
+      "html_url": "https://github.com/halindrome",
+      "followers_url": "https://api.github.com/users/halindrome/followers",
+      "following_url": "https://api.github.com/users/halindrome/following{/other_user}",
+      "gists_url": "https://api.github.com/users/halindrome/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/halindrome/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/halindrome/subscriptions",
+      "organizations_url": "https://api.github.com/users/halindrome/orgs",
+      "repos_url": "https://api.github.com/users/halindrome/repos",
+      "events_url": "https://api.github.com/users/halindrome/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/halindrome/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "halindrome",
+      "id": 520688,
+      "node_id": "MDQ6VXNlcjUyMDY4OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/520688?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/halindrome",
+      "html_url": "https://github.com/halindrome",
+      "followers_url": "https://api.github.com/users/halindrome/followers",
+      "following_url": "https://api.github.com/users/halindrome/following{/other_user}",
+      "gists_url": "https://api.github.com/users/halindrome/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/halindrome/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/halindrome/subscriptions",
+      "organizations_url": "https://api.github.com/users/halindrome/orgs",
+      "repos_url": "https://api.github.com/users/halindrome/repos",
+      "events_url": "https://api.github.com/users/halindrome/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/halindrome/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b722d7ddeec483a2b7364e8aef014a18751bcdba",
+        "url": "https://api.github.com/repos/w3c/respec/commits/b722d7ddeec483a2b7364e8aef014a18751bcdba",
+        "html_url": "https://github.com/w3c/respec/commit/b722d7ddeec483a2b7364e8aef014a18751bcdba"
+      }
+    ]
+  },
+  {
+    "sha": "23997535efa00dbf11eef7eaa93888347949a9f8",
+    "node_id": "MDY6Q29tbWl0NDI4NzA2NjoyMzk5NzUzNWVmYTAwZGJmMTFlZWY3ZWFhOTM4ODgzNDc5NDlhOWY4",
+    "commit": {
+      "author": {
+        "name": "Shane McCarron",
+        "email": "halindrome@gmail.com",
+        "date": "2014-10-08T23:33:12Z"
+      },
+      "committer": {
+        "name": "Shane McCarron",
+        "email": "halindrome@gmail.com",
+        "date": "2014-10-08T23:33:12Z"
+      },
+      "message": "Added a note about how the counter is not used.",
+      "tree": {
+        "sha": "3c47204eecda2d828862842bef5ae9b4fa016338",
+        "url": "https://api.github.com/repos/w3c/respec/git/trees/3c47204eecda2d828862842bef5ae9b4fa016338"
+      },
+      "url": "https://api.github.com/repos/w3c/respec/git/commits/23997535efa00dbf11eef7eaa93888347949a9f8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/w3c/respec/commits/23997535efa00dbf11eef7eaa93888347949a9f8",
+    "html_url": "https://github.com/w3c/respec/commit/23997535efa00dbf11eef7eaa93888347949a9f8",
+    "comments_url": "https://api.github.com/repos/w3c/respec/commits/23997535efa00dbf11eef7eaa93888347949a9f8/comments",
+    "author": {
+      "login": "halindrome",
+      "id": 520688,
+      "node_id": "MDQ6VXNlcjUyMDY4OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/520688?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/halindrome",
+      "html_url": "https://github.com/halindrome",
+      "followers_url": "https://api.github.com/users/halindrome/followers",
+      "following_url": "https://api.github.com/users/halindrome/following{/other_user}",
+      "gists_url": "https://api.github.com/users/halindrome/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/halindrome/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/halindrome/subscriptions",
+      "organizations_url": "https://api.github.com/users/halindrome/orgs",
+      "repos_url": "https://api.github.com/users/halindrome/repos",
+      "events_url": "https://api.github.com/users/halindrome/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/halindrome/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "halindrome",
+      "id": 520688,
+      "node_id": "MDQ6VXNlcjUyMDY4OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/520688?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/halindrome",
+      "html_url": "https://github.com/halindrome",
+      "followers_url": "https://api.github.com/users/halindrome/followers",
+      "following_url": "https://api.github.com/users/halindrome/following{/other_user}",
+      "gists_url": "https://api.github.com/users/halindrome/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/halindrome/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/halindrome/subscriptions",
+      "organizations_url": "https://api.github.com/users/halindrome/orgs",
+      "repos_url": "https://api.github.com/users/halindrome/repos",
+      "events_url": "https://api.github.com/users/halindrome/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/halindrome/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5eedc570bc15e6848ad22382eca936c54663c52d",
+        "url": "https://api.github.com/repos/w3c/respec/commits/5eedc570bc15e6848ad22382eca936c54663c52d",
+        "html_url": "https://github.com/w3c/respec/commit/5eedc570bc15e6848ad22382eca936c54663c52d"
+      }
+    ]
+  }
+]

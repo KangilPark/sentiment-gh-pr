@@ -1,0 +1,937 @@
+[
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48318516",
+    "pull_request_review_id": null,
+    "id": 48318516,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzE4NTE2",
+    "diff_hunk": "@@ -387,7 +387,10 @@ class HttpGoogleServicesDAO(\n       case Right(member) => new Member().setEmail(member.groupEmail.value).setRole(groupMemberRole)\n     }\n     val inserter = getGroupDirectory.members.insert(toGoogleGroupName(groupRef.groupName), memberEmail)\n-    retry(when500)(() => Future { blocking { inserter.execute } })",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/HttpGoogleServicesDAO.scala",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "changes in this file are important because, in dev, we have lots of rawlses that fiddle with groups that may already have members we are trying to add or not have members we are trying to delete. It will also come in handy when blowing away an existing database.\n",
+    "created_at": "2015-12-23T02:44:47Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48318516",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48318516"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48318516"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 390,
+    "original_line": null,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48318568",
+    "pull_request_review_id": null,
+    "id": 48318568,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzE4NTY4",
+    "diff_hunk": "@@ -120,15 +124,37 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n \n   //imports the response from the above listUsers\n   def importUsers(rawlsUserInfoList: RawlsUserInfoList): Future[PerRequestMessage] = asAdmin {\n-    Future(dataSource.inTransaction() { txn =>\n-      val users = rawlsUserInfoList.userInfoList\n-      users.foreach(u => {\n-        containerDAO.authDAO.saveUser(u.user, txn)\n-        u.billingProjects.foreach(b =>\n-          containerDAO.billingDAO.addUserToProject(u.user, containerDAO.billingDAO.loadProject(b, txn).get, txn)\n-        )\n+    dataSource.inFutureTransaction() { txn =>",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 51,
+    "original_position": 31,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "had to switch to a future transaction because addUsersToAllUsersGroup is a future\n",
+    "created_at": "2015-12-23T02:46:19Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48318568",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48318568"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48318568"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 129,
+    "original_line": 127,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48318593",
+    "pull_request_review_id": null,
+    "id": 48318593,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzE4NTkz",
+    "diff_hunk": "@@ -262,17 +294,21 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n         containerDAO.authDAO.loadGroup(groupRef, txn) match {\n           case Some(_) => Future.successful(RequestComplete(ErrorReport(StatusCodes.Conflict, s\"Group ${groupRef.groupName} already exists\")))\n           case None =>\n-            containerDAO.authDAO.saveGroup(RawlsGroup(groupRef.groupName, RawlsGroupEmail(gcsDAO.toGoogleGroupName(groupRef.groupName)), Set.empty[RawlsUserRef], Set.empty[RawlsGroupRef]), txn)\n-            gcsDAO.createGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.Created) }\n+            createGroupInternal(groupRef, txn) map { _ => RequestComplete(StatusCodes.Created) }\n         }\n       }\n     }\n   }\n \n+  private def createGroupInternal(groupRef: RawlsGroupRef, txn: RawlsTransaction): Future[RawlsGroup] = {",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 113,
+    "original_position": 93,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "changes here and below in this file are refactoring to enable reuse\n",
+    "created_at": "2015-12-23T02:47:15Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48318593",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48318593"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48318593"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 305,
+    "original_line": 303,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48318639",
+    "pull_request_review_id": null,
+    "id": 48318639,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzE4NjM5",
+    "diff_hunk": "@@ -927,7 +927,7 @@ class WorkspaceService(protected val userInfo: UserInfo, dataSource: DataSource,\n         }\n         RequestComplete(StatusCodes.Created, submissionReport)\n \n-      case (somethingWrong, _) => somethingWrong // this is the case where something was not found in withSubmissionParameters\n+      case (somethingWrong, Some(_)) => somethingWrong // this is the case where something was not found in withSubmissionParameters",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/workspace/WorkspaceService.scala",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "the old way makes the next line unreachable\n",
+    "created_at": "2015-12-23T02:48:22Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48318639",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48318639"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48318639"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 930,
+    "original_line": 930,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48357827",
+    "pull_request_review_id": null,
+    "id": 48357827,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzU3ODI3",
+    "diff_hunk": "@@ -387,7 +387,10 @@ class HttpGoogleServicesDAO(\n       case Right(member) => new Member().setEmail(member.groupEmail.value).setRole(groupMemberRole)\n     }\n     val inserter = getGroupDirectory.members.insert(toGoogleGroupName(groupRef.groupName), memberEmail)\n-    retry(when500)(() => Future { blocking { inserter.execute } })\n+    val insertFuture: Future[Unit] = retry(when500)(() => Future { blocking { inserter.execute } })\n+    insertFuture recover {\n+      case t: HttpResponseException if t.getStatusCode == StatusCodes.Conflict.intValue => println(t.getStatusCode); Unit // it is ok of the email is already there",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/HttpGoogleServicesDAO.scala",
+    "position": null,
+    "original_position": 7,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Shouldn't this go to a logger? (not println)\n",
+    "created_at": "2015-12-23T16:19:03Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48357827",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48357827"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48357827"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 392,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48358011",
+    "pull_request_review_id": null,
+    "id": 48358011,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzU4MDEx",
+    "diff_hunk": "@@ -21,6 +21,8 @@ import scala.util.{Success, Try, Failure}\n  * Created by dvoet on 10/27/15.\n  */\n object UserService {\n+  val allUsersGroupRef = RawlsGroupRef(RawlsGroupName(\"All_Users\"))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "What happens if I try to create my own group called this? Or update it?\n",
+    "created_at": "2015-12-23T16:21:03Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48358011",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48358011"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48358011"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 24,
+    "original_line": 24,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48358298",
+    "pull_request_review_id": null,
+    "id": 48358298,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzU4Mjk4",
+    "diff_hunk": "@@ -100,7 +102,9 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     // retrying this call will retry the failures, failures due to already created groups/entries are ok\n     handleFutures(Future.sequence(Seq(\n       toFutureTry(gcsDAO.createProxyGroup(user)),\n-      toFutureTry(Future(dataSource.inTransaction()(txn => containerDAO.authDAO.saveUser(user, txn)))),\n+      toFutureTry(dataSource.inFutureTransaction() { txn =>\n+        Future(containerDAO.authDAO.saveUser(user, txn)).\n+          flatMap(user => addUsersToAllUsersGroup(Seq(user), txn)) }),",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 36,
+    "original_position": 16,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "What's the difference between  \n`toFutureTry(Future(dataSource.inTransaction() { blah` and  \n`toFutureTry(dataSource.inFutureTransaction(){ Future( blah`?\n\n(i.e. what does the combination of inFutureTransaction and pushing the Future into the txn achieve)\n",
+    "created_at": "2015-12-23T16:24:34Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48358298",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48358298"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48358298"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 109,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48358369",
+    "pull_request_review_id": null,
+    "id": 48358369,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzU4MzY5",
+    "diff_hunk": "@@ -100,7 +102,9 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     // retrying this call will retry the failures, failures due to already created groups/entries are ok\n     handleFutures(Future.sequence(Seq(\n       toFutureTry(gcsDAO.createProxyGroup(user)),\n-      toFutureTry(Future(dataSource.inTransaction()(txn => containerDAO.authDAO.saveUser(user, txn)))),\n+      toFutureTry(dataSource.inFutureTransaction() { txn =>\n+        Future(containerDAO.authDAO.saveUser(user, txn)).\n+          flatMap(user => addUsersToAllUsersGroup(Seq(user), txn)) }),",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 36,
+    "original_position": 16,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Oh, maybe you explained below.\n\n`Future( inTx` is \"equivalent\" to `inFutureTx( Future` ?\n",
+    "created_at": "2015-12-23T16:25:24Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48358369",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48358369"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48358369"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 109,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48361455",
+    "pull_request_review_id": null,
+    "id": 48361455,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzYxNDU1",
+    "diff_hunk": "@@ -280,78 +316,84 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n-  //ideally this would probably just return the already loaded users to avoid loading twice\n-  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n-    dataSource.inTransaction() { txn =>\n-      val users = memberList.userEmails.map(e => containerDAO.authDAO.loadUserByEmail(e, txn))\n-      val groups = memberList.subGroupEmails.map(e => containerDAO.authDAO.loadGroupByEmail(e, txn))\n-      !(users++groups).contains(None)\n-    }\n-  }\n-\n-  //in the event of a failure updating the user in the google group, the user will not be updated in the RawlsGroup\n-  def updateGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList, adding: Boolean) = {\n+  def updateGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList, adding: Boolean): Future[PerRequestMessage] = {\n     asAdmin {\n       dataSource.inFutureTransaction() { txn =>\n-        if (!allMembersExist(memberList))\n-          Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound,\n-            \"Not all members are registered. Please ensure that all users/groups exist\")))\n-        else {\n-          val updateMap = memberList.userEmails.map { user =>\n-            val theUser = containerDAO.authDAO.loadUserByEmail(user, txn).get\n-            val updateTry = adding match {\n-              case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Left(theUser)))\n-              case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(groupRef, Left(theUser)))\n-            }\n-            updateTry.map(Left(theUser) -> _)\n-          } ++ memberList.subGroupEmails.map { subGroup =>\n-            val theGroup = containerDAO.authDAO.loadGroupByEmail(subGroup, txn).get\n-            val updateTry = adding match {\n-              case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Right(theGroup)))\n-              case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(groupRef, Right(theGroup)))\n-            }\n-            updateTry.map(Right(theGroup) -> _)\n-          }\n-\n-          val list: Future[Seq[Try[Either[RawlsUser, RawlsGroup]]]] = Future.sequence(updateMap) map { pairs =>\n-            pairs.map { case (member: Either[RawlsUser, RawlsGroup], result: Try[Either[RawlsUser, RawlsGroup]]) =>\n-              result match {\n-                case Success(_) => Success(member)\n-                case Failure(f) => member match {\n-                  case Left(theUser) => Failure(new RawlsException(s\"Could not update user ${theUser.userEmail.value}\", f))\n-                  case Right(theGroup) => Failure(new RawlsException(s\"Could not update group ${theGroup.groupEmail.value}\", f))\n+        withGroup(groupRef, txn) { group =>\n+          val users = memberList.userEmails.map(email => (email, containerDAO.authDAO.loadUserByEmail(email, txn)))\n+          val subGroups = memberList.subGroupEmails.map(email => (email, containerDAO.authDAO.loadGroupByEmail(email, txn)))\n+\n+          (users.collect { case (email, None) => email }, subGroups.collect { case (email, None) => email }) match {\n+            // success case, all users and groups found\n+            case (Seq(), Seq()) =>\n+              updateGroupMembersInternal(group, users.map(_._2.get), subGroups.map(_._2.get), adding, txn) map {\n+                _ match {\n+                  case None => RequestComplete(StatusCodes.OK)\n+                  case Some(error) => RequestComplete(error)\n                 }\n               }\n-            }\n+\n+            // failure cases, some users and/or groups not found\n+            case (Seq(), missingGroups) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some groups not found: ${missingGroups.mkString(\", \")}\")))\n+            case (missingUsers, Seq()) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some users not found: ${missingUsers.mkString(\", \")}\")))\n+            case (missingUsers, missingGroups) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some users not found: ${missingUsers.mkString(\", \")}. Some groups not found: ${missingGroups.mkString(\", \")}\")))\n           }\n+        }\n+      }\n+    }\n+  }\n \n-          list.map { tries =>\n-            val exceptions = tries.collect {\n-              case Failure(t) => t\n-            }\n-\n-            val successfulUsers = tries.collect {\n-              case Success(Left(member)) => RawlsUser.toRef(member)\n-            }.toSet\n-            val successfulGroups = tries.collect {\n-              case Success(Right(member)) => RawlsGroup.toRef(member)\n-            }.toSet\n-\n-            val group = containerDAO.authDAO.loadGroup(groupRef, txn).getOrElse(throw new RawlsException(\"Unable to load group\"))\n-            adding match {\n-              case true => containerDAO.authDAO.saveGroup(group.copy(users = (group.users ++ successfulUsers),\n-                subGroups = (group.subGroups ++ successfulGroups)), txn)\n-              case false => containerDAO.authDAO.saveGroup(group.copy(users = (group.users -- successfulUsers),\n-                subGroups = (group.subGroups -- successfulGroups)), txn)\n-            }\n-            if (exceptions.isEmpty)\n-              RequestComplete(StatusCodes.OK)\n-            else\n-              RequestComplete(ErrorReport(StatusCodes.BadRequest, \"Unable to update the following member(s)\", exceptions.map(ErrorReport(_))))\n+  //in the event of a failure updating the user in the google group, the user will not be updated in the RawlsGroup\n+  private def updateGroupMembersInternal(group: RawlsGroup, users: Seq[RawlsUser], subGroups: Seq[RawlsGroup], adding: Boolean, txn: RawlsTransaction): Future[Option[ErrorReport]] = {",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 200,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Can you document the arguments to this function? My guess would be that `users` go into the `group` but without reading the code I don't know what `subGroups` is for or what that bool does.\n",
+    "created_at": "2015-12-23T16:58:43Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48361455",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48361455"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48361455"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 347,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48361593",
+    "pull_request_review_id": null,
+    "id": 48361593,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzYxNTkz",
+    "diff_hunk": "@@ -280,78 +316,84 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n-  //ideally this would probably just return the already loaded users to avoid loading twice\n-  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n-    dataSource.inTransaction() { txn =>\n-      val users = memberList.userEmails.map(e => containerDAO.authDAO.loadUserByEmail(e, txn))\n-      val groups = memberList.subGroupEmails.map(e => containerDAO.authDAO.loadGroupByEmail(e, txn))\n-      !(users++groups).contains(None)\n-    }\n-  }\n-\n-  //in the event of a failure updating the user in the google group, the user will not be updated in the RawlsGroup\n-  def updateGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList, adding: Boolean) = {\n+  def updateGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList, adding: Boolean): Future[PerRequestMessage] = {\n     asAdmin {\n       dataSource.inFutureTransaction() { txn =>\n-        if (!allMembersExist(memberList))\n-          Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound,\n-            \"Not all members are registered. Please ensure that all users/groups exist\")))\n-        else {\n-          val updateMap = memberList.userEmails.map { user =>\n-            val theUser = containerDAO.authDAO.loadUserByEmail(user, txn).get\n-            val updateTry = adding match {\n-              case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Left(theUser)))\n-              case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(groupRef, Left(theUser)))\n-            }\n-            updateTry.map(Left(theUser) -> _)\n-          } ++ memberList.subGroupEmails.map { subGroup =>\n-            val theGroup = containerDAO.authDAO.loadGroupByEmail(subGroup, txn).get\n-            val updateTry = adding match {\n-              case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Right(theGroup)))\n-              case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(groupRef, Right(theGroup)))\n-            }\n-            updateTry.map(Right(theGroup) -> _)\n-          }\n-\n-          val list: Future[Seq[Try[Either[RawlsUser, RawlsGroup]]]] = Future.sequence(updateMap) map { pairs =>\n-            pairs.map { case (member: Either[RawlsUser, RawlsGroup], result: Try[Either[RawlsUser, RawlsGroup]]) =>\n-              result match {\n-                case Success(_) => Success(member)\n-                case Failure(f) => member match {\n-                  case Left(theUser) => Failure(new RawlsException(s\"Could not update user ${theUser.userEmail.value}\", f))\n-                  case Right(theGroup) => Failure(new RawlsException(s\"Could not update group ${theGroup.groupEmail.value}\", f))\n+        withGroup(groupRef, txn) { group =>\n+          val users = memberList.userEmails.map(email => (email, containerDAO.authDAO.loadUserByEmail(email, txn)))\n+          val subGroups = memberList.subGroupEmails.map(email => (email, containerDAO.authDAO.loadGroupByEmail(email, txn)))\n+\n+          (users.collect { case (email, None) => email }, subGroups.collect { case (email, None) => email }) match {\n+            // success case, all users and groups found\n+            case (Seq(), Seq()) =>\n+              updateGroupMembersInternal(group, users.map(_._2.get), subGroups.map(_._2.get), adding, txn) map {\n+                _ match {\n+                  case None => RequestComplete(StatusCodes.OK)\n+                  case Some(error) => RequestComplete(error)\n                 }\n               }\n-            }\n+\n+            // failure cases, some users and/or groups not found\n+            case (Seq(), missingGroups) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some groups not found: ${missingGroups.mkString(\", \")}\")))\n+            case (missingUsers, Seq()) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some users not found: ${missingUsers.mkString(\", \")}\")))\n+            case (missingUsers, missingGroups) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some users not found: ${missingUsers.mkString(\", \")}. Some groups not found: ${missingGroups.mkString(\", \")}\")))\n           }\n+        }\n+      }\n+    }\n+  }\n \n-          list.map { tries =>\n-            val exceptions = tries.collect {\n-              case Failure(t) => t\n-            }\n-\n-            val successfulUsers = tries.collect {\n-              case Success(Left(member)) => RawlsUser.toRef(member)\n-            }.toSet\n-            val successfulGroups = tries.collect {\n-              case Success(Right(member)) => RawlsGroup.toRef(member)\n-            }.toSet\n-\n-            val group = containerDAO.authDAO.loadGroup(groupRef, txn).getOrElse(throw new RawlsException(\"Unable to load group\"))\n-            adding match {\n-              case true => containerDAO.authDAO.saveGroup(group.copy(users = (group.users ++ successfulUsers),\n-                subGroups = (group.subGroups ++ successfulGroups)), txn)\n-              case false => containerDAO.authDAO.saveGroup(group.copy(users = (group.users -- successfulUsers),\n-                subGroups = (group.subGroups -- successfulGroups)), txn)\n-            }\n-            if (exceptions.isEmpty)\n-              RequestComplete(StatusCodes.OK)\n-            else\n-              RequestComplete(ErrorReport(StatusCodes.BadRequest, \"Unable to update the following member(s)\", exceptions.map(ErrorReport(_))))\n+  //in the event of a failure updating the user in the google group, the user will not be updated in the RawlsGroup\n+  private def updateGroupMembersInternal(group: RawlsGroup, users: Seq[RawlsUser], subGroups: Seq[RawlsGroup], adding: Boolean, txn: RawlsTransaction): Future[Option[ErrorReport]] = {\n+    val updateMap = users.map { user =>\n+      val updateTry = adding match {\n+        case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(group, Left(user)))\n+        case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(group, Left(user)))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 204,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":-1: bool to distinguish add and remove. Can we have an OPERATION enum or something?\n",
+    "created_at": "2015-12-23T17:00:10Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48361593",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48361593"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48361593"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 351,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48362483",
+    "pull_request_review_id": null,
+    "id": 48362483,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzYyNDgz",
+    "diff_hunk": "@@ -280,78 +316,84 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n-  //ideally this would probably just return the already loaded users to avoid loading twice\n-  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n-    dataSource.inTransaction() { txn =>\n-      val users = memberList.userEmails.map(e => containerDAO.authDAO.loadUserByEmail(e, txn))\n-      val groups = memberList.subGroupEmails.map(e => containerDAO.authDAO.loadGroupByEmail(e, txn))\n-      !(users++groups).contains(None)\n-    }\n-  }\n-\n-  //in the event of a failure updating the user in the google group, the user will not be updated in the RawlsGroup\n-  def updateGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList, adding: Boolean) = {\n+  def updateGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList, adding: Boolean): Future[PerRequestMessage] = {\n     asAdmin {\n       dataSource.inFutureTransaction() { txn =>\n-        if (!allMembersExist(memberList))\n-          Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound,\n-            \"Not all members are registered. Please ensure that all users/groups exist\")))\n-        else {\n-          val updateMap = memberList.userEmails.map { user =>\n-            val theUser = containerDAO.authDAO.loadUserByEmail(user, txn).get\n-            val updateTry = adding match {\n-              case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Left(theUser)))\n-              case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(groupRef, Left(theUser)))\n-            }\n-            updateTry.map(Left(theUser) -> _)\n-          } ++ memberList.subGroupEmails.map { subGroup =>\n-            val theGroup = containerDAO.authDAO.loadGroupByEmail(subGroup, txn).get\n-            val updateTry = adding match {\n-              case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Right(theGroup)))\n-              case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(groupRef, Right(theGroup)))\n-            }\n-            updateTry.map(Right(theGroup) -> _)\n-          }\n-\n-          val list: Future[Seq[Try[Either[RawlsUser, RawlsGroup]]]] = Future.sequence(updateMap) map { pairs =>\n-            pairs.map { case (member: Either[RawlsUser, RawlsGroup], result: Try[Either[RawlsUser, RawlsGroup]]) =>\n-              result match {\n-                case Success(_) => Success(member)\n-                case Failure(f) => member match {\n-                  case Left(theUser) => Failure(new RawlsException(s\"Could not update user ${theUser.userEmail.value}\", f))\n-                  case Right(theGroup) => Failure(new RawlsException(s\"Could not update group ${theGroup.groupEmail.value}\", f))\n+        withGroup(groupRef, txn) { group =>\n+          val users = memberList.userEmails.map(email => (email, containerDAO.authDAO.loadUserByEmail(email, txn)))\n+          val subGroups = memberList.subGroupEmails.map(email => (email, containerDAO.authDAO.loadGroupByEmail(email, txn)))\n+\n+          (users.collect { case (email, None) => email }, subGroups.collect { case (email, None) => email }) match {\n+            // success case, all users and groups found\n+            case (Seq(), Seq()) =>\n+              updateGroupMembersInternal(group, users.map(_._2.get), subGroups.map(_._2.get), adding, txn) map {\n+                _ match {\n+                  case None => RequestComplete(StatusCodes.OK)\n+                  case Some(error) => RequestComplete(error)\n                 }\n               }\n-            }\n+\n+            // failure cases, some users and/or groups not found\n+            case (Seq(), missingGroups) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some groups not found: ${missingGroups.mkString(\", \")}\")))\n+            case (missingUsers, Seq()) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some users not found: ${missingUsers.mkString(\", \")}\")))\n+            case (missingUsers, missingGroups) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some users not found: ${missingUsers.mkString(\", \")}. Some groups not found: ${missingGroups.mkString(\", \")}\")))\n           }\n+        }\n+      }\n+    }\n+  }\n \n-          list.map { tries =>\n-            val exceptions = tries.collect {\n-              case Failure(t) => t\n-            }\n-\n-            val successfulUsers = tries.collect {\n-              case Success(Left(member)) => RawlsUser.toRef(member)\n-            }.toSet\n-            val successfulGroups = tries.collect {\n-              case Success(Right(member)) => RawlsGroup.toRef(member)\n-            }.toSet\n-\n-            val group = containerDAO.authDAO.loadGroup(groupRef, txn).getOrElse(throw new RawlsException(\"Unable to load group\"))\n-            adding match {\n-              case true => containerDAO.authDAO.saveGroup(group.copy(users = (group.users ++ successfulUsers),\n-                subGroups = (group.subGroups ++ successfulGroups)), txn)\n-              case false => containerDAO.authDAO.saveGroup(group.copy(users = (group.users -- successfulUsers),\n-                subGroups = (group.subGroups -- successfulGroups)), txn)\n-            }\n-            if (exceptions.isEmpty)\n-              RequestComplete(StatusCodes.OK)\n-            else\n-              RequestComplete(ErrorReport(StatusCodes.BadRequest, \"Unable to update the following member(s)\", exceptions.map(ErrorReport(_))))\n+  //in the event of a failure updating the user in the google group, the user will not be updated in the RawlsGroup\n+  private def updateGroupMembersInternal(group: RawlsGroup, users: Seq[RawlsUser], subGroups: Seq[RawlsGroup], adding: Boolean, txn: RawlsTransaction): Future[Option[ErrorReport]] = {\n+    val updateMap = users.map { user =>\n+      val updateTry = adding match {\n+        case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(group, Left(user)))\n+        case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(group, Left(user)))\n+      }\n+      updateTry.map(Left(user) -> _)\n+    } ++ subGroups.map { subGroup =>\n+      val updateTry = adding match {\n+        case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(group, Right(subGroup)))\n+        case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(group, Right(subGroup)))\n+      }\n+      updateTry.map(Right(subGroup) -> _)\n+    }\n+\n+    val list: Future[Seq[Try[Either[RawlsUser, RawlsGroup]]]] = Future.sequence(updateMap) map { pairs =>",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 215,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "more descriptive variable name than `list` please\n",
+    "created_at": "2015-12-23T17:10:10Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48362483",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48362483"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48362483"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 362,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48363401",
+    "pull_request_review_id": null,
+    "id": 48363401,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzYzNDAx",
+    "diff_hunk": "@@ -387,7 +387,10 @@ class HttpGoogleServicesDAO(\n       case Right(member) => new Member().setEmail(member.groupEmail.value).setRole(groupMemberRole)\n     }\n     val inserter = getGroupDirectory.members.insert(toGoogleGroupName(groupRef.groupName), memberEmail)\n-    retry(when500)(() => Future { blocking { inserter.execute } })\n+    val insertFuture: Future[Unit] = retry(when500)(() => Future { blocking { inserter.execute } })\n+    insertFuture recover {\n+      case t: HttpResponseException if t.getStatusCode == StatusCodes.Conflict.intValue => println(t.getStatusCode); Unit // it is ok of the email is already there",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/HttpGoogleServicesDAO.scala",
+    "position": null,
+    "original_position": 7,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "oops. debug code\n",
+    "created_at": "2015-12-23T17:21:06Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48363401",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48363401"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48363401"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 392,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48366080",
+    "pull_request_review_id": null,
+    "id": 48366080,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzY2MDgw",
+    "diff_hunk": "@@ -21,6 +21,8 @@ import scala.util.{Success, Try, Failure}\n  * Created by dvoet on 10/27/15.\n  */\n object UserService {\n+  val allUsersGroupRef = RawlsGroupRef(RawlsGroupName(\"All_Users\"))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "only admins can create or update groups and they should not do naughty things but they have full control\n",
+    "created_at": "2015-12-23T17:56:41Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48366080",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48366080"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48366080"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 24,
+    "original_line": 24,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48366192",
+    "pull_request_review_id": null,
+    "id": 48366192,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzY2MTky",
+    "diff_hunk": "@@ -100,7 +102,9 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     // retrying this call will retry the failures, failures due to already created groups/entries are ok\n     handleFutures(Future.sequence(Seq(\n       toFutureTry(gcsDAO.createProxyGroup(user)),\n-      toFutureTry(Future(dataSource.inTransaction()(txn => containerDAO.authDAO.saveUser(user, txn)))),\n+      toFutureTry(dataSource.inFutureTransaction() { txn =>\n+        Future(containerDAO.authDAO.saveUser(user, txn)).\n+          flatMap(user => addUsersToAllUsersGroup(Seq(user), txn)) }),",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 36,
+    "original_position": 16,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "you would user inFutureTx if the tx needs to be shared across multiple futures. If it is only required in 1 future it is probably better to use Future { inTx...\n",
+    "created_at": "2015-12-23T17:58:23Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48366192",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48366192"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48366192"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 109,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48366431",
+    "pull_request_review_id": null,
+    "id": 48366431,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4MzY2NDMx",
+    "diff_hunk": "@@ -280,78 +316,84 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n-  //ideally this would probably just return the already loaded users to avoid loading twice\n-  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n-    dataSource.inTransaction() { txn =>\n-      val users = memberList.userEmails.map(e => containerDAO.authDAO.loadUserByEmail(e, txn))\n-      val groups = memberList.subGroupEmails.map(e => containerDAO.authDAO.loadGroupByEmail(e, txn))\n-      !(users++groups).contains(None)\n-    }\n-  }\n-\n-  //in the event of a failure updating the user in the google group, the user will not be updated in the RawlsGroup\n-  def updateGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList, adding: Boolean) = {\n+  def updateGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList, adding: Boolean): Future[PerRequestMessage] = {\n     asAdmin {\n       dataSource.inFutureTransaction() { txn =>\n-        if (!allMembersExist(memberList))\n-          Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound,\n-            \"Not all members are registered. Please ensure that all users/groups exist\")))\n-        else {\n-          val updateMap = memberList.userEmails.map { user =>\n-            val theUser = containerDAO.authDAO.loadUserByEmail(user, txn).get\n-            val updateTry = adding match {\n-              case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Left(theUser)))\n-              case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(groupRef, Left(theUser)))\n-            }\n-            updateTry.map(Left(theUser) -> _)\n-          } ++ memberList.subGroupEmails.map { subGroup =>\n-            val theGroup = containerDAO.authDAO.loadGroupByEmail(subGroup, txn).get\n-            val updateTry = adding match {\n-              case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Right(theGroup)))\n-              case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(groupRef, Right(theGroup)))\n-            }\n-            updateTry.map(Right(theGroup) -> _)\n-          }\n-\n-          val list: Future[Seq[Try[Either[RawlsUser, RawlsGroup]]]] = Future.sequence(updateMap) map { pairs =>\n-            pairs.map { case (member: Either[RawlsUser, RawlsGroup], result: Try[Either[RawlsUser, RawlsGroup]]) =>\n-              result match {\n-                case Success(_) => Success(member)\n-                case Failure(f) => member match {\n-                  case Left(theUser) => Failure(new RawlsException(s\"Could not update user ${theUser.userEmail.value}\", f))\n-                  case Right(theGroup) => Failure(new RawlsException(s\"Could not update group ${theGroup.groupEmail.value}\", f))\n+        withGroup(groupRef, txn) { group =>\n+          val users = memberList.userEmails.map(email => (email, containerDAO.authDAO.loadUserByEmail(email, txn)))\n+          val subGroups = memberList.subGroupEmails.map(email => (email, containerDAO.authDAO.loadGroupByEmail(email, txn)))\n+\n+          (users.collect { case (email, None) => email }, subGroups.collect { case (email, None) => email }) match {\n+            // success case, all users and groups found\n+            case (Seq(), Seq()) =>\n+              updateGroupMembersInternal(group, users.map(_._2.get), subGroups.map(_._2.get), adding, txn) map {\n+                _ match {\n+                  case None => RequestComplete(StatusCodes.OK)\n+                  case Some(error) => RequestComplete(error)\n                 }\n               }\n-            }\n+\n+            // failure cases, some users and/or groups not found\n+            case (Seq(), missingGroups) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some groups not found: ${missingGroups.mkString(\", \")}\")))\n+            case (missingUsers, Seq()) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some users not found: ${missingUsers.mkString(\", \")}\")))\n+            case (missingUsers, missingGroups) => Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Some users not found: ${missingUsers.mkString(\", \")}. Some groups not found: ${missingGroups.mkString(\", \")}\")))\n           }\n+        }\n+      }\n+    }\n+  }\n \n-          list.map { tries =>\n-            val exceptions = tries.collect {\n-              case Failure(t) => t\n-            }\n-\n-            val successfulUsers = tries.collect {\n-              case Success(Left(member)) => RawlsUser.toRef(member)\n-            }.toSet\n-            val successfulGroups = tries.collect {\n-              case Success(Right(member)) => RawlsGroup.toRef(member)\n-            }.toSet\n-\n-            val group = containerDAO.authDAO.loadGroup(groupRef, txn).getOrElse(throw new RawlsException(\"Unable to load group\"))\n-            adding match {\n-              case true => containerDAO.authDAO.saveGroup(group.copy(users = (group.users ++ successfulUsers),\n-                subGroups = (group.subGroups ++ successfulGroups)), txn)\n-              case false => containerDAO.authDAO.saveGroup(group.copy(users = (group.users -- successfulUsers),\n-                subGroups = (group.subGroups -- successfulGroups)), txn)\n-            }\n-            if (exceptions.isEmpty)\n-              RequestComplete(StatusCodes.OK)\n-            else\n-              RequestComplete(ErrorReport(StatusCodes.BadRequest, \"Unable to update the following member(s)\", exceptions.map(ErrorReport(_))))\n+  //in the event of a failure updating the user in the google group, the user will not be updated in the RawlsGroup\n+  private def updateGroupMembersInternal(group: RawlsGroup, users: Seq[RawlsUser], subGroups: Seq[RawlsGroup], adding: Boolean, txn: RawlsTransaction): Future[Option[ErrorReport]] = {\n+    val updateMap = users.map { user =>\n+      val updateTry = adding match {\n+        case true => toFutureTry(gcsDAO.addMemberToGoogleGroup(group, Left(user)))\n+        case false => toFutureTry(gcsDAO.removeMemberFromGoogleGroup(group, Left(user)))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 204,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "this is prior code so I am not going to fiddle with it. I don't really like it either but have not really thought of something better. I don't think a 2 value enum is really any better.\n",
+    "created_at": "2015-12-23T18:01:23Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48366431",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48366431"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48366431"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 351,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48770072",
+    "pull_request_review_id": null,
+    "id": 48770072,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4NzcwMDcy",
+    "diff_hunk": "@@ -21,6 +21,8 @@ import scala.util.{Success, Try, Failure}\n  * Created by dvoet on 10/27/15.\n  */\n object UserService {\n+  val allUsersGroupRef = RawlsGroupRef(RawlsGroupName(\"All_Users\"))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Willing to accept that a naughty admin could mess with the group. Can you confirm that trying to create your own group called All_Users results in an HTTP Conflict?\n",
+    "created_at": "2016-01-04T19:31:47Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48770072",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48770072"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48770072"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 24,
+    "original_line": 24,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48850448",
+    "pull_request_review_id": null,
+    "id": 48850448,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ4ODUwNDQ4",
+    "diff_hunk": "@@ -21,6 +21,8 @@ import scala.util.{Success, Try, Failure}\n  * Created by dvoet on 10/27/15.\n  */\n object UserService {\n+  val allUsersGroupRef = RawlsGroupRef(RawlsGroupName(\"All_Users\"))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "c4a3a85705c29deabd3839d97aa77e8897e030f2",
+    "original_commit_id": "0fc09bb5b948432cb3cd9b958d0cc73a4bd9173c",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "confirmed\n",
+    "created_at": "2016-01-05T14:41:29Z",
+    "updated_at": "2016-01-05T14:45:18Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48850448",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/48850448"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/256#discussion_r48850448"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 24,
+    "original_line": 24,
+    "side": "RIGHT"
+  }
+]

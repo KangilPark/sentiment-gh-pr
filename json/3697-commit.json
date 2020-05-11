@@ -1,0 +1,2214 @@
+[
+  {
+    "sha": "8533286114f73f16146e80c450c9c26cc2ed3d0e",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4NTMzMjg2MTE0ZjczZjE2MTQ2ZTgwYzQ1MGM5YzI2Y2MyZWQzZDBl",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-01T22:18:12Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Move internal things into an internal section",
+      "tree": {
+        "sha": "ecc7be20e7e25adb7c3532ddd7ab36c142d0b50c",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ecc7be20e7e25adb7c3532ddd7ab36c142d0b50c"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/8533286114f73f16146e80c450c9c26cc2ed3d0e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/8533286114f73f16146e80c450c9c26cc2ed3d0e",
+    "html_url": "https://github.com/atom/atom/commit/8533286114f73f16146e80c450c9c26cc2ed3d0e",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/8533286114f73f16146e80c450c9c26cc2ed3d0e/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "98d31a1d302a4d8b3a048c8ad4bc8865e02679d3",
+        "url": "https://api.github.com/repos/atom/atom/commits/98d31a1d302a4d8b3a048c8ad4bc8865e02679d3",
+        "html_url": "https://github.com/atom/atom/commit/98d31a1d302a4d8b3a048c8ad4bc8865e02679d3"
+      }
+    ]
+  },
+  {
+    "sha": "356f4bec7c1d421f96860bbff01d5c9712fc1343",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozNTZmNGJlYzdjMWQ0MjFmOTY4NjBiYmZmMDFkNWM5NzEyZmMxMzQz",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-01T23:31:22Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Basic scoped settings in Config works",
+      "tree": {
+        "sha": "62f94a02ca233597bcb0fa4036d6734f9f6723c2",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/62f94a02ca233597bcb0fa4036d6734f9f6723c2"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/356f4bec7c1d421f96860bbff01d5c9712fc1343",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/356f4bec7c1d421f96860bbff01d5c9712fc1343",
+    "html_url": "https://github.com/atom/atom/commit/356f4bec7c1d421f96860bbff01d5c9712fc1343",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/356f4bec7c1d421f96860bbff01d5c9712fc1343/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8533286114f73f16146e80c450c9c26cc2ed3d0e",
+        "url": "https://api.github.com/repos/atom/atom/commits/8533286114f73f16146e80c450c9c26cc2ed3d0e",
+        "html_url": "https://github.com/atom/atom/commit/8533286114f73f16146e80c450c9c26cc2ed3d0e"
+      }
+    ]
+  },
+  {
+    "sha": "38e889b7d879f1f34928c95300af7ffbc40e56d7",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozOGU4ODliN2Q4NzlmMWYzNDkyOGM5NTMwMGFmN2ZmYmM0MGU1NmQ3",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-01T23:34:51Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Reorganize private methods into section",
+      "tree": {
+        "sha": "29b9e6175589fdb5fdbfbcd51c2ade912b5a4fb2",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/29b9e6175589fdb5fdbfbcd51c2ade912b5a4fb2"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/38e889b7d879f1f34928c95300af7ffbc40e56d7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/38e889b7d879f1f34928c95300af7ffbc40e56d7",
+    "html_url": "https://github.com/atom/atom/commit/38e889b7d879f1f34928c95300af7ffbc40e56d7",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/38e889b7d879f1f34928c95300af7ffbc40e56d7/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "356f4bec7c1d421f96860bbff01d5c9712fc1343",
+        "url": "https://api.github.com/repos/atom/atom/commits/356f4bec7c1d421f96860bbff01d5c9712fc1343",
+        "html_url": "https://github.com/atom/atom/commit/356f4bec7c1d421f96860bbff01d5c9712fc1343"
+      }
+    ]
+  },
+  {
+    "sha": "778d9fafc5a1efc21dcd998b3eeaf227a253fca3",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo3NzhkOWZhZmM1YTFlZmMyMWRjZDk5OGIzZWVhZjIyN2EyNTNmY2Ez",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-01T23:44:10Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "fix value and default value object checks",
+      "tree": {
+        "sha": "cf084a525dee6c7e49fa2b06f6727c430e721495",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/cf084a525dee6c7e49fa2b06f6727c430e721495"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/778d9fafc5a1efc21dcd998b3eeaf227a253fca3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/778d9fafc5a1efc21dcd998b3eeaf227a253fca3",
+    "html_url": "https://github.com/atom/atom/commit/778d9fafc5a1efc21dcd998b3eeaf227a253fca3",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/778d9fafc5a1efc21dcd998b3eeaf227a253fca3/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "38e889b7d879f1f34928c95300af7ffbc40e56d7",
+        "url": "https://api.github.com/repos/atom/atom/commits/38e889b7d879f1f34928c95300af7ffbc40e56d7",
+        "html_url": "https://github.com/atom/atom/commit/38e889b7d879f1f34928c95300af7ffbc40e56d7"
+      }
+    ]
+  },
+  {
+    "sha": "7a5054027ebdd4d10b01219c71025f5229ffa7df",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo3YTUwNTQwMjdlYmRkNGQxMGIwMTIxOWM3MTAyNWY1MjI5ZmZhN2Rm",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-01T23:44:26Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Shift the args before coercing the value",
+      "tree": {
+        "sha": "04ea25fe58f5b0cc49bfe1a185c8fc7d242d6a3e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/04ea25fe58f5b0cc49bfe1a185c8fc7d242d6a3e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/7a5054027ebdd4d10b01219c71025f5229ffa7df",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/7a5054027ebdd4d10b01219c71025f5229ffa7df",
+    "html_url": "https://github.com/atom/atom/commit/7a5054027ebdd4d10b01219c71025f5229ffa7df",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/7a5054027ebdd4d10b01219c71025f5229ffa7df/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "778d9fafc5a1efc21dcd998b3eeaf227a253fca3",
+        "url": "https://api.github.com/repos/atom/atom/commits/778d9fafc5a1efc21dcd998b3eeaf227a253fca3",
+        "html_url": "https://github.com/atom/atom/commit/778d9fafc5a1efc21dcd998b3eeaf227a253fca3"
+      }
+    ]
+  },
+  {
+    "sha": "f61a7d0c6204699f8a94257f6326f95d5b7fc43e",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmNjFhN2QwYzYyMDQ2OTlmOGE5NDI1N2Y2MzI2Zjk1ZDViN2ZjNDNl",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-01T23:52:00Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Remove unused method",
+      "tree": {
+        "sha": "1fe2e4cbcb7f1b30a8795556aae84745280b6a2e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/1fe2e4cbcb7f1b30a8795556aae84745280b6a2e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/f61a7d0c6204699f8a94257f6326f95d5b7fc43e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/f61a7d0c6204699f8a94257f6326f95d5b7fc43e",
+    "html_url": "https://github.com/atom/atom/commit/f61a7d0c6204699f8a94257f6326f95d5b7fc43e",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/f61a7d0c6204699f8a94257f6326f95d5b7fc43e/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "7a5054027ebdd4d10b01219c71025f5229ffa7df",
+        "url": "https://api.github.com/repos/atom/atom/commits/7a5054027ebdd4d10b01219c71025f5229ffa7df",
+        "html_url": "https://github.com/atom/atom/commit/7a5054027ebdd4d10b01219c71025f5229ffa7df"
+      }
+    ]
+  },
+  {
+    "sha": "dd05c6cec1a19a3b84bd40b5185c89c0f65efb00",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkZDA1YzZjZWMxYTE5YTNiODRiZDQwYjUxODVjODljMGY2NWVmYjAw",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T00:05:04Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Syntax calls into atom.config for scoped properties",
+      "tree": {
+        "sha": "0a693195b16917ec438045342e9b2c4d1ac0c3c2",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/0a693195b16917ec438045342e9b2c4d1ac0c3c2"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/dd05c6cec1a19a3b84bd40b5185c89c0f65efb00",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/dd05c6cec1a19a3b84bd40b5185c89c0f65efb00",
+    "html_url": "https://github.com/atom/atom/commit/dd05c6cec1a19a3b84bd40b5185c89c0f65efb00",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/dd05c6cec1a19a3b84bd40b5185c89c0f65efb00/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f61a7d0c6204699f8a94257f6326f95d5b7fc43e",
+        "url": "https://api.github.com/repos/atom/atom/commits/f61a7d0c6204699f8a94257f6326f95d5b7fc43e",
+        "html_url": "https://github.com/atom/atom/commit/f61a7d0c6204699f8a94257f6326f95d5b7fc43e"
+      }
+    ]
+  },
+  {
+    "sha": "21feab322fcba73bcb2420d6cf35762be642b9c0",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyMWZlYWIzMjJmY2JhNzNiY2IyNDIwZDZjZjM1NzYyYmU2NDJiOWMw",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T00:07:58Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Add deprecations to the syntax scoped property methods",
+      "tree": {
+        "sha": "c42829f5e0b7921dd4521cd141e4e5dab329f37e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c42829f5e0b7921dd4521cd141e4e5dab329f37e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/21feab322fcba73bcb2420d6cf35762be642b9c0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/21feab322fcba73bcb2420d6cf35762be642b9c0",
+    "html_url": "https://github.com/atom/atom/commit/21feab322fcba73bcb2420d6cf35762be642b9c0",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/21feab322fcba73bcb2420d6cf35762be642b9c0/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "dd05c6cec1a19a3b84bd40b5185c89c0f65efb00",
+        "url": "https://api.github.com/repos/atom/atom/commits/dd05c6cec1a19a3b84bd40b5185c89c0f65efb00",
+        "html_url": "https://github.com/atom/atom/commit/dd05c6cec1a19a3b84bd40b5185c89c0f65efb00"
+      }
+    ]
+  },
+  {
+    "sha": "9a957fe0a466d69cde60d89fe99104c2e4350486",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo5YTk1N2ZlMGE0NjZkNjljZGU2MGQ4OWZlOTkxMDRjMmU0MzUwNDg2",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T01:11:40Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Fix specs for settings view.",
+      "tree": {
+        "sha": "994dd12cc3f5e49fb8ed5f4ccceccbd373955891",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/994dd12cc3f5e49fb8ed5f4ccceccbd373955891"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/9a957fe0a466d69cde60d89fe99104c2e4350486",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/9a957fe0a466d69cde60d89fe99104c2e4350486",
+    "html_url": "https://github.com/atom/atom/commit/9a957fe0a466d69cde60d89fe99104c2e4350486",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/9a957fe0a466d69cde60d89fe99104c2e4350486/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "21feab322fcba73bcb2420d6cf35762be642b9c0",
+        "url": "https://api.github.com/repos/atom/atom/commits/21feab322fcba73bcb2420d6cf35762be642b9c0",
+        "html_url": "https://github.com/atom/atom/commit/21feab322fcba73bcb2420d6cf35762be642b9c0"
+      }
+    ]
+  },
+  {
+    "sha": "d72b179b3b7def4f777f215f32937e2a614335c7",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkNzJiMTc5YjNiN2RlZjRmNzc3ZjIxNWYzMjkzN2UyYTYxNDMzNWM3",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T01:11:52Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Use config in spec helper",
+      "tree": {
+        "sha": "f10a6fad3fd6cb2f72fb3ac2ba95270804034e93",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/f10a6fad3fd6cb2f72fb3ac2ba95270804034e93"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/d72b179b3b7def4f777f215f32937e2a614335c7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/d72b179b3b7def4f777f215f32937e2a614335c7",
+    "html_url": "https://github.com/atom/atom/commit/d72b179b3b7def4f777f215f32937e2a614335c7",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/d72b179b3b7def4f777f215f32937e2a614335c7/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9a957fe0a466d69cde60d89fe99104c2e4350486",
+        "url": "https://api.github.com/repos/atom/atom/commits/9a957fe0a466d69cde60d89fe99104c2e4350486",
+        "html_url": "https://github.com/atom/atom/commit/9a957fe0a466d69cde60d89fe99104c2e4350486"
+      }
+    ]
+  },
+  {
+    "sha": "82990cfc778309a2ab59ff86f2afa3e6fb3601ed",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4Mjk5MGNmYzc3ODMwOWEyYWI1OWZmODZmMmFmYTNlNmZiMzYwMWVk",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T01:14:16Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "rename method",
+      "tree": {
+        "sha": "f231422dccd4400d54205b6b54b25b9421daed6c",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/f231422dccd4400d54205b6b54b25b9421daed6c"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/82990cfc778309a2ab59ff86f2afa3e6fb3601ed",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/82990cfc778309a2ab59ff86f2afa3e6fb3601ed",
+    "html_url": "https://github.com/atom/atom/commit/82990cfc778309a2ab59ff86f2afa3e6fb3601ed",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/82990cfc778309a2ab59ff86f2afa3e6fb3601ed/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d72b179b3b7def4f777f215f32937e2a614335c7",
+        "url": "https://api.github.com/repos/atom/atom/commits/d72b179b3b7def4f777f215f32937e2a614335c7",
+        "html_url": "https://github.com/atom/atom/commit/d72b179b3b7def4f777f215f32937e2a614335c7"
+      }
+    ]
+  },
+  {
+    "sha": "e2ac19c17f98865cbefb648b8e3e6f79c3c71fc7",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplMmFjMTljMTdmOTg4NjVjYmVmYjY0OGI4ZTNlNmY3OWMzYzcxZmM3",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T17:31:32Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Use config rather than syntax for scoped properties",
+      "tree": {
+        "sha": "3bffe0447446777ecb06ba1036b8fa386eaa9e20",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/3bffe0447446777ecb06ba1036b8fa386eaa9e20"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/e2ac19c17f98865cbefb648b8e3e6f79c3c71fc7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/e2ac19c17f98865cbefb648b8e3e6f79c3c71fc7",
+    "html_url": "https://github.com/atom/atom/commit/e2ac19c17f98865cbefb648b8e3e6f79c3c71fc7",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/e2ac19c17f98865cbefb648b8e3e6f79c3c71fc7/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "82990cfc778309a2ab59ff86f2afa3e6fb3601ed",
+        "url": "https://api.github.com/repos/atom/atom/commits/82990cfc778309a2ab59ff86f2afa3e6fb3601ed",
+        "html_url": "https://github.com/atom/atom/commit/82990cfc778309a2ab59ff86f2afa3e6fb3601ed"
+      }
+    ]
+  },
+  {
+    "sha": "a8fad6a0fbc81533ad884b4b5e0f7b4b149d811b",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphOGZhZDZhMGZiYzgxNTMzYWQ4ODRiNGI1ZTBmN2I0YjE0OWQ4MTFi",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T20:49:30Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:13Z"
+      },
+      "message": "Use disposables for removing properties",
+      "tree": {
+        "sha": "e26bd80ca3f126ae262f7881be894aeea67c9c34",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e26bd80ca3f126ae262f7881be894aeea67c9c34"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/a8fad6a0fbc81533ad884b4b5e0f7b4b149d811b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/a8fad6a0fbc81533ad884b4b5e0f7b4b149d811b",
+    "html_url": "https://github.com/atom/atom/commit/a8fad6a0fbc81533ad884b4b5e0f7b4b149d811b",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/a8fad6a0fbc81533ad884b4b5e0f7b4b149d811b/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e2ac19c17f98865cbefb648b8e3e6f79c3c71fc7",
+        "url": "https://api.github.com/repos/atom/atom/commits/e2ac19c17f98865cbefb648b8e3e6f79c3c71fc7",
+        "html_url": "https://github.com/atom/atom/commit/e2ac19c17f98865cbefb648b8e3e6f79c3c71fc7"
+      }
+    ]
+  },
+  {
+    "sha": "b1f8c6a6e89a3ff499dbb8ae3a37823fe88ee925",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiMWY4YzZhNmU4OWEzZmY0OTlkYmI4YWUzYTM3ODIzZmU4OGVlOTI1",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T20:56:27Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Remove special method for language mode",
+      "tree": {
+        "sha": "f92bf9aaa0f7fd88b96ea83308f874faad9c77c9",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/f92bf9aaa0f7fd88b96ea83308f874faad9c77c9"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/b1f8c6a6e89a3ff499dbb8ae3a37823fe88ee925",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/b1f8c6a6e89a3ff499dbb8ae3a37823fe88ee925",
+    "html_url": "https://github.com/atom/atom/commit/b1f8c6a6e89a3ff499dbb8ae3a37823fe88ee925",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/b1f8c6a6e89a3ff499dbb8ae3a37823fe88ee925/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a8fad6a0fbc81533ad884b4b5e0f7b4b149d811b",
+        "url": "https://api.github.com/repos/atom/atom/commits/a8fad6a0fbc81533ad884b4b5e0f7b4b149d811b",
+        "html_url": "https://github.com/atom/atom/commit/a8fad6a0fbc81533ad884b4b5e0f7b4b149d811b"
+      }
+    ]
+  },
+  {
+    "sha": "d47dbede29f8e765165a3c68144781ab23a009a8",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkNDdkYmVkZTI5ZjhlNzY1MTY1YTNjNjgxNDQ3ODFhYjIzYTAwOWE4",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T21:01:35Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Fix specs",
+      "tree": {
+        "sha": "50f374e3c71c858263b4fa75d795f05b96b07540",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/50f374e3c71c858263b4fa75d795f05b96b07540"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/d47dbede29f8e765165a3c68144781ab23a009a8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/d47dbede29f8e765165a3c68144781ab23a009a8",
+    "html_url": "https://github.com/atom/atom/commit/d47dbede29f8e765165a3c68144781ab23a009a8",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/d47dbede29f8e765165a3c68144781ab23a009a8/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b1f8c6a6e89a3ff499dbb8ae3a37823fe88ee925",
+        "url": "https://api.github.com/repos/atom/atom/commits/b1f8c6a6e89a3ff499dbb8ae3a37823fe88ee925",
+        "html_url": "https://github.com/atom/atom/commit/b1f8c6a6e89a3ff499dbb8ae3a37823fe88ee925"
+      }
+    ]
+  },
+  {
+    "sha": "aedf02a3e33dc783743c3b31d3094c8f4bc4d55d",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphZWRmMDJhM2UzM2RjNzgzNzQzYzNiMzFkMzA5NGM4ZjRiYzRkNTVk",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T21:16:36Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Remove +default junk",
+      "tree": {
+        "sha": "fa8f8b1e8ea92f8237591f1e3ef70f149b1a5295",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/fa8f8b1e8ea92f8237591f1e3ef70f149b1a5295"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/aedf02a3e33dc783743c3b31d3094c8f4bc4d55d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/aedf02a3e33dc783743c3b31d3094c8f4bc4d55d",
+    "html_url": "https://github.com/atom/atom/commit/aedf02a3e33dc783743c3b31d3094c8f4bc4d55d",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/aedf02a3e33dc783743c3b31d3094c8f4bc4d55d/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d47dbede29f8e765165a3c68144781ab23a009a8",
+        "url": "https://api.github.com/repos/atom/atom/commits/d47dbede29f8e765165a3c68144781ab23a009a8",
+        "html_url": "https://github.com/atom/atom/commit/d47dbede29f8e765165a3c68144781ab23a009a8"
+      }
+    ]
+  },
+  {
+    "sha": "3732bdf1e9d1ae8d338a69e4f7a2d7777bc72fef",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozNzMyYmRmMWU5ZDFhZThkMzM4YTY5ZTRmN2EyZDc3NzdiYzcyZmVm",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T21:34:02Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Ugh, add settingsForScopeDescriptor back \n\nIt’s used by language mode and autocomplete for different things",
+      "tree": {
+        "sha": "783361793afc31f87e72b5c2841a1c88e055706f",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/783361793afc31f87e72b5c2841a1c88e055706f"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/3732bdf1e9d1ae8d338a69e4f7a2d7777bc72fef",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/3732bdf1e9d1ae8d338a69e4f7a2d7777bc72fef",
+    "html_url": "https://github.com/atom/atom/commit/3732bdf1e9d1ae8d338a69e4f7a2d7777bc72fef",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/3732bdf1e9d1ae8d338a69e4f7a2d7777bc72fef/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "aedf02a3e33dc783743c3b31d3094c8f4bc4d55d",
+        "url": "https://api.github.com/repos/atom/atom/commits/aedf02a3e33dc783743c3b31d3094c8f4bc4d55d",
+        "html_url": "https://github.com/atom/atom/commit/aedf02a3e33dc783743c3b31d3094c8f4bc4d55d"
+      }
+    ]
+  },
+  {
+    "sha": "e5d67bb2ff6fa789d69aa20628ceccdf6a8df597",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplNWQ2N2JiMmZmNmZhNzg5ZDY5YWEyMDYyOGNlY2NkZjZhOGRmNTk3",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T21:43:14Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Can remove the clearing of scoped properties\n\nConfig is being created on each spec run!",
+      "tree": {
+        "sha": "6e424ee807154df11a9bdfc5cb534a4c61dbe848",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/6e424ee807154df11a9bdfc5cb534a4c61dbe848"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/e5d67bb2ff6fa789d69aa20628ceccdf6a8df597",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/e5d67bb2ff6fa789d69aa20628ceccdf6a8df597",
+    "html_url": "https://github.com/atom/atom/commit/e5d67bb2ff6fa789d69aa20628ceccdf6a8df597",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/e5d67bb2ff6fa789d69aa20628ceccdf6a8df597/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "3732bdf1e9d1ae8d338a69e4f7a2d7777bc72fef",
+        "url": "https://api.github.com/repos/atom/atom/commits/3732bdf1e9d1ae8d338a69e4f7a2d7777bc72fef",
+        "html_url": "https://github.com/atom/atom/commit/3732bdf1e9d1ae8d338a69e4f7a2d7777bc72fef"
+      }
+    ]
+  },
+  {
+    "sha": "899929a1ce91150745b6c1a2de723b2a01ff05c9",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4OTk5MjlhMWNlOTExNTA3NDViNmMxYTJkZTcyM2IyYTAxZmYwNWM5",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T21:53:22Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "addScopedDefaults -> addScopedSettings",
+      "tree": {
+        "sha": "18f365b05888a223e860952a3d4c5dbb843dacc9",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/18f365b05888a223e860952a3d4c5dbb843dacc9"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/899929a1ce91150745b6c1a2de723b2a01ff05c9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/899929a1ce91150745b6c1a2de723b2a01ff05c9",
+    "html_url": "https://github.com/atom/atom/commit/899929a1ce91150745b6c1a2de723b2a01ff05c9",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/899929a1ce91150745b6c1a2de723b2a01ff05c9/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e5d67bb2ff6fa789d69aa20628ceccdf6a8df597",
+        "url": "https://api.github.com/repos/atom/atom/commits/e5d67bb2ff6fa789d69aa20628ceccdf6a8df597",
+        "html_url": "https://github.com/atom/atom/commit/e5d67bb2ff6fa789d69aa20628ceccdf6a8df597"
+      }
+    ]
+  },
+  {
+    "sha": "f8a3ae61043adc7912e50bee102210f6567bab2f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmOGEzYWU2MTA0M2FkYzc5MTJlNTBiZWUxMDIyMTBmNjU2N2JhYjJm",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T22:20:29Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Pull observing out into special methods for global config",
+      "tree": {
+        "sha": "7d776fd6c4bd7af24aee0683fa52784ec011e569",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/7d776fd6c4bd7af24aee0683fa52784ec011e569"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/f8a3ae61043adc7912e50bee102210f6567bab2f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/f8a3ae61043adc7912e50bee102210f6567bab2f",
+    "html_url": "https://github.com/atom/atom/commit/f8a3ae61043adc7912e50bee102210f6567bab2f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/f8a3ae61043adc7912e50bee102210f6567bab2f/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "899929a1ce91150745b6c1a2de723b2a01ff05c9",
+        "url": "https://api.github.com/repos/atom/atom/commits/899929a1ce91150745b6c1a2de723b2a01ff05c9",
+        "html_url": "https://github.com/atom/atom/commit/899929a1ce91150745b6c1a2de723b2a01ff05c9"
+      }
+    ]
+  },
+  {
+    "sha": "f724c7fca88edb5bf183ab7b382ec1b9a8cf615f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmNzI0YzdmY2E4OGVkYjViZjE4M2FiN2IzODJlYzFiOWE4Y2Y2MTVm",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-02T23:17:08Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Implement observing on scoped properties",
+      "tree": {
+        "sha": "ffa63c2d6202cbc34cfa5b27537b8d9be050c961",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ffa63c2d6202cbc34cfa5b27537b8d9be050c961"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/f724c7fca88edb5bf183ab7b382ec1b9a8cf615f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/f724c7fca88edb5bf183ab7b382ec1b9a8cf615f",
+    "html_url": "https://github.com/atom/atom/commit/f724c7fca88edb5bf183ab7b382ec1b9a8cf615f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/f724c7fca88edb5bf183ab7b382ec1b9a8cf615f/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f8a3ae61043adc7912e50bee102210f6567bab2f",
+        "url": "https://api.github.com/repos/atom/atom/commits/f8a3ae61043adc7912e50bee102210f6567bab2f",
+        "html_url": "https://github.com/atom/atom/commit/f8a3ae61043adc7912e50bee102210f6567bab2f"
+      }
+    ]
+  },
+  {
+    "sha": "2475e1a9a602351a0df78badb5e276d175febd8c",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyNDc1ZTFhOWE2MDIzNTFhMGRmNzhiYWRiNWUyNzZkMTc1ZmViZDhj",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T00:20:10Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": ":memo: Update docs for scoped settings",
+      "tree": {
+        "sha": "21b94e81fa8a7b8cb26397f63460efc918720d8e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/21b94e81fa8a7b8cb26397f63460efc918720d8e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/2475e1a9a602351a0df78badb5e276d175febd8c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/2475e1a9a602351a0df78badb5e276d175febd8c",
+    "html_url": "https://github.com/atom/atom/commit/2475e1a9a602351a0df78badb5e276d175febd8c",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/2475e1a9a602351a0df78badb5e276d175febd8c/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f724c7fca88edb5bf183ab7b382ec1b9a8cf615f",
+        "url": "https://api.github.com/repos/atom/atom/commits/f724c7fca88edb5bf183ab7b382ec1b9a8cf615f",
+        "html_url": "https://github.com/atom/atom/commit/f724c7fca88edb5bf183ab7b382ec1b9a8cf615f"
+      }
+    ]
+  },
+  {
+    "sha": "16fd53c1235289ae68548c33378da31c3e8b9031",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxNmZkNTNjMTIzNTI4OWFlNjg1NDhjMzMzNzhkYTMxYzNlOGI5MDMx",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T00:32:30Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Add schemas for scoped configs",
+      "tree": {
+        "sha": "29da74c52d6efc3272355741800a3d7f16460828",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/29da74c52d6efc3272355741800a3d7f16460828"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/16fd53c1235289ae68548c33378da31c3e8b9031",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/16fd53c1235289ae68548c33378da31c3e8b9031",
+    "html_url": "https://github.com/atom/atom/commit/16fd53c1235289ae68548c33378da31c3e8b9031",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/16fd53c1235289ae68548c33378da31c3e8b9031/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "2475e1a9a602351a0df78badb5e276d175febd8c",
+        "url": "https://api.github.com/repos/atom/atom/commits/2475e1a9a602351a0df78badb5e276d175febd8c",
+        "html_url": "https://github.com/atom/atom/commit/2475e1a9a602351a0df78badb5e276d175febd8c"
+      }
+    ]
+  },
+  {
+    "sha": "27da0669f32e440d9e5a3a4ac7c624ccf7d28f7d",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyN2RhMDY2OWYzMmU0NDBkOWU1YTNhNGFjN2M2MjRjY2Y3ZDI4Zjdk",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T01:04:38Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": "Moar :memo:",
+      "tree": {
+        "sha": "416e63ace128e67e3f97207f616d10d9168abfb0",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/416e63ace128e67e3f97207f616d10d9168abfb0"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/27da0669f32e440d9e5a3a4ac7c624ccf7d28f7d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/27da0669f32e440d9e5a3a4ac7c624ccf7d28f7d",
+    "html_url": "https://github.com/atom/atom/commit/27da0669f32e440d9e5a3a4ac7c624ccf7d28f7d",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/27da0669f32e440d9e5a3a4ac7c624ccf7d28f7d/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "16fd53c1235289ae68548c33378da31c3e8b9031",
+        "url": "https://api.github.com/repos/atom/atom/commits/16fd53c1235289ae68548c33378da31c3e8b9031",
+        "html_url": "https://github.com/atom/atom/commit/16fd53c1235289ae68548c33378da31c3e8b9031"
+      }
+    ]
+  },
+  {
+    "sha": "a711e908d560af71542a63a16ff18bed4ce0d558",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphNzExZTkwOGQ1NjBhZjcxNTQyYTYzYTE2ZmYxOGJlZDRjZTBkNTU4",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:45:37Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T17:46:57Z"
+      },
+      "message": ":lipstick:",
+      "tree": {
+        "sha": "689f30fd9e3ede64fad230e384204301f7a001a8",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/689f30fd9e3ede64fad230e384204301f7a001a8"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/a711e908d560af71542a63a16ff18bed4ce0d558",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/a711e908d560af71542a63a16ff18bed4ce0d558",
+    "html_url": "https://github.com/atom/atom/commit/a711e908d560af71542a63a16ff18bed4ce0d558",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/a711e908d560af71542a63a16ff18bed4ce0d558/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "27da0669f32e440d9e5a3a4ac7c624ccf7d28f7d",
+        "url": "https://api.github.com/repos/atom/atom/commits/27da0669f32e440d9e5a3a4ac7c624ccf7d28f7d",
+        "html_url": "https://github.com/atom/atom/commit/27da0669f32e440d9e5a3a4ac7c624ccf7d28f7d"
+      }
+    ]
+  },
+  {
+    "sha": "47d5b46a1d792e1637c8e0424a448b580bb6f687",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0N2Q1YjQ2YTFkNzkyZTE2MzdjOGUwNDI0YTQ0OGI1ODBiYjZmNjg3",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T18:42:45Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T18:42:45Z"
+      },
+      "message": "Fix warnings from schema incorrectness",
+      "tree": {
+        "sha": "3e6a9991298b64fc954b3f54be86c1e14adf5135",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/3e6a9991298b64fc954b3f54be86c1e14adf5135"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/47d5b46a1d792e1637c8e0424a448b580bb6f687",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/47d5b46a1d792e1637c8e0424a448b580bb6f687",
+    "html_url": "https://github.com/atom/atom/commit/47d5b46a1d792e1637c8e0424a448b580bb6f687",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/47d5b46a1d792e1637c8e0424a448b580bb6f687/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "a711e908d560af71542a63a16ff18bed4ce0d558",
+        "url": "https://api.github.com/repos/atom/atom/commits/a711e908d560af71542a63a16ff18bed4ce0d558",
+        "html_url": "https://github.com/atom/atom/commit/a711e908d560af71542a63a16ff18bed4ce0d558"
+      }
+    ]
+  },
+  {
+    "sha": "4e3c8406ee70b6544a3e52c99fb484362bbec225",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0ZTNjODQwNmVlNzBiNjU0NGEzZTUyYzk5ZmI0ODQzNjJiYmVjMjI1",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T18:57:35Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T18:57:35Z"
+      },
+      "message": "Clean up docs",
+      "tree": {
+        "sha": "e4cebab9d6e8e3682d044ecf2b2bc2157cc1a46a",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e4cebab9d6e8e3682d044ecf2b2bc2157cc1a46a"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/4e3c8406ee70b6544a3e52c99fb484362bbec225",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/4e3c8406ee70b6544a3e52c99fb484362bbec225",
+    "html_url": "https://github.com/atom/atom/commit/4e3c8406ee70b6544a3e52c99fb484362bbec225",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/4e3c8406ee70b6544a3e52c99fb484362bbec225/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "47d5b46a1d792e1637c8e0424a448b580bb6f687",
+        "url": "https://api.github.com/repos/atom/atom/commits/47d5b46a1d792e1637c8e0424a448b580bb6f687",
+        "html_url": "https://github.com/atom/atom/commit/47d5b46a1d792e1637c8e0424a448b580bb6f687"
+      }
+    ]
+  },
+  {
+    "sha": "062fa29895a79e9158fe973a4d8856cd8f62c877",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowNjJmYTI5ODk1YTc5ZTkxNThmZTk3M2E0ZDg4NTZjZDhmNjJjODc3",
+    "commit": {
+      "author": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T18:57:50Z"
+      },
+      "committer": {
+        "name": "Ben Ogle",
+        "email": "ogle.ben@gmail.com",
+        "date": "2014-10-03T18:57:50Z"
+      },
+      "message": "addRawScopedValue -> setRawScopedValue",
+      "tree": {
+        "sha": "510969133c183567e4d675530e991923ef54b5ac",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/510969133c183567e4d675530e991923ef54b5ac"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/062fa29895a79e9158fe973a4d8856cd8f62c877",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/062fa29895a79e9158fe973a4d8856cd8f62c877",
+    "html_url": "https://github.com/atom/atom/commit/062fa29895a79e9158fe973a4d8856cd8f62c877",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/062fa29895a79e9158fe973a4d8856cd8f62c877/comments",
+    "author": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "benogle",
+      "id": 69169,
+      "node_id": "MDQ6VXNlcjY5MTY5",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/69169?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/benogle",
+      "html_url": "https://github.com/benogle",
+      "followers_url": "https://api.github.com/users/benogle/followers",
+      "following_url": "https://api.github.com/users/benogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/benogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/benogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/benogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/benogle/orgs",
+      "repos_url": "https://api.github.com/users/benogle/repos",
+      "events_url": "https://api.github.com/users/benogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/benogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4e3c8406ee70b6544a3e52c99fb484362bbec225",
+        "url": "https://api.github.com/repos/atom/atom/commits/4e3c8406ee70b6544a3e52c99fb484362bbec225",
+        "html_url": "https://github.com/atom/atom/commit/4e3c8406ee70b6544a3e52c99fb484362bbec225"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1652 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37364722",
+    "pull_request_review_id": null,
+    "id": 37364722,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3MzY0NzIy",
+    "diff_hunk": "@@ -178,32 +178,75 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true\n+      values = body\n+    elsif body.is_a?(Hash)\n+      multi_insert = false\n+      values = [body]\n+    else\n+      json_bad_request\n+    end\n+\n+    # Validation\n+    #   currently, only messages are validated\n+    valid_values = if table_name == TABLE_NAMES[:message] then",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3c6838fb46d35c6070f84321eeb31d9573588537",
+    "user": {
+      "login": "houndci-bot",
+      "id": 6697940,
+      "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/houndci-bot",
+      "html_url": "https://github.com/houndci-bot",
+      "followers_url": "https://api.github.com/users/houndci-bot/followers",
+      "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+      "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+      "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+      "repos_url": "https://api.github.com/users/houndci-bot/repos",
+      "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Style/MultilineIfThen: Do not use `then` for multi-line `if`.\n",
+    "created_at": "2015-08-18T23:09:49Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37364722",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37364722"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37364722"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 208,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37364725",
+    "pull_request_review_id": null,
+    "id": 37364725,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3MzY0NzI1",
+    "diff_hunk": "@@ -178,32 +178,75 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true\n+      values = body\n+    elsif body.is_a?(Hash)\n+      multi_insert = false\n+      values = [body]\n+    else\n+      json_bad_request\n+    end\n+\n+    # Validation\n+    #   currently, only messages are validated\n+    valid_values = if table_name == TABLE_NAMES[:message] then\n+      values.select { |value| message_valid?(shard_id, value) }",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": null,
+    "original_position": 44,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3c6838fb46d35c6070f84321eeb31d9573588537",
+    "user": {
+      "login": "houndci-bot",
+      "id": 6697940,
+      "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/houndci-bot",
+      "html_url": "https://github.com/houndci-bot",
+      "followers_url": "https://api.github.com/users/houndci-bot/followers",
+      "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+      "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+      "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+      "repos_url": "https://api.github.com/users/houndci-bot/repos",
+      "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Style/IndentationWidth: Use 2 (not -13) spaces for indentation.\n",
+    "created_at": "2015-08-18T23:09:49Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37364725",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37364725"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37364725"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 209,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37364726",
+    "pull_request_review_id": null,
+    "id": 37364726,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3MzY0NzI2",
+    "diff_hunk": "@@ -178,32 +178,75 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true\n+      values = body\n+    elsif body.is_a?(Hash)\n+      multi_insert = false\n+      values = [body]\n+    else\n+      json_bad_request\n+    end\n+\n+    # Validation\n+    #   currently, only messages are validated\n+    valid_values = if table_name == TABLE_NAMES[:message] then\n+      values.select { |value| message_valid?(shard_id, value) }\n+    else",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": null,
+    "original_position": 45,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3c6838fb46d35c6070f84321eeb31d9573588537",
+    "user": {
+      "login": "houndci-bot",
+      "id": 6697940,
+      "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/houndci-bot",
+      "html_url": "https://github.com/houndci-bot",
+      "followers_url": "https://api.github.com/users/houndci-bot/followers",
+      "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+      "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+      "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+      "repos_url": "https://api.github.com/users/houndci-bot/repos",
+      "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Style/ElseAlignment: Align `else` with `if`.\n",
+    "created_at": "2015-08-18T23:09:50Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37364726",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37364726"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37364726"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 210,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37364727",
+    "pull_request_review_id": null,
+    "id": 37364727,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3MzY0NzI3",
+    "diff_hunk": "@@ -178,32 +178,75 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true\n+      values = body\n+    elsif body.is_a?(Hash)\n+      multi_insert = false\n+      values = [body]\n+    else\n+      json_bad_request\n+    end\n+\n+    # Validation\n+    #   currently, only messages are validated\n+    valid_values = if table_name == TABLE_NAMES[:message] then\n+      values.select { |value| message_valid?(shard_id, value) }\n+    else\n+      values\n+    end",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": null,
+    "original_position": 47,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3c6838fb46d35c6070f84321eeb31d9573588537",
+    "user": {
+      "login": "houndci-bot",
+      "id": 6697940,
+      "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/houndci-bot",
+      "html_url": "https://github.com/houndci-bot",
+      "followers_url": "https://api.github.com/users/houndci-bot/followers",
+      "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+      "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+      "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+      "repos_url": "https://api.github.com/users/houndci-bot/repos",
+      "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Lint/EndAlignment: `end` at 212, 4 is not aligned with `if` at 208, 19\n",
+    "created_at": "2015-08-18T23:09:50Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37364727",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37364727"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37364727"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 212,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37461385",
+    "pull_request_review_id": null,
+    "id": 37461385,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDYxMzg1",
+    "diff_hunk": "@@ -178,32 +178,75 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "4d405bc0fcb717af1ef7801fd5bc71ed3a79bd2d",
+    "user": {
+      "login": "philbogle",
+      "id": 5198586,
+      "node_id": "MDQ6VXNlcjUxOTg1ODY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5198586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/philbogle",
+      "html_url": "https://github.com/philbogle",
+      "followers_url": "https://api.github.com/users/philbogle/followers",
+      "following_url": "https://api.github.com/users/philbogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/philbogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/philbogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/philbogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/philbogle/orgs",
+      "repos_url": "https://api.github.com/users/philbogle/repos",
+      "events_url": "https://api.github.com/users/philbogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/philbogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Could you document the allowed POST body formats, now that this is getting more complicated.\n",
+    "created_at": "2015-08-19T20:08:12Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37461385",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37461385"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37461385"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 181,
+    "original_line": 181,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37461601",
+    "pull_request_review_id": null,
+    "id": 37461601,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDYxNjAx",
+    "diff_hunk": "@@ -178,32 +178,75 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "4d405bc0fcb717af1ef7801fd5bc71ed3a79bd2d",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Good call.\n\nIs there a style guide we're using for this kind of documentation?\n",
+    "created_at": "2015-08-19T20:10:02Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37461601",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37461601"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37461601"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 181,
+    "original_line": 181,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37462931",
+    "pull_request_review_id": null,
+    "id": 37462931,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDYyOTMx",
+    "diff_hunk": "@@ -178,32 +178,75 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true\n+      values = body\n+    elsif body.is_a?(Hash)\n+      multi_insert = false\n+      values = [body]\n+    else\n+      json_bad_request\n+    end\n+\n+    # Validation\n+    #   currently, only messages are validated\n+    valid_values = if table_name == TABLE_NAMES[:message]\n+                     values.select { |value| message_valid?(shard_id, value) }\n+                   else\n+                     values\n+                   end\n+\n+    # If any values failed validation or if we were not given any values\n+    # to begin with, error out\n+    json_bad_request unless valid_values.length == values.length && valid_values.length > 0",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": null,
+    "original_position": 51,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "4d405bc0fcb717af1ef7801fd5bc71ed3a79bd2d",
+    "user": {
+      "login": "philbogle",
+      "id": 5198586,
+      "node_id": "MDQ6VXNlcjUxOTg1ODY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5198586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/philbogle",
+      "html_url": "https://github.com/philbogle",
+      "followers_url": "https://api.github.com/users/philbogle/followers",
+      "following_url": "https://api.github.com/users/philbogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/philbogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/philbogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/philbogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/philbogle/orgs",
+      "repos_url": "https://api.github.com/users/philbogle/repos",
+      "events_url": "https://api.github.com/users/philbogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/philbogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This is a little tricky.  Since we are only checking the length here, this seems like a way that bugs could sneak in (length matches but values are different), especially since we use valid_values below.\n\nI believe the following is clearer.  Add a value_valid? method that takes the shard, table_name, and value and use all? to make sure all values are valid:\n\nall_values_valid = values.all? { |value| value_valid?(shard_id, table_name, value } \njson_bad_request unless all_values_valid\n\nThen value_valid? can be as follows which will scale nicely as we add validation for other table types.\n\ndef value_valid?(shard_id, table_name, value)\n   case table_name \n      when TABLE_NAMES[:message]\n          message_valid(shard_id, value)\n      else\n         true\n     end\nend\n",
+    "created_at": "2015-08-19T20:22:15Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37462931",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37462931"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37462931"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 216,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37463067",
+    "pull_request_review_id": null,
+    "id": 37463067,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDYzMDY3",
+    "diff_hunk": "@@ -71,6 +71,37 @@ def test_create_read_update_delete\n     assert read_records.first.nil?, 'Table was not empty'\n   end\n \n+  def test_create_multiple_records\n+    created_ids = []\n+    # Sending any number of records as an array should result in an\n+    # array being returned\n+    record_create_response = create_record([{name: 'alice', age: 7, male: false}])\n+    assert record_create_response.is_a?(Array)\n+    assert_equal 1, record_create_response.length\n+    assert_equal 1, read_records().length\n+    created_ids.push(record_create_response[0]['id'])\n+\n+    # Sending a record as a hash should result in a hash being returned\n+    record_create_response = create_record({name: 'fred', age: 12, male: true})\n+    assert record_create_response.is_a?(Hash)\n+    assert_equal 2, read_records().length\n+    created_ids.push(record_create_response['id'])\n+\n+    # Sending several records should result in them all being inserted\n+    record_create_response = create_record([",
+    "path": "shared/test/test_net_sim_api.rb",
+    "position": 21,
+    "original_position": 21,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "4d405bc0fcb717af1ef7801fd5bc71ed3a79bd2d",
+    "user": {
+      "login": "philbogle",
+      "id": 5198586,
+      "node_id": "MDQ6VXNlcjUxOTg1ODY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5198586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/philbogle",
+      "html_url": "https://github.com/philbogle",
+      "followers_url": "https://api.github.com/users/philbogle/followers",
+      "following_url": "https://api.github.com/users/philbogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/philbogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/philbogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/philbogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/philbogle/orgs",
+      "repos_url": "https://api.github.com/users/philbogle/repos",
+      "events_url": "https://api.github.com/users/philbogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/philbogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Please add a test case for an empty array, which should succeed and do nothing (I think!)\n",
+    "created_at": "2015-08-19T20:23:24Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37463067",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37463067"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37463067"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 91,
+    "original_line": 91,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37463193",
+    "pull_request_review_id": null,
+    "id": 37463193,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDYzMTkz",
+    "diff_hunk": "@@ -71,6 +71,37 @@ def test_create_read_update_delete\n     assert read_records.first.nil?, 'Table was not empty'\n   end\n \n+  def test_create_multiple_records\n+    created_ids = []\n+    # Sending any number of records as an array should result in an\n+    # array being returned\n+    record_create_response = create_record([{name: 'alice', age: 7, male: false}])\n+    assert record_create_response.is_a?(Array)\n+    assert_equal 1, record_create_response.length\n+    assert_equal 1, read_records().length\n+    created_ids.push(record_create_response[0]['id'])\n+\n+    # Sending a record as a hash should result in a hash being returned\n+    record_create_response = create_record({name: 'fred', age: 12, male: true})\n+    assert record_create_response.is_a?(Hash)\n+    assert_equal 2, read_records().length\n+    created_ids.push(record_create_response['id'])\n+\n+    # Sending several records should result in them all being inserted\n+    record_create_response = create_record([\n+      {name: 'nancy', age: 9, male: false},\n+      {name: 'drew', age: 11, male: true}\n+    ])\n+    assert record_create_response.is_a?(Array)",
+    "path": "shared/test/test_net_sim_api.rb",
+    "position": 25,
+    "original_position": 25,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "4d405bc0fcb717af1ef7801fd5bc71ed3a79bd2d",
+    "user": {
+      "login": "philbogle",
+      "id": 5198586,
+      "node_id": "MDQ6VXNlcjUxOTg1ODY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5198586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/philbogle",
+      "html_url": "https://github.com/philbogle",
+      "followers_url": "https://api.github.com/users/philbogle/followers",
+      "following_url": "https://api.github.com/users/philbogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/philbogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/philbogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/philbogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/philbogle/orgs",
+      "repos_url": "https://api.github.com/users/philbogle/repos",
+      "events_url": "https://api.github.com/users/philbogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/philbogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Please verify that it returns an error if the array contains something that is not a hash, or the top level thing is neither a hash nor an array.\n",
+    "created_at": "2015-08-19T20:24:26Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37463193",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37463193"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37463193"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 95,
+    "original_line": 95,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37463835",
+    "pull_request_review_id": null,
+    "id": 37463835,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDYzODM1",
+    "diff_hunk": "@@ -178,32 +178,75 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "4d405bc0fcb717af1ef7801fd5bc71ed3a79bd2d",
+    "user": {
+      "login": "philbogle",
+      "id": 5198586,
+      "node_id": "MDQ6VXNlcjUxOTg1ODY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5198586?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/philbogle",
+      "html_url": "https://github.com/philbogle",
+      "followers_url": "https://api.github.com/users/philbogle/followers",
+      "following_url": "https://api.github.com/users/philbogle/following{/other_user}",
+      "gists_url": "https://api.github.com/users/philbogle/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/philbogle/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/philbogle/subscriptions",
+      "organizations_url": "https://api.github.com/users/philbogle/orgs",
+      "repos_url": "https://api.github.com/users/philbogle/repos",
+      "events_url": "https://api.github.com/users/philbogle/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/philbogle/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think documentation by example is fine for the JSON body.\n",
+    "created_at": "2015-08-19T20:29:23Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37463835",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37463835"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37463835"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 181,
+    "original_line": 181,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37470570",
+    "pull_request_review_id": null,
+    "id": 37470570,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDcwNTcw",
+    "diff_hunk": "@@ -71,6 +71,54 @@ def test_create_read_update_delete\n     assert read_records.first.nil?, 'Table was not empty'\n   end\n \n+  def test_create_multiple_records\n+    created_ids = []\n+    # Sending any number of records as an array should result in an\n+    # array being returned\n+    record_create_response = create_record([{name: 'alice', age: 7, male: false}])\n+    assert record_create_response.is_a?(Array)\n+    assert_equal 1, record_create_response.length\n+    assert_equal 1, read_records().length\n+    created_ids.push(record_create_response[0]['id'])\n+\n+    # Sending a record as a hash should result in a hash being returned\n+    record_create_response = create_record({name: 'fred', age: 12, male: true})\n+    assert record_create_response.is_a?(Hash)\n+    assert_equal 2, read_records().length\n+    created_ids.push(record_create_response['id'])\n+\n+    # Sending several records should result in them all being inserted\n+    record_create_response = create_record([\n+      {name: 'nancy', age: 9, male: false},\n+      {name: 'drew', age: 11, male: true}\n+    ])\n+    assert record_create_response.is_a?(Array)\n+    assert_equal 2, record_create_response.length\n+    assert_equal 4, read_records().length\n+    created_ids.push(record_create_response[0]['id'])\n+    created_ids.push(record_create_response[1]['id'])\n+\n+    # sending an empty array should be a no-op\n+    record_create_response = create_record([])\n+    assert record_create_response.is_a?(Array)\n+    assert_equal 0, record_create_response.length\n+    assert_equal 4, read_records().length\n+\n+    # sending a value that is neither an array nor a hash should fail\n+    record_create_response = create_record(1)\n+    assert_equal 400, @net_sim_api.last_response.status\n+    assert_equal 4, read_records().length\n+\n+    # sending an array containing a value that is neither an array nor a\n+    # hash should fail\n+    record_create_response = create_record([1])",
+    "path": "shared/test/test_net_sim_api.rb",
+    "position": null,
+    "original_position": 44,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "c5d6fbfdb933570efc11ce5cd99f5778b5f5358f",
+    "user": {
+      "login": "houndci-bot",
+      "id": 6697940,
+      "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/houndci-bot",
+      "html_url": "https://github.com/houndci-bot",
+      "followers_url": "https://api.github.com/users/houndci-bot/followers",
+      "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+      "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+      "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+      "repos_url": "https://api.github.com/users/houndci-bot/repos",
+      "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Lint/UselessAssignment: Useless assignment to variable - `record_create_response`.\n",
+    "created_at": "2015-08-19T21:27:49Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37470570",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37470570"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37470570"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 114,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37470572",
+    "pull_request_review_id": null,
+    "id": 37470572,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDcwNTcy",
+    "diff_hunk": "@@ -71,6 +71,54 @@ def test_create_read_update_delete\n     assert read_records.first.nil?, 'Table was not empty'\n   end\n \n+  def test_create_multiple_records\n+    created_ids = []\n+    # Sending any number of records as an array should result in an\n+    # array being returned\n+    record_create_response = create_record([{name: 'alice', age: 7, male: false}])\n+    assert record_create_response.is_a?(Array)\n+    assert_equal 1, record_create_response.length\n+    assert_equal 1, read_records().length\n+    created_ids.push(record_create_response[0]['id'])\n+\n+    # Sending a record as a hash should result in a hash being returned\n+    record_create_response = create_record({name: 'fred', age: 12, male: true})\n+    assert record_create_response.is_a?(Hash)\n+    assert_equal 2, read_records().length\n+    created_ids.push(record_create_response['id'])\n+\n+    # Sending several records should result in them all being inserted\n+    record_create_response = create_record([\n+      {name: 'nancy', age: 9, male: false},\n+      {name: 'drew', age: 11, male: true}\n+    ])\n+    assert record_create_response.is_a?(Array)\n+    assert_equal 2, record_create_response.length\n+    assert_equal 4, read_records().length\n+    created_ids.push(record_create_response[0]['id'])\n+    created_ids.push(record_create_response[1]['id'])\n+\n+    # sending an empty array should be a no-op\n+    record_create_response = create_record([])\n+    assert record_create_response.is_a?(Array)\n+    assert_equal 0, record_create_response.length\n+    assert_equal 4, read_records().length\n+\n+    # sending a value that is neither an array nor a hash should fail\n+    record_create_response = create_record(1)",
+    "path": "shared/test/test_net_sim_api.rb",
+    "position": null,
+    "original_position": 38,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "c5d6fbfdb933570efc11ce5cd99f5778b5f5358f",
+    "user": {
+      "login": "houndci-bot",
+      "id": 6697940,
+      "node_id": "MDQ6VXNlcjY2OTc5NDA=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6697940?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/houndci-bot",
+      "html_url": "https://github.com/houndci-bot",
+      "followers_url": "https://api.github.com/users/houndci-bot/followers",
+      "following_url": "https://api.github.com/users/houndci-bot/following{/other_user}",
+      "gists_url": "https://api.github.com/users/houndci-bot/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/houndci-bot/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/houndci-bot/subscriptions",
+      "organizations_url": "https://api.github.com/users/houndci-bot/orgs",
+      "repos_url": "https://api.github.com/users/houndci-bot/repos",
+      "events_url": "https://api.github.com/users/houndci-bot/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/houndci-bot/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Lint/UselessAssignment: Useless assignment to variable - `record_create_response`.\n",
+    "created_at": "2015-08-19T21:27:49Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37470572",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37470572"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37470572"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 108,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657139",
+    "pull_request_review_id": null,
+    "id": 37657139,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU3MTM5",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "The type of the payload _must_ be a binary `{!string}` right?\n",
+    "created_at": "2015-08-21T17:29:26Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657139",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657139"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657139"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 99,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657186",
+    "pull_request_review_id": null,
+    "id": 37657186,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU3MTg2",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for\n+ *           all operations involving this message.\n+ * @property {Base64Payload} base64Payload - base64-encoded binary\n+ *           message content, all of which can be exposed to the\n+ *           student.  May contain headers of its own.\n+ */",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": null,
+    "original_position": 22,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Shouldn't `extraHopsRemaining` and `visitedNodeIDs` be documented in this type too?\n",
+    "created_at": "2015-08-21T17:30:01Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657186",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657186"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657186"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 113,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657488",
+    "pull_request_review_id": null,
+    "id": 37657488,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU3NDg4",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Potentially inconsistent use of the non-nullable type indicator `!` in these two typedefs ([see JSDoc @type docs here](http://usejsdoc.org/tags-type.html)).  It looks like you intentionally left `extraHopsRemaining` and `visitedNodeIDs` optional in `MessageData` but should probably mirror matching non-nullable indicators into `MessageRow`.\n",
+    "created_at": "2015-08-21T17:33:15Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657488",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657488"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657488"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 108,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657575",
+    "pull_request_review_id": null,
+    "id": 37657575,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU3NTc1",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for\n+ *           all operations involving this message.\n+ * @property {Base64Payload} base64Payload - base64-encoded binary\n+ *           message content, all of which can be exposed to the\n+ *           student.  May contain headers of its own.\n+ */\n+\n+/**\n+ * Static row construction method. Used by dynamic buildRow method and\n+ * by static async API creation methods to create a properly-formatted\n+ * row for database insertion\n+ * @param {MessageData} messageData\n+ * @returns {MessageRow}\n+ * @throws {TypeError} if payload is invalid\n+ */\n+NetSimMessage.buildRowFromData = function (messageData) {\n+  return {\n+    fromNodeID: messageData.fromNodeID,\n+    toNodeID: messageData.toNodeID,\n+    simulatedBy: messageData.simulatedBy,\n+    base64Payload: binaryToBase64(messageData.payload),\n+    extraHopsRemaining: utils.valueOr(messageData.extraHopsRemaining, 0),\n+    visitedNodeIDs: utils.valueOr(messageData.visitedNodeIDs, [])\n+  };\n+};\n+\n+/**\n  * Static async creation method.  Creates a new message on the given shard,\n  * and then calls the callback with a success boolean.\n  * @param {!NetSimShard} shard\n- * @param {Object} messageData\n- * @param {!number} messageData.fromNodeID - sender node ID\n- * @param {!number} messageData.toNodeID - destination node ID\n- * @param {!number} messageData.simulatedBy - node ID of client simulating message\n- * @param {*} messageData.payload - message content\n- * @param {number} messageData.extraHopsRemaining\n- * @param {number[]} messageData.visitedNodeIDs\n+ * @param {MessageData} messageData",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": null,
+    "original_position": 54,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":+1: Yay so much cleaner!  Suggest `{!MessageData}` here.\n",
+    "created_at": "2015-08-21T17:34:08Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657575",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657575"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657575"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 138,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657752",
+    "pull_request_review_id": null,
+    "id": 37657752,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU3NzUy",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for\n+ *           all operations involving this message.\n+ * @property {Base64Payload} base64Payload - base64-encoded binary\n+ *           message content, all of which can be exposed to the\n+ *           student.  May contain headers of its own.\n+ */\n+\n+/**\n+ * Static row construction method. Used by dynamic buildRow method and\n+ * by static async API creation methods to create a properly-formatted\n+ * row for database insertion\n+ * @param {MessageData} messageData\n+ * @returns {MessageRow}\n+ * @throws {TypeError} if payload is invalid\n+ */\n+NetSimMessage.buildRowFromData = function (messageData) {\n+  return {\n+    fromNodeID: messageData.fromNodeID,\n+    toNodeID: messageData.toNodeID,\n+    simulatedBy: messageData.simulatedBy,\n+    base64Payload: binaryToBase64(messageData.payload),\n+    extraHopsRemaining: utils.valueOr(messageData.extraHopsRemaining, 0),\n+    visitedNodeIDs: utils.valueOr(messageData.visitedNodeIDs, [])\n+  };\n+};\n+\n+/**\n  * Static async creation method.  Creates a new message on the given shard,\n  * and then calls the callback with a success boolean.\n  * @param {!NetSimShard} shard\n- * @param {Object} messageData\n- * @param {!number} messageData.fromNodeID - sender node ID\n- * @param {!number} messageData.toNodeID - destination node ID\n- * @param {!number} messageData.simulatedBy - node ID of client simulating message\n- * @param {*} messageData.payload - message content\n- * @param {number} messageData.extraHopsRemaining\n- * @param {number[]} messageData.visitedNodeIDs\n+ * @param {MessageData} messageData\n  * @param {!NodeStyleCallback} onComplete (success)\n  */\n NetSimMessage.send = function (shard, messageData, onComplete) {\n-  var entity = new NetSimMessage(shard);\n-  entity.fromNodeID = messageData.fromNodeID;\n-  entity.toNodeID = messageData.toNodeID;\n-  entity.simulatedBy = messageData.simulatedBy;\n-  entity.payload = messageData.payload;\n-  entity.extraHopsRemaining = utils.valueOr(messageData.extraHopsRemaining, 0);\n-  entity.visitedNodeIDs = utils.valueOr(messageData.visitedNodeIDs, []);\n   try {\n-    entity.getTable().create(entity.buildRow(), onComplete);\n+    var row = NetSimMessage.buildRowFromData(messageData);\n+    shard.messageTable.create(row, onComplete);\n+  } catch (err) {\n+    onComplete(err, null);\n+  }\n+};\n+\n+/**\n+ * Static async multi-create method. Creates new messages on the given shard,\n+ * and then calls the callback with a success boolean.\n+ * @param {!NetSimShard} shard\n+ * @param {MessageData[]} messageDatas",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": 95,
+    "original_position": 78,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":confused: `{MessageDatum[]} messageData`?\n\nJust kidding, this is fine.  Gotta love nested pluralization.\n",
+    "created_at": "2015-08-21T17:36:26Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657752",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657752"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657752"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 157,
+    "original_line": 154,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657842",
+    "pull_request_review_id": null,
+    "id": 37657842,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU3ODQy",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for\n+ *           all operations involving this message.\n+ * @property {Base64Payload} base64Payload - base64-encoded binary\n+ *           message content, all of which can be exposed to the\n+ *           student.  May contain headers of its own.\n+ */",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": null,
+    "original_position": 22,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Ah, I see this is my own omission, as this was moved up from the end of the file and was already out-of-date.\n",
+    "created_at": "2015-08-21T17:37:27Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657842",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37657842"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37657842"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 113,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658236",
+    "pull_request_review_id": null,
+    "id": 37658236,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU4MjM2",
+    "diff_hunk": "@@ -137,28 +181,10 @@ NetSimMessage.prototype.getTable = function () {\n };\n \n /**\n- * @typedef {Object} MessageRow\n- * @property {number} fromNodeID - this message in-flight-from node\n- * @property {number} toNodeID - this message in-flight-to node\n- * @property {number} simulatedBy - Node ID of the client responsible for\n- *           all operations involving this message.\n- * @property {Base64Payload} base64Payload - base64-encoded binary\n- *           message content, all of which can be exposed to the\n- *           student.  May contain headers of its own.\n- */\n-\n-/**\n  * Build own row for the message table\n  * @returns {MessageRow}\n  * @throws {TypeError} if payload is invalid\n  */\n NetSimMessage.prototype.buildRow = function () {\n-  return {\n-    fromNodeID: this.fromNodeID,\n-    toNodeID: this.toNodeID,\n-    simulatedBy: this.simulatedBy,\n-    base64Payload: binaryToBase64(this.payload),\n-    extraHopsRemaining: this.extraHopsRemaining,\n-    visitedNodeIDs: this.visitedNodeIDs\n-  };\n+  return NetSimMessage.buildRowFromData(this);",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": 133,
+    "original_position": 116,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Wait... does `NetSimMessage` [@implements](http://usejsdoc.org/tags-implements.html) `MessageData`?  I'm not sure `MessageData` needs to be an [@interface](http://usejsdoc.org/tags-interface.html) but I do think we should document this relationship if we want to preserve it.\n",
+    "created_at": "2015-08-21T17:41:37Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658236",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658236"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658236"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 192,
+    "original_line": 189,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658486",
+    "pull_request_review_id": null,
+    "id": 37658486,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU4NDg2",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I'd argue they should be nullable in `MessageData` but non-nullable in `MessageRow`, since `buildRowFromData` is using `utils.valueOr` to provide reasonable defaults.\n",
+    "created_at": "2015-08-21T17:44:00Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658486",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658486"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658486"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 108,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658506",
+    "pull_request_review_id": null,
+    "id": 37658506,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU4NTA2",
+    "diff_hunk": "@@ -1539,30 +1539,17 @@ NetSimRouterNode.prototype.forwardMessageToAll_ = function (message, onComplete)\n  */\n NetSimRouterNode.prototype.forwardMessageToNodeIDs_ = function (message,\n     nodeIDs, onComplete) {\n-  if (nodeIDs.length === 0) {\n-    // All done!\n-    onComplete(null);\n-    return;\n-  }\n \n-  // Send to the first recipient, then recurse on the remaining recipients\n-  var nextRecipientNodeID = nodeIDs[0];\n-  NetSimMessage.send(\n-      this.shard_,\n-      {\n+  var messages = nodeIDs.map(function(nodeID) {\n+    return {\n         fromNodeID: this.entityID,\n-        toNodeID: nextRecipientNodeID,\n-        simulatedBy: nextRecipientNodeID,\n+        toNodeID: nodeID,\n+        simulatedBy: nodeID,\n         payload: message.payload\n-      },\n-      function (err) {\n-        if (err) {\n-          onComplete(err);\n-          return;\n-        }\n-        this.forwardMessageToNodeIDs_(message, nodeIDs.slice(1), onComplete);\n-      }.bind(this)\n-  );\n+      };\n+  }.bind(this));",
+    "path": "apps/src/netsim/NetSimRouterNode.js",
+    "position": null,
+    "original_position": 33,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "[Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) takes _thisArg_, preferred over `.bind(this)`.\n",
+    "created_at": "2015-08-21T17:44:13Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658506",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658506"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658506"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1550,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658923",
+    "pull_request_review_id": null,
+    "id": 37658923,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU4OTIz",
+    "diff_hunk": "@@ -137,28 +181,10 @@ NetSimMessage.prototype.getTable = function () {\n };\n \n /**\n- * @typedef {Object} MessageRow\n- * @property {number} fromNodeID - this message in-flight-from node\n- * @property {number} toNodeID - this message in-flight-to node\n- * @property {number} simulatedBy - Node ID of the client responsible for\n- *           all operations involving this message.\n- * @property {Base64Payload} base64Payload - base64-encoded binary\n- *           message content, all of which can be exposed to the\n- *           student.  May contain headers of its own.\n- */\n-\n-/**\n  * Build own row for the message table\n  * @returns {MessageRow}\n  * @throws {TypeError} if payload is invalid\n  */\n NetSimMessage.prototype.buildRow = function () {\n-  return {\n-    fromNodeID: this.fromNodeID,\n-    toNodeID: this.toNodeID,\n-    simulatedBy: this.simulatedBy,\n-    base64Payload: binaryToBase64(this.payload),\n-    extraHopsRemaining: this.extraHopsRemaining,\n-    visitedNodeIDs: this.visitedNodeIDs\n-  };\n+  return NetSimMessage.buildRowFromData(this);",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": 133,
+    "original_position": 116,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Hmmm. I'm not sure. `MessageData` is just a datatype. One of the two datatypes used by `NetSimMessage`.\n",
+    "created_at": "2015-08-21T17:48:01Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658923",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658923"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658923"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 192,
+    "original_line": 189,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658974",
+    "pull_request_review_id": null,
+    "id": 37658974,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU4OTc0",
+    "diff_hunk": "@@ -178,32 +178,94 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n+  # Accepts a JSON request body of either an Object if inserting a\n+  # single row or an Array of Objects if inserting multiple rows\n+  #\n+  # Examples:\n+  #\n+  # POST \"{ 'name': 'alice', 'male': false }\"\n+  # -> 201 \"{ 'name': 'alice', 'male': false, 'id': 1 }\"\n+  #\n+  # POST \"[{ 'name': 'nancy', 'male': false }, { 'name': 'drew', 'male': true }]\"\n+  # -> 201 \"[{ 'name': 'nancy', 'male': false, 'id': 2 }, { 'name': 'drew', 'male': true, 'id': 3 }]\"\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": 42,
+    "original_position": 42,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I wonder if we'd be better off just requiring that all inserts be formed as multi-inserts, and sending an array of one any time we only have one row to insert - less branching, less 'surface area' so to speak.  Probably not much added cost.\n\nI say this hypocritically because I haven't finished this clean-up with deletes, myself.  I think the client is only using multi-delete at this point but I haven't torn out the single-delete endpoint from the API.\n\n@philbogle thoughts?\n",
+    "created_at": "2015-08-21T17:48:24Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658974",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37658974"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37658974"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 207,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659191",
+    "pull_request_review_id": null,
+    "id": 37659191,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU5MTkx",
+    "diff_hunk": "@@ -178,32 +178,94 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n+  # Accepts a JSON request body of either an Object if inserting a\n+  # single row or an Array of Objects if inserting multiple rows\n+  #\n+  # Examples:\n+  #\n+  # POST \"{ 'name': 'alice', 'male': false }\"\n+  # -> 201 \"{ 'name': 'alice', 'male': false, 'id': 1 }\"\n+  #\n+  # POST \"[{ 'name': 'nancy', 'male': false }, { 'name': 'drew', 'male': true }]\"\n+  # -> 201 \"[{ 'name': 'nancy', 'male': false, 'id': 2 }, { 'name': 'drew', 'male': true, 'id': 3 }]\"\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true\n+      values = body\n+    elsif body.is_a?(Hash)\n+      multi_insert = false\n+      values = [body]\n+    else\n+      json_bad_request\n+    end\n+\n+    # Validation\n+    #   currently, only messages are validated\n+    all_values_valid = values.all? { |value| value_valid?(shard_id, table_name, value) }\n+    json_bad_request unless all_values_valid\n+\n+    # If we get all the way down here without errors, insert everything\n+    table = get_table(shard_id, table_name)\n+    result = values.map { |value| table.insert(value, request.ip) }\n+\n+    # Finally, if we are not performing a multi-insert, denormalize our\n+    # return value to a single item\n+    result = result[0] unless multi_insert\n+\n     dont_cache\n     content_type :json\n     status 201\n-    value.to_json\n+    result.to_json\n+  end\n+\n+  # @param [String] shard_id - The shard we're checking validation on.\n+  # @param [String] table_name - The table we're validating for\n+  # @param [Hash] value - The value we're validating\n+  # @return [Boolean] Currently only validates messages by passing\n+  #         through to message_valid?. Return true for all other tables\n+  #         as long as the value is a Hash.\n+  def value_valid?(shard_id, table_name, value)\n+    case table_name\n+    when TABLE_NAMES[:message]\n+      message_valid?(shard_id, value)\n+    else\n+      value.is_a?(Hash)\n+    end\n+  end\n+\n+  # @param [String] shard_id - The shard we're checking validation on.\n+  # @param [Hash] message - The message we're validating\n+  # @return [Boolean] Currently is true if and only if the message is a\n+  #         Hash and the messages's simulatedBy node exists in the\n+  #         shard. In the future, we would also like to enforce\n+  #         reasonable values for other fields.\n+  def message_valid?(shard_id, message)\n+    false unless message.is_a?(Hash)\n+\n+    # TODO this is wildly inefficient, particularly when validating\n+    # multi-insert messages",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": 96,
+    "original_position": 96,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Do you feel we should address this `TODO` before merging?\n",
+    "created_at": "2015-08-21T17:50:15Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659191",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659191"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659191"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 260,
+    "original_line": 260,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659427",
+    "pull_request_review_id": null,
+    "id": 37659427,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU5NDI3",
+    "diff_hunk": "@@ -178,32 +178,94 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n+  # Accepts a JSON request body of either an Object if inserting a\n+  # single row or an Array of Objects if inserting multiple rows\n+  #\n+  # Examples:\n+  #\n+  # POST \"{ 'name': 'alice', 'male': false }\"\n+  # -> 201 \"{ 'name': 'alice', 'male': false, 'id': 1 }\"\n+  #\n+  # POST \"[{ 'name': 'nancy', 'male': false }, { 'name': 'drew', 'male': true }]\"\n+  # -> 201 \"[{ 'name': 'nancy', 'male': false, 'id': 2 }, { 'name': 'drew', 'male': true, 'id': 3 }]\"\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": 42,
+    "original_position": 42,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I thought about that. Supporting both multi- and single-inserts means something somewhere is going to have to normalize one into the other to compensate. I'd rather that something be the one endpoint than every client who wants to implement the endpoint.\n\nThat being said, I feel guilty about how far this endpoint has gotten from the clean and elegant endpoint I first met.\n",
+    "created_at": "2015-08-21T17:52:10Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659427",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659427"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659427"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 207,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659540",
+    "pull_request_review_id": null,
+    "id": 37659540,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU5NTQw",
+    "diff_hunk": "@@ -178,32 +178,94 @@ def owns_shard?(shard_id)\n   #\n   # POST /v3/netsim/<shard-id>/<table-name>\n   #\n-  # Insert a new row.\n+  # Insert a new row or rows.\n+  # Accepts a JSON request body of either an Object if inserting a\n+  # single row or an Array of Objects if inserting multiple rows\n+  #\n+  # Examples:\n+  #\n+  # POST \"{ 'name': 'alice', 'male': false }\"\n+  # -> 201 \"{ 'name': 'alice', 'male': false, 'id': 1 }\"\n+  #\n+  # POST \"[{ 'name': 'nancy', 'male': false }, { 'name': 'drew', 'male': true }]\"\n+  # -> 201 \"[{ 'name': 'nancy', 'male': false, 'id': 2 }, { 'name': 'drew', 'male': true, 'id': 3 }]\"\n   #\n   post %r{/v3/netsim/([^/]+)/(\\w+)$} do |shard_id, table_name|\n     dont_cache\n     unsupported_media_type unless has_json_utf8_headers(request)\n \n+    # Parse JSON\n     begin\n-      value = get_table(shard_id, table_name).\n-          insert(JSON.parse(request.body.read), request.ip)\n-      if table_name == TABLE_NAMES[:message]\n-        node_exists = get_table(shard_id, TABLE_NAMES[:node]).to_a.any? do |node|\n-          node['id'] == value['simulatedBy']\n-        end\n-        unless node_exists\n-          get_table(shard_id, table_name).delete(value['id'])\n-          json_bad_request\n-        end\n-      end\n+      body = JSON.parse(request.body.read)\n     rescue JSON::ParserError\n       json_bad_request\n     end\n \n+    # Determine whether or not we are performing a multi-insert and\n+    # normalize our request body into an array of values\n+    if body.is_a?(Array)\n+      multi_insert = true\n+      values = body\n+    elsif body.is_a?(Hash)\n+      multi_insert = false\n+      values = [body]\n+    else\n+      json_bad_request\n+    end\n+\n+    # Validation\n+    #   currently, only messages are validated\n+    all_values_valid = values.all? { |value| value_valid?(shard_id, table_name, value) }\n+    json_bad_request unless all_values_valid\n+\n+    # If we get all the way down here without errors, insert everything\n+    table = get_table(shard_id, table_name)\n+    result = values.map { |value| table.insert(value, request.ip) }\n+\n+    # Finally, if we are not performing a multi-insert, denormalize our\n+    # return value to a single item\n+    result = result[0] unless multi_insert\n+\n     dont_cache\n     content_type :json\n     status 201\n-    value.to_json\n+    result.to_json\n+  end\n+\n+  # @param [String] shard_id - The shard we're checking validation on.\n+  # @param [String] table_name - The table we're validating for\n+  # @param [Hash] value - The value we're validating\n+  # @return [Boolean] Currently only validates messages by passing\n+  #         through to message_valid?. Return true for all other tables\n+  #         as long as the value is a Hash.\n+  def value_valid?(shard_id, table_name, value)\n+    case table_name\n+    when TABLE_NAMES[:message]\n+      message_valid?(shard_id, value)\n+    else\n+      value.is_a?(Hash)\n+    end\n+  end\n+\n+  # @param [String] shard_id - The shard we're checking validation on.\n+  # @param [Hash] message - The message we're validating\n+  # @return [Boolean] Currently is true if and only if the message is a\n+  #         Hash and the messages's simulatedBy node exists in the\n+  #         shard. In the future, we would also like to enforce\n+  #         reasonable values for other fields.\n+  def message_valid?(shard_id, message)\n+    false unless message.is_a?(Hash)\n+\n+    # TODO this is wildly inefficient, particularly when validating\n+    # multi-insert messages",
+    "path": "shared/middleware/net_sim_api.rb",
+    "position": 96,
+    "original_position": 96,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I can do it either now or when I address the other TODO in the next couple of weeks.\n",
+    "created_at": "2015-08-21T17:53:14Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659540",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659540"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659540"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 260,
+    "original_line": 260,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659643",
+    "pull_request_review_id": null,
+    "id": 37659643,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU5NjQz",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for\n+ *           all operations involving this message.\n+ * @property {Base64Payload} base64Payload - base64-encoded binary\n+ *           message content, all of which can be exposed to the\n+ *           student.  May contain headers of its own.\n+ */\n+\n+/**\n+ * Static row construction method. Used by dynamic buildRow method and\n+ * by static async API creation methods to create a properly-formatted\n+ * row for database insertion\n+ * @param {MessageData} messageData\n+ * @returns {MessageRow}\n+ * @throws {TypeError} if payload is invalid\n+ */\n+NetSimMessage.buildRowFromData = function (messageData) {\n+  return {\n+    fromNodeID: messageData.fromNodeID,\n+    toNodeID: messageData.toNodeID,\n+    simulatedBy: messageData.simulatedBy,\n+    base64Payload: binaryToBase64(messageData.payload),\n+    extraHopsRemaining: utils.valueOr(messageData.extraHopsRemaining, 0),\n+    visitedNodeIDs: utils.valueOr(messageData.visitedNodeIDs, [])\n+  };\n+};\n+\n+/**\n  * Static async creation method.  Creates a new message on the given shard,\n  * and then calls the callback with a success boolean.\n  * @param {!NetSimShard} shard\n- * @param {Object} messageData\n- * @param {!number} messageData.fromNodeID - sender node ID\n- * @param {!number} messageData.toNodeID - destination node ID\n- * @param {!number} messageData.simulatedBy - node ID of client simulating message\n- * @param {*} messageData.payload - message content\n- * @param {number} messageData.extraHopsRemaining\n- * @param {number[]} messageData.visitedNodeIDs\n+ * @param {MessageData} messageData\n  * @param {!NodeStyleCallback} onComplete (success)\n  */\n NetSimMessage.send = function (shard, messageData, onComplete) {\n-  var entity = new NetSimMessage(shard);\n-  entity.fromNodeID = messageData.fromNodeID;\n-  entity.toNodeID = messageData.toNodeID;\n-  entity.simulatedBy = messageData.simulatedBy;\n-  entity.payload = messageData.payload;\n-  entity.extraHopsRemaining = utils.valueOr(messageData.extraHopsRemaining, 0);\n-  entity.visitedNodeIDs = utils.valueOr(messageData.visitedNodeIDs, []);\n   try {\n-    entity.getTable().create(entity.buildRow(), onComplete);\n+    var row = NetSimMessage.buildRowFromData(messageData);\n+    shard.messageTable.create(row, onComplete);\n+  } catch (err) {\n+    onComplete(err, null);\n+  }\n+};\n+\n+/**\n+ * Static async multi-create method. Creates new messages on the given shard,\n+ * and then calls the callback with a success boolean.\n+ * @param {!NetSimShard} shard\n+ * @param {MessageData[]} messageDatas\n+ * @param {!NodeStyleCallback} onComplete (success)\n+ */\n+NetSimMessage.sendMany = function (shard, messageDatas, onComplete) {",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": 98,
+    "original_position": 81,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Please add a client-side test around sendMany and make sure our fake API (in netsimTestUtils.js) can handle this operation.\n",
+    "created_at": "2015-08-21T17:54:06Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659643",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659643"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659643"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 160,
+    "original_line": 157,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659734",
+    "pull_request_review_id": null,
+    "id": 37659734,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU5NzM0",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for\n+ *           all operations involving this message.\n+ * @property {Base64Payload} base64Payload - base64-encoded binary\n+ *           message content, all of which can be exposed to the\n+ *           student.  May contain headers of its own.\n+ */\n+\n+/**\n+ * Static row construction method. Used by dynamic buildRow method and\n+ * by static async API creation methods to create a properly-formatted\n+ * row for database insertion\n+ * @param {MessageData} messageData\n+ * @returns {MessageRow}\n+ * @throws {TypeError} if payload is invalid\n+ */\n+NetSimMessage.buildRowFromData = function (messageData) {\n+  return {\n+    fromNodeID: messageData.fromNodeID,\n+    toNodeID: messageData.toNodeID,\n+    simulatedBy: messageData.simulatedBy,\n+    base64Payload: binaryToBase64(messageData.payload),\n+    extraHopsRemaining: utils.valueOr(messageData.extraHopsRemaining, 0),\n+    visitedNodeIDs: utils.valueOr(messageData.visitedNodeIDs, [])\n+  };\n+};\n+\n+/**\n  * Static async creation method.  Creates a new message on the given shard,\n  * and then calls the callback with a success boolean.\n  * @param {!NetSimShard} shard\n- * @param {Object} messageData\n- * @param {!number} messageData.fromNodeID - sender node ID\n- * @param {!number} messageData.toNodeID - destination node ID\n- * @param {!number} messageData.simulatedBy - node ID of client simulating message\n- * @param {*} messageData.payload - message content\n- * @param {number} messageData.extraHopsRemaining\n- * @param {number[]} messageData.visitedNodeIDs\n+ * @param {MessageData} messageData\n  * @param {!NodeStyleCallback} onComplete (success)\n  */\n NetSimMessage.send = function (shard, messageData, onComplete) {\n-  var entity = new NetSimMessage(shard);\n-  entity.fromNodeID = messageData.fromNodeID;\n-  entity.toNodeID = messageData.toNodeID;\n-  entity.simulatedBy = messageData.simulatedBy;\n-  entity.payload = messageData.payload;\n-  entity.extraHopsRemaining = utils.valueOr(messageData.extraHopsRemaining, 0);\n-  entity.visitedNodeIDs = utils.valueOr(messageData.visitedNodeIDs, []);\n   try {\n-    entity.getTable().create(entity.buildRow(), onComplete);\n+    var row = NetSimMessage.buildRowFromData(messageData);\n+    shard.messageTable.create(row, onComplete);\n+  } catch (err) {\n+    onComplete(err, null);\n+  }\n+};\n+\n+/**\n+ * Static async multi-create method. Creates new messages on the given shard,\n+ * and then calls the callback with a success boolean.\n+ * @param {!NetSimShard} shard\n+ * @param {MessageData[]} messageDatas\n+ * @param {!NodeStyleCallback} onComplete (success)\n+ */\n+NetSimMessage.sendMany = function (shard, messageDatas, onComplete) {\n+  try {\n+    var rows = messageDatas.map(NetSimMessage.buildRowFromData);\n+    shard.messageTable.create(rows, onComplete);",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": null,
+    "original_position": 84,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I don't see any corresponding change to `NetSimTable.prototype.create` that supports passing an array as the first argument.  Does this work?  I wouldn't expect it to, I think `addRowToCache_` would do bad things in this situation.\n",
+    "created_at": "2015-08-21T17:55:01Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659734",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37659734"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37659734"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 160,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37660360",
+    "pull_request_review_id": null,
+    "id": 37660360,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjYwMzYw",
+    "diff_hunk": "@@ -92,28 +92,72 @@ var NetSimMessage = module.exports = function (shard, messageRow) {\n NetSimMessage.inherits(NetSimEntity);\n \n /**\n+ * @typedef {Object} MessageData\n+ * @property {!number} fromNodeID - sender node ID\n+ * @property {!number} toNodeID - destination node ID\n+ * @property {!number} simulatedBy - node ID of client simulating message\n+ * @property {*} payload - message content\n+ * @property {number} extraHopsRemaining\n+ * @property {number[]} visitedNodeIDs\n+ */\n+\n+/**\n+ * @typedef {Object} MessageRow\n+ * @property {number} fromNodeID - this message in-flight-from node\n+ * @property {number} toNodeID - this message in-flight-to node\n+ * @property {number} simulatedBy - Node ID of the client responsible for",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Sounds good.  Let's document as such.\n",
+    "created_at": "2015-08-21T18:00:28Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37660360",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37660360"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37660360"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 108,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37660651",
+    "pull_request_review_id": null,
+    "id": 37660651,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjYwNjUx",
+    "diff_hunk": "@@ -137,28 +181,10 @@ NetSimMessage.prototype.getTable = function () {\n };\n \n /**\n- * @typedef {Object} MessageRow\n- * @property {number} fromNodeID - this message in-flight-from node\n- * @property {number} toNodeID - this message in-flight-to node\n- * @property {number} simulatedBy - Node ID of the client responsible for\n- *           all operations involving this message.\n- * @property {Base64Payload} base64Payload - base64-encoded binary\n- *           message content, all of which can be exposed to the\n- *           student.  May contain headers of its own.\n- */\n-\n-/**\n  * Build own row for the message table\n  * @returns {MessageRow}\n  * @throws {TypeError} if payload is invalid\n  */\n NetSimMessage.prototype.buildRow = function () {\n-  return {\n-    fromNodeID: this.fromNodeID,\n-    toNodeID: this.toNodeID,\n-    simulatedBy: this.simulatedBy,\n-    base64Payload: binaryToBase64(this.payload),\n-    extraHopsRemaining: this.extraHopsRemaining,\n-    visitedNodeIDs: this.visitedNodeIDs\n-  };\n+  return NetSimMessage.buildRowFromData(this);",
+    "path": "apps/src/netsim/NetSimMessage.js",
+    "position": 133,
+    "original_position": 116,
+    "commit_id": "dc4cff2875ebd1ac09814f3e4738361413a4d6a2",
+    "original_commit_id": "3b627d73c79eed7521ffbf5e742fa8c600339eb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I ask because you're passing `this` (which is `NetSimMessage`) to a method that expects `MessageData`, requiring that the one implements the other.  I think the `NetSimMessage` tests already have some tests that ensure certain members exist - might want to double-check that they cover all `MessageData` properties.\n",
+    "created_at": "2015-08-21T18:03:08Z",
+    "updated_at": "2015-08-24T18:11:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37660651",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/37660651"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/3628#discussion_r37660651"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/3628"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 192,
+    "original_line": 189,
+    "side": "RIGHT"
+  }
+]

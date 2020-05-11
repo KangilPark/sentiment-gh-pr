@@ -1,0 +1,552 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64425421",
+    "pull_request_review_id": null,
+    "id": 64425421,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDI1NDIx",
+    "diff_hunk": "@@ -991,6 +991,30 @@ <h3 class=\"cheatsheet-title\">Storage shortcuts</h3>\n     loadScript(script, 'onPiskelReady()');\n   }\n })();\n+    (function () {\n+\n+  /**\n+   * Main entry point for messages received from outside the iframe.  This method\n+   * is effectively a router for incoming commands.\n+   * @param event\n+   */\n+  function receiveMessage(event) {\n+    // Should validate origin and not receive commands if embedded on another\n+    // domain.\n+    // TODO (bbuchanan): Safer cross-domain check.\n+    var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.\n+    if (!/studio\\.code\\.org/i.test(origin))",
+    "path": "apps/lib/piskel/index.html",
+    "position": null,
+    "original_position": 28,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "pcardune",
+      "id": 124827,
+      "node_id": "MDQ6VXNlcjEyNDgyNw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/124827?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pcardune",
+      "html_url": "https://github.com/pcardune",
+      "followers_url": "https://api.github.com/users/pcardune/followers",
+      "following_url": "https://api.github.com/users/pcardune/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pcardune/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pcardune/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pcardune/subscriptions",
+      "organizations_url": "https://api.github.com/users/pcardune/orgs",
+      "repos_url": "https://api.github.com/users/pcardune/repos",
+      "events_url": "https://api.github.com/users/pcardune/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pcardune/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "no curlies? 😢 \n",
+    "created_at": "2016-05-24T16:23:23Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64425421",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64425421"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64425421"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1006,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64426315",
+    "pull_request_review_id": null,
+    "id": 64426315,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDI2MzE1",
+    "diff_hunk": "@@ -945,5 +945,29 @@ <h3 class=\"cheatsheet-title\">Storage shortcuts</h3>\n   loadScript(script, 'onPiskelReady()');\n }\n })();\n+  (function () {\n+\n+/**\n+ * Main entry point for messages received from outside the iframe.  This method\n+ * is effectively a router for incoming commands.\n+ * @param event\n+ */\n+function receiveMessage(event) {\n+  // Should validate origin and not receive commands if embedded on another\n+  // domain.\n+  // TODO (bbuchanan): Safer cross-domain check.\n+  var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.\n+  if (!/studio\\.code\\.org/i.test(origin))\n+    return;\n+\n+  var message = event.data;\n+  if (message.type === 'LOAD_IMAGE') {\n+    alert('Received LOAD_IMAGE message. Metadata:\\n' + JSON.stringify(message.animation));\n+  }\n+}\n+window.addEventListener('message', receiveMessage);\n+\n+})();\n+",
+    "path": "apps/lib/piskel/piskelapp-partials/main-partial.html",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "pcardune",
+      "id": 124827,
+      "node_id": "MDQ6VXNlcjEyNDgyNw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/124827?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pcardune",
+      "html_url": "https://github.com/pcardune",
+      "followers_url": "https://api.github.com/users/pcardune/followers",
+      "following_url": "https://api.github.com/users/pcardune/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pcardune/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pcardune/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pcardune/subscriptions",
+      "organizations_url": "https://api.github.com/users/pcardune/orgs",
+      "repos_url": "https://api.github.com/users/pcardune/repos",
+      "events_url": "https://api.github.com/users/pcardune/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pcardune/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "So which one of these is a build file? Is there a corresponding commit to the non-built files in the piskel repo?\n",
+    "created_at": "2016-05-24T16:28:13Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64426315",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64426315"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64426315"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 971,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64426784",
+    "pull_request_review_id": null,
+    "id": 64426784,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDI2Nzg0",
+    "diff_hunk": "@@ -235,20 +235,45 @@ GameLab.prototype.init = function (config) {\n GameLab.prototype.setupReduxSubscribers = function (store) {\n   var state = {};\n   var boundOnIsRunningChange = this.onIsRunningChange.bind(this);\n+  var boundOnSelectedAnimationChange = this.onSelectedAnimationChange.bind(this);",
+    "path": "apps/src/gamelab/GameLab.js",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "pcardune",
+      "id": 124827,
+      "node_id": "MDQ6VXNlcjEyNDgyNw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/124827?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pcardune",
+      "html_url": "https://github.com/pcardune",
+      "followers_url": "https://api.github.com/users/pcardune/followers",
+      "following_url": "https://api.github.com/users/pcardune/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pcardune/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pcardune/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pcardune/subscriptions",
+      "organizations_url": "https://api.github.com/users/pcardune/orgs",
+      "repos_url": "https://api.github.com/users/pcardune/repos",
+      "events_url": "https://api.github.com/users/pcardune/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pcardune/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I wonder if there is any value in using the react pattern of rewriting all the instance methods to be prebound to the instance? i.e.\n`this.onSelectedAnimationChange = this.onSelectedAnimationChange.bind(this);`\nand then just referring to `this.onSelectedAnimationChange` everywhere instead of having these special `bound*` variables.\n",
+    "created_at": "2016-05-24T16:30:31Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64426784",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64426784"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64426784"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 238,
+    "original_line": 238,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64427465",
+    "pull_request_review_id": null,
+    "id": 64427465,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDI3NDY1",
+    "diff_hunk": "@@ -970,6 +995,13 @@ GameLab.prototype.getAnimationMetadata = function () {\n   return this.studioApp_.reduxStore.getState().animations;\n };\n \n+/**\n+ * Get metadata for a particular animation.\n+ */\n+GameLab.prototype.getAnimationMetadataByKey = function (key) {\n+  return this.getAnimationMetadata().filter(animation => animation.key === key)[0];",
+    "path": "apps/src/gamelab/GameLab.js",
+    "position": null,
+    "original_position": 54,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "pcardune",
+      "id": 124827,
+      "node_id": "MDQ6VXNlcjEyNDgyNw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/124827?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pcardune",
+      "html_url": "https://github.com/pcardune",
+      "followers_url": "https://api.github.com/users/pcardune/followers",
+      "following_url": "https://api.github.com/users/pcardune/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pcardune/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pcardune/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pcardune/subscriptions",
+      "organizations_url": "https://api.github.com/users/pcardune/orgs",
+      "repos_url": "https://api.github.com/users/pcardune/repos",
+      "events_url": "https://api.github.com/users/pcardune/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pcardune/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "You can use `Array.find` in es6 to avoid the index 0 lookup: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find\n",
+    "created_at": "2016-05-24T16:34:05Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64427465",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64427465"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64427465"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1002,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64427721",
+    "pull_request_review_id": null,
+    "id": 64427721,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDI3NzIx",
+    "diff_hunk": "@@ -235,20 +235,45 @@ GameLab.prototype.init = function (config) {\n GameLab.prototype.setupReduxSubscribers = function (store) {\n   var state = {};\n   var boundOnIsRunningChange = this.onIsRunningChange.bind(this);\n+  var boundOnSelectedAnimationChange = this.onSelectedAnimationChange.bind(this);\n   store.subscribe(function () {\n     var lastState = state;\n     state = store.getState();\n \n     if (!lastState.runState || state.runState.isRunning !== lastState.runState.isRunning) {\n       boundOnIsRunningChange(state.runState.isRunning);\n     }\n+\n+    if (!lastState.animationTab || state.animationTab.selectedAnimation !== lastState.animationTab.selectedAnimation) {\n+      boundOnSelectedAnimationChange(state.animationTab.selectedAnimation);\n+    }\n   });\n };\n \n GameLab.prototype.onIsRunningChange = function () {\n   this.setCrosshairCursorForPlaySpace();\n };\n \n+GameLab.prototype.onSelectedAnimationChange = function (selectedAnimation) {\n+  if (!selectedAnimation) {\n+    return;\n+  }\n+\n+  const iframe = document.getElementById('piskel-frame');\n+  if (!iframe) {\n+    return;\n+  }\n+  const iframeWindow = iframe.contentWindow;\n+  if (!iframeWindow) {\n+    return;",
+    "path": "apps/src/gamelab/GameLab.js",
+    "position": null,
+    "original_position": 34,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "pcardune",
+      "id": 124827,
+      "node_id": "MDQ6VXNlcjEyNDgyNw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/124827?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pcardune",
+      "html_url": "https://github.com/pcardune",
+      "followers_url": "https://api.github.com/users/pcardune/followers",
+      "following_url": "https://api.github.com/users/pcardune/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pcardune/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pcardune/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pcardune/subscriptions",
+      "organizations_url": "https://api.github.com/users/pcardune/orgs",
+      "repos_url": "https://api.github.com/users/pcardune/repos",
+      "events_url": "https://api.github.com/users/pcardune/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pcardune/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "In what scenario would there be no iframe or no iframeWindow? Would that not be an error case?\n",
+    "created_at": "2016-05-24T16:35:39Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64427721",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64427721"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64427721"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 268,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64431988",
+    "pull_request_review_id": null,
+    "id": 64431988,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDMxOTg4",
+    "diff_hunk": "@@ -991,6 +991,30 @@ <h3 class=\"cheatsheet-title\">Storage shortcuts</h3>\n     loadScript(script, 'onPiskelReady()');\n   }\n })();\n+    (function () {\n+\n+  /**\n+   * Main entry point for messages received from outside the iframe.  This method\n+   * is effectively a router for incoming commands.\n+   * @param event\n+   */\n+  function receiveMessage(event) {\n+    // Should validate origin and not receive commands if embedded on another\n+    // domain.\n+    // TODO (bbuchanan): Safer cross-domain check.\n+    var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.\n+    if (!/studio\\.code\\.org/i.test(origin))",
+    "path": "apps/lib/piskel/index.html",
+    "position": null,
+    "original_position": 28,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Whoops.\n",
+    "created_at": "2016-05-24T16:58:33Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64431988",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64431988"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64431988"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1006,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64432376",
+    "pull_request_review_id": null,
+    "id": 64432376,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDMyMzc2",
+    "diff_hunk": "@@ -945,5 +945,29 @@ <h3 class=\"cheatsheet-title\">Storage shortcuts</h3>\n   loadScript(script, 'onPiskelReady()');\n }\n })();\n+  (function () {\n+\n+/**\n+ * Main entry point for messages received from outside the iframe.  This method\n+ * is effectively a router for incoming commands.\n+ * @param event\n+ */\n+function receiveMessage(event) {\n+  // Should validate origin and not receive commands if embedded on another\n+  // domain.\n+  // TODO (bbuchanan): Safer cross-domain check.\n+  var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.\n+  if (!/studio\\.code\\.org/i.test(origin))\n+    return;\n+\n+  var message = event.data;\n+  if (message.type === 'LOAD_IMAGE') {\n+    alert('Received LOAD_IMAGE message. Metadata:\\n' + JSON.stringify(message.animation));\n+  }\n+}\n+window.addEventListener('message', receiveMessage);\n+\n+})();\n+",
+    "path": "apps/lib/piskel/piskelapp-partials/main-partial.html",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Everything in [cdo]/apps/lib/piskel is from [piskel]/dest/prod after a build.  I suspect what you're getting at is that we should record which piskel commit we've built somehow.\n",
+    "created_at": "2016-05-24T17:00:30Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64432376",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64432376"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64432376"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 971,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64432973",
+    "pull_request_review_id": null,
+    "id": 64432973,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDMyOTcz",
+    "diff_hunk": "@@ -235,20 +235,45 @@ GameLab.prototype.init = function (config) {\n GameLab.prototype.setupReduxSubscribers = function (store) {\n   var state = {};\n   var boundOnIsRunningChange = this.onIsRunningChange.bind(this);\n+  var boundOnSelectedAnimationChange = this.onSelectedAnimationChange.bind(this);\n   store.subscribe(function () {\n     var lastState = state;\n     state = store.getState();\n \n     if (!lastState.runState || state.runState.isRunning !== lastState.runState.isRunning) {\n       boundOnIsRunningChange(state.runState.isRunning);\n     }\n+\n+    if (!lastState.animationTab || state.animationTab.selectedAnimation !== lastState.animationTab.selectedAnimation) {\n+      boundOnSelectedAnimationChange(state.animationTab.selectedAnimation);\n+    }\n   });\n };\n \n GameLab.prototype.onIsRunningChange = function () {\n   this.setCrosshairCursorForPlaySpace();\n };\n \n+GameLab.prototype.onSelectedAnimationChange = function (selectedAnimation) {\n+  if (!selectedAnimation) {\n+    return;\n+  }\n+\n+  const iframe = document.getElementById('piskel-frame');\n+  if (!iframe) {\n+    return;\n+  }\n+  const iframeWindow = iframe.contentWindow;\n+  if (!iframeWindow) {\n+    return;",
+    "path": "apps/src/gamelab/GameLab.js",
+    "position": null,
+    "original_position": 34,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Hmm... I'm being overlay paranoid because this is sort of an event handler, and I'm concerned that it might get called before the initial render.  I suppose we should make sure our initialization doesn't allow that, though.\n",
+    "created_at": "2016-05-24T17:04:05Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64432973",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64432973"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64432973"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 268,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64434120",
+    "pull_request_review_id": null,
+    "id": 64434120,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM0MTIw",
+    "diff_hunk": "@@ -235,20 +235,45 @@ GameLab.prototype.init = function (config) {\n GameLab.prototype.setupReduxSubscribers = function (store) {\n   var state = {};\n   var boundOnIsRunningChange = this.onIsRunningChange.bind(this);\n+  var boundOnSelectedAnimationChange = this.onSelectedAnimationChange.bind(this);\n   store.subscribe(function () {\n     var lastState = state;\n     state = store.getState();\n \n     if (!lastState.runState || state.runState.isRunning !== lastState.runState.isRunning) {\n       boundOnIsRunningChange(state.runState.isRunning);\n     }\n+\n+    if (!lastState.animationTab || state.animationTab.selectedAnimation !== lastState.animationTab.selectedAnimation) {\n+      boundOnSelectedAnimationChange(state.animationTab.selectedAnimation);\n+    }\n   });\n };\n \n GameLab.prototype.onIsRunningChange = function () {\n   this.setCrosshairCursorForPlaySpace();\n };\n \n+GameLab.prototype.onSelectedAnimationChange = function (selectedAnimation) {\n+  if (!selectedAnimation) {\n+    return;\n+  }\n+\n+  const iframe = document.getElementById('piskel-frame');\n+  if (!iframe) {\n+    return;\n+  }\n+  const iframeWindow = iframe.contentWindow;\n+  if (!iframeWindow) {\n+    return;",
+    "path": "apps/src/gamelab/GameLab.js",
+    "position": null,
+    "original_position": 34,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "pcardune",
+      "id": 124827,
+      "node_id": "MDQ6VXNlcjEyNDgyNw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/124827?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pcardune",
+      "html_url": "https://github.com/pcardune",
+      "followers_url": "https://api.github.com/users/pcardune/followers",
+      "following_url": "https://api.github.com/users/pcardune/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pcardune/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pcardune/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pcardune/subscriptions",
+      "organizations_url": "https://api.github.com/users/pcardune/orgs",
+      "repos_url": "https://api.github.com/users/pcardune/repos",
+      "events_url": "https://api.github.com/users/pcardune/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pcardune/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "paranoia is good, but if this is a \"this should never happen case\" then we should probably at least log an error?\n",
+    "created_at": "2016-05-24T17:09:37Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64434120",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64434120"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64434120"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 268,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64434431",
+    "pull_request_review_id": null,
+    "id": 64434431,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM0NDMx",
+    "diff_hunk": "@@ -945,5 +945,29 @@ <h3 class=\"cheatsheet-title\">Storage shortcuts</h3>\n   loadScript(script, 'onPiskelReady()');\n }\n })();\n+  (function () {\n+\n+/**\n+ * Main entry point for messages received from outside the iframe.  This method\n+ * is effectively a router for incoming commands.\n+ * @param event\n+ */\n+function receiveMessage(event) {\n+  // Should validate origin and not receive commands if embedded on another\n+  // domain.\n+  // TODO (bbuchanan): Safer cross-domain check.\n+  var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.\n+  if (!/studio\\.code\\.org/i.test(origin))\n+    return;\n+\n+  var message = event.data;\n+  if (message.type === 'LOAD_IMAGE') {\n+    alert('Received LOAD_IMAGE message. Metadata:\\n' + JSON.stringify(message.animation));\n+  }\n+}\n+window.addEventListener('message', receiveMessage);\n+\n+})();\n+",
+    "path": "apps/lib/piskel/piskelapp-partials/main-partial.html",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "30648041050e32798827216397ab3ced74183894",
+    "original_commit_id": "69040d23d85a17066c6c7cd26389f201513173b7",
+    "user": {
+      "login": "pcardune",
+      "id": 124827,
+      "node_id": "MDQ6VXNlcjEyNDgyNw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/124827?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pcardune",
+      "html_url": "https://github.com/pcardune",
+      "followers_url": "https://api.github.com/users/pcardune/followers",
+      "following_url": "https://api.github.com/users/pcardune/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pcardune/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pcardune/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pcardune/subscriptions",
+      "organizations_url": "https://api.github.com/users/pcardune/orgs",
+      "repos_url": "https://api.github.com/users/pcardune/repos",
+      "events_url": "https://api.github.com/users/pcardune/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pcardune/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I guess I'm just not a fan of committing build artifacts into a repository, for a variety of reasons including the difficulty of figuring out where the build artifacts came from and how to recreate them.\n",
+    "created_at": "2016-05-24T17:11:26Z",
+    "updated_at": "2016-05-27T21:17:26Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64434431",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64434431"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8562#discussion_r64434431"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8562"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 971,
+    "side": "RIGHT"
+  }
+]

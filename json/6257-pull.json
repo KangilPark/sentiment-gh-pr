@@ -1,0 +1,1542 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49140496",
+    "pull_request_review_id": null,
+    "id": 49140496,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQwNDk2",
+    "diff_hunk": "@@ -94,6 +106,16 @@ exports.execute = function (commands) {\n   }\n };\n \n+\n+/**\n+ * Log a message in a box, so it stands out from the rest of the logging info.\n+ * @param {!string} message\n+ */\n+exports.fancyLog = function (message) {",
+    "path": "shared/js/build-commands.js",
+    "position": null,
+    "original_position": 28,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "1660a1a2665e11eea26a829f68c9ac0a852ad5e4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Could call it boxLog instead of fancyLog?\n",
+    "created_at": "2016-01-07T23:21:34Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49140496",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49140496"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49140496"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 114,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49140688",
+    "pull_request_review_id": null,
+    "id": 49140688,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQwNjg4",
+    "diff_hunk": "@@ -0,0 +1,27 @@\n+#!/usr/bin/env node\n+/** @file Build script for copying unpreprocessed assets from the code-studio\n+ * package and its dependencies over into the build output directory. */\n+'use strict';\n+\n+var build_commands = require('../shared/js/build-commands');\n+\n+/** @const {string} */\n+var BUILD_PATH = './build/assets/';",
+    "path": "code-studio/copy-assets.js",
+    "position": null,
+    "original_position": 9,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "1660a1a2665e11eea26a829f68c9ac0a852ad5e4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "does this mean these get served from something like assets/code-studio/assets?\n",
+    "created_at": "2016-01-07T23:23:33Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49140688",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49140688"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49140688"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 9,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49141291",
+    "pull_request_review_id": null,
+    "id": 49141291,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQxMjkx",
+    "diff_hunk": "@@ -0,0 +1,27 @@\n+#!/usr/bin/env node\n+/** @file Build script for copying unpreprocessed assets from the code-studio\n+ * package and its dependencies over into the build output directory. */\n+'use strict';\n+\n+var build_commands = require('../shared/js/build-commands');\n+\n+/** @const {string} */\n+var BUILD_PATH = './build/assets/';",
+    "path": "code-studio/copy-assets.js",
+    "position": null,
+    "original_position": 9,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "1660a1a2665e11eea26a829f68c9ac0a852ad5e4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Since they are copied into dashboard/public and also have a precompiled asset rule, they get served in two places:\n1. Unprocessed, unfingerprinted at [domain]/code-studio/assets/\n2. Preprocessed and fingerprinted at [domain]/assets/[fingerprinted filename]\n\nOption 1 should always be the same, and can be hard-coded as a root-relative URL if needed (I do that in a few places for video.js), but isn't effectively cachebusted, so it's a poor choice for anything we expect to change ourselves.  This is a good option for assets that libraries want to access themselves at runtime.\n\nOption 2 currently requires you to use a Rails asset helper to get the correct URL, but will be cachebusted appropriately because of that.  We'll want Rails to generate a manifest of some sort to allow our JavaScript to reference assets this way.\n",
+    "created_at": "2016-01-07T23:31:06Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49141291",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49141291"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49141291"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 9,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49141588",
+    "pull_request_review_id": null,
+    "id": 49141588,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQxNTg4",
+    "diff_hunk": "@@ -94,6 +106,16 @@ exports.execute = function (commands) {\n   }\n };\n \n+\n+/**\n+ * Log a message in a box, so it stands out from the rest of the logging info.\n+ * @param {!string} message\n+ */\n+exports.fancyLog = function (message) {",
+    "path": "shared/js/build-commands.js",
+    "position": null,
+    "original_position": 28,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "1660a1a2665e11eea26a829f68c9ac0a852ad5e4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I went with `logBoxedMessage`.\n",
+    "created_at": "2016-01-07T23:34:39Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49141588",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49141588"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49141588"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 114,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147009",
+    "pull_request_review_id": null,
+    "id": 49147009,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3MDA5",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');",
+    "path": "code-studio/src/js/videos.js",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This file both moved and renamed from videos.js.erb, with some additional changes necessary.  Major changes:\n- Require video.js and url_test.js instead of depending on their global availability.\n- Dropped the wrapper function since browserify does that for us now.\n- One other adjustment that I'll comment inline.\n- Small syntax adjustments to pass linting.\n",
+    "created_at": "2016-01-08T00:46:34Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147009",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147009"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147009"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 5,
+    "original_line": 5,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147153",
+    "pull_request_review_id": null,
+    "id": 49147153,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3MTUz",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 107,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I didn't change this, but dropping a note that this appears to be the source of the bug with the fallback player and the \"Show Notes\" tab.  For some reason, we remove the `src` attribute to hide the player?  When using the Flash fallback player, there is no such attribute, which explains why nothing happens to it.  I think `stopTrackingVideoJSProgress()` was originally supposed to help with this, but it doesn't do anything to pause/hide the video.\n",
+    "created_at": "2016-01-08T00:48:31Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147153",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147153"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147153"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147498",
+    "pull_request_review_id": null,
+    "id": 49147498,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3NDk4",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I added the guards, here and just below.  The functions `stopTrackingProgress()` and `stopTrackingCurrentTime()` do exist in the version of video.js that we're using, but in the minified version that gets required when using the node module the symbols have been changed/minified.  It's unclear whether these functions were ever intended to be public.  It is possible that some video.js Player objects (for certain fallbacks) have these functions so I'm leaving them in, guarded.\n\nI tried to recreate the issue described in the function comment here, but was unable to - this code is original to Geoffrey Elliot from when the repo was set up, and I wonder if our implementation has improved since then.\n\nThere _is_ an existing issue which I mention in the PR description with hiding the fallback video player, which is where this code is used - so I think the best time to tackle this (or remove this method entirely) is when fixing that bug, which belongs in a different PR.\n",
+    "created_at": "2016-01-08T00:53:01Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147498",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147498"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147498"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147535",
+    "pull_request_review_id": null,
+    "id": 49147535,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3NTM1",
+    "diff_hunk": "@@ -11,7 +11,7 @@\n //= require jquery\n //= require jquery_ujs\n //= require jquery-ui\n-//= require video\n+// (Former location of video.js; reference while converting to code-studio.js)",
+    "path": "dashboard/app/assets/javascripts/application.js.erb",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Keeping this note so we can preserve the order of these includes as we move things over to code-studio.js.\n",
+    "created_at": "2016-01-08T00:53:43Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147535",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147535"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147535"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 14,
+    "original_line": 14,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147578",
+    "pull_request_review_id": null,
+    "id": 49147578,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3NTc4",
+    "diff_hunk": "@@ -1,303 +0,0 @@\n-//= require url_test/url_test.js\n-\n-(function() {\n-\n-  window.createVideoWithFallback = function(parentElement, options, width, height) {\n-    upgradeInsecureOptions(options);\n-    var video = createVideo(options);\n-    video.width(width).height(height);\n-    if(parentElement) {\n-      parentElement.append(video);\n-    }\n-    setupVideoFallback(options, width, height);\n-    return video;\n-  }\n-\n-  function onVideoEnded() {\n-    $('.video-modal').trigger(\"ended\");\n-  }\n-\n-  function onYouTubeIframeAPIReady() {\n-    // requires there be an iframe#video present on the page\n-    var player = new YT.Player('video');\n-    player.addEventListener('onStateChange', function (state) {\n-      if (state.data === YT.PlayerState.ENDED) {\n-        onVideoEnded();\n-      }\n-    });\n-  }\n-\n-  function createVideo(options) {\n-    return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n-      src: options.src,\n-      scrolling: 'no'\n-    });\n-  }\n-\n-  // Options include:\n-  //   src - the url to the video\n-  //   key - an uid.\n-  //   name - a string.\n-  //   redirect - the redirect page after the video is dismissed.\n-  //   onClose - actions to take after closing the video dialog, or immediately\n-  //             if the video isn't shown.\n-  window.showVideoDialog = function(options, forceShowVideo) {\n-    if (forceShowVideo === undefined) {\n-      forceShowVideo = false;\n-    }\n-\n-    if (options.onClose === undefined) {\n-      options.onClose = function () {};\n-    }\n-\n-    if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n-      // Anything we were going to do when the video closed, we ought to do\n-      // right now.\n-      options.onClose();\n-      if (options.redirect) {\n-        window.location.href = options.redirect;\n-      }\n-      return;\n-    }\n-\n-    upgradeInsecureOptions(options);\n-    var widthRatio = .8;\n-    var heightRatio = .8;\n-    var aspectRatio = 16 / 9;\n-\n-    var body = $('<div/>');\n-    var content = $('#notes-content').contents().clone();\n-    content.find('.video-name').text(options.name);\n-    body.append(content);\n-\n-    var video = createVideo(options);\n-    body.append(video);\n-\n-    var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n-    body.append(notesDiv);\n-    getShowNotes(options.key, notesDiv.children('#notes'));\n-\n-    var dialog = new Dialog({ body: body, redirect : options.redirect });\n-    $div = $(dialog.div);\n-    $div.addClass('video-modal');\n-\n-    $('.video-modal').on(\"remove\", function () {\n-      // Manually removing src to fix a continual playback bug in IE9\n-      // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n-      video.removeAttr('src');\n-      options.onClose();\n-      dashboard.clientState.recordVideoSeen(options.key);\n-      // Raise an event that the dialog has been hidden, in case anything needs to\n-      // play/respond to it.\n-      var event = document.createEvent('Event');\n-      event.initEvent('videoHidden', true, true);\n-      document.dispatchEvent(event);\n-    });\n-\n-    var tabHandler = function(event, ui) {\n-      var tab = ui.tab || ui.newTab;  // Depends on event.\n-      var videoElement = $('#video');\n-      if (tab.find('a').attr('href') === \"#video\") {\n-        // If it is the video page, restore the src\n-        videoElement.attr('src', options.src);\n-      } else {\n-        videoElement.attr('src', '');\n-        stopTrackingVideoJSProgress();\n-      }\n-      // Remember which tab is selected.\n-      var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n-      try {\n-        window.sessionStorage.setItem('lastTab', selected);\n-      } catch (exc) {\n-        console.log('Caught exception in sessionStorage.setItem: ', exc);\n-      }\n-    };\n-\n-    var lastTab = window.sessionStorage.getItem('lastTab');\n-    body.tabs({\n-      event : 'click touchend',\n-      activate: tabHandler,\n-      create: tabHandler,\n-      active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n-    });\n-\n-    var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n-        .addClass('download-video')\n-        .attr('href', options.download);\n-    var nav = $div.find('.ui-tabs-nav');\n-    nav.append(download);\n-\n-    // Resize modal to fit constraining dimension.\n-    var height = $(window).height() * widthRatio,\n-        width = $(window).width() * heightRatio;\n-\n-    if (height * aspectRatio < width) {\n-      $div.height(height);\n-      $div.width(height * aspectRatio);\n-    } else {\n-      $div.height(width / aspectRatio);\n-      $div.width(width);\n-    }\n-\n-    // Standard css hack to center a div within the viewport.\n-    $div.css({\n-      top: '50%',\n-      left: '50%',\n-      marginTop: ($div.height() / -2) + 'px',\n-      marginLeft: ($div.width() / -2) + 'px'\n-    });\n-\n-    var divHeight = $div.innerHeight() - nav.outerHeight();\n-    $(video).height(divHeight);\n-\n-    notesDiv.height(divHeight);\n-\n-    if (window.YT && window.YT.loaded) {\n-      onYouTubeIframeAPIReady();\n-    } else {\n-      // Use the official YouTube IFrame Player API to load the YouTube video.\n-      // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n-      var tag = document.createElement('script');\n-      tag.src = \"https://www.youtube.com/iframe_api\";\n-      var firstScriptTag = document.getElementsByTagName('script')[0];\n-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n-      // calls window.onYouTubeIframeAPIReady\n-    }\n-\n-    dialog.show();\n-\n-    $('.video-modal').on(\"ended\", function () {\n-      dialog.hide();\n-    });\n-\n-    // Raise an event that the dialog has been shown, in case anything needs to\n-    // pause/respond to it.\n-    var event = document.createEvent('Event');\n-    event.initEvent('videoShown', true, true);\n-    document.dispatchEvent(event);\n-\n-    // Don't add fallback player if a video modal has closed\n-    var shouldStillAdd = true;\n-    $('.video-modal').one('hidden.bs.modal', function(){\n-      shouldStillAdd = false;\n-    });\n-\n-    setupVideoFallback(options, $div.width(), divHeight, function(){\n-      return shouldStillAdd;\n-    });\n-  }\n-\n-  /**\n-   * When hidden quickly after being shown, the videojs flash player progress tracker\n-   * starts looping out read property 'length' of undefined errors. Since we don't currently\n-   * use this progress tracking, disable it\n-   */\n-  function stopTrackingVideoJSProgress() {\n-    if (!$('.video-js').length) {\n-      return;\n-    }\n-\n-    var fallbackPlayer = vjs($('.video-js')[0]);\n-    fallbackPlayer.stopTrackingProgress();\n-    fallbackPlayer.stopTrackingCurrentTime();",
+    "path": "dashboard/app/assets/javascripts/videos.js.erb",
+    "position": 202,
+    "original_position": 202,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Here's the old `stopTrackingVideoJSProgress()` for reference.\n",
+    "created_at": "2016-01-08T00:54:10Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147578",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147578"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147578"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 202,
+    "original_line": 202,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147808",
+    "pull_request_review_id": null,
+    "id": 49147808,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3ODA4",
+    "diff_hunk": "@@ -30,6 +29,8 @@\n  *= require details-polyfill\n  */\n \n+// TODO: Move into code-studio.scss when it exists.\n+@import \"/code-studio/assets/video-js/video-js.css\";",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 13,
+    "original_position": 13,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This compiles into a plain CSS @import directive:\n\n``` css\n@import url(/code-studio/assets/video-js/video-js.css);\n```\n\nThis works fine for now, although it adds a file for the client to download.  Eventually I'd like to concatenate this into a code-studio version of application.css, though it'll take some doing since sass doesn't have native support for concatenating in plain css files (which is pretty dumb, since they're valid scss).\n",
+    "created_at": "2016-01-08T00:56:55Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147808",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147808"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147808"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 33,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147871",
+    "pull_request_review_id": null,
+    "id": 49147871,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3ODcx",
+    "diff_hunk": "@@ -1,7 +1,6 @@\n - content_for(:head) do\n   = stylesheet_link_tag 'css/levelbuilder', media: 'all'\n   = stylesheet_link_tag 'jquery.handsontable.full', media: 'all'\n-  = javascript_include_tag 'js/code-studio-common'",
+    "path": "dashboard/app/views/levels/editors/_all.html.haml",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This goes away because it's moved up to application.html.haml.\n",
+    "created_at": "2016-01-08T00:57:34Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147871",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147871"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147871"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 4,
+    "original_line": 4,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147893",
+    "pull_request_review_id": null,
+    "id": 49147893,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3ODkz",
+    "diff_hunk": "@@ -1,6 +1,3 @@\n-- content_for(:head) do\n-  = javascript_include_tag 'js/code-studio-common'",
+    "path": "dashboard/app/views/levels/show.html.haml",
+    "position": 2,
+    "original_position": 2,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This goes away because it's moved up to application.html.haml.\n",
+    "created_at": "2016-01-08T00:57:47Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147893",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147893"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49147893"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 2,
+    "original_line": 2,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49218484",
+    "pull_request_review_id": null,
+    "id": 49218484,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjE4NDg0",
+    "diff_hunk": "@@ -128,8 +128,6 @@ gem 'stringex', '~> 2.5.2' # Provides String.to_ascii\n \n gem 'naturally' # for sorting string naturally\n \n-gem 'videojs_rails'\n-",
+    "path": "Gemfile",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":tada: :trophy: :clap: \n",
+    "created_at": "2016-01-08T18:13:53Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49218484",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49218484"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49218484"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 132,
+    "original_line": 132,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49220865",
+    "pull_request_review_id": null,
+    "id": 49220865,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjIwODY1",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "A whole separate issue is why the `require('video.js')` is including a minified module, and whether there's a good way around that.  Wouldn't it be preferable to import the unminified library and do our own minification?\n",
+    "created_at": "2016-01-08T18:34:20Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49220865",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49220865"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49220865"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49246747",
+    "pull_request_review_id": null,
+    "id": 49246747,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjQ2NzQ3",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "wjordan",
+      "id": 56541,
+      "node_id": "MDQ6VXNlcjU2NTQx",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56541?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/wjordan",
+      "html_url": "https://github.com/wjordan",
+      "followers_url": "https://api.github.com/users/wjordan/followers",
+      "following_url": "https://api.github.com/users/wjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/wjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/wjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/wjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/wjordan/orgs",
+      "repos_url": "https://api.github.com/users/wjordan/repos",
+      "events_url": "https://api.github.com/users/wjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/wjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> I tried to recreate the issue described in the function comment here, but was unable to - this code is original to Geoffrey Elliot from when the repo was set up, and I wonder if our implementation has improved since then.\n\nYou can check the old (private) [code-dot-org/dashboard](https://github.com/code-dot-org/dashboard) repo for earlier git history.\n\nThe original code was actually added by @bcjordan in code-dot-org/dashboard#1049 (07/2014). Doubt he remembers much from that long ago but I'll ping him on this thread just in case he can help shed some light on anything.\n",
+    "created_at": "2016-01-08T22:33:01Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49246747",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49246747"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49246747"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49247591",
+    "pull_request_review_id": null,
+    "id": 49247591,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjQ3NTkx",
+    "diff_hunk": "@@ -48,7 +54,22 @@ build_commands.execute([\n     shouldFactor: false,\n     shouldMinify: commander.min,\n     shouldWatch: commander.watch\n+  }),\n+\n+  // Build embedVideo.js in its own step (skipping factor-bundle) so that\n+  // we don't have to include the large code-studio-common file in the\n+  // embedded video page, keeping it fairly lightweight.\n+  // (I wonder how much more we could slim it down by removing jQuery!)\n+  build_commands.browserify({\n+    srcPath: SRC_PATH,\n+    buildPath: BUILD_PATH,\n+    filenames: [\n+      'embedVideo.js'\n+    ],\n+    commonFile: 'embedVideo',\n+    shouldFactor: false,\n+    shouldMinify: commander.min,\n+    shouldWatch: commander.watch",
+    "path": "code-studio/build-js.js",
+    "position": 39,
+    "original_position": 39,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "aacae4b43e17150d7d9b5e0d9dc5ac9db135bac9",
+    "user": {
+      "login": "wjordan",
+      "id": 56541,
+      "node_id": "MDQ6VXNlcjU2NTQx",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56541?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/wjordan",
+      "html_url": "https://github.com/wjordan",
+      "followers_url": "https://api.github.com/users/wjordan/followers",
+      "following_url": "https://api.github.com/users/wjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/wjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/wjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/wjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/wjordan/orgs",
+      "repos_url": "https://api.github.com/users/wjordan/repos",
+      "events_url": "https://api.github.com/users/wjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/wjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "my copy-paste-bloat senses are starting to tingle a bit here with this third `build_commands.browserify` entry. Maybe in a future pass we can collapse this set of verbose javascript configuration lines into a more compact declarative format before they spiral too out of control?\n",
+    "created_at": "2016-01-08T22:41:26Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49247591",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49247591"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49247591"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 72,
+    "original_line": 72,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49248145",
+    "pull_request_review_id": null,
+    "id": 49248145,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjQ4MTQ1",
+    "diff_hunk": "@@ -48,7 +54,22 @@ build_commands.execute([\n     shouldFactor: false,\n     shouldMinify: commander.min,\n     shouldWatch: commander.watch\n+  }),\n+\n+  // Build embedVideo.js in its own step (skipping factor-bundle) so that\n+  // we don't have to include the large code-studio-common file in the\n+  // embedded video page, keeping it fairly lightweight.\n+  // (I wonder how much more we could slim it down by removing jQuery!)\n+  build_commands.browserify({\n+    srcPath: SRC_PATH,\n+    buildPath: BUILD_PATH,\n+    filenames: [\n+      'embedVideo.js'\n+    ],\n+    commonFile: 'embedVideo',\n+    shouldFactor: false,\n+    shouldMinify: commander.min,\n+    shouldWatch: commander.watch",
+    "path": "code-studio/build-js.js",
+    "position": 39,
+    "original_position": 39,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "aacae4b43e17150d7d9b5e0d9dc5ac9db135bac9",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah, I started feeling that too after a bit.  Actually, I think I'd like to make this improvement with my upcoming change that adds the `reactify` and `require-globify` transforms.\n",
+    "created_at": "2016-01-08T22:47:13Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49248145",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49248145"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49248145"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 72,
+    "original_line": 72,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49248306",
+    "pull_request_review_id": null,
+    "id": 49248306,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjQ4MzA2",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Those links 404 for me.  I know I've seen that repo before. Do I need permission to see it or something?\n",
+    "created_at": "2016-01-08T22:48:58Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49248306",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49248306"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49248306"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49248486",
+    "pull_request_review_id": null,
+    "id": 49248486,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjQ4NDg2",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "wjordan",
+      "id": 56541,
+      "node_id": "MDQ6VXNlcjU2NTQx",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56541?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/wjordan",
+      "html_url": "https://github.com/wjordan",
+      "followers_url": "https://api.github.com/users/wjordan/followers",
+      "following_url": "https://api.github.com/users/wjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/wjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/wjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/wjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/wjordan/orgs",
+      "repos_url": "https://api.github.com/users/wjordan/repos",
+      "events_url": "https://api.github.com/users/wjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/wjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "yes, it's a private repo, you need to follow the link after logged into your github account i believe.\n(edit: changed access settings on the repo, which might make it show up for you now)\n",
+    "created_at": "2016-01-08T22:51:02Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49248486",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49248486"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49248486"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49249607",
+    "pull_request_review_id": null,
+    "id": 49249607,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjQ5NjA3",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Well, it looks like the code hasn't changed _that_ much since then and we're still using the same version of videojs_rails, which implies that I may be reintroducing the repeating JavaScript error when changing tabs before the player initializes.\n\nReading through the current version of the plugin we use, it does look like this is code we were never meant to touch (it's a fallback feature for older media players) and I'm fairly certain the problem would go away if we wrote the code to pause the fallback player when switching tabs.  In fact, I'll do just that.\n",
+    "created_at": "2016-01-08T23:05:19Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49249607",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49249607"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49249607"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49250123",
+    "pull_request_review_id": null,
+    "id": 49250123,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjUwMTIz",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "If I'm wrong, I'll also make the argument that the existing bug that never actually hides the fallback player when you change tabs prevents this particular bug from ever happening :grin:\n",
+    "created_at": "2016-01-08T23:12:35Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49250123",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49250123"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49250123"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49250264",
+    "pull_request_review_id": null,
+    "id": 49250264,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjUwMjY0",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "wjordan",
+      "id": 56541,
+      "node_id": "MDQ6VXNlcjU2NTQx",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56541?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/wjordan",
+      "html_url": "https://github.com/wjordan",
+      "followers_url": "https://api.github.com/users/wjordan/followers",
+      "following_url": "https://api.github.com/users/wjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/wjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/wjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/wjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/wjordan/orgs",
+      "repos_url": "https://api.github.com/users/wjordan/repos",
+      "events_url": "https://api.github.com/users/wjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/wjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> A whole separate issue is why the require('video.js') is including a minified module, and whether there's a good way around that. Wouldn't it be preferable to import the unminified library and do our own minification?\n\nvideo.js is an _extremely_ complicated project on its own and I don't think we want to start digging into its internal build-chain unless we have specific reason to. The v4.5.2 [artifact](https://github.com/videojs/video.js/blob/v4.5.2/dist/video-js/video.js) published via npm (see [package.json](https://github.com/videojs/video.js/blob/v4.5.2/package.json#L22)) is the minified pre-compiled JS asset (presumably bundled up as a UMD-compatible module), so I'd suggest we stick with using that vendor-supplied file as long as it works.\n",
+    "created_at": "2016-01-08T23:14:26Z",
+    "updated_at": "2016-01-08T23:14:45Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49250264",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49250264"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49250264"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49250592",
+    "pull_request_review_id": null,
+    "id": 49250592,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjUwNTky",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I wasn't suggesting we do some workaround to include their unminified source (which they do provide as video.dev.js).  I was just curious why they did it that way.\n\nMaybe a better question is why the videojs_rails gem we were using was _not_ using the minified version they ship?\n",
+    "created_at": "2016-01-08T23:19:27Z",
+    "updated_at": "2016-01-08T23:19:27Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49250592",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49250592"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49250592"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49250901",
+    "pull_request_review_id": null,
+    "id": 49250901,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjUwOTAx",
+    "diff_hunk": "@@ -30,6 +29,8 @@\n  *= require details-polyfill\n  */\n \n+// TODO: Move into code-studio.scss when it exists.\n+@import \"/code-studio/assets/video-js/video-js.css\";",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 13,
+    "original_position": 13,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "wjordan",
+      "id": 56541,
+      "node_id": "MDQ6VXNlcjU2NTQx",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56541?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/wjordan",
+      "html_url": "https://github.com/wjordan",
+      "followers_url": "https://api.github.com/users/wjordan/followers",
+      "following_url": "https://api.github.com/users/wjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/wjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/wjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/wjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/wjordan/orgs",
+      "repos_url": "https://api.github.com/users/wjordan/repos",
+      "events_url": "https://api.github.com/users/wjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/wjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Last year, I experimented with extracting video.js into a self-contained js bundle, so it could be cleanly separated from the dashboard application.js. (I abandoned the effort at the time, because of how complicated and time-consuming working with and testing video.js changes ended up being.)\n\nIn that work I managed to get a decent system going using the [browserify-css](https://github.com/cheton/browserify-css) plugin, which not only supported inlining css into a browserify bundle, but also supported transforming css relative-url directives according to custom logic, so css-referenced assets could resolve correctly after the inlining transformation. See  the code here: [bundle.js](https://github.com/code-dot-org/code-dot-org/blob/rewrite_youtube_embed-3/shared/js/video/bundle.js#L25-L44)\n",
+    "created_at": "2016-01-08T23:24:07Z",
+    "updated_at": "2016-01-08T23:25:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49250901",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49250901"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49250901"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 33,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49251579",
+    "pull_request_review_id": null,
+    "id": 49251579,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjUxNTc5",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "wjordan",
+      "id": 56541,
+      "node_id": "MDQ6VXNlcjU2NTQx",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56541?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/wjordan",
+      "html_url": "https://github.com/wjordan",
+      "followers_url": "https://api.github.com/users/wjordan/followers",
+      "following_url": "https://api.github.com/users/wjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/wjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/wjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/wjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/wjordan/orgs",
+      "repos_url": "https://api.github.com/users/wjordan/repos",
+      "events_url": "https://api.github.com/users/wjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/wjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "ah, if an unminified dev version is also provided then yeah, it might be preferable to link to that version if possible. Maybe something like `require('video.js/dist/video-js/video.dev')` instead of `require('video.js')`?\n",
+    "created_at": "2016-01-08T23:35:35Z",
+    "updated_at": "2016-01-08T23:35:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49251579",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49251579"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49251579"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49251639",
+    "pull_request_review_id": null,
+    "id": 49251639,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjUxNjM5",
+    "diff_hunk": "@@ -0,0 +1,312 @@\n+'use strict';\n+/* global dashboard, Dialog, YT */\n+\n+var videojs = require('video.js');\n+var testImageAccess = require('./url_test');\n+\n+window.createVideoWithFallback = function(parentElement, options, width, height) {\n+  upgradeInsecureOptions(options);\n+  var video = createVideo(options);\n+  video.width(width).height(height);\n+  if(parentElement) {\n+    parentElement.append(video);\n+  }\n+  setupVideoFallback(options, width, height);\n+  return video;\n+};\n+\n+function onVideoEnded() {\n+  $('.video-modal').trigger(\"ended\");\n+}\n+\n+function onYouTubeIframeAPIReady() {\n+  // requires there be an iframe#video present on the page\n+  var player = new YT.Player('video');\n+  player.addEventListener('onStateChange', function (state) {\n+    if (state.data === YT.PlayerState.ENDED) {\n+      onVideoEnded();\n+    }\n+  });\n+}\n+\n+function createVideo(options) {\n+  return $('<iframe id=\"video\"/>').addClass('video-player').attr({\n+    src: options.src,\n+    scrolling: 'no'\n+  });\n+}\n+\n+// Options include:\n+//   src - the url to the video\n+//   key - an uid.\n+//   name - a string.\n+//   redirect - the redirect page after the video is dismissed.\n+//   onClose - actions to take after closing the video dialog, or immediately\n+//             if the video isn't shown.\n+window.showVideoDialog = function(options, forceShowVideo) {\n+  if (forceShowVideo === undefined) {\n+    forceShowVideo = false;\n+  }\n+\n+  if (options.onClose === undefined) {\n+    options.onClose = function () {};\n+  }\n+\n+  if (dashboard.clientState.hasSeenVideo(options.key) && forceShowVideo === false) {\n+    // Anything we were going to do when the video closed, we ought to do\n+    // right now.\n+    options.onClose();\n+    if (options.redirect) {\n+      window.location.href = options.redirect;\n+    }\n+    return;\n+  }\n+\n+  upgradeInsecureOptions(options);\n+  var widthRatio = 0.8;\n+  var heightRatio = 0.8;\n+  var aspectRatio = 16 / 9;\n+\n+  var body = $('<div/>');\n+  var content = $('#notes-content').contents().clone();\n+  content.find('.video-name').text(options.name);\n+  body.append(content);\n+\n+  var video = createVideo(options);\n+  body.append(video);\n+\n+  var notesDiv = $('<div id=\"notes-outer\"><div id=\"notes\"/></div>');\n+  body.append(notesDiv);\n+  getShowNotes(options.key, notesDiv.children('#notes'));\n+\n+  var dialog = new Dialog({ body: body, redirect : options.redirect });\n+  var $div = $(dialog.div);\n+  $div.addClass('video-modal');\n+\n+  $('.video-modal').on(\"remove\", function () {\n+    // Manually removing src to fix a continual playback bug in IE9\n+    // https://github.com/code-dot-org/code-dot-org/pull/5277#issue-116253168\n+    video.removeAttr('src');\n+    options.onClose();\n+    dashboard.clientState.recordVideoSeen(options.key);\n+    // Raise an event that the dialog has been hidden, in case anything needs to\n+    // play/respond to it.\n+    var event = document.createEvent('Event');\n+    event.initEvent('videoHidden', true, true);\n+    document.dispatchEvent(event);\n+  });\n+\n+  var tabHandler = function(event, ui) {\n+    var tab = ui.tab || ui.newTab;  // Depends on event.\n+    var videoElement = $('#video');\n+    if (tab.find('a').attr('href') === \"#video\") {\n+      // If it is the video page, restore the src\n+      videoElement.attr('src', options.src);\n+    } else {\n+      video.removeAttr('src');\n+      stopTrackingVideoJSProgress();\n+    }\n+    // Remember which tab is selected.\n+    var selected = tab.parents('.ui-tabs').tabs('option', 'active');\n+    try {\n+      window.sessionStorage.setItem('lastTab', selected);\n+    } catch (exc) {\n+      console.log('Caught exception in sessionStorage.setItem: ', exc);\n+    }\n+  };\n+\n+  var lastTab = window.sessionStorage.getItem('lastTab');\n+  body.tabs({\n+    event : 'click touchend',\n+    activate: tabHandler,\n+    create: tabHandler,\n+    active: (lastTab !== null) ? lastTab : 0  // Set starting tab.\n+  });\n+\n+  var download = $('<a/>').append($('<img src=\"/shared/images/download_button.png\"/>'))\n+      .addClass('download-video')\n+      .attr('href', options.download);\n+  var nav = $div.find('.ui-tabs-nav');\n+  nav.append(download);\n+\n+  // Resize modal to fit constraining dimension.\n+  var height = $(window).height() * widthRatio,\n+      width = $(window).width() * heightRatio;\n+\n+  if (height * aspectRatio < width) {\n+    $div.height(height);\n+    $div.width(height * aspectRatio);\n+  } else {\n+    $div.height(width / aspectRatio);\n+    $div.width(width);\n+  }\n+\n+  // Standard css hack to center a div within the viewport.\n+  $div.css({\n+    top: '50%',\n+    left: '50%',\n+    marginTop: ($div.height() / -2) + 'px',\n+    marginLeft: ($div.width() / -2) + 'px'\n+  });\n+\n+  var divHeight = $div.innerHeight() - nav.outerHeight();\n+  $(video).height(divHeight);\n+\n+  notesDiv.height(divHeight);\n+\n+  if (window.YT && window.YT.loaded) {\n+    onYouTubeIframeAPIReady();\n+  } else {\n+    // Use the official YouTube IFrame Player API to load the YouTube video.\n+    // Ref: https://developers.google.com/youtube/iframe_api_reference#Getting_Started\n+    var tag = document.createElement('script');\n+    tag.src = \"https://www.youtube.com/iframe_api\";\n+    var firstScriptTag = document.getElementsByTagName('script')[0];\n+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\n+    // calls window.onYouTubeIframeAPIReady\n+  }\n+\n+  dialog.show();\n+\n+  var videoModal = $('.video-modal');\n+\n+  videoModal.on(\"ended\", function () {\n+    dialog.hide();\n+  });\n+\n+  // Raise an event that the dialog has been shown, in case anything needs to\n+  // pause/respond to it.\n+  var event = document.createEvent('Event');\n+  event.initEvent('videoShown', true, true);\n+  document.dispatchEvent(event);\n+\n+  // Don't add fallback player if a video modal has closed\n+  var shouldStillAdd = true;\n+  videoModal.one('hidden.bs.modal', function(){\n+    shouldStillAdd = false;\n+  });\n+\n+  setupVideoFallback(options, $div.width(), divHeight, function(){\n+    return shouldStillAdd;\n+  });\n+};\n+\n+/**\n+ * When hidden quickly after being shown, the videojs flash player progress tracker\n+ * starts looping out read property 'length' of undefined errors. Since we don't currently\n+ * use this progress tracking, disable it\n+ */\n+function stopTrackingVideoJSProgress() {\n+  if (!$('.video-js').length) {\n+    return;\n+  }\n+\n+  var fallbackPlayer = videojs($('.video-js')[0]);\n+  if (fallbackPlayer.stopTrackingProgress) {\n+    fallbackPlayer.stopTrackingProgress();\n+  }",
+    "path": "code-studio/src/js/videos.js",
+    "position": null,
+    "original_position": 207,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "wjordan",
+      "id": 56541,
+      "node_id": "MDQ6VXNlcjU2NTQx",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56541?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/wjordan",
+      "html_url": "https://github.com/wjordan",
+      "followers_url": "https://api.github.com/users/wjordan/followers",
+      "following_url": "https://api.github.com/users/wjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/wjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/wjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/wjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/wjordan/orgs",
+      "repos_url": "https://api.github.com/users/wjordan/repos",
+      "events_url": "https://api.github.com/users/wjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/wjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "And yeah, I have no idea why they link to the minified source as the package `main`. I know that in the past they used a custom Closure Compiler configuration to heavily mangle the final output, so maybe it was something related to that?\n",
+    "created_at": "2016-01-08T23:36:55Z",
+    "updated_at": "2016-01-08T23:36:55Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49251639",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49251639"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49251639"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49252002",
+    "pull_request_review_id": null,
+    "id": 49252002,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjUyMDAy",
+    "diff_hunk": "@@ -30,6 +29,8 @@\n  *= require details-polyfill\n  */\n \n+// TODO: Move into code-studio.scss when it exists.\n+@import \"/code-studio/assets/video-js/video-js.css\";",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 13,
+    "original_position": 13,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Interesting - I hadn't thought of using browserify for this.  It's a [much-requested feature](https://github.com/sass/sass/issues/556) of sass to be able to inline css files but they keep pushing back because it doesn't play nice with their \"It's just CSS\" philosophy.\n\nI was going to try out [node-sass-css-importer](https://www.npmjs.com/package/node-sass-css-importer) which requires you to be explicit (special syntax) when asking to inline CSS, but that seems okay to me.\n",
+    "created_at": "2016-01-08T23:42:59Z",
+    "updated_at": "2016-01-08T23:42:59Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49252002",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49252002"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49252002"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 33,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49256133",
+    "pull_request_review_id": null,
+    "id": 49256133,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MjU2MTMz",
+    "diff_hunk": "@@ -30,6 +29,8 @@\n  *= require details-polyfill\n  */\n \n+// TODO: Move into code-studio.scss when it exists.\n+@import \"/code-studio/assets/video-js/video-js.css\";",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 13,
+    "original_position": 13,
+    "commit_id": "d179464363db0da2d12a22a0d1aab41a27155e4a",
+    "original_commit_id": "3014ad2c72e499077d2939a279dd849a79b8d56b",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Here's a [quick experiment with a custom SASS importer](https://github.com/code-dot-org/code-dot-org/compare/create-code-studio-scss) (a feature they claim is experimental, but it's been around since the last major version).  It seems to work great; unfortunately I discovered video.js is a poor candidate for using this, because their CSS file contains relative references to font files they need to load.\n",
+    "created_at": "2016-01-09T00:55:07Z",
+    "updated_at": "2016-01-09T00:55:07Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49256133",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49256133"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6257#discussion_r49256133"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6257"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 33,
+    "original_line": 33,
+    "side": "RIGHT"
+  }
+]

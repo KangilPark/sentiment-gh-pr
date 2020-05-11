@@ -1,0 +1,387 @@
+[
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43793957",
+    "pull_request_review_id": null,
+    "id": 43793957,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNzkzOTU3",
+    "diff_hunk": "@@ -78,22 +83,28 @@ class GraphAuthDAO extends AuthDAO with GraphDAO {\n           .loop(\n             \"vtx\", //start point of loop\n             invert(isVertexOfClass(VertexSchema.Workspace)), //loop condition: stop walking the path once we've found a workspace node\n-            isConnectedToTargetWorkspace(workspaceId)) //loop body: only emit paths to access maps connected to the target workspace\n+            isVertexOfClass(VertexSchema.Workspace)) //loop body: emit paths to all workspaces",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/GraphAuthDAO.scala",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "293a5570c796321afae02f1ca60ecb1d81cbf586",
+    "original_commit_id": "31efae0cafcd484b0e7ab6e54d7c6a9de6433522",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "you don't need this if it's the negation of the loop condition\n",
+    "created_at": "2015-11-03T19:22:49Z",
+    "updated_at": "2015-11-04T15:53:35Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43793957",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/193",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43793957"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43793957"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/193"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 86,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43794072",
+    "pull_request_review_id": null,
+    "id": 43794072,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNzk0MDcy",
+    "diff_hunk": "@@ -68,6 +68,11 @@ class GraphAuthDAO extends AuthDAO with GraphDAO {\n   }\n \n   override def getMaximumAccessLevel(userSubjectId: String, workspaceId: String, txn: RawlsTransaction): WorkspaceAccessLevel = {\n+    val workspaces = listWorkspaces(userSubjectId, txn)\n+    workspaces.find(_.workspaceId == workspaceId).map(_.accessLevel).getOrElse(WorkspaceAccessLevels.NoAccess)\n+  }\n+\n+  override def listWorkspaces(userSubjectId: String, txn: RawlsTransaction): Seq[WorkspacePermissionsPair] = {\n     txn withGraph { db =>\n \n       //Returns a list of paths starting with a group the user belongs in and ending with the workspace's access map.",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/GraphAuthDAO.scala",
+    "position": null,
+    "original_position": 11,
+    "commit_id": "293a5570c796321afae02f1ca60ecb1d81cbf586",
+    "original_commit_id": "31efae0cafcd484b0e7ab6e54d7c6a9de6433522",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "update this comment\n",
+    "created_at": "2015-11-03T19:23:38Z",
+    "updated_at": "2015-11-04T15:53:35Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43794072",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/193",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43794072"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43794072"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/193"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 78,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43794393",
+    "pull_request_review_id": null,
+    "id": 43794393,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNzk0Mzkz",
+    "diff_hunk": "@@ -68,6 +68,11 @@ class GraphAuthDAO extends AuthDAO with GraphDAO {\n   }\n \n   override def getMaximumAccessLevel(userSubjectId: String, workspaceId: String, txn: RawlsTransaction): WorkspaceAccessLevel = {\n+    val workspaces = listWorkspaces(userSubjectId, txn)\n+    workspaces.find(_.workspaceId == workspaceId).map(_.accessLevel).getOrElse(WorkspaceAccessLevels.NoAccess)",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/GraphAuthDAO.scala",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "293a5570c796321afae02f1ca60ecb1d81cbf586",
+    "original_commit_id": "31efae0cafcd484b0e7ab6e54d7c6a9de6433522",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":-1: overkill to get all the workspaces when you're only looking for one\n",
+    "created_at": "2015-11-03T19:25:41Z",
+    "updated_at": "2015-11-04T15:53:35Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43794393",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/193",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43794393"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43794393"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/193"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 72,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43795796",
+    "pull_request_review_id": null,
+    "id": 43795796,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNzk1Nzk2",
+    "diff_hunk": "@@ -78,22 +83,28 @@ class GraphAuthDAO extends AuthDAO with GraphDAO {\n           .loop(\n             \"vtx\", //start point of loop\n             invert(isVertexOfClass(VertexSchema.Workspace)), //loop condition: stop walking the path once we've found a workspace node\n-            isConnectedToTargetWorkspace(workspaceId)) //loop body: only emit paths to access maps connected to the target workspace\n+            isVertexOfClass(VertexSchema.Workspace)) //loop body: emit paths to all workspaces\n           .enablePath.path()\n \n-      //The last two elements of each path are the group and then the workspace access map.\n-      //The edge label between them corresponds to the access level for the group.\n-      //This foldl is equivalent to doing a max() on the list of those access levels.\n-      accessMapPaths.iterator.foldLeft(WorkspaceAccessLevels.NoAccess:WorkspaceAccessLevel)({ (maxAccessLevel, path) =>\n-        val reversePath = path.reverseIterator\n-        val accessMap = reversePath.next().asInstanceOf[Vertex]\n-        val group = reversePath.next().asInstanceOf[Vertex]\n-\n-        val accessLabel = accessMap.getEdges(Direction.OUT).filter( _.getVertex(Direction.IN) == group ).head.getLabel\n-        val accessLevel = WorkspaceAccessLevels.withName(EdgeSchema.stripEdgeRelation(accessLabel))\n-\n-        WorkspaceAccessLevels.max(accessLevel, maxAccessLevel)\n-      })\n+      //The last 3 elements of each path are the group then the workspace access map then the workspace.\n+      //The edge label between the group and the workspace access map corresponds to the access level for the group.\n+      //It is possible for there to be more than 1 access level for a user for a workspace\n+      //Group the paths by workspace then take the max access level for each workspace\n+      val accessByWorkspace = accessMapPaths.toList.groupBy(path => path.last.asInstanceOf[Vertex].getProperty[String](\"workspaceId\"))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/GraphAuthDAO.scala",
+    "position": null,
+    "original_position": 37,
+    "commit_id": "293a5570c796321afae02f1ca60ecb1d81cbf586",
+    "original_commit_id": "31efae0cafcd484b0e7ab6e54d7c6a9de6433522",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "getProperty breaks encapsulation of the serialization code (maybe one day we'll base64encode our property names???) but i'm not sure i can recommend `loadObject[Workspace](vertex).workspaceId` as an alternative and keep my dignity\n",
+    "created_at": "2015-11-03T19:35:20Z",
+    "updated_at": "2015-11-04T15:53:35Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43795796",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/193",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43795796"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43795796"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/193"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 93,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43797232",
+    "pull_request_review_id": null,
+    "id": 43797232,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNzk3MjMy",
+    "diff_hunk": "@@ -68,6 +68,11 @@ class GraphAuthDAO extends AuthDAO with GraphDAO {\n   }\n \n   override def getMaximumAccessLevel(userSubjectId: String, workspaceId: String, txn: RawlsTransaction): WorkspaceAccessLevel = {\n+    val workspaces = listWorkspaces(userSubjectId, txn)\n+    workspaces.find(_.workspaceId == workspaceId).map(_.accessLevel).getOrElse(WorkspaceAccessLevels.NoAccess)",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/GraphAuthDAO.scala",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "293a5570c796321afae02f1ca60ecb1d81cbf586",
+    "original_commit_id": "31efae0cafcd484b0e7ab6e54d7c6a9de6433522",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I don't think there is an actual difference, all the gremlin pipelines execute locally (not on the orient server) so we are pulling back all those vertices anyway only to discard them.\n",
+    "created_at": "2015-11-03T19:46:02Z",
+    "updated_at": "2015-11-04T15:53:35Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43797232",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/193",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43797232"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43797232"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/193"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 72,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43797518",
+    "pull_request_review_id": null,
+    "id": 43797518,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNzk3NTE4",
+    "diff_hunk": "@@ -68,6 +68,11 @@ class GraphAuthDAO extends AuthDAO with GraphDAO {\n   }\n \n   override def getMaximumAccessLevel(userSubjectId: String, workspaceId: String, txn: RawlsTransaction): WorkspaceAccessLevel = {\n+    val workspaces = listWorkspaces(userSubjectId, txn)\n+    workspaces.find(_.workspaceId == workspaceId).map(_.accessLevel).getOrElse(WorkspaceAccessLevels.NoAccess)",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/GraphAuthDAO.scala",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "293a5570c796321afae02f1ca60ecb1d81cbf586",
+    "original_commit_id": "31efae0cafcd484b0e7ab6e54d7c6a9de6433522",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "you're still doing all the work to build permissions lists for a bunch of workspaces you don't care about\n",
+    "created_at": "2015-11-03T19:47:56Z",
+    "updated_at": "2015-11-04T15:53:35Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43797518",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/193",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43797518"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43797518"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/193"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 72,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43798013",
+    "pull_request_review_id": null,
+    "id": 43798013,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNzk4MDEz",
+    "diff_hunk": "@@ -68,6 +68,11 @@ class GraphAuthDAO extends AuthDAO with GraphDAO {\n   }\n \n   override def getMaximumAccessLevel(userSubjectId: String, workspaceId: String, txn: RawlsTransaction): WorkspaceAccessLevel = {\n+    val workspaces = listWorkspaces(userSubjectId, txn)\n+    workspaces.find(_.workspaceId == workspaceId).map(_.accessLevel).getOrElse(WorkspaceAccessLevels.NoAccess)",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/GraphAuthDAO.scala",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "293a5570c796321afae02f1ca60ecb1d81cbf586",
+    "original_commit_id": "31efae0cafcd484b0e7ab6e54d7c6a9de6433522",
+    "user": {
+      "login": "helgridly",
+      "id": 775136,
+      "node_id": "MDQ6VXNlcjc3NTEzNg==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/775136?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/helgridly",
+      "html_url": "https://github.com/helgridly",
+      "followers_url": "https://api.github.com/users/helgridly/followers",
+      "following_url": "https://api.github.com/users/helgridly/following{/other_user}",
+      "gists_url": "https://api.github.com/users/helgridly/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/helgridly/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/helgridly/subscriptions",
+      "organizations_url": "https://api.github.com/users/helgridly/orgs",
+      "repos_url": "https://api.github.com/users/helgridly/repos",
+      "events_url": "https://api.github.com/users/helgridly/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/helgridly/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "you could probably make us both happy by making the loop emit function a parameter or something.\n",
+    "created_at": "2015-11-03T19:51:18Z",
+    "updated_at": "2015-11-04T15:53:35Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43798013",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/193",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/43798013"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/193#discussion_r43798013"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/193"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 72,
+    "side": "RIGHT"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "url": "https://api.github.com/repos/OnsenUI/OnsenUI/pulls/comments/58873254",
+    "pull_request_review_id": null,
+    "id": 58873254,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4ODczMjU0",
+    "diff_hunk": "@@ -436,4 +436,5 @@ function waitDeviceReady() {\n   }, false);\n }\n \n+window._super_secret_ons = ons;",
+    "path": "core/src/ons/ons.js",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "c6d861980401dec184f82a3d4fa683ebfef2556a",
+    "original_commit_id": "c6d861980401dec184f82a3d4fa683ebfef2556a",
+    "user": {
+      "login": "argelius",
+      "id": 6549462,
+      "node_id": "MDQ6VXNlcjY1NDk0NjI=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6549462?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/argelius",
+      "html_url": "https://github.com/argelius",
+      "followers_url": "https://api.github.com/users/argelius/followers",
+      "following_url": "https://api.github.com/users/argelius/following{/other_user}",
+      "gists_url": "https://api.github.com/users/argelius/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/argelius/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/argelius/subscriptions",
+      "organizations_url": "https://api.github.com/users/argelius/orgs",
+      "repos_url": "https://api.github.com/users/argelius/repos",
+      "events_url": "https://api.github.com/users/argelius/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/argelius/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":sunglasses: \n",
+    "created_at": "2016-04-07T13:46:44Z",
+    "updated_at": "2016-04-07T13:46:44Z",
+    "html_url": "https://github.com/OnsenUI/OnsenUI/pull/1349#discussion_r58873254",
+    "pull_request_url": "https://api.github.com/repos/OnsenUI/OnsenUI/pulls/1349",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/OnsenUI/OnsenUI/pulls/comments/58873254"
+      },
+      "html": {
+        "href": "https://github.com/OnsenUI/OnsenUI/pull/1349#discussion_r58873254"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/OnsenUI/OnsenUI/pulls/1349"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 439,
+    "original_line": 439,
+    "side": "RIGHT"
+  }
+]

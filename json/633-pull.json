@@ -1,0 +1,222 @@
+[
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/40036791",
+    "pull_request_review_id": null,
+    "id": 40036791,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwMDM2Nzkx",
+    "diff_hunk": "@@ -782,6 +774,131 @@ void testFunctionBasedBushingForce()\n \n     ASSERT(*copyOfSpring == spring);\n }\n+\n+void testExpressionBasedBushingForce()\n+{\n+    using namespace SimTK;\n+    \n+    double mass = 1;\n+    double stiffness = 10;\n+    double start_h = 0.5;\n+    double ball_radius = 0.25;\n+    \n+    double omega = sqrt(stiffness/mass);\n+    \n+    double dh = mass*gravity_vec(1)/stiffness;\n+    \n+    // Setup OpenSim model\n+    Model *osimModel = new Model;\n+    osimModel->setName(\"ExpressionBasedBushingTest\");\n+    osimModel->setGravity(gravity_vec);\n+\n+    // Create ball body and attach it to ground\n+    // with a vertical slider\n+\n+    const Ground& ground = osimModel->getGround();\n+\n+    OpenSim::Body ball(\"ball\", mass, Vec3(0), mass*SimTK::Inertia::sphere(0.1));\n+    ball.addMeshGeometry(\"sphere.vtp\");\n+    ball.scale(Vec3(ball_radius), false);\n+    \n+    SliderJoint sliderY(\"\", ground, Vec3(0), Vec3(0,0,Pi/2), ball, Vec3(0), Vec3(0,0,Pi/2));\n+    \n+    double positionRange[2] = {-10, 10};\n+    // Rename coordinates for a slider joint\n+    CoordinateSet &slider_coords = sliderY.upd_CoordinateSet();\n+    slider_coords[0].setName(\"ball_h\");\n+    slider_coords[0].setRange(positionRange);\n+    slider_coords[0].setMotionType(Coordinate::Translational);",
+    "path": "OpenSim/Simulation/Test/testForces.cpp",
+    "position": null,
+    "original_position": 125,
+    "commit_id": "5515cc259fa76a51cf696037467642153f1de03c",
+    "original_commit_id": "730f4c4602fe88fecc4edea98993375292d2f354",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why is this line necessary? Aren't coordinates associated with `SliderJoint`s necessarily translational?\n",
+    "created_at": "2015-09-21T22:51:44Z",
+    "updated_at": "2015-09-22T03:31:47Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/633#discussion_r40036791",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/633",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/40036791"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/633#discussion_r40036791"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/633"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 812,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/40037034",
+    "pull_request_review_id": null,
+    "id": 40037034,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwMDM3MDM0",
+    "diff_hunk": "@@ -782,6 +774,131 @@ void testFunctionBasedBushingForce()\n \n     ASSERT(*copyOfSpring == spring);\n }\n+\n+void testExpressionBasedBushingForce()\n+{\n+    using namespace SimTK;\n+    \n+    double mass = 1;\n+    double stiffness = 10;\n+    double start_h = 0.5;\n+    double ball_radius = 0.25;\n+    \n+    double omega = sqrt(stiffness/mass);\n+    \n+    double dh = mass*gravity_vec(1)/stiffness;\n+    \n+    // Setup OpenSim model\n+    Model *osimModel = new Model;\n+    osimModel->setName(\"ExpressionBasedBushingTest\");\n+    osimModel->setGravity(gravity_vec);\n+\n+    // Create ball body and attach it to ground\n+    // with a vertical slider\n+\n+    const Ground& ground = osimModel->getGround();\n+\n+    OpenSim::Body ball(\"ball\", mass, Vec3(0), mass*SimTK::Inertia::sphere(0.1));\n+    ball.addMeshGeometry(\"sphere.vtp\");\n+    ball.scale(Vec3(ball_radius), false);\n+    \n+    SliderJoint sliderY(\"\", ground, Vec3(0), Vec3(0,0,Pi/2), ball, Vec3(0), Vec3(0,0,Pi/2));\n+    \n+    double positionRange[2] = {-10, 10};\n+    // Rename coordinates for a slider joint\n+    CoordinateSet &slider_coords = sliderY.upd_CoordinateSet();\n+    slider_coords[0].setName(\"ball_h\");\n+    slider_coords[0].setRange(positionRange);\n+    slider_coords[0].setMotionType(Coordinate::Translational);\n+    \n+    osimModel->addBody(&ball);\n+    osimModel->addJoint(&sliderY);\n+    \n+    // Create base body and attach it to ground with a weld\n+\n+    OpenSim::Body base(\"base_body\", mass, Vec3(0), mass*SimTK::Inertia::sphere(0.1));\n+    base.addMeshGeometry(\"sphere.vtp\");\n+    base.scale(Vec3(ball_radius), false);\n+    \n+    WeldJoint weld(\"\", ground, Vec3(0), Vec3(0), base, Vec3(0), Vec3(0));\n+    osimModel->addBody(&base);\n+    osimModel->addJoint(&weld);\n+    \n+    // create an ExpressionBasedBushingForce that represents an\n+    // uncoupled, linear bushing between the ball body and welded base body\n+    Vec3 rotStiffness(0);\n+    Vec3 transStiffness(stiffness);\n+    Vec3 rotDamping(0);\n+    Vec3 transDamping(0);\n+    \n+    ExpressionBasedBushingForce spring(\"base_body\", Vec3(0), Vec3(0), \"ball\", Vec3(0), Vec3(0), transStiffness, rotStiffness, transDamping, rotDamping);",
+    "path": "OpenSim/Simulation/Test/testForces.cpp",
+    "position": null,
+    "original_position": 147,
+    "commit_id": "5515cc259fa76a51cf696037467642153f1de03c",
+    "original_commit_id": "730f4c4602fe88fecc4edea98993375292d2f354",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Violation of [80 character line limit](https://github.com/opensim-org/opensim-core/blob/master/CONTRIBUTING.md#each-line-of-text-should-be-at-most-80-characters) :rabbit2:\n",
+    "created_at": "2015-09-21T22:54:28Z",
+    "updated_at": "2015-09-22T03:31:47Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/633#discussion_r40037034",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/633",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/40037034"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/633#discussion_r40037034"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/633"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 834,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/40037237",
+    "pull_request_review_id": null,
+    "id": 40037237,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwMDM3MjM3",
+    "diff_hunk": "@@ -782,6 +774,131 @@ void testFunctionBasedBushingForce()\n \n     ASSERT(*copyOfSpring == spring);\n }\n+\n+void testExpressionBasedBushingForce()\n+{\n+    using namespace SimTK;\n+    \n+    double mass = 1;\n+    double stiffness = 10;\n+    double start_h = 0.5;\n+    double ball_radius = 0.25;\n+    \n+    double omega = sqrt(stiffness/mass);\n+    \n+    double dh = mass*gravity_vec(1)/stiffness;\n+    \n+    // Setup OpenSim model\n+    Model *osimModel = new Model;\n+    osimModel->setName(\"ExpressionBasedBushingTest\");\n+    osimModel->setGravity(gravity_vec);\n+\n+    // Create ball body and attach it to ground\n+    // with a vertical slider\n+\n+    const Ground& ground = osimModel->getGround();\n+\n+    OpenSim::Body ball(\"ball\", mass, Vec3(0), mass*SimTK::Inertia::sphere(0.1));\n+    ball.addMeshGeometry(\"sphere.vtp\");\n+    ball.scale(Vec3(ball_radius), false);\n+    \n+    SliderJoint sliderY(\"\", ground, Vec3(0), Vec3(0,0,Pi/2), ball, Vec3(0), Vec3(0,0,Pi/2));\n+    \n+    double positionRange[2] = {-10, 10};\n+    // Rename coordinates for a slider joint\n+    CoordinateSet &slider_coords = sliderY.upd_CoordinateSet();\n+    slider_coords[0].setName(\"ball_h\");\n+    slider_coords[0].setRange(positionRange);\n+    slider_coords[0].setMotionType(Coordinate::Translational);\n+    \n+    osimModel->addBody(&ball);\n+    osimModel->addJoint(&sliderY);\n+    \n+    // Create base body and attach it to ground with a weld\n+\n+    OpenSim::Body base(\"base_body\", mass, Vec3(0), mass*SimTK::Inertia::sphere(0.1));\n+    base.addMeshGeometry(\"sphere.vtp\");\n+    base.scale(Vec3(ball_radius), false);\n+    \n+    WeldJoint weld(\"\", ground, Vec3(0), Vec3(0), base, Vec3(0), Vec3(0));\n+    osimModel->addBody(&base);\n+    osimModel->addJoint(&weld);\n+    \n+    // create an ExpressionBasedBushingForce that represents an\n+    // uncoupled, linear bushing between the ball body and welded base body\n+    Vec3 rotStiffness(0);\n+    Vec3 transStiffness(stiffness);\n+    Vec3 rotDamping(0);\n+    Vec3 transDamping(0);\n+    \n+    ExpressionBasedBushingForce spring(\"base_body\", Vec3(0), Vec3(0), \"ball\", Vec3(0), Vec3(0), transStiffness, rotStiffness, transDamping, rotDamping);\n+    spring.setName(\"linear_bushing\");\n+    \n+    osimModel->addForce(&spring);\n+    \n+    osimModel->print(\"ExpressionBasedBushingForceModel.osim\");\n+    \n+    // Create the force reporter\n+    ForceReporter* reporter = new ForceReporter(osimModel);\n+    osimModel->addAnalysis(reporter);\n+    \n+    SimTK::State& osim_state = osimModel->initSystem();\n+    \n+    // set the initial height of the ball on slider\n+    slider_coords[0].setValue(osim_state, start_h);\n+    osimModel->getMultibodySystem().realize(osim_state, Stage::Position );\n+    \n+    //==========================================================================\n+    // Compute the force and torque at the specified times.\n+    RungeKuttaMersonIntegrator integrator(osimModel->getMultibodySystem() );\n+    integrator.setAccuracy(1e-6);\n+    Manager manager(*osimModel,  integrator);\n+    manager.setInitialTime(0.0);\n+    \n+    double final_t = 2.0;\n+    double nsteps = 10;\n+    double dt = final_t/nsteps;\n+    \n+    for(int i = 1; i <=nsteps; i++){",
+    "path": "OpenSim/Simulation/Test/testForces.cpp",
+    "position": null,
+    "original_position": 175,
+    "commit_id": "5515cc259fa76a51cf696037467642153f1de03c",
+    "original_commit_id": "730f4c4602fe88fecc4edea98993375292d2f354",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Violation of [pre-increment operator rule](https://github.com/opensim-org/opensim-core/blob/master/CONTRIBUTING.md#always-use-pre-increment-and-pre-decrement-operators-when-you-have-a-choice) :turtle:\n",
+    "created_at": "2015-09-21T22:56:55Z",
+    "updated_at": "2015-09-22T03:31:47Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/633#discussion_r40037237",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/633",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/40037237"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/633#discussion_r40037237"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/633"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 862,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/40037424",
+    "pull_request_review_id": null,
+    "id": 40037424,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwMDM3NDI0",
+    "diff_hunk": "@@ -782,6 +774,131 @@ void testFunctionBasedBushingForce()\n \n     ASSERT(*copyOfSpring == spring);\n }\n+\n+void testExpressionBasedBushingForce()\n+{\n+    using namespace SimTK;\n+    \n+    double mass = 1;\n+    double stiffness = 10;\n+    double start_h = 0.5;\n+    double ball_radius = 0.25;\n+    \n+    double omega = sqrt(stiffness/mass);\n+    \n+    double dh = mass*gravity_vec(1)/stiffness;\n+    \n+    // Setup OpenSim model\n+    Model *osimModel = new Model;\n+    osimModel->setName(\"ExpressionBasedBushingTest\");\n+    osimModel->setGravity(gravity_vec);\n+\n+    // Create ball body and attach it to ground\n+    // with a vertical slider\n+\n+    const Ground& ground = osimModel->getGround();\n+\n+    OpenSim::Body ball(\"ball\", mass, Vec3(0), mass*SimTK::Inertia::sphere(0.1));\n+    ball.addMeshGeometry(\"sphere.vtp\");\n+    ball.scale(Vec3(ball_radius), false);\n+    \n+    SliderJoint sliderY(\"\", ground, Vec3(0), Vec3(0,0,Pi/2), ball, Vec3(0), Vec3(0,0,Pi/2));\n+    \n+    double positionRange[2] = {-10, 10};\n+    // Rename coordinates for a slider joint\n+    CoordinateSet &slider_coords = sliderY.upd_CoordinateSet();\n+    slider_coords[0].setName(\"ball_h\");\n+    slider_coords[0].setRange(positionRange);\n+    slider_coords[0].setMotionType(Coordinate::Translational);\n+    \n+    osimModel->addBody(&ball);\n+    osimModel->addJoint(&sliderY);\n+    \n+    // Create base body and attach it to ground with a weld\n+\n+    OpenSim::Body base(\"base_body\", mass, Vec3(0), mass*SimTK::Inertia::sphere(0.1));\n+    base.addMeshGeometry(\"sphere.vtp\");\n+    base.scale(Vec3(ball_radius), false);\n+    \n+    WeldJoint weld(\"\", ground, Vec3(0), Vec3(0), base, Vec3(0), Vec3(0));\n+    osimModel->addBody(&base);\n+    osimModel->addJoint(&weld);\n+    \n+    // create an ExpressionBasedBushingForce that represents an\n+    // uncoupled, linear bushing between the ball body and welded base body\n+    Vec3 rotStiffness(0);\n+    Vec3 transStiffness(stiffness);\n+    Vec3 rotDamping(0);\n+    Vec3 transDamping(0);\n+    \n+    ExpressionBasedBushingForce spring(\"base_body\", Vec3(0), Vec3(0), \"ball\", Vec3(0), Vec3(0), transStiffness, rotStiffness, transDamping, rotDamping);\n+    spring.setName(\"linear_bushing\");\n+    \n+    osimModel->addForce(&spring);\n+    \n+    osimModel->print(\"ExpressionBasedBushingForceModel.osim\");\n+    \n+    // Create the force reporter\n+    ForceReporter* reporter = new ForceReporter(osimModel);\n+    osimModel->addAnalysis(reporter);\n+    \n+    SimTK::State& osim_state = osimModel->initSystem();\n+    \n+    // set the initial height of the ball on slider\n+    slider_coords[0].setValue(osim_state, start_h);\n+    osimModel->getMultibodySystem().realize(osim_state, Stage::Position );\n+    \n+    //==========================================================================\n+    // Compute the force and torque at the specified times.\n+    RungeKuttaMersonIntegrator integrator(osimModel->getMultibodySystem() );\n+    integrator.setAccuracy(1e-6);\n+    Manager manager(*osimModel,  integrator);\n+    manager.setInitialTime(0.0);\n+    \n+    double final_t = 2.0;\n+    double nsteps = 10;\n+    double dt = final_t/nsteps;\n+    \n+    for(int i = 1; i <=nsteps; i++){\n+        manager.setFinalTime(dt*i);\n+        manager.integrate(osim_state);\n+        osimModel->getMultibodySystem().realize(osim_state, Stage::Acceleration);\n+        Vec3 pos;\n+        osimModel->updSimbodyEngine().getPosition(osim_state, ball, Vec3(0), pos);\n+        \n+        // compute the height based on the analytic solution for 1-D spring-mass\n+        // system with zero-velocity at initial offset.\n+        double height = (start_h-dh)*cos(omega*osim_state.getTime())+dh;\n+\n+        // check that the simulated solution is equivalent to the analytic solution\n+        ASSERT_EQUAL(height, pos(1), 1e-4);\n+        \n+        // get the forces applied to the base and ball\n+        Array<double> model_force = spring.getRecordValues(osim_state);\n+        \n+        // compute the expected force on the ball\n+        double analytical_force = -stiffness*height;\n+\n+        // check analytical force corresponds to the force on the ball \n+        // in the Y direction, index = 7\n+        ASSERT_EQUAL(analytical_force, model_force[7], 2e-4);",
+    "path": "OpenSim/Simulation/Test/testForces.cpp",
+    "position": 199,
+    "original_position": 197,
+    "commit_id": "5515cc259fa76a51cf696037467642153f1de03c",
+    "original_commit_id": "730f4c4602fe88fecc4edea98993375292d2f354",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why 2e-4 here but 1e-4 above? Where did these tolerances come from and how do they relate to the integration accuracy?\n",
+    "created_at": "2015-09-21T22:58:58Z",
+    "updated_at": "2015-09-22T03:31:47Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/633#discussion_r40037424",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/633",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/40037424"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/633#discussion_r40037424"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/633"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 886,
+    "original_line": 884,
+    "side": "RIGHT"
+  }
+]

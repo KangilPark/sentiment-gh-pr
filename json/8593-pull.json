@@ -1,0 +1,332 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64482607",
+    "pull_request_review_id": null,
+    "id": 64482607,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDgyNjA3",
+    "diff_hunk": "@@ -20,9 +20,7 @@ module.exports = {\n   },\n   \"globals\": {\n     \"$\": true,\n-    \"jQuery\": true,\n-    \"React\": true,\n-    \"ReactDOM\": true\n+    \"jQuery\": true",
+    "path": ".eslintrc.js",
+    "position": 7,
+    "original_position": 7,
+    "commit_id": "e2ab7aebe43b1a6bc2803a744ad6a314960ce462",
+    "original_commit_id": "969274c64d4a0e7236d51bfa390c942ab3ee9342",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I'd _really_ like to do this for jQuery too, but that's a big enough task that I'm saving it for another PR.\n",
+    "created_at": "2016-05-24T22:01:23Z",
+    "updated_at": "2016-05-25T21:37:01Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64482607",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64482607"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64482607"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 23,
+    "original_line": 23,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64482686",
+    "pull_request_review_id": null,
+    "id": 64482686,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDgyNjg2",
+    "diff_hunk": "@@ -2,10 +2,7 @@\n \n // third party dependencies that are provided as globals in code-studio but\n // which need to be explicitly required here.\n-window.React = require('react');\n-window.ReactDOM = require('react-dom');\n window.$ = require('jquery');\n-window.Radium = require('radium');",
+    "path": "apps/src/applab/api-entry.js",
+    "position": 7,
+    "original_position": 7,
+    "commit_id": "e2ab7aebe43b1a6bc2803a744ad6a314960ce462",
+    "original_commit_id": "969274c64d4a0e7236d51bfa390c942ab3ee9342",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Here's one of the places we no longer need to put these on the global namespace :tada:\n",
+    "created_at": "2016-05-24T22:01:56Z",
+    "updated_at": "2016-05-25T21:37:01Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64482686",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64482686"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64482686"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 8,
+    "original_line": 8,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64482775",
+    "pull_request_review_id": null,
+    "id": 64482775,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDgyNzc1",
+    "diff_hunk": "@@ -1,7 +1,7 @@\n /* global Applab, dashboard */\n \n-// TODO (brent) - make it so that we dont need to specify .jsx. This currently\n-// works in our grunt build, but not in tests",
+    "path": "apps/src/applab/designMode.js",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "e2ab7aebe43b1a6bc2803a744ad6a314960ce462",
+    "original_commit_id": "969274c64d4a0e7236d51bfa390c942ab3ee9342",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Pretty sure this TODO is outdated now.\n",
+    "created_at": "2016-05-24T22:02:26Z",
+    "updated_at": "2016-05-25T21:37:01Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64482775",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64482775"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64482775"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 4,
+    "original_line": 4,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64482930",
+    "pull_request_review_id": null,
+    "id": 64482930,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDgyOTMw",
+    "diff_hunk": "@@ -11,7 +11,6 @@\n     ]\n   },\n   \"browserify-shim\": {\n-    \"marked\": \"global:marked\",\n-    \"radium\": \"global:Radium\"\n+    \"marked\": \"global:marked\"",
+    "path": "apps/src/package.json",
+    "position": 6,
+    "original_position": 6,
+    "commit_id": "e2ab7aebe43b1a6bc2803a744ad6a314960ce462",
+    "original_commit_id": "969274c64d4a0e7236d51bfa390c942ab3ee9342",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This was a little tricky; the `browserify-shim` entry for Radium here is now redundant with the `browserify-global-shim` entry in apps/package.json, and this was shimming Radium in tests when we don't want to anymore.\n",
+    "created_at": "2016-05-24T22:03:40Z",
+    "updated_at": "2016-05-25T21:37:01Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64482930",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64482930"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64482930"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 14,
+    "original_line": 14,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64483061",
+    "pull_request_review_id": null,
+    "id": 64483061,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDgzMDYx",
+    "diff_hunk": "@@ -3,16 +3,10 @@ import {assert} from './configuredChai';\n require('require-globify');\n \n var $ = require('jquery');\n-var React = require('react');\n-var ReactDOM = require('react-dom');\n-var Radium = require('radium');\n \n exports.setExternalGlobals = function () {\n-  window.React = React;\n-  window.ReactDOM = ReactDOM;\n   window.$ = $;\n   window.jQuery = $;\n-  window.Radium = Radium;",
+    "path": "apps/test/util/testUtils.js",
+    "position": 13,
+    "original_position": 13,
+    "commit_id": "e2ab7aebe43b1a6bc2803a744ad6a314960ce462",
+    "original_commit_id": "969274c64d4a0e7236d51bfa390c942ab3ee9342",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Here's the second kludge we get to (mostly) remove by doing this - tests don't depend on having these on window anymore.\n",
+    "created_at": "2016-05-24T22:04:31Z",
+    "updated_at": "2016-05-25T21:37:01Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64483061",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64483061"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64483061"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 15,
+    "original_line": 15,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64483542",
+    "pull_request_review_id": null,
+    "id": 64483542,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDgzNTQy",
+    "diff_hunk": "@@ -1,7 +1,7 @@\n /* global Applab, dashboard */\n \n-// TODO (brent) - make it so that we dont need to specify .jsx. This currently\n-// works in our grunt build, but not in tests",
+    "path": "apps/src/applab/designMode.js",
+    "position": 4,
+    "original_position": 4,
+    "commit_id": "e2ab7aebe43b1a6bc2803a744ad6a314960ce462",
+    "original_commit_id": "969274c64d4a0e7236d51bfa390c942ab3ee9342",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "yep\n",
+    "created_at": "2016-05-24T22:07:33Z",
+    "updated_at": "2016-05-25T21:37:01Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64483542",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64483542"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8593#discussion_r64483542"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8593"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 4,
+    "original_line": 4,
+    "side": "RIGHT"
+  }
+]

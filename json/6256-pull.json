@@ -1,0 +1,1212 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49136728",
+    "pull_request_review_id": null,
+    "id": 49136728,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM2NzI4",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 1,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "By convention I think we've been capitalizing our jsx classes (ie. HintsDisplay.jsx), though it might be super difficult to do change this now in git.\n",
+    "created_at": "2016-01-07T22:39:49Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49136728",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49136728"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49136728"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49136902",
+    "pull_request_review_id": null,
+    "id": 49136902,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM2OTAy",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why not pass in the results of these funcs as props instead of passing in the funcs and storing the result as state?\n",
+    "created_at": "2016-01-07T22:41:18Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49136902",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49136902"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49136902"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 14,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49137286",
+    "pull_request_review_id": null,
+    "id": 49137286,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM3Mjg2",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "hmm...are we calling getInitialState multiple times over the lifetime of this component and expecting different results each time? That seems like an anti-pattern.\n",
+    "created_at": "2016-01-07T22:44:55Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49137286",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49137286"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49137286"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49138648",
+    "pull_request_review_id": null,
+    "id": 49138648,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM4NjQ4",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Cause the idea is that clicking the button changes the results of these funcs\n",
+    "created_at": "2016-01-07T22:58:55Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49138648",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49138648"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49138648"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 14,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49138667",
+    "pull_request_review_id": null,
+    "id": 49138667,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM4NjY3",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think that the way that I would structure this is as follows:\n\nprops consist of seen hints, unseen hints, and a function recordViewedHint\n\nstate consist only of showViewHintButton\n\nwhen i click view hint, it calls recordUserViewedHint, which I'm assuming updates which hints we have/haven't seen. it then calls React.Render again, which causes us to rerender the component using the new props\n",
+    "created_at": "2016-01-07T22:59:10Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49138667",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49138667"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49138667"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49138795",
+    "pull_request_review_id": null,
+    "id": 49138795,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM4Nzk1",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah, I wasn't sure whether to go with that or with\n\n``` javascript\nsetState({\n  seenHints: this.props.getSeenHints(),\n  unseenHints: this.props.getUnseenHints(),\n  showViewHintButton: true\n});\n```\n\nReally what I want is a \"refresh state\" concept\n",
+    "created_at": "2016-01-07T23:00:37Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49138795",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49138795"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49138795"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49138886",
+    "pull_request_review_id": null,
+    "id": 49138886,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM4ODg2",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "The alternative would of course be to pass in the lists of seen vs unseen hints as props and just modify them when the button is pressed to match the logic of the controller that's passing in those getters, but this seemed cleaner.\n",
+    "created_at": "2016-01-07T23:01:46Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49138886",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49138886"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49138886"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49139024",
+    "pull_request_review_id": null,
+    "id": 49139024,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM5MDI0",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Rerendering the component from the controller is simple enough, but what would you say is the advantage of doing that over state modification, allowing the component to rerender itself?\n",
+    "created_at": "2016-01-07T23:03:09Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49139024",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49139024"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49139024"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49139377",
+    "pull_request_review_id": null,
+    "id": 49139377,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM5Mzc3",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "In general, the React philosophy is that state is bad and makes things harder to reason about and to test. In a world without state, I can look at the incoming props and figure out exactly what the component will look like. In a world where these are state, I now need to understand a bunch more about how getSeenHints and getUnseenHints work\n",
+    "created_at": "2016-01-07T23:07:39Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49139377",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49139377"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49139377"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49139673",
+    "pull_request_review_id": null,
+    "id": 49139673,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTM5Njcz",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Ah, perfect!\n\nIn that case, since the Instructions component is using this one, I'd want to rerender the entire thing, yes?\n",
+    "created_at": "2016-01-07T23:11:13Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49139673",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49139673"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49139673"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49140246",
+    "pull_request_review_id": null,
+    "id": 49140246,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQwMjQ2",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah, with the idea that the virtual DOM is fast enough that there's minimal cost in rerendering the portions of the  DOM that didnt change\n",
+    "created_at": "2016-01-07T23:18:35Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49140246",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49140246"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49140246"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49145415",
+    "pull_request_review_id": null,
+    "id": 49145415,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ1NDE1",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "How would the react philosophy feel about a world with a much simpler state; something just like\n\n``` javascript\n  getInitialState: function () {\n    return {\n      showNextUnseenHint: false\n    };\n  },\n\n  viewHint: function () {\n    this.props.onUserViewedHint();\n    this.setState({\n      showNextUnseenHint: true\n    });\n  },\n```\n",
+    "created_at": "2016-01-08T00:24:55Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49145415",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49145415"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49145415"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49145704",
+    "pull_request_review_id": null,
+    "id": 49145704,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ1NzA0",
+    "diff_hunk": "@@ -0,0 +1,57 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    getSeenHints: React.PropTypes.func.isRequired,\n+    getUnseenHints: React.PropTypes.func.isRequired,\n+    recordUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      seenHints: this.props.getSeenHints(),\n+      unseenHints: this.props.getUnseenHints(),\n+      showViewHintButton: true\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.recordUserViewedHint(this.state.unseenHints[0]);\n+    var newState = this.getInitialState();",
+    "path": "apps/src/templates/hintsDisplay.jsx",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "943170e5f5ba3b3cfc795fa0737caf83920ec3e6",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think this is acceptable\n",
+    "created_at": "2016-01-08T00:28:38Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49145704",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49145704"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49145704"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147333",
+    "pull_request_review_id": null,
+    "id": 49147333,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3MzMz",
+    "diff_hunk": "@@ -0,0 +1,60 @@\n+module.exports = React.createClass({",
+    "path": "apps/src/templates/HintsDisplay.jsx",
+    "position": 11,
+    "original_position": 1,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Might be worth a file level comment explaining what this guy is about.\n",
+    "created_at": "2016-01-08T00:50:49Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147333",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147333"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147333"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 11,
+    "original_line": 1,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147404",
+    "pull_request_review_id": null,
+    "id": 49147404,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3NDA0",
+    "diff_hunk": "@@ -0,0 +1,60 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    seenHints: React.PropTypes.array.isRequired,\n+    unseenHints: React.PropTypes.array.isRequired,\n+    onUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      showNextUnseenHint: false\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.onUserViewedHint();\n+    this.setState({\n+      showNextUnseenHint: true\n+    });\n+  },\n+\n+  render: function () {\n+",
+    "path": "apps/src/templates/HintsDisplay.jsx",
+    "position": null,
+    "original_position": 25,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I notice you often have this blank first link in a lot of your functions. Any argument for it? I don't necessarily have a problem with it.\n",
+    "created_at": "2016-01-08T00:51:50Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147404",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147404"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147404"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 25,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147461",
+    "pull_request_review_id": null,
+    "id": 49147461,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3NDYx",
+    "diff_hunk": "@@ -0,0 +1,60 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    seenHints: React.PropTypes.array.isRequired,\n+    unseenHints: React.PropTypes.array.isRequired,",
+    "path": "apps/src/templates/HintsDisplay.jsx",
+    "position": null,
+    "original_position": 6,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "If you want, you could also do React.PropTypes. arrayOf(...)\n",
+    "created_at": "2016-01-08T00:52:32Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147461",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147461"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147461"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 6,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147573",
+    "pull_request_review_id": null,
+    "id": 49147573,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3NTcz",
+    "diff_hunk": "@@ -1936,6 +1947,16 @@ $modal-no-icon-gap: 22px;\n   min-width: 100px;\n }\n \n+#hint-button {\n+  background-color: $lightest_gray;\n+  border: 1px solid $light_gray;\n+  color: black;\n+\n+  svg {\n+    margin: -12px -6px;\n+  }\n+}\n+",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 31,
+    "original_position": 31,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Could both these blocks of css live as inline styles in the Jsx component instead?\n",
+    "created_at": "2016-01-08T00:54:07Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147573",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147573"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147573"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1959,
+    "original_line": 1959,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147940",
+    "pull_request_review_id": null,
+    "id": 49147940,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ3OTQw",
+    "diff_hunk": "@@ -0,0 +1,60 @@\n+module.exports = React.createClass({\n+\n+  propTypes: {\n+    hintReviewTitle: React.PropTypes.string.isRequired,\n+    seenHints: React.PropTypes.array.isRequired,\n+    unseenHints: React.PropTypes.array.isRequired,\n+    onUserViewedHint: React.PropTypes.func.isRequired,\n+    lightbulbSVG: React.PropTypes.node.isRequired,\n+  },\n+\n+  getInitialState: function () {\n+    return {\n+      showNextUnseenHint: false\n+    };\n+  },\n+\n+  viewHint: function () {\n+    this.props.onUserViewedHint();\n+    this.setState({\n+      showNextUnseenHint: true\n+    });\n+  },\n+\n+  render: function () {\n+",
+    "path": "apps/src/templates/HintsDisplay.jsx",
+    "position": null,
+    "original_position": 25,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I don't have a strong feeling either way about it, but I use it in larger functions to distinguish broad-scoping 'function initialization' stuff (config parsing and whatnot) from just jumping into the body of the function. So, \n\n``` javascript\nfunction (options) {\n  var options = options || {};\n\n  // start the body of the function\n}\n```\n\nVersus\n\n``` javascript\nfunction (options) {\n\n  // first self-contained bit of logic\n\n  // second self-contained bit of logic\n\n  // and so on\n}\n```\n\nBut it's mostly aesthetics plus an old habit, and it does violate our styleguide.\n",
+    "created_at": "2016-01-08T00:58:35Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147940",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49147940"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49147940"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 25,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49148432",
+    "pull_request_review_id": null,
+    "id": 49148432,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ4NDMy",
+    "diff_hunk": "@@ -1936,6 +1947,16 @@ $modal-no-icon-gap: 22px;\n   min-width: 100px;\n }\n \n+#hint-button {\n+  background-color: $lightest_gray;\n+  border: 1px solid $light_gray;\n+  color: black;\n+\n+  svg {\n+    margin: -12px -6px;\n+  }\n+}\n+",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 31,
+    "original_position": 31,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "They technically could right now, but the next item on my list is to restyle the \"show hint\" button for feedback blocks to match this, and I'll want the styles to live here when I do that.\n",
+    "created_at": "2016-01-08T01:05:41Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49148432",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49148432"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49148432"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1959,
+    "original_line": 1959,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49148586",
+    "pull_request_review_id": null,
+    "id": 49148586,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ4NTg2",
+    "diff_hunk": "@@ -1936,6 +1947,16 @@ $modal-no-icon-gap: 22px;\n   min-width: 100px;\n }\n \n+#hint-button {\n+  background-color: $lightest_gray;\n+  border: 1px solid $light_gray;\n+  color: black;\n+\n+  svg {\n+    margin: -12px -6px;\n+  }\n+}\n+",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 31,
+    "original_position": 31,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":cry: :panda_face: \n",
+    "created_at": "2016-01-08T01:08:01Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49148586",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49148586"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49148586"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1959,
+    "original_line": 1959,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49148719",
+    "pull_request_review_id": null,
+    "id": 49148719,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ4NzE5",
+    "diff_hunk": "@@ -1936,6 +1947,16 @@ $modal-no-icon-gap: 22px;\n   min-width: 100px;\n }\n \n+#hint-button {\n+  background-color: $lightest_gray;\n+  border: 1px solid $light_gray;\n+  color: black;\n+\n+  svg {\n+    margin: -12px -6px;\n+  }\n+}\n+",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 31,
+    "original_position": 31,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Hamms",
+      "id": 244100,
+      "node_id": "MDQ6VXNlcjI0NDEwMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/244100?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Hamms",
+      "html_url": "https://github.com/Hamms",
+      "followers_url": "https://api.github.com/users/Hamms/followers",
+      "following_url": "https://api.github.com/users/Hamms/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Hamms/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Hamms/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Hamms/subscriptions",
+      "organizations_url": "https://api.github.com/users/Hamms/orgs",
+      "repos_url": "https://api.github.com/users/Hamms/repos",
+      "events_url": "https://api.github.com/users/Hamms/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Hamms/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "It'll just have to wait until we Reactify the feedback dialog!\n",
+    "created_at": "2016-01-08T01:09:37Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49148719",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49148719"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49148719"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1959,
+    "original_line": 1959,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49149163",
+    "pull_request_review_id": null,
+    "id": 49149163,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ5MTQ5MTYz",
+    "diff_hunk": "@@ -1936,6 +1947,16 @@ $modal-no-icon-gap: 22px;\n   min-width: 100px;\n }\n \n+#hint-button {\n+  background-color: $lightest_gray;\n+  border: 1px solid $light_gray;\n+  color: black;\n+\n+  svg {\n+    margin: -12px -6px;\n+  }\n+}\n+",
+    "path": "dashboard/app/assets/stylesheets/application.css.scss",
+    "position": 31,
+    "original_position": 31,
+    "commit_id": "576dc3265504d20906de45acd576ed830a720253",
+    "original_commit_id": "27dd5b66775c8f38a7a08a13319fa89cfaaa0f86",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":+1: \n",
+    "created_at": "2016-01-08T01:15:59Z",
+    "updated_at": "2016-01-08T01:18:35Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49149163",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/49149163"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6256#discussion_r49149163"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6256"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1959,
+    "original_line": 1959,
+    "side": "RIGHT"
+  }
+]

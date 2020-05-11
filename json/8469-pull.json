@@ -1,0 +1,1102 @@
+[
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/37665253",
+    "pull_request_review_id": null,
+    "id": 37665253,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjY1MjUz",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull request. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub  search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue if you have suggestions for new labels or if you notice some labels are missing on some repositories.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 32,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "0cd007dfb18d608be497971e942695243dff60c2",
+    "user": {
+      "login": "lee-dohm",
+      "id": 1038121,
+      "node_id": "MDQ6VXNlcjEwMzgxMjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1038121?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lee-dohm",
+      "html_url": "https://github.com/lee-dohm",
+      "followers_url": "https://api.github.com/users/lee-dohm/followers",
+      "following_url": "https://api.github.com/users/lee-dohm/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lee-dohm/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lee-dohm/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lee-dohm/subscriptions",
+      "organizations_url": "https://api.github.com/users/lee-dohm/orgs",
+      "repos_url": "https://api.github.com/users/lee-dohm/repos",
+      "events_url": "https://api.github.com/users/lee-dohm/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lee-dohm/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Where should one open an Issue? Should they all just be opened on atom/atom?\n\nShould we have a `label` label? :laughing:\n",
+    "created_at": "2015-08-21T18:45:50Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r37665253",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/37665253"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r37665253"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 185,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/37665753",
+    "pull_request_review_id": null,
+    "id": 37665753,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjY1NzUz",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull request. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub  search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 28,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "0cd007dfb18d608be497971e942695243dff60c2",
+    "user": {
+      "login": "mnquintana",
+      "id": 823545,
+      "node_id": "MDQ6VXNlcjgyMzU0NQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/823545?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mnquintana",
+      "html_url": "https://github.com/mnquintana",
+      "followers_url": "https://api.github.com/users/mnquintana/followers",
+      "following_url": "https://api.github.com/users/mnquintana/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mnquintana/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mnquintana/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mnquintana/subscriptions",
+      "organizations_url": "https://api.github.com/users/mnquintana/orgs",
+      "repos_url": "https://api.github.com/users/mnquintana/repos",
+      "events_url": "https://api.github.com/users/mnquintana/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mnquintana/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Super minor, but there's an extra space between `GitHub` and `search` :art:\n",
+    "created_at": "2015-08-21T18:50:24Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r37665753",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/37665753"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r37665753"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 181,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/37665802",
+    "pull_request_review_id": null,
+    "id": 37665802,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjY1ODAy",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull request. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 26,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "0cd007dfb18d608be497971e942695243dff60c2",
+    "user": {
+      "login": "mnquintana",
+      "id": 823545,
+      "node_id": "MDQ6VXNlcjgyMzU0NQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/823545?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mnquintana",
+      "html_url": "https://github.com/mnquintana",
+      "followers_url": "https://api.github.com/users/mnquintana/followers",
+      "following_url": "https://api.github.com/users/mnquintana/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mnquintana/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mnquintana/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mnquintana/subscriptions",
+      "organizations_url": "https://api.github.com/users/mnquintana/orgs",
+      "repos_url": "https://api.github.com/users/mnquintana/repos",
+      "events_url": "https://api.github.com/users/mnquintana/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mnquintana/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`pull request` -> `pull requests`?\n",
+    "created_at": "2015-08-21T18:50:49Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r37665802",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/37665802"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r37665802"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 179,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38547195",
+    "pull_request_review_id": null,
+    "id": 38547195,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTQ3MTk1",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 30,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "mnquintana",
+      "id": 823545,
+      "node_id": "MDQ6VXNlcjgyMzU0NQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/823545?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mnquintana",
+      "html_url": "https://github.com/mnquintana",
+      "followers_url": "https://api.github.com/users/mnquintana/followers",
+      "following_url": "https://api.github.com/users/mnquintana/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mnquintana/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mnquintana/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mnquintana/subscriptions",
+      "organizations_url": "https://api.github.com/users/mnquintana/orgs",
+      "repos_url": "https://api.github.com/users/mnquintana/repos",
+      "events_url": "https://api.github.com/users/mnquintana/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mnquintana/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":art: `that every issue has a label` -> `that every issue have a label`?\n",
+    "created_at": "2015-09-02T15:37:05Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38547195",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38547195"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38547195"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 183,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38547290",
+    "pull_request_review_id": null,
+    "id": 38547290,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTQ3Mjkw",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |\n+| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |\n+| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |\n+| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |\n+| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |\n+\n+#### `atom/atom` Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |\n+| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |\n+| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |\n+| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |\n+| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |\n+| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |\n+| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |\n+| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |\n+\n+#### Core Team Project Management\n+\n+| Label name | `atom/atom` search | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `in-progress` | [search][search-atom-repo-label-in-progress] | [search][search-atom-org-label-in-progress] | Tasks which the Atom core team is working on currently. |\n+| `on-deck` | [search][search-atom-repo-label-on-deck] | [search][search-atom-org-label-on-deck] | Tasks which the Atom core team plans to work on next. |\n+| `shipping` | [search][search-atom-repo-label-shipping] | [search][search-atom-org-label-shipping] | Tasks which the Atom core team completed and will be released in one of the next releases. |\n+| `post-1.0-roadmap` | [search][search-atom-repo-label-post-1.0-roadmap] | [search][search-atom-org-label-post-1.0-roadmap] | Atom core team's roadmap post 1.0.0 version.  |\n+| `atom` | [search][search-atom-repo-label-atom] | [search][search-atom-org-label-atom] | Topics discussed  for prioritization at next meeting of Atom core team members. |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 94,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "mnquintana",
+      "id": 823545,
+      "node_id": "MDQ6VXNlcjgyMzU0NQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/823545?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mnquintana",
+      "html_url": "https://github.com/mnquintana",
+      "followers_url": "https://api.github.com/users/mnquintana/followers",
+      "following_url": "https://api.github.com/users/mnquintana/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mnquintana/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mnquintana/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mnquintana/subscriptions",
+      "organizations_url": "https://api.github.com/users/mnquintana/orgs",
+      "repos_url": "https://api.github.com/users/mnquintana/repos",
+      "events_url": "https://api.github.com/users/mnquintana/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mnquintana/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":art: I think there's an extra space between `discussed` and `for`\n",
+    "created_at": "2015-09-02T15:37:50Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38547290",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38547290"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38547290"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 247,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38547343",
+    "pull_request_review_id": null,
+    "id": 38547343,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTQ3MzQz",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |\n+| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |\n+| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |\n+| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |\n+| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |\n+\n+#### `atom/atom` Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |\n+| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |\n+| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |\n+| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |\n+| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |\n+| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |\n+| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |\n+| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |\n+\n+#### Core Team Project Management\n+\n+| Label name | `atom/atom` search | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `in-progress` | [search][search-atom-repo-label-in-progress] | [search][search-atom-org-label-in-progress] | Tasks which the Atom core team is working on currently. |\n+| `on-deck` | [search][search-atom-repo-label-on-deck] | [search][search-atom-org-label-on-deck] | Tasks which the Atom core team plans to work on next. |\n+| `shipping` | [search][search-atom-repo-label-shipping] | [search][search-atom-org-label-shipping] | Tasks which the Atom core team completed and will be released in one of the next releases. |\n+| `post-1.0-roadmap` | [search][search-atom-repo-label-post-1.0-roadmap] | [search][search-atom-org-label-post-1.0-roadmap] | Atom core team's roadmap post 1.0.0 version.  |\n+| `atom` | [search][search-atom-repo-label-atom] | [search][search-atom-org-label-atom] | Topics discussed  for prioritization at next meeting of Atom core team members. |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 94,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "mnquintana",
+      "id": 823545,
+      "node_id": "MDQ6VXNlcjgyMzU0NQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/823545?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mnquintana",
+      "html_url": "https://github.com/mnquintana",
+      "followers_url": "https://api.github.com/users/mnquintana/followers",
+      "following_url": "https://api.github.com/users/mnquintana/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mnquintana/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mnquintana/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mnquintana/subscriptions",
+      "organizations_url": "https://api.github.com/users/mnquintana/orgs",
+      "repos_url": "https://api.github.com/users/mnquintana/repos",
+      "events_url": "https://api.github.com/users/mnquintana/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mnquintana/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`at next meeting` -> `at the next meeting`?\n",
+    "created_at": "2015-09-02T15:38:11Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38547343",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38547343"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38547343"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 247,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38547462",
+    "pull_request_review_id": null,
+    "id": 38547462,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTQ3NDYy",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |\n+| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |\n+| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |\n+| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |\n+| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |\n+\n+#### `atom/atom` Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |\n+| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |\n+| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |\n+| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |\n+| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |\n+| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |\n+| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |\n+| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |\n+\n+#### Core Team Project Management\n+\n+| Label name | `atom/atom` search | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `in-progress` | [search][search-atom-repo-label-in-progress] | [search][search-atom-org-label-in-progress] | Tasks which the Atom core team is working on currently. |\n+| `on-deck` | [search][search-atom-repo-label-on-deck] | [search][search-atom-org-label-on-deck] | Tasks which the Atom core team plans to work on next. |\n+| `shipping` | [search][search-atom-repo-label-shipping] | [search][search-atom-org-label-shipping] | Tasks which the Atom core team completed and will be released in one of the next releases. |\n+| `post-1.0-roadmap` | [search][search-atom-repo-label-post-1.0-roadmap] | [search][search-atom-org-label-post-1.0-roadmap] | Atom core team's roadmap post 1.0.0 version.  |\n+| `atom` | [search][search-atom-repo-label-atom] | [search][search-atom-org-label-atom] | Topics discussed  for prioritization at next meeting of Atom core team members. |\n+\n+#### Pull Request Labels\n+\n+| Label name | `atom/atom` pull requests | `atom`‑org pull requests | Description\n+| --- | --- | --- | --- |\n+| `work-in-progress` | [search][search-atom-repo-label-work-in-progress] | [search][search-atom-org-label-work-in-progress] | The author is still working on the pull request, more changes will follow. |\n+| `needs-review` | [search][search-atom-repo-label-needs-review] | [search][search-atom-org-label-needs-review] | Needs code review, and also approval from maintainers or Atom core team. |\n+| `under-review` | [search][search-atom-repo-label-under-review] | [search][search-atom-org-label-under-review] | Pull request is being reviewed by a maintainer or Atom core team. |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 102,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "mnquintana",
+      "id": 823545,
+      "node_id": "MDQ6VXNlcjgyMzU0NQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/823545?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mnquintana",
+      "html_url": "https://github.com/mnquintana",
+      "followers_url": "https://api.github.com/users/mnquintana/followers",
+      "following_url": "https://api.github.com/users/mnquintana/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mnquintana/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mnquintana/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mnquintana/subscriptions",
+      "organizations_url": "https://api.github.com/users/mnquintana/orgs",
+      "repos_url": "https://api.github.com/users/mnquintana/repos",
+      "events_url": "https://api.github.com/users/mnquintana/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mnquintana/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`or Atom core team member` maybe?\n",
+    "created_at": "2015-09-02T15:38:54Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38547462",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38547462"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38547462"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 255,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38551391",
+    "pull_request_review_id": null,
+    "id": 38551391,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUxMzkx",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 26,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "How about `Most labels are used across all atom repositories, but some are specific to atom/atom`?\n",
+    "created_at": "2015-09-02T16:09:29Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38551391",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38551391"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38551391"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 179,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38551681",
+    "pull_request_review_id": null,
+    "id": 38551681,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUxNjgx",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`[...]or something that is very likely to be a bug`\n",
+    "created_at": "2015-09-02T16:11:58Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38551681",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38551681"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38551681"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 192,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38551911",
+    "pull_request_review_id": null,
+    "id": 38551911,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUxOTEx",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":art: issue -> issues\nSo `Less complex issues which would be good places to start for users[...]`?\n",
+    "created_at": "2015-09-02T16:14:08Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38551911",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38551911"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38551911"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 196,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552109",
+    "pull_request_review_id": null,
+    "id": 38552109,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyMTA5",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 46,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This label has never been used yet, so perhaps :fire:?\n",
+    "created_at": "2015-09-02T16:15:57Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552109",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552109"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552109"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 199,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552147",
+    "pull_request_review_id": null,
+    "id": 38552147,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyMTQ3",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 49,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "has decided\n",
+    "created_at": "2015-09-02T16:16:20Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552147",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552147"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552147"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 202,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552243",
+    "pull_request_review_id": null,
+    "id": 38552243,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyMjQz",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 52,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "It might be better to be more specific here, eg `a bug related to the settings view was reported on atom/atom`.\n",
+    "created_at": "2015-09-02T16:17:04Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552243",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552243"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552243"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 205,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552357",
+    "pull_request_review_id": null,
+    "id": 38552357,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyMzU3",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 66,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`Issues created for any uncaught exceptions, ...`?\n",
+    "created_at": "2015-09-02T16:18:14Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552357",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552357"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552357"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 219,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552386",
+    "pull_request_review_id": null,
+    "id": 38552386,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyMzg2",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 67,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Problems-->Situations\n",
+    "created_at": "2015-09-02T16:18:34Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552386",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552386"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552386"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 220,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552553",
+    "pull_request_review_id": null,
+    "id": 38552553,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyNTUz",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |\n+| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |\n+| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |\n+| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |\n+| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |\n+\n+#### `atom/atom` Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |\n+| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |\n+| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |\n+| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |\n+| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |\n+| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |\n+| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |\n+| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |",
+    "path": "CONTRIBUTING.md",
+    "position": 83,
+    "original_position": 84,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This could also be a candidate for removal - it's only been used once.\n",
+    "created_at": "2015-09-02T16:20:00Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552553",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552553"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552553"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 236,
+    "original_line": 237,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552649",
+    "pull_request_review_id": null,
+    "id": 38552649,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyNjQ5",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |\n+| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |\n+| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |\n+| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |\n+| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |\n+\n+#### `atom/atom` Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |\n+| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |\n+| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |\n+| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |\n+| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |\n+| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |\n+| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |\n+| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |\n+\n+#### Core Team Project Management\n+\n+| Label name | `atom/atom` search | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `in-progress` | [search][search-atom-repo-label-in-progress] | [search][search-atom-org-label-in-progress] | Tasks which the Atom core team is working on currently. |\n+| `on-deck` | [search][search-atom-repo-label-on-deck] | [search][search-atom-org-label-on-deck] | Tasks which the Atom core team plans to work on next. |\n+| `shipping` | [search][search-atom-repo-label-shipping] | [search][search-atom-org-label-shipping] | Tasks which the Atom core team completed and will be released in one of the next releases. |\n+| `post-1.0-roadmap` | [search][search-atom-repo-label-post-1.0-roadmap] | [search][search-atom-org-label-post-1.0-roadmap] | Atom core team's roadmap post 1.0.0 version.  |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 93,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":art: `The Atom core team's roadmap post version 1.0.0`\n",
+    "created_at": "2015-09-02T16:20:58Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552649",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552649"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552649"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 246,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552822",
+    "pull_request_review_id": null,
+    "id": 38552822,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyODIy",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |\n+| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |\n+| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |\n+| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |\n+| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |\n+\n+#### `atom/atom` Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |\n+| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |\n+| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |\n+| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |\n+| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |\n+| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |\n+| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |\n+| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |\n+\n+#### Core Team Project Management\n+\n+| Label name | `atom/atom` search | `atom`‑org :mag_right: | Description |",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 88,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "atom/atom is missing `:mag_right:`\n",
+    "created_at": "2015-09-02T16:22:32Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552822",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552822"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552822"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 241,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38552848",
+    "pull_request_review_id": null,
+    "id": 38552848,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NTUyODQ4",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |\n+| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |\n+| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |\n+| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |\n+| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |\n+\n+#### `atom/atom` Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |\n+| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |\n+| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |\n+| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |\n+| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |\n+| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |\n+| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |\n+| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |\n+\n+#### Core Team Project Management\n+\n+| Label name | `atom/atom` search | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `in-progress` | [search][search-atom-repo-label-in-progress] | [search][search-atom-org-label-in-progress] | Tasks which the Atom core team is working on currently. |\n+| `on-deck` | [search][search-atom-repo-label-on-deck] | [search][search-atom-org-label-on-deck] | Tasks which the Atom core team plans to work on next. |\n+| `shipping` | [search][search-atom-repo-label-shipping] | [search][search-atom-org-label-shipping] | Tasks which the Atom core team completed and will be released in one of the next releases. |\n+| `post-1.0-roadmap` | [search][search-atom-repo-label-post-1.0-roadmap] | [search][search-atom-org-label-post-1.0-roadmap] | Atom core team's roadmap post 1.0.0 version.  |\n+| `atom` | [search][search-atom-repo-label-atom] | [search][search-atom-org-label-atom] | Topics discussed  for prioritization at next meeting of Atom core team members. |\n+\n+#### Pull Request Labels\n+\n+| Label name | `atom/atom` pull requests | `atom`‑org pull requests | Description",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 98,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "50Wliu",
+      "id": 2766036,
+      "node_id": "MDQ6VXNlcjI3NjYwMzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2766036?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/50Wliu",
+      "html_url": "https://github.com/50Wliu",
+      "followers_url": "https://api.github.com/users/50Wliu/followers",
+      "following_url": "https://api.github.com/users/50Wliu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/50Wliu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/50Wliu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/50Wliu/subscriptions",
+      "organizations_url": "https://api.github.com/users/50Wliu/orgs",
+      "repos_url": "https://api.github.com/users/50Wliu/repos",
+      "events_url": "https://api.github.com/users/50Wliu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/50Wliu/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Both are missing `:mag_right:`\n",
+    "created_at": "2015-09-02T16:22:45Z",
+    "updated_at": "2015-09-04T11:59:03Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38552848",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38552848"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38552848"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 251,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38745173",
+    "pull_request_review_id": null,
+    "id": 38745173,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4NzQ1MTcz",
+    "diff_hunk": "@@ -163,3 +173,180 @@ describe 'a dog', ->\n # Returns `undefined`.\n disablePackage: (name, options, callback) ->\n ```\n+\n+## Issue and Pull Request Labels\n+\n+This section lists the labels we use to help us track and manage issues and pull requests. Most labels are used across the core `atom/atom` repository and all package repositories, but some are specific for `atom/atom`.\n+\n+[GitHub search](https://help.github.com/articles/searching-issues/) makes it easy to use labels for finding groups of issues or pull requests you're interested in. For example, you might be interested in [open issues across `atom/atom` and all Atom-owned packages which are labeled as bugs, but still need to be reliably reproduced](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+user%3Aatom+label%3Abug+label%3Aneeds-reproduction) or perhaps [open pull requests in `atom/atom` which haven't been reviewed yet](https://github.com/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Apr+repo%3Aatom%2Fatom+comments%3A0). To help you find issues and pull requests, each label is listed with search links for finding open items with that label in `atom/atom` only and also across all Atom repositories. We  encourage you to read about [other search filters](https://help.github.com/articles/searching-issues/) which will help you write more focused queries.\n+\n+The labels are loosely grouped by their purpose, but it's not required that every issue has a label from every group or that an issue can't have more than one label from the same group.\n+\n+Please open an issue on `atom/atom` if you have suggestions for new labels, and if you notice some labels are missing on some repositories, then please open an issue on that repository.\n+\n+#### Type of Issue and Issue State\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `enhancement` | [search][search-atom-repo-label-enhancement] | [search][search-atom-org-label-enhancement] | A feature request. |\n+| `bug` | [search][search-atom-repo-label-bug] | [search][search-atom-org-label-bug] | A confirmed bug or issue very likely to be a bug. |\n+| `question` | [search][search-atom-repo-label-question] | [search][search-atom-org-label-question] | A question more than a bug report or feature request (e.g. how do I do X). |\n+| `feedback` | [search][search-atom-repo-label-feedback] | [search][search-atom-org-label-feedback] | General feedback more than a bug report or feature request. |\n+| `help-wanted` | [search][search-atom-repo-label-help-wanted] | [search][search-atom-org-label-help-wanted] | The Atom core team would appreciate help from the community in resolving these issues. |\n+| `beginner` | [search][search-atom-repo-label-beginner] | [search][search-atom-org-label-beginner] | Less complex issue which would be a good first issue to work on for users who want to contribute to Atom. |\n+| `more-information-needed` | [search][search-atom-repo-label-more-information-needed] | [search][search-atom-org-label-more-information-needed] | More information needs to be collected about the problem or feature request (e.g. steps to reproduce). |\n+| `needs-reproduction` | [search][search-atom-repo-label-needs-reproduction] | [search][search-atom-org-label-needs-reproduction] | Likely a bug, but hasn't been reliably reproduced. |\n+| `triage-help-needed` | [search][search-atom-repo-label-triage-help-needed] | [search][search-atom-org-label-triage-help-needed] | Help is needed to triage this issue, normally from the Atom core team, e.g. to determine if it's a bug or not. |\n+| `blocked` | [search][search-atom-repo-label-blocked] | [search][search-atom-org-label-blocked] | Issue is blocked on another issue. |\n+| `duplicate` | [search][search-atom-repo-label-duplicate] | [search][search-atom-org-label-duplicate] | Issue is a duplicate of another issue. |\n+| `wontfix` | [search][search-atom-repo-label-wontfix] | [search][search-atom-org-label-wontfix] | The Atom core team decided not to fix this issue for now, either because it's working as intended or for some other reason. |\n+| `invalid` | [search][search-atom-repo-label-invalid] | [search][search-atom-org-label-invalid] | Issue isn't valid (e.g. user error). |\n+| `package-idea` | [search][search-atom-repo-label-package-idea] | [search][search-atom-org-label-package-idea] | A feature request which might be a good candidate for a new package, instead of extending Atom or a core Atom package. |\n+| `wrong-repo` | [search][search-atom-repo-label-wrong-repo] | [search][search-atom-org-label-wrong-repo] | Issue was reported on the wrong repository (e.g. a bug related to a package was reported on `atom/atom`). |\n+\n+#### Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `windows` | [search][search-atom-repo-label-windows] | [search][search-atom-org-label-windows] | Related to Atom running on Windows. |\n+| `linux` | [search][search-atom-repo-label-linux] | [search][search-atom-org-label-linux] | Related to Atom running on Linux. |\n+| `mac` | [search][search-atom-repo-label-mac] | [search][search-atom-org-label-mac] | Related to Atom running on OSX. |\n+| `documentation` | [search][search-atom-repo-label-documentation] | [search][search-atom-org-label-documentation] | Related to any type of documentation (e.g. [API documentation](https://atom.io/docs/api/latest/Atom) and the [flight manual](https://atom.io/docs/latest/)). |\n+| `performance` | [search][search-atom-repo-label-performance] | [search][search-atom-org-label-performance] | Related to performance. |\n+| `security` | [search][search-atom-repo-label-security] | [search][search-atom-org-label-security] | Related to security. |\n+| `ui` | [search][search-atom-repo-label-ui] | [search][search-atom-org-label-ui] | Related to visual design. |\n+| `api` | [search][search-atom-repo-label-api] | [search][search-atom-org-label-api] | Related to Atom's public APIs. |\n+| `uncaught-exception` | [search][search-atom-repo-label-uncaught-exception] | [search][search-atom-org-label-uncaught-exception] | Issues created for uncaught exceptions thrown, normally from the [Notifications package](https://github.com/atom/notifications). |\n+| `crash` | [search][search-atom-repo-label-crash] | [search][search-atom-org-label-crash] | Problems which cause Atom to crash. |\n+| `auto-indent` | [search][search-atom-repo-label-auto-indent] | [search][search-atom-org-label-auto-indent] | Related to auto-indenting text. |\n+| `encoding` | [search][search-atom-repo-label-encoding] | [search][search-atom-org-label-encoding] | Related to character encoding. |\n+| `network` | [search][search-atom-repo-label-network] | [search][search-atom-org-label-network] | Related to network problems or working with remote files (e.g. on network drives). |\n+| `git` | [search][search-atom-repo-label-git] | [search][search-atom-org-label-git] | Related to Git functionality (e.g. problems with gitignore files or with showing the correct file status). |\n+\n+#### `atom/atom` Topic Categories\n+\n+| Label name | `atom/atom` :mag_right: | `atom`‑org :mag_right: | Description |\n+| --- | --- | --- | --- |\n+| `editor-rendering` | [search][search-atom-repo-label-editor-rendering] | [search][search-atom-org-label-editor-rendering] | Related to language-independent aspects of rendering text (e.g. scrolling, soft wrap, and font rendering). |\n+| `build-error` | [search][search-atom-repo-label-build-error] | [search][search-atom-org-label-build-error] | Related to problems with building Atom from source. |\n+| `error-from-pathwatcher` | [search][search-atom-repo-label-error-from-pathwatcher] | [search][search-atom-org-label-error-from-pathwatcher] | Related to errors thrown by the [pathwatcher library](https://github.com/atom/node-pathwatcher). |\n+| `error-from-save` | [search][search-atom-repo-label-error-from-save] | [search][search-atom-org-label-error-from-save] | Related to errors thrown when saving files. |\n+| `error-from-open` | [search][search-atom-repo-label-error-from-open] | [search][search-atom-org-label-error-from-open] | Related to errors thrown when opening files. |\n+| `installer` | [search][search-atom-repo-label-installer] | [search][search-atom-org-label-installer] | Related to the Atom installers for different OSes. |\n+| `auto-updater` | [search][search-atom-repo-label-auto-updater] | [search][search-atom-org-label-auto-updater] | Related to the auto-updater for different OSes. |\n+| `deprecation-help` | [search][search-atom-repo-label-deprecation-help] | [search][search-atom-org-label-deprecation-help] | Issues for helping package authors remove usage of deprecated APIs in packages. |",
+    "path": "CONTRIBUTING.md",
+    "position": 83,
+    "original_position": 84,
+    "commit_id": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "original_commit_id": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "user": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "> This could also be a candidate for removal - it's only been used once.\n\nThanks for pointing this out, @50Wliu, and that `triage-help-needed` label. I removed the latter, but decided to keep this one for now, since it's been used once :one:. One of my motivations for documenting _everything_ (or as much of everything as possible :smile:) was a hope that users who read this might have ideas and suggest better labels/workflows for the project.\n",
+    "created_at": "2015-09-04T12:12:06Z",
+    "updated_at": "2015-09-04T12:12:06Z",
+    "html_url": "https://github.com/atom/atom/pull/8469#discussion_r38745173",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8469",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38745173"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8469#discussion_r38745173"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8469"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 236,
+    "original_line": 237,
+    "side": "RIGHT"
+  }
+]

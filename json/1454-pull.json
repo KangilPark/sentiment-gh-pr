@@ -1,0 +1,1377 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525723",
+    "pull_request_review_id": null,
+    "id": 25525723,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI1NzIz",
+    "diff_hunk": "@@ -224,6 +224,19 @@ Blockly.Blocks.functional_definition = {\n       this.updateParams_();\n     }\n   },\n+  changeParamType: function(name, newType) {\n+    var change = false;",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "s/change/changed maybe\n",
+    "created_at": "2015-02-27T18:13:36Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525723",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525723"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525723"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 228,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525789",
+    "pull_request_review_id": null,
+    "id": 25525789,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI1Nzg5",
+    "diff_hunk": "@@ -224,6 +224,19 @@ Blockly.Blocks.functional_definition = {\n       this.updateParams_();\n     }\n   },\n+  changeParamType: function(name, newType) {",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 4,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Style: missing a space `function(name` => `function (name`\n",
+    "created_at": "2015-02-27T18:14:32Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525789",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525789"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525789"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 227,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525817",
+    "pull_request_review_id": null,
+    "id": 25525817,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI1ODE3",
+    "diff_hunk": "@@ -224,6 +224,19 @@ Blockly.Blocks.functional_definition = {\n       this.updateParams_();\n     }\n   },\n+  changeParamType: function(name, newType) {\n+    var change = false;\n+    for (var x = 0; x < this.parameterNames_.length; x++) {\n+      if (Blockly.Names.equals(name, this.parameterNames_[x])) {\n+        this.parameterTypes_[x] = newType;\n+        change = true;\n+      }\n+    }",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 11,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Is it valid to have multiple params of the same name? If so, should we be changing them all or just one?\n",
+    "created_at": "2015-02-27T18:14:57Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525817",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525817"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525817"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 234,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525905",
+    "pull_request_review_id": null,
+    "id": 25525905,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI1OTA1",
+    "diff_hunk": "@@ -421,7 +437,9 @@ Blockly.Blocks.functional_call = {\n     for (var x = 0; x < this.currentParameterNames_.length; x++) {\n       if (Blockly.Names.equals(oldName, this.currentParameterNames_[x])) {\n         this.currentParameterNames_[x] = newName;\n-        this.getInput('ARG' + x).titleRow[0].setText(newName);\n+        this.refreshParameterTitleString_();\n+        //block.setTitleValue(newName, 'ARG' + x);\n+        //this.getInput().titleRow[0].setText(newName);",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 49,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "should commented code be deleted?\n",
+    "created_at": "2015-02-27T18:16:12Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525905",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525905"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525905"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 442,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525919",
+    "pull_request_review_id": null,
+    "id": 25525919,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI1OTE5",
+    "diff_hunk": "@@ -224,6 +224,19 @@ Blockly.Blocks.functional_definition = {\n       this.updateParams_();\n     }\n   },\n+  changeParamType: function(name, newType) {\n+    var change = false;\n+    for (var x = 0; x < this.parameterNames_.length; x++) {\n+      if (Blockly.Names.equals(name, this.parameterNames_[x])) {\n+        this.parameterTypes_[x] = newType;\n+        change = true;\n+      }\n+    }",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 11,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Do we expect multiple entries in `parameterNames_` to match `name`?  If not, can we break out of this loop after we find one match?\n",
+    "created_at": "2015-02-27T18:16:24Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525919",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525919"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525919"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 234,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525931",
+    "pull_request_review_id": null,
+    "id": 25525931,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI1OTMx",
+    "diff_hunk": "@@ -421,7 +437,9 @@ Blockly.Blocks.functional_call = {\n     for (var x = 0; x < this.currentParameterNames_.length; x++) {\n       if (Blockly.Names.equals(oldName, this.currentParameterNames_[x])) {\n         this.currentParameterNames_[x] = newName;\n-        this.getInput('ARG' + x).titleRow[0].setText(newName);\n+        this.refreshParameterTitleString_();\n+        //block.setTitleValue(newName, 'ARG' + x);\n+        //this.getInput().titleRow[0].setText(newName);",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 49,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "removed\n",
+    "created_at": "2015-02-27T18:16:33Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525931",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525931"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525931"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 442,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525971",
+    "pull_request_review_id": null,
+    "id": 25525971,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI1OTcx",
+    "diff_hunk": "@@ -224,6 +224,19 @@ Blockly.Blocks.functional_definition = {\n       this.updateParams_();\n     }\n   },\n+  changeParamType: function(name, newType) {",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 4,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Oh, sorry; this may not be the convention in blockly-core.\n",
+    "created_at": "2015-02-27T18:17:04Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525971",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25525971"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25525971"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 227,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526022",
+    "pull_request_review_id": null,
+    "id": 25526022,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2MDIy",
+    "diff_hunk": "@@ -224,6 +224,19 @@ Blockly.Blocks.functional_definition = {\n       this.updateParams_();\n     }\n   },\n+  changeParamType: function(name, newType) {\n+    var change = false;\n+    for (var x = 0; x < this.parameterNames_.length; x++) {\n+      if (Blockly.Names.equals(name, this.parameterNames_[x])) {\n+        this.parameterTypes_[x] = newType;\n+        change = true;\n+      }\n+    }",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 11,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Right now, that's correct. I think it'll make sense to eventually change them by ID instead, but IIRC it'll take a hefty change on the block space operation side to disambiguate for blocks already on the main blockspace (there's no global, persistent unique ID)\n",
+    "created_at": "2015-02-27T18:17:42Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526022",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526022"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526022"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 234,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526065",
+    "pull_request_review_id": null,
+    "id": 25526065,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2MDY1",
+    "diff_hunk": "@@ -468,13 +470,45 @@ Blockly.ContractEditor.prototype.isEditingVariable = function() {\n  * @override\n  */\n Blockly.ContractEditor.prototype.addParameter = function(newParameterName, opt_newParameterType) {\n-  this.orderedParamIDsToBlocks_.set(\n-    goog.events.getUniqueId('parameter'),\n+  var newParameterID = goog.events.getUniqueId('parameter');\n+  this.orderedParamIDsToBlocks_.set(newParameterID,\n     this.newParameterBlock(newParameterName, opt_newParameterType));\n+  this.addDomainEditorForParamID_(newParameterID);\n+};\n+\n+Blockly.ContractEditor.prototype.addDomainEditorForParamID_ = function(paramID) {\n+  var paramInfo = this.getParamNameType(paramID);\n+  var name = paramInfo.name;\n+  var type = paramInfo.type;\n+\n+  var domainEditor = new Blockly.DomainEditor({\n+    name: name,\n+    type: type,\n+    onRemovePress: goog.bind(this.removeParameter, this, name),\n+    onTypeChanged: goog.bind(this.changeParameterType_, this, paramID),\n+    onNameChanged: goog.bind(this.changeParameterName_, this, paramID),\n+    typeChoices: USER_TYPE_CHOICES\n+  });\n+  domainEditor.render(goog.dom.getElement('domain-area'));\n+  this.domainEditors_.push(domainEditor);\n+};\n+\n+Blockly.ContractEditor.prototype.removeParameter = function(name) {\n+  Blockly.ContractEditor.superClass_.removeParameter.call(this, name);\n+\n+  goog.array.removeIf(this.domainEditors_, function (editor) {\n+    if (editor.name == name) {",
+    "path": "blockly-core/core/ui/contract_editor/contract_editor.js",
+    "position": null,
+    "original_position": 144,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "s/==/===?\n",
+    "created_at": "2015-02-27T18:18:18Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526065",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526065"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526065"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 500,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526073",
+    "pull_request_review_id": null,
+    "id": 25526073,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2MDcz",
+    "diff_hunk": "@@ -421,7 +437,9 @@ Blockly.Blocks.functional_call = {\n     for (var x = 0; x < this.currentParameterNames_.length; x++) {\n       if (Blockly.Names.equals(oldName, this.currentParameterNames_[x])) {\n         this.currentParameterNames_[x] = newName;\n-        this.getInput('ARG' + x).titleRow[0].setText(newName);\n+        this.refreshParameterTitleString_();\n+        //block.setTitleValue(newName, 'ARG' + x);\n+        //this.getInput().titleRow[0].setText(newName);",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 49,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Is this commented code redundant with the method call above?\n",
+    "created_at": "2015-02-27T18:18:29Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526073",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526073"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526073"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 442,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526096",
+    "pull_request_review_id": null,
+    "id": 25526096,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2MDk2",
+    "diff_hunk": "@@ -224,6 +224,19 @@ Blockly.Blocks.functional_definition = {\n       this.updateParams_();\n     }\n   },\n+  changeParamType: function(name, newType) {\n+    var change = false;",
+    "path": "blockly-core/blocks/functional_procedures.js",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "change**d** :)\n",
+    "created_at": "2015-02-27T18:18:43Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526096",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526096"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526096"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 228,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526283",
+    "pull_request_review_id": null,
+    "id": 25526283,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2Mjgz",
+    "diff_hunk": "@@ -468,13 +470,45 @@ Blockly.ContractEditor.prototype.isEditingVariable = function() {\n  * @override\n  */\n Blockly.ContractEditor.prototype.addParameter = function(newParameterName, opt_newParameterType) {\n-  this.orderedParamIDsToBlocks_.set(\n-    goog.events.getUniqueId('parameter'),\n+  var newParameterID = goog.events.getUniqueId('parameter');\n+  this.orderedParamIDsToBlocks_.set(newParameterID,\n     this.newParameterBlock(newParameterName, opt_newParameterType));\n+  this.addDomainEditorForParamID_(newParameterID);\n+};\n+\n+Blockly.ContractEditor.prototype.addDomainEditorForParamID_ = function(paramID) {\n+  var paramInfo = this.getParamNameType(paramID);\n+  var name = paramInfo.name;\n+  var type = paramInfo.type;\n+\n+  var domainEditor = new Blockly.DomainEditor({\n+    name: name,\n+    type: type,\n+    onRemovePress: goog.bind(this.removeParameter, this, name),\n+    onTypeChanged: goog.bind(this.changeParameterType_, this, paramID),\n+    onNameChanged: goog.bind(this.changeParameterName_, this, paramID),\n+    typeChoices: USER_TYPE_CHOICES\n+  });\n+  domainEditor.render(goog.dom.getElement('domain-area'));\n+  this.domainEditors_.push(domainEditor);\n+};\n+\n+Blockly.ContractEditor.prototype.removeParameter = function(name) {\n+  Blockly.ContractEditor.superClass_.removeParameter.call(this, name);\n+\n+  goog.array.removeIf(this.domainEditors_, function (editor) {\n+    if (editor.name == name) {",
+    "path": "blockly-core/core/ui/contract_editor/contract_editor.js",
+    "position": null,
+    "original_position": 144,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Fixed. :-1: habit from Swift\n",
+    "created_at": "2015-02-27T18:21:13Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526283",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526283"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526283"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 500,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526476",
+    "pull_request_review_id": null,
+    "id": 25526476,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2NDc2",
+    "diff_hunk": "@@ -0,0 +1,73 @@\n+'use strict';\n+\n+goog.provide('Blockly.DomainEditor');\n+\n+goog.require('goog.dom');\n+goog.require('Blockly.TypeDropdown');\n+goog.require('Blockly.DomainNameInput');\n+goog.require('Blockly.XButton');\n+\n+/**\n+ * A DOM-based parameter editor\n+ * @param {!Object} options\n+ *          name: String\n+ *          type: Blockly.BlockValueType\n+ *          onRemovePress\n+ *          onTypeChanged (newType: String)\n+ *          onNameChanged (newName: String)\n+ *          typeChoices {name(String): type(Blockly.BlockValueType)}\n+ * @constructor\n+ */\n+Blockly.DomainEditor = function (options) {\n+  this.onRemovePress = options.onRemovePress;\n+  this.onTypeChanged = options.onTypeChanged;\n+  this.onNameChanged = options.onNameChanged;\n+  this.typeChoices = options.typeChoices;\n+  this.type = options.type;\n+  this.name = options.name;\n+\n+  // For cleanup\n+  this.editorDom_ = null;\n+  this.typeDropdown_ = null;\n+  this.nameInput_ = null;",
+    "path": "blockly-core/core/ui/contract_editor/domain_editor.js",
+    "position": null,
+    "original_position": 32,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Should JSDoc type the member variables here, too?\n",
+    "created_at": "2015-02-27T18:23:15Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526476",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526476"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526476"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 32,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526726",
+    "pull_request_review_id": null,
+    "id": 25526726,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2NzI2",
+    "diff_hunk": "@@ -0,0 +1,130 @@\n+'use strict';\n+\n+goog.provide('Blockly.TypeDropdown');\n+\n+/**\n+ * A DOM-based type selection dropdown\n+ * @param {!Object} options\n+ *          onTypeChanged (newType: String)\n+ *          typeChoices {name(String): type(Blockly.BlockValueType)}\n+ * @constructor\n+ */\n+Blockly.TypeDropdown = function (options) {\n+  /**\n+   * @type {goog.ui.Select}\n+   * @private\n+   */\n+  this.selectComponent_ = null;\n+\n+  /**\n+   * @type {Element}\n+   * @private\n+   */\n+  this.container_ = null;\n+\n+  /**\n+   * @type {Element}\n+   * @private\n+   */\n+  this.parent_ = null;\n+\n+  this.onTypeChanged_ = options.onTypeChanged;\n+\n+  this.typeChoices_ = options.typeChoices;",
+    "path": "blockly-core/core/ui/contract_editor/type_dropdown.js",
+    "position": null,
+    "original_position": 33,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Types?\n",
+    "created_at": "2015-02-27T18:26:31Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526726",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526726"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526726"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526862",
+    "pull_request_review_id": null,
+    "id": 25526862,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2ODYy",
+    "diff_hunk": "@@ -0,0 +1,44 @@\n+'use strict';\n+\n+goog.provide('Blockly.XButton');\n+\n+/**\n+ * A DOM-based input which sends events on changes\n+ * @param {!Object} options\n+ *          onNameChanged (newName: String)\n+ *          onEnterPressed\n+ * @constructor\n+ */\n+Blockly.XButton = function (options) {",
+    "path": "blockly-core/core/ui/contract_editor/x_button.js",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`XButton` isn't super clear to me as a name, and the class description above doesn't help much.  Is this a `CloseButton`?  Or something more specific?\n",
+    "created_at": "2015-02-27T18:28:24Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526862",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526862"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526862"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 12,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526869",
+    "pull_request_review_id": null,
+    "id": 25526869,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI2ODY5",
+    "diff_hunk": "@@ -0,0 +1,73 @@\n+'use strict';\n+\n+goog.provide('Blockly.DomainEditor');\n+\n+goog.require('goog.dom');\n+goog.require('Blockly.TypeDropdown');\n+goog.require('Blockly.DomainNameInput');\n+goog.require('Blockly.XButton');\n+\n+/**\n+ * A DOM-based parameter editor\n+ * @param {!Object} options\n+ *          name: String\n+ *          type: Blockly.BlockValueType\n+ *          onRemovePress\n+ *          onTypeChanged (newType: String)\n+ *          onNameChanged (newName: String)\n+ *          typeChoices {name(String): type(Blockly.BlockValueType)}\n+ * @constructor\n+ */\n+Blockly.DomainEditor = function (options) {\n+  this.onRemovePress = options.onRemovePress;\n+  this.onTypeChanged = options.onTypeChanged;\n+  this.onNameChanged = options.onNameChanged;\n+  this.typeChoices = options.typeChoices;\n+  this.type = options.type;\n+  this.name = options.name;\n+\n+  // For cleanup\n+  this.editorDom_ = null;\n+  this.typeDropdown_ = null;\n+  this.nameInput_ = null;",
+    "path": "blockly-core/core/ui/contract_editor/domain_editor.js",
+    "position": null,
+    "original_position": 32,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Good call\n",
+    "created_at": "2015-02-27T18:28:30Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526869",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25526869"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25526869"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 32,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25527386",
+    "pull_request_review_id": null,
+    "id": 25527386,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI3Mzg2",
+    "diff_hunk": "@@ -0,0 +1,44 @@\n+'use strict';\n+\n+goog.provide('Blockly.XButton');\n+\n+/**\n+ * A DOM-based input which sends events on changes\n+ * @param {!Object} options\n+ *          onNameChanged (newName: String)\n+ *          onEnterPressed\n+ * @constructor\n+ */\n+Blockly.XButton = function (options) {\n+  this.onButtonPressed = options.onButtonPressed;\n+\n+  // For disposal\n+  this.eventsToUnbind_ = [];\n+  this.buttonElement_ = null;\n+};\n+\n+Blockly.XButton.prototype.render = function (parent) {\n+  var buttonElement = goog.dom.createDom('button');\n+  buttonElement.className = \"btn\";\n+  buttonElement.innerHTML = \"x\";\n+  buttonElement.style.marginRight = \"-10px\";\n+\n+  parent.appendChild(buttonElement);\n+\n+  this.eventsToUnbind_.push(Blockly.bindEvent_(buttonElement, 'mousedown', this, goog.bind(function () {\n+    if (this.onButtonPressed) {\n+      this.onButtonPressed();\n+    }",
+    "path": "blockly-core/core/ui/contract_editor/x_button.js",
+    "position": 34,
+    "original_position": 31,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I've been seeing a lot of this sort of pattern (if function exists, call function) between this PR and the one I recently did for Brad.. What do we think of instead writing this as:\n\n```\nthis.onButtonPressed && this.onButtonPressed();\n```\n\nDef more concise, I'm not sure if it makes it more or less clear.\n",
+    "created_at": "2015-02-27T18:35:00Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25527386",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25527386"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25527386"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 34,
+    "original_line": 31,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25527472",
+    "pull_request_review_id": null,
+    "id": 25527472,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI3NDcy",
+    "diff_hunk": "@@ -192,6 +216,15 @@ Blockly.FunctionEditor.prototype.renameParameter = function(oldName, newName) {\n   });\n };\n \n+Blockly.FunctionEditor.prototype.changeParameterType = function(name, newType) {\n+  this.orderedParamIDsToBlocks_.forEach(function(blockXML, paramID, linkedMap) {\n+    if (blockXML.firstElementChild &&\n+        blockXML.firstElementChild.textContent === name) {\n+      blockXML.childNodes[1].firstElementChild.textContent = newType;",
+    "path": "blockly-core/core/ui/function_editor.js",
+    "position": null,
+    "original_position": 71,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why childNodes[1]?\n",
+    "created_at": "2015-02-27T18:36:01Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25527472",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25527472"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25527472"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 223,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25527683",
+    "pull_request_review_id": null,
+    "id": 25527683,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI3Njgz",
+    "diff_hunk": "@@ -0,0 +1,44 @@\n+'use strict';\n+\n+goog.provide('Blockly.XButton');\n+\n+/**\n+ * A DOM-based input which sends events on changes\n+ * @param {!Object} options\n+ *          onNameChanged (newName: String)\n+ *          onEnterPressed\n+ * @constructor\n+ */\n+Blockly.XButton = function (options) {\n+  this.onButtonPressed = options.onButtonPressed;\n+\n+  // For disposal\n+  this.eventsToUnbind_ = [];\n+  this.buttonElement_ = null;\n+};\n+\n+Blockly.XButton.prototype.render = function (parent) {\n+  var buttonElement = goog.dom.createDom('button');\n+  buttonElement.className = \"btn\";\n+  buttonElement.innerHTML = \"x\";\n+  buttonElement.style.marginRight = \"-10px\";\n+\n+  parent.appendChild(buttonElement);\n+\n+  this.eventsToUnbind_.push(Blockly.bindEvent_(buttonElement, 'mousedown', this, goog.bind(function () {\n+    if (this.onButtonPressed) {\n+      this.onButtonPressed();\n+    }",
+    "path": "blockly-core/core/ui/contract_editor/x_button.js",
+    "position": 34,
+    "original_position": 31,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I like that style, though we might want a rule of limit-1-null-check for one-liners to prevent really long chains of those (I've seen them become unreadable and difficult to debug when there are multiple null checks leading a function call)\n",
+    "created_at": "2015-02-27T18:38:35Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25527683",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25527683"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25527683"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 34,
+    "original_line": 31,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25527700",
+    "pull_request_review_id": null,
+    "id": 25527700,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI3NzAw",
+    "diff_hunk": "@@ -0,0 +1,130 @@\n+'use strict';\n+\n+goog.provide('Blockly.TypeDropdown');\n+\n+/**\n+ * A DOM-based type selection dropdown\n+ * @param {!Object} options\n+ *          onTypeChanged (newType: String)\n+ *          typeChoices {name(String): type(Blockly.BlockValueType)}\n+ * @constructor\n+ */\n+Blockly.TypeDropdown = function (options) {\n+  /**\n+   * @type {goog.ui.Select}\n+   * @private\n+   */\n+  this.selectComponent_ = null;\n+\n+  /**\n+   * @type {Element}\n+   * @private\n+   */\n+  this.container_ = null;\n+\n+  /**\n+   * @type {Element}\n+   * @private\n+   */\n+  this.parent_ = null;\n+\n+  this.onTypeChanged_ = options.onTypeChanged;\n+\n+  this.typeChoices_ = options.typeChoices;",
+    "path": "blockly-core/core/ui/contract_editor/type_dropdown.js",
+    "position": null,
+    "original_position": 33,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "added\n",
+    "created_at": "2015-02-27T18:38:42Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25527700",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25527700"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25527700"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528059",
+    "pull_request_review_id": null,
+    "id": 25528059,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI4MDU5",
+    "diff_hunk": "@@ -192,6 +216,15 @@ Blockly.FunctionEditor.prototype.renameParameter = function(oldName, newName) {\n   });\n };\n \n+Blockly.FunctionEditor.prototype.changeParameterType = function(name, newType) {\n+  this.orderedParamIDsToBlocks_.forEach(function(blockXML, paramID, linkedMap) {\n+    if (blockXML.firstElementChild &&\n+        blockXML.firstElementChild.textContent === name) {\n+      blockXML.childNodes[1].firstElementChild.textContent = newType;",
+    "path": "blockly-core/core/ui/function_editor.js",
+    "position": null,
+    "original_position": 71,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Clarified by introducing a couple of examples and sample XML.\n",
+    "created_at": "2015-02-27T18:43:11Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528059",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528059"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528059"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 223,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528097",
+    "pull_request_review_id": null,
+    "id": 25528097,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI4MDk3",
+    "diff_hunk": "@@ -192,6 +216,15 @@ Blockly.FunctionEditor.prototype.renameParameter = function(oldName, newName) {\n   });\n };\n \n+Blockly.FunctionEditor.prototype.changeParameterType = function(name, newType) {\n+  this.orderedParamIDsToBlocks_.forEach(function(blockXML, paramID, linkedMap) {\n+    if (blockXML.firstElementChild &&\n+        blockXML.firstElementChild.textContent === name) {\n+      blockXML.childNodes[1].firstElementChild.textContent = newType;",
+    "path": "blockly-core/core/ui/function_editor.js",
+    "position": null,
+    "original_position": 71,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I'd like to eventually move this to use closure tools' xpath since this is pretty brittle\n",
+    "created_at": "2015-02-27T18:43:44Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528097",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528097"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528097"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 223,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528244",
+    "pull_request_review_id": null,
+    "id": 25528244,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI4MjQ0",
+    "diff_hunk": "@@ -0,0 +1,44 @@\n+'use strict';\n+\n+goog.provide('Blockly.XButton');\n+\n+/**\n+ * A DOM-based input which sends events on changes\n+ * @param {!Object} options\n+ *          onNameChanged (newName: String)\n+ *          onEnterPressed\n+ * @constructor\n+ */\n+Blockly.XButton = function (options) {\n+  this.onButtonPressed = options.onButtonPressed;\n+\n+  // For disposal\n+  this.eventsToUnbind_ = [];\n+  this.buttonElement_ = null;\n+};\n+\n+Blockly.XButton.prototype.render = function (parent) {\n+  var buttonElement = goog.dom.createDom('button');\n+  buttonElement.className = \"btn\";\n+  buttonElement.innerHTML = \"x\";\n+  buttonElement.style.marginRight = \"-10px\";\n+\n+  parent.appendChild(buttonElement);\n+\n+  this.eventsToUnbind_.push(Blockly.bindEvent_(buttonElement, 'mousedown', this, goog.bind(function () {\n+    if (this.onButtonPressed) {\n+      this.onButtonPressed();\n+    }",
+    "path": "blockly-core/core/ui/contract_editor/x_button.js",
+    "position": 34,
+    "original_position": 31,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "FYI for @islemaster There were also a bunch of opportunities for you to use this sort of pattern in your most recent PR if this is something you like.\n",
+    "created_at": "2015-02-27T18:45:44Z",
+    "updated_at": "2015-02-27T18:46:40Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528244",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528244"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528244"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 34,
+    "original_line": 31,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528361",
+    "pull_request_review_id": null,
+    "id": 25528361,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI4MzYx",
+    "diff_hunk": "@@ -0,0 +1,44 @@\n+'use strict';\n+\n+goog.provide('Blockly.XButton');\n+\n+/**\n+ * A DOM-based input which sends events on changes\n+ * @param {!Object} options\n+ *          onNameChanged (newName: String)\n+ *          onEnterPressed\n+ * @constructor\n+ */\n+Blockly.XButton = function (options) {",
+    "path": "blockly-core/core/ui/contract_editor/x_button.js",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This should really be made a \"text button\", and actually the \"Add\" button used at the top-level contract editor could then be an instance of this. I'll track this\n",
+    "created_at": "2015-02-27T18:47:04Z",
+    "updated_at": "2015-02-27T18:47:04Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528361",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528361"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528361"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 12,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528436",
+    "pull_request_review_id": null,
+    "id": 25528436,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1NTI4NDM2",
+    "diff_hunk": "@@ -0,0 +1,44 @@\n+'use strict';\n+\n+goog.provide('Blockly.XButton');\n+\n+/**\n+ * A DOM-based input which sends events on changes\n+ * @param {!Object} options\n+ *          onNameChanged (newName: String)\n+ *          onEnterPressed\n+ * @constructor\n+ */\n+Blockly.XButton = function (options) {\n+  this.onButtonPressed = options.onButtonPressed;\n+\n+  // For disposal\n+  this.eventsToUnbind_ = [];\n+  this.buttonElement_ = null;\n+};\n+\n+Blockly.XButton.prototype.render = function (parent) {\n+  var buttonElement = goog.dom.createDom('button');\n+  buttonElement.className = \"btn\";\n+  buttonElement.innerHTML = \"x\";\n+  buttonElement.style.marginRight = \"-10px\";\n+\n+  parent.appendChild(buttonElement);\n+\n+  this.eventsToUnbind_.push(Blockly.bindEvent_(buttonElement, 'mousedown', this, goog.bind(function () {\n+    if (this.onButtonPressed) {\n+      this.onButtonPressed();\n+    }",
+    "path": "blockly-core/core/ui/contract_editor/x_button.js",
+    "position": 34,
+    "original_position": 31,
+    "commit_id": "fb6c3cf903afcd0e72f08850d7752c0654b51aa1",
+    "original_commit_id": "d3176a356016941dd1699d32c373ac053dd8d49a",
+    "user": {
+      "login": "bcjordan",
+      "id": 206973,
+      "node_id": "MDQ6VXNlcjIwNjk3Mw==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/206973?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bcjordan",
+      "html_url": "https://github.com/bcjordan",
+      "followers_url": "https://api.github.com/users/bcjordan/followers",
+      "following_url": "https://api.github.com/users/bcjordan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bcjordan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bcjordan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bcjordan/subscriptions",
+      "organizations_url": "https://api.github.com/users/bcjordan/orgs",
+      "repos_url": "https://api.github.com/users/bcjordan/repos",
+      "events_url": "https://api.github.com/users/bcjordan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bcjordan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Might be worth checking linter compatibility\n",
+    "created_at": "2015-02-27T18:48:13Z",
+    "updated_at": "2015-02-27T18:48:13Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528436",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/25528436"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/1454#discussion_r25528436"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/1454"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 34,
+    "original_line": 31,
+    "side": "RIGHT"
+  }
+]

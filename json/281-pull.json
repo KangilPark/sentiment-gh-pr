@@ -1,0 +1,1523 @@
+[
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41796151",
+    "pull_request_review_id": null,
+    "id": 41796151,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNzk2MTUx",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 54,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "@bartonjs Does this look right to you? ECDsaSecurityKey is a wrapper class for creating keys to be used for ECDsaCng algo.\n",
+    "created_at": "2015-10-12T20:13:10Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41796151",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41796151"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41796151"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 54,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41798777",
+    "pull_request_review_id": null,
+    "id": 41798777,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNzk4Nzc3",
+    "diff_hunk": "@@ -50,62 +90,109 @@ public class AsymmetricSignatureProvider : SignatureProvider\n         /// </param>\n         /// <exception cref=\"ArgumentNullException\">'key' is null.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning\"/>.\n+        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the given algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigningMap\"/>.\n         /// </exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying\"/>. Note: this is always checked.\n+        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifyingMap\"/>. Note: this is always checked.\n         /// </exception>\n         /// <exception cref=\"ArgumentException\">if 'algorithm\" is not supported.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">if 'key' is not <see cref=\"RsaSecurityKey\"/> or <see cref=\"X509SecurityKey\"/>.</exception>\n         public AsymmetricSignatureProvider(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures = false)\n         {\n             if (key == null)\n-                throw new ArgumentNullException(\"key\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"AsymmetricSignatureProvider.key\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             if (!IsSupportedAlgorithm(algorithm))\n                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm ?? \"null\"));\n \n-            if (willCreateSignatures)\n+            minimumAsymmetricKeySizeInBitsForSigningMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForSigningMap);\n+            minimumAsymmetricKeySizeInBitsForVerifyingMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForVerifyingMap);\n+\n+            ValidateAsymmetricSecurityKeySize(key, algorithm, willCreateSignatures);\n+            if (willCreateSignatures && !key.HasPrivateKey)\n             {\n-                if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning)\n-                {\n-                    throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10631, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning));\n-                }\n+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n+            }\n \n-                if (!key.HasPrivateKey)\n-                {\n-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n-                }\n+            bool algorithmResolved = false;",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 102,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "we can have the var inside the #if since #if is a compiler switch.\n",
+    "created_at": "2015-10-12T20:40:02Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41798777",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41798777"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41798777"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 117,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41799627",
+    "pull_request_review_id": null,
+    "id": 41799627,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNzk5NjI3",
+    "diff_hunk": "@@ -50,62 +90,109 @@ public class AsymmetricSignatureProvider : SignatureProvider\n         /// </param>\n         /// <exception cref=\"ArgumentNullException\">'key' is null.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning\"/>.\n+        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the given algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigningMap\"/>.\n         /// </exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying\"/>. Note: this is always checked.\n+        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifyingMap\"/>. Note: this is always checked.\n         /// </exception>\n         /// <exception cref=\"ArgumentException\">if 'algorithm\" is not supported.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">if 'key' is not <see cref=\"RsaSecurityKey\"/> or <see cref=\"X509SecurityKey\"/>.</exception>\n         public AsymmetricSignatureProvider(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures = false)\n         {\n             if (key == null)\n-                throw new ArgumentNullException(\"key\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"AsymmetricSignatureProvider.key\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             if (!IsSupportedAlgorithm(algorithm))\n                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm ?? \"null\"));\n \n-            if (willCreateSignatures)\n+            minimumAsymmetricKeySizeInBitsForSigningMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForSigningMap);\n+            minimumAsymmetricKeySizeInBitsForVerifyingMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForVerifyingMap);\n+\n+            ValidateAsymmetricSecurityKeySize(key, algorithm, willCreateSignatures);\n+            if (willCreateSignatures && !key.HasPrivateKey)\n             {\n-                if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning)\n-                {\n-                    throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10631, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning));\n-                }\n+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n+            }\n \n-                if (!key.HasPrivateKey)\n-                {\n-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n-                }\n+            bool algorithmResolved = false;\n+#if DNXCORE50\n+            algorithmResolved = ResolveDotNetCoreAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#else\n+            algorithmResolved = ResolveDotNetDesktopAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#endif\n+            if (!algorithmResolved)\n+                throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10641, key.ToString()));",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 109,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think it would be cleaner to throw inside Resolve...\n",
+    "created_at": "2015-10-12T20:49:02Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41799627",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41799627"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41799627"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 124,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41799740",
+    "pull_request_review_id": null,
+    "id": 41799740,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNzk5NzQw",
+    "diff_hunk": "@@ -31,11 +35,47 @@ public class AsymmetricSignatureProvider : SignatureProvider\n #if DNXCORE50\n         private RSA rsa;\n         private HashAlgorithmName hash;\n+        private ECDsa ecdsaCng;",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 18,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "we should put '_' in instance variables.\n",
+    "created_at": "2015-10-12T20:50:18Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41799740",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41799740"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41799740"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 38,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800264",
+    "pull_request_review_id": null,
+    "id": 41800264,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAwMjY0",
+    "diff_hunk": "@@ -50,62 +90,109 @@ public class AsymmetricSignatureProvider : SignatureProvider\n         /// </param>\n         /// <exception cref=\"ArgumentNullException\">'key' is null.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning\"/>.\n+        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the given algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigningMap\"/>.\n         /// </exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying\"/>. Note: this is always checked.\n+        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifyingMap\"/>. Note: this is always checked.\n         /// </exception>\n         /// <exception cref=\"ArgumentException\">if 'algorithm\" is not supported.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">if 'key' is not <see cref=\"RsaSecurityKey\"/> or <see cref=\"X509SecurityKey\"/>.</exception>\n         public AsymmetricSignatureProvider(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures = false)\n         {\n             if (key == null)\n-                throw new ArgumentNullException(\"key\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"AsymmetricSignatureProvider.key\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             if (!IsSupportedAlgorithm(algorithm))\n                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm ?? \"null\"));\n \n-            if (willCreateSignatures)\n+            minimumAsymmetricKeySizeInBitsForSigningMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForSigningMap);\n+            minimumAsymmetricKeySizeInBitsForVerifyingMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForVerifyingMap);\n+\n+            ValidateAsymmetricSecurityKeySize(key, algorithm, willCreateSignatures);\n+            if (willCreateSignatures && !key.HasPrivateKey)\n             {\n-                if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning)\n-                {\n-                    throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10631, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning));\n-                }\n+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n+            }\n \n-                if (!key.HasPrivateKey)\n-                {\n-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n-                }\n+            bool algorithmResolved = false;\n+#if DNXCORE50\n+            algorithmResolved = ResolveDotNetCoreAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#else\n+            algorithmResolved = ResolveDotNetDesktopAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#endif\n+            if (!algorithmResolved)\n+                throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10641, key.ToString()));\n+        }\n+\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for creating signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForSigningMap\n+        {\n+            get\n+            {\n+                return minimumAsymmetricKeySizeInBitsForSigningMap;\n             }\n+        }\n \n-            if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying)\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for verifying signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForVerifyingMap\n+        {\n+            get\n             {\n-                throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10630, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying));\n+                return minimumAsymmetricKeySizeInBitsForVerifyingMap;\n             }\n+        }\n+\n \n #if DNXCORE50\n+        protected virtual HashAlgorithmName GetHashAlgorithmName(string algorithm)\n+        {\n+            if (string.IsNullOrWhiteSpace(algorithm))\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"GetHashAlgorithmName.algorithm\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+\n+            switch (algorithm)\n+            {\n+                case SecurityAlgorithms.SHA256:\n+                case SecurityAlgorithms.ECDSA_SHA256:\n+                case SecurityAlgorithms.RSA_SHA256:\n+                case SecurityAlgorithms.RsaSha256Signature:\n+                    return HashAlgorithmName.SHA256;\n+\n+                case SecurityAlgorithms.SHA384:\n+                case SecurityAlgorithms.ECDSA_SHA384:\n+                case SecurityAlgorithms.RSA_SHA384:\n+                case SecurityAlgorithms.RsaSha384Signature:\n+                    return HashAlgorithmName.SHA384;\n+\n+                case SecurityAlgorithms.SHA512:\n+                case SecurityAlgorithms.ECDSA_SHA512:\n+                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.RsaSha512Signature:\n+                    return HashAlgorithmName.SHA512;\n+\n+                default:\n+                    throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm));",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 164,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "We are not consistent with LogHelper. Sometimes we use it sometimes we don't. Is there any reason not to use it?\n",
+    "created_at": "2015-10-12T20:55:29Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800264",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800264"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800264"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 177,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800312",
+    "pull_request_review_id": null,
+    "id": 41800312,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAwMzEy",
+    "diff_hunk": "@@ -50,62 +90,109 @@ public class AsymmetricSignatureProvider : SignatureProvider\n         /// </param>\n         /// <exception cref=\"ArgumentNullException\">'key' is null.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning\"/>.\n+        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the given algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigningMap\"/>.\n         /// </exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying\"/>. Note: this is always checked.\n+        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifyingMap\"/>. Note: this is always checked.\n         /// </exception>\n         /// <exception cref=\"ArgumentException\">if 'algorithm\" is not supported.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">if 'key' is not <see cref=\"RsaSecurityKey\"/> or <see cref=\"X509SecurityKey\"/>.</exception>\n         public AsymmetricSignatureProvider(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures = false)\n         {\n             if (key == null)\n-                throw new ArgumentNullException(\"key\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"AsymmetricSignatureProvider.key\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             if (!IsSupportedAlgorithm(algorithm))\n                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm ?? \"null\"));\n \n-            if (willCreateSignatures)\n+            minimumAsymmetricKeySizeInBitsForSigningMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForSigningMap);\n+            minimumAsymmetricKeySizeInBitsForVerifyingMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForVerifyingMap);\n+\n+            ValidateAsymmetricSecurityKeySize(key, algorithm, willCreateSignatures);\n+            if (willCreateSignatures && !key.HasPrivateKey)\n             {\n-                if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning)\n-                {\n-                    throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10631, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning));\n-                }\n+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n+            }\n \n-                if (!key.HasPrivateKey)\n-                {\n-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n-                }\n+            bool algorithmResolved = false;\n+#if DNXCORE50\n+            algorithmResolved = ResolveDotNetCoreAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#else\n+            algorithmResolved = ResolveDotNetDesktopAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#endif\n+            if (!algorithmResolved)\n+                throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10641, key.ToString()));\n+        }\n+\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for creating signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForSigningMap\n+        {\n+            get\n+            {\n+                return minimumAsymmetricKeySizeInBitsForSigningMap;\n             }\n+        }\n \n-            if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying)\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for verifying signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForVerifyingMap\n+        {\n+            get\n             {\n-                throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10630, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying));\n+                return minimumAsymmetricKeySizeInBitsForVerifyingMap;\n             }\n+        }\n+\n \n #if DNXCORE50\n+        protected virtual HashAlgorithmName GetHashAlgorithmName(string algorithm)\n+        {\n+            if (string.IsNullOrWhiteSpace(algorithm))\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"GetHashAlgorithmName.algorithm\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+\n+            switch (algorithm)\n+            {\n+                case SecurityAlgorithms.SHA256:\n+                case SecurityAlgorithms.ECDSA_SHA256:\n+                case SecurityAlgorithms.RSA_SHA256:\n+                case SecurityAlgorithms.RsaSha256Signature:\n+                    return HashAlgorithmName.SHA256;\n+\n+                case SecurityAlgorithms.SHA384:\n+                case SecurityAlgorithms.ECDSA_SHA384:\n+                case SecurityAlgorithms.RSA_SHA384:\n+                case SecurityAlgorithms.RsaSha384Signature:\n+                    return HashAlgorithmName.SHA384;\n+\n+                case SecurityAlgorithms.SHA512:\n+                case SecurityAlgorithms.ECDSA_SHA512:\n+                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.RsaSha512Signature:\n+                    return HashAlgorithmName.SHA512;\n+\n+                default:\n+                    throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm));\n+            }\n+        }\n+\n+        private bool ResolveDotNetCoreAsymmetricAlgorithm(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures)",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 168,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "As above I think we should just throw inside here.\n",
+    "created_at": "2015-10-12T20:56:04Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800312",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800312"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800312"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 181,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800334",
+    "pull_request_review_id": null,
+    "id": 41800334,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAwMzM0",
+    "diff_hunk": "@@ -171,39 +251,73 @@ protected virtual HashAlgorithm GetHashAlgorithm(string algorithm)\n             }\n         }\n \n-#if DNXCORE50\n-        protected virtual HashAlgorithmName GetHashAlgorithmName(string algorithm)\n+        protected virtual CngAlgorithm GetCngAlgorithm(string algorithm)\n         {\n             if (string.IsNullOrWhiteSpace(algorithm))\n-                throw new ArgumentNullException(\"algorithm\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"GetCngAlgorithm.algorithm\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             switch (algorithm)\n             {\n-                case SecurityAlgorithms.RsaSha1Signature:\n-                    return HashAlgorithmName.SHA1;\n-\n+                case SecurityAlgorithms.SHA256:\n                 case SecurityAlgorithms.ECDSA_SHA256:\n-                case SecurityAlgorithms.HMAC_SHA256:\n                 case SecurityAlgorithms.RSA_SHA256:\n                 case SecurityAlgorithms.RsaSha256Signature:\n-                    return HashAlgorithmName.SHA256;\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA256);\n \n+                case SecurityAlgorithms.SHA384:\n                 case SecurityAlgorithms.ECDSA_SHA384:\n-                case SecurityAlgorithms.HMAC_SHA384:\n                 case SecurityAlgorithms.RSA_SHA384:\n                 case SecurityAlgorithms.RsaSha384Signature:\n-                    return HashAlgorithmName.SHA384;\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA384);\n \n-                case SecurityAlgorithms.RsaSha512Signature:\n-                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.SHA512:\n                 case SecurityAlgorithms.ECDSA_SHA512:\n-                case SecurityAlgorithms.HMAC_SHA512:\n-                    return HashAlgorithmName.SHA512;\n+                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.RsaSha512Signature:\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA512);\n \n                 default:\n                     throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm));\n             }\n         }\n+\n+        private bool ResolveDotNetDesktopAsymmetricAlgorithm(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures)",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 308,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "As above I think we should just throw inside here.\n",
+    "created_at": "2015-10-12T20:56:20Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800334",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800334"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800334"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 284,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800518",
+    "pull_request_review_id": null,
+    "id": 41800518,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAwNTE4",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);\n+            }\n+        }\n+\n+        public override bool HasPublicKey\n+        {\n+            get\n+            {\n+                return (HasPrivateKey || _blobFormat.Format == CngKeyBlobFormat.EccPublicBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPublicBlob.Format);\n+            }\n+        }\n+\n+        public override SignatureProvider GetSignatureProvider(string algorithm, bool verifyOnly)\n+        {\n+            if (verifyOnly)\n+                return SignatureProviderFactory.CreateForVerifying(this, algorithm);\n+            else\n+                return SignatureProviderFactory.CreateForSigning(this, algorithm);\n+        }\n+\n+        public byte[] Blob",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 74,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "What will a user do with this?\n",
+    "created_at": "2015-10-12T20:58:19Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800518",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800518"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800518"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 74,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800534",
+    "pull_request_review_id": null,
+    "id": 41800534,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAwNTM0",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);\n+            }\n+        }\n+\n+        public override bool HasPublicKey\n+        {\n+            get\n+            {\n+                return (HasPrivateKey || _blobFormat.Format == CngKeyBlobFormat.EccPublicBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPublicBlob.Format);\n+            }\n+        }\n+\n+        public override SignatureProvider GetSignatureProvider(string algorithm, bool verifyOnly)\n+        {\n+            if (verifyOnly)\n+                return SignatureProviderFactory.CreateForVerifying(this, algorithm);\n+            else\n+                return SignatureProviderFactory.CreateForSigning(this, algorithm);\n+        }\n+\n+        public byte[] Blob\n+        {\n+            get\n+            {\n+                return _blob;\n+            }\n+        }\n+\n+        public CngKeyBlobFormat BlobFormat",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 82,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "What will a user do with this?\n",
+    "created_at": "2015-10-12T20:58:33Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800534",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800534"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800534"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 82,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800757",
+    "pull_request_review_id": null,
+    "id": 41800757,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAwNzU3",
+    "diff_hunk": "@@ -50,62 +90,109 @@ public class AsymmetricSignatureProvider : SignatureProvider\n         /// </param>\n         /// <exception cref=\"ArgumentNullException\">'key' is null.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning\"/>.\n+        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the given algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigningMap\"/>.\n         /// </exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying\"/>. Note: this is always checked.\n+        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifyingMap\"/>. Note: this is always checked.\n         /// </exception>\n         /// <exception cref=\"ArgumentException\">if 'algorithm\" is not supported.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">if 'key' is not <see cref=\"RsaSecurityKey\"/> or <see cref=\"X509SecurityKey\"/>.</exception>\n         public AsymmetricSignatureProvider(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures = false)\n         {\n             if (key == null)\n-                throw new ArgumentNullException(\"key\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"AsymmetricSignatureProvider.key\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             if (!IsSupportedAlgorithm(algorithm))\n                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm ?? \"null\"));\n \n-            if (willCreateSignatures)\n+            minimumAsymmetricKeySizeInBitsForSigningMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForSigningMap);\n+            minimumAsymmetricKeySizeInBitsForVerifyingMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForVerifyingMap);\n+\n+            ValidateAsymmetricSecurityKeySize(key, algorithm, willCreateSignatures);\n+            if (willCreateSignatures && !key.HasPrivateKey)\n             {\n-                if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning)\n-                {\n-                    throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10631, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning));\n-                }\n+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n+            }\n \n-                if (!key.HasPrivateKey)\n-                {\n-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n-                }\n+            bool algorithmResolved = false;\n+#if DNXCORE50\n+            algorithmResolved = ResolveDotNetCoreAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#else\n+            algorithmResolved = ResolveDotNetDesktopAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#endif\n+            if (!algorithmResolved)\n+                throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10641, key.ToString()));\n+        }\n+\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for creating signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForSigningMap\n+        {\n+            get\n+            {\n+                return minimumAsymmetricKeySizeInBitsForSigningMap;\n             }\n+        }\n \n-            if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying)\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for verifying signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForVerifyingMap\n+        {\n+            get\n             {\n-                throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10630, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying));\n+                return minimumAsymmetricKeySizeInBitsForVerifyingMap;\n             }\n+        }\n+\n \n #if DNXCORE50\n+        protected virtual HashAlgorithmName GetHashAlgorithmName(string algorithm)\n+        {\n+            if (string.IsNullOrWhiteSpace(algorithm))\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"GetHashAlgorithmName.algorithm\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+\n+            switch (algorithm)\n+            {\n+                case SecurityAlgorithms.SHA256:\n+                case SecurityAlgorithms.ECDSA_SHA256:\n+                case SecurityAlgorithms.RSA_SHA256:\n+                case SecurityAlgorithms.RsaSha256Signature:\n+                    return HashAlgorithmName.SHA256;\n+\n+                case SecurityAlgorithms.SHA384:\n+                case SecurityAlgorithms.ECDSA_SHA384:\n+                case SecurityAlgorithms.RSA_SHA384:\n+                case SecurityAlgorithms.RsaSha384Signature:\n+                    return HashAlgorithmName.SHA384;\n+\n+                case SecurityAlgorithms.SHA512:\n+                case SecurityAlgorithms.ECDSA_SHA512:\n+                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.RsaSha512Signature:\n+                    return HashAlgorithmName.SHA512;\n+\n+                default:\n+                    throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm));",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 164,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "When I changed throw => LogHelper, some of them were missed. All of them should be LogHelper.\n",
+    "created_at": "2015-10-12T21:00:51Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800757",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800757"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800757"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 177,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800899",
+    "pull_request_review_id": null,
+    "id": 41800899,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAwODk5",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);\n+            }\n+        }\n+\n+        public override bool HasPublicKey\n+        {\n+            get\n+            {\n+                return (HasPrivateKey || _blobFormat.Format == CngKeyBlobFormat.EccPublicBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPublicBlob.Format);\n+            }\n+        }\n+\n+        public override SignatureProvider GetSignatureProvider(string algorithm, bool verifyOnly)\n+        {\n+            if (verifyOnly)\n+                return SignatureProviderFactory.CreateForVerifying(this, algorithm);\n+            else\n+                return SignatureProviderFactory.CreateForSigning(this, algorithm);\n+        }\n+\n+        public byte[] Blob",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 74,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "If they want to access the private part of the blob. Once a private blob is used to generate a CngKey, they can only export the public blob.\n",
+    "created_at": "2015-10-12T21:02:16Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800899",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41800899"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41800899"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 74,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41801330",
+    "pull_request_review_id": null,
+    "id": 41801330,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAxMzMw",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);\n+            }\n+        }\n+\n+        public override bool HasPublicKey\n+        {\n+            get\n+            {\n+                return (HasPrivateKey || _blobFormat.Format == CngKeyBlobFormat.EccPublicBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPublicBlob.Format);\n+            }\n+        }\n+\n+        public override SignatureProvider GetSignatureProvider(string algorithm, bool verifyOnly)\n+        {\n+            if (verifyOnly)\n+                return SignatureProviderFactory.CreateForVerifying(this, algorithm);\n+            else\n+                return SignatureProviderFactory.CreateForSigning(this, algorithm);\n+        }\n+\n+        public byte[] Blob\n+        {\n+            get\n+            {\n+                return _blob;\n+            }\n+        }\n+\n+        public CngKeyBlobFormat BlobFormat",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 82,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This is the blob format used to generate the CngKey. It is basically a string wrapper. This is used to identify the blob format used to create the cngkey -  eccpublic or eccprivate or generic. Users might be able to get to this using CngKey.GetProperty but I think its useful to have it as first class property.\n",
+    "created_at": "2015-10-12T21:06:25Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41801330",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41801330"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41801330"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 82,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41802730",
+    "pull_request_review_id": null,
+    "id": 41802730,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAyNzMw",
+    "diff_hunk": "@@ -50,62 +90,109 @@ public class AsymmetricSignatureProvider : SignatureProvider\n         /// </param>\n         /// <exception cref=\"ArgumentNullException\">'key' is null.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning\"/>.\n+        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the given algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigningMap\"/>.\n         /// </exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying\"/>. Note: this is always checked.\n+        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifyingMap\"/>. Note: this is always checked.\n         /// </exception>\n         /// <exception cref=\"ArgumentException\">if 'algorithm\" is not supported.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">if 'key' is not <see cref=\"RsaSecurityKey\"/> or <see cref=\"X509SecurityKey\"/>.</exception>\n         public AsymmetricSignatureProvider(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures = false)\n         {\n             if (key == null)\n-                throw new ArgumentNullException(\"key\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"AsymmetricSignatureProvider.key\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             if (!IsSupportedAlgorithm(algorithm))\n                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm ?? \"null\"));\n \n-            if (willCreateSignatures)\n+            minimumAsymmetricKeySizeInBitsForSigningMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForSigningMap);\n+            minimumAsymmetricKeySizeInBitsForVerifyingMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForVerifyingMap);\n+\n+            ValidateAsymmetricSecurityKeySize(key, algorithm, willCreateSignatures);\n+            if (willCreateSignatures && !key.HasPrivateKey)\n             {\n-                if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning)\n-                {\n-                    throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10631, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning));\n-                }\n+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n+            }\n \n-                if (!key.HasPrivateKey)\n-                {\n-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n-                }\n+            bool algorithmResolved = false;\n+#if DNXCORE50\n+            algorithmResolved = ResolveDotNetCoreAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#else\n+            algorithmResolved = ResolveDotNetDesktopAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#endif\n+            if (!algorithmResolved)\n+                throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10641, key.ToString()));\n+        }\n+\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for creating signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForSigningMap\n+        {\n+            get\n+            {\n+                return minimumAsymmetricKeySizeInBitsForSigningMap;\n             }\n+        }\n \n-            if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying)\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for verifying signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForVerifyingMap\n+        {\n+            get\n             {\n-                throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10630, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying));\n+                return minimumAsymmetricKeySizeInBitsForVerifyingMap;\n             }\n+        }\n+",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 135,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "extra line\n",
+    "created_at": "2015-10-12T21:22:20Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41802730",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41802730"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41802730"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 148,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41803480",
+    "pull_request_review_id": null,
+    "id": 41803480,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAzNDgw",
+    "diff_hunk": "@@ -171,39 +251,73 @@ protected virtual HashAlgorithm GetHashAlgorithm(string algorithm)\n             }\n         }\n \n-#if DNXCORE50\n-        protected virtual HashAlgorithmName GetHashAlgorithmName(string algorithm)\n+        protected virtual CngAlgorithm GetCngAlgorithm(string algorithm)\n         {\n             if (string.IsNullOrWhiteSpace(algorithm))\n-                throw new ArgumentNullException(\"algorithm\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"GetCngAlgorithm.algorithm\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             switch (algorithm)\n             {\n-                case SecurityAlgorithms.RsaSha1Signature:\n-                    return HashAlgorithmName.SHA1;\n-\n+                case SecurityAlgorithms.SHA256:\n                 case SecurityAlgorithms.ECDSA_SHA256:\n-                case SecurityAlgorithms.HMAC_SHA256:\n                 case SecurityAlgorithms.RSA_SHA256:\n                 case SecurityAlgorithms.RsaSha256Signature:\n-                    return HashAlgorithmName.SHA256;\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA256);\n \n+                case SecurityAlgorithms.SHA384:\n                 case SecurityAlgorithms.ECDSA_SHA384:\n-                case SecurityAlgorithms.HMAC_SHA384:\n                 case SecurityAlgorithms.RSA_SHA384:\n                 case SecurityAlgorithms.RsaSha384Signature:\n-                    return HashAlgorithmName.SHA384;\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA384);\n \n-                case SecurityAlgorithms.RsaSha512Signature:\n-                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.SHA512:\n                 case SecurityAlgorithms.ECDSA_SHA512:\n-                case SecurityAlgorithms.HMAC_SHA512:\n-                    return HashAlgorithmName.SHA512;\n+                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.RsaSha512Signature:\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA512);\n \n                 default:\n                     throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm));\n             }\n         }\n+\n+        private bool ResolveDotNetDesktopAsymmetricAlgorithm(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures)\n+        {\n+            hash = GetHashAlgorithm(algorithm);",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 310,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Do we need to make this call to GetHashAlgorithm for ECD?\n",
+    "created_at": "2015-10-12T21:29:59Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41803480",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41803480"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41803480"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 286,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41803855",
+    "pull_request_review_id": null,
+    "id": 41803855,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODAzODU1",
+    "diff_hunk": "@@ -171,39 +251,73 @@ protected virtual HashAlgorithm GetHashAlgorithm(string algorithm)\n             }\n         }\n \n-#if DNXCORE50\n-        protected virtual HashAlgorithmName GetHashAlgorithmName(string algorithm)\n+        protected virtual CngAlgorithm GetCngAlgorithm(string algorithm)\n         {\n             if (string.IsNullOrWhiteSpace(algorithm))\n-                throw new ArgumentNullException(\"algorithm\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"GetCngAlgorithm.algorithm\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             switch (algorithm)\n             {\n-                case SecurityAlgorithms.RsaSha1Signature:\n-                    return HashAlgorithmName.SHA1;\n-\n+                case SecurityAlgorithms.SHA256:\n                 case SecurityAlgorithms.ECDSA_SHA256:\n-                case SecurityAlgorithms.HMAC_SHA256:\n                 case SecurityAlgorithms.RSA_SHA256:\n                 case SecurityAlgorithms.RsaSha256Signature:\n-                    return HashAlgorithmName.SHA256;\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA256);\n \n+                case SecurityAlgorithms.SHA384:\n                 case SecurityAlgorithms.ECDSA_SHA384:\n-                case SecurityAlgorithms.HMAC_SHA384:\n                 case SecurityAlgorithms.RSA_SHA384:\n                 case SecurityAlgorithms.RsaSha384Signature:\n-                    return HashAlgorithmName.SHA384;\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA384);\n \n-                case SecurityAlgorithms.RsaSha512Signature:\n-                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.SHA512:\n                 case SecurityAlgorithms.ECDSA_SHA512:\n-                case SecurityAlgorithms.HMAC_SHA512:\n-                    return HashAlgorithmName.SHA512;\n+                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.RsaSha512Signature:\n+                    return new CngAlgorithm(SecurityAlgorithms.SHA512);\n \n                 default:\n                     throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm));\n             }\n         }\n+\n+        private bool ResolveDotNetDesktopAsymmetricAlgorithm(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures)\n+        {\n+            hash = GetHashAlgorithm(algorithm);",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 310,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "No, not for EC. I moved the statement to if blocks of rsa and x509.\n",
+    "created_at": "2015-10-12T21:34:23Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41803855",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41803855"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41803855"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 286,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41804233",
+    "pull_request_review_id": null,
+    "id": 41804233,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODA0MjMz",
+    "diff_hunk": "@@ -50,62 +90,109 @@ public class AsymmetricSignatureProvider : SignatureProvider\n         /// </param>\n         /// <exception cref=\"ArgumentNullException\">'key' is null.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning\"/>.\n+        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the given algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigningMap\"/>.\n         /// </exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying\"/>. Note: this is always checked.\n+        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifyingMap\"/>. Note: this is always checked.\n         /// </exception>\n         /// <exception cref=\"ArgumentException\">if 'algorithm\" is not supported.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">if 'key' is not <see cref=\"RsaSecurityKey\"/> or <see cref=\"X509SecurityKey\"/>.</exception>\n         public AsymmetricSignatureProvider(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures = false)\n         {\n             if (key == null)\n-                throw new ArgumentNullException(\"key\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"AsymmetricSignatureProvider.key\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             if (!IsSupportedAlgorithm(algorithm))\n                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm ?? \"null\"));\n \n-            if (willCreateSignatures)\n+            minimumAsymmetricKeySizeInBitsForSigningMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForSigningMap);\n+            minimumAsymmetricKeySizeInBitsForVerifyingMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForVerifyingMap);\n+\n+            ValidateAsymmetricSecurityKeySize(key, algorithm, willCreateSignatures);\n+            if (willCreateSignatures && !key.HasPrivateKey)\n             {\n-                if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning)\n-                {\n-                    throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10631, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning));\n-                }\n+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n+            }\n \n-                if (!key.HasPrivateKey)\n-                {\n-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n-                }\n+            bool algorithmResolved = false;\n+#if DNXCORE50\n+            algorithmResolved = ResolveDotNetCoreAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#else\n+            algorithmResolved = ResolveDotNetDesktopAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#endif\n+            if (!algorithmResolved)\n+                throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10641, key.ToString()));\n+        }\n+\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for creating signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForSigningMap\n+        {\n+            get\n+            {\n+                return minimumAsymmetricKeySizeInBitsForSigningMap;\n             }\n+        }\n \n-            if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying)\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for verifying signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForVerifyingMap\n+        {\n+            get\n             {\n-                throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10630, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying));\n+                return minimumAsymmetricKeySizeInBitsForVerifyingMap;\n             }\n+        }\n+\n \n #if DNXCORE50\n+        protected virtual HashAlgorithmName GetHashAlgorithmName(string algorithm)\n+        {\n+            if (string.IsNullOrWhiteSpace(algorithm))\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"GetHashAlgorithmName.algorithm\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+\n+            switch (algorithm)\n+            {\n+                case SecurityAlgorithms.SHA256:\n+                case SecurityAlgorithms.ECDSA_SHA256:\n+                case SecurityAlgorithms.RSA_SHA256:\n+                case SecurityAlgorithms.RsaSha256Signature:\n+                    return HashAlgorithmName.SHA256;\n+\n+                case SecurityAlgorithms.SHA384:\n+                case SecurityAlgorithms.ECDSA_SHA384:\n+                case SecurityAlgorithms.RSA_SHA384:\n+                case SecurityAlgorithms.RsaSha384Signature:\n+                    return HashAlgorithmName.SHA384;\n+\n+                case SecurityAlgorithms.SHA512:\n+                case SecurityAlgorithms.ECDSA_SHA512:\n+                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.RsaSha512Signature:\n+                    return HashAlgorithmName.SHA512;\n+\n+                default:\n+                    throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm));\n+            }\n+        }\n+\n+        private bool ResolveDotNetCoreAsymmetricAlgorithm(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures)\n+        {\n             hash = GetHashAlgorithmName(algorithm);",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 170,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "We don't need to create the hash if clr returns RSACryptoServiceProvider because Sign and VerifyData take the hash.Name. Is there a way to just use the name?\n",
+    "created_at": "2015-10-12T21:38:29Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41804233",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41804233"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41804233"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 183,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41806585",
+    "pull_request_review_id": null,
+    "id": 41806585,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODA2NTg1",
+    "diff_hunk": "@@ -50,62 +90,109 @@ public class AsymmetricSignatureProvider : SignatureProvider\n         /// </param>\n         /// <exception cref=\"ArgumentNullException\">'key' is null.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning\"/>.\n+        /// willCreateSignatures is true and <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the given algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigningMap\"/>.\n         /// </exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">\n-        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying\"/>. Note: this is always checked.\n+        /// <see cref=\"AsymmetricSecurityKey\"/>.KeySize is less than the size corresponding to the algorithm in <see cref=\"SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifyingMap\"/>. Note: this is always checked.\n         /// </exception>\n         /// <exception cref=\"ArgumentException\">if 'algorithm\" is not supported.</exception>\n         /// <exception cref=\"ArgumentOutOfRangeException\">if 'key' is not <see cref=\"RsaSecurityKey\"/> or <see cref=\"X509SecurityKey\"/>.</exception>\n         public AsymmetricSignatureProvider(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures = false)\n         {\n             if (key == null)\n-                throw new ArgumentNullException(\"key\");\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"AsymmetricSignatureProvider.key\"), typeof(ArgumentNullException), EventLevel.Verbose);\n \n             if (!IsSupportedAlgorithm(algorithm))\n                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm ?? \"null\"));\n \n-            if (willCreateSignatures)\n+            minimumAsymmetricKeySizeInBitsForSigningMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForSigningMap);\n+            minimumAsymmetricKeySizeInBitsForVerifyingMap = new Dictionary<string, int>(DefaultMinimumAsymmetricKeySizeInBitsForVerifyingMap);\n+\n+            ValidateAsymmetricSecurityKeySize(key, algorithm, willCreateSignatures);\n+            if (willCreateSignatures && !key.HasPrivateKey)\n             {\n-                if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning)\n-                {\n-                    throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10631, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForSigning));\n-                }\n+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n+            }\n \n-                if (!key.HasPrivateKey)\n-                {\n-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10638, key.ToString()));\n-                }\n+            bool algorithmResolved = false;\n+#if DNXCORE50\n+            algorithmResolved = ResolveDotNetCoreAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#else\n+            algorithmResolved = ResolveDotNetDesktopAsymmetricAlgorithm(key, algorithm, willCreateSignatures);\n+#endif\n+            if (!algorithmResolved)\n+                throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10641, key.ToString()));\n+        }\n+\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for creating signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForSigningMap\n+        {\n+            get\n+            {\n+                return minimumAsymmetricKeySizeInBitsForSigningMap;\n             }\n+        }\n \n-            if (key.KeySize < SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying)\n+        /// <summary>\n+        /// Gets the mapping from algorithm to the minimum <see cref=\"AsymmetricSecurityKey\"/>.KeySize for verifying signatures.\n+        /// </summary>\n+        public IReadOnlyDictionary<string, int> MinimumAsymmetricKeySizeInBitsForVerifyingMap\n+        {\n+            get\n             {\n-                throw new ArgumentOutOfRangeException(\"key.KeySize\", key.KeySize, string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10630, key.GetType(), SignatureProviderFactory.MinimumAsymmetricKeySizeInBitsForVerifying));\n+                return minimumAsymmetricKeySizeInBitsForVerifyingMap;\n             }\n+        }\n+\n \n #if DNXCORE50\n+        protected virtual HashAlgorithmName GetHashAlgorithmName(string algorithm)\n+        {\n+            if (string.IsNullOrWhiteSpace(algorithm))\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"GetHashAlgorithmName.algorithm\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+\n+            switch (algorithm)\n+            {\n+                case SecurityAlgorithms.SHA256:\n+                case SecurityAlgorithms.ECDSA_SHA256:\n+                case SecurityAlgorithms.RSA_SHA256:\n+                case SecurityAlgorithms.RsaSha256Signature:\n+                    return HashAlgorithmName.SHA256;\n+\n+                case SecurityAlgorithms.SHA384:\n+                case SecurityAlgorithms.ECDSA_SHA384:\n+                case SecurityAlgorithms.RSA_SHA384:\n+                case SecurityAlgorithms.RsaSha384Signature:\n+                    return HashAlgorithmName.SHA384;\n+\n+                case SecurityAlgorithms.SHA512:\n+                case SecurityAlgorithms.ECDSA_SHA512:\n+                case SecurityAlgorithms.RSA_SHA512:\n+                case SecurityAlgorithms.RsaSha512Signature:\n+                    return HashAlgorithmName.SHA512;\n+\n+                default:\n+                    throw new ArgumentOutOfRangeException(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10640, algorithm));\n+            }\n+        }\n+\n+        private bool ResolveDotNetCoreAsymmetricAlgorithm(AsymmetricSecurityKey key, string algorithm, bool willCreateSignatures)\n+        {\n             hash = GetHashAlgorithmName(algorithm);",
+    "path": "src/System.IdentityModel.Tokens/AsymmetricSignatureProvider.cs",
+    "position": null,
+    "original_position": 170,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "It does not create an hashAlgorithm object. HashAlgorithmName is only a struct (more like a string wrapper), and is not as expensive as SHA1.Create(). I looked through the .net code and it seems, we should not create an \"HashAlgorithm\" object in any case since .net creates an HashAlgorithm again. We should always pass the string representation to .net.\n",
+    "created_at": "2015-10-12T22:07:17Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41806585",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41806585"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41806585"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 183,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41853559",
+    "pull_request_review_id": null,
+    "id": 41853559,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODUzNTU5",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 29,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "acaa5302d5b96f2eefbe44ac514fb7a3cc41e268",
+    "user": {
+      "login": "kevinchalet",
+      "id": 6998306,
+      "node_id": "MDQ6VXNlcjY5OTgzMDY=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6998306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinchalet",
+      "html_url": "https://github.com/kevinchalet",
+      "followers_url": "https://api.github.com/users/kevinchalet/followers",
+      "following_url": "https://api.github.com/users/kevinchalet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinchalet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinchalet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinchalet/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinchalet/orgs",
+      "repos_url": "https://api.github.com/users/kevinchalet/repos",
+      "events_url": "https://api.github.com/users/kevinchalet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinchalet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Have you considered removing these fields and using private-set properties?\n",
+    "created_at": "2015-10-13T11:15:13Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41853559",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41853559"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41853559"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 29,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41853601",
+    "pull_request_review_id": null,
+    "id": 41853601,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODUzNjAx",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 33,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "acaa5302d5b96f2eefbe44ac514fb7a3cc41e268",
+    "user": {
+      "login": "kevinchalet",
+      "id": 6998306,
+      "node_id": "MDQ6VXNlcjY5OTgzMDY=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6998306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinchalet",
+      "html_url": "https://github.com/kevinchalet",
+      "followers_url": "https://api.github.com/users/kevinchalet/followers",
+      "following_url": "https://api.github.com/users/kevinchalet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinchalet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinchalet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinchalet/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinchalet/orgs",
+      "repos_url": "https://api.github.com/users/kevinchalet/repos",
+      "events_url": "https://api.github.com/users/kevinchalet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinchalet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think a constructor directly taking the `CngKey` might be useful.\n",
+    "created_at": "2015-10-13T11:15:54Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41853601",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41853601"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41853601"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41854421",
+    "pull_request_review_id": null,
+    "id": 41854421,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODU0NDIx",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 27,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "acaa5302d5b96f2eefbe44ac514fb7a3cc41e268",
+    "user": {
+      "login": "kevinchalet",
+      "id": 6998306,
+      "node_id": "MDQ6VXNlcjY5OTgzMDY=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6998306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinchalet",
+      "html_url": "https://github.com/kevinchalet",
+      "followers_url": "https://api.github.com/users/kevinchalet/followers",
+      "following_url": "https://api.github.com/users/kevinchalet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinchalet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinchalet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinchalet/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinchalet/orgs",
+      "repos_url": "https://api.github.com/users/kevinchalet/repos",
+      "events_url": "https://api.github.com/users/kevinchalet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinchalet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "nit: the case used in file name differs from the one used for the class name :trollface: \n",
+    "created_at": "2015-10-13T11:27:38Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41854421",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41854421"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41854421"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 27,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41855221",
+    "pull_request_review_id": null,
+    "id": 41855221,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODU1MjIx",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);\n+            }\n+        }\n+\n+        public override bool HasPublicKey\n+        {\n+            get\n+            {\n+                return (HasPrivateKey || _blobFormat.Format == CngKeyBlobFormat.EccPublicBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPublicBlob.Format);\n+            }\n+        }\n+\n+        public override SignatureProvider GetSignatureProvider(string algorithm, bool verifyOnly)\n+        {\n+            if (verifyOnly)\n+                return SignatureProviderFactory.CreateForVerifying(this, algorithm);\n+            else\n+                return SignatureProviderFactory.CreateForSigning(this, algorithm);\n+        }\n+\n+        public byte[] Blob",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 74,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "kevinchalet",
+      "id": 6998306,
+      "node_id": "MDQ6VXNlcjY5OTgzMDY=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6998306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinchalet",
+      "html_url": "https://github.com/kevinchalet",
+      "followers_url": "https://api.github.com/users/kevinchalet/followers",
+      "following_url": "https://api.github.com/users/kevinchalet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinchalet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinchalet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinchalet/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinchalet/orgs",
+      "repos_url": "https://api.github.com/users/kevinchalet/repos",
+      "events_url": "https://api.github.com/users/kevinchalet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinchalet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I guess it depends on whether the key was marked as exportable or not when instantiating the key (using `ExportPolicy = CngExportPolicies.AllowPlaintextExport`).\n\nI think it might be a good idea to remove this `Blob` property and let the user decide whether he/she wants the private part to be exportable via `CngKey.Export(CngKeyBlobFormat.EccPrivateBlob)`.\n",
+    "created_at": "2015-10-13T11:38:47Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41855221",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41855221"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41855221"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 74,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41894085",
+    "pull_request_review_id": null,
+    "id": 41894085,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODk0MDg1",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 33,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "acaa5302d5b96f2eefbe44ac514fb7a3cc41e268",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":+1: \n",
+    "created_at": "2015-10-13T16:59:53Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41894085",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41894085"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41894085"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41894125",
+    "pull_request_review_id": null,
+    "id": 41894125,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODk0MTI1",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 27,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "acaa5302d5b96f2eefbe44ac514fb7a3cc41e268",
+    "user": {
+      "login": "brentschmaltz",
+      "id": 3172421,
+      "node_id": "MDQ6VXNlcjMxNzI0MjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3172421?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/brentschmaltz",
+      "html_url": "https://github.com/brentschmaltz",
+      "followers_url": "https://api.github.com/users/brentschmaltz/followers",
+      "following_url": "https://api.github.com/users/brentschmaltz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brentschmaltz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brentschmaltz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brentschmaltz/subscriptions",
+      "organizations_url": "https://api.github.com/users/brentschmaltz/orgs",
+      "repos_url": "https://api.github.com/users/brentschmaltz/repos",
+      "events_url": "https://api.github.com/users/brentschmaltz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brentschmaltz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "thanks, we should fix this.\n",
+    "created_at": "2015-10-13T17:00:16Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41894125",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41894125"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41894125"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 27,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41895114",
+    "pull_request_review_id": null,
+    "id": 41895114,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxODk1MTE0",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 33,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "acaa5302d5b96f2eefbe44ac514fb7a3cc41e268",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Sounds good. will add that.\n",
+    "created_at": "2015-10-13T17:09:27Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41895114",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41895114"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41895114"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41900796",
+    "pull_request_review_id": null,
+    "id": 41900796,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxOTAwNzk2",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 54,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "bartonjs",
+      "id": 10642668,
+      "node_id": "MDQ6VXNlcjEwNjQyNjY4",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10642668?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bartonjs",
+      "html_url": "https://github.com/bartonjs",
+      "followers_url": "https://api.github.com/users/bartonjs/followers",
+      "following_url": "https://api.github.com/users/bartonjs/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bartonjs/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bartonjs/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bartonjs/subscriptions",
+      "organizations_url": "https://api.github.com/users/bartonjs/orgs",
+      "repos_url": "https://api.github.com/users/bartonjs/repos",
+      "events_url": "https://api.github.com/users/bartonjs/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bartonjs/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "If you're just sticking with blobs; those are the two that exist right now.  I don't know how to determine if an already open handle has a private key, though (other than to just use it and see).\n",
+    "created_at": "2015-10-13T17:53:47Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41900796",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41900796"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41900796"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 54,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41905468",
+    "pull_request_review_id": null,
+    "id": 41905468,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxOTA1NDY4",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);\n+            }\n+        }\n+\n+        public override bool HasPublicKey\n+        {\n+            get\n+            {\n+                return (HasPrivateKey || _blobFormat.Format == CngKeyBlobFormat.EccPublicBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPublicBlob.Format);\n+            }\n+        }\n+\n+        public override SignatureProvider GetSignatureProvider(string algorithm, bool verifyOnly)\n+        {\n+            if (verifyOnly)\n+                return SignatureProviderFactory.CreateForVerifying(this, algorithm);\n+            else\n+                return SignatureProviderFactory.CreateForSigning(this, algorithm);\n+        }\n+\n+        public byte[] Blob",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 74,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Makes sense. I will remove this property.\n",
+    "created_at": "2015-10-13T18:29:55Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41905468",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/41905468"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r41905468"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 74,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/42036919",
+    "pull_request_review_id": null,
+    "id": 42036919,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMDM2OTE5",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 54,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": {
+      "login": "tushargupta51",
+      "id": 803796,
+      "node_id": "MDQ6VXNlcjgwMzc5Ng==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/803796?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tushargupta51",
+      "html_url": "https://github.com/tushargupta51",
+      "followers_url": "https://api.github.com/users/tushargupta51/followers",
+      "following_url": "https://api.github.com/users/tushargupta51/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tushargupta51/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tushargupta51/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tushargupta51/subscriptions",
+      "organizations_url": "https://api.github.com/users/tushargupta51/orgs",
+      "repos_url": "https://api.github.com/users/tushargupta51/repos",
+      "events_url": "https://api.github.com/users/tushargupta51/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tushargupta51/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "We are going to add one more constructor that takes a CngKey so blobs won't be available then.\n@AtsushiKan do you have any insights into how we can determine whether a CngKey has privateKey or just publicey?\n",
+    "created_at": "2015-10-14T18:57:14Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r42036919",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/42036919"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r42036919"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 54,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/42039064",
+    "pull_request_review_id": null,
+    "id": 42039064,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMDM5MDY0",
+    "diff_hunk": "@@ -0,0 +1,106 @@\n+//-----------------------------------------------------------------------\n+// Copyright (c) Microsoft Open Technologies, Inc.\n+// All Rights Reserved\n+// Apache License 2.0\n+//\n+// Licensed under the Apache License, Version 2.0 (the \"License\");\n+// you may not use this file except in compliance with the License.\n+// You may obtain a copy of the License at\n+// \n+// http://www.apache.org/licenses/LICENSE-2.0\n+// \n+// Unless required by applicable law or agreed to in writing, software\n+// distributed under the License is distributed on an \"AS IS\" BASIS,\n+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n+// See the License for the specific language governing permissions and\n+// limitations under the License.\n+//-----------------------------------------------------------------------\n+\n+using System;\n+using System.Diagnostics.Tracing;\n+using System.Globalization;\n+using System.Security.Cryptography;\n+using Microsoft.IdentityModel.Logging;\n+\n+namespace System.IdentityModel.Tokens\n+{\n+    public class ECDsaSecurityKey : AsymmetricSecurityKey\n+    {\n+        private byte[] _blob;\n+        private CngKeyBlobFormat _blobFormat;\n+        private CngKey _cngKey;\n+\n+        public ECDsaSecurityKey(byte[] blob, CngKeyBlobFormat blobFormat)\n+        {\n+            if (blob == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blob\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            if (blobFormat == null)\n+            {\n+                LogHelper.Throw(string.Format(CultureInfo.InvariantCulture, LogMessages.IDX10000, \"ECDsaSecurityKey.blobFormat\"), typeof(ArgumentNullException), EventLevel.Verbose);\n+            }\n+\n+            _cngKey = CngKey.Import(blob, blobFormat);\n+            _blob = blob;\n+            _blobFormat = blobFormat;\n+        }\n+\n+        public override bool HasPrivateKey\n+        {\n+            get\n+            {\n+                return (_blobFormat.Format == CngKeyBlobFormat.EccPrivateBlob.Format || _blobFormat.Format == CngKeyBlobFormat.GenericPrivateBlob.Format);",
+    "path": "src/System.IdentityModel.Tokens/ECDSASecurityKey.cs",
+    "position": null,
+    "original_position": 54,
+    "commit_id": "eb75d5fe145d395d8335db004e99f56a9fc5843d",
+    "original_commit_id": "50591e60801c840b564d9afdf494e466c7a6c0b2",
+    "user": null,
+    "body": "Nothing comes to mind. Might want to ask the WinCrypto guys on an internal email.\n",
+    "created_at": "2015-10-14T19:14:16Z",
+    "updated_at": "2015-10-16T19:00:45Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r42039064",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/42039064"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/281#discussion_r42039064"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/281"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 54,
+    "side": "RIGHT"
+  }
+]

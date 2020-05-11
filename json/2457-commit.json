@@ -1,0 +1,788 @@
+[
+  {
+    "sha": "07e64152be272dea68f3b149be9b94a27b871491",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowN2U2NDE1MmJlMjcyZGVhNjhmM2IxNDliZTliOTRhMjdiODcxNDkx",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T16:21:26Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T16:31:42Z"
+      },
+      "message": "Add verify-requirements util",
+      "tree": {
+        "sha": "ef5f1260d42b0e74aaba74c8b4b0a84b83e4f1cc",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ef5f1260d42b0e74aaba74c8b4b0a84b83e4f1cc"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/07e64152be272dea68f3b149be9b94a27b871491",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/07e64152be272dea68f3b149be9b94a27b871491",
+    "html_url": "https://github.com/atom/atom/commit/07e64152be272dea68f3b149be9b94a27b871491",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/07e64152be272dea68f3b149be9b94a27b871491/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "6e34562d9493e14b5dbf26635a8d1c18f0cc30bb",
+        "url": "https://api.github.com/repos/atom/atom/commits/6e34562d9493e14b5dbf26635a8d1c18f0cc30bb",
+        "html_url": "https://github.com/atom/atom/commit/6e34562d9493e14b5dbf26635a8d1c18f0cc30bb"
+      }
+    ]
+  },
+  {
+    "sha": "041ec8c7cfea831934139c7935fe1c9c2c264a45",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowNDFlYzhjN2NmZWE4MzE5MzQxMzljNzkzNWZlMWM5YzJjMjY0YTQ1",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T16:21:51Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T16:31:53Z"
+      },
+      "message": "Use verifyRequirements in script/bootstrap",
+      "tree": {
+        "sha": "b8e5ec35e0284c1fe48a95164b59a2b878c151f0",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b8e5ec35e0284c1fe48a95164b59a2b878c151f0"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/041ec8c7cfea831934139c7935fe1c9c2c264a45",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/041ec8c7cfea831934139c7935fe1c9c2c264a45",
+    "html_url": "https://github.com/atom/atom/commit/041ec8c7cfea831934139c7935fe1c9c2c264a45",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/041ec8c7cfea831934139c7935fe1c9c2c264a45/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "07e64152be272dea68f3b149be9b94a27b871491",
+        "url": "https://api.github.com/repos/atom/atom/commits/07e64152be272dea68f3b149be9b94a27b871491",
+        "html_url": "https://github.com/atom/atom/commit/07e64152be272dea68f3b149be9b94a27b871491"
+      }
+    ]
+  },
+  {
+    "sha": "0fdceb847481df6643fe433d0cae02fd4069cba2",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowZmRjZWI4NDc0ODFkZjY2NDNmZTQzM2QwY2FlMDJmZDQwNjljYmEy",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T16:36:29Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T16:36:29Z"
+      },
+      "message": "Update bootstrap requires",
+      "tree": {
+        "sha": "09677f1c30e42b31cf9781411616c49ab82a8b38",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/09677f1c30e42b31cf9781411616c49ab82a8b38"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/0fdceb847481df6643fe433d0cae02fd4069cba2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/0fdceb847481df6643fe433d0cae02fd4069cba2",
+    "html_url": "https://github.com/atom/atom/commit/0fdceb847481df6643fe433d0cae02fd4069cba2",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/0fdceb847481df6643fe433d0cae02fd4069cba2/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "041ec8c7cfea831934139c7935fe1c9c2c264a45",
+        "url": "https://api.github.com/repos/atom/atom/commits/041ec8c7cfea831934139c7935fe1c9c2c264a45",
+        "html_url": "https://github.com/atom/atom/commit/041ec8c7cfea831934139c7935fe1c9c2c264a45"
+      }
+    ]
+  },
+  {
+    "sha": "57531d75fe9356a693680eac0396bf6f5595989f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo1NzUzMWQ3NWZlOTM1NmE2OTM2ODBlYWMwMzk2YmY2ZjU1OTU5ODlm",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T18:01:22Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T18:01:22Z"
+      },
+      "message": "Add better python path description",
+      "tree": {
+        "sha": "d9dc668e8616ad6b43836c2086ff5409fe335f83",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/d9dc668e8616ad6b43836c2086ff5409fe335f83"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/57531d75fe9356a693680eac0396bf6f5595989f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/57531d75fe9356a693680eac0396bf6f5595989f",
+    "html_url": "https://github.com/atom/atom/commit/57531d75fe9356a693680eac0396bf6f5595989f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/57531d75fe9356a693680eac0396bf6f5595989f/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "0fdceb847481df6643fe433d0cae02fd4069cba2",
+        "url": "https://api.github.com/repos/atom/atom/commits/0fdceb847481df6643fe433d0cae02fd4069cba2",
+        "html_url": "https://github.com/atom/atom/commit/0fdceb847481df6643fe433d0cae02fd4069cba2"
+      }
+    ]
+  },
+  {
+    "sha": "4265cfc61e4d0b57006203ed6b1a3223c3192299",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0MjY1Y2ZjNjFlNGQwYjU3MDA2MjAzZWQ2YjFhMzIyM2MzMTkyMjk5",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T18:10:45Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-05-30T18:10:45Z"
+      },
+      "message": "Merge remote-tracking branch 'origin/master' into cj-add-python-check",
+      "tree": {
+        "sha": "c3714e1db8b5477d90132943681ab02aed7466d5",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c3714e1db8b5477d90132943681ab02aed7466d5"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/4265cfc61e4d0b57006203ed6b1a3223c3192299",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/4265cfc61e4d0b57006203ed6b1a3223c3192299",
+    "html_url": "https://github.com/atom/atom/commit/4265cfc61e4d0b57006203ed6b1a3223c3192299",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/4265cfc61e4d0b57006203ed6b1a3223c3192299/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "57531d75fe9356a693680eac0396bf6f5595989f",
+        "url": "https://api.github.com/repos/atom/atom/commits/57531d75fe9356a693680eac0396bf6f5595989f",
+        "html_url": "https://github.com/atom/atom/commit/57531d75fe9356a693680eac0396bf6f5595989f"
+      },
+      {
+        "sha": "5c1d9a6a2e85092ace1b3a1bab6929a6a63aa0f3",
+        "url": "https://api.github.com/repos/atom/atom/commits/5c1d9a6a2e85092ace1b3a1bab6929a6a63aa0f3",
+        "html_url": "https://github.com/atom/atom/commit/5c1d9a6a2e85092ace1b3a1bab6929a6a63aa0f3"
+      }
+    ]
+  },
+  {
+    "sha": "3f8d7d54cf4d1fe8903d892e6fda5f63d339e687",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozZjhkN2Q1NGNmNGQxZmU4OTAzZDg5MmU2ZmRhNWY2M2QzMzllNjg3",
+    "commit": {
+      "author": {
+        "name": "James R Sconfitto",
+        "email": "jugglingnutcase@gmail.com",
+        "date": "2014-06-04T02:20:33Z"
+      },
+      "committer": {
+        "name": "James R Sconfitto",
+        "email": "jugglingnutcase@gmail.com",
+        "date": "2014-06-04T02:20:33Z"
+      },
+      "message": ":checkered_flag: Verify python version for build\n\nReferences:\nhttps://github.com/TooTallNate/node-gyp/blob/56dcb889091a6a0594854ccc517e498b21078d5f/lib/configure.js",
+      "tree": {
+        "sha": "3c4cce9195b227b7d3c7f127c46f741e35ca7331",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/3c4cce9195b227b7d3c7f127c46f741e35ca7331"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/3f8d7d54cf4d1fe8903d892e6fda5f63d339e687",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/3f8d7d54cf4d1fe8903d892e6fda5f63d339e687",
+    "html_url": "https://github.com/atom/atom/commit/3f8d7d54cf4d1fe8903d892e6fda5f63d339e687",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/3f8d7d54cf4d1fe8903d892e6fda5f63d339e687/comments",
+    "author": {
+      "login": "jrsconfitto",
+      "id": 238079,
+      "node_id": "MDQ6VXNlcjIzODA3OQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/238079?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jrsconfitto",
+      "html_url": "https://github.com/jrsconfitto",
+      "followers_url": "https://api.github.com/users/jrsconfitto/followers",
+      "following_url": "https://api.github.com/users/jrsconfitto/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jrsconfitto/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jrsconfitto/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jrsconfitto/subscriptions",
+      "organizations_url": "https://api.github.com/users/jrsconfitto/orgs",
+      "repos_url": "https://api.github.com/users/jrsconfitto/repos",
+      "events_url": "https://api.github.com/users/jrsconfitto/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jrsconfitto/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "jrsconfitto",
+      "id": 238079,
+      "node_id": "MDQ6VXNlcjIzODA3OQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/238079?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jrsconfitto",
+      "html_url": "https://github.com/jrsconfitto",
+      "followers_url": "https://api.github.com/users/jrsconfitto/followers",
+      "following_url": "https://api.github.com/users/jrsconfitto/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jrsconfitto/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jrsconfitto/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jrsconfitto/subscriptions",
+      "organizations_url": "https://api.github.com/users/jrsconfitto/orgs",
+      "repos_url": "https://api.github.com/users/jrsconfitto/repos",
+      "events_url": "https://api.github.com/users/jrsconfitto/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jrsconfitto/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "57531d75fe9356a693680eac0396bf6f5595989f",
+        "url": "https://api.github.com/repos/atom/atom/commits/57531d75fe9356a693680eac0396bf6f5595989f",
+        "html_url": "https://github.com/atom/atom/commit/57531d75fe9356a693680eac0396bf6f5595989f"
+      }
+    ]
+  },
+  {
+    "sha": "50445a73bd7efa1489087b153fec4e75e7f9b897",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo1MDQ0NWE3M2JkN2VmYTE0ODkwODdiMTUzZmVjNGU3NWU3ZjliODk3",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T17:48:47Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T17:48:47Z"
+      },
+      "message": "Merge branch 'jugglingnutcase-exec-python-for-version' into cj-add-python-check",
+      "tree": {
+        "sha": "82ad37d91e2a9b3ba4134706f544a8cdb996eeae",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/82ad37d91e2a9b3ba4134706f544a8cdb996eeae"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/50445a73bd7efa1489087b153fec4e75e7f9b897",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/50445a73bd7efa1489087b153fec4e75e7f9b897",
+    "html_url": "https://github.com/atom/atom/commit/50445a73bd7efa1489087b153fec4e75e7f9b897",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/50445a73bd7efa1489087b153fec4e75e7f9b897/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "4265cfc61e4d0b57006203ed6b1a3223c3192299",
+        "url": "https://api.github.com/repos/atom/atom/commits/4265cfc61e4d0b57006203ed6b1a3223c3192299",
+        "html_url": "https://github.com/atom/atom/commit/4265cfc61e4d0b57006203ed6b1a3223c3192299"
+      },
+      {
+        "sha": "3f8d7d54cf4d1fe8903d892e6fda5f63d339e687",
+        "url": "https://api.github.com/repos/atom/atom/commits/3f8d7d54cf4d1fe8903d892e6fda5f63d339e687",
+        "html_url": "https://github.com/atom/atom/commit/3f8d7d54cf4d1fe8903d892e6fda5f63d339e687"
+      }
+    ]
+  },
+  {
+    "sha": "5434a26636cecc4bff724924c28cd793916e05d3",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo1NDM0YTI2NjM2Y2VjYzRiZmY3MjQ5MjRjMjhjZDc5MzkxNmUwNWQz",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T17:53:05Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T17:53:05Z"
+      },
+      "message": "Rename postVerification method to bootstrap",
+      "tree": {
+        "sha": "b920e3e02e4215c39f449a6b64954a620e5065cd",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b920e3e02e4215c39f449a6b64954a620e5065cd"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/5434a26636cecc4bff724924c28cd793916e05d3",
+      "comment_count": 1,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/5434a26636cecc4bff724924c28cd793916e05d3",
+    "html_url": "https://github.com/atom/atom/commit/5434a26636cecc4bff724924c28cd793916e05d3",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/5434a26636cecc4bff724924c28cd793916e05d3/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "50445a73bd7efa1489087b153fec4e75e7f9b897",
+        "url": "https://api.github.com/repos/atom/atom/commits/50445a73bd7efa1489087b153fec4e75e7f9b897",
+        "html_url": "https://github.com/atom/atom/commit/50445a73bd7efa1489087b153fec4e75e7f9b897"
+      }
+    ]
+  },
+  {
+    "sha": "1ac40b267338a9ff1e569878f5356ec5b4d4b03f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxYWM0MGIyNjczMzhhOWZmMWU1Njk4NzhmNTM1NmVjNWI0ZDRiMDNm",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T17:55:10Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T17:55:10Z"
+      },
+      "message": "Mimic Atom’s if/else style convention",
+      "tree": {
+        "sha": "1d36833372b94fa08a731120d0b7bde3b07ae088",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/1d36833372b94fa08a731120d0b7bde3b07ae088"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/1ac40b267338a9ff1e569878f5356ec5b4d4b03f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/1ac40b267338a9ff1e569878f5356ec5b4d4b03f",
+    "html_url": "https://github.com/atom/atom/commit/1ac40b267338a9ff1e569878f5356ec5b4d4b03f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/1ac40b267338a9ff1e569878f5356ec5b4d4b03f/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "5434a26636cecc4bff724924c28cd793916e05d3",
+        "url": "https://api.github.com/repos/atom/atom/commits/5434a26636cecc4bff724924c28cd793916e05d3",
+        "html_url": "https://github.com/atom/atom/commit/5434a26636cecc4bff724924c28cd793916e05d3"
+      }
+    ]
+  },
+  {
+    "sha": "b7bd11a8839a82879cdc9e029aca26061e8434c1",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiN2JkMTFhODgzOWE4Mjg3OWNkYzllMDI5YWNhMjYwNjFlODQzNGMx",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T18:09:50Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T18:09:50Z"
+      },
+      "message": "Reuse pythonExecutable variable",
+      "tree": {
+        "sha": "e0d415d34974af1c46a98a0bd6dd31a0611d2538",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e0d415d34974af1c46a98a0bd6dd31a0611d2538"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/b7bd11a8839a82879cdc9e029aca26061e8434c1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/b7bd11a8839a82879cdc9e029aca26061e8434c1",
+    "html_url": "https://github.com/atom/atom/commit/b7bd11a8839a82879cdc9e029aca26061e8434c1",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/b7bd11a8839a82879cdc9e029aca26061e8434c1/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "1ac40b267338a9ff1e569878f5356ec5b4d4b03f",
+        "url": "https://api.github.com/repos/atom/atom/commits/1ac40b267338a9ff1e569878f5356ec5b4d4b03f",
+        "html_url": "https://github.com/atom/atom/commit/1ac40b267338a9ff1e569878f5356ec5b4d4b03f"
+      }
+    ]
+  },
+  {
+    "sha": "99af9e2c33d2228a4fd124372fc8691e2687b0dd",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo5OWFmOWUyYzMzZDIyMjhhNGZkMTI0MzcyZmM4NjkxZTI2ODdiMGRk",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T18:10:14Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T18:10:14Z"
+      },
+      "message": "Update error messages",
+      "tree": {
+        "sha": "54e30365b194428aa99f6eb31e69cdd5b253269f",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/54e30365b194428aa99f6eb31e69cdd5b253269f"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/99af9e2c33d2228a4fd124372fc8691e2687b0dd",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/99af9e2c33d2228a4fd124372fc8691e2687b0dd",
+    "html_url": "https://github.com/atom/atom/commit/99af9e2c33d2228a4fd124372fc8691e2687b0dd",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/99af9e2c33d2228a4fd124372fc8691e2687b0dd/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "b7bd11a8839a82879cdc9e029aca26061e8434c1",
+        "url": "https://api.github.com/repos/atom/atom/commits/b7bd11a8839a82879cdc9e029aca26061e8434c1",
+        "html_url": "https://github.com/atom/atom/commit/b7bd11a8839a82879cdc9e029aca26061e8434c1"
+      }
+    ]
+  },
+  {
+    "sha": "3ead596a5dd3607f397a2c08e5f74bc0a07d07e5",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozZWFkNTk2YTVkZDM2MDdmMzk3YTJjMDhlNWY3NGJjMGEwN2QwN2U1",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T18:44:52Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T18:44:52Z"
+      },
+      "message": "Assume the PYTHON env points to python.exe",
+      "tree": {
+        "sha": "1010f1e651b63eb6511276bba827fbef0ea8f23e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/1010f1e651b63eb6511276bba827fbef0ea8f23e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/3ead596a5dd3607f397a2c08e5f74bc0a07d07e5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/3ead596a5dd3607f397a2c08e5f74bc0a07d07e5",
+    "html_url": "https://github.com/atom/atom/commit/3ead596a5dd3607f397a2c08e5f74bc0a07d07e5",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/3ead596a5dd3607f397a2c08e5f74bc0a07d07e5/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "99af9e2c33d2228a4fd124372fc8691e2687b0dd",
+        "url": "https://api.github.com/repos/atom/atom/commits/99af9e2c33d2228a4fd124372fc8691e2687b0dd",
+        "html_url": "https://github.com/atom/atom/commit/99af9e2c33d2228a4fd124372fc8691e2687b0dd"
+      }
+    ]
+  },
+  {
+    "sha": "c79c7b7a98a64a5678667f67e1a0df7b04eab596",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpjNzljN2I3YTk4YTY0YTU2Nzg2NjdmNjdlMWEwZGY3YjA0ZWFiNTk2",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T19:16:16Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T19:16:16Z"
+      },
+      "message": "Make all verify requirements methods take callbacks\n\nThis moves the error handling to bootstrap and also allows us to \ndisplay a success message.",
+      "tree": {
+        "sha": "cc0a4bfa579e2ed30620c263f84c430e647b0eac",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/cc0a4bfa579e2ed30620c263f84c430e647b0eac"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/c79c7b7a98a64a5678667f67e1a0df7b04eab596",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/c79c7b7a98a64a5678667f67e1a0df7b04eab596",
+    "html_url": "https://github.com/atom/atom/commit/c79c7b7a98a64a5678667f67e1a0df7b04eab596",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/c79c7b7a98a64a5678667f67e1a0df7b04eab596/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "3ead596a5dd3607f397a2c08e5f74bc0a07d07e5",
+        "url": "https://api.github.com/repos/atom/atom/commits/3ead596a5dd3607f397a2c08e5f74bc0a07d07e5",
+        "html_url": "https://github.com/atom/atom/commit/3ead596a5dd3607f397a2c08e5f74bc0a07d07e5"
+      }
+    ]
+  },
+  {
+    "sha": "1479197ffb21abdb29cd81c65d0b09541d6daf19",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxNDc5MTk3ZmZiMjFhYmRiMjljZDgxYzY1ZDBiMDk1NDFkNmRhZjE5",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T19:32:14Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T19:32:14Z"
+      },
+      "message": "Add better python error message",
+      "tree": {
+        "sha": "57e5e0f7ce4fb858fbba7b2645a64acd54c8d159",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/57e5e0f7ce4fb858fbba7b2645a64acd54c8d159"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/1479197ffb21abdb29cd81c65d0b09541d6daf19",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/1479197ffb21abdb29cd81c65d0b09541d6daf19",
+    "html_url": "https://github.com/atom/atom/commit/1479197ffb21abdb29cd81c65d0b09541d6daf19",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/1479197ffb21abdb29cd81c65d0b09541d6daf19/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "c79c7b7a98a64a5678667f67e1a0df7b04eab596",
+        "url": "https://api.github.com/repos/atom/atom/commits/c79c7b7a98a64a5678667f67e1a0df7b04eab596",
+        "html_url": "https://github.com/atom/atom/commit/c79c7b7a98a64a5678667f67e1a0df7b04eab596"
+      }
+    ]
+  },
+  {
+    "sha": "0b088e8b721542d115ab82c000d985e5f0ec5d77",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowYjA4OGU4YjcyMTU0MmQxMTVhYjgyYzAwMGQ5ODVlNWYwZWM1ZDc3",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T19:34:18Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T19:34:18Z"
+      },
+      "message": ":lipstick:",
+      "tree": {
+        "sha": "b22c6c9dd88e9346ba71bd9431e8c27c41736603",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b22c6c9dd88e9346ba71bd9431e8c27c41736603"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/0b088e8b721542d115ab82c000d985e5f0ec5d77",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/0b088e8b721542d115ab82c000d985e5f0ec5d77",
+    "html_url": "https://github.com/atom/atom/commit/0b088e8b721542d115ab82c000d985e5f0ec5d77",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/0b088e8b721542d115ab82c000d985e5f0ec5d77/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "1479197ffb21abdb29cd81c65d0b09541d6daf19",
+        "url": "https://api.github.com/repos/atom/atom/commits/1479197ffb21abdb29cd81c65d0b09541d6daf19",
+        "html_url": "https://github.com/atom/atom/commit/1479197ffb21abdb29cd81c65d0b09541d6daf19"
+      }
+    ]
+  },
+  {
+    "sha": "2e5c844d460471d4b0cd13994f40e499555a299a",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyZTVjODQ0ZDQ2MDQ3MWQ0YjBjZDEzOTk0ZjQwZTQ5OTU1NWEyOTlh",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T19:44:51Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T19:44:51Z"
+      },
+      "message": "Use childProcess directly",
+      "tree": {
+        "sha": "54c15a2660c74685a9ce16933f5c7d07e269eea8",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/54c15a2660c74685a9ce16933f5c7d07e269eea8"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/2e5c844d460471d4b0cd13994f40e499555a299a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/2e5c844d460471d4b0cd13994f40e499555a299a",
+    "html_url": "https://github.com/atom/atom/commit/2e5c844d460471d4b0cd13994f40e499555a299a",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/2e5c844d460471d4b0cd13994f40e499555a299a/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "0b088e8b721542d115ab82c000d985e5f0ec5d77",
+        "url": "https://api.github.com/repos/atom/atom/commits/0b088e8b721542d115ab82c000d985e5f0ec5d77",
+        "html_url": "https://github.com/atom/atom/commit/0b088e8b721542d115ab82c000d985e5f0ec5d77"
+      }
+    ]
+  },
+  {
+    "sha": "51183f4be541042215c4b862628059d7f48f0d90",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo1MTE4M2Y0YmU1NDEwNDIyMTVjNGI4NjI2MjgwNTlkN2Y0OGYwZDkw",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T20:14:00Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T20:14:00Z"
+      },
+      "message": "Use process.exit",
+      "tree": {
+        "sha": "a25c5857bc4ec83f67813c6cfcfb0e267a649ede",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/a25c5857bc4ec83f67813c6cfcfb0e267a649ede"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/51183f4be541042215c4b862628059d7f48f0d90",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/51183f4be541042215c4b862628059d7f48f0d90",
+    "html_url": "https://github.com/atom/atom/commit/51183f4be541042215c4b862628059d7f48f0d90",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/51183f4be541042215c4b862628059d7f48f0d90/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "2e5c844d460471d4b0cd13994f40e499555a299a",
+        "url": "https://api.github.com/repos/atom/atom/commits/2e5c844d460471d4b0cd13994f40e499555a299a",
+        "html_url": "https://github.com/atom/atom/commit/2e5c844d460471d4b0cd13994f40e499555a299a"
+      }
+    ]
+  },
+  {
+    "sha": "fbcb1521077e6030a84016b13fcac500ea1b5111",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmYmNiMTUyMTA3N2U2MDMwYTg0MDE2YjEzZmNhYzUwMGVhMWI1MTEx",
+    "commit": {
+      "author": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T21:07:59Z"
+      },
+      "committer": {
+        "name": "probablycorey",
+        "email": "cj@github.com",
+        "date": "2014-06-04T21:07:59Z"
+      },
+      "message": "Reorder if/else check",
+      "tree": {
+        "sha": "6946a528621072495b003e7e83cadaa9ad1851a8",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/6946a528621072495b003e7e83cadaa9ad1851a8"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/fbcb1521077e6030a84016b13fcac500ea1b5111",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/fbcb1521077e6030a84016b13fcac500ea1b5111",
+    "html_url": "https://github.com/atom/atom/commit/fbcb1521077e6030a84016b13fcac500ea1b5111",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/fbcb1521077e6030a84016b13fcac500ea1b5111/comments",
+    "author": null,
+    "committer": null,
+    "parents": [
+      {
+        "sha": "51183f4be541042215c4b862628059d7f48f0d90",
+        "url": "https://api.github.com/repos/atom/atom/commits/51183f4be541042215c4b862628059d7f48f0d90",
+        "html_url": "https://github.com/atom/atom/commit/51183f4be541042215c4b862628059d7f48f0d90"
+      }
+    ]
+  }
+]

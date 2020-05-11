@@ -1,0 +1,2387 @@
+[
+  {
+    "sha": "5612071cf304cdd18b0a41afc3149d3b85adc78d",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo1NjEyMDcxY2YzMDRjZGQxOGIwYTQxYWZjMzE0OWQzYjg1YWRjNzhk",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T18:01:44Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T18:01:44Z"
+      },
+      "message": "Add line-ending-selector to packageDependencies",
+      "tree": {
+        "sha": "50b3802dba20fef5db47e7dc757f04b556ccbe9c",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/50b3802dba20fef5db47e7dc757f04b556ccbe9c"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/5612071cf304cdd18b0a41afc3149d3b85adc78d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/5612071cf304cdd18b0a41afc3149d3b85adc78d",
+    "html_url": "https://github.com/atom/atom/commit/5612071cf304cdd18b0a41afc3149d3b85adc78d",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/5612071cf304cdd18b0a41afc3149d3b85adc78d/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "7e197060bc483106f9002526f22349fed6d94959",
+        "url": "https://api.github.com/repos/atom/atom/commits/7e197060bc483106f9002526f22349fed6d94959",
+        "html_url": "https://github.com/atom/atom/commit/7e197060bc483106f9002526f22349fed6d94959"
+      }
+    ]
+  },
+  {
+    "sha": "7adcbc60a360079cf30a8136d3a60468a491b5fe",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo3YWRjYmM2MGEzNjAwNzljZjMwYTgxMzZkM2E2MDQ2OGE0OTFiNWZl",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T21:31:03Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T21:47:48Z"
+      },
+      "message": "Compile babel files in place during compile task",
+      "tree": {
+        "sha": "d4c5b13238616b8dab1cc0fe3603dee1cf733b39",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/d4c5b13238616b8dab1cc0fe3603dee1cf733b39"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/7adcbc60a360079cf30a8136d3a60468a491b5fe",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/7adcbc60a360079cf30a8136d3a60468a491b5fe",
+    "html_url": "https://github.com/atom/atom/commit/7adcbc60a360079cf30a8136d3a60468a491b5fe",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/7adcbc60a360079cf30a8136d3a60468a491b5fe/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "5612071cf304cdd18b0a41afc3149d3b85adc78d",
+        "url": "https://api.github.com/repos/atom/atom/commits/5612071cf304cdd18b0a41afc3149d3b85adc78d",
+        "html_url": "https://github.com/atom/atom/commit/5612071cf304cdd18b0a41afc3149d3b85adc78d"
+      }
+    ]
+  },
+  {
+    "sha": "76f05814d710ad22c27d1d3c4ee08a40d9e29e82",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo3NmYwNTgxNGQ3MTBhZDIyYzI3ZDFkM2M0ZWUwOGE0MGQ5ZTI5ZTgy",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T21:51:15Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T21:51:15Z"
+      },
+      "message": "convert-tabs-to-spaces",
+      "tree": {
+        "sha": "f34323cca826eed98ef6d708d7f5b417427e0bfd",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/f34323cca826eed98ef6d708d7f5b417427e0bfd"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/76f05814d710ad22c27d1d3c4ee08a40d9e29e82",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/76f05814d710ad22c27d1d3c4ee08a40d9e29e82",
+    "html_url": "https://github.com/atom/atom/commit/76f05814d710ad22c27d1d3c4ee08a40d9e29e82",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/76f05814d710ad22c27d1d3c4ee08a40d9e29e82/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "7adcbc60a360079cf30a8136d3a60468a491b5fe",
+        "url": "https://api.github.com/repos/atom/atom/commits/7adcbc60a360079cf30a8136d3a60468a491b5fe",
+        "html_url": "https://github.com/atom/atom/commit/7adcbc60a360079cf30a8136d3a60468a491b5fe"
+      }
+    ]
+  },
+  {
+    "sha": "ca58687c889148d9b2f07f2b4cac7b6e884cca3b",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpjYTU4Njg3Yzg4OTE0OGQ5YjJmMDdmMmI0Y2FjN2I2ZTg4NGNjYTNi",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T22:43:38Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T22:43:38Z"
+      },
+      "message": "Write babel-compiled JS files to app dir",
+      "tree": {
+        "sha": "18aa07a9853b520ea664bec612bbef22e6b957fb",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/18aa07a9853b520ea664bec612bbef22e6b957fb"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/ca58687c889148d9b2f07f2b4cac7b6e884cca3b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/ca58687c889148d9b2f07f2b4cac7b6e884cca3b",
+    "html_url": "https://github.com/atom/atom/commit/ca58687c889148d9b2f07f2b4cac7b6e884cca3b",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/ca58687c889148d9b2f07f2b4cac7b6e884cca3b/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "76f05814d710ad22c27d1d3c4ee08a40d9e29e82",
+        "url": "https://api.github.com/repos/atom/atom/commits/76f05814d710ad22c27d1d3c4ee08a40d9e29e82",
+        "html_url": "https://github.com/atom/atom/commit/76f05814d710ad22c27d1d3c4ee08a40d9e29e82"
+      }
+    ]
+  },
+  {
+    "sha": "e4b1d512cd01175583a615a8493b0ee75ec8f73e",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplNGIxZDUxMmNkMDExNzU1ODNhNjE1YTg0OTNiMGVlNzVlYzhmNzNl",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T22:49:34Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-19T00:32:11Z"
+      },
+      "message": "Honor /** use babel */ in addition to 'use babel'",
+      "tree": {
+        "sha": "836fb7fbc2a2c5331639d905f37751a9a91a2b9e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/836fb7fbc2a2c5331639d905f37751a9a91a2b9e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/e4b1d512cd01175583a615a8493b0ee75ec8f73e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/e4b1d512cd01175583a615a8493b0ee75ec8f73e",
+    "html_url": "https://github.com/atom/atom/commit/e4b1d512cd01175583a615a8493b0ee75ec8f73e",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/e4b1d512cd01175583a615a8493b0ee75ec8f73e/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "ca58687c889148d9b2f07f2b4cac7b6e884cca3b",
+        "url": "https://api.github.com/repos/atom/atom/commits/ca58687c889148d9b2f07f2b4cac7b6e884cca3b",
+        "html_url": "https://github.com/atom/atom/commit/ca58687c889148d9b2f07f2b4cac7b6e884cca3b"
+      }
+    ]
+  },
+  {
+    "sha": "bea45b5921a3dbd06f083a972b327237d04b9312",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiZWE0NWI1OTIxYTNkYmQwNmYwODNhOTcyYjMyNzIzN2QwNGI5MzEy",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-18T23:17:27Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-19T00:32:11Z"
+      },
+      "message": "Don't use Buffer::equals\n\nNode 0.10 doesn't have it",
+      "tree": {
+        "sha": "641d8b5d773a40ba764d519a3ef31d5927a212f0",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/641d8b5d773a40ba764d519a3ef31d5927a212f0"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/bea45b5921a3dbd06f083a972b327237d04b9312",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/bea45b5921a3dbd06f083a972b327237d04b9312",
+    "html_url": "https://github.com/atom/atom/commit/bea45b5921a3dbd06f083a972b327237d04b9312",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/bea45b5921a3dbd06f083a972b327237d04b9312/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "e4b1d512cd01175583a615a8493b0ee75ec8f73e",
+        "url": "https://api.github.com/repos/atom/atom/commits/e4b1d512cd01175583a615a8493b0ee75ec8f73e",
+        "html_url": "https://github.com/atom/atom/commit/e4b1d512cd01175583a615a8493b0ee75ec8f73e"
+      }
+    ]
+  },
+  {
+    "sha": "a25a8c83e46a9c9c1f741283eb961483ce83577f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphMjVhOGM4M2U0NmE5YzljMWY3NDEyODNlYjk2MTQ4M2NlODM1Nzdm",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-19T00:50:49Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-19T00:50:49Z"
+      },
+      "message": "Use same babel options for compiling bundled packages",
+      "tree": {
+        "sha": "c53feb5c692acb1bf70c378c902d15d7236ec433",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c53feb5c692acb1bf70c378c902d15d7236ec433"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/a25a8c83e46a9c9c1f741283eb961483ce83577f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/a25a8c83e46a9c9c1f741283eb961483ce83577f",
+    "html_url": "https://github.com/atom/atom/commit/a25a8c83e46a9c9c1f741283eb961483ce83577f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/a25a8c83e46a9c9c1f741283eb961483ce83577f/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "bea45b5921a3dbd06f083a972b327237d04b9312",
+        "url": "https://api.github.com/repos/atom/atom/commits/bea45b5921a3dbd06f083a972b327237d04b9312",
+        "html_url": "https://github.com/atom/atom/commit/bea45b5921a3dbd06f083a972b327237d04b9312"
+      }
+    ]
+  },
+  {
+    "sha": "733c120ef786d5e7feb05841c0deb72468d42cf1",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo3MzNjMTIwZWY3ODZkNWU3ZmViMDU4NDFjMGRlYjcyNDY4ZDQyY2Yx",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-19T19:00:41Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-19T19:00:41Z"
+      },
+      "message": "Merge remote-tracking branch 'origin/master' into mb-bundle-line-ending-selector",
+      "tree": {
+        "sha": "d0fbca801ac7cf46a5e96ea6930db27ee92bf5d6",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/d0fbca801ac7cf46a5e96ea6930db27ee92bf5d6"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/733c120ef786d5e7feb05841c0deb72468d42cf1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/733c120ef786d5e7feb05841c0deb72468d42cf1",
+    "html_url": "https://github.com/atom/atom/commit/733c120ef786d5e7feb05841c0deb72468d42cf1",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/733c120ef786d5e7feb05841c0deb72468d42cf1/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "a25a8c83e46a9c9c1f741283eb961483ce83577f",
+        "url": "https://api.github.com/repos/atom/atom/commits/a25a8c83e46a9c9c1f741283eb961483ce83577f",
+        "html_url": "https://github.com/atom/atom/commit/a25a8c83e46a9c9c1f741283eb961483ce83577f"
+      },
+      {
+        "sha": "327789312aca80ee3cb133cc9eac00f4a68a4513",
+        "url": "https://api.github.com/repos/atom/atom/commits/327789312aca80ee3cb133cc9eac00f4a68a4513",
+        "html_url": "https://github.com/atom/atom/commit/327789312aca80ee3cb133cc9eac00f4a68a4513"
+      }
+    ]
+  },
+  {
+    "sha": "49e37f541046f0ce9037494d3fe9bf7e85847980",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0OWUzN2Y1NDEwNDZmMGNlOTAzNzQ5NGQzZmU5YmY3ZTg1ODQ3OTgw",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-19T23:36:24Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T00:55:29Z"
+      },
+      "message": "Use source-map-support to handle stack trace conversion\n\nPreviously, our Error.convertStackTrace function was provided by coffeestack,\nwhich only works for coffee-script. This adds a dependency on 'source-map-support',\nwhich works for any source file with inline source maps.\n\nThis also refactors the code for registering our compilers (coffee-script,\ntypescript, and babel) so that caching logic is shared.",
+      "tree": {
+        "sha": "0fc34b7b6e2e78756435d01a7379adbb072ee40e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/0fc34b7b6e2e78756435d01a7379adbb072ee40e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/49e37f541046f0ce9037494d3fe9bf7e85847980",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/49e37f541046f0ce9037494d3fe9bf7e85847980",
+    "html_url": "https://github.com/atom/atom/commit/49e37f541046f0ce9037494d3fe9bf7e85847980",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/49e37f541046f0ce9037494d3fe9bf7e85847980/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "733c120ef786d5e7feb05841c0deb72468d42cf1",
+        "url": "https://api.github.com/repos/atom/atom/commits/733c120ef786d5e7feb05841c0deb72468d42cf1",
+        "html_url": "https://github.com/atom/atom/commit/733c120ef786d5e7feb05841c0deb72468d42cf1"
+      }
+    ]
+  },
+  {
+    "sha": "2285e8a42c3f12d47d31c22f96c541ca48a575ee",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyMjg1ZThhNDJjM2YxMmQ0N2QzMWMyMmY5NmM1NDFjYTQ4YTU3NWVl",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T00:27:57Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T00:55:29Z"
+      },
+      "message": "Move babel config to a separate file in static directory",
+      "tree": {
+        "sha": "6d8aaca45d1009ef257aed1f66411b1bb86adebf",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/6d8aaca45d1009ef257aed1f66411b1bb86adebf"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/2285e8a42c3f12d47d31c22f96c541ca48a575ee",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/2285e8a42c3f12d47d31c22f96c541ca48a575ee",
+    "html_url": "https://github.com/atom/atom/commit/2285e8a42c3f12d47d31c22f96c541ca48a575ee",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/2285e8a42c3f12d47d31c22f96c541ca48a575ee/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "49e37f541046f0ce9037494d3fe9bf7e85847980",
+        "url": "https://api.github.com/repos/atom/atom/commits/49e37f541046f0ce9037494d3fe9bf7e85847980",
+        "html_url": "https://github.com/atom/atom/commit/49e37f541046f0ce9037494d3fe9bf7e85847980"
+      }
+    ]
+  },
+  {
+    "sha": "1bfbf7f9d30c6722241639c15c4f74fc4aa949b7",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxYmZiZjdmOWQzMGM2NzIyMjQxNjM5YzE1YzRmNzRmYzRhYTk0OWI3",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T17:00:38Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T18:58:45Z"
+      },
+      "message": "Map line numbers in onerror handler w/ source-map-support",
+      "tree": {
+        "sha": "da9770e33ce3e79be25cfc61f85a4450226b92c5",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/da9770e33ce3e79be25cfc61f85a4450226b92c5"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/1bfbf7f9d30c6722241639c15c4f74fc4aa949b7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/1bfbf7f9d30c6722241639c15c4f74fc4aa949b7",
+    "html_url": "https://github.com/atom/atom/commit/1bfbf7f9d30c6722241639c15c4f74fc4aa949b7",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/1bfbf7f9d30c6722241639c15c4f74fc4aa949b7/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "2285e8a42c3f12d47d31c22f96c541ca48a575ee",
+        "url": "https://api.github.com/repos/atom/atom/commits/2285e8a42c3f12d47d31c22f96c541ca48a575ee",
+        "html_url": "https://github.com/atom/atom/commit/2285e8a42c3f12d47d31c22f96c541ca48a575ee"
+      }
+    ]
+  },
+  {
+    "sha": "973c2a6a18f7e7229fa73d1b80456c69a13e63e4",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo5NzNjMmE2YTE4ZjdlNzIyOWZhNzNkMWI4MDQ1NmM2OWExM2U2M2U0",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T18:22:32Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T18:58:46Z"
+      },
+      "message": "Don't match newlines when finding source-map data",
+      "tree": {
+        "sha": "674a35c2f3c623f0a1a9653258ae584b69edcf24",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/674a35c2f3c623f0a1a9653258ae584b69edcf24"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/973c2a6a18f7e7229fa73d1b80456c69a13e63e4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/973c2a6a18f7e7229fa73d1b80456c69a13e63e4",
+    "html_url": "https://github.com/atom/atom/commit/973c2a6a18f7e7229fa73d1b80456c69a13e63e4",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/973c2a6a18f7e7229fa73d1b80456c69a13e63e4/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "1bfbf7f9d30c6722241639c15c4f74fc4aa949b7",
+        "url": "https://api.github.com/repos/atom/atom/commits/1bfbf7f9d30c6722241639c15c4f74fc4aa949b7",
+        "html_url": "https://github.com/atom/atom/commit/1bfbf7f9d30c6722241639c15c4f74fc4aa949b7"
+      }
+    ]
+  },
+  {
+    "sha": "070f4000f0039b8cc9fbbff2cfccaa8b028e6c81",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowNzBmNDAwMGYwMDM5YjhjYzlmYmJmZjJjZmNjYWE4YjAyOGU2Yzgx",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T18:25:38Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T18:58:46Z"
+      },
+      "message": "Replace 'use babel' -> '@babel' in comment directive",
+      "tree": {
+        "sha": "64f15d05630a2cacc56208b4dca564f29a2771ff",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/64f15d05630a2cacc56208b4dca564f29a2771ff"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/070f4000f0039b8cc9fbbff2cfccaa8b028e6c81",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/070f4000f0039b8cc9fbbff2cfccaa8b028e6c81",
+    "html_url": "https://github.com/atom/atom/commit/070f4000f0039b8cc9fbbff2cfccaa8b028e6c81",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/070f4000f0039b8cc9fbbff2cfccaa8b028e6c81/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "973c2a6a18f7e7229fa73d1b80456c69a13e63e4",
+        "url": "https://api.github.com/repos/atom/atom/commits/973c2a6a18f7e7229fa73d1b80456c69a13e63e4",
+        "html_url": "https://github.com/atom/atom/commit/973c2a6a18f7e7229fa73d1b80456c69a13e63e4"
+      }
+    ]
+  },
+  {
+    "sha": "6ef15468eb9b60c833f34fb08f2c30f46015b9ef",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo2ZWYxNTQ2OGViOWI2MGM4MzNmMzRmYjA4ZjJjMzBmNDYwMTViOWVm",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-20T19:35:49Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-20T19:35:49Z"
+      },
+      "message": ":arrow_up: grim to drop its custom CoffeeScript stack trace support\n\nIt’s interfering with our global stack trace support.",
+      "tree": {
+        "sha": "156dd62bbb80f9b72e198b150bbce12dd916fc20",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/156dd62bbb80f9b72e198b150bbce12dd916fc20"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/6ef15468eb9b60c833f34fb08f2c30f46015b9ef",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/6ef15468eb9b60c833f34fb08f2c30f46015b9ef",
+    "html_url": "https://github.com/atom/atom/commit/6ef15468eb9b60c833f34fb08f2c30f46015b9ef",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/6ef15468eb9b60c833f34fb08f2c30f46015b9ef/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "070f4000f0039b8cc9fbbff2cfccaa8b028e6c81",
+        "url": "https://api.github.com/repos/atom/atom/commits/070f4000f0039b8cc9fbbff2cfccaa8b028e6c81",
+        "html_url": "https://github.com/atom/atom/commit/070f4000f0039b8cc9fbbff2cfccaa8b028e6c81"
+      }
+    ]
+  },
+  {
+    "sha": "dba53f3358a5f582e2b36c4835ec5be4b62a9c71",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkYmE1M2YzMzU4YTVmNTgyZTJiMzZjNDgzNWVjNWJlNGI2MmE5Yzcx",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-20T20:05:28Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-20T20:05:28Z"
+      },
+      "message": "Merge branch 'master' into mb-bundle-line-ending-selector",
+      "tree": {
+        "sha": "dd2820f4564edf0de7a65b7ccbc49b3be13862f0",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/dd2820f4564edf0de7a65b7ccbc49b3be13862f0"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/dba53f3358a5f582e2b36c4835ec5be4b62a9c71",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/dba53f3358a5f582e2b36c4835ec5be4b62a9c71",
+    "html_url": "https://github.com/atom/atom/commit/dba53f3358a5f582e2b36c4835ec5be4b62a9c71",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/dba53f3358a5f582e2b36c4835ec5be4b62a9c71/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "6ef15468eb9b60c833f34fb08f2c30f46015b9ef",
+        "url": "https://api.github.com/repos/atom/atom/commits/6ef15468eb9b60c833f34fb08f2c30f46015b9ef",
+        "html_url": "https://github.com/atom/atom/commit/6ef15468eb9b60c833f34fb08f2c30f46015b9ef"
+      },
+      {
+        "sha": "e76c2658262ad9869f22c3ea1e6823f2632e73cd",
+        "url": "https://api.github.com/repos/atom/atom/commits/e76c2658262ad9869f22c3ea1e6823f2632e73cd",
+        "html_url": "https://github.com/atom/atom/commit/e76c2658262ad9869f22c3ea1e6823f2632e73cd"
+      }
+    ]
+  },
+  {
+    "sha": "61ef1da81531839efb281278e438318ac2a61859",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo2MWVmMWRhODE1MzE4MzllZmIyODEyNzhlNDM4MzE4YWMyYTYxODU5",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-20T22:07:37Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T22:07:37Z"
+      },
+      "message": ":art:\n\nSigned-off-by: Max Brunsfeld <maxbrunsfeld@gmail.com>",
+      "tree": {
+        "sha": "8aff0f28c1491f58b8f7eb501e01236e019cf139",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/8aff0f28c1491f58b8f7eb501e01236e019cf139"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/61ef1da81531839efb281278e438318ac2a61859",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/61ef1da81531839efb281278e438318ac2a61859",
+    "html_url": "https://github.com/atom/atom/commit/61ef1da81531839efb281278e438318ac2a61859",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/61ef1da81531839efb281278e438318ac2a61859/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "dba53f3358a5f582e2b36c4835ec5be4b62a9c71",
+        "url": "https://api.github.com/repos/atom/atom/commits/dba53f3358a5f582e2b36c4835ec5be4b62a9c71",
+        "html_url": "https://github.com/atom/atom/commit/dba53f3358a5f582e2b36c4835ec5be4b62a9c71"
+      }
+    ]
+  },
+  {
+    "sha": "c0f3ca6dcdc56c45582c86249665b66f5c45784b",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpjMGYzY2E2ZGNkYzU2YzQ1NTgyYzg2MjQ5NjY1YjY2ZjVjNDU3ODRi",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-20T22:08:03Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-20T22:08:03Z"
+      },
+      "message": "Fix inline source map regex\n\nNeed to enable multi-line mode after all\n\nSigned-off-by: Max Brunsfeld <maxbrunsfeld@gmail.com>",
+      "tree": {
+        "sha": "a0f69b03ae21ee8554fea8846869c7547bbf29d7",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/a0f69b03ae21ee8554fea8846869c7547bbf29d7"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/c0f3ca6dcdc56c45582c86249665b66f5c45784b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/c0f3ca6dcdc56c45582c86249665b66f5c45784b",
+    "html_url": "https://github.com/atom/atom/commit/c0f3ca6dcdc56c45582c86249665b66f5c45784b",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/c0f3ca6dcdc56c45582c86249665b66f5c45784b/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "61ef1da81531839efb281278e438318ac2a61859",
+        "url": "https://api.github.com/repos/atom/atom/commits/61ef1da81531839efb281278e438318ac2a61859",
+        "html_url": "https://github.com/atom/atom/commit/61ef1da81531839efb281278e438318ac2a61859"
+      }
+    ]
+  },
+  {
+    "sha": "6f44fc4c7f7a0b85ce483b1b641493c4bdbc74e8",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo2ZjQ0ZmM0YzdmN2EwYjg1Y2U0ODNiMWI2NDE0OTNjNGJkYmM3NGU4",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-20T22:08:25Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-20T22:08:25Z"
+      },
+      "message": "Generate sourceFiles in CoffeeScript source maps correctly",
+      "tree": {
+        "sha": "ce85fa2cca6ee54d551636869cdb52768b392ef8",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ce85fa2cca6ee54d551636869cdb52768b392ef8"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/6f44fc4c7f7a0b85ce483b1b641493c4bdbc74e8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/6f44fc4c7f7a0b85ce483b1b641493c4bdbc74e8",
+    "html_url": "https://github.com/atom/atom/commit/6f44fc4c7f7a0b85ce483b1b641493c4bdbc74e8",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/6f44fc4c7f7a0b85ce483b1b641493c4bdbc74e8/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "c0f3ca6dcdc56c45582c86249665b66f5c45784b",
+        "url": "https://api.github.com/repos/atom/atom/commits/c0f3ca6dcdc56c45582c86249665b66f5c45784b",
+        "html_url": "https://github.com/atom/atom/commit/c0f3ca6dcdc56c45582c86249665b66f5c45784b"
+      }
+    ]
+  },
+  {
+    "sha": "f531684acf7ee03eda4bba64e3a7be71433c2dc9",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmNTMxNjg0YWNmN2VlMDNlZGE0YmJhNjRlM2E3YmU3MTQzM2MyZGM5",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T00:59:29Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T00:59:29Z"
+      },
+      "message": "Use compile-cache in browser process (for dev mode)",
+      "tree": {
+        "sha": "6d3f93f5a066507546471b2a9b64c7321e0de283",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/6d3f93f5a066507546471b2a9b64c7321e0de283"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/f531684acf7ee03eda4bba64e3a7be71433c2dc9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/f531684acf7ee03eda4bba64e3a7be71433c2dc9",
+    "html_url": "https://github.com/atom/atom/commit/f531684acf7ee03eda4bba64e3a7be71433c2dc9",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/f531684acf7ee03eda4bba64e3a7be71433c2dc9/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "6f44fc4c7f7a0b85ce483b1b641493c4bdbc74e8",
+        "url": "https://api.github.com/repos/atom/atom/commits/6f44fc4c7f7a0b85ce483b1b641493c4bdbc74e8",
+        "html_url": "https://github.com/atom/atom/commit/6f44fc4c7f7a0b85ce483b1b641493c4bdbc74e8"
+      }
+    ]
+  },
+  {
+    "sha": "8c5eed28d20fee1d64ad647e2ca45dd2c4712ee3",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4YzVlZWQyOGQyMGZlZTFkNjRhZDY0N2UyY2E0NWRkMmM0NzEyZWUz",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T17:31:29Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T17:31:29Z"
+      },
+      "message": "Don't use es6 features in compile-cache\n\nAPM requires it directly, and it uses an older version of node",
+      "tree": {
+        "sha": "509358005cef469d785f64ea4b2cc465734cc5ab",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/509358005cef469d785f64ea4b2cc465734cc5ab"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/8c5eed28d20fee1d64ad647e2ca45dd2c4712ee3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/8c5eed28d20fee1d64ad647e2ca45dd2c4712ee3",
+    "html_url": "https://github.com/atom/atom/commit/8c5eed28d20fee1d64ad647e2ca45dd2c4712ee3",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/8c5eed28d20fee1d64ad647e2ca45dd2c4712ee3/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "f531684acf7ee03eda4bba64e3a7be71433c2dc9",
+        "url": "https://api.github.com/repos/atom/atom/commits/f531684acf7ee03eda4bba64e3a7be71433c2dc9",
+        "html_url": "https://github.com/atom/atom/commit/f531684acf7ee03eda4bba64e3a7be71433c2dc9"
+      }
+    ]
+  },
+  {
+    "sha": "8b7f9b047162f8552a97d9d7bd9db7ef33f6bba2",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4YjdmOWIwNDcxNjJmODU1MmE5N2Q5ZDdiZDlkYjdlZjMzZjZiYmEy",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-21T17:54:10Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2015-08-21T17:54:10Z"
+      },
+      "message": "Merge branch 'master' into mb-bundle-line-ending-selector",
+      "tree": {
+        "sha": "a013d2365923c60678287fbefce05a9b45aa0d20",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/a013d2365923c60678287fbefce05a9b45aa0d20"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/8b7f9b047162f8552a97d9d7bd9db7ef33f6bba2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/8b7f9b047162f8552a97d9d7bd9db7ef33f6bba2",
+    "html_url": "https://github.com/atom/atom/commit/8b7f9b047162f8552a97d9d7bd9db7ef33f6bba2",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/8b7f9b047162f8552a97d9d7bd9db7ef33f6bba2/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "8c5eed28d20fee1d64ad647e2ca45dd2c4712ee3",
+        "url": "https://api.github.com/repos/atom/atom/commits/8c5eed28d20fee1d64ad647e2ca45dd2c4712ee3",
+        "html_url": "https://github.com/atom/atom/commit/8c5eed28d20fee1d64ad647e2ca45dd2c4712ee3"
+      },
+      {
+        "sha": "5de1a26283d778180503b91c22d4a91ad5193fcd",
+        "url": "https://api.github.com/repos/atom/atom/commits/5de1a26283d778180503b91c22d4a91ad5193fcd",
+        "html_url": "https://github.com/atom/atom/commit/5de1a26283d778180503b91c22d4a91ad5193fcd"
+      }
+    ]
+  },
+  {
+    "sha": "408202729ec842029a68a730bf2dbff532379f20",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0MDgyMDI3MjllYzg0MjAyOWE2OGE3MzBiZjJkYmZmNTMyMzc5ZjIw",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T18:19:11Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T18:19:11Z"
+      },
+      "message": "Add sourceURL comment to all compiled js files",
+      "tree": {
+        "sha": "e0fbc84416e3bc27e64a9a7a67b3dd39b11b150e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e0fbc84416e3bc27e64a9a7a67b3dd39b11b150e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/408202729ec842029a68a730bf2dbff532379f20",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/408202729ec842029a68a730bf2dbff532379f20",
+    "html_url": "https://github.com/atom/atom/commit/408202729ec842029a68a730bf2dbff532379f20",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/408202729ec842029a68a730bf2dbff532379f20/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "8b7f9b047162f8552a97d9d7bd9db7ef33f6bba2",
+        "url": "https://api.github.com/repos/atom/atom/commits/8b7f9b047162f8552a97d9d7bd9db7ef33f6bba2",
+        "html_url": "https://github.com/atom/atom/commit/8b7f9b047162f8552a97d9d7bd9db7ef33f6bba2"
+      }
+    ]
+  },
+  {
+    "sha": "bb69f1352dc00348c16a2f5f89e1d9c46a853722",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiYjY5ZjEzNTJkYzAwMzQ4YzE2YTJmNWY4OWUxZDljNDZhODUzNzIy",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T18:50:54Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T18:50:54Z"
+      },
+      "message": ":art:",
+      "tree": {
+        "sha": "a9bb6c872f5395b5cc23c16f8739f22c130a0e6b",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/a9bb6c872f5395b5cc23c16f8739f22c130a0e6b"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/bb69f1352dc00348c16a2f5f89e1d9c46a853722",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/bb69f1352dc00348c16a2f5f89e1d9c46a853722",
+    "html_url": "https://github.com/atom/atom/commit/bb69f1352dc00348c16a2f5f89e1d9c46a853722",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/bb69f1352dc00348c16a2f5f89e1d9c46a853722/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "408202729ec842029a68a730bf2dbff532379f20",
+        "url": "https://api.github.com/repos/atom/atom/commits/408202729ec842029a68a730bf2dbff532379f20",
+        "html_url": "https://github.com/atom/atom/commit/408202729ec842029a68a730bf2dbff532379f20"
+      }
+    ]
+  },
+  {
+    "sha": "1f646761898876cd2bf8a707fb2b98a777188d0e",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxZjY0Njc2MTg5ODg3NmNkMmJmOGE3MDdmYjJiOThhNzc3MTg4ZDBl",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T19:14:10Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T19:14:10Z"
+      },
+      "message": ":fire: Unnecessary joining and splitting",
+      "tree": {
+        "sha": "b66c012df12a50fe6045e77198130fa66ff5278a",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b66c012df12a50fe6045e77198130fa66ff5278a"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/1f646761898876cd2bf8a707fb2b98a777188d0e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/1f646761898876cd2bf8a707fb2b98a777188d0e",
+    "html_url": "https://github.com/atom/atom/commit/1f646761898876cd2bf8a707fb2b98a777188d0e",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/1f646761898876cd2bf8a707fb2b98a777188d0e/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "bb69f1352dc00348c16a2f5f89e1d9c46a853722",
+        "url": "https://api.github.com/repos/atom/atom/commits/bb69f1352dc00348c16a2f5f89e1d9c46a853722",
+        "html_url": "https://github.com/atom/atom/commit/bb69f1352dc00348c16a2f5f89e1d9c46a853722"
+      }
+    ]
+  },
+  {
+    "sha": "b533aff8f497224bbf08583a73733dba5002099d",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiNTMzYWZmOGY0OTcyMjRiYmYwODU4M2E3MzczM2RiYTUwMDIwOTlk",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T20:35:52Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T20:48:56Z"
+      },
+      "message": ":racehorse: Minimize dependencies loaded before the module-cache",
+      "tree": {
+        "sha": "8c4c3cc64b0d787e36986dd5d849eac0df3b461c",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/8c4c3cc64b0d787e36986dd5d849eac0df3b461c"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/b533aff8f497224bbf08583a73733dba5002099d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/b533aff8f497224bbf08583a73733dba5002099d",
+    "html_url": "https://github.com/atom/atom/commit/b533aff8f497224bbf08583a73733dba5002099d",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/b533aff8f497224bbf08583a73733dba5002099d/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "1f646761898876cd2bf8a707fb2b98a777188d0e",
+        "url": "https://api.github.com/repos/atom/atom/commits/1f646761898876cd2bf8a707fb2b98a777188d0e",
+        "html_url": "https://github.com/atom/atom/commit/1f646761898876cd2bf8a707fb2b98a777188d0e"
+      }
+    ]
+  },
+  {
+    "sha": "f8397661d17148c8183bd5397d8874715c39b2a5",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmODM5NzY2MWQxNzE0OGM4MTgzYmQ1Mzk3ZDg4NzQ3MTVjMzliMmE1",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T20:45:02Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T20:48:56Z"
+      },
+      "message": "Defer coffee-script require, prevent it from reassigning prepareStackTrace",
+      "tree": {
+        "sha": "9fdaaf08f5232b930b5b86a56ac61781d7e552ef",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/9fdaaf08f5232b930b5b86a56ac61781d7e552ef"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/f8397661d17148c8183bd5397d8874715c39b2a5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/f8397661d17148c8183bd5397d8874715c39b2a5",
+    "html_url": "https://github.com/atom/atom/commit/f8397661d17148c8183bd5397d8874715c39b2a5",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/f8397661d17148c8183bd5397d8874715c39b2a5/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "b533aff8f497224bbf08583a73733dba5002099d",
+        "url": "https://api.github.com/repos/atom/atom/commits/b533aff8f497224bbf08583a73733dba5002099d",
+        "html_url": "https://github.com/atom/atom/commit/b533aff8f497224bbf08583a73733dba5002099d"
+      }
+    ]
+  },
+  {
+    "sha": "a6fa098a8cf20afc434e84146b0dfbc6ec37bb99",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphNmZhMDk4YThjZjIwYWZjNDM0ZTg0MTQ2YjBkZmJjNmVjMzdiYjk5",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T21:47:32Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T21:47:32Z"
+      },
+      "message": "Add CompileCache spec",
+      "tree": {
+        "sha": "ca48e0572c41ee34d5eb7ae4402ba6fe15e9c20c",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ca48e0572c41ee34d5eb7ae4402ba6fe15e9c20c"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/a6fa098a8cf20afc434e84146b0dfbc6ec37bb99",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/a6fa098a8cf20afc434e84146b0dfbc6ec37bb99",
+    "html_url": "https://github.com/atom/atom/commit/a6fa098a8cf20afc434e84146b0dfbc6ec37bb99",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/a6fa098a8cf20afc434e84146b0dfbc6ec37bb99/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "f8397661d17148c8183bd5397d8874715c39b2a5",
+        "url": "https://api.github.com/repos/atom/atom/commits/f8397661d17148c8183bd5397d8874715c39b2a5",
+        "html_url": "https://github.com/atom/atom/commit/f8397661d17148c8183bd5397d8874715c39b2a5"
+      }
+    ]
+  },
+  {
+    "sha": "a18b7e2fa9cb7f6c675d6dab1fc0e9303bb17764",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphMThiN2UyZmE5Y2I3ZjZjNjc1ZDZkYWIxZmMwZTkzMDNiYjE3NzY0",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T21:57:39Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T21:57:39Z"
+      },
+      "message": "Don't make prepareStackTrace unwritable\n\nThis breaks other code (such as Grim) that may want to temporarily\nuse a different prepareStackTrace function.",
+      "tree": {
+        "sha": "095953ca6c04322e9732610700ed95d02aacd282",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/095953ca6c04322e9732610700ed95d02aacd282"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/a18b7e2fa9cb7f6c675d6dab1fc0e9303bb17764",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/a18b7e2fa9cb7f6c675d6dab1fc0e9303bb17764",
+    "html_url": "https://github.com/atom/atom/commit/a18b7e2fa9cb7f6c675d6dab1fc0e9303bb17764",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/a18b7e2fa9cb7f6c675d6dab1fc0e9303bb17764/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "a6fa098a8cf20afc434e84146b0dfbc6ec37bb99",
+        "url": "https://api.github.com/repos/atom/atom/commits/a6fa098a8cf20afc434e84146b0dfbc6ec37bb99",
+        "html_url": "https://github.com/atom/atom/commit/a6fa098a8cf20afc434e84146b0dfbc6ec37bb99"
+      }
+    ]
+  },
+  {
+    "sha": "f3778148a065c713b98738d42cd7acb49c0b8ae0",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmMzc3ODE0OGEwNjVjNzEzYjk4NzM4ZDQyY2Q3YWNiNDljMGI4YWUw",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T22:37:36Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T22:37:36Z"
+      },
+      "message": "Catch errors when retrieving source maps",
+      "tree": {
+        "sha": "f7ead8866933586f81647bcc09f00382d91c619b",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/f7ead8866933586f81647bcc09f00382d91c619b"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/f3778148a065c713b98738d42cd7acb49c0b8ae0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/f3778148a065c713b98738d42cd7acb49c0b8ae0",
+    "html_url": "https://github.com/atom/atom/commit/f3778148a065c713b98738d42cd7acb49c0b8ae0",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/f3778148a065c713b98738d42cd7acb49c0b8ae0/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "a18b7e2fa9cb7f6c675d6dab1fc0e9303bb17764",
+        "url": "https://api.github.com/repos/atom/atom/commits/a18b7e2fa9cb7f6c675d6dab1fc0e9303bb17764",
+        "html_url": "https://github.com/atom/atom/commit/a18b7e2fa9cb7f6c675d6dab1fc0e9303bb17764"
+      }
+    ]
+  },
+  {
+    "sha": "ca4922bb70c20730e4446aed7e3af00a133d0a61",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpjYTQ5MjJiYjcwYzIwNzMwZTQ0NDZhZWQ3ZTNhZjAwYTEzM2QwYTYx",
+    "commit": {
+      "author": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T23:00:39Z"
+      },
+      "committer": {
+        "name": "Max Brunsfeld",
+        "email": "maxbrunsfeld@gmail.com",
+        "date": "2015-08-21T23:00:39Z"
+      },
+      "message": ":fire: File extension",
+      "tree": {
+        "sha": "ce7ecf8d5bf018ddfd387d3958aca16aa0cc1622",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ce7ecf8d5bf018ddfd387d3958aca16aa0cc1622"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/ca4922bb70c20730e4446aed7e3af00a133d0a61",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/ca4922bb70c20730e4446aed7e3af00a133d0a61",
+    "html_url": "https://github.com/atom/atom/commit/ca4922bb70c20730e4446aed7e3af00a133d0a61",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/ca4922bb70c20730e4446aed7e3af00a133d0a61/comments",
+    "author": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "f3778148a065c713b98738d42cd7acb49c0b8ae0",
+        "url": "https://api.github.com/repos/atom/atom/commits/f3778148a065c713b98738d42cd7acb49c0b8ae0",
+        "html_url": "https://github.com/atom/atom/commit/f3778148a065c713b98738d42cd7acb49c0b8ae0"
+      }
+    ]
+  }
+]

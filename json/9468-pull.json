@@ -1,0 +1,277 @@
+[
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44156378",
+    "pull_request_review_id": null,
+    "id": 44156378,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTU2Mzc4",
+    "diff_hunk": "@@ -465,6 +465,10 @@ class DisplayBuffer extends Model\n \n     folds\n \n+  # Returns all the folds that contain the given row range.\n+  foldsContainingBufferRowRange: (startRow, endRow) ->",
+    "path": "src/display-buffer.coffee",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "7d97241f359bc01d1b2ab05dd0adf73843a51167",
+    "original_commit_id": "dd10216943750791436aaee1282c0ee3b59590d3",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I think this should be named `foldsIntersectingBufferRowRange`, based on the query.\n",
+    "created_at": "2015-11-06T16:29:33Z",
+    "updated_at": "2015-11-06T16:41:06Z",
+    "html_url": "https://github.com/atom/atom/pull/9468#discussion_r44156378",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9468",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44156378"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9468#discussion_r44156378"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9468"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 469,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44156448",
+    "pull_request_review_id": null,
+    "id": 44156448,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTU2NDQ4",
+    "diff_hunk": "@@ -97,8 +97,8 @@ class LanguageMode\n \n   # Unfolds all the foldable lines in the buffer.\n   unfoldAll: ->\n-    for row in [@buffer.getLastRow()..0] by -1\n-      fold.destroy() for fold in @editor.displayBuffer.foldsStartingAtBufferRow(row)\n+    for fold in @editor.displayBuffer.foldsContainingBufferRowRange(0, @buffer.getLastRow()) by -1",
+    "path": "src/language-mode.coffee",
+    "position": null,
+    "original_position": 6,
+    "commit_id": "7d97241f359bc01d1b2ab05dd0adf73843a51167",
+    "original_commit_id": "dd10216943750791436aaee1282c0ee3b59590d3",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Great job here. Querying every single line is insane. Definitely leftover from the dark ages.\n",
+    "created_at": "2015-11-06T16:30:09Z",
+    "updated_at": "2015-11-06T16:41:06Z",
+    "html_url": "https://github.com/atom/atom/pull/9468#discussion_r44156448",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9468",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44156448"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9468#discussion_r44156448"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9468"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 100,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44156822",
+    "pull_request_review_id": null,
+    "id": 44156822,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTU2ODIy",
+    "diff_hunk": "@@ -465,6 +465,10 @@ class DisplayBuffer extends Model\n \n     folds\n \n+  # Returns all the folds that contain the given row range.\n+  foldsContainingBufferRowRange: (startRow, endRow) ->",
+    "path": "src/display-buffer.coffee",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "7d97241f359bc01d1b2ab05dd0adf73843a51167",
+    "original_commit_id": "dd10216943750791436aaee1282c0ee3b59590d3",
+    "user": {
+      "login": "as-cii",
+      "id": 482957,
+      "node_id": "MDQ6VXNlcjQ4Mjk1Nw==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/482957?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/as-cii",
+      "html_url": "https://github.com/as-cii",
+      "followers_url": "https://api.github.com/users/as-cii/followers",
+      "following_url": "https://api.github.com/users/as-cii/following{/other_user}",
+      "gists_url": "https://api.github.com/users/as-cii/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/as-cii/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/as-cii/subscriptions",
+      "organizations_url": "https://api.github.com/users/as-cii/orgs",
+      "repos_url": "https://api.github.com/users/as-cii/repos",
+      "events_url": "https://api.github.com/users/as-cii/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/as-cii/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah, I thought to this as well but this _seems_ inconsistent with the method below (`::foldsContainingBufferRow`) which performs a similar query. What do you think?\n",
+    "created_at": "2015-11-06T16:32:50Z",
+    "updated_at": "2015-11-06T16:41:06Z",
+    "html_url": "https://github.com/atom/atom/pull/9468#discussion_r44156822",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9468",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44156822"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9468#discussion_r44156822"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9468"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 469,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44157431",
+    "pull_request_review_id": null,
+    "id": 44157431,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTU3NDMx",
+    "diff_hunk": "@@ -465,6 +465,10 @@ class DisplayBuffer extends Model\n \n     folds\n \n+  # Returns all the folds that contain the given row range.\n+  foldsContainingBufferRowRange: (startRow, endRow) ->",
+    "path": "src/display-buffer.coffee",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "7d97241f359bc01d1b2ab05dd0adf73843a51167",
+    "original_commit_id": "dd10216943750791436aaee1282c0ee3b59590d3",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Makes sense, but in that case, if a fold intersects a single row it also contains it. In this case it's a range of rows, and we know these folds don't fully contain the range, otherwise there would only be one big fold. I'd be down renaming the other method for clarity/consistent if it isn't being used by packages (it's private but still might as well avoid breakages just in case).\n",
+    "created_at": "2015-11-06T16:37:41Z",
+    "updated_at": "2015-11-06T16:41:06Z",
+    "html_url": "https://github.com/atom/atom/pull/9468#discussion_r44157431",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9468",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44157431"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9468#discussion_r44157431"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9468"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 469,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44158288",
+    "pull_request_review_id": null,
+    "id": 44158288,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MTU4Mjg4",
+    "diff_hunk": "@@ -465,6 +465,10 @@ class DisplayBuffer extends Model\n \n     folds\n \n+  # Returns all the folds that contain the given row range.\n+  foldsContainingBufferRowRange: (startRow, endRow) ->",
+    "path": "src/display-buffer.coffee",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "7d97241f359bc01d1b2ab05dd0adf73843a51167",
+    "original_commit_id": "dd10216943750791436aaee1282c0ee3b59590d3",
+    "user": {
+      "login": "as-cii",
+      "id": 482957,
+      "node_id": "MDQ6VXNlcjQ4Mjk1Nw==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/482957?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/as-cii",
+      "html_url": "https://github.com/as-cii",
+      "followers_url": "https://api.github.com/users/as-cii/followers",
+      "following_url": "https://api.github.com/users/as-cii/following{/other_user}",
+      "gists_url": "https://api.github.com/users/as-cii/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/as-cii/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/as-cii/subscriptions",
+      "organizations_url": "https://api.github.com/users/as-cii/orgs",
+      "repos_url": "https://api.github.com/users/as-cii/repos",
+      "events_url": "https://api.github.com/users/as-cii/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/as-cii/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "A cursory search showed up that there's some reference to `foldsContainingBufferRow` in packages (some typescript header files), so I think it's just better to rename the new one only (7d97241). \n\nThanks! :sparkles: \n",
+    "created_at": "2015-11-06T16:44:20Z",
+    "updated_at": "2015-11-06T16:44:20Z",
+    "html_url": "https://github.com/atom/atom/pull/9468#discussion_r44158288",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9468",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44158288"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9468#discussion_r44158288"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9468"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 469,
+    "side": "RIGHT"
+  }
+]

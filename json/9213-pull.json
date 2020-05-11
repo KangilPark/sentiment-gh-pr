@@ -1,0 +1,1652 @@
+[
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42404532",
+    "pull_request_review_id": null,
+    "id": 42404532,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNDA0NTMy",
+    "diff_hunk": "@@ -0,0 +1,406 @@\n+temp = require 'temp'\n+GitRepositoryAsync = require '../src/git-repository-async'\n+Git = require 'nodegit'\n+fs = require 'fs-plus'\n+os = require 'os'\n+path = require 'path'\n+Task = require '../src/task'\n+Project = require '../src/project'\n+\n+# Clean up when the process exits\n+temp.track()\n+\n+copyRepository = ->\n+  workingDirPath = temp.mkdirSync('atom-working-dir')\n+  fs.copySync(path.join(__dirname, 'fixtures', 'git', 'working-dir'), workingDirPath)\n+  fs.renameSync(path.join(workingDirPath, 'git.git'), path.join(workingDirPath, '.git'))\n+  fs.realpathSync(workingDirPath)\n+\n+openFixture = (fixture)->\n+  GitRepositoryAsync.open(path.join(__dirname, 'fixtures', 'git', fixture))\n+\n+describe \"GitRepositoryAsync\", ->\n+  repo = null\n+\n+  # beforeEach ->\n+  #   gitPath = path.join(temp.dir, '.git')\n+  #   fs.removeSync(gitPath) if fs.isDirectorySync(gitPath)\n+  #\n+  # afterEach ->\n+  #   repo.destroy() if repo?.repo?\n+\n+  describe \"@open(path)\", ->\n+\n+    # This just exercises the framework, but I'm trying to match the sync specs to start\n+    it \"repo is null when no repository is found\", ->\n+      repo = GitRepositoryAsync.open(path.join(temp.dir, 'nogit.txt'))\n+\n+      waitsForPromise {shouldReject: true}, ->\n+        repo.repoPromise\n+\n+      runs ->\n+        expect(repo.repo).toBe null\n+\n+  describe \".getPath()\", ->\n+    # XXX HEAD isn't a git directory.. what's this spec supposed to be about?\n+    xit \"returns the repository path for a .git directory path\", ->\n+      # Rejects as malformed\n+      repo = GitRepositoryAsync.open(path.join(__dirname, 'fixtures', 'git', 'master.git', 'HEAD'))\n+\n+      onSuccess = jasmine.createSpy('onSuccess')\n+\n+      waitsForPromise ->",
+    "path": "spec/git-repository-async-spec.coffee",
+    "position": null,
+    "original_position": 52,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "0e6d30e707fd1b9c1791fd1de19538db4000f927",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "If you also write the specs in ES6, `async/await` syntax could really clean up these async tests...\n\n``` js\nit('does something async', function () {\n  waitsForPromise(async function() {\n    expect(await repo.getPath()).toBe('/some/path')\n  })\n})\n```\n",
+    "created_at": "2015-10-19T18:02:42Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42404532",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42404532"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42404532"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 52,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42404653",
+    "pull_request_review_id": null,
+    "id": 42404653,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNDA0NjUz",
+    "diff_hunk": "@@ -0,0 +1,191 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path)\n+  }\n+\n+  constructor (path) {\n+    this.repo = null",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 22,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "0e6d30e707fd1b9c1791fd1de19538db4000f927",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "What's this used for?\n",
+    "created_at": "2015-10-19T18:03:32Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42404653",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42404653"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42404653"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 22,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42405297",
+    "pull_request_review_id": null,
+    "id": 42405297,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNDA1Mjk3",
+    "diff_hunk": "@@ -0,0 +1,191 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path)\n+  }\n+\n+  constructor (path) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 42,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "0e6d30e707fd1b9c1791fd1de19538db4000f927",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Is `pathIsIgnored` synchronous?\n",
+    "created_at": "2015-10-19T18:08:16Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42405297",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42405297"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42405297"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 42,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42405542",
+    "pull_request_review_id": null,
+    "id": 42405542,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNDA1NTQy",
+    "diff_hunk": "@@ -0,0 +1,191 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path)\n+  }\n+\n+  constructor (path) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 48,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "0e6d30e707fd1b9c1791fd1de19538db4000f927",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "V8 supports the new ES6 `Array.prototype.every` method, which would be clearer and save you allocation of a new array.\n",
+    "created_at": "2015-10-19T18:09:56Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42405542",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42405542"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42405542"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 48,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42674780",
+    "pull_request_review_id": null,
+    "id": 42674780,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjc0Nzgw",
+    "diff_hunk": "@@ -0,0 +1,272 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "11ccb980fed0fbe178ceb418ef9498404917dc73",
+    "user": {
+      "login": "philipgiuliani",
+      "id": 5446019,
+      "node_id": "MDQ6VXNlcjU0NDYwMTk=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5446019?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/philipgiuliani",
+      "html_url": "https://github.com/philipgiuliani",
+      "followers_url": "https://api.github.com/users/philipgiuliani/followers",
+      "following_url": "https://api.github.com/users/philipgiuliani/following{/other_user}",
+      "gists_url": "https://api.github.com/users/philipgiuliani/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/philipgiuliani/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/philipgiuliani/subscriptions",
+      "organizations_url": "https://api.github.com/users/philipgiuliani/orgs",
+      "repos_url": "https://api.github.com/users/philipgiuliani/repos",
+      "events_url": "https://api.github.com/users/philipgiuliani/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/philipgiuliani/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":lipstick: :art: What do you think about removing the spaces in front of the arguments? https://github.com/airbnb/javascript#18.3 Just about style. Really good work! Love the ES6 :heart: \n",
+    "created_at": "2015-10-21T20:05:24Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42674780",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42674780"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42674780"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42675339",
+    "pull_request_review_id": null,
+    "id": 42675339,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjc1MzM5",
+    "diff_hunk": "@@ -0,0 +1,272 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "11ccb980fed0fbe178ceb418ef9498404917dc73",
+    "user": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Good catch - this currently conforms to [JS Standard Style](https://github.com/feross/standard) (a very presumptuous name, isn't it?) rather than AirBnB style and I'm happy with Standard. \n",
+    "created_at": "2015-10-21T20:10:11Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42675339",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42675339"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42675339"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42675969",
+    "pull_request_review_id": null,
+    "id": 42675969,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjc1OTY5",
+    "diff_hunk": "@@ -0,0 +1,272 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "11ccb980fed0fbe178ceb418ef9498404917dc73",
+    "user": {
+      "login": "philipgiuliani",
+      "id": 5446019,
+      "node_id": "MDQ6VXNlcjU0NDYwMTk=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5446019?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/philipgiuliani",
+      "html_url": "https://github.com/philipgiuliani",
+      "followers_url": "https://api.github.com/users/philipgiuliani/followers",
+      "following_url": "https://api.github.com/users/philipgiuliani/following{/other_user}",
+      "gists_url": "https://api.github.com/users/philipgiuliani/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/philipgiuliani/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/philipgiuliani/subscriptions",
+      "organizations_url": "https://api.github.com/users/philipgiuliani/orgs",
+      "repos_url": "https://api.github.com/users/philipgiuliani/repos",
+      "events_url": "https://api.github.com/users/philipgiuliani/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/philipgiuliani/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Thanks for the resource. Didn't knew about it! Looks of course also good :+1: Just important that there is one style over the whole repository :+1: :clap: \n",
+    "created_at": "2015-10-21T20:15:19Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42675969",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42675969"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42675969"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42769258",
+    "pull_request_review_id": null,
+    "id": 42769258,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNzY5MjU4",
+    "diff_hunk": "@@ -0,0 +1,255 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 31,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "c2520f490956c8757cb426ac243a142bbb4fed9e",
+    "user": {
+      "login": "steelbrain",
+      "id": 4278113,
+      "node_id": "MDQ6VXNlcjQyNzgxMTM=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4278113?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/steelbrain",
+      "html_url": "https://github.com/steelbrain",
+      "followers_url": "https://api.github.com/users/steelbrain/followers",
+      "following_url": "https://api.github.com/users/steelbrain/following{/other_user}",
+      "gists_url": "https://api.github.com/users/steelbrain/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/steelbrain/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/steelbrain/subscriptions",
+      "organizations_url": "https://api.github.com/users/steelbrain/orgs",
+      "repos_url": "https://api.github.com/users/steelbrain/repos",
+      "events_url": "https://api.github.com/users/steelbrain/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/steelbrain/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "If you want a boolean value from `refreshOnWindowFocus`, then use `refreshOnWindowFocus = Boolean(refreshOnWindowFocus)`. It'll turn `false`, `null` and others to `false` and `true` remains the same.\n",
+    "created_at": "2015-10-22T16:12:05Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42769258",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42769258"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42769258"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 31,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42769439",
+    "pull_request_review_id": null,
+    "id": 42769439,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNzY5NDM5",
+    "diff_hunk": "@@ -0,0 +1,255 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 52,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "c2520f490956c8757cb426ac243a142bbb4fed9e",
+    "user": {
+      "login": "steelbrain",
+      "id": 4278113,
+      "node_id": "MDQ6VXNlcjQyNzgxMTM=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4278113?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/steelbrain",
+      "html_url": "https://github.com/steelbrain",
+      "followers_url": "https://api.github.com/users/steelbrain/followers",
+      "following_url": "https://api.github.com/users/steelbrain/following{/other_user}",
+      "gists_url": "https://api.github.com/users/steelbrain/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/steelbrain/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/steelbrain/subscriptions",
+      "organizations_url": "https://api.github.com/users/steelbrain/orgs",
+      "repos_url": "https://api.github.com/users/steelbrain/repos",
+      "events_url": "https://api.github.com/users/steelbrain/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/steelbrain/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "in ES6, if you are only getting one parameter, you can write `(repo) => { }` as just `repo => { }`\n",
+    "created_at": "2015-10-22T16:13:25Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42769439",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42769439"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42769439"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 52,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42769539",
+    "pull_request_review_id": null,
+    "id": 42769539,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNzY5NTM5",
+    "diff_hunk": "@@ -0,0 +1,255 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {\n+        return status.isModified()\n+      }).length > 0\n+      return Promise.resolve(ret)",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 68,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "c2520f490956c8757cb426ac243a142bbb4fed9e",
+    "user": {
+      "login": "steelbrain",
+      "id": 4278113,
+      "node_id": "MDQ6VXNlcjQyNzgxMTM=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4278113?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/steelbrain",
+      "html_url": "https://github.com/steelbrain",
+      "followers_url": "https://api.github.com/users/steelbrain/followers",
+      "following_url": "https://api.github.com/users/steelbrain/following{/other_user}",
+      "gists_url": "https://api.github.com/users/steelbrain/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/steelbrain/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/steelbrain/subscriptions",
+      "organizations_url": "https://api.github.com/users/steelbrain/orgs",
+      "repos_url": "https://api.github.com/users/steelbrain/repos",
+      "events_url": "https://api.github.com/users/steelbrain/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/steelbrain/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "You don't necessarily have to return a promise from `Promise.prototype.then`\n",
+    "created_at": "2015-10-22T16:14:23Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42769539",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42769539"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42769539"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 68,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42770067",
+    "pull_request_review_id": null,
+    "id": 42770067,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNzcwMDY3",
+    "diff_hunk": "@@ -0,0 +1,6 @@\n+{\n+  \"env\": {",
+    "path": ".eslintrc",
+    "position": null,
+    "original_position": 2,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "c2520f490956c8757cb426ac243a142bbb4fed9e",
+    "user": {
+      "login": "steelbrain",
+      "id": 4278113,
+      "node_id": "MDQ6VXNlcjQyNzgxMTM=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4278113?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/steelbrain",
+      "html_url": "https://github.com/steelbrain",
+      "followers_url": "https://api.github.com/users/steelbrain/followers",
+      "following_url": "https://api.github.com/users/steelbrain/following{/other_user}",
+      "gists_url": "https://api.github.com/users/steelbrain/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/steelbrain/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/steelbrain/subscriptions",
+      "organizations_url": "https://api.github.com/users/steelbrain/orgs",
+      "repos_url": "https://api.github.com/users/steelbrain/repos",
+      "events_url": "https://api.github.com/users/steelbrain/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/steelbrain/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "May I suggest the eslint [`no-var`](http://eslint.org/docs/rules/no-var.html) clause?\n",
+    "created_at": "2015-10-22T16:18:16Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42770067",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42770067"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42770067"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42851838",
+    "pull_request_review_id": null,
+    "id": 42851838,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyODUxODM4",
+    "diff_hunk": "@@ -0,0 +1,255 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 31,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "c2520f490956c8757cb426ac243a142bbb4fed9e",
+    "user": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I actually want to check undefined here, because it should default to `true` - that is to say, `true` is `true` and `undefined` is `true`, but only explicitly set`false` is `false`, which isn't quite how the Boolean constructor works.\n",
+    "created_at": "2015-10-23T10:33:18Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42851838",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42851838"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42851838"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 31,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42852039",
+    "pull_request_review_id": null,
+    "id": 42852039,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyODUyMDM5",
+    "diff_hunk": "@@ -0,0 +1,6 @@\n+{\n+  \"env\": {",
+    "path": ".eslintrc",
+    "position": null,
+    "original_position": 2,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "c2520f490956c8757cb426ac243a142bbb4fed9e",
+    "user": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "That's not a bad idea. There's a bunch of other JS in the repo that won't comply to this, but we don't need to have CI fail on eslint failures right away..\n",
+    "created_at": "2015-10-23T10:36:16Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42852039",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42852039"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42852039"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42854872",
+    "pull_request_review_id": null,
+    "id": 42854872,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyODU0ODcy",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 53,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "steelbrain",
+      "id": 4278113,
+      "node_id": "MDQ6VXNlcjQyNzgxMTM=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4278113?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/steelbrain",
+      "html_url": "https://github.com/steelbrain",
+      "followers_url": "https://api.github.com/users/steelbrain/followers",
+      "following_url": "https://api.github.com/users/steelbrain/following{/other_user}",
+      "gists_url": "https://api.github.com/users/steelbrain/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/steelbrain/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/steelbrain/subscriptions",
+      "organizations_url": "https://api.github.com/users/steelbrain/orgs",
+      "repos_url": "https://api.github.com/users/steelbrain/repos",
+      "events_url": "https://api.github.com/users/steelbrain/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/steelbrain/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "You might want to replace most of these `Promise.resolve`s here with just values.\n",
+    "created_at": "2015-10-23T11:21:51Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42854872",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42854872"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42854872"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 53,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42989493",
+    "pull_request_review_id": null,
+    "id": 42989493,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTg5NDkz",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 29,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This should be `let` (or `const`), doesn't look like we want or need hoisting here.\n",
+    "created_at": "2015-10-26T13:02:40Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42989493",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42989493"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42989493"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 29,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42989834",
+    "pull_request_review_id": null,
+    "id": 42989834,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTg5ODM0",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 66,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This can be changed into\n\n``` js\nreturn statuses.filter(status => status.isModified())\n```\n\nYou should probably also be able to rewrite the whole block as\n\n``` js\nreturn this._filterStatusesByPath(_path).then(statuses => statuses.filter(status => status.isModified()))\n```\n",
+    "created_at": "2015-10-26T13:06:50Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42989834",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42989834"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42989834"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42989924",
+    "pull_request_review_id": null,
+    "id": 42989924,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTg5OTI0",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()\n+      }).length > 0\n+    })\n+  }\n+\n+  isPathNew (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {\n+        return status.isNew()",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 74,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Same deal here with the `var`, and collapsing the single return function.\n",
+    "created_at": "2015-10-26T13:07:59Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42989924",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42989924"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42989924"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 74,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42989947",
+    "pull_request_review_id": null,
+    "id": 42989947,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTg5OTQ3",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()\n+      }).length > 0\n+    })\n+  }\n+\n+  isPathNew (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {\n+        return status.isNew()\n+      }).length > 0\n+      return Promise.resolve(ret)\n+    })\n+  }\n+\n+  checkoutHead (_path) {\n+    return this.repoPromise.then((repo) => {\n+      var checkoutOptions = new Git.CheckoutOptions()",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 82,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`let`\n",
+    "created_at": "2015-10-26T13:08:18Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42989947",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42989947"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42989947"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 82,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42989969",
+    "pull_request_review_id": null,
+    "id": 42989969,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTg5OTY5",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()\n+      }).length > 0\n+    })\n+  }\n+\n+  isPathNew (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {\n+        return status.isNew()\n+      }).length > 0\n+      return Promise.resolve(ret)\n+    })\n+  }\n+\n+  checkoutHead (_path) {\n+    return this.repoPromise.then((repo) => {\n+      var checkoutOptions = new Git.CheckoutOptions()\n+      checkoutOptions.paths = [this._gitUtilsRepo.relativize(_path)]\n+      checkoutOptions.checkoutStrategy = Git.Checkout.STRATEGY.FORCE | Git.Checkout.STRATEGY.DISABLE_PATHSPEC_MATCH\n+      return Git.Checkout.head(repo, checkoutOptions)\n+    }).then(() => {\n+      return this.getPathStatus(_path)",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 87,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Can be collapsed.\n",
+    "created_at": "2015-10-26T13:08:33Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42989969",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42989969"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42989969"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 87,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42989982",
+    "pull_request_review_id": null,
+    "id": 42989982,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTg5OTgy",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()\n+      }).length > 0\n+    })\n+  }\n+\n+  isPathNew (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {\n+        return status.isNew()\n+      }).length > 0\n+      return Promise.resolve(ret)\n+    })\n+  }\n+\n+  checkoutHead (_path) {\n+    return this.repoPromise.then((repo) => {\n+      var checkoutOptions = new Git.CheckoutOptions()\n+      checkoutOptions.paths = [this._gitUtilsRepo.relativize(_path)]\n+      checkoutOptions.checkoutStrategy = Git.Checkout.STRATEGY.FORCE | Git.Checkout.STRATEGY.DISABLE_PATHSPEC_MATCH\n+      return Git.Checkout.head(repo, checkoutOptions)\n+    }).then(() => {\n+      return this.getPathStatus(_path)\n+    })\n+  }\n+\n+  checkoutHeadForEditor (editor) {\n+    return new Promise(function (resolve, reject) {\n+      var filePath = editor.getPath()",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 93,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`let`\n",
+    "created_at": "2015-10-26T13:08:40Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42989982",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42989982"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42989982"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 93,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42989996",
+    "pull_request_review_id": null,
+    "id": 42989996,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTg5OTk2",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()\n+      }).length > 0\n+    })\n+  }\n+\n+  isPathNew (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {\n+        return status.isNew()\n+      }).length > 0\n+      return Promise.resolve(ret)\n+    })\n+  }\n+\n+  checkoutHead (_path) {\n+    return this.repoPromise.then((repo) => {\n+      var checkoutOptions = new Git.CheckoutOptions()\n+      checkoutOptions.paths = [this._gitUtilsRepo.relativize(_path)]\n+      checkoutOptions.checkoutStrategy = Git.Checkout.STRATEGY.FORCE | Git.Checkout.STRATEGY.DISABLE_PATHSPEC_MATCH\n+      return Git.Checkout.head(repo, checkoutOptions)\n+    }).then(() => {\n+      return this.getPathStatus(_path)\n+    })\n+  }\n+\n+  checkoutHeadForEditor (editor) {\n+    return new Promise(function (resolve, reject) {\n+      var filePath = editor.getPath()\n+      if (filePath) {\n+        if (editor.buffer.isModified()) {\n+          editor.buffer.reload()\n+        }\n+        resolve(filePath)\n+      } else {\n+        reject()\n+      }\n+    }).then((filePath) => {\n+      return this.checkoutHead(filePath)",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 103,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Can be collapsed.\n",
+    "created_at": "2015-10-26T13:08:53Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42989996",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42989996"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42989996"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 103,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42990005",
+    "pull_request_review_id": null,
+    "id": 42990005,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTkwMDA1",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()\n+      }).length > 0\n+    })\n+  }\n+\n+  isPathNew (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {\n+        return status.isNew()\n+      }).length > 0\n+      return Promise.resolve(ret)\n+    })\n+  }\n+\n+  checkoutHead (_path) {\n+    return this.repoPromise.then((repo) => {\n+      var checkoutOptions = new Git.CheckoutOptions()\n+      checkoutOptions.paths = [this._gitUtilsRepo.relativize(_path)]\n+      checkoutOptions.checkoutStrategy = Git.Checkout.STRATEGY.FORCE | Git.Checkout.STRATEGY.DISABLE_PATHSPEC_MATCH\n+      return Git.Checkout.head(repo, checkoutOptions)\n+    }).then(() => {\n+      return this.getPathStatus(_path)\n+    })\n+  }\n+\n+  checkoutHeadForEditor (editor) {\n+    return new Promise(function (resolve, reject) {\n+      var filePath = editor.getPath()\n+      if (filePath) {\n+        if (editor.buffer.isModified()) {\n+          editor.buffer.reload()\n+        }\n+        resolve(filePath)\n+      } else {\n+        reject()\n+      }\n+    }).then((filePath) => {\n+      return this.checkoutHead(filePath)\n+    })\n+  }\n+\n+  // Returns a Promise that resolves to the status bit of a given path if it has\n+  // one, otherwise 'current'.\n+  getPathStatus (_path) {\n+    var relativePath = this._gitUtilsRepo.relativize(_path)",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 110,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`let`\n",
+    "created_at": "2015-10-26T13:09:04Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42990005",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42990005"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42990005"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 110,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42990040",
+    "pull_request_review_id": null,
+    "id": 42990040,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyOTkwMDQw",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()\n+      }).length > 0\n+    })\n+  }\n+\n+  isPathNew (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      var ret = statuses.filter((status) => {\n+        return status.isNew()\n+      }).length > 0\n+      return Promise.resolve(ret)\n+    })\n+  }\n+\n+  checkoutHead (_path) {\n+    return this.repoPromise.then((repo) => {\n+      var checkoutOptions = new Git.CheckoutOptions()\n+      checkoutOptions.paths = [this._gitUtilsRepo.relativize(_path)]\n+      checkoutOptions.checkoutStrategy = Git.Checkout.STRATEGY.FORCE | Git.Checkout.STRATEGY.DISABLE_PATHSPEC_MATCH\n+      return Git.Checkout.head(repo, checkoutOptions)\n+    }).then(() => {\n+      return this.getPathStatus(_path)\n+    })\n+  }\n+\n+  checkoutHeadForEditor (editor) {\n+    return new Promise(function (resolve, reject) {\n+      var filePath = editor.getPath()\n+      if (filePath) {\n+        if (editor.buffer.isModified()) {\n+          editor.buffer.reload()\n+        }\n+        resolve(filePath)\n+      } else {\n+        reject()\n+      }\n+    }).then((filePath) => {\n+      return this.checkoutHead(filePath)\n+    })\n+  }\n+\n+  // Returns a Promise that resolves to the status bit of a given path if it has\n+  // one, otherwise 'current'.\n+  getPathStatus (_path) {\n+    var relativePath = this._gitUtilsRepo.relativize(_path)\n+    return this.repoPromise.then((repo) => {\n+      return this._filterStatusesByPath(_path)\n+    }).then((statuses) => {\n+      var cachedStatus = this.pathStatusCache[relativePath] || 0\n+      var status = statuses[0] ? statuses[0].statusBit() : Git.Status.STATUS.CURRENT\n+      if (status !== cachedStatus) {\n+        this.emitter.emit('did-change-status', {path: _path, pathStatus: status})\n+      }\n+      this.pathStatusCache[relativePath] = status\n+      return Promise.resolve(status)\n+    })\n+  }",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 122,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`let`s, and collapses :smiley: \n",
+    "created_at": "2015-10-26T13:09:33Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r42990040",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42990040"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r42990040"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 122,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/43004161",
+    "pull_request_review_id": null,
+    "id": 43004161,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMDA0MTYx",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 66,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I had been trying to only use `=>` where I needed lexical this (though it snuck in here), is it typical to just use it everywhere?\n",
+    "created_at": "2015-10-26T15:02:31Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r43004161",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/43004161"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r43004161"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/43007273",
+    "pull_request_review_id": null,
+    "id": 43007273,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMDA3Mjcz",
+    "diff_hunk": "@@ -0,0 +1,271 @@\n+'use babel'\n+\n+const Git = require('nodegit')\n+const path = require('path')\n+const {Emitter, Disposable, CompositeDisposable} = require('event-kit')\n+\n+// Temporary requires\n+// ==================\n+// GitUtils is temporarily used for ::relativize only, because I don't want\n+// to port it just yet. TODO: remove\n+const GitUtils = require('git-utils')\n+// Just using this for _.isEqual and _.object, we should impl our own here\n+const _ = require('underscore-plus')\n+\n+module.exports = class GitRepositoryAsync {\n+  static open (path, options = {}) {\n+    // QUESTION: Should this wrap Git.Repository and reject with a nicer message?\n+    return new GitRepositoryAsync(path, options)\n+  }\n+\n+  constructor (path, options) {\n+    this.repo = null\n+    this.emitter = new Emitter()\n+    this.subscriptions = new CompositeDisposable()\n+    this.pathStatusCache = {}\n+    this._gitUtilsRepo = GitUtils.open(path) // TODO remove after porting ::relativize\n+    this.repoPromise = Git.Repository.open(path)\n+\n+    var {project, refreshOnWindowFocus} = options\n+    this.project = project\n+    if (refreshOnWindowFocus === undefined) {\n+      refreshOnWindowFocus = true\n+    }\n+    if (refreshOnWindowFocus) {\n+      // TODO\n+    }\n+\n+    if (this.project) {\n+      this.subscriptions.add(this.project.onDidAddBuffer((buffer) => {\n+        this.subscribeToBuffer(buffer)\n+      }))\n+\n+      this.project.getBuffers().forEach((buffer) => { this.subscribeToBuffer(buffer) })\n+    }\n+  }\n+\n+  destroy () {\n+    this.subscriptions.dispose()\n+  }\n+\n+  getPath () {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(repo.path().replace(/\\/$/, ''))\n+    })\n+  }\n+\n+  isPathIgnored (_path) {\n+    return this.repoPromise.then((repo) => {\n+      return Promise.resolve(Git.Ignore.pathIsIgnored(repo, _path))\n+    })\n+  }\n+\n+  isPathModified (_path) {\n+    return this._filterStatusesByPath(_path).then(function (statuses) {\n+      return statuses.filter((status) => {\n+        return status.isModified()",
+    "path": "src/git-repository-async.js",
+    "position": null,
+    "original_position": 66,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "1d2834f2ade80a1ce7208193f5c7b47bdd9068d1",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "They are typically used everywhere. I use them just as I use skinny arrows in CS.\n",
+    "created_at": "2015-10-26T15:23:46Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r43007273",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/43007273"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r43007273"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/43522780",
+    "pull_request_review_id": null,
+    "id": 43522780,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNTIyNzgw",
+    "diff_hunk": "@@ -0,0 +1,406 @@\n+temp = require 'temp'\n+GitRepositoryAsync = require '../src/git-repository-async'\n+Git = require 'nodegit'\n+fs = require 'fs-plus'\n+os = require 'os'\n+path = require 'path'\n+Task = require '../src/task'\n+Project = require '../src/project'\n+\n+# Clean up when the process exits\n+temp.track()\n+\n+copyRepository = ->\n+  workingDirPath = temp.mkdirSync('atom-working-dir')\n+  fs.copySync(path.join(__dirname, 'fixtures', 'git', 'working-dir'), workingDirPath)\n+  fs.renameSync(path.join(workingDirPath, 'git.git'), path.join(workingDirPath, '.git'))\n+  fs.realpathSync(workingDirPath)\n+\n+openFixture = (fixture)->\n+  GitRepositoryAsync.open(path.join(__dirname, 'fixtures', 'git', fixture))\n+\n+describe \"GitRepositoryAsync\", ->\n+  repo = null\n+\n+  # beforeEach ->\n+  #   gitPath = path.join(temp.dir, '.git')\n+  #   fs.removeSync(gitPath) if fs.isDirectorySync(gitPath)\n+  #\n+  # afterEach ->\n+  #   repo.destroy() if repo?.repo?\n+\n+  describe \"@open(path)\", ->\n+\n+    # This just exercises the framework, but I'm trying to match the sync specs to start\n+    it \"repo is null when no repository is found\", ->\n+      repo = GitRepositoryAsync.open(path.join(temp.dir, 'nogit.txt'))\n+\n+      waitsForPromise {shouldReject: true}, ->\n+        repo.repoPromise\n+\n+      runs ->\n+        expect(repo.repo).toBe null\n+\n+  describe \".getPath()\", ->\n+    # XXX HEAD isn't a git directory.. what's this spec supposed to be about?\n+    xit \"returns the repository path for a .git directory path\", ->\n+      # Rejects as malformed\n+      repo = GitRepositoryAsync.open(path.join(__dirname, 'fixtures', 'git', 'master.git', 'HEAD'))\n+\n+      onSuccess = jasmine.createSpy('onSuccess')\n+\n+      waitsForPromise ->",
+    "path": "spec/git-repository-async-spec.coffee",
+    "position": null,
+    "original_position": 52,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "0e6d30e707fd1b9c1791fd1de19538db4000f927",
+    "user": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think that's ES7+ only\n",
+    "created_at": "2015-10-30T16:32:01Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r43522780",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/43522780"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r43522780"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 52,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/43523184",
+    "pull_request_review_id": null,
+    "id": 43523184,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzNTIzMTg0",
+    "diff_hunk": "@@ -0,0 +1,406 @@\n+temp = require 'temp'\n+GitRepositoryAsync = require '../src/git-repository-async'\n+Git = require 'nodegit'\n+fs = require 'fs-plus'\n+os = require 'os'\n+path = require 'path'\n+Task = require '../src/task'\n+Project = require '../src/project'\n+\n+# Clean up when the process exits\n+temp.track()\n+\n+copyRepository = ->\n+  workingDirPath = temp.mkdirSync('atom-working-dir')\n+  fs.copySync(path.join(__dirname, 'fixtures', 'git', 'working-dir'), workingDirPath)\n+  fs.renameSync(path.join(workingDirPath, 'git.git'), path.join(workingDirPath, '.git'))\n+  fs.realpathSync(workingDirPath)\n+\n+openFixture = (fixture)->\n+  GitRepositoryAsync.open(path.join(__dirname, 'fixtures', 'git', fixture))\n+\n+describe \"GitRepositoryAsync\", ->\n+  repo = null\n+\n+  # beforeEach ->\n+  #   gitPath = path.join(temp.dir, '.git')\n+  #   fs.removeSync(gitPath) if fs.isDirectorySync(gitPath)\n+  #\n+  # afterEach ->\n+  #   repo.destroy() if repo?.repo?\n+\n+  describe \"@open(path)\", ->\n+\n+    # This just exercises the framework, but I'm trying to match the sync specs to start\n+    it \"repo is null when no repository is found\", ->\n+      repo = GitRepositoryAsync.open(path.join(temp.dir, 'nogit.txt'))\n+\n+      waitsForPromise {shouldReject: true}, ->\n+        repo.repoPromise\n+\n+      runs ->\n+        expect(repo.repo).toBe null\n+\n+  describe \".getPath()\", ->\n+    # XXX HEAD isn't a git directory.. what's this spec supposed to be about?\n+    xit \"returns the repository path for a .git directory path\", ->\n+      # Rejects as malformed\n+      repo = GitRepositoryAsync.open(path.join(__dirname, 'fixtures', 'git', 'master.git', 'HEAD'))\n+\n+      onSuccess = jasmine.createSpy('onSuccess')\n+\n+      waitsForPromise ->",
+    "path": "spec/git-repository-async-spec.coffee",
+    "position": null,
+    "original_position": 52,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "0e6d30e707fd1b9c1791fd1de19538db4000f927",
+    "user": {
+      "login": "thomasjo",
+      "id": 3622,
+      "node_id": "MDQ6VXNlcjM2MjI=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3622?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thomasjo",
+      "html_url": "https://github.com/thomasjo",
+      "followers_url": "https://api.github.com/users/thomasjo/followers",
+      "following_url": "https://api.github.com/users/thomasjo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thomasjo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thomasjo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thomasjo/subscriptions",
+      "organizations_url": "https://api.github.com/users/thomasjo/orgs",
+      "repos_url": "https://api.github.com/users/thomasjo/repos",
+      "events_url": "https://api.github.com/users/thomasjo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thomasjo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yes, which we have access to :smile: \n",
+    "created_at": "2015-10-30T16:35:38Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r43523184",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/43523184"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r43523184"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 52,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/45234090",
+    "pull_request_review_id": null,
+    "id": 45234090,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MjM0MDkw",
+    "diff_hunk": "@@ -0,0 +1,457 @@\n+'use babel'\n+\n+const fs = require('fs-plus')\n+const path = require('path')\n+const temp = require('temp')\n+const Git = require('nodegit')\n+\n+const GitRepositoryAsync = require('../src/git-repository-async')\n+const Project = require('../src/project')\n+\n+temp.track()\n+\n+function openFixture(fixture) {\n+  return GitRepositoryAsync.open(path.join(__dirname, 'fixtures', 'git', fixture))\n+}\n+\n+function copyRepository() {\n+  let workingDirPath = temp.mkdirSync('atom-working-dir')\n+  fs.copySync(path.join(__dirname, 'fixtures', 'git', 'working-dir'), workingDirPath)\n+  fs.renameSync(path.join(workingDirPath, 'git.git'), path.join(workingDirPath, '.git'))\n+  return fs.realpathSync(workingDirPath)\n+}\n+\n+function asyncIt(name, fn) {\n+  it(name, () => {\n+    waitsForPromise(fn)\n+  })\n+}\n+\n+function fasyncIt(name, fn) {\n+  fit(name, () => {\n+    waitsForPromise(fn)\n+  })\n+}\n+\n+function xasyncIt(name, fn) {\n+  xit(name, () => {\n+    waitsForPromise(fn)\n+  })\n+}",
+    "path": "spec/git-repository-async-spec.js",
+    "position": null,
+    "original_position": 40,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "8c47335db6f913a8493a1bdf852b86d2702cdf6b",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "@nathansobo ended up adding functions like these in [async-spec-helpers.coffee](https://github.com/atom/atom/blob/master/spec/async-spec-helpers.coffee). They detect if a promise is returned from the `it` function, so you can just shadow `it` and friends.\n",
+    "created_at": "2015-11-18T17:51:58Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r45234090",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/45234090"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r45234090"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 40,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/47156606",
+    "pull_request_review_id": null,
+    "id": 47156606,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MTU2NjA2",
+    "diff_hunk": "@@ -1 +1,4 @@\n cache = ~/.atom/.npm\n+runtime = electron\n+target = 0.34.5",
+    "path": ".npmrc",
+    "position": null,
+    "original_position": 3,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "9d7095442d762faf9299eb206e3d62a0573c9bb4",
+    "user": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I don't like that we have to put this here and in package.json. Anyone have ideas about how we could not do that?\n",
+    "created_at": "2015-12-09T21:44:01Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r47156606",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/47156606"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r47156606"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 3,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/47156660",
+    "pull_request_review_id": null,
+    "id": 47156660,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ3MTU2NjYw",
+    "diff_hunk": "@@ -1 +1,4 @@\n cache = ~/.atom/.npm\n+runtime = electron\n+target = 0.34.5",
+    "path": ".npmrc",
+    "position": null,
+    "original_position": 3,
+    "commit_id": "7cfb8a320782ba98e296b1ae6c1169c6c17e5c2a",
+    "original_commit_id": "9d7095442d762faf9299eb206e3d62a0573c9bb4",
+    "user": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Maybe set the environment variable from within bootstrap? Or something?\n",
+    "created_at": "2015-12-09T21:44:16Z",
+    "updated_at": "2016-01-15T18:39:08Z",
+    "html_url": "https://github.com/atom/atom/pull/9213#discussion_r47156660",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9213",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/47156660"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9213#discussion_r47156660"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9213"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 3,
+    "side": "RIGHT"
+  }
+]

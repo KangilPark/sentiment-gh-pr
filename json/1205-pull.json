@@ -1,0 +1,1666 @@
+[
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75946969",
+    "pull_request_review_id": null,
+    "id": 75946969,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTQ2OTY5",
+    "diff_hunk": "@@ -151,13 +151,17 @@ Model buildHopper() {\n     // vastus muscle can wrap. In the future, we will be able to attach wrap\n     // objects to PhysicalOffsetFrames; for now, we will use the existing\n     // \"translation\" property.\n+    auto patellaFrame = new PhysicalOffsetFrame(\"patellaFrame\",",
+    "path": "OpenSim/Sandbox/ExampleHopperDevice/buildHopperModel.cpp",
+    "position": null,
+    "original_position": 4,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "The \"In the future…\" sentence can now be removed from the above comment.\n",
+    "created_at": "2016-08-23T20:44:50Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75946969",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75946969"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75946969"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 154,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75947442",
+    "pull_request_review_id": null,
+    "id": 75947442,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTQ3NDQy",
+    "diff_hunk": "@@ -151,13 +151,17 @@ Model buildHopper() {\n     // vastus muscle can wrap. In the future, we will be able to attach wrap\n     // objects to PhysicalOffsetFrames; for now, we will use the existing\n     // \"translation\" property.\n+    auto patellaFrame = new PhysicalOffsetFrame(\"patellaFrame\",\n+        *thigh, SimTK::Transform(linkDistalPoint));\n     auto patella = new WrapCylinder();\n     patella->setName(\"patella\");\n     patella->set_radius(0.08);\n     patella->set_length(linkRadius*2.);\n-    patella->set_translation(linkDistalPoint);\n+    //patella->set_translation(linkDistalPoint);",
+    "path": "OpenSim/Sandbox/ExampleHopperDevice/buildHopperModel.cpp",
+    "position": null,
+    "original_position": 11,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think these commented lines (160 and 162) can be deleted. (We wouldn't want a workshop attendee to uncomment them.)\n",
+    "created_at": "2016-08-23T20:47:33Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75947442",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75947442"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75947442"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 160,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75948536",
+    "pull_request_review_id": null,
+    "id": 75948536,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTQ4NTM2",
+    "diff_hunk": "@@ -168,12 +168,28 @@ void addDeviceConsoleReporterToModel(Model& model, Device& device,\n } // namespace OpenSim\n \n \n+void executeExample();",
+    "path": "OpenSim/Sandbox/ExampleHopperDevice/exampleHopperDevice.cpp",
+    "position": null,
+    "original_position": 4,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Renaming `main()` to `executeExample()` requires corresponding modifications to [README.md](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Sandbox/ExampleHopperDevice/README.md) (bottom), exampleHopperDevice.cpp ([line 35](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Sandbox/ExampleHopperDevice/exampleHopperDevice.cpp#L35)), and exampleHopperDevice_answers.cpp ([line 35](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Sandbox/ExampleHopperDevice/exampleHopperDevice_answers.cpp#L35)).\n",
+    "created_at": "2016-08-23T20:53:43Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75948536",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75948536"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75948536"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 171,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75966167",
+    "pull_request_review_id": null,
+    "id": 75966167,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTY2MTY3",
+    "diff_hunk": "@@ -58,21 +66,25 @@ void testGait10dof18musc() {\n     cout << \"*                      testGait10dof18musc                       *\" << endl;\n     cout << \"******************************************************************\\n\" << endl;\n     CMCTool cmc(\"gait10dof18musc_Setup_CMC.xml\");\n-    cmc.run();\n+    const string& muscleType = cmc.getModel().getMuscles()[0].getConcreteClassName();\n+\n+    if (!cmc.run())\n+        OPENSIM_THROW(Exception, \"testGait10dof18musc \" + muscleType +\n+            \" failed to complete.\");\n \n     Storage results(\"gait10dof18musc_ResultsCMC/walk_subject_states.sto\");\n     Storage temp(\"gait10dof18musc_std_walk_subject_states.sto\");\n \n     Storage *standard = new Storage();\n     cmc.getModel().formStateStorage(temp, *standard);\n \n-    Array<double> rms_tols(0.02, 2*10+2*18); // activations within 2%\n-    for(int i=0; i<20; ++i){\n-        rms_tols[i] = 0.01;  // angles and speeds within .6 degrees .6 degs/s \n-    }\n+    int nstates = standard->getColumnLabels().size() - 1;\n \n-    CHECK_STORAGE_AGAINST_STANDARD(results, *standard, rms_tols, __FILE__, __LINE__, \"testArm26 failed\");\n+    // angles and speeds within .6 degrees .6 degs/s; activations within 1%\n+    Array<double> rms_tols(0.01, nstates);\n \n-    const string& muscleType = cmc.getModel().getMuscles()[0].getConcreteClassName();\n-    cout << \"\\ntestGait10dof18musc \"+muscleType+\" passed\\n\" << endl;\n+    CHECK_STORAGE_AGAINST_STANDARD(results, *standard, rms_tols,\n+        __FILE__, __LINE__, \"testGait10dof18musc failed\");",
+    "path": "Applications/CMC/test/testCMCGait10dof18musc.cpp",
+    "position": null,
+    "original_position": 54,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`\"testGait10dof18musc failed\"`  :arrow_right:  `\"testGait10dof18musc \" + muscleType + \" failed\"` ?\n",
+    "created_at": "2016-08-23T22:50:32Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75966167",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75966167"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75966167"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 87,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75968216",
+    "pull_request_review_id": null,
+    "id": 75968216,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTY4MjE2",
+    "diff_hunk": "@@ -1053,6 +1067,17 @@ bool Component::constructOutputForStateVariable(const std::string& name)\n     return constructOutput<double>(name, func, SimTK::Stage::Model);\n }\n \n+// helper method to specify the order of subcomponents.",
+    "path": "OpenSim/Common/Component.cpp",
+    "position": 81,
+    "original_position": 62,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`(append subcomponent to the end of Component's _orderedSubcomponents list if it isn't already in the list)`?\n",
+    "created_at": "2016-08-23T23:06:34Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75968216",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75968216"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75968216"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1079,
+    "original_line": 1070,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75968549",
+    "pull_request_review_id": null,
+    "id": 75968549,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTY4NTQ5",
+    "diff_hunk": "@@ -1053,6 +1067,17 @@ bool Component::constructOutputForStateVariable(const std::string& name)\n     return constructOutput<double>(name, func, SimTK::Stage::Model);\n }\n \n+// helper method to specify the order of subcomponents.",
+    "path": "OpenSim/Common/Component.cpp",
+    "position": 81,
+    "original_position": 62,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Nevermind - the comment for this method in Component.h looks good.\n",
+    "created_at": "2016-08-23T23:09:35Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75968549",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75968549"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75968549"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1079,
+    "original_line": 1070,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75968887",
+    "pull_request_review_id": null,
+    "id": 75968887,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTY4ODg3",
+    "diff_hunk": "@@ -2487,11 +2501,18 @@ OpenSim_DECLARE_ABSTRACT_OBJECT(Component, Object);\n     // subsystem.\n     SimTK::ResetOnCopy<SimTK::MeasureIndex> _simTKcomponentIndex;\n \n+    // list of subomponents that are contained in this Component's properties",
+    "path": "OpenSim/Common/Component.h",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "subomponents -> subcomponents\n",
+    "created_at": "2016-08-23T23:12:13Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75968887",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75968887"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75968887"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2504,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75969477",
+    "pull_request_review_id": null,
+    "id": 75969477,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTY5NDc3",
+    "diff_hunk": "@@ -76,7 +77,9 @@ void TrackingController::setNull()\n //=============================================================================\n void TrackingController::setDesiredStatesStorage(const Storage* aYDesStore)\n {\n-    _desiredStatesStorage = aYDesStore;\n+    auto* old = _desiredStatesStorage.release();\n+    delete old;",
+    "path": "OpenSim/Simulation/Control/TrackingController.cpp",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":potable_water: :arrow_right: :non-potable_water: :+1:\n",
+    "created_at": "2016-08-23T23:17:23Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75969477",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75969477"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75969477"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 81,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75970126",
+    "pull_request_review_id": null,
+    "id": 75970126,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTcwMTI2",
+    "diff_hunk": "@@ -146,14 +142,21 @@ void CMCActuatorSubsystemRep::setSpeedTrajectories(FunctionSet *aSet) {\n         _qSet->evaluate(_uWork,1,t);\n     }\n \n-    for(i=0;i<nq;i++) q[i] = _qWork[i] + _qCorrections[i];\n-    for(i=0;i<nu;i++) u[i] = _uWork[i] + _uCorrections[i];\n+    /* Hack to obtain a modifiable state in a const method */",
+    "path": "OpenSim/Simulation/Model/CMCActuatorSubsystem.cpp",
+    "position": null,
+    "original_position": 22,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Ideally, would `realizeSubsystemDynamicsImpl()` just take a non-const state? The comment seems sufficient if we don't want to start fiddling with CMC's architecture.\n",
+    "created_at": "2016-08-23T23:23:44Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75970126",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75970126"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75970126"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 145,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75970671",
+    "pull_request_review_id": null,
+    "id": 75970671,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTcwNjcx",
+    "diff_hunk": "@@ -146,14 +142,21 @@ void CMCActuatorSubsystemRep::setSpeedTrajectories(FunctionSet *aSet) {\n         _qSet->evaluate(_uWork,1,t);\n     }\n \n-    for(i=0;i<nq;i++) q[i] = _qWork[i] + _qCorrections[i];\n-    for(i=0;i<nu;i++) u[i] = _uWork[i] + _uCorrections[i];\n+    /* Hack to obtain a modifiable state in a const method */\n+    State& modCompState = const_cast<SimTK::State&>(_completeState);\n \n+    // Update the coordinate values to pose the model while computing muscle\n+    // controls\n+    const CoordinateSet& coords = _model->getCoordinateSet();\n+    for (int i = 0; i < nq; ++i) {\n+        coords[i].setValue(modCompState, _qWork[i] + _qCorrections[i], i==(nq-1));",
+    "path": "OpenSim/Simulation/Model/CMCActuatorSubsystem.cpp",
+    "position": null,
+    "original_position": 29,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why is the \"enforce constraints\" flag set for the last coordinate (as opposed to, say, `i==0`)? Perhaps a comment would be helpful here, since this seems to be a minor change to the algorithm.\n",
+    "created_at": "2016-08-23T23:28:27Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75970671",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75970671"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75970671"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 152,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75972616",
+    "pull_request_review_id": null,
+    "id": 75972616,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTcyNjE2",
+    "diff_hunk": "@@ -656,38 +666,31 @@ void Model::extendConnectToModel(Model &model)\n             Joint* free = new FreeJoint(jname, *ground, *child);\n             free->upd_reverse() = mob.isReversedFromJoint();\n             addJoint(free);\n+            setNextSubcomponentInSystem(*free);",
+    "path": "OpenSim/Simulation/Model/Model.cpp",
+    "position": null,
+    "original_position": 160,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I was expecting this code to be more similar to the code above (lines 645–650) when a WeldConstraint is added. The comment above about JointSet (lines 611–612) suggests that JointSet will eventually disappear, so should `addJoint(free)` be `adoptSubcomponent(free)` instead? (In `addJoint()`, it looks like `free` will be adopted by the JointSet, which will eventually disappear.)\n",
+    "created_at": "2016-08-23T23:46:04Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75972616",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75972616"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75972616"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 669,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75973337",
+    "pull_request_review_id": null,
+    "id": 75973337,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTczMzM3",
+    "diff_hunk": "@@ -168,12 +168,28 @@ void addDeviceConsoleReporterToModel(Model& model, Device& device,\n } // namespace OpenSim\n \n \n+void executeExample();",
+    "path": "OpenSim/Sandbox/ExampleHopperDevice/exampleHopperDevice.cpp",
+    "position": null,
+    "original_position": 4,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "aseth1",
+      "id": 6494122,
+      "node_id": "MDQ6VXNlcjY0OTQxMjI=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6494122?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aseth1",
+      "html_url": "https://github.com/aseth1",
+      "followers_url": "https://api.github.com/users/aseth1/followers",
+      "following_url": "https://api.github.com/users/aseth1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aseth1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aseth1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aseth1/subscriptions",
+      "organizations_url": "https://api.github.com/users/aseth1/orgs",
+      "repos_url": "https://api.github.com/users/aseth1/repos",
+      "events_url": "https://api.github.com/users/aseth1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aseth1/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I also arbitrarily chose `executeExample()` and I am happy to change it while I am revising. Any preferences: `runHopperExample` or `hopToIt()` ?\n",
+    "created_at": "2016-08-23T23:52:22Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75973337",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75973337"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75973337"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 171,
+    "side": "RIGHT",
+    "in_reply_to_id": 75948536
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75973619",
+    "pull_request_review_id": null,
+    "id": 75973619,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTczNjE5",
+    "diff_hunk": "@@ -744,7 +764,7 @@ void Model::extendAddToSystem(SimTK::MultibodySystem& system) const\n     Model *mutableThis = const_cast<Model *>(this);\n \n     // Ensure Ground is added before all other Components\n-    getGround().addToSystem(system);\n+    //getGround().addToSystem(system);",
+    "path": "OpenSim/Simulation/Model/Model.cpp",
+    "position": null,
+    "original_position": 255,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Was this line commented out to allow nested Models (i.e., Ground isn't necessarily at the top of the Component list)? Perhaps delete altogether or add a \"TODO\" for when nested Models are fully implemented.\n",
+    "created_at": "2016-08-23T23:55:29Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75973619",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75973619"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75973619"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 767,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75974096",
+    "pull_request_review_id": null,
+    "id": 75974096,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTc0MDk2",
+    "diff_hunk": "@@ -146,14 +142,21 @@ void CMCActuatorSubsystemRep::setSpeedTrajectories(FunctionSet *aSet) {\n         _qSet->evaluate(_uWork,1,t);\n     }\n \n-    for(i=0;i<nq;i++) q[i] = _qWork[i] + _qCorrections[i];\n-    for(i=0;i<nu;i++) u[i] = _uWork[i] + _uCorrections[i];\n+    /* Hack to obtain a modifiable state in a const method */\n+    State& modCompState = const_cast<SimTK::State&>(_completeState);\n \n+    // Update the coordinate values to pose the model while computing muscle\n+    // controls\n+    const CoordinateSet& coords = _model->getCoordinateSet();\n+    for (int i = 0; i < nq; ++i) {\n+        coords[i].setValue(modCompState, _qWork[i] + _qCorrections[i], i==(nq-1));",
+    "path": "OpenSim/Simulation/Model/CMCActuatorSubsystem.cpp",
+    "position": null,
+    "original_position": 29,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "aseth1",
+      "id": 6494122,
+      "node_id": "MDQ6VXNlcjY0OTQxMjI=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6494122?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aseth1",
+      "html_url": "https://github.com/aseth1",
+      "followers_url": "https://api.github.com/users/aseth1/followers",
+      "following_url": "https://api.github.com/users/aseth1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aseth1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aseth1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aseth1/subscriptions",
+      "organizations_url": "https://api.github.com/users/aseth1/orgs",
+      "repos_url": "https://api.github.com/users/aseth1/repos",
+      "events_url": "https://api.github.com/users/aseth1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aseth1/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Since we are setting all the coordinate values, I wait to the last coordinate before enforcing the constraints. The default is to enforce constraints on every `setValue()`.  I will add a clarifying comment.\n",
+    "created_at": "2016-08-24T00:00:02Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75974096",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75974096"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75974096"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 152,
+    "side": "RIGHT",
+    "in_reply_to_id": 75970671
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75974135",
+    "pull_request_review_id": null,
+    "id": 75974135,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTc0MTM1",
+    "diff_hunk": "@@ -656,38 +666,31 @@ void Model::extendConnectToModel(Model &model)\n             Joint* free = new FreeJoint(jname, *ground, *child);\n             free->upd_reverse() = mob.isReversedFromJoint();\n             addJoint(free);\n+            setNextSubcomponentInSystem(*free);",
+    "path": "OpenSim/Simulation/Model/Model.cpp",
+    "position": null,
+    "original_position": 160,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "aseth1",
+      "id": 6494122,
+      "node_id": "MDQ6VXNlcjY0OTQxMjI=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6494122?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aseth1",
+      "html_url": "https://github.com/aseth1",
+      "followers_url": "https://api.github.com/users/aseth1/followers",
+      "following_url": "https://api.github.com/users/aseth1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aseth1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aseth1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aseth1/subscriptions",
+      "organizations_url": "https://api.github.com/users/aseth1/orgs",
+      "repos_url": "https://api.github.com/users/aseth1/repos",
+      "events_url": "https://api.github.com/users/aseth1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aseth1/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "That's a good point. It currently would serialize the FreeJoint (having been added to the JointSet), so I agree adopting directly would not have that affect (like the hidden Welds that are added to break loops). I will update.\n",
+    "created_at": "2016-08-24T00:00:25Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75974135",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75974135"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75974135"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 669,
+    "side": "RIGHT",
+    "in_reply_to_id": 75972616
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75974477",
+    "pull_request_review_id": null,
+    "id": 75974477,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTc0NDc3",
+    "diff_hunk": "@@ -168,12 +168,28 @@ void addDeviceConsoleReporterToModel(Model& model, Device& device,\n } // namespace OpenSim\n \n \n+void executeExample();",
+    "path": "OpenSim/Sandbox/ExampleHopperDevice/exampleHopperDevice.cpp",
+    "position": null,
+    "original_position": 4,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I like `hopToIt()` :rabbit2:, but it isn't descriptive so we probably shouldn't encourage in a workshop example. `runHopperExample()` sounds good to me.\n",
+    "created_at": "2016-08-24T00:04:14Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75974477",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75974477"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75974477"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 171,
+    "side": "RIGHT",
+    "in_reply_to_id": 75948536
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75975161",
+    "pull_request_review_id": null,
+    "id": 75975161,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTc1MTYx",
+    "diff_hunk": "@@ -146,14 +142,21 @@ void CMCActuatorSubsystemRep::setSpeedTrajectories(FunctionSet *aSet) {\n         _qSet->evaluate(_uWork,1,t);\n     }\n \n-    for(i=0;i<nq;i++) q[i] = _qWork[i] + _qCorrections[i];\n-    for(i=0;i<nu;i++) u[i] = _uWork[i] + _uCorrections[i];\n+    /* Hack to obtain a modifiable state in a const method */\n+    State& modCompState = const_cast<SimTK::State&>(_completeState);\n \n+    // Update the coordinate values to pose the model while computing muscle\n+    // controls\n+    const CoordinateSet& coords = _model->getCoordinateSet();\n+    for (int i = 0; i < nq; ++i) {\n+        coords[i].setValue(modCompState, _qWork[i] + _qCorrections[i], i==(nq-1));",
+    "path": "OpenSim/Simulation/Model/CMCActuatorSubsystem.cpp",
+    "position": null,
+    "original_position": 29,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> Since we are setting all the coordinate values, I wait to the last coordinate before enforcing the constraints.\n\nAh, ok. I think the algorithm is slightly different now because, previously, all the coordinate values could have changed slightly for every `0 <= i < nq-1`—but the tolerance is probably so small that the results don't change substantially (and the new way seems correct, since the projection should be independent of the order in which the coordinates are set).\n",
+    "created_at": "2016-08-24T00:10:49Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75975161",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75975161"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75975161"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 152,
+    "side": "RIGHT",
+    "in_reply_to_id": 75970671
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75976373",
+    "pull_request_review_id": null,
+    "id": 75976373,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTc2Mzcz",
+    "diff_hunk": "@@ -744,7 +764,7 @@ void Model::extendAddToSystem(SimTK::MultibodySystem& system) const\n     Model *mutableThis = const_cast<Model *>(this);\n \n     // Ensure Ground is added before all other Components\n-    getGround().addToSystem(system);\n+    //getGround().addToSystem(system);",
+    "path": "OpenSim/Simulation/Model/Model.cpp",
+    "position": null,
+    "original_position": 255,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "aseth1",
+      "id": 6494122,
+      "node_id": "MDQ6VXNlcjY0OTQxMjI=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6494122?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aseth1",
+      "html_url": "https://github.com/aseth1",
+      "followers_url": "https://api.github.com/users/aseth1/followers",
+      "following_url": "https://api.github.com/users/aseth1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aseth1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aseth1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aseth1/subscriptions",
+      "organizations_url": "https://api.github.com/users/aseth1/orgs",
+      "repos_url": "https://api.github.com/users/aseth1/repos",
+      "events_url": "https://api.github.com/users/aseth1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aseth1/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "It was a previous hack to force Ground to be added first. I will delete!\n",
+    "created_at": "2016-08-24T00:22:58Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75976373",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75976373"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75976373"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 767,
+    "side": "RIGHT",
+    "in_reply_to_id": 75973619
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75978983",
+    "pull_request_review_id": null,
+    "id": 75978983,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTc4OTgz",
+    "diff_hunk": "@@ -146,14 +142,21 @@ void CMCActuatorSubsystemRep::setSpeedTrajectories(FunctionSet *aSet) {\n         _qSet->evaluate(_uWork,1,t);\n     }\n \n-    for(i=0;i<nq;i++) q[i] = _qWork[i] + _qCorrections[i];\n-    for(i=0;i<nu;i++) u[i] = _uWork[i] + _uCorrections[i];\n+    /* Hack to obtain a modifiable state in a const method */",
+    "path": "OpenSim/Simulation/Model/CMCActuatorSubsystem.cpp",
+    "position": null,
+    "original_position": 22,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "aseth1",
+      "id": 6494122,
+      "node_id": "MDQ6VXNlcjY0OTQxMjI=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6494122?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aseth1",
+      "html_url": "https://github.com/aseth1",
+      "followers_url": "https://api.github.com/users/aseth1/followers",
+      "following_url": "https://api.github.com/users/aseth1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aseth1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aseth1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aseth1/subscriptions",
+      "organizations_url": "https://api.github.com/users/aseth1/orgs",
+      "repos_url": "https://api.github.com/users/aseth1/repos",
+      "events_url": "https://api.github.com/users/aseth1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aseth1/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "The issue is that the CMCActuatorSubsystemRep has it own secret internal State (_completeState) which it updates. Computation is not supposed change the System (or subsystem). It is a bad implementation and I would rather not change it. All I did was gather it to one `const_cast` instead of having three.\n",
+    "created_at": "2016-08-24T00:53:40Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75978983",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75978983"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75978983"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 145,
+    "side": "RIGHT",
+    "in_reply_to_id": 75970126
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75979436",
+    "pull_request_review_id": null,
+    "id": 75979436,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc1OTc5NDM2",
+    "diff_hunk": "@@ -146,14 +142,21 @@ void CMCActuatorSubsystemRep::setSpeedTrajectories(FunctionSet *aSet) {\n         _qSet->evaluate(_uWork,1,t);\n     }\n \n-    for(i=0;i<nq;i++) q[i] = _qWork[i] + _qCorrections[i];\n-    for(i=0;i<nu;i++) u[i] = _uWork[i] + _uCorrections[i];\n+    /* Hack to obtain a modifiable state in a const method */",
+    "path": "OpenSim/Simulation/Model/CMCActuatorSubsystem.cpp",
+    "position": null,
+    "original_position": 22,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> All I did was gather it to one `const_cast` instead of having three.\n\nOk, sounds good. Thanks for explaining.\n",
+    "created_at": "2016-08-24T00:59:13Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75979436",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/75979436"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r75979436"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 145,
+    "side": "RIGHT",
+    "in_reply_to_id": 75970126
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77292824",
+    "pull_request_review_id": null,
+    "id": 77292824,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3MjkyODI0",
+    "diff_hunk": "@@ -65,28 +65,27 @@ void testGait2354() {\n \n     int nq = results.getColumnLabels().getSize()-1;\n \n-    // Tracking kinematics angles in degrees should be within 2 degrees\n-    std::vector<double> rms_tols(nq, 2.0);\n+    // Tracking kinematics angles in degrees should be within 1.5 degrees\n+    std::vector<double> rms_tols(nq, 1.5);\n     rms_tols[3] = 0.005; // pelvis translations in m should be with 5mm\n     rms_tols[4] = 0.005;\n     rms_tols[5] = 0.005;\n \n-    CHECK_STORAGE_AGAINST_STANDARD(results, standard, rms_tols, \n+    CHECK_STORAGE_AGAINST_STANDARD(results, standard, rms_tols,\n         __FILE__, __LINE__, \"testGait2354 tracking failed\");\n \n     Storage results2(\"subject01_ResultsCMC/subject01_walk1_states.sto\");\n     Storage standard2(\"std_subject01_walk1_states.sto\");\n \n     Array<string> col_labels = standard2.getColumnLabels();\n-    std::vector<double> rms_tols2(col_labels.getSize()-1, 0.1);\n-    for (int i = 23; i < 46; ++i){\n-        rms_tols2[i] = 0.75; // velocities\n-    }\n-    for (size_t i = 46; i < rms_tols2.size(); ++i){\n-        rms_tols2[i] = 0.15; // muscle activations and fiber-lengths\n+\n+    // tolerance for joint angles 0.02rad ~= 1.15 degs and activation within 2%\n+    std::vector<double> rms_tols2(col_labels.getSize()-1, 0.02);\n+    for (int i = 0; i < nq; ++i){\n+        rms_tols2[2*i+1] = 0.25; // velocities rad/s",
+    "path": "Applications/CMC/test/testCMCWithControlConstraintsGait2354.cpp",
+    "position": 30,
+    "original_position": 30,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "9cadc0fcf1bf85a9ce4df8e14c7cf5f29f325bba",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I'm afraid the order of the states could change again in the future.\n",
+    "created_at": "2016-09-02T04:52:06Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77292824",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77292824"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77292824"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 85,
+    "original_line": 85,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77296709",
+    "pull_request_review_id": null,
+    "id": 77296709,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3Mjk2NzA5",
+    "diff_hunk": "@@ -319,6 +331,11 @@ void Component::disconnect()\n \n void Component::addToSystem(SimTK::MultibodySystem& system) const\n {\n+    // If being asked to be added to the same System that it is already\n+    // a part, there is nothing to be done.\n+    if (hasSystem() && (&getSystem() == &system)) {\n+        return;\n+    }",
+    "path": "OpenSim/Common/Component.cpp",
+    "position": 38,
+    "original_position": 38,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "9cadc0fcf1bf85a9ce4df8e14c7cf5f29f325bba",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Seems okay to me but I'm curious. What caused this to be necessary? Are you sure that silently passing is the correct thing to do, instead of throwing an exception?\n",
+    "created_at": "2016-09-02T05:57:06Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77296709",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77296709"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77296709"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 328,
+    "original_line": 338,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77296995",
+    "pull_request_review_id": null,
+    "id": 77296995,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3Mjk2OTk1",
+    "diff_hunk": "@@ -2487,11 +2501,18 @@ OpenSim_DECLARE_ABSTRACT_OBJECT(Component, Object);\n     // subsystem.\n     SimTK::ResetOnCopy<SimTK::MeasureIndex> _simTKcomponentIndex;\n \n+    // list of subcomponents that are contained in this Component's properties\n+    SimTK::Array_<SimTK::ReferencePtr<Component> >  _propertySubcomponents;\n     // Keep fixed list of data member Components upon construction\n     SimTK::Array_<SimTK::ClonePtr<Component> > _memberSubcomponents;\n     // Hold onto adopted components\n     SimTK::Array_<SimTK::ClonePtr<Component> > _adoptedSubcomponents;\n \n+    // A flat list of all the subcomponents that comprise this Component.\n+    // The list must be complete and in the correct System order by \n+    // addToSystem().\n+    mutable std::vector<SimTK::ReferencePtr<const Component> > _orderedSubcomponents;",
+    "path": "OpenSim/Common/Component.h",
+    "position": null,
+    "original_position": 53,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "9cadc0fcf1bf85a9ce4df8e14c7cf5f29f325bba",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why don't member or adopted subcomponents need to be ordered with the property subcomponents?\n",
+    "created_at": "2016-09-02T06:00:06Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77296995",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77296995"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77296995"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2514,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77297078",
+    "pull_request_review_id": null,
+    "id": 77297078,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3Mjk3MDc4",
+    "diff_hunk": "@@ -2487,11 +2501,18 @@ OpenSim_DECLARE_ABSTRACT_OBJECT(Component, Object);\n     // subsystem.\n     SimTK::ResetOnCopy<SimTK::MeasureIndex> _simTKcomponentIndex;\n \n+    // list of subcomponents that are contained in this Component's properties\n+    SimTK::Array_<SimTK::ReferencePtr<Component> >  _propertySubcomponents;\n     // Keep fixed list of data member Components upon construction\n     SimTK::Array_<SimTK::ClonePtr<Component> > _memberSubcomponents;\n     // Hold onto adopted components\n     SimTK::Array_<SimTK::ClonePtr<Component> > _adoptedSubcomponents;\n \n+    // A flat list of all the subcomponents that comprise this Component.\n+    // The list must be complete and in the correct System order by \n+    // addToSystem().\n+    mutable std::vector<SimTK::ReferencePtr<const Component> > _orderedSubcomponents;",
+    "path": "OpenSim/Common/Component.h",
+    "position": null,
+    "original_position": 53,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "9cadc0fcf1bf85a9ce4df8e14c7cf5f29f325bba",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Sorry; forget this comment. I need to get a better understanding of the changes first.\n",
+    "created_at": "2016-09-02T06:00:53Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77297078",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77297078"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77297078"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2514,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77298173",
+    "pull_request_review_id": null,
+    "id": 77298173,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3Mjk4MTcz",
+    "diff_hunk": "@@ -76,7 +77,9 @@ void TrackingController::setNull()\n //=============================================================================\n void TrackingController::setDesiredStatesStorage(const Storage* aYDesStore)\n {\n-    _desiredStatesStorage = aYDesStore;\n+    auto* old = _desiredStatesStorage.release();\n+    delete old;",
+    "path": "OpenSim/Simulation/Control/TrackingController.cpp",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Despite Tom's excitement, I don't think this is what we should do. `_desiredStatesStorage` is a non-owning pointer and it's effectively being used as an owning pointer now. If the memory management has changed, then `_desiredStatesStorage` should be changed to a `SimTK::ResetOnCopy<std::unique_ptr<Storage>`, or something like that.\n\nDid you discover a leak? If so, where?\n\nI think it would be good to also edit the doxygen for this method to mention the memory management.\n",
+    "created_at": "2016-09-02T06:17:36Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77298173",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77298173"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77298173"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 81,
+    "side": "RIGHT",
+    "in_reply_to_id": 75969477
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77419982",
+    "pull_request_review_id": null,
+    "id": 77419982,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NDE5OTgy",
+    "diff_hunk": "@@ -76,7 +77,9 @@ void TrackingController::setNull()\n //=============================================================================\n void TrackingController::setDesiredStatesStorage(const Storage* aYDesStore)\n {\n-    _desiredStatesStorage = aYDesStore;\n+    auto* old = _desiredStatesStorage.release();\n+    delete old;",
+    "path": "OpenSim/Simulation/Control/TrackingController.cpp",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> Despite Tom's excitement, I don't think this is what we should do.\n\nI didn't perform a thorough analysis of this change. I checked [the commit where this change was made](https://github.com/opensim-org/opensim-core/pull/1205/commits/02b4c1cc8509d758a245e65acd6d63c0251dfa79), and it seemed as though @aseth1 just happened to find the leak and patched it up without redoing the whole kitchen. If further analysis is necessary, I suggest opening a new issue to investigate since this class seems unrelated to the point of this PR.\n",
+    "created_at": "2016-09-02T22:24:19Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77419982",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77419982"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77419982"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 81,
+    "side": "RIGHT",
+    "in_reply_to_id": 75969477
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77420778",
+    "pull_request_review_id": null,
+    "id": 77420778,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NDIwNzc4",
+    "diff_hunk": "@@ -76,7 +77,9 @@ void TrackingController::setNull()\n //=============================================================================\n void TrackingController::setDesiredStatesStorage(const Storage* aYDesStore)\n {\n-    _desiredStatesStorage = aYDesStore;\n+    auto* old = _desiredStatesStorage.release();\n+    delete old;",
+    "path": "OpenSim/Simulation/Control/TrackingController.cpp",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "07613cc7568c2ce01fa819c985d828df3090df4c",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah...I would prefer that this change is undone and a new Issue be created.\n",
+    "created_at": "2016-09-02T22:32:44Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77420778",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77420778"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77420778"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 81,
+    "side": "RIGHT",
+    "in_reply_to_id": 75969477
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77548984",
+    "pull_request_review_id": null,
+    "id": 77548984,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NTQ4OTg0",
+    "diff_hunk": "@@ -65,28 +65,27 @@ void testGait2354() {\n \n     int nq = results.getColumnLabels().getSize()-1;\n \n-    // Tracking kinematics angles in degrees should be within 2 degrees\n-    std::vector<double> rms_tols(nq, 2.0);\n+    // Tracking kinematics angles in degrees should be within 1.5 degrees\n+    std::vector<double> rms_tols(nq, 1.5);\n     rms_tols[3] = 0.005; // pelvis translations in m should be with 5mm\n     rms_tols[4] = 0.005;\n     rms_tols[5] = 0.005;\n \n-    CHECK_STORAGE_AGAINST_STANDARD(results, standard, rms_tols, \n+    CHECK_STORAGE_AGAINST_STANDARD(results, standard, rms_tols,\n         __FILE__, __LINE__, \"testGait2354 tracking failed\");\n \n     Storage results2(\"subject01_ResultsCMC/subject01_walk1_states.sto\");\n     Storage standard2(\"std_subject01_walk1_states.sto\");\n \n     Array<string> col_labels = standard2.getColumnLabels();\n-    std::vector<double> rms_tols2(col_labels.getSize()-1, 0.1);\n-    for (int i = 23; i < 46; ++i){\n-        rms_tols2[i] = 0.75; // velocities\n-    }\n-    for (size_t i = 46; i < rms_tols2.size(); ++i){\n-        rms_tols2[i] = 0.15; // muscle activations and fiber-lengths\n+\n+    // tolerance for joint angles 0.02rad ~= 1.15 degs and activation within 2%\n+    std::vector<double> rms_tols2(col_labels.getSize()-1, 0.02);\n+    for (int i = 0; i < nq; ++i){\n+        rms_tols2[2*i+1] = 0.25; // velocities rad/s",
+    "path": "Applications/CMC/test/testCMCWithControlConstraintsGait2354.cpp",
+    "position": 30,
+    "original_position": 30,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "9cadc0fcf1bf85a9ce4df8e14c7cf5f29f325bba",
+    "user": {
+      "login": "aseth1",
+      "id": 6494122,
+      "node_id": "MDQ6VXNlcjY0OTQxMjI=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6494122?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aseth1",
+      "html_url": "https://github.com/aseth1",
+      "followers_url": "https://api.github.com/users/aseth1/followers",
+      "following_url": "https://api.github.com/users/aseth1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aseth1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aseth1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aseth1/subscriptions",
+      "organizations_url": "https://api.github.com/users/aseth1/orgs",
+      "repos_url": "https://api.github.com/users/aseth1/repos",
+      "events_url": "https://api.github.com/users/aseth1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aseth1/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I agree. But that wasn't the reason for the change. Tightening the tolerances was the main purpose. As far as I can tell the order has been wrong since we started using the `MultibodyGraphMaker` but the tolerances were to loose make a difference.\n",
+    "created_at": "2016-09-05T18:14:03Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77548984",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77548984"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77548984"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 85,
+    "original_line": 85,
+    "side": "RIGHT",
+    "in_reply_to_id": 77292824
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77550829",
+    "pull_request_review_id": null,
+    "id": 77550829,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NTUwODI5",
+    "diff_hunk": "@@ -319,6 +331,11 @@ void Component::disconnect()\n \n void Component::addToSystem(SimTK::MultibodySystem& system) const\n {\n+    // If being asked to be added to the same System that it is already\n+    // a part, there is nothing to be done.\n+    if (hasSystem() && (&getSystem() == &system)) {\n+        return;\n+    }",
+    "path": "OpenSim/Common/Component.cpp",
+    "position": 38,
+    "original_position": 38,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "9cadc0fcf1bf85a9ce4df8e14c7cf5f29f325bba",
+    "user": {
+      "login": "aseth1",
+      "id": 6494122,
+      "node_id": "MDQ6VXNlcjY0OTQxMjI=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6494122?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aseth1",
+      "html_url": "https://github.com/aseth1",
+      "followers_url": "https://api.github.com/users/aseth1/followers",
+      "following_url": "https://api.github.com/users/aseth1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aseth1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aseth1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aseth1/subscriptions",
+      "organizations_url": "https://api.github.com/users/aseth1/orgs",
+      "repos_url": "https://api.github.com/users/aseth1/repos",
+      "events_url": "https://api.github.com/users/aseth1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aseth1/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Now that Component writers can dictate the order of subcomponents this will often mean cycling through Component lists of specific types, and it will be difficult to to guarantee they are attempting to add components only once. Since property changes should wipe out the system, this should be safe to do. My inclination is that it is too harsh to throw an Exception in this case.\n\n`Component::setNextSubcomponentInSystem()` only appends the component to the list of ordered subcomponents if the subcomponent is not already in the list, so it is unique for a given Component. However, each subcomponent also has its own list.\n\nBut there is nothing stopping the component from directly calling `addToSystem` on a subcomponent. Note that previously, we didn't check and simply added the component to the system again. So this at least fixes that problem.\n\nHere is the use case. A Model has Ground, Bodies, PhysicalOffsetFrames (POFs), Joints, Forces and user defined Components (like a Device). Some Joints have their own POFs (as subcomponents) and others connect to POFs somewhere else in the Model (like on Bodies or a Device). The MultibodyGraphMaker dictates which Bodies and POFs are to be added first to define each Joint in multibody tree order until the POFs, Bodies and Joints that make up the multibody tree are part of the System. At this point there are still POFs (not specifically part of the multibody tree) that have not been added to the System yet (think POF of the Device for attaching it). So a reasonable thing to do is to cycle through all POFs and add them next sinces, POFs act as attachment sites for other components (e.g. Stations, Forces, Device). POFs that were added as a requirement for the building the tree will already be present and I think it makes sense to now ignore them as the Model does another pass to make sure all POFs are added before attempting to add other Components to the System.\n\nLet me know if you agree.\n",
+    "created_at": "2016-09-05T18:58:33Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77550829",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77550829"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77550829"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 328,
+    "original_line": 338,
+    "side": "RIGHT",
+    "in_reply_to_id": 77296709
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77551115",
+    "pull_request_review_id": null,
+    "id": 77551115,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc3NTUxMTE1",
+    "diff_hunk": "@@ -2487,11 +2501,18 @@ OpenSim_DECLARE_ABSTRACT_OBJECT(Component, Object);\n     // subsystem.\n     SimTK::ResetOnCopy<SimTK::MeasureIndex> _simTKcomponentIndex;\n \n+    // list of subcomponents that are contained in this Component's properties\n+    SimTK::Array_<SimTK::ReferencePtr<Component> >  _propertySubcomponents;\n     // Keep fixed list of data member Components upon construction\n     SimTK::Array_<SimTK::ClonePtr<Component> > _memberSubcomponents;\n     // Hold onto adopted components\n     SimTK::Array_<SimTK::ClonePtr<Component> > _adoptedSubcomponents;\n \n+    // A flat list of all the subcomponents that comprise this Component.\n+    // The list must be complete and in the correct System order by \n+    // addToSystem().\n+    mutable std::vector<SimTK::ReferencePtr<const Component> > _orderedSubcomponents;",
+    "path": "OpenSim/Common/Component.h",
+    "position": null,
+    "original_position": 53,
+    "commit_id": "c90e1f3d88030cf7a77a34d542054a23448961b8",
+    "original_commit_id": "9cadc0fcf1bf85a9ce4df8e14c7cf5f29f325bba",
+    "user": {
+      "login": "aseth1",
+      "id": 6494122,
+      "node_id": "MDQ6VXNlcjY0OTQxMjI=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6494122?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aseth1",
+      "html_url": "https://github.com/aseth1",
+      "followers_url": "https://api.github.com/users/aseth1/followers",
+      "following_url": "https://api.github.com/users/aseth1/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aseth1/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aseth1/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aseth1/subscriptions",
+      "organizations_url": "https://api.github.com/users/aseth1/orgs",
+      "repos_url": "https://api.github.com/users/aseth1/repos",
+      "events_url": "https://api.github.com/users/aseth1/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aseth1/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`_orderedSubcomponents` is just a way for a Component to dictate the order in which subcomponents get added to the System. If the Component writer has no requirement on order then the list is auto generated in ownership traversal order. It includes all subcomponents regardless of internal designation (member, property, adopted)\n",
+    "created_at": "2016-09-05T19:05:23Z",
+    "updated_at": "2016-09-22T22:02:54Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77551115",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/77551115"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1205#discussion_r77551115"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1205"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2514,
+    "side": "RIGHT",
+    "in_reply_to_id": 77296995
+  }
+]

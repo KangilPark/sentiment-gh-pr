@@ -1,0 +1,81 @@
+[
+  {
+    "sha": "6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "node_id": "MDY6Q29tbWl0MTc0OTYxOTQ6Njg3NGYxOTE0ZjZhYjBiYjkzYTA1MTk5YmY4NjE5M2RhNGJlOTRmZA==",
+    "commit": {
+      "author": {
+        "name": "Polita Paulus",
+        "email": "phuff@microsoft.com",
+        "date": "2016-05-23T22:06:04Z"
+      },
+      "committer": {
+        "name": "Polita Paulus",
+        "email": "phuff@microsoft.com",
+        "date": "2016-05-23T22:06:04Z"
+      },
+      "message": "Update default automatic MetadataRefresh to 1 day.",
+      "tree": {
+        "sha": "519acb14383ce74a509bb04daf3d3529abb3f009",
+        "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/git/trees/519acb14383ce74a509bb04daf3d3529abb3f009"
+      },
+      "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/git/commits/6874f1914f6ab0bb93a05199bf86193da4be94fd",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commit/6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "comments_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/6874f1914f6ab0bb93a05199bf86193da4be94fd/comments",
+    "author": {
+      "login": "polita",
+      "id": 7873171,
+      "node_id": "MDQ6VXNlcjc4NzMxNzE=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7873171?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/polita",
+      "html_url": "https://github.com/polita",
+      "followers_url": "https://api.github.com/users/polita/followers",
+      "following_url": "https://api.github.com/users/polita/following{/other_user}",
+      "gists_url": "https://api.github.com/users/polita/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/polita/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/polita/subscriptions",
+      "organizations_url": "https://api.github.com/users/polita/orgs",
+      "repos_url": "https://api.github.com/users/polita/repos",
+      "events_url": "https://api.github.com/users/polita/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/polita/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "polita",
+      "id": 7873171,
+      "node_id": "MDQ6VXNlcjc4NzMxNzE=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7873171?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/polita",
+      "html_url": "https://github.com/polita",
+      "followers_url": "https://api.github.com/users/polita/followers",
+      "following_url": "https://api.github.com/users/polita/following{/other_user}",
+      "gists_url": "https://api.github.com/users/polita/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/polita/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/polita/subscriptions",
+      "organizations_url": "https://api.github.com/users/polita/orgs",
+      "repos_url": "https://api.github.com/users/polita/repos",
+      "events_url": "https://api.github.com/users/polita/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/polita/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "392e5b508af40b995bcf6ebb41b890f201396dd4",
+        "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commits/392e5b508af40b995bcf6ebb41b890f201396dd4",
+        "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/commit/392e5b508af40b995bcf6ebb41b890f201396dd4"
+      }
+    ]
+  }
+]

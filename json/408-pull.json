@@ -1,0 +1,167 @@
+[
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/64423748",
+    "pull_request_review_id": null,
+    "id": 64423748,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDIzNzQ4",
+    "diff_hunk": "@@ -45,7 +45,7 @@ public class ConfigurationManager<T> : IConfigurationManager<T> where T : class\n         /// <summary>\n         /// 5 days is the default time interval that afterwards, <see cref=\"GetConfigurationAsync()\"/> will obtain new configuration.",
+    "path": "src/Microsoft.IdentityModel.Protocols/Configuration/ConfigurationManager.cs",
+    "position": 2,
+    "original_position": 2,
+    "commit_id": "6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "original_commit_id": "6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "user": {
+      "login": "kevinchalet",
+      "id": 6998306,
+      "node_id": "MDQ6VXNlcjY5OTgzMDY=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6998306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinchalet",
+      "html_url": "https://github.com/kevinchalet",
+      "followers_url": "https://api.github.com/users/kevinchalet/followers",
+      "following_url": "https://api.github.com/users/kevinchalet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinchalet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinchalet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinchalet/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinchalet/orgs",
+      "repos_url": "https://api.github.com/users/kevinchalet/repos",
+      "events_url": "https://api.github.com/users/kevinchalet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinchalet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Nice, the XML documentation is now incorrect... maybe it was worth updating it? :sweat_smile: \n",
+    "created_at": "2016-05-24T16:15:12Z",
+    "updated_at": "2016-05-24T16:15:12Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/408#discussion_r64423748",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/408",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/64423748"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/408#discussion_r64423748"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/408"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 46,
+    "original_line": 46,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/64464031",
+    "pull_request_review_id": null,
+    "id": 64464031,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDY0MDMx",
+    "diff_hunk": "@@ -45,7 +45,7 @@ public class ConfigurationManager<T> : IConfigurationManager<T> where T : class\n         /// <summary>\n         /// 5 days is the default time interval that afterwards, <see cref=\"GetConfigurationAsync()\"/> will obtain new configuration.",
+    "path": "src/Microsoft.IdentityModel.Protocols/Configuration/ConfigurationManager.cs",
+    "position": 2,
+    "original_position": 2,
+    "commit_id": "6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "original_commit_id": "6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "user": {
+      "login": "polita",
+      "id": 7873171,
+      "node_id": "MDQ6VXNlcjc4NzMxNzE=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7873171?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/polita",
+      "html_url": "https://github.com/polita",
+      "followers_url": "https://api.github.com/users/polita/followers",
+      "following_url": "https://api.github.com/users/polita/following{/other_user}",
+      "gists_url": "https://api.github.com/users/polita/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/polita/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/polita/subscriptions",
+      "organizations_url": "https://api.github.com/users/polita/orgs",
+      "repos_url": "https://api.github.com/users/polita/repos",
+      "events_url": "https://api.github.com/users/polita/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/polita/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Thanks, I'll fix it.\n",
+    "created_at": "2016-05-24T20:04:32Z",
+    "updated_at": "2016-05-24T20:04:32Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/408#discussion_r64464031",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/408",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/64464031"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/408#discussion_r64464031"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/408"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 46,
+    "original_line": 46,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/64487187",
+    "pull_request_review_id": null,
+    "id": 64487187,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDg3MTg3",
+    "diff_hunk": "@@ -45,7 +45,7 @@ public class ConfigurationManager<T> : IConfigurationManager<T> where T : class\n         /// <summary>\n         /// 5 days is the default time interval that afterwards, <see cref=\"GetConfigurationAsync()\"/> will obtain new configuration.",
+    "path": "src/Microsoft.IdentityModel.Protocols/Configuration/ConfigurationManager.cs",
+    "position": 2,
+    "original_position": 2,
+    "commit_id": "6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "original_commit_id": "6874f1914f6ab0bb93a05199bf86193da4be94fd",
+    "user": {
+      "login": "polita",
+      "id": 7873171,
+      "node_id": "MDQ6VXNlcjc4NzMxNzE=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7873171?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/polita",
+      "html_url": "https://github.com/polita",
+      "followers_url": "https://api.github.com/users/polita/followers",
+      "following_url": "https://api.github.com/users/polita/following{/other_user}",
+      "gists_url": "https://api.github.com/users/polita/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/polita/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/polita/subscriptions",
+      "organizations_url": "https://api.github.com/users/polita/orgs",
+      "repos_url": "https://api.github.com/users/polita/repos",
+      "events_url": "https://api.github.com/users/polita/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/polita/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "See PR #410 \n",
+    "created_at": "2016-05-24T22:35:08Z",
+    "updated_at": "2016-05-24T22:35:08Z",
+    "html_url": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/408#discussion_r64487187",
+    "pull_request_url": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/408",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/comments/64487187"
+      },
+      "html": {
+        "href": "https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pull/408#discussion_r64487187"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/pulls/408"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 46,
+    "original_line": 46,
+    "side": "RIGHT"
+  }
+]

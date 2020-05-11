@@ -1,0 +1,1655 @@
+[
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72217294",
+    "pull_request_review_id": null,
+    "id": 72217294,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjE3Mjk0",
+    "diff_hunk": "@@ -284,27 +283,22 @@ def filter_paid(self):\n             return self.base_queryset.top_paid(listed=False)\n \n     def filter_popular(self):\n-        return (self.base_queryset.order_by('-weekly_downloads')\n-                .with_index(addons='downloads_type_idx'))\n+        return self.base_queryset.order_by('-weekly_downloads')",
+    "path": "src/olympia/addons/views.py",
+    "position": 25,
+    "original_position": 25,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "We should test those queries on stage, running `EXPLAIN` on them to make sure `MySQL` properly chooses the right index without our help.\n",
+    "created_at": "2016-07-26T09:36:40Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72217294",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72217294"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72217294"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 293,
+    "original_line": 286,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72217734",
+    "pull_request_review_id": null,
+    "id": 72217734,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjE3NzM0",
+    "diff_hunk": "@@ -414,6 +391,11 @@ def update(self, **kw):\n             models.signals.post_save.send(sender=cls, instance=self,\n                                           created=False)\n \n+    def save(self, **kwargs):\n+        if hasattr(self._meta, 'translated_fields'):\n+            save_translations(id(self))",
+    "path": "src/olympia/amo/models.py",
+    "position": null,
+    "original_position": 65,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why? It should be done via `pre_save` on models using translations.\n",
+    "created_at": "2016-07-26T09:40:02Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72217734",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72217734"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72217734"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 396,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72217933",
+    "pull_request_review_id": null,
+    "id": 72217933,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjE3OTMz",
+    "diff_hunk": "@@ -572,7 +572,10 @@ def _get_created(created):\n                         random.randint(0, 59))  # Seconds\n \n \n-def addon_factory(status=amo.STATUS_PUBLIC, version_kw={}, file_kw={}, **kw):",
+    "path": "src/olympia/amo/tests/__init__.py",
+    "position": 13,
+    "original_position": 13,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "lol, I read this function definition often and never caught that...\n",
+    "created_at": "2016-07-26T09:41:35Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72217933",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72217933"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72217933"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 576,
+    "original_line": 575,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72218407",
+    "pull_request_review_id": null,
+    "id": 72218407,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjE4NDA3",
+    "diff_hunk": "@@ -60,7 +60,14 @@ def fake_object(self, data):\n     def handle_date(self, value):\n         if not value:\n             return None\n-        return datetime.strptime(value, u'%Y-%m-%dT%H:%M:%S')\n+\n+        # Don't be picky about microseconds here. But we get them some time\n+        # so we have to support them. Maybe there's a nicer way of doing\n+        # this? (cgrebs)",
+    "path": "src/olympia/api/serializers.py",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Not really nicer, but https://github.com/mozilla/zamboni/blob/master/mkt/search/serializers.py#L9\n",
+    "created_at": "2016-07-26T09:45:08Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72218407",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72218407"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72218407"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72218796",
+    "pull_request_review_id": null,
+    "id": 72218796,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjE4Nzk2",
+    "diff_hunk": "@@ -73,7 +73,7 @@ def test_dashboard(self):\n         r = self.client.get(reverse('devhub.addons'))\n         doc = pq(r.content)\n         assert len(doc('li.item')) == 4\n-        assert doc('.subscribe-feed').attr('href')[:-32] == (\n+        assert doc('.subscribe-feed').attr('href')[:-36] == (",
+    "path": "src/olympia/devhub/tests/test_feeds.py",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "mmm? does this mean that changing the field to use django's `UUIDField` is not backwards-compatible ?\n",
+    "created_at": "2016-07-26T09:47:48Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72218796",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72218796"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72218796"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 76,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72218984",
+    "pull_request_review_id": null,
+    "id": 72218984,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjE4OTg0",
+    "diff_hunk": "@@ -1389,12 +1391,17 @@ def version_bounce(request, addon_id, addon, version):\n @dev_required\n def version_stats(request, addon_id, addon):\n     qs = Version.objects.filter(addon=addon)\n-    reviews = (qs.annotate(reviews=Count('reviews'))\n-               .values('id', 'version', 'reviews'))\n+    reviews = (qs.annotate(review_count=Count('reviews'))\n+               .values('id', 'version', 'review_count'))\n     d = dict((v['id'], v) for v in reviews)\n-    files = qs.annotate(files=Count('files')).values_list('id', 'files')\n-    for id, files in files:\n-        d[id]['files'] = files\n+    files = (\n+        qs\n+        .annotate(file_count=Count('files'))\n+        .values_list('id', 'file_count'))\n+    for id, file_count in files:",
+    "path": "src/olympia/devhub/views.py",
+    "position": null,
+    "original_position": 92,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "nitpick (I know it was already like this before) `id_` to avoid confusion ?\n",
+    "created_at": "2016-07-26T09:49:05Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72218984",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72218984"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72218984"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1401,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72219400",
+    "pull_request_review_id": null,
+    "id": 72219400,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjE5NDAw",
+    "diff_hunk": "@@ -60,8 +60,10 @@ def url(u, **kwargs):\n     if v:\n         d['version'] = v.version\n         d['platforms'] = [unicode(a.name) for a in v.supported_platforms]\n-        d['compatible_apps'] = v.compatible_apps.values()\n-\n+        d['compatible_apps'] = [\n+            {unicode(amo.APP_IDS[obj.application].pretty): {\n+                'min': unicode(obj.min), 'max': unicode(obj.max)}}\n+            for obj in v.compatible_apps.values()]",
+    "path": "src/olympia/legacy_api/utils.py",
+    "position": 9,
+    "original_position": 9,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Just commenting to remember that we need to double-check that it's working properly.\n",
+    "created_at": "2016-07-26T09:52:01Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72219400",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72219400"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72219400"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 66,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72220320",
+    "pull_request_review_id": null,
+    "id": 72220320,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjIwMzIw",
+    "diff_hunk": "@@ -453,7 +453,7 @@ def test_version_exists_with_pk(self):\n         response = self.get(self.url(self.guid, '3.0', upload.uuid))",
+    "path": "src/olympia/signing/tests/test_views.py",
+    "position": null,
+    "original_position": 1,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Shouldn't this be `upload.uuid.hex` ?\n",
+    "created_at": "2016-07-26T09:58:16Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72220320",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72220320"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72220320"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 453,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72220413",
+    "pull_request_review_id": null,
+    "id": 72220413,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjIwNDEz",
+    "diff_hunk": "@@ -453,7 +453,7 @@ def test_version_exists_with_pk(self):\n         response = self.get(self.url(self.guid, '3.0', upload.uuid))\n         assert response.status_code == 200\n         # For backwards-compatibility reasons, we return the uuid as \"pk\".\n-        assert response.data['pk'] == upload.uuid\n+        assert response.data['pk'] == str(upload.uuid)",
+    "path": "src/olympia/signing/tests/test_views.py",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Shouldn't this be `upload.uuid.hex` ? Worried about backwards-compatibility, the API needs to accept/return uuids without dashes IMHO.\n",
+    "created_at": "2016-07-26T09:58:57Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72220413",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72220413"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72220413"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 456,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72221905",
+    "pull_request_review_id": null,
+    "id": 72221905,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjIxOTA1",
+    "diff_hunk": "@@ -414,6 +391,11 @@ def update(self, **kw):\n             models.signals.post_save.send(sender=cls, instance=self,\n                                           created=False)\n \n+    def save(self, **kwargs):\n+        if hasattr(self._meta, 'translated_fields'):\n+            save_translations(id(self))",
+    "path": "src/olympia/amo/models.py",
+    "position": null,
+    "original_position": 65,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Actually I stole that from marketplace and it's not the case regarding `pre_save` - the problem is that `save` checks for any m2n relation to have the parent saved and only after that saves the actual model so we get an error.\n",
+    "created_at": "2016-07-26T10:10:46Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72221905",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72221905"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72221905"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 396,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223064",
+    "pull_request_review_id": null,
+    "id": 72223064,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjIzMDY0",
+    "diff_hunk": "@@ -572,7 +572,10 @@ def _get_created(created):\n                         random.randint(0, 59))  # Seconds\n \n \n-def addon_factory(status=amo.STATUS_PUBLIC, version_kw={}, file_kw={}, **kw):",
+    "path": "src/olympia/amo/tests/__init__.py",
+    "position": 13,
+    "original_position": 13,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "hehe, yeah, it probably never hurt us but better safe than sorry.\n",
+    "created_at": "2016-07-26T10:19:28Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223064",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223064"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223064"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 576,
+    "original_line": 575,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223285",
+    "pull_request_review_id": null,
+    "id": 72223285,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjIzMjg1",
+    "diff_hunk": "@@ -60,7 +60,14 @@ def fake_object(self, data):\n     def handle_date(self, value):\n         if not value:\n             return None\n-        return datetime.strptime(value, u'%Y-%m-%dT%H:%M:%S')\n+\n+        # Don't be picky about microseconds here. But we get them some time\n+        # so we have to support them. Maybe there's a nicer way of doing\n+        # this? (cgrebs)",
+    "path": "src/olympia/api/serializers.py",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "hmm, to be honest, drf strips microseconds when serializing - maybe we should just expect no microseconds here and fix the code that's calling it. But that also feels wrong somehow.\n",
+    "created_at": "2016-07-26T10:21:09Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223285",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223285"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223285"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223354",
+    "pull_request_review_id": null,
+    "id": 72223354,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjIzMzU0",
+    "diff_hunk": "@@ -73,7 +73,7 @@ def test_dashboard(self):\n         r = self.client.get(reverse('devhub.addons'))\n         doc = pq(r.content)\n         assert len(doc('li.item')) == 4\n-        assert doc('.subscribe-feed').attr('href')[:-32] == (\n+        assert doc('.subscribe-feed').attr('href')[:-36] == (",
+    "path": "src/olympia/devhub/tests/test_feeds.py",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I still have this explicit change on my list to check and re-check - it should be backwards compatible so this change should not happen. Forgot about it.\n",
+    "created_at": "2016-07-26T10:21:47Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223354",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223354"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223354"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 76,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223722",
+    "pull_request_review_id": null,
+    "id": 72223722,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjIzNzIy",
+    "diff_hunk": "@@ -414,6 +391,11 @@ def update(self, **kw):\n             models.signals.post_save.send(sender=cls, instance=self,\n                                           created=False)\n \n+    def save(self, **kwargs):\n+        if hasattr(self._meta, 'translated_fields'):\n+            save_translations(id(self))",
+    "path": "src/olympia/amo/models.py",
+    "position": null,
+    "original_position": 65,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Ugh. Add a comment then.\n",
+    "created_at": "2016-07-26T10:24:35Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223722",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223722"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223722"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 396,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223826",
+    "pull_request_review_id": null,
+    "id": 72223826,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjIzODI2",
+    "diff_hunk": "@@ -60,7 +60,14 @@ def fake_object(self, data):\n     def handle_date(self, value):\n         if not value:\n             return None\n-        return datetime.strptime(value, u'%Y-%m-%dT%H:%M:%S')\n+\n+        # Don't be picky about microseconds here. But we get them some time\n+        # so we have to support them. Maybe there's a nicer way of doing\n+        # this? (cgrebs)",
+    "path": "src/olympia/api/serializers.py",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I'd totally be in favor of stripping microseconds FWIW\n",
+    "created_at": "2016-07-26T10:25:26Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223826",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72223826"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72223826"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72224232",
+    "pull_request_review_id": null,
+    "id": 72224232,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjI0MjMy",
+    "diff_hunk": "@@ -1389,12 +1391,17 @@ def version_bounce(request, addon_id, addon, version):\n @dev_required\n def version_stats(request, addon_id, addon):\n     qs = Version.objects.filter(addon=addon)\n-    reviews = (qs.annotate(reviews=Count('reviews'))\n-               .values('id', 'version', 'reviews'))\n+    reviews = (qs.annotate(review_count=Count('reviews'))\n+               .values('id', 'version', 'review_count'))\n     d = dict((v['id'], v) for v in reviews)\n-    files = qs.annotate(files=Count('files')).values_list('id', 'files')\n-    for id, files in files:\n-        d[id]['files'] = files\n+    files = (\n+        qs\n+        .annotate(file_count=Count('files'))\n+        .values_list('id', 'file_count'))\n+    for id, file_count in files:",
+    "path": "src/olympia/devhub/views.py",
+    "position": null,
+    "original_position": 92,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "good call, will do. Although I'm a strong believer that this complicates code but too many people aren't on my side of this anyway :laughing: \n",
+    "created_at": "2016-07-26T10:28:18Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72224232",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72224232"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72224232"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1401,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72224480",
+    "pull_request_review_id": null,
+    "id": 72224480,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMjI0NDgw",
+    "diff_hunk": "@@ -453,7 +453,7 @@ def test_version_exists_with_pk(self):\n         response = self.get(self.url(self.guid, '3.0', upload.uuid))\n         assert response.status_code == 200\n         # For backwards-compatibility reasons, we return the uuid as \"pk\".\n-        assert response.data['pk'] == upload.uuid\n+        assert response.data['pk'] == str(upload.uuid)",
+    "path": "src/olympia/signing/tests/test_views.py",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "gosh, good call - I was under the impression the signing api returned with the dashes - checked docs and that's not the case. I'll fix this.\n",
+    "created_at": "2016-07-26T10:30:40Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72224480",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72224480"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72224480"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 456,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72381621",
+    "pull_request_review_id": null,
+    "id": 72381621,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMzgxNjIx",
+    "diff_hunk": "@@ -60,8 +60,10 @@ def url(u, **kwargs):\n     if v:\n         d['version'] = v.version\n         d['platforms'] = [unicode(a.name) for a in v.supported_platforms]\n-        d['compatible_apps'] = v.compatible_apps.values()\n-\n+        d['compatible_apps'] = [\n+            {unicode(amo.APP_IDS[obj.application].pretty): {\n+                'min': unicode(obj.min), 'max': unicode(obj.max)}}\n+            for obj in v.compatible_apps.values()]",
+    "path": "src/olympia/legacy_api/utils.py",
+    "position": 9,
+    "original_position": 9,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "At least there were tests failing when I removed the other part of it and had to re-add it here to make them pass.\n",
+    "created_at": "2016-07-27T05:13:29Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72381621",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72381621"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72381621"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 66,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72382812",
+    "pull_request_review_id": null,
+    "id": 72382812,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyMzgyODEy",
+    "diff_hunk": "@@ -60,7 +60,14 @@ def fake_object(self, data):\n     def handle_date(self, value):\n         if not value:\n             return None\n-        return datetime.strptime(value, u'%Y-%m-%dT%H:%M:%S')\n+\n+        # Don't be picky about microseconds here. But we get them some time\n+        # so we have to support them. Maybe there's a nicer way of doing\n+        # this? (cgrebs)",
+    "path": "src/olympia/api/serializers.py",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "42973cb67faa0ee98bc25c96806f1e6ceaa254b8",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Stripping them now and added a test in 989cdd5. I figured it'd be best to do that here than to strip that everytime on the input-side.\n",
+    "created_at": "2016-07-27T05:33:47Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72382812",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72382812"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72382812"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72477402",
+    "pull_request_review_id": null,
+    "id": 72477402,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyNDc3NDAy",
+    "diff_hunk": "@@ -51,7 +51,7 @@ class ValidationJob(ModelBase):\n                                          related_name='validation_current_set')\n     target_version = models.ForeignKey(AppVersion,\n                                        related_name='validation_target_set')\n-    finish_email = models.EmailField(null=True)\n+    finish_email = models.EmailField(null=True, max_length=75)",
+    "path": "src/olympia/zadmin/models.py",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "b59b000f9c43521a07e00af1170c7109df197a93",
+    "user": {
+      "login": "eviljeff",
+      "id": 768592,
+      "node_id": "MDQ6VXNlcjc2ODU5Mg==",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/768592?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eviljeff",
+      "html_url": "https://github.com/eviljeff",
+      "followers_url": "https://api.github.com/users/eviljeff/followers",
+      "following_url": "https://api.github.com/users/eviljeff/following{/other_user}",
+      "gists_url": "https://api.github.com/users/eviljeff/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/eviljeff/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/eviljeff/subscriptions",
+      "organizations_url": "https://api.github.com/users/eviljeff/orgs",
+      "repos_url": "https://api.github.com/users/eviljeff/repos",
+      "events_url": "https://api.github.com/users/eviljeff/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/eviljeff/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Any particular reason for 75?  \n",
+    "created_at": "2016-07-27T16:51:46Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72477402",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72477402"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72477402"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 54,
+    "original_line": 54,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72524795",
+    "pull_request_review_id": null,
+    "id": 72524795,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDcyNTI0Nzk1",
+    "diff_hunk": "@@ -51,7 +51,7 @@ class ValidationJob(ModelBase):\n                                          related_name='validation_current_set')\n     target_version = models.ForeignKey(AppVersion,\n                                        related_name='validation_target_set')\n-    finish_email = models.EmailField(null=True)\n+    finish_email = models.EmailField(null=True, max_length=75)",
+    "path": "src/olympia/zadmin/models.py",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "b59b000f9c43521a07e00af1170c7109df197a93",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "that was the default length of the `EmailField` in Django 1.7 and earlier, they increased that value in 1.8 but I'd like to do that separately from the general 1.8 upgrade.\n",
+    "created_at": "2016-07-27T21:13:00Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72524795",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/72524795"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r72524795"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 54,
+    "original_line": 54,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76421065",
+    "pull_request_review_id": null,
+    "id": 76421065,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDIxMDY1",
+    "diff_hunk": "@@ -1,5 +1,5 @@\n worker: &worker\n-  image: addons/addons-server\n+  image: addons/addons-server:feature_2176-django-1.8",
+    "path": "docker-compose.yml",
+    "position": null,
+    "original_position": 3,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "We don't want to merge this\n",
+    "created_at": "2016-08-26T13:49:25Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76421065",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76421065"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76421065"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76422071",
+    "pull_request_review_id": null,
+    "id": 76422071,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDIyMDcx",
+    "diff_hunk": "@@ -90,6 +90,8 @@ def publishable_by(self, user):\n class Collection(ModelBase):\n     TYPE_CHOICES = amo.COLLECTION_CHOICES.items()\n \n+    # TODO: Use models.UUIDField but it uses max_length=32 hex (no hypheh)",
+    "path": "src/olympia/bandwagon/models.py",
+    "position": null,
+    "original_position": 4,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "typo `hypheh` :)\n",
+    "created_at": "2016-08-26T13:56:02Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76422071",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76422071"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76422071"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 93,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76422136",
+    "pull_request_review_id": null,
+    "id": 76422136,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDIyMTM2",
+    "diff_hunk": "@@ -90,6 +90,8 @@ def publishable_by(self, user):\n class Collection(ModelBase):\n     TYPE_CHOICES = amo.COLLECTION_CHOICES.items()\n \n+    # TODO: Use models.UUIDField but it uses max_length=32 hex (no hypheh)\n+    # uuids so needs some migration.\n     uuid = models.CharField(max_length=36, blank=True, unique=True)",
+    "path": "src/olympia/bandwagon/models.py",
+    "position": null,
+    "original_position": 6,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why do collections even have uuids...\n",
+    "created_at": "2016-08-26T13:56:28Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76422136",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76422136"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76422136"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 95,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76422238",
+    "pull_request_review_id": null,
+    "id": 76422238,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDIyMjM4",
+    "diff_hunk": "@@ -90,6 +90,8 @@ def publishable_by(self, user):\n class Collection(ModelBase):\n     TYPE_CHOICES = amo.COLLECTION_CHOICES.items()\n \n+    # TODO: Use models.UUIDField but it uses max_length=32 hex (no hypheh)\n+    # uuids so needs some migration.\n     uuid = models.CharField(max_length=36, blank=True, unique=True)\n     name = TranslatedField(require_locale=False)\n     # nickname is deprecated.  Use slug.",
+    "path": "src/olympia/bandwagon/models.py",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Fun project : remove this field, if it's deprecated...\n",
+    "created_at": "2016-08-26T13:57:06Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76422238",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76422238"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76422238"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 97,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76422293",
+    "pull_request_review_id": null,
+    "id": 76422293,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDIyMjkz",
+    "diff_hunk": "@@ -1,5 +1,5 @@\n worker: &worker\n-  image: addons/addons-server\n+  image: addons/addons-server:feature_2176-django-1.8",
+    "path": "docker-compose.yml",
+    "position": null,
+    "original_position": 3,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "eh, yeah we don't - but it's unfortunately neccessary to get circleci builds working (which actually helped finding a few issues here) so I'd remove it right before merging\n",
+    "created_at": "2016-08-26T13:57:26Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76422293",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76422293"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76422293"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2,
+    "side": "RIGHT",
+    "in_reply_to_id": 76421065
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76426693",
+    "pull_request_review_id": null,
+    "id": 76426693,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDI2Njkz",
+    "diff_hunk": "@@ -40,6 +41,9 @@ def handle(self, *args, **kwargs):\n         if not settings.DEBUG:\n             raise CommandError('You can only run this command with your '\n                                'DEBUG setting set to True.')\n+\n+        translation.activate(settings.LANGUAGE_CODE)",
+    "path": "src/olympia/landfill/management/commands/generate_addons.py",
+    "position": null,
+    "original_position": 13,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This should be done using the [override](https://docs.djangoproject.com/en/1.8/ref/utils/#django.utils.translation.override) context manager instead to avoid changing anything in the caller if there is one.\n",
+    "created_at": "2016-08-26T14:23:34Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76426693",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76426693"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76426693"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 45,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76426713",
+    "pull_request_review_id": null,
+    "id": 76426713,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDI2NzEz",
+    "diff_hunk": "@@ -37,4 +38,7 @@ def handle(self, *args, **kwargs):\n                                'DEBUG setting set to True.')\n         num = int(args[0])\n         email = kwargs.get('email')\n+\n+        translation.activate(settings.LANGUAGE_CODE)",
+    "path": "src/olympia/landfill/management/commands/generate_themes.py",
+    "position": null,
+    "original_position": 13,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "diox",
+      "id": 187006,
+      "node_id": "MDQ6VXNlcjE4NzAwNg==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/187006?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/diox",
+      "html_url": "https://github.com/diox",
+      "followers_url": "https://api.github.com/users/diox/followers",
+      "following_url": "https://api.github.com/users/diox/following{/other_user}",
+      "gists_url": "https://api.github.com/users/diox/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/diox/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/diox/subscriptions",
+      "organizations_url": "https://api.github.com/users/diox/orgs",
+      "repos_url": "https://api.github.com/users/diox/repos",
+      "events_url": "https://api.github.com/users/diox/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/diox/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "See above.\n",
+    "created_at": "2016-08-26T14:23:43Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76426713",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76426713"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76426713"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 42,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76427048",
+    "pull_request_review_id": null,
+    "id": 76427048,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDI3MDQ4",
+    "diff_hunk": "@@ -90,6 +90,8 @@ def publishable_by(self, user):\n class Collection(ModelBase):\n     TYPE_CHOICES = amo.COLLECTION_CHOICES.items()\n \n+    # TODO: Use models.UUIDField but it uses max_length=32 hex (no hypheh)\n+    # uuids so needs some migration.\n     uuid = models.CharField(max_length=36, blank=True, unique=True)",
+    "path": "src/olympia/bandwagon/models.py",
+    "position": null,
+    "original_position": 6,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I have no idea but they're being used to some degreee it seems :(\n",
+    "created_at": "2016-08-26T14:25:50Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76427048",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76427048"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76427048"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 95,
+    "side": "RIGHT",
+    "in_reply_to_id": 76422136
+  },
+  {
+    "url": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76429318",
+    "pull_request_review_id": null,
+    "id": 76429318,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NDI5MzE4",
+    "diff_hunk": "@@ -90,6 +90,8 @@ def publishable_by(self, user):\n class Collection(ModelBase):\n     TYPE_CHOICES = amo.COLLECTION_CHOICES.items()\n \n+    # TODO: Use models.UUIDField but it uses max_length=32 hex (no hypheh)\n+    # uuids so needs some migration.\n     uuid = models.CharField(max_length=36, blank=True, unique=True)\n     name = TranslatedField(require_locale=False)\n     # nickname is deprecated.  Use slug.",
+    "path": "src/olympia/bandwagon/models.py",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "a74e42c469def3bdc85d9ab302f0baf8bc88b3ee",
+    "original_commit_id": "a29b30d66729b2c30d3a77d0de2d9fbc258f7284",
+    "user": {
+      "login": "EnTeQuAk",
+      "id": 139033,
+      "node_id": "MDQ6VXNlcjEzOTAzMw==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/139033?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/EnTeQuAk",
+      "html_url": "https://github.com/EnTeQuAk",
+      "followers_url": "https://api.github.com/users/EnTeQuAk/followers",
+      "following_url": "https://api.github.com/users/EnTeQuAk/following{/other_user}",
+      "gists_url": "https://api.github.com/users/EnTeQuAk/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/EnTeQuAk/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/EnTeQuAk/subscriptions",
+      "organizations_url": "https://api.github.com/users/EnTeQuAk/orgs",
+      "repos_url": "https://api.github.com/users/EnTeQuAk/repos",
+      "events_url": "https://api.github.com/users/EnTeQuAk/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/EnTeQuAk/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "yeah, but not in this PR :laughing: - it appears `nickname` is not much used but in some interesting places so maybe not too easy to remove or maybe it is, not sure.\n",
+    "created_at": "2016-08-26T14:38:31Z",
+    "updated_at": "2016-08-31T06:31:44Z",
+    "html_url": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76429318",
+    "pull_request_url": "https://api.github.com/repos/mozilla/addons-server/pulls/3168",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/comments/76429318"
+      },
+      "html": {
+        "href": "https://github.com/mozilla/addons-server/pull/3168#discussion_r76429318"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/mozilla/addons-server/pulls/3168"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 97,
+    "side": "RIGHT",
+    "in_reply_to_id": 76422238
+  }
+]

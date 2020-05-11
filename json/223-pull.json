@@ -1,0 +1,937 @@
+[
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45117554",
+    "pull_request_review_id": null,
+    "id": 45117554,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTE3NTU0",
+    "diff_hunk": "@@ -345,6 +345,49 @@ class HttpGoogleServicesDAO(\n     }\n   }\n \n+  override def createGoogleGroup(groupRef: RawlsGroupRef): Future[Unit] = {\n+    val directory = getGroupDirectory\n+    val groups = directory.groups\n+    retry(when500) {\n+      () => Future {\n+        val inserter = groups.insert(new Group().setEmail(toGoogleGroupName(groupRef.groupName)).setName(groupRef.groupName.value))\n+        blocking {\n+          inserter.execute\n+        }\n+      }\n+    }\n+  }\n+\n+  override def addMemberToGoogleGroup(groupRef: RawlsGroupRef, memberToAdd: Either[RawlsUser, RawlsGroup]): Future[Unit] = {\n+    val member = memberToAdd match {\n+      case Left(member) => new Member().setEmail(toProxyFromUser(memberToAdd.left.get.userSubjectId)).setRole(groupMemberRole)",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/dataaccess/HttpGoogleServicesDAO.scala",
+    "position": null,
+    "original_position": 19,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Use a different variable name besides `member` here in case it is confused with the previous line.\n\nAlso, you can use the pattern-matched variable directly instead of `memberToAdd.left.get`\n",
+    "created_at": "2015-11-17T20:43:17Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45117554",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45117554"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45117554"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 363,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45117845",
+    "pull_request_review_id": null,
+    "id": 45117845,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTE3ODQ1",
+    "diff_hunk": "@@ -90,6 +94,49 @@ trait AdminApiService extends HttpService with PerRequestCreator with UserInfoDi\n           WorkspaceService.props(workspaceServiceConstructor, userInfo),\n           WorkspaceService.AdminAbortSubmission(workspaceNamespace,workspaceName,submissionId))\n       }\n+    } ~\n+    path(\"admin\" / \"groups\") { //create group\n+      post {\n+        entity(as[RawlsGroupRef]) { groupRef =>\n+          requestContext => perRequest(requestContext,\n+            UserService.props(userServiceConstructor, userInfo),\n+            UserService.CreateGroup(groupRef))\n+        }\n+      }\n+    } ~\n+    path(\"admin\" / \"groups\") { //delete group\n+      delete {\n+        entity(as[RawlsGroupRef]) { groupRef =>\n+          requestContext => perRequest(requestContext,\n+            UserService.props(userServiceConstructor, userInfo),\n+            UserService.DeleteGroup(groupRef))\n+        }\n+      }\n+    } ~\n+    path(\"admin\" / \"groups\" / Segment / \"members\") { (groupName) => //add members to group\n+      post {\n+        entity(as[RawlsGroupMemberList]) { memberList =>\n+          requestContext => perRequest(requestContext,\n+            UserService.props(userServiceConstructor, userInfo),\n+            UserService.AddGroupMembers(RawlsGroupRef(RawlsGroupName(groupName)), memberList))\n+        }\n+      }\n+    } ~\n+    path(\"admin\" / \"groups\" / Segment / \"members\") { (groupName) => //remove member from group",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/webservice/AdminApiService.scala",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "make comment plural\n",
+    "created_at": "2015-11-17T20:45:39Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45117845",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45117845"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45117845"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 125,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45118374",
+    "pull_request_review_id": null,
+    "id": 45118374,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTE4Mzc0",
+    "diff_hunk": "@@ -187,6 +211,211 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listAdmins() = {\n+    asAdmin {\n+      gcsDAO.listAdmins.map(RequestComplete(StatusCodes.OK, _)).recover{ case throwable =>",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 64,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I'd prefer `listAdmins()` to make it explicit that this is a method call\n",
+    "created_at": "2015-11-17T20:50:06Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45118374",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45118374"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45118374"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 216,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45119543",
+    "pull_request_review_id": null,
+    "id": 45119543,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTE5NTQz",
+    "diff_hunk": "@@ -187,6 +211,211 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listAdmins() = {\n+    asAdmin {\n+      gcsDAO.listAdmins.map(RequestComplete(StatusCodes.OK, _)).recover{ case throwable =>",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 64,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "MatthewBemis",
+      "id": 7257391,
+      "node_id": "MDQ6VXNlcjcyNTczOTE=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7257391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/MatthewBemis",
+      "html_url": "https://github.com/MatthewBemis",
+      "followers_url": "https://api.github.com/users/MatthewBemis/followers",
+      "following_url": "https://api.github.com/users/MatthewBemis/following{/other_user}",
+      "gists_url": "https://api.github.com/users/MatthewBemis/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/MatthewBemis/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/MatthewBemis/subscriptions",
+      "organizations_url": "https://api.github.com/users/MatthewBemis/orgs",
+      "repos_url": "https://api.github.com/users/MatthewBemis/repos",
+      "events_url": "https://api.github.com/users/MatthewBemis/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/MatthewBemis/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I didn't write this, just moved it out of WorkspaceService. If we decide to keep them here and not remove them altogether then I'm sure that can be taken care of.\n",
+    "created_at": "2015-11-17T20:58:47Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45119543",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45119543"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45119543"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 216,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45119902",
+    "pull_request_review_id": null,
+    "id": 45119902,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTE5OTAy",
+    "diff_hunk": "@@ -187,6 +211,211 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listAdmins() = {\n+    asAdmin {\n+      gcsDAO.listAdmins.map(RequestComplete(StatusCodes.OK, _)).recover{ case throwable =>",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 64,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "MatthewBemis",
+      "id": 7257391,
+      "node_id": "MDQ6VXNlcjcyNTczOTE=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7257391?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/MatthewBemis",
+      "html_url": "https://github.com/MatthewBemis",
+      "followers_url": "https://api.github.com/users/MatthewBemis/followers",
+      "following_url": "https://api.github.com/users/MatthewBemis/following{/other_user}",
+      "gists_url": "https://api.github.com/users/MatthewBemis/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/MatthewBemis/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/MatthewBemis/subscriptions",
+      "organizations_url": "https://api.github.com/users/MatthewBemis/orgs",
+      "repos_url": "https://api.github.com/users/MatthewBemis/repos",
+      "events_url": "https://api.github.com/users/MatthewBemis/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/MatthewBemis/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "On a related note, I should probably either close the other PR that does exactly this, or not do it in this PR since it seems that we need to discuss it as a group a bit more.\n",
+    "created_at": "2015-11-17T21:01:12Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45119902",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45119902"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45119902"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 216,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45120432",
+    "pull_request_review_id": null,
+    "id": 45120432,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTIwNDMy",
+    "diff_hunk": "@@ -187,6 +211,211 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listAdmins() = {\n+    asAdmin {\n+      gcsDAO.listAdmins.map(RequestComplete(StatusCodes.OK, _)).recover{ case throwable =>\n+        RequestComplete(ErrorReport(StatusCodes.BadGateway,\"Unable to list admins.\",gcsDAO.toErrorReport(throwable)))\n+      }\n+    }\n+  }\n+\n+  def isAdmin(userId: String) = {\n+    asAdmin {\n+      tryIsAdmin(userId) map { admin =>\n+        if (admin) RequestComplete(StatusCodes.NoContent)\n+        else RequestComplete(ErrorReport(StatusCodes.NotFound, s\"User ${userId} is not an admin.\"))\n+      } recover { case throwable =>\n+        RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to determine whether ${userId} is an admin.\", gcsDAO.toErrorReport(throwable)))\n+      }\n+    }\n+  }\n+\n+  def addAdmin(userId: String) = {\n+    asAdmin {\n+      tryIsAdmin(userId) flatMap { admin =>\n+        if (admin) {\n+          Future.successful(RequestComplete(StatusCodes.NoContent))\n+        } else {\n+          gcsDAO.addAdmin(userId) map (_ => RequestComplete(StatusCodes.Created)) recover { case throwable =>\n+            RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to add ${userId} as an admin.\", gcsDAO.toErrorReport(throwable)))\n+          }\n+        }\n+      } recover { case throwable =>\n+        RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to determine whether ${userId} is an admin.\", gcsDAO.toErrorReport(throwable)))\n+      }\n+    }\n+  }\n+\n+  def deleteAdmin(userId: String) = {\n+    asAdmin {\n+      tryIsAdmin(userId) flatMap { admin =>\n+        if (admin) {\n+          gcsDAO.deleteAdmin(userId) map (_ => RequestComplete(StatusCodes.NoContent)) recover { case throwable =>\n+            RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to delete ${userId} as an admin.\", gcsDAO.toErrorReport(throwable)))\n+          }\n+        } else {\n+          Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound,s\"${userId} is not an admin.\")))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 105,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why is adding an already-admin successful, but deleting a non-admin an error?\n",
+    "created_at": "2015-11-17T21:04:56Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45120432",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45120432"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45120432"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 257,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45121063",
+    "pull_request_review_id": null,
+    "id": 45121063,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTIxMDYz",
+    "diff_hunk": "@@ -187,6 +211,211 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listAdmins() = {\n+    asAdmin {\n+      gcsDAO.listAdmins.map(RequestComplete(StatusCodes.OK, _)).recover{ case throwable =>",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 64,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I'm not seeing any changes to WorkspaceService as part of this PR.  Do you need to commit those?\n",
+    "created_at": "2015-11-17T21:09:41Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45121063",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45121063"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45121063"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 216,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45126379",
+    "pull_request_review_id": null,
+    "id": 45126379,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTI2Mzc5",
+    "diff_hunk": "@@ -187,6 +211,211 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listAdmins() = {\n+    asAdmin {\n+      gcsDAO.listAdmins.map(RequestComplete(StatusCodes.OK, _)).recover{ case throwable =>\n+        RequestComplete(ErrorReport(StatusCodes.BadGateway,\"Unable to list admins.\",gcsDAO.toErrorReport(throwable)))\n+      }\n+    }\n+  }\n+\n+  def isAdmin(userId: String) = {\n+    asAdmin {\n+      tryIsAdmin(userId) map { admin =>\n+        if (admin) RequestComplete(StatusCodes.NoContent)\n+        else RequestComplete(ErrorReport(StatusCodes.NotFound, s\"User ${userId} is not an admin.\"))\n+      } recover { case throwable =>\n+        RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to determine whether ${userId} is an admin.\", gcsDAO.toErrorReport(throwable)))\n+      }\n+    }\n+  }\n+\n+  def addAdmin(userId: String) = {\n+    asAdmin {\n+      tryIsAdmin(userId) flatMap { admin =>\n+        if (admin) {\n+          Future.successful(RequestComplete(StatusCodes.NoContent))\n+        } else {\n+          gcsDAO.addAdmin(userId) map (_ => RequestComplete(StatusCodes.Created)) recover { case throwable =>\n+            RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to add ${userId} as an admin.\", gcsDAO.toErrorReport(throwable)))\n+          }\n+        }\n+      } recover { case throwable =>\n+        RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to determine whether ${userId} is an admin.\", gcsDAO.toErrorReport(throwable)))\n+      }\n+    }\n+  }\n+\n+  def deleteAdmin(userId: String) = {\n+    asAdmin {\n+      tryIsAdmin(userId) flatMap { admin =>\n+        if (admin) {\n+          gcsDAO.deleteAdmin(userId) map (_ => RequestComplete(StatusCodes.NoContent)) recover { case throwable =>\n+            RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to delete ${userId} as an admin.\", gcsDAO.toErrorReport(throwable)))\n+          }\n+        } else {\n+          Future.successful(RequestComplete(ErrorReport(StatusCodes.NotFound,s\"${userId} is not an admin.\")))\n+        }\n+      } recover { case throwable =>\n+        RequestComplete(ErrorReport(StatusCodes.BadGateway, s\"Unable to determine whether ${userId} is an admin.\", gcsDAO.toErrorReport(throwable)))\n+      }\n+    }\n+  }\n+\n+\n+  def listGroupMembers(groupName: String) = {\n+    asAdmin {\n+      dataSource.inFutureTransaction() { txn =>\n+        Future {\n+          containerDAO.authDAO.loadGroup(RawlsGroupRef(RawlsGroupName(groupName)), txn) match {\n+            case None => RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Group ${groupName} does not exist\"))\n+            case Some(group) =>\n+              val memberUsers = group.users.map(u => containerDAO.authDAO.loadUser(u, txn).get.userEmail.value)\n+              val memberGroups = group.subGroups.map(g => containerDAO.authDAO.loadGroup(g, txn).get.groupEmail.value)\n+              RequestComplete(StatusCodes.OK, UserList((memberUsers ++ memberGroups).toSeq))\n+          }\n+        }\n+      }\n+    }\n+  }\n+\n+  def createGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        containerDAO.authDAO.loadGroup(groupRef, txn) match {\n+          case Some(_) => Future.successful(RequestComplete(ErrorReport(StatusCodes.Conflict, s\"Group ${groupRef.groupName} already exists\")))\n+          case None =>\n+            containerDAO.authDAO.createGroup(RawlsGroup(groupRef.groupName, RawlsGroupEmail(gcsDAO.toGoogleGroupName(groupRef.groupName)), Set.empty[RawlsUserRef], Set.empty[RawlsGroupRef]), txn)\n+            gcsDAO.createGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.Created) }\n+        }\n+      }\n+    }\n+  }\n+\n+  def deleteGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        withGroup(groupRef) { group =>\n+          containerDAO.authDAO.deleteGroup(groupRef, txn)\n+          gcsDAO.deleteGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.OK) }\n+        }\n+      }\n+    }\n+  }\n+\n+  //ideally this would probably just return the already loaded users to avoid loading twice\n+  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n+    dataSource.inTransaction() { txn =>\n+      memberList.userEmails.foreach { user =>\n+        containerDAO.authDAO.loadUserByEmail(user, txn).getOrElse(return false)\n+      }\n+      memberList.subGroupEmails.foreach { subGroup =>\n+        containerDAO.authDAO.loadGroupByEmail(subGroup, txn).getOrElse(return false)\n+      }\n+      true\n+    }\n+  }\n+\n+  def addGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList) = {\n+    asAdmin {\n+      dataSource.inFutureTransaction() { txn =>\n+        if (!allMembersExist(memberList))\n+          Future.successful(RequestComplete(StatusCodes.NotFound, \"Not all members are registered. Please ensure that all users/groups exist\"))\n+        else {\n+          val addMap = memberList.userEmails.map { user =>\n+            val theUser = containerDAO.authDAO.loadUserByEmail(user, txn).get\n+            val addTry = toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Left(theUser)))\n+            addTry.map(Left(theUser) -> _)\n+          } ++ memberList.subGroupEmails.map { subGroup =>\n+            val theGroup = containerDAO.authDAO.loadGroupByEmail(subGroup, txn).get\n+            val addTry = toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Right(theGroup)))\n+            addTry.map(Right(theGroup) -> _)\n+          }\n+\n+          val list: Future[Seq[Try[_]]] = Future.sequence(addMap) map { pairs =>\n+            pairs.map { case (member: Either[RawlsUser, RawlsGroup], result: Try[Unit]) =>\n+              result match {\n+                case Success(_) =>\n+                  Success(member match {\n+                    case Left(theUser) =>\n+                      val group = containerDAO.authDAO.loadGroup(groupRef, txn).getOrElse(throw new RawlsException(\"Unable to load group\"))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 189,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "The group is loaded and saved once per new member.  It would be better to collect the new members so they can be added all at once.\n",
+    "created_at": "2015-11-17T21:47:57Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45126379",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45126379"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45126379"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 341,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45128253",
+    "pull_request_review_id": null,
+    "id": 45128253,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTI4MjUz",
+    "diff_hunk": "@@ -429,4 +434,170 @@ class AdminApiServiceSpec extends FlatSpec with HttpService with ScalatestRouteT\n         assertResult(StatusCodes.Forbidden) { status }\n       }\n     }\n+\n+\n+  it should \"return 201 when creating a new group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+  }\n+\n+  it should \"return 409 when trying to create a group that already exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Conflict) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when deleting a group that exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Delete(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+  }\n+\n+  it should \"return 404 when trying to delete a group that does not exist\" in withTestDataApiServices { services =>\n+    Delete(s\"/admin/groups/doesnotexist\") ~>",
+    "path": "src/test/scala/org/broadinstitute/dsde/rawls/webservice/AdminApiServiceSpec.scala",
+    "position": null,
+    "original_position": 79,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This is not testing the correct endpoint.  Change to `/admin/groups` with appropriate JSON entity.\n",
+    "created_at": "2015-11-17T21:59:49Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45128253",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45128253"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45128253"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 480,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45128626",
+    "pull_request_review_id": null,
+    "id": 45128626,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTI4NjI2",
+    "diff_hunk": "@@ -429,4 +434,170 @@ class AdminApiServiceSpec extends FlatSpec with HttpService with ScalatestRouteT\n         assertResult(StatusCodes.Forbidden) { status }\n       }\n     }\n+\n+\n+  it should \"return 201 when creating a new group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+  }\n+\n+  it should \"return 409 when trying to create a group that already exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Conflict) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when deleting a group that exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Delete(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+  }\n+\n+  it should \"return 404 when trying to delete a group that does not exist\" in withTestDataApiServices { services =>\n+    Delete(s\"/admin/groups/doesnotexist\") ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.NotFound) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when listing the members of a group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+    val subGroup = new RawlsGroupRef(RawlsGroupName(\"dbgap\"))",
+    "path": "src/test/scala/org/broadinstitute/dsde/rawls/webservice/AdminApiServiceSpec.scala",
+    "position": null,
+    "original_position": 88,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Add a member to the subgroup to show that list members doesn't show it because it only goes down one level.\n",
+    "created_at": "2015-11-17T22:02:31Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45128626",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45128626"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45128626"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 489,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45128888",
+    "pull_request_review_id": null,
+    "id": 45128888,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTI4ODg4",
+    "diff_hunk": "@@ -429,4 +434,170 @@ class AdminApiServiceSpec extends FlatSpec with HttpService with ScalatestRouteT\n         assertResult(StatusCodes.Forbidden) { status }\n       }\n     }\n+\n+\n+  it should \"return 201 when creating a new group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+  }\n+\n+  it should \"return 409 when trying to create a group that already exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Conflict) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when deleting a group that exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Delete(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+  }\n+\n+  it should \"return 404 when trying to delete a group that does not exist\" in withTestDataApiServices { services =>\n+    Delete(s\"/admin/groups/doesnotexist\") ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.NotFound) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when listing the members of a group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+    val subGroup = new RawlsGroupRef(RawlsGroupName(\"dbgap\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, subGroup.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups/${group.groupName.value}/members\", HttpEntity(ContentTypes.`application/json`, RawlsGroupMemberList(Seq.empty, Seq(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\")).toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+    Get(s\"/admin/groups/${group.groupName.value}/members\") ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(UserList(List(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\"))) {\n+          responseAs[UserList]\n+        }\n+      }\n+  }\n+\n+  it should \"return 404 when adding a member that doesn't exist\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups/${group.groupName.value}/members\", HttpEntity(ContentTypes.`application/json`, RawlsGroupMemberList(Seq.empty, Seq(s\"GROUP_blahhh@dev.firecloud.org\")).toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.NotFound) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when adding a member to a group\" in withTestDataApiServices { services =>",
+    "path": "src/test/scala/org/broadinstitute/dsde/rawls/webservice/AdminApiServiceSpec.scala",
+    "position": null,
+    "original_position": 129,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "How is this different from the \"when listing the members of a group\" test?\n",
+    "created_at": "2015-11-17T22:04:19Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45128888",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45128888"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45128888"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 530,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45129041",
+    "pull_request_review_id": null,
+    "id": 45129041,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MTI5MDQx",
+    "diff_hunk": "@@ -429,4 +434,170 @@ class AdminApiServiceSpec extends FlatSpec with HttpService with ScalatestRouteT\n         assertResult(StatusCodes.Forbidden) { status }\n       }\n     }\n+\n+\n+  it should \"return 201 when creating a new group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+  }\n+\n+  it should \"return 409 when trying to create a group that already exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Conflict) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when deleting a group that exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Delete(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+  }\n+\n+  it should \"return 404 when trying to delete a group that does not exist\" in withTestDataApiServices { services =>\n+    Delete(s\"/admin/groups/doesnotexist\") ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.NotFound) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when listing the members of a group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+    val subGroup = new RawlsGroupRef(RawlsGroupName(\"dbgap\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, subGroup.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups/${group.groupName.value}/members\", HttpEntity(ContentTypes.`application/json`, RawlsGroupMemberList(Seq.empty, Seq(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\")).toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+    Get(s\"/admin/groups/${group.groupName.value}/members\") ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(UserList(List(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\"))) {\n+          responseAs[UserList]\n+        }\n+      }\n+  }\n+\n+  it should \"return 404 when adding a member that doesn't exist\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups/${group.groupName.value}/members\", HttpEntity(ContentTypes.`application/json`, RawlsGroupMemberList(Seq.empty, Seq(s\"GROUP_blahhh@dev.firecloud.org\")).toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.NotFound) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when adding a member to a group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+    val subGroup = new RawlsGroupRef(RawlsGroupName(\"test_subGroup\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, subGroup.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups/${group.groupName.value}/members\", HttpEntity(ContentTypes.`application/json`, RawlsGroupMemberList(Seq.empty, Seq(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\")).toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+    Get(s\"/admin/groups/${group.groupName.value}/members\") ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(UserList(List(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\"))) {\n+          responseAs[UserList]\n+        }\n+      }\n+  }\n+\n+  it should \"return 200 when removing a member from a group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+    val subGroup = new RawlsGroupRef(RawlsGroupName(\"test_subGroup\"))\n+\n+    //make main group\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    //make subgroup\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, subGroup.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    //put subgroup into main group\n+    Post(s\"/admin/groups/${group.groupName.value}/members\", HttpEntity(ContentTypes.`application/json`, RawlsGroupMemberList(Seq.empty, Seq(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\")).toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+    //verify subgroup was put into subgroup",
+    "path": "src/test/scala/org/broadinstitute/dsde/rawls/webservice/AdminApiServiceSpec.scala",
+    "position": null,
+    "original_position": 179,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "put into main group\n",
+    "created_at": "2015-11-17T22:05:25Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45129041",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45129041"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45129041"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 580,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45235661",
+    "pull_request_review_id": null,
+    "id": 45235661,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1MjM1NjYx",
+    "diff_hunk": "@@ -429,4 +434,170 @@ class AdminApiServiceSpec extends FlatSpec with HttpService with ScalatestRouteT\n         assertResult(StatusCodes.Forbidden) { status }\n       }\n     }\n+\n+\n+  it should \"return 201 when creating a new group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+  }\n+\n+  it should \"return 409 when trying to create a group that already exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Conflict) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when deleting a group that exists\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Delete(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+  }\n+\n+  it should \"return 404 when trying to delete a group that does not exist\" in withTestDataApiServices { services =>\n+    Delete(s\"/admin/groups/doesnotexist\") ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.NotFound) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when listing the members of a group\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+    val subGroup = new RawlsGroupRef(RawlsGroupName(\"dbgap\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, subGroup.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups/${group.groupName.value}/members\", HttpEntity(ContentTypes.`application/json`, RawlsGroupMemberList(Seq.empty, Seq(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\")).toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.OK) { status }\n+      }\n+    Get(s\"/admin/groups/${group.groupName.value}/members\") ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(UserList(List(s\"GROUP_${subGroup.groupName.value}@dev.firecloud.org\"))) {\n+          responseAs[UserList]\n+        }\n+      }\n+  }\n+\n+  it should \"return 404 when adding a member that doesn't exist\" in withTestDataApiServices { services =>\n+    val group = new RawlsGroupRef(RawlsGroupName(\"test_group\"))\n+\n+    Post(s\"/admin/groups\", HttpEntity(ContentTypes.`application/json`, group.toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.Created) { status }\n+      }\n+    Post(s\"/admin/groups/${group.groupName.value}/members\", HttpEntity(ContentTypes.`application/json`, RawlsGroupMemberList(Seq.empty, Seq(s\"GROUP_blahhh@dev.firecloud.org\")).toJson.toString)) ~>\n+      sealRoute(services.adminRoutes) ~>\n+      check {\n+        assertResult(StatusCodes.NotFound) { status }\n+      }\n+  }\n+\n+  it should \"return 200 when adding a member to a group\" in withTestDataApiServices { services =>",
+    "path": "src/test/scala/org/broadinstitute/dsde/rawls/webservice/AdminApiServiceSpec.scala",
+    "position": null,
+    "original_position": 129,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "faafdc1da91c61a97edd329fc92cd38172b7ffb9",
+    "user": {
+      "login": "jmthibault79",
+      "id": 2701406,
+      "node_id": "MDQ6VXNlcjI3MDE0MDY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2701406?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jmthibault79",
+      "html_url": "https://github.com/jmthibault79",
+      "followers_url": "https://api.github.com/users/jmthibault79/followers",
+      "following_url": "https://api.github.com/users/jmthibault79/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jmthibault79/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jmthibault79/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jmthibault79/subscriptions",
+      "organizations_url": "https://api.github.com/users/jmthibault79/orgs",
+      "repos_url": "https://api.github.com/users/jmthibault79/repos",
+      "events_url": "https://api.github.com/users/jmthibault79/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jmthibault79/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah this test is redundant and can be removed.\n",
+    "created_at": "2015-11-18T18:04:40Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45235661",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45235661"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45235661"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 530,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45297660",
+    "pull_request_review_id": null,
+    "id": 45297660,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1Mjk3NjYw",
+    "diff_hunk": "@@ -187,6 +201,163 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listGroupMembers(groupName: String) = {\n+    asAdmin {\n+      dataSource.inFutureTransaction() { txn =>\n+        Future {\n+          containerDAO.authDAO.loadGroup(RawlsGroupRef(RawlsGroupName(groupName)), txn) match {\n+            case None => RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Group ${groupName} does not exist\"))\n+            case Some(group) =>\n+              val memberUsers = group.users.map(u => containerDAO.authDAO.loadUser(u, txn).get.userEmail.value)\n+              val memberGroups = group.subGroups.map(g => containerDAO.authDAO.loadGroup(g, txn).get.groupEmail.value)\n+              RequestComplete(StatusCodes.OK, UserList((memberUsers ++ memberGroups).toSeq))\n+          }\n+        }\n+      }\n+    }\n+  }\n+\n+  def createGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        containerDAO.authDAO.loadGroup(groupRef, txn) match {\n+          case Some(_) => Future.successful(RequestComplete(ErrorReport(StatusCodes.Conflict, s\"Group ${groupRef.groupName} already exists\")))\n+          case None =>\n+            containerDAO.authDAO.createGroup(RawlsGroup(groupRef.groupName, RawlsGroupEmail(gcsDAO.toGoogleGroupName(groupRef.groupName)), Set.empty[RawlsUserRef], Set.empty[RawlsGroupRef]), txn)\n+            gcsDAO.createGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.Created) }\n+        }\n+      }\n+    }\n+  }\n+\n+  def deleteGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        withGroup(groupRef) { group =>\n+          containerDAO.authDAO.deleteGroup(groupRef, txn)\n+          gcsDAO.deleteGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.OK) }\n+        }\n+      }\n+    }\n+  }\n+\n+  //ideally this would probably just return the already loaded users to avoid loading twice\n+  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n+    dataSource.inTransaction() { txn =>\n+      memberList.userEmails.foreach { user =>\n+        containerDAO.authDAO.loadUserByEmail(user, txn).getOrElse(return false)\n+      }\n+      memberList.subGroupEmails.foreach { subGroup =>\n+        containerDAO.authDAO.loadGroupByEmail(subGroup, txn).getOrElse(return false)\n+      }\n+      true",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 101,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "5014903a6dbe53fd7caa57b017a5e01ee17aa6f1",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":-1: return statements, this should map each list of emails to load the object, concatenate those 2 lists then return  !list.exists(None)\n",
+    "created_at": "2015-11-19T04:10:34Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45297660",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45297660"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45297660"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 253,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45297699",
+    "pull_request_review_id": null,
+    "id": 45297699,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1Mjk3Njk5",
+    "diff_hunk": "@@ -187,6 +201,163 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listGroupMembers(groupName: String) = {\n+    asAdmin {\n+      dataSource.inFutureTransaction() { txn =>\n+        Future {\n+          containerDAO.authDAO.loadGroup(RawlsGroupRef(RawlsGroupName(groupName)), txn) match {\n+            case None => RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Group ${groupName} does not exist\"))\n+            case Some(group) =>\n+              val memberUsers = group.users.map(u => containerDAO.authDAO.loadUser(u, txn).get.userEmail.value)\n+              val memberGroups = group.subGroups.map(g => containerDAO.authDAO.loadGroup(g, txn).get.groupEmail.value)\n+              RequestComplete(StatusCodes.OK, UserList((memberUsers ++ memberGroups).toSeq))\n+          }\n+        }\n+      }\n+    }\n+  }\n+\n+  def createGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        containerDAO.authDAO.loadGroup(groupRef, txn) match {\n+          case Some(_) => Future.successful(RequestComplete(ErrorReport(StatusCodes.Conflict, s\"Group ${groupRef.groupName} already exists\")))\n+          case None =>\n+            containerDAO.authDAO.createGroup(RawlsGroup(groupRef.groupName, RawlsGroupEmail(gcsDAO.toGoogleGroupName(groupRef.groupName)), Set.empty[RawlsUserRef], Set.empty[RawlsGroupRef]), txn)\n+            gcsDAO.createGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.Created) }\n+        }\n+      }\n+    }\n+  }\n+\n+  def deleteGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        withGroup(groupRef) { group =>\n+          containerDAO.authDAO.deleteGroup(groupRef, txn)\n+          gcsDAO.deleteGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.OK) }\n+        }\n+      }\n+    }\n+  }\n+\n+  //ideally this would probably just return the already loaded users to avoid loading twice\n+  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n+    dataSource.inTransaction() { txn =>\n+      memberList.userEmails.foreach { user =>\n+        containerDAO.authDAO.loadUserByEmail(user, txn).getOrElse(return false)\n+      }\n+      memberList.subGroupEmails.foreach { subGroup =>\n+        containerDAO.authDAO.loadGroupByEmail(subGroup, txn).getOrElse(return false)\n+      }\n+      true\n+    }\n+  }\n+\n+  def addGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList) = {\n+    asAdmin {\n+      dataSource.inFutureTransaction() { txn =>\n+        if (!allMembersExist(memberList))\n+          Future.successful(RequestComplete(StatusCodes.NotFound, \"Not all members are registered. Please ensure that all users/groups exist\"))",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 109,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "5014903a6dbe53fd7caa57b017a5e01ee17aa6f1",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "use ErrorReport\n",
+    "created_at": "2015-11-19T04:11:44Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45297699",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45297699"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45297699"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 261,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45297755",
+    "pull_request_review_id": null,
+    "id": 45297755,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1Mjk3NzU1",
+    "diff_hunk": "@@ -187,6 +201,163 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listGroupMembers(groupName: String) = {\n+    asAdmin {\n+      dataSource.inFutureTransaction() { txn =>\n+        Future {\n+          containerDAO.authDAO.loadGroup(RawlsGroupRef(RawlsGroupName(groupName)), txn) match {\n+            case None => RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Group ${groupName} does not exist\"))\n+            case Some(group) =>\n+              val memberUsers = group.users.map(u => containerDAO.authDAO.loadUser(u, txn).get.userEmail.value)\n+              val memberGroups = group.subGroups.map(g => containerDAO.authDAO.loadGroup(g, txn).get.groupEmail.value)\n+              RequestComplete(StatusCodes.OK, UserList((memberUsers ++ memberGroups).toSeq))\n+          }\n+        }\n+      }\n+    }\n+  }\n+\n+  def createGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        containerDAO.authDAO.loadGroup(groupRef, txn) match {\n+          case Some(_) => Future.successful(RequestComplete(ErrorReport(StatusCodes.Conflict, s\"Group ${groupRef.groupName} already exists\")))\n+          case None =>\n+            containerDAO.authDAO.createGroup(RawlsGroup(groupRef.groupName, RawlsGroupEmail(gcsDAO.toGoogleGroupName(groupRef.groupName)), Set.empty[RawlsUserRef], Set.empty[RawlsGroupRef]), txn)\n+            gcsDAO.createGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.Created) }\n+        }\n+      }\n+    }\n+  }\n+\n+  def deleteGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        withGroup(groupRef) { group =>\n+          containerDAO.authDAO.deleteGroup(groupRef, txn)\n+          gcsDAO.deleteGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.OK) }\n+        }\n+      }\n+    }\n+  }\n+\n+  //ideally this would probably just return the already loaded users to avoid loading twice\n+  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n+    dataSource.inTransaction() { txn =>\n+      memberList.userEmails.foreach { user =>\n+        containerDAO.authDAO.loadUserByEmail(user, txn).getOrElse(return false)\n+      }\n+      memberList.subGroupEmails.foreach { subGroup =>\n+        containerDAO.authDAO.loadGroupByEmail(subGroup, txn).getOrElse(return false)\n+      }\n+      true\n+    }\n+  }\n+\n+  def addGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList) = {",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 105,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "5014903a6dbe53fd7caa57b017a5e01ee17aa6f1",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "comment what this function does in the case of failures\n",
+    "created_at": "2015-11-19T04:13:08Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45297755",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45297755"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45297755"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 257,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45297797",
+    "pull_request_review_id": null,
+    "id": 45297797,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ1Mjk3Nzk3",
+    "diff_hunk": "@@ -187,6 +201,163 @@ class UserService(protected val userInfo: UserInfo, dataSource: DataSource, prot\n     }\n   }\n \n+  def listGroupMembers(groupName: String) = {\n+    asAdmin {\n+      dataSource.inFutureTransaction() { txn =>\n+        Future {\n+          containerDAO.authDAO.loadGroup(RawlsGroupRef(RawlsGroupName(groupName)), txn) match {\n+            case None => RequestComplete(ErrorReport(StatusCodes.NotFound, s\"Group ${groupName} does not exist\"))\n+            case Some(group) =>\n+              val memberUsers = group.users.map(u => containerDAO.authDAO.loadUser(u, txn).get.userEmail.value)\n+              val memberGroups = group.subGroups.map(g => containerDAO.authDAO.loadGroup(g, txn).get.groupEmail.value)\n+              RequestComplete(StatusCodes.OK, UserList((memberUsers ++ memberGroups).toSeq))\n+          }\n+        }\n+      }\n+    }\n+  }\n+\n+  def createGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        containerDAO.authDAO.loadGroup(groupRef, txn) match {\n+          case Some(_) => Future.successful(RequestComplete(ErrorReport(StatusCodes.Conflict, s\"Group ${groupRef.groupName} already exists\")))\n+          case None =>\n+            containerDAO.authDAO.createGroup(RawlsGroup(groupRef.groupName, RawlsGroupEmail(gcsDAO.toGoogleGroupName(groupRef.groupName)), Set.empty[RawlsUserRef], Set.empty[RawlsGroupRef]), txn)\n+            gcsDAO.createGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.Created) }\n+        }\n+      }\n+    }\n+  }\n+\n+  def deleteGroup(groupRef: RawlsGroupRef) = {\n+    asAdmin {\n+      dataSource.inTransaction() { txn =>\n+        withGroup(groupRef) { group =>\n+          containerDAO.authDAO.deleteGroup(groupRef, txn)\n+          gcsDAO.deleteGoogleGroup(groupRef) map { _ => RequestComplete(StatusCodes.OK) }\n+        }\n+      }\n+    }\n+  }\n+\n+  //ideally this would probably just return the already loaded users to avoid loading twice\n+  def allMembersExist(memberList: RawlsGroupMemberList): Boolean = {\n+    dataSource.inTransaction() { txn =>\n+      memberList.userEmails.foreach { user =>\n+        containerDAO.authDAO.loadUserByEmail(user, txn).getOrElse(return false)\n+      }\n+      memberList.subGroupEmails.foreach { subGroup =>\n+        containerDAO.authDAO.loadGroupByEmail(subGroup, txn).getOrElse(return false)\n+      }\n+      true\n+    }\n+  }\n+\n+  def addGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList) = {\n+    asAdmin {\n+      dataSource.inFutureTransaction() { txn =>\n+        if (!allMembersExist(memberList))\n+          Future.successful(RequestComplete(StatusCodes.NotFound, \"Not all members are registered. Please ensure that all users/groups exist\"))\n+        else {\n+          val addMap = memberList.userEmails.map { user =>\n+            val theUser = containerDAO.authDAO.loadUserByEmail(user, txn).get\n+            val addTry = toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Left(theUser)))\n+            addTry.map(Left(theUser) -> _)\n+          } ++ memberList.subGroupEmails.map { subGroup =>\n+            val theGroup = containerDAO.authDAO.loadGroupByEmail(subGroup, txn).get\n+            val addTry = toFutureTry(gcsDAO.addMemberToGoogleGroup(groupRef, Right(theGroup)))\n+            addTry.map(Right(theGroup) -> _)\n+          }\n+\n+          val list: Future[Seq[Try[Either[RawlsUser, RawlsGroup]]]] = Future.sequence(addMap) map { pairs =>\n+            pairs.map { case (member: Either[RawlsUser, RawlsGroup], result: Try[Either[RawlsUser, RawlsGroup]]) =>\n+              result match {\n+                case Success(_) => Success(member)\n+                case Failure(f) => member match {\n+                  case Left(theUser) => Failure(new RawlsException(s\"Could not add user ${theUser.userEmail.value}\", f))\n+                  case Right(theGroup) => Failure(new RawlsException(s\"Could not add group ${theGroup.groupEmail.value}\", f))\n+                }\n+              }\n+            }\n+          }\n+\n+          list.map { tries =>\n+            val exceptions = tries.collect {\n+              case Failure(t) => t\n+            }\n+\n+            val successfulUsers = tries.collect {\n+              case Success(Left(member)) => RawlsUser.toRef(member)\n+            }.toSet\n+            val successfulGroups = tries.collect {\n+              case Success(Right(member)) => RawlsGroup.toRef(member)\n+            }.toSet\n+\n+            val group = containerDAO.authDAO.loadGroup(groupRef, txn).getOrElse(throw new RawlsException(\"Unable to load group\"))\n+            containerDAO.authDAO.saveGroup(group.copy(users = (group.users ++ successfulUsers), subGroups = (group.subGroups ++ successfulGroups)), txn)\n+            if (exceptions.isEmpty)\n+              RequestComplete(StatusCodes.OK)\n+            else\n+              RequestComplete(ErrorReport(StatusCodes.BadRequest, \"Unable to add the following member(s)\", exceptions.map(ErrorReport(_))))\n+          }\n+        }\n+      }\n+    }\n+  }\n+\n+  def removeGroupMembers(groupRef: RawlsGroupRef, memberList: RawlsGroupMemberList) = {",
+    "path": "src/main/scala/org/broadinstitute/dsde/rawls/user/UserService.scala",
+    "position": null,
+    "original_position": 157,
+    "commit_id": "bed784570d2d29dd0accd085ed24fd3645dc5ef1",
+    "original_commit_id": "5014903a6dbe53fd7caa57b017a5e01ee17aa6f1",
+    "user": {
+      "login": "dvoet",
+      "id": 1521333,
+      "node_id": "MDQ6VXNlcjE1MjEzMzM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1521333?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dvoet",
+      "html_url": "https://github.com/dvoet",
+      "followers_url": "https://api.github.com/users/dvoet/followers",
+      "following_url": "https://api.github.com/users/dvoet/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dvoet/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dvoet/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dvoet/subscriptions",
+      "organizations_url": "https://api.github.com/users/dvoet/orgs",
+      "repos_url": "https://api.github.com/users/dvoet/repos",
+      "events_url": "https://api.github.com/users/dvoet/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dvoet/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "is there any commonality between add and remove that can be factored out... the code looks virtually identical\n",
+    "created_at": "2015-11-19T04:14:34Z",
+    "updated_at": "2015-11-23T15:47:07Z",
+    "html_url": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45297797",
+    "pull_request_url": "https://api.github.com/repos/broadinstitute/rawls/pulls/223",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/comments/45297797"
+      },
+      "html": {
+        "href": "https://github.com/broadinstitute/rawls/pull/223#discussion_r45297797"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/broadinstitute/rawls/pulls/223"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 309,
+    "side": "RIGHT"
+  }
+]

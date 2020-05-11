@@ -1,0 +1,949 @@
+[
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76728866",
+    "pull_request_review_id": null,
+    "id": 76728866,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzI4ODY2",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Do you propose removing (or hiding) the existing mechanism for connecting?\n\nEDIT: Sorry; I now see your message about this below.\n",
+    "created_at": "2016-08-30T04:27:28Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76728866",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76728866"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76728866"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 12,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76729011",
+    "pull_request_review_id": null,
+    "id": 76729011,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzI5MDEx",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.\n+\n+Changes to `AbstractConnector`, `Connector`, `AbstractInput`, and `Input`:\n+- Move the existing `connect()` methods from public to protected.\n+  (Note that `Component` is already a friend of `AbstractConnector`.)\n+\n+### Interfaces\n+Example from hopper:\n+```cpp\n+// before\n+reporter->updInput(\"inputs\").connect(device.getOutput(outputName));\n+// after: either\n+Component::connect(reporter->updInput(\"inputs\"), device.getOutput(outputName));\n+// or\n+Component::connect(device.getOutput(outputName), reporter->updInput(\"inputs\"));",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think we should only allow one of the two: the thing satisfying the dependency should always be on the left. I think this is necessary, otherwise it gets _really_ confusing to read code like `connect(frame, actuator)`.\n",
+    "created_at": "2016-08-30T04:29:33Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76729011",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76729011"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76729011"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 39,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76729109",
+    "pull_request_review_id": null,
+    "id": 76729109,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzI5MTA5",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 25,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "What about connecting components? (i.e., Connectors)?\n\nEDIT I understand now that that's what the first signature is for.\n",
+    "created_at": "2016-08-30T04:31:18Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76729109",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76729109"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76729109"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 25,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76729266",
+    "pull_request_review_id": null,
+    "id": 76729266,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzI5MjY2",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Components can require a connection to Objects, but Objects cannot require a connection to other Objects. So you would want `static void connect(const Object& object, Component& object)`.\n",
+    "created_at": "2016-08-30T04:34:09Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76729266",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76729266"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76729266"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 17,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76729408",
+    "pull_request_review_id": null,
+    "id": 76729408,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzI5NDA4",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.\n+\n+Changes to `AbstractConnector`, `Connector`, `AbstractInput`, and `Input`:\n+- Move the existing `connect()` methods from public to protected.\n+  (Note that `Component` is already a friend of `AbstractConnector`.)\n+\n+### Interfaces\n+Example from hopper:\n+```cpp\n+// before\n+reporter->updInput(\"inputs\").connect(device.getOutput(outputName));\n+// after: either\n+Component::connect(reporter->updInput(\"inputs\"), device.getOutput(outputName));\n+// or\n+Component::connect(device.getOutput(outputName), reporter->updInput(\"inputs\"));\n+```\n+\n+### Bindings\n+I don't know. Are there issues wrapping static methods?",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "IIRC I have used static functions in both python and MATLAB. They should be automatically wrapped without any special treatment.\n",
+    "created_at": "2016-08-30T04:36:35Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76729408",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76729408"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76729408"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 43,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76731807",
+    "pull_request_review_id": null,
+    "id": 76731807,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzMxODA3",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> I now see your message about this below.\n\nBased on the template, my understanding is that we are supposed to list only the needs in the \"Requirements\" section, with the strategy for meeting these needs discussed in later sections.\n",
+    "created_at": "2016-08-30T05:16:47Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76731807",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76731807"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76731807"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 12,
+    "side": "RIGHT",
+    "in_reply_to_id": 76728866
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76732371",
+    "pull_request_review_id": null,
+    "id": 76732371,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzMyMzcx",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.\n+\n+Changes to `AbstractConnector`, `Connector`, `AbstractInput`, and `Input`:\n+- Move the existing `connect()` methods from public to protected.\n+  (Note that `Component` is already a friend of `AbstractConnector`.)\n+\n+### Interfaces\n+Example from hopper:\n+```cpp\n+// before\n+reporter->updInput(\"inputs\").connect(device.getOutput(outputName));\n+// after: either\n+Component::connect(reporter->updInput(\"inputs\"), device.getOutput(outputName));\n+// or\n+Component::connect(device.getOutput(outputName), reporter->updInput(\"inputs\"));",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> I think we should only allow one of the two\n\nThat sounds okay in theory, but I think @aseth1 prefers the input first (\"satisfy this input with this output\") whereas I prefer the output first (\"plug this output into this input\"). It wasn't clear that we would be able to agree on one or the other.\n",
+    "created_at": "2016-08-30T05:27:33Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76732371",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76732371"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76732371"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 39,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729011
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76732445",
+    "pull_request_review_id": null,
+    "id": 76732445,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2NzMyNDQ1",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> Components can require a connection to Objects, but Objects cannot require a connection to other Objects.\n\nCorrect.\n",
+    "created_at": "2016-08-30T05:29:02Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76732445",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76732445"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76732445"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 17,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729266
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76838354",
+    "pull_request_review_id": null,
+    "id": 76838354,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2ODM4MzU0",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah I think you're right. Oops.\n",
+    "created_at": "2016-08-30T17:13:36Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76838354",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76838354"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76838354"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 12,
+    "side": "RIGHT",
+    "in_reply_to_id": 76728866
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76838515",
+    "pull_request_review_id": null,
+    "id": 76838515,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2ODM4NTE1",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.\n+\n+Changes to `AbstractConnector`, `Connector`, `AbstractInput`, and `Input`:\n+- Move the existing `connect()` methods from public to protected.\n+  (Note that `Component` is already a friend of `AbstractConnector`.)\n+\n+### Interfaces\n+Example from hopper:\n+```cpp\n+// before\n+reporter->updInput(\"inputs\").connect(device.getOutput(outputName));\n+// after: either\n+Component::connect(reporter->updInput(\"inputs\"), device.getOutput(outputName));\n+// or\n+Component::connect(device.getOutput(outputName), reporter->updInput(\"inputs\"));",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Then we have redundancy, violating the requirements. I prefer the latter (output -> input).\n",
+    "created_at": "2016-08-30T17:14:35Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76838515",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76838515"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76838515"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 39,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729011
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76843278",
+    "pull_request_review_id": null,
+    "id": 76843278,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2ODQzMjc4",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.\n+\n+Changes to `AbstractConnector`, `Connector`, `AbstractInput`, and `Input`:\n+- Move the existing `connect()` methods from public to protected.\n+  (Note that `Component` is already a friend of `AbstractConnector`.)\n+\n+### Interfaces\n+Example from hopper:\n+```cpp\n+// before\n+reporter->updInput(\"inputs\").connect(device.getOutput(outputName));\n+// after: either\n+Component::connect(reporter->updInput(\"inputs\"), device.getOutput(outputName));\n+// or\n+Component::connect(device.getOutput(outputName), reporter->updInput(\"inputs\"));",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "aymanhab",
+      "id": 3972208,
+      "node_id": "MDQ6VXNlcjM5NzIyMDg=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3972208?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aymanhab",
+      "html_url": "https://github.com/aymanhab",
+      "followers_url": "https://api.github.com/users/aymanhab/followers",
+      "following_url": "https://api.github.com/users/aymanhab/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aymanhab/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aymanhab/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aymanhab/subscriptions",
+      "organizations_url": "https://api.github.com/users/aymanhab/orgs",
+      "repos_url": "https://api.github.com/users/aymanhab/repos",
+      "events_url": "https://api.github.com/users/aymanhab/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aymanhab/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Would it make it clearer if we call the methods connectInputToOutput & connectOutputToInput respectively?\n",
+    "created_at": "2016-08-30T17:41:56Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76843278",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76843278"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76843278"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 39,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729011
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76843854",
+    "pull_request_review_id": null,
+    "id": 76843854,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2ODQzODU0",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 25,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "aymanhab",
+      "id": 3972208,
+      "node_id": "MDQ6VXNlcjM5NzIyMDg=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3972208?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aymanhab",
+      "html_url": "https://github.com/aymanhab",
+      "followers_url": "https://api.github.com/users/aymanhab/followers",
+      "following_url": "https://api.github.com/users/aymanhab/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aymanhab/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aymanhab/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aymanhab/subscriptions",
+      "organizations_url": "https://api.github.com/users/aymanhab/orgs",
+      "repos_url": "https://api.github.com/users/aymanhab/repos",
+      "events_url": "https://api.github.com/users/aymanhab/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aymanhab/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Sorry, but I think we have enough \"finalize\" methods, it feels quite diluted. If we want to call it topLevel, or root or world or any other connotation to indicate actual distinction from Component level that would be clearer to users I think.\n",
+    "created_at": "2016-08-30T17:44:58Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76843854",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76843854"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76843854"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 25,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729109
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76844858",
+    "pull_request_review_id": null,
+    "id": 76844858,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2ODQ0ODU4",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.\n+\n+Changes to `AbstractConnector`, `Connector`, `AbstractInput`, and `Input`:\n+- Move the existing `connect()` methods from public to protected.\n+  (Note that `Component` is already a friend of `AbstractConnector`.)\n+\n+### Interfaces\n+Example from hopper:\n+```cpp\n+// before\n+reporter->updInput(\"inputs\").connect(device.getOutput(outputName));\n+// after: either\n+Component::connect(reporter->updInput(\"inputs\"), device.getOutput(outputName));\n+// or\n+Component::connect(device.getOutput(outputName), reporter->updInput(\"inputs\"));",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> Would it make it clearer if we call the methods connectInputToOutput & connectOutputToInput respectively?\n\nThat could work for Inputs and Outputs. What about Connectors like [these](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Sandbox/ExampleHopperDevice/defineDeviceAndController_answers.h#L184)?\n",
+    "created_at": "2016-08-30T17:50:07Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76844858",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76844858"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76844858"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 39,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729011
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76847420",
+    "pull_request_review_id": null,
+    "id": 76847420,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2ODQ3NDIw",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.\n+\n+Changes to `AbstractConnector`, `Connector`, `AbstractInput`, and `Input`:\n+- Move the existing `connect()` methods from public to protected.\n+  (Note that `Component` is already a friend of `AbstractConnector`.)\n+\n+### Interfaces\n+Example from hopper:\n+```cpp\n+// before\n+reporter->updInput(\"inputs\").connect(device.getOutput(outputName));\n+// after: either\n+Component::connect(reporter->updInput(\"inputs\"), device.getOutput(outputName));\n+// or\n+Component::connect(device.getOutput(outputName), reporter->updInput(\"inputs\"));",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "aymanhab",
+      "id": 3972208,
+      "node_id": "MDQ6VXNlcjM5NzIyMDg=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3972208?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/aymanhab",
+      "html_url": "https://github.com/aymanhab",
+      "followers_url": "https://api.github.com/users/aymanhab/followers",
+      "following_url": "https://api.github.com/users/aymanhab/following{/other_user}",
+      "gists_url": "https://api.github.com/users/aymanhab/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/aymanhab/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/aymanhab/subscriptions",
+      "organizations_url": "https://api.github.com/users/aymanhab/orgs",
+      "repos_url": "https://api.github.com/users/aymanhab/repos",
+      "events_url": "https://api.github.com/users/aymanhab/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/aymanhab/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Aha, good one. The input/output relation seems like a dataflow diagram. The example here is a different kind of connection (like a depends on) at least conceptually, does that warrant a different presentation/API?\n",
+    "created_at": "2016-08-30T18:03:06Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76847420",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76847420"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76847420"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 39,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729011
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76847859",
+    "pull_request_review_id": null,
+    "id": 76847859,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2ODQ3ODU5",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 25,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I was unsure about `finalize` here but I think @tkuchida is trying to achieve something important. There are two distinct operations: (i) model-developers specifying what should be connected to what, and (ii) model-consumers telling their model to \"find the things that the model-developer said you're supposed to be connected to\". Right now, we use the word `connect()` for both of these operations, and that is confusing. I personally am fine with `finalizeConnections()` since it reduces the number of verbs in our interface, and the operation is similar to `finalizeFromProperties()`.\n\nOne option: remove this method altogether (perhaps make it internal/private), and include \"satisfying connections\" as part of \"finalizing from properties.\" This would be a larger project I think, though. We could either have a separate proposal for that, or have this proposal cover multiple PRs.\n",
+    "created_at": "2016-08-30T18:05:43Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76847859",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76847859"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76847859"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 25,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729109
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76955926",
+    "pull_request_review_id": null,
+    "id": 76955926,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2OTU1OTI2",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.\n+\n+Changes to `AbstractConnector`, `Connector`, `AbstractInput`, and `Input`:\n+- Move the existing `connect()` methods from public to protected.\n+  (Note that `Component` is already a friend of `AbstractConnector`.)\n+\n+### Interfaces\n+Example from hopper:\n+```cpp\n+// before\n+reporter->updInput(\"inputs\").connect(device.getOutput(outputName));\n+// after: either\n+Component::connect(reporter->updInput(\"inputs\"), device.getOutput(outputName));\n+// or\n+Component::connect(device.getOutput(outputName), reporter->updInput(\"inputs\"));",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 39,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> The input/output relation seems like a dataflow diagram. The example here is a different kind of connection (like a depends on) at least conceptually, does that warrant a different presentation/API?\n\nI think the distinction between Inputs and Connectors is somewhat artificial because both must be satisfied (just by different types). On a block diagram, Inputs and Connectors would both look like \"inputs\", so perhaps Connector should be renamed. Also, \"input\" implies directionality whereas \"connector\" does not, which could lead to further confusion. This proposal does not attempt to address this issue.\n\nI've updated the proposal, replacing the single `connect()` method with separate `connectToInput()` and `connectToConnector()` methods.\n",
+    "created_at": "2016-08-31T09:42:32Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76955926",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76955926"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76955926"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 39,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729011
+  },
+  {
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76957115",
+    "pull_request_review_id": null,
+    "id": 76957115,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDc2OTU3MTE1",
+    "diff_hunk": "@@ -0,0 +1,62 @@\n+## Project: Improved interface for connecting Components\n+***OpenSim Development Proposal***\n+\n+### Overview\n+Connecting Components currently looks something like \"update the Input of my ConsoleReporter and connect it to this Output from my Model\".\n+Some users may find it more intuitive to (i) begin with the verb *connect*, and (ii) swap the order of the Input and Output.\n+This project proposes to change the user interface for connecting Components while retaining all current functionality.\n+See [issue #1118](https://github.com/opensim-org/opensim-core/issues/1118).\n+\n+### Requirements\n+- No change to what can be connected or how the underlying connections are formed.\n+- No redundancy in the interface (i.e., the new interface replaces the existing interface).\n+\n+### Architecture\n+Changes to `Component`:\n+- Create a new method for forming connections between Components. There will be several variants:\n+  - `static void connect(const Object& object, Object& object)` and `static void connect(Object& object, const Object& object)`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L278).\n+  - `static void connect(const AbstractOutput& output, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractOutput& output, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L494).\n+  - `static void connect(const AbstractChannel& channel, AbstractInput& input, const std::string& annotation = \"\")` and\n+    `static void connect(AbstractInput& input, const AbstractChannel& channel, const std::string& annotation = \"\")`,\n+    which will call [this method](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Common/ComponentConnector.h#L497).\n+- Change the name of the existing `void connect(Component& root)` method to `finalizeConnections()`.",
+    "path": "DevelopmentProposals/componentConnectInterface/componentConnectInterface.md",
+    "position": null,
+    "original_position": 25,
+    "commit_id": "9ded8c64ca6694165d2a0febf3cbcfe8617494cd",
+    "original_commit_id": "83e68fffb0a558f1b25ad48a17e64d02e36afe04",
+    "user": {
+      "login": "tkuchida",
+      "id": 4203505,
+      "node_id": "MDQ6VXNlcjQyMDM1MDU=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4203505?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/tkuchida",
+      "html_url": "https://github.com/tkuchida",
+      "followers_url": "https://api.github.com/users/tkuchida/followers",
+      "following_url": "https://api.github.com/users/tkuchida/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tkuchida/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tkuchida/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tkuchida/subscriptions",
+      "organizations_url": "https://api.github.com/users/tkuchida/orgs",
+      "repos_url": "https://api.github.com/users/tkuchida/repos",
+      "events_url": "https://api.github.com/users/tkuchida/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tkuchida/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "> One option: remove this method altogether (perhaps make it internal/private), and include \"satisfying connections\" as part of \"finalizing from properties.\" This would be a larger project I think, though. We could either have a separate proposal for that, or have this proposal cover multiple PRs.\n\nWorth exploring, but perhaps as a separate DevProp for discussing user workflow and disciplined model-building \"stages\".\n",
+    "created_at": "2016-08-31T09:49:58Z",
+    "updated_at": "2016-09-08T20:19:37Z",
+    "html_url": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76957115",
+    "pull_request_url": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/comments/76957115"
+      },
+      "html": {
+        "href": "https://github.com/opensim-org/opensim-core/pull/1219#discussion_r76957115"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/opensim-org/opensim-core/pulls/1219"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 25,
+    "side": "RIGHT",
+    "in_reply_to_id": 76729109
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "sha": "e72171c66af08d9b49eea0e03aa065bd39c484f8",
+    "node_id": "MDY6Q29tbWl0MzEzOTU5MzA6ZTcyMTcxYzY2YWYwOGQ5YjQ5ZWVhMGUwM2FhMDY1YmQzOWM0ODRmOA==",
+    "commit": {
+      "author": {
+        "name": "Jeff Bornemann",
+        "email": "bornemannjs@gmail.com",
+        "date": "2016-01-11T19:05:39Z"
+      },
+      "committer": {
+        "name": "Jeff Bornemann",
+        "email": "bornemannjs@gmail.com",
+        "date": "2016-01-12T22:26:31Z"
+      },
+      "message": "Cleaned up WorkflowManager, and work to avoid concurrency issues",
+      "tree": {
+        "sha": "b152097551e8e9690fd85c9ad5ebae15cda6b100",
+        "url": "https://api.github.com/repos/TWCable/grabbit/git/trees/b152097551e8e9690fd85c9ad5ebae15cda6b100"
+      },
+      "url": "https://api.github.com/repos/TWCable/grabbit/git/commits/e72171c66af08d9b49eea0e03aa065bd39c484f8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/TWCable/grabbit/commits/e72171c66af08d9b49eea0e03aa065bd39c484f8",
+    "html_url": "https://github.com/TWCable/grabbit/commit/e72171c66af08d9b49eea0e03aa065bd39c484f8",
+    "comments_url": "https://api.github.com/repos/TWCable/grabbit/commits/e72171c66af08d9b49eea0e03aa065bd39c484f8/comments",
+    "author": {
+      "login": "jbornemann",
+      "id": 4540994,
+      "node_id": "MDQ6VXNlcjQ1NDA5OTQ=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4540994?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jbornemann",
+      "html_url": "https://github.com/jbornemann",
+      "followers_url": "https://api.github.com/users/jbornemann/followers",
+      "following_url": "https://api.github.com/users/jbornemann/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jbornemann/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jbornemann/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jbornemann/subscriptions",
+      "organizations_url": "https://api.github.com/users/jbornemann/orgs",
+      "repos_url": "https://api.github.com/users/jbornemann/repos",
+      "events_url": "https://api.github.com/users/jbornemann/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jbornemann/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "jbornemann",
+      "id": 4540994,
+      "node_id": "MDQ6VXNlcjQ1NDA5OTQ=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4540994?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jbornemann",
+      "html_url": "https://github.com/jbornemann",
+      "followers_url": "https://api.github.com/users/jbornemann/followers",
+      "following_url": "https://api.github.com/users/jbornemann/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jbornemann/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jbornemann/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jbornemann/subscriptions",
+      "organizations_url": "https://api.github.com/users/jbornemann/orgs",
+      "repos_url": "https://api.github.com/users/jbornemann/repos",
+      "events_url": "https://api.github.com/users/jbornemann/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jbornemann/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6b6a3d923e593c0d8fa139ca8d284db6a7716137",
+        "url": "https://api.github.com/repos/TWCable/grabbit/commits/6b6a3d923e593c0d8fa139ca8d284db6a7716137",
+        "html_url": "https://github.com/TWCable/grabbit/commit/6b6a3d923e593c0d8fa139ca8d284db6a7716137"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1212 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64304567",
+    "pull_request_review_id": null,
+    "id": 64304567,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0MzA0NTY3",
+    "diff_hunk": "@@ -2731,7 +2726,9 @@ StudioApp.prototype.setPageConstants = function (config, appSpecificConstants) {\n     isEmbedView: !!config.embed,\n     isShareView: !!config.share,\n     pinWorkspaceToBottom: !!config.pinWorkspaceToBottom,\n-    instructionsMarkdown: level.markdownInstructions,\n+    shortInstructions: level.instructions,\n+    // TODO - better handle the case where we have only short\n+    instructionsMarkdown: level.markdownInstructions || level.instructions,",
+    "path": "apps/src/StudioApp.js",
+    "position": null,
+    "original_position": 19,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "85d6b45d7e2f68e09aa873397989a7b79a308f54",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Right now if we have just short instructions (true of some course1 levels). We'll end up using these as long instructions too, and our less/more toggle will essentially just hide the resizer. Long term we'll probably just want to show without the resizer/toggle button in this case.\n",
+    "created_at": "2016-05-23T23:06:08Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64304567",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64304567"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64304567"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 2731,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64304598",
+    "pull_request_review_id": null,
+    "id": 64304598,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0MzA0NTk4",
+    "diff_hunk": "@@ -2,10 +2,18 @@\n  * A set of reducers that are used across all of our apps\n  */\n \n-var runState = require('./runState');\n-var pageConstants = require('./pageConstants');\n+var runState = require('./runState').default;",
+    "path": "apps/src/redux/commonReducers.js",
+    "position": null,
+    "original_position": 6,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "85d6b45d7e2f68e09aa873397989a7b79a308f54",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Not importing runState bc it's not an ES6 module yet.\n",
+    "created_at": "2016-05-23T23:06:28Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64304598",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64304598"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64304598"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 5,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64305637",
+    "pull_request_review_id": null,
+    "id": 64305637,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0MzA1NjM3",
+    "diff_hunk": "@@ -1,161 +1,28 @@\n 'use strict';\n \n-var Radium = require('radium');\n-var connect = require('react-redux').connect;\n-var actions = require('../../applab/actions');\n-var instructions = require('../../redux/instructions');\n-var color = require('../../color');\n-var styleConstants = require('../../styleConstants');\n-var commonStyles = require('../../commonStyles');\n-\n-var processMarkdown = require('marked');\n-\n-var Instructions = require('./Instructions');\n-var CollapserIcon = require('./CollapserIcon');\n-var HeightResizer = require('./HeightResizer');\n-var constants = require('../../constants');\n-var msg = require('../../locale');\n-\n-var HEADER_HEIGHT = styleConstants['workspace-headers-height'];\n-var RESIZER_HEIGHT = styleConstants['resize-bar-width'];\n-\n-var MIN_HEIGHT = RESIZER_HEIGHT + 60;\n-\n-var styles = {\n-  main: {\n-    position: 'absolute',\n-    marginLeft: 15,\n-    top: 0,\n-    right: 0,\n-    // left handled by media queries for .editor-column\n+import TopInstructionsCSF from './TopInstructionsCSF';\n+import TopInstructionsCSP from './TopInstructionsCSP';\n+\n+/**\n+ * Simple class allowing us to have differences between CSF and CSP top\n+ * instructions. Ultimately those might be combined back into one.\n+ */\n+const TopInstructions = React.createClass({\n+  getRenderedHeight() {\n+    return this.refs.topInstructions.getWrappedInstance().getRenderedHeight();\n   },\n-  header: {\n-    height: HEADER_HEIGHT,\n-    lineHeight: HEADER_HEIGHT + 'px',\n-    fontFamily: '\"Gotham 4r\"',\n-    backgroundColor: color.lighter_purple,\n-    textAlign: 'center'\n-  },\n-  body: {\n-    backgroundColor: 'white',\n-    overflowY: 'scroll',\n-    paddingLeft: 10,\n-    paddingRight: 10,\n-    position: 'absolute',\n-    top: HEADER_HEIGHT,\n-    bottom: 0,\n-    left: 0,\n-    right: 0\n-  },\n-  embedView: {\n-    height: undefined,\n-    bottom: 0,\n-    // Visualization is hard-coded on embed levels. Do the same for instructions position\n-    left: 340\n-  }\n-};\n \n-var TopInstructions = React.createClass({\n-  propTypes: {\n-    isEmbedView: React.PropTypes.bool.isRequired,\n-    puzzleNumber: React.PropTypes.number.isRequired,\n-    stageTotal: React.PropTypes.number.isRequired,\n-    height: React.PropTypes.number.isRequired,\n-    maxHeight: React.PropTypes.number.isRequired,\n-    markdown: React.PropTypes.string,\n-    collapsed: React.PropTypes.bool.isRequired,\n-    toggleInstructionsCollapsed: React.PropTypes.func.isRequired,\n-    setInstructionsHeight: React.PropTypes.func.isRequired,\n-    onLoadImage: React.PropTypes.func.isRequired\n+  getCollapsedHeight() {\n+    return this.refs.topInstructions.getWrappedInstance().getCollapsedHeight();\n   },\n \n-  /**\n-   * Called externally\n-   * @returns {number} The height of the rendered contents in pixels\n-   */\n-  getContentHeight: function () {\n-    var instructionsContent = this.refs.instructions.refs.instructionsMarkdown;\n-    return $(ReactDOM.findDOMNode(instructionsContent)).outerHeight(true);\n-  },\n+  render() {\n+    const { props } = this;\n \n-  /**\n-   * Given a prospective delta, determines how much we can actually change the\n-   * height (accounting for min/max) and changes height by that much.\n-   * @param {number} delta\n-   * @returns {number} How much we actually changed\n-   */\n-  onHeightResize: function (delta) {\n-    var minHeight = MIN_HEIGHT;\n-    var currentHeight = this.props.height;\n+    const ChildClass = props.csf ? TopInstructionsCSF : TopInstructionsCSP;\n \n-    var newHeight = Math.max(minHeight, currentHeight + delta);\n-    newHeight = Math.min(newHeight, this.props.maxHeight);\n-\n-    this.props.setInstructionsHeight(newHeight);\n-    return newHeight - currentHeight;\n-  },\n-\n-  componentDidMount: function () {\n-    // Parent needs to readjust some sizing after images have loaded\n-    $(ReactDOM.findDOMNode(this)).find('img').load(this.props.onLoadImage);\n-  },\n-\n-  render: function () {\n-    if (!this.props.markdown) {\n-      return <div/>;\n-    }\n-    var id = this.props.id;\n-\n-    var mainStyle = [styles.main, {\n-      height: this.props.height - RESIZER_HEIGHT\n-    }, this.props.isEmbedView && styles.embedView];\n-\n-    return (\n-      <div style={mainStyle} className=\"editor-column\">\n-        {!this.props.isEmbedView && <CollapserIcon\n-            collapsed={this.props.collapsed}\n-            onClick={this.props.toggleInstructionsCollapsed}/>\n-        }\n-        <div style={styles.header}>\n-          {msg.puzzleTitle({\n-            stage_total: this.props.stageTotal,\n-            puzzle_number: this.props.puzzleNumber\n-          })}\n-        </div>\n-        <div style={[this.props.collapsed && commonStyles.hidden]}>\n-          <div style={styles.body}>\n-            <Instructions\n-              ref=\"instructions\"\n-              renderedMarkdown={processMarkdown(this.props.markdown)}\n-              inTopPane\n-              />\n-          </div>\n-          {!this.props.isEmbedView && <HeightResizer\n-            position={this.props.height}\n-            onResize={this.onHeightResize}/>\n-          }\n-        </div>\n-      </div>\n-    );\n+    return <ChildClass ref=\"topInstructions\" {...props}/>;\n   }\n });\n-module.exports = connect(function propsFromStore(state) {\n-  return {\n-    isEmbedView: state.pageConstants.isEmbedView,\n-    puzzleNumber: state.pageConstants.puzzleNumber,\n-    stageTotal: state.pageConstants.stageTotal,\n-    maxHeight: state.instructions.maxHeight,\n-    markdown: state.pageConstants.instructionsMarkdown,\n-    collapsed: state.instructions.collapsed,\n-  };\n-}, function propsFromDispatch(dispatch) {\n-  return {\n-    toggleInstructionsCollapsed: function () {\n-      dispatch(instructions.toggleInstructionsCollapsed());\n-    },\n-    setInstructionsHeight: function (height) {\n-      dispatch(instructions.setInstructionsHeight(height));\n-    }\n-  };\n-}, null, { withRef: true }\n-)(Radium(TopInstructions));\n+\n+export default TopInstructions;",
+    "path": "apps/src/templates/instructions/TopInstructions.jsx",
+    "position": 183,
+    "original_position": 179,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "85d6b45d7e2f68e09aa873397989a7b79a308f54",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Diff in this file is confusing, but basically I co-opted TopInstructions to be a wrapper class that gives you either a TopInstructionsCSF or TopInstructionsCSP. Once CSF instructions are more polished, it might be we can combine these back into one without too much difficulty\n",
+    "created_at": "2016-05-23T23:16:12Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64305637",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64305637"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64305637"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 34,
+    "original_line": 28,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438104",
+    "pull_request_review_id": null,
+    "id": 64438104,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM4MTA0",
+    "diff_hunk": "@@ -1,20 +1,20 @@\n /**\n  * This duck module tracks whether the current app's run state.\n  */\n-var _ = require('../lodash');\n+import _ from 'lodash';",
+    "path": "apps/src/redux/runState.js",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Did you mean to switch to full lodash here?\n",
+    "created_at": "2016-05-24T17:31:20Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438104",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438104"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438104"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 4,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438181",
+    "pull_request_review_id": null,
+    "id": 64438181,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM4MTgx",
+    "diff_hunk": "@@ -1,20 +1,20 @@\n /**\n  * This duck module tracks whether the current app's run state.\n  */\n-var _ = require('../lodash');\n+import _ from 'lodash';\n \n-var SET_IS_RUNNING = 'runState/SET_IS_RUNNING';\n-var SET_IS_DEBUGGER_PAUSED = 'runState/SET_IS_DEBUGGER_PAUSED';\n+const SET_IS_RUNNING = 'runState/SET_IS_RUNNING';\n+const SET_IS_DEBUGGER_PAUSED = 'runState/SET_IS_DEBUGGER_PAUSED';\n \n-var initialState = {\n+const initialState = {\n   isRunning: false,\n   isDebuggerPaused: false\n };\n \n /**\n  * Reducer for runState. It should be impossible to be debugging if not running.\n  */\n-module.exports.default = function (state, action) {\n+export default function (state, action) {",
+    "path": "apps/src/redux/runState.js",
+    "position": null,
+    "original_position": 22,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Might be nice to name the reducer as you did in pageConstants.js\n",
+    "created_at": "2016-05-24T17:31:51Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438181",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438181"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438181"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 17,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438611",
+    "pull_request_review_id": null,
+    "id": 64438611,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM4NjEx",
+    "diff_hunk": "@@ -22,6 +22,11 @@ var InstructionsWithWorkspace = React.createClass({\n     instructionsMaxHeight: React.PropTypes.number.isRequired,\n     setInstructionsHeight: React.PropTypes.func.isRequired,\n     setInstructionsMaxHeight: React.PropTypes.func.isRequired,\n+\n+    isCsf: React.PropTypes.bool,\n+    // TODO - properly pass these to top instructions\n+    isRtl: React.PropTypes.bool.isRequired,\n+    noVisualization: React.PropTypes.bool.isRequired",
+    "path": "apps/src/templates/instructions/InstructionsWithWorkspace.jsx",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`isRtl` is unused.\n",
+    "created_at": "2016-05-24T17:34:31Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438611",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438611"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438611"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 29,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438830",
+    "pull_request_review_id": null,
+    "id": 64438830,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM4ODMw",
+    "diff_hunk": "@@ -22,6 +22,11 @@ var InstructionsWithWorkspace = React.createClass({\n     instructionsMaxHeight: React.PropTypes.number.isRequired,\n     setInstructionsHeight: React.PropTypes.func.isRequired,\n     setInstructionsMaxHeight: React.PropTypes.func.isRequired,\n+\n+    isCsf: React.PropTypes.bool,",
+    "path": "apps/src/templates/instructions/InstructionsWithWorkspace.jsx",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`isCsf` doesn't strike me as particularly descriptive.  Can prop be renamed to better represent what it actually affects?\n",
+    "created_at": "2016-05-24T17:35:24Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438830",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438830"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438830"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 26,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438933",
+    "pull_request_review_id": null,
+    "id": 64438933,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM4OTMz",
+    "diff_hunk": "@@ -19,23 +19,35 @@ var styles = {\n   }\n };\n \n-var MarkdownInstructions = function (props) {\n-  return (\n-    <div\n-      className='instructions-markdown'\n-      style={[\n-        styles.standard,\n-        props.inTopPane && styles.inTopPane,\n-        props.markdownClassicMargins && styles.classic\n-      ]}\n-      dangerouslySetInnerHTML={{ __html: props.renderedMarkdown }}/>\n-  );\n-};\n+const MarkdownInstructions = React.createClass({\n+  propTypes: {\n+    renderedMarkdown: React.PropTypes.string.isRequired,\n+    markdownClassicMargins: React.PropTypes.bool,\n+    inTopPane: React.PropTypes.bool\n+  },\n \n-MarkdownInstructions.propTypes = {\n-  renderedMarkdown: React.PropTypes.string.isRequired,\n-  markdownClassicMargins: React.PropTypes.bool,\n-  inTopPane: React.PropTypes.bool\n-};\n+  componentDidMount() {\n+    // If we have the jQuery details plugin, enable it's usage on any details\n+    // elements",
+    "path": "apps/src/templates/instructions/MarkdownInstructions.jsx",
+    "position": null,
+    "original_position": 30,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "s/it's/its\n",
+    "created_at": "2016-05-24T17:36:08Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438933",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64438933"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64438933"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 31,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439177",
+    "pull_request_review_id": null,
+    "id": 64439177,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM5MTc3",
+    "diff_hunk": "@@ -19,23 +19,35 @@ var styles = {\n   }\n };\n \n-var MarkdownInstructions = function (props) {\n-  return (\n-    <div\n-      className='instructions-markdown'\n-      style={[\n-        styles.standard,\n-        props.inTopPane && styles.inTopPane,\n-        props.markdownClassicMargins && styles.classic\n-      ]}\n-      dangerouslySetInnerHTML={{ __html: props.renderedMarkdown }}/>\n-  );\n-};\n+const MarkdownInstructions = React.createClass({\n+  propTypes: {\n+    renderedMarkdown: React.PropTypes.string.isRequired,\n+    markdownClassicMargins: React.PropTypes.bool,\n+    inTopPane: React.PropTypes.bool\n+  },\n \n-MarkdownInstructions.propTypes = {\n-  renderedMarkdown: React.PropTypes.string.isRequired,\n-  markdownClassicMargins: React.PropTypes.bool,\n-  inTopPane: React.PropTypes.bool\n-};\n+  componentDidMount() {\n+    // If we have the jQuery details plugin, enable it's usage on any details\n+    // elements\n+    const detailsDOM = $(ReactDOM.findDOMNode(this)).find('details');\n+    if (detailsDOM.length && detailsDOM.details) {\n+      detailsDOM.details();",
+    "path": "apps/src/templates/instructions/MarkdownInstructions.jsx",
+    "position": null,
+    "original_position": 33,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Since `detailsDOM` is a jQuery object, you shouldn't need to check its length here - I think just calling `details()` on an empty set would be idiomatic.\n",
+    "created_at": "2016-05-24T17:37:43Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439177",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439177"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439177"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 34,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439489",
+    "pull_request_review_id": null,
+    "id": 64439489,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM5NDg5",
+    "diff_hunk": "@@ -19,23 +19,35 @@ var styles = {\n   }\n };\n \n-var MarkdownInstructions = function (props) {\n-  return (\n-    <div\n-      className='instructions-markdown'\n-      style={[\n-        styles.standard,\n-        props.inTopPane && styles.inTopPane,\n-        props.markdownClassicMargins && styles.classic\n-      ]}\n-      dangerouslySetInnerHTML={{ __html: props.renderedMarkdown }}/>\n-  );\n-};\n+const MarkdownInstructions = React.createClass({\n+  propTypes: {\n+    renderedMarkdown: React.PropTypes.string.isRequired,\n+    markdownClassicMargins: React.PropTypes.bool,\n+    inTopPane: React.PropTypes.bool\n+  },\n \n-MarkdownInstructions.propTypes = {\n-  renderedMarkdown: React.PropTypes.string.isRequired,\n-  markdownClassicMargins: React.PropTypes.bool,\n-  inTopPane: React.PropTypes.bool\n-};\n+  componentDidMount() {\n+    // If we have the jQuery details plugin, enable it's usage on any details\n+    // elements\n+    const detailsDOM = $(ReactDOM.findDOMNode(this)).find('details');\n+    if (detailsDOM.length && detailsDOM.details) {\n+      detailsDOM.details();",
+    "path": "apps/src/templates/instructions/MarkdownInstructions.jsx",
+    "position": null,
+    "original_position": 33,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Does this operation need to happen on `componentDidUpdate` as well as `componentDidMount`, to handle later rendering operations?\n",
+    "created_at": "2016-05-24T17:39:40Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439489",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439489"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439489"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 34,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439688",
+    "pull_request_review_id": null,
+    "id": 64439688,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM5Njg4",
+    "diff_hunk": "@@ -1,161 +1,31 @@\n 'use strict';\n \n-var Radium = require('radium');\n-var connect = require('react-redux').connect;\n-var actions = require('../../applab/actions');\n-var instructions = require('../../redux/instructions');\n-var color = require('../../color');\n-var styleConstants = require('../../styleConstants');\n-var commonStyles = require('../../commonStyles');\n-\n-var processMarkdown = require('marked');\n-\n-var Instructions = require('./Instructions');\n-var CollapserIcon = require('./CollapserIcon');\n-var HeightResizer = require('./HeightResizer');\n-var constants = require('../../constants');\n-var msg = require('../../locale');\n-\n-var HEADER_HEIGHT = styleConstants['workspace-headers-height'];\n-var RESIZER_HEIGHT = styleConstants['resize-bar-width'];\n-\n-var MIN_HEIGHT = RESIZER_HEIGHT + 60;\n-\n-var styles = {\n-  main: {\n-    position: 'absolute',\n-    marginLeft: 15,\n-    top: 0,\n-    right: 0,\n-    // left handled by media queries for .editor-column\n-  },\n-  header: {\n-    height: HEADER_HEIGHT,\n-    lineHeight: HEADER_HEIGHT + 'px',\n-    fontFamily: '\"Gotham 4r\"',\n-    backgroundColor: color.lighter_purple,\n-    textAlign: 'center'\n-  },\n-  body: {\n-    backgroundColor: 'white',\n-    overflowY: 'scroll',\n-    paddingLeft: 10,\n-    paddingRight: 10,\n-    position: 'absolute',\n-    top: HEADER_HEIGHT,\n-    bottom: 0,\n-    left: 0,\n-    right: 0\n-  },\n-  embedView: {\n-    height: undefined,\n-    bottom: 0,\n-    // Visualization is hard-coded on embed levels. Do the same for instructions position\n-    left: 340\n-  }\n-};\n-\n-var TopInstructions = React.createClass({\n+import TopInstructionsCSF from './TopInstructionsCSF';\n+import TopInstructionsCSP from './TopInstructionsCSP';\n+\n+/**\n+ * Simple class allowing us to have differences between CSF and CSP top\n+ * instructions. Ultimately those might be combined back into one.\n+ */\n+const TopInstructions = React.createClass({\n   propTypes: {\n-    isEmbedView: React.PropTypes.bool.isRequired,\n-    puzzleNumber: React.PropTypes.number.isRequired,\n-    stageTotal: React.PropTypes.number.isRequired,\n-    height: React.PropTypes.number.isRequired,\n-    maxHeight: React.PropTypes.number.isRequired,\n-    markdown: React.PropTypes.string,\n-    collapsed: React.PropTypes.bool.isRequired,\n-    toggleInstructionsCollapsed: React.PropTypes.func.isRequired,\n-    setInstructionsHeight: React.PropTypes.func.isRequired,\n-    onLoadImage: React.PropTypes.func.isRequired\n-  },\n-\n-  /**\n-   * Called externally\n-   * @returns {number} The height of the rendered contents in pixels\n-   */\n-  getContentHeight: function () {\n-    var instructionsContent = this.refs.instructions.refs.instructionsMarkdown;\n-    return $(ReactDOM.findDOMNode(instructionsContent)).outerHeight(true);\n+    isCsf: React.PropTypes.bool.isRequired\n   },\n-\n-  /**\n-   * Given a prospective delta, determines how much we can actually change the\n-   * height (accounting for min/max) and changes height by that much.\n-   * @param {number} delta\n-   * @returns {number} How much we actually changed\n-   */\n-  onHeightResize: function (delta) {\n-    var minHeight = MIN_HEIGHT;\n-    var currentHeight = this.props.height;\n-\n-    var newHeight = Math.max(minHeight, currentHeight + delta);\n-    newHeight = Math.min(newHeight, this.props.maxHeight);\n-\n-    this.props.setInstructionsHeight(newHeight);\n-    return newHeight - currentHeight;\n+  getRenderedHeight() {\n+    return this.refs.topInstructions.getWrappedInstance().getRenderedHeight();\n   },\n \n-  componentDidMount: function () {\n-    // Parent needs to readjust some sizing after images have loaded\n-    $(ReactDOM.findDOMNode(this)).find('img').load(this.props.onLoadImage);\n+  getCollapsedHeight() {\n+    return this.refs.topInstructions.getWrappedInstance().getCollapsedHeight();\n   },\n \n-  render: function () {\n-    if (!this.props.markdown) {\n-      return <div/>;\n-    }\n-    var id = this.props.id;\n+  render() {\n+    const { props } = this;",
+    "path": "apps/src/templates/instructions/TopInstructions.jsx",
+    "position": null,
+    "original_position": 122,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Bwuh?\n",
+    "created_at": "2016-05-24T17:40:48Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439688",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439688"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439688"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 23,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439860",
+    "pull_request_review_id": null,
+    "id": 64439860,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM5ODYw",
+    "diff_hunk": "@@ -0,0 +1,194 @@\n+'use strict';\n+\n+var Radium = require('radium');\n+var connect = require('react-redux').connect;\n+var actions = require('../../applab/actions');\n+var instructions = require('../../redux/instructions');\n+var color = require('../../color');\n+var styleConstants = require('../../styleConstants');\n+var commonStyles = require('../../commonStyles');\n+\n+var processMarkdown = require('marked');\n+\n+var Instructions = require('./Instructions');\n+var CollapserIcon = require('./CollapserIcon');\n+var HeightResizer = require('./HeightResizer');\n+var constants = require('../../constants');\n+var msg = require('../../locale');\n+import CollapserButton from './CollapserButton';\n+\n+const VERTICAL_PADDING = 10;\n+const HORIZONTAL_PADDING = 20;\n+const RESIZER_HEIGHT = styleConstants['resize-bar-width'];\n+\n+const styles = {\n+  main: {\n+    position: 'absolute',\n+    marginLeft: 15,\n+    top: 0,\n+    right: 0,\n+    // left handled by media queries for .editor-column\n+  },\n+  body: {\n+    backgroundColor: 'white',\n+    overflowY: 'scroll',\n+    paddingTop: VERTICAL_PADDING,\n+    paddingBottom: VERTICAL_PADDING,\n+    paddingLeft: HORIZONTAL_PADDING,\n+    paddingRight: HORIZONTAL_PADDING,\n+    position: 'absolute',\n+    top: 0,\n+    bottom: 0,\n+    left: 0,\n+    right: 0,\n+    borderRadius: 10\n+  },\n+  embedView: {\n+    height: undefined,\n+    bottom: 0,\n+    // Visualization is hard-coded on embed levels. Do the same for instructions position\n+    left: 340\n+  },\n+  collapserButton: {\n+    float: 'right',\n+    height: 42,\n+    marginLeft: 10,\n+    // don't want the right margin to apply to our button\n+    marginRight: -10,\n+    marginTop: 5,\n+    marginBottom: 5\n+  }\n+};\n+\n+const COLLAPSED_HEIGHT = styles.collapserButton.height +\n+  styles.collapserButton.marginTop +\n+  styles.collapserButton.marginBottom +\n+  2 * VERTICAL_PADDING;\n+\n+const MIN_HEIGHT = COLLAPSED_HEIGHT;\n+\n+var TopInstructions = React.createClass({\n+  propTypes: {\n+    isEmbedView: React.PropTypes.bool.isRequired,\n+    puzzleNumber: React.PropTypes.number.isRequired,\n+    stageTotal: React.PropTypes.number.isRequired,\n+    height: React.PropTypes.number.isRequired,\n+    maxHeight: React.PropTypes.number.isRequired,\n+    markdown: React.PropTypes.string,\n+    collapsed: React.PropTypes.bool.isRequired,\n+    toggleInstructionsCollapsed: React.PropTypes.func.isRequired,\n+    setInstructionsHeight: React.PropTypes.func.isRequired,\n+    onResize: React.PropTypes.func.isRequired\n+  },\n+\n+  /**\n+   * Called externally\n+   * @returns {number} The height of the rendered contents in pixels\n+   */\n+  getRenderedHeight() {\n+    // TODO - this is getting called a LOT - prob bc blockly?",
+    "path": "apps/src/templates/instructions/TopInstructionsCSF.jsx",
+    "position": 89,
+    "original_position": 89,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Should handle this TODO now, or later?\n",
+    "created_at": "2016-05-24T17:41:36Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439860",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439860"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439860"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 89,
+    "original_line": 89,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439942",
+    "pull_request_review_id": null,
+    "id": 64439942,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDM5OTQy",
+    "diff_hunk": "@@ -0,0 +1,194 @@\n+'use strict';\n+\n+var Radium = require('radium');\n+var connect = require('react-redux').connect;\n+var actions = require('../../applab/actions');\n+var instructions = require('../../redux/instructions');\n+var color = require('../../color');\n+var styleConstants = require('../../styleConstants');\n+var commonStyles = require('../../commonStyles');\n+\n+var processMarkdown = require('marked');\n+\n+var Instructions = require('./Instructions');\n+var CollapserIcon = require('./CollapserIcon');\n+var HeightResizer = require('./HeightResizer');\n+var constants = require('../../constants');\n+var msg = require('../../locale');\n+import CollapserButton from './CollapserButton';\n+\n+const VERTICAL_PADDING = 10;\n+const HORIZONTAL_PADDING = 20;\n+const RESIZER_HEIGHT = styleConstants['resize-bar-width'];\n+\n+const styles = {\n+  main: {\n+    position: 'absolute',\n+    marginLeft: 15,\n+    top: 0,\n+    right: 0,\n+    // left handled by media queries for .editor-column\n+  },\n+  body: {\n+    backgroundColor: 'white',\n+    overflowY: 'scroll',\n+    paddingTop: VERTICAL_PADDING,\n+    paddingBottom: VERTICAL_PADDING,\n+    paddingLeft: HORIZONTAL_PADDING,\n+    paddingRight: HORIZONTAL_PADDING,\n+    position: 'absolute',\n+    top: 0,\n+    bottom: 0,\n+    left: 0,\n+    right: 0,\n+    borderRadius: 10\n+  },\n+  embedView: {\n+    height: undefined,\n+    bottom: 0,\n+    // Visualization is hard-coded on embed levels. Do the same for instructions position\n+    left: 340\n+  },\n+  collapserButton: {\n+    float: 'right',\n+    height: 42,\n+    marginLeft: 10,\n+    // don't want the right margin to apply to our button\n+    marginRight: -10,\n+    marginTop: 5,\n+    marginBottom: 5\n+  }\n+};\n+\n+const COLLAPSED_HEIGHT = styles.collapserButton.height +\n+  styles.collapserButton.marginTop +\n+  styles.collapserButton.marginBottom +\n+  2 * VERTICAL_PADDING;\n+\n+const MIN_HEIGHT = COLLAPSED_HEIGHT;\n+\n+var TopInstructions = React.createClass({\n+  propTypes: {\n+    isEmbedView: React.PropTypes.bool.isRequired,\n+    puzzleNumber: React.PropTypes.number.isRequired,\n+    stageTotal: React.PropTypes.number.isRequired,\n+    height: React.PropTypes.number.isRequired,\n+    maxHeight: React.PropTypes.number.isRequired,\n+    markdown: React.PropTypes.string,\n+    collapsed: React.PropTypes.bool.isRequired,\n+    toggleInstructionsCollapsed: React.PropTypes.func.isRequired,\n+    setInstructionsHeight: React.PropTypes.func.isRequired,\n+    onResize: React.PropTypes.func.isRequired\n+  },\n+\n+  /**\n+   * Called externally\n+   * @returns {number} The height of the rendered contents in pixels\n+   */\n+  getRenderedHeight() {\n+    // TODO - this is getting called a LOT - prob bc blockly?\n+    var instructionsContent = this.refs.instructions.refs.instructionsMarkdown;\n+    return $(ReactDOM.findDOMNode(instructionsContent)).outerHeight(true) + 2 * VERTICAL_PADDING;\n+  },\n+\n+  getCollapsedHeight() {\n+    return COLLAPSED_HEIGHT;\n+  },\n+\n+  /**\n+   * Given a prospective delta, determines how much we can actually change the\n+   * height (accounting for min/max) and changes height by that much.\n+   * @param {number} delta\n+   * @returns {number} How much we actually changed\n+   */\n+  onHeightResize: function (delta) {\n+    var minHeight = MIN_HEIGHT;\n+    var currentHeight = this.props.height;\n+\n+    var newHeight = Math.max(minHeight, currentHeight + delta);\n+    newHeight = Math.min(newHeight, this.props.maxHeight);\n+\n+    this.props.setInstructionsHeight(newHeight);\n+    return newHeight - currentHeight;\n+  },\n+\n+  // TODO - could have some of this as a HOC?",
+    "path": "apps/src/templates/instructions/TopInstructionsCSF.jsx",
+    "position": null,
+    "original_position": 115,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "TODO, and what's a \"HOC\" in this context?\n",
+    "created_at": "2016-05-24T17:42:05Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439942",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64439942"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64439942"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 115,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64440100",
+    "pull_request_review_id": null,
+    "id": 64440100,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDQwMTAw",
+    "diff_hunk": "@@ -0,0 +1,194 @@\n+'use strict';\n+\n+var Radium = require('radium');\n+var connect = require('react-redux').connect;\n+var actions = require('../../applab/actions');\n+var instructions = require('../../redux/instructions');\n+var color = require('../../color');\n+var styleConstants = require('../../styleConstants');\n+var commonStyles = require('../../commonStyles');\n+\n+var processMarkdown = require('marked');\n+\n+var Instructions = require('./Instructions');\n+var CollapserIcon = require('./CollapserIcon');\n+var HeightResizer = require('./HeightResizer');\n+var constants = require('../../constants');\n+var msg = require('../../locale');\n+import CollapserButton from './CollapserButton';\n+\n+const VERTICAL_PADDING = 10;\n+const HORIZONTAL_PADDING = 20;\n+const RESIZER_HEIGHT = styleConstants['resize-bar-width'];\n+\n+const styles = {\n+  main: {\n+    position: 'absolute',\n+    marginLeft: 15,\n+    top: 0,\n+    right: 0,\n+    // left handled by media queries for .editor-column\n+  },\n+  body: {\n+    backgroundColor: 'white',\n+    overflowY: 'scroll',\n+    paddingTop: VERTICAL_PADDING,\n+    paddingBottom: VERTICAL_PADDING,\n+    paddingLeft: HORIZONTAL_PADDING,\n+    paddingRight: HORIZONTAL_PADDING,\n+    position: 'absolute',\n+    top: 0,\n+    bottom: 0,\n+    left: 0,\n+    right: 0,\n+    borderRadius: 10\n+  },\n+  embedView: {\n+    height: undefined,\n+    bottom: 0,\n+    // Visualization is hard-coded on embed levels. Do the same for instructions position\n+    left: 340\n+  },\n+  collapserButton: {\n+    float: 'right',\n+    height: 42,\n+    marginLeft: 10,\n+    // don't want the right margin to apply to our button\n+    marginRight: -10,\n+    marginTop: 5,\n+    marginBottom: 5\n+  }\n+};\n+\n+const COLLAPSED_HEIGHT = styles.collapserButton.height +\n+  styles.collapserButton.marginTop +\n+  styles.collapserButton.marginBottom +\n+  2 * VERTICAL_PADDING;\n+\n+const MIN_HEIGHT = COLLAPSED_HEIGHT;\n+\n+var TopInstructions = React.createClass({\n+  propTypes: {\n+    isEmbedView: React.PropTypes.bool.isRequired,\n+    puzzleNumber: React.PropTypes.number.isRequired,\n+    stageTotal: React.PropTypes.number.isRequired,\n+    height: React.PropTypes.number.isRequired,\n+    maxHeight: React.PropTypes.number.isRequired,\n+    markdown: React.PropTypes.string,\n+    collapsed: React.PropTypes.bool.isRequired,\n+    toggleInstructionsCollapsed: React.PropTypes.func.isRequired,\n+    setInstructionsHeight: React.PropTypes.func.isRequired,\n+    onResize: React.PropTypes.func.isRequired\n+  },\n+\n+  /**\n+   * Called externally\n+   * @returns {number} The height of the rendered contents in pixels\n+   */\n+  getRenderedHeight() {\n+    // TODO - this is getting called a LOT - prob bc blockly?\n+    var instructionsContent = this.refs.instructions.refs.instructionsMarkdown;\n+    return $(ReactDOM.findDOMNode(instructionsContent)).outerHeight(true) + 2 * VERTICAL_PADDING;\n+  },\n+\n+  getCollapsedHeight() {\n+    return COLLAPSED_HEIGHT;\n+  },\n+\n+  /**\n+   * Given a prospective delta, determines how much we can actually change the\n+   * height (accounting for min/max) and changes height by that much.\n+   * @param {number} delta\n+   * @returns {number} How much we actually changed\n+   */\n+  onHeightResize: function (delta) {\n+    var minHeight = MIN_HEIGHT;\n+    var currentHeight = this.props.height;\n+\n+    var newHeight = Math.max(minHeight, currentHeight + delta);\n+    newHeight = Math.min(newHeight, this.props.maxHeight);\n+\n+    this.props.setInstructionsHeight(newHeight);\n+    return newHeight - currentHeight;\n+  },\n+\n+  // TODO - could have some of this as a HOC?\n+  componentDidMount: function () {\n+    // Parent needs to readjust some sizing after images have loaded\n+    $(ReactDOM.findDOMNode(this)).find('img').load(this.props.onResize);\n+\n+    $('details').on({\n+      'toggle.details.TopInstructions': () => {\n+        this.props.onResize();",
+    "path": "apps/src/templates/instructions/TopInstructionsCSF.jsx",
+    "position": null,
+    "original_position": 122,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Again, binding handlers with jQuery, do we need to do maintenance on componentDidUpdate?\n",
+    "created_at": "2016-05-24T17:42:55Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64440100",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64440100"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64440100"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 122,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64441304",
+    "pull_request_review_id": null,
+    "id": 64441304,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDQxMzA0",
+    "diff_hunk": "@@ -1,20 +1,20 @@\n /**\n  * This duck module tracks whether the current app's run state.\n  */\n-var _ = require('../lodash');\n+import _ from 'lodash';",
+    "path": "apps/src/redux/runState.js",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Nope. A mistake a seem to keep making :(\n",
+    "created_at": "2016-05-24T17:49:35Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64441304",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64441304"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64441304"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 4,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64441462",
+    "pull_request_review_id": null,
+    "id": 64441462,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDQxNDYy",
+    "diff_hunk": "@@ -22,6 +22,11 @@ var InstructionsWithWorkspace = React.createClass({\n     instructionsMaxHeight: React.PropTypes.number.isRequired,\n     setInstructionsHeight: React.PropTypes.func.isRequired,\n     setInstructionsMaxHeight: React.PropTypes.func.isRequired,\n+\n+    isCsf: React.PropTypes.bool,\n+    // TODO - properly pass these to top instructions\n+    isRtl: React.PropTypes.bool.isRequired,\n+    noVisualization: React.PropTypes.bool.isRequired",
+    "path": "apps/src/templates/instructions/InstructionsWithWorkspace.jsx",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah. While topInstructions were CSP only, we didn't need to worry about this. In CSF we will going forward. I'm not using this yet, but will need to eventually (hence the TODO)\n",
+    "created_at": "2016-05-24T17:50:27Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64441462",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64441462"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64441462"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 29,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64441811",
+    "pull_request_review_id": null,
+    "id": 64441811,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDQxODEx",
+    "diff_hunk": "@@ -0,0 +1,194 @@\n+'use strict';\n+\n+var Radium = require('radium');\n+var connect = require('react-redux').connect;\n+var actions = require('../../applab/actions');\n+var instructions = require('../../redux/instructions');\n+var color = require('../../color');\n+var styleConstants = require('../../styleConstants');\n+var commonStyles = require('../../commonStyles');\n+\n+var processMarkdown = require('marked');\n+\n+var Instructions = require('./Instructions');\n+var CollapserIcon = require('./CollapserIcon');\n+var HeightResizer = require('./HeightResizer');\n+var constants = require('../../constants');\n+var msg = require('../../locale');\n+import CollapserButton from './CollapserButton';\n+\n+const VERTICAL_PADDING = 10;\n+const HORIZONTAL_PADDING = 20;\n+const RESIZER_HEIGHT = styleConstants['resize-bar-width'];\n+\n+const styles = {\n+  main: {\n+    position: 'absolute',\n+    marginLeft: 15,\n+    top: 0,\n+    right: 0,\n+    // left handled by media queries for .editor-column\n+  },\n+  body: {\n+    backgroundColor: 'white',\n+    overflowY: 'scroll',\n+    paddingTop: VERTICAL_PADDING,\n+    paddingBottom: VERTICAL_PADDING,\n+    paddingLeft: HORIZONTAL_PADDING,\n+    paddingRight: HORIZONTAL_PADDING,\n+    position: 'absolute',\n+    top: 0,\n+    bottom: 0,\n+    left: 0,\n+    right: 0,\n+    borderRadius: 10\n+  },\n+  embedView: {\n+    height: undefined,\n+    bottom: 0,\n+    // Visualization is hard-coded on embed levels. Do the same for instructions position\n+    left: 340\n+  },\n+  collapserButton: {\n+    float: 'right',\n+    height: 42,\n+    marginLeft: 10,\n+    // don't want the right margin to apply to our button\n+    marginRight: -10,\n+    marginTop: 5,\n+    marginBottom: 5\n+  }\n+};\n+\n+const COLLAPSED_HEIGHT = styles.collapserButton.height +\n+  styles.collapserButton.marginTop +\n+  styles.collapserButton.marginBottom +\n+  2 * VERTICAL_PADDING;\n+\n+const MIN_HEIGHT = COLLAPSED_HEIGHT;\n+\n+var TopInstructions = React.createClass({\n+  propTypes: {\n+    isEmbedView: React.PropTypes.bool.isRequired,\n+    puzzleNumber: React.PropTypes.number.isRequired,\n+    stageTotal: React.PropTypes.number.isRequired,\n+    height: React.PropTypes.number.isRequired,\n+    maxHeight: React.PropTypes.number.isRequired,\n+    markdown: React.PropTypes.string,\n+    collapsed: React.PropTypes.bool.isRequired,\n+    toggleInstructionsCollapsed: React.PropTypes.func.isRequired,\n+    setInstructionsHeight: React.PropTypes.func.isRequired,\n+    onResize: React.PropTypes.func.isRequired\n+  },\n+\n+  /**\n+   * Called externally\n+   * @returns {number} The height of the rendered contents in pixels\n+   */\n+  getRenderedHeight() {\n+    // TODO - this is getting called a LOT - prob bc blockly?",
+    "path": "apps/src/templates/instructions/TopInstructionsCSF.jsx",
+    "position": 89,
+    "original_position": 89,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Later, but I didn't actually have this task tracked in my pivotal item, and should\n",
+    "created_at": "2016-05-24T17:52:06Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64441811",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64441811"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64441811"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 89,
+    "original_line": 89,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64441895",
+    "pull_request_review_id": null,
+    "id": 64441895,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDQxODk1",
+    "diff_hunk": "@@ -0,0 +1,194 @@\n+'use strict';\n+\n+var Radium = require('radium');\n+var connect = require('react-redux').connect;\n+var actions = require('../../applab/actions');\n+var instructions = require('../../redux/instructions');\n+var color = require('../../color');\n+var styleConstants = require('../../styleConstants');\n+var commonStyles = require('../../commonStyles');\n+\n+var processMarkdown = require('marked');\n+\n+var Instructions = require('./Instructions');\n+var CollapserIcon = require('./CollapserIcon');\n+var HeightResizer = require('./HeightResizer');\n+var constants = require('../../constants');\n+var msg = require('../../locale');\n+import CollapserButton from './CollapserButton';\n+\n+const VERTICAL_PADDING = 10;\n+const HORIZONTAL_PADDING = 20;\n+const RESIZER_HEIGHT = styleConstants['resize-bar-width'];\n+\n+const styles = {\n+  main: {\n+    position: 'absolute',\n+    marginLeft: 15,\n+    top: 0,\n+    right: 0,\n+    // left handled by media queries for .editor-column\n+  },\n+  body: {\n+    backgroundColor: 'white',\n+    overflowY: 'scroll',\n+    paddingTop: VERTICAL_PADDING,\n+    paddingBottom: VERTICAL_PADDING,\n+    paddingLeft: HORIZONTAL_PADDING,\n+    paddingRight: HORIZONTAL_PADDING,\n+    position: 'absolute',\n+    top: 0,\n+    bottom: 0,\n+    left: 0,\n+    right: 0,\n+    borderRadius: 10\n+  },\n+  embedView: {\n+    height: undefined,\n+    bottom: 0,\n+    // Visualization is hard-coded on embed levels. Do the same for instructions position\n+    left: 340\n+  },\n+  collapserButton: {\n+    float: 'right',\n+    height: 42,\n+    marginLeft: 10,\n+    // don't want the right margin to apply to our button\n+    marginRight: -10,\n+    marginTop: 5,\n+    marginBottom: 5\n+  }\n+};\n+\n+const COLLAPSED_HEIGHT = styles.collapserButton.height +\n+  styles.collapserButton.marginTop +\n+  styles.collapserButton.marginBottom +\n+  2 * VERTICAL_PADDING;\n+\n+const MIN_HEIGHT = COLLAPSED_HEIGHT;\n+\n+var TopInstructions = React.createClass({\n+  propTypes: {\n+    isEmbedView: React.PropTypes.bool.isRequired,\n+    puzzleNumber: React.PropTypes.number.isRequired,\n+    stageTotal: React.PropTypes.number.isRequired,\n+    height: React.PropTypes.number.isRequired,\n+    maxHeight: React.PropTypes.number.isRequired,\n+    markdown: React.PropTypes.string,\n+    collapsed: React.PropTypes.bool.isRequired,\n+    toggleInstructionsCollapsed: React.PropTypes.func.isRequired,\n+    setInstructionsHeight: React.PropTypes.func.isRequired,\n+    onResize: React.PropTypes.func.isRequired\n+  },\n+\n+  /**\n+   * Called externally\n+   * @returns {number} The height of the rendered contents in pixels\n+   */\n+  getRenderedHeight() {\n+    // TODO - this is getting called a LOT - prob bc blockly?\n+    var instructionsContent = this.refs.instructions.refs.instructionsMarkdown;\n+    return $(ReactDOM.findDOMNode(instructionsContent)).outerHeight(true) + 2 * VERTICAL_PADDING;\n+  },\n+\n+  getCollapsedHeight() {\n+    return COLLAPSED_HEIGHT;\n+  },\n+\n+  /**\n+   * Given a prospective delta, determines how much we can actually change the\n+   * height (accounting for min/max) and changes height by that much.\n+   * @param {number} delta\n+   * @returns {number} How much we actually changed\n+   */\n+  onHeightResize: function (delta) {\n+    var minHeight = MIN_HEIGHT;\n+    var currentHeight = this.props.height;\n+\n+    var newHeight = Math.max(minHeight, currentHeight + delta);\n+    newHeight = Math.min(newHeight, this.props.maxHeight);\n+\n+    this.props.setInstructionsHeight(newHeight);\n+    return newHeight - currentHeight;\n+  },\n+\n+  // TODO - could have some of this as a HOC?",
+    "path": "apps/src/templates/instructions/TopInstructionsCSF.jsx",
+    "position": null,
+    "original_position": 115,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "high order component\n",
+    "created_at": "2016-05-24T17:52:36Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64441895",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64441895"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64441895"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 115,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64442075",
+    "pull_request_review_id": null,
+    "id": 64442075,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDQyMDc1",
+    "diff_hunk": "@@ -1,161 +1,31 @@\n 'use strict';\n \n-var Radium = require('radium');\n-var connect = require('react-redux').connect;\n-var actions = require('../../applab/actions');\n-var instructions = require('../../redux/instructions');\n-var color = require('../../color');\n-var styleConstants = require('../../styleConstants');\n-var commonStyles = require('../../commonStyles');\n-\n-var processMarkdown = require('marked');\n-\n-var Instructions = require('./Instructions');\n-var CollapserIcon = require('./CollapserIcon');\n-var HeightResizer = require('./HeightResizer');\n-var constants = require('../../constants');\n-var msg = require('../../locale');\n-\n-var HEADER_HEIGHT = styleConstants['workspace-headers-height'];\n-var RESIZER_HEIGHT = styleConstants['resize-bar-width'];\n-\n-var MIN_HEIGHT = RESIZER_HEIGHT + 60;\n-\n-var styles = {\n-  main: {\n-    position: 'absolute',\n-    marginLeft: 15,\n-    top: 0,\n-    right: 0,\n-    // left handled by media queries for .editor-column\n-  },\n-  header: {\n-    height: HEADER_HEIGHT,\n-    lineHeight: HEADER_HEIGHT + 'px',\n-    fontFamily: '\"Gotham 4r\"',\n-    backgroundColor: color.lighter_purple,\n-    textAlign: 'center'\n-  },\n-  body: {\n-    backgroundColor: 'white',\n-    overflowY: 'scroll',\n-    paddingLeft: 10,\n-    paddingRight: 10,\n-    position: 'absolute',\n-    top: HEADER_HEIGHT,\n-    bottom: 0,\n-    left: 0,\n-    right: 0\n-  },\n-  embedView: {\n-    height: undefined,\n-    bottom: 0,\n-    // Visualization is hard-coded on embed levels. Do the same for instructions position\n-    left: 340\n-  }\n-};\n-\n-var TopInstructions = React.createClass({\n+import TopInstructionsCSF from './TopInstructionsCSF';\n+import TopInstructionsCSP from './TopInstructionsCSP';\n+\n+/**\n+ * Simple class allowing us to have differences between CSF and CSP top\n+ * instructions. Ultimately those might be combined back into one.\n+ */\n+const TopInstructions = React.createClass({\n   propTypes: {\n-    isEmbedView: React.PropTypes.bool.isRequired,\n-    puzzleNumber: React.PropTypes.number.isRequired,\n-    stageTotal: React.PropTypes.number.isRequired,\n-    height: React.PropTypes.number.isRequired,\n-    maxHeight: React.PropTypes.number.isRequired,\n-    markdown: React.PropTypes.string,\n-    collapsed: React.PropTypes.bool.isRequired,\n-    toggleInstructionsCollapsed: React.PropTypes.func.isRequired,\n-    setInstructionsHeight: React.PropTypes.func.isRequired,\n-    onLoadImage: React.PropTypes.func.isRequired\n-  },\n-\n-  /**\n-   * Called externally\n-   * @returns {number} The height of the rendered contents in pixels\n-   */\n-  getContentHeight: function () {\n-    var instructionsContent = this.refs.instructions.refs.instructionsMarkdown;\n-    return $(ReactDOM.findDOMNode(instructionsContent)).outerHeight(true);\n+    isCsf: React.PropTypes.bool.isRequired\n   },\n-\n-  /**\n-   * Given a prospective delta, determines how much we can actually change the\n-   * height (accounting for min/max) and changes height by that much.\n-   * @param {number} delta\n-   * @returns {number} How much we actually changed\n-   */\n-  onHeightResize: function (delta) {\n-    var minHeight = MIN_HEIGHT;\n-    var currentHeight = this.props.height;\n-\n-    var newHeight = Math.max(minHeight, currentHeight + delta);\n-    newHeight = Math.min(newHeight, this.props.maxHeight);\n-\n-    this.props.setInstructionsHeight(newHeight);\n-    return newHeight - currentHeight;\n+  getRenderedHeight() {\n+    return this.refs.topInstructions.getWrappedInstance().getRenderedHeight();\n   },\n \n-  componentDidMount: function () {\n-    // Parent needs to readjust some sizing after images have loaded\n-    $(ReactDOM.findDOMNode(this)).find('img').load(this.props.onLoadImage);\n+  getCollapsedHeight() {\n+    return this.refs.topInstructions.getWrappedInstance().getCollapsedHeight();\n   },\n \n-  render: function () {\n-    if (!this.props.markdown) {\n-      return <div/>;\n-    }\n-    var id = this.props.id;\n+  render() {\n+    const { props } = this;",
+    "path": "apps/src/templates/instructions/TopInstructions.jsx",
+    "position": null,
+    "original_position": 122,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Equivalent to `const props = this.props`; Might be clearer to just do that in this cas.e\n",
+    "created_at": "2016-05-24T17:53:35Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64442075",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64442075"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64442075"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 23,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64442837",
+    "pull_request_review_id": null,
+    "id": 64442837,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDQyODM3",
+    "diff_hunk": "@@ -22,6 +22,11 @@ var InstructionsWithWorkspace = React.createClass({\n     instructionsMaxHeight: React.PropTypes.number.isRequired,\n     setInstructionsHeight: React.PropTypes.func.isRequired,\n     setInstructionsMaxHeight: React.PropTypes.func.isRequired,\n+\n+    isCsf: React.PropTypes.bool,",
+    "path": "apps/src/templates/instructions/InstructionsWithWorkspace.jsx",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Any suggestions? Originally it was just `csf`. I spent some time trying to come up with a better name, and the best I could do was `isCsf` :-P Maybe some terse way of saying \"instructions that collapse to a header\" vs. \"instructions that collapse to a smaller version of themselves\"\n",
+    "created_at": "2016-05-24T17:58:09Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64442837",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64442837"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64442837"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 26,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64450707",
+    "pull_request_review_id": null,
+    "id": 64450707,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDUwNzA3",
+    "diff_hunk": "@@ -1,20 +1,20 @@\n /**\n  * This duck module tracks whether the current app's run state.\n  */\n-var _ = require('../lodash');\n+import _ from 'lodash';",
+    "path": "apps/src/redux/runState.js",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "You know, it'd be a lot harder to make this mistake if we just used stock lodash everywhere :wink: \n",
+    "created_at": "2016-05-24T18:41:47Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64450707",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64450707"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64450707"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 4,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64451339",
+    "pull_request_review_id": null,
+    "id": 64451339,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDY0NDUxMzM5",
+    "diff_hunk": "@@ -22,6 +22,11 @@ var InstructionsWithWorkspace = React.createClass({\n     instructionsMaxHeight: React.PropTypes.number.isRequired,\n     setInstructionsHeight: React.PropTypes.func.isRequired,\n     setInstructionsMaxHeight: React.PropTypes.func.isRequired,\n+\n+    isCsf: React.PropTypes.bool,",
+    "path": "apps/src/templates/instructions/InstructionsWithWorkspace.jsx",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "badd3b4df6407c9defc6cca32320870b9364b714",
+    "original_commit_id": "740481978937237a828ee4506574dde540d8c3a4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "`headerWhenCollapsed` and/or `shortInstructionsWhenCollapsed`?\n",
+    "created_at": "2016-05-24T18:45:05Z",
+    "updated_at": "2016-05-24T22:13:08Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64451339",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/64451339"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/8561#discussion_r64451339"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/8561"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 26,
+    "side": "RIGHT"
+  }
+]

@@ -1,0 +1,167 @@
+[
+  {
+    "url": "https://api.github.com/repos/NixOS/nixpkgs/pulls/comments/60942566",
+    "pull_request_review_id": null,
+    "id": 60942566,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYwOTQyNTY2",
+    "diff_hunk": "@@ -19587,7 +19587,7 @@ in modules // {\n       url = \"https://pypi.python.org/packages/source/s/scipy/scipy-${version}.tar.gz\";\n       sha256 = \"ecd1efbb1c038accb0516151d1e6679809c6010288765eb5da6051550bf52260\";\n     };\n-    numpy = self.numpy;\n+    numpy = self.numpy_1_10;",
+    "path": "pkgs/top-level/python-packages.nix",
+    "position": 14,
+    "original_position": 14,
+    "commit_id": "48177a18f84948469dad9b57a5bf27bf7d3d9a08",
+    "original_commit_id": "48177a18f84948469dad9b57a5bf27bf7d3d9a08",
+    "user": {
+      "login": "adnelson",
+      "id": 5091511,
+      "node_id": "MDQ6VXNlcjUwOTE1MTE=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5091511?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adnelson",
+      "html_url": "https://github.com/adnelson",
+      "followers_url": "https://api.github.com/users/adnelson/followers",
+      "following_url": "https://api.github.com/users/adnelson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adnelson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adnelson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adnelson/subscriptions",
+      "organizations_url": "https://api.github.com/users/adnelson/orgs",
+      "repos_url": "https://api.github.com/users/adnelson/repos",
+      "events_url": "https://api.github.com/users/adnelson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adnelson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Can we keep this stuff tho? :grimacing: \n",
+    "created_at": "2016-04-25T16:21:40Z",
+    "updated_at": "2016-04-25T16:21:40Z",
+    "html_url": "https://github.com/NixOS/nixpkgs/pull/14978#discussion_r60942566",
+    "pull_request_url": "https://api.github.com/repos/NixOS/nixpkgs/pulls/14978",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/NixOS/nixpkgs/pulls/comments/60942566"
+      },
+      "html": {
+        "href": "https://github.com/NixOS/nixpkgs/pull/14978#discussion_r60942566"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/NixOS/nixpkgs/pulls/14978"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 19590,
+    "original_line": 19590,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/NixOS/nixpkgs/pulls/comments/60942624",
+    "pull_request_review_id": null,
+    "id": 60942624,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYwOTQyNjI0",
+    "diff_hunk": "@@ -19587,7 +19587,7 @@ in modules // {\n       url = \"https://pypi.python.org/packages/source/s/scipy/scipy-${version}.tar.gz\";\n       sha256 = \"ecd1efbb1c038accb0516151d1e6679809c6010288765eb5da6051550bf52260\";\n     };\n-    numpy = self.numpy;\n+    numpy = self.numpy_1_10;",
+    "path": "pkgs/top-level/python-packages.nix",
+    "position": 14,
+    "original_position": 14,
+    "commit_id": "48177a18f84948469dad9b57a5bf27bf7d3d9a08",
+    "original_commit_id": "48177a18f84948469dad9b57a5bf27bf7d3d9a08",
+    "user": {
+      "login": "adnelson",
+      "id": 5091511,
+      "node_id": "MDQ6VXNlcjUwOTE1MTE=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5091511?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/adnelson",
+      "html_url": "https://github.com/adnelson",
+      "followers_url": "https://api.github.com/users/adnelson/followers",
+      "following_url": "https://api.github.com/users/adnelson/following{/other_user}",
+      "gists_url": "https://api.github.com/users/adnelson/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/adnelson/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/adnelson/subscriptions",
+      "organizations_url": "https://api.github.com/users/adnelson/orgs",
+      "repos_url": "https://api.github.com/users/adnelson/repos",
+      "events_url": "https://api.github.com/users/adnelson/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/adnelson/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I mean a separate PR is fine. I can make it actually\n",
+    "created_at": "2016-04-25T16:22:06Z",
+    "updated_at": "2016-04-25T16:22:06Z",
+    "html_url": "https://github.com/NixOS/nixpkgs/pull/14978#discussion_r60942624",
+    "pull_request_url": "https://api.github.com/repos/NixOS/nixpkgs/pulls/14978",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/NixOS/nixpkgs/pulls/comments/60942624"
+      },
+      "html": {
+        "href": "https://github.com/NixOS/nixpkgs/pull/14978#discussion_r60942624"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/NixOS/nixpkgs/pulls/14978"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 19590,
+    "original_line": 19590,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/NixOS/nixpkgs/pulls/comments/60942751",
+    "pull_request_review_id": null,
+    "id": 60942751,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDYwOTQyNzUx",
+    "diff_hunk": "@@ -19587,7 +19587,7 @@ in modules // {\n       url = \"https://pypi.python.org/packages/source/s/scipy/scipy-${version}.tar.gz\";\n       sha256 = \"ecd1efbb1c038accb0516151d1e6679809c6010288765eb5da6051550bf52260\";\n     };\n-    numpy = self.numpy;\n+    numpy = self.numpy_1_10;",
+    "path": "pkgs/top-level/python-packages.nix",
+    "position": 14,
+    "original_position": 14,
+    "commit_id": "48177a18f84948469dad9b57a5bf27bf7d3d9a08",
+    "original_commit_id": "48177a18f84948469dad9b57a5bf27bf7d3d9a08",
+    "user": {
+      "login": "FRidh",
+      "id": 2129135,
+      "node_id": "MDQ6VXNlcjIxMjkxMzU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2129135?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/FRidh",
+      "html_url": "https://github.com/FRidh",
+      "followers_url": "https://api.github.com/users/FRidh/followers",
+      "following_url": "https://api.github.com/users/FRidh/following{/other_user}",
+      "gists_url": "https://api.github.com/users/FRidh/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/FRidh/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/FRidh/subscriptions",
+      "organizations_url": "https://api.github.com/users/FRidh/orgs",
+      "repos_url": "https://api.github.com/users/FRidh/repos",
+      "events_url": "https://api.github.com/users/FRidh/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/FRidh/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "yes, this is kept\n",
+    "created_at": "2016-04-25T16:22:53Z",
+    "updated_at": "2016-04-25T16:22:53Z",
+    "html_url": "https://github.com/NixOS/nixpkgs/pull/14978#discussion_r60942751",
+    "pull_request_url": "https://api.github.com/repos/NixOS/nixpkgs/pulls/14978",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/NixOS/nixpkgs/pulls/comments/60942751"
+      },
+      "html": {
+        "href": "https://github.com/NixOS/nixpkgs/pull/14978#discussion_r60942751"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/NixOS/nixpkgs/pulls/14978"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 19590,
+    "original_line": 19590,
+    "side": "RIGHT"
+  }
+]

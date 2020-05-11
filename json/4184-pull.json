@@ -1,0 +1,1487 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40574838",
+    "pull_request_review_id": null,
+    "id": 40574838,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNTc0ODM4",
+    "diff_hunk": "@@ -19,6 +19,8 @@\n       = tag 'meta', property: 'og:description', content: t('share.description')\n     = render partial: 'layouts/analytics'\n     = render partial: 'layouts/javascript_strings'\n+    - # TODO: Only load jsapi when needed (in Applab)\n+    %script{type: 'text/javascript', src: 'https://www.google.com/jsapi'}",
+    "path": "dashboard/app/views/layouts/application.html.haml",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "6f9275c90666239c300a96ec280e0676db4e3976",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Opinions on doing this include cleanly?\n",
+    "created_at": "2015-09-28T16:45:29Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40574838",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40574838"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40574838"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 23,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40745249",
+    "pull_request_review_id": null,
+    "id": 40745249,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ1MjQ5",
+    "diff_hunk": "@@ -1388,3 +1389,132 @@ applabCommands.getUserId = function (opts) {\n   }\n   return Applab.user.applabUserId;\n };\n+\n+/**\n+ * How to execute the 'drawChartFromRecords' function.\n+ * Delegates most work to ChartApi.drawChartFromRecords, but a few things are\n+ * handled directly at this layer:\n+ *   - Type validation (before execution)\n+ *   - Queueing callbacks (after execution)\n+ *   - Reporting errors and warnings (after execution)\n+ * @see {ChartApi}\n+ * @param {Object} opts\n+ * @param {string} opts.chartId\n+ * @param {ChartType} opts.chartType\n+ * @param {string} opts.tableName\n+ * @param {string[]} opts.columns\n+ * @param {Object} opts.options\n+ * @param {function} opts.callback\n+ */\n+applabCommands.drawChartFromRecords = function (opts) {\n+  apiValidateType(opts, 'drawChartFromRecords', 'chartId', opts.chartId, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'chartType', opts.chartType, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'tableName', opts.tableName, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'columns', opts.columns, 'array');",
+    "path": "apps/src/applab/commands.js",
+    "position": 33,
+    "original_position": 33,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "columns should be optional, right?\n",
+    "created_at": "2015-09-29T23:51:07Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40745249",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40745249"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40745249"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1413,
+    "original_line": 1413,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40745266",
+    "pull_request_review_id": null,
+    "id": 40745266,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ1MjY2",
+    "diff_hunk": "@@ -0,0 +1,463 @@\n+/**\n+ * @file Wrapper around Google Charts API chart-drawing features\n+ *\n+ * @see https://developers.google.com/chart/\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+/* global google */\n+\n+var Promise = require('es6-promise').Promise;\n+require('../utils');\n+\n+/**\n+ * Abstract base type for Google Charts API charts.\n+ *\n+ * @example\n+ *   var chart = new PieChart(targetDiv);\n+ *   Promise.resolve(function () {\n+ *     return chart.loadDependencies();\n+ *   }).then(function () {\n+ *     return chart.loadData(data[, columns]);\n+ *   }).then(function () {\n+ *     return chart.drawChart([options]);\n+ *   });\n+ *\n+ * May optionally omit the loadDependencies() step; if so, it will automatically\n+ * occur as needed prior to another asynchronous step.  It's exposed here to\n+ * facilitate asynchronous loading.\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ */\n+var GoogleChart = module.exports = function (targetDiv) {\n+  // Define this late so we can overwrite it in tests.\n+  if (!GoogleChart.lib) {\n+    GoogleChart.lib = google;\n+  }\n+\n+  /** @private {Element} */\n+  this.targetDiv_ = targetDiv;\n+\n+  /** @private {google.visualization.DataTable} */\n+  this.dataTable_ = null;\n+\n+  /**\n+   * List of all warnings logged while performing operations with this chart\n+   * instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+/**\n+ * Loads the required libraries for this particular chart type.\n+ * Safe to call multiple times - Google's loader caches dependencies.\n+ * @returns {Promise} that resolves when dependencies have been loaded.\n+ */\n+GoogleChart.prototype.loadDependencies = function () {\n+  return new Promise(function (resolve, reject) {\n+    try {\n+      GoogleChart.lib.load('visualization', '1', {\n+        packages: this.getDependencies(),\n+        callback: resolve\n+      });\n+    } catch (e) {\n+      // We catch and return a different error so that we don't surface Google\n+      // API errors to students.\n+      reject(new Error('Unable to load Charts API.  Please try again later.'));\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * Validates and prepares the provided data to be displayed by the chart.\n+ *\n+ * Must be called prior to drawChart().  If loadDependencies() has not been\n+ * called before this method, dependencies will be loaded now.\n+ *\n+ * @param {Object[]} rawData - data to display in chart, formatted as an array\n+ *        of objects where each object represents a row, and the object keys\n+ *        are column names.\n+ * @param {string[]} [columnList] - Ordered list of column names to use as source\n+ *        data for the chart.  Column names must match keys in rawData.  If\n+ *        omitted, column names will be inferred from rawData.\n+ * @returns {Promise} that resolves when the chart data has been loaded and\n+ *          the chart is ready for drawChart().\n+ */\n+GoogleChart.prototype.loadData = function (rawData, columnList) {\n+  // If columnList is not provided, infer it from raw data\n+  if (columnList === undefined) {\n+    columnList = GoogleChart.inferColumnsFromRawData(rawData);",
+    "path": "apps/src/applab/GoogleChart.js",
+    "position": null,
+    "original_position": 102,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "you probably want to omit the `id` field from this list\n",
+    "created_at": "2015-09-29T23:51:25Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40745266",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40745266"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40745266"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 102,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746128",
+    "pull_request_review_id": null,
+    "id": 40746128,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ2MTI4",
+    "diff_hunk": "@@ -1388,3 +1389,132 @@ applabCommands.getUserId = function (opts) {\n   }\n   return Applab.user.applabUserId;\n };\n+\n+/**\n+ * How to execute the 'drawChartFromRecords' function.\n+ * Delegates most work to ChartApi.drawChartFromRecords, but a few things are\n+ * handled directly at this layer:\n+ *   - Type validation (before execution)\n+ *   - Queueing callbacks (after execution)\n+ *   - Reporting errors and warnings (after execution)\n+ * @see {ChartApi}\n+ * @param {Object} opts\n+ * @param {string} opts.chartId\n+ * @param {ChartType} opts.chartType\n+ * @param {string} opts.tableName\n+ * @param {string[]} opts.columns\n+ * @param {Object} opts.options\n+ * @param {function} opts.callback\n+ */\n+applabCommands.drawChartFromRecords = function (opts) {\n+  apiValidateType(opts, 'drawChartFromRecords', 'chartId', opts.chartId, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'chartType', opts.chartType, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'tableName', opts.tableName, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'columns', opts.columns, 'array');",
+    "path": "apps/src/applab/commands.js",
+    "position": 33,
+    "original_position": 33,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I see that the spec says `columns` is required, but I also see that you added logic to infer columns when they are not specified, so I'm not quite sure what the desired behavior is here.\n",
+    "created_at": "2015-09-30T00:04:53Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746128",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746128"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746128"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1413,
+    "original_line": 1413,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746331",
+    "pull_request_review_id": null,
+    "id": 40746331,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ2MzMx",
+    "diff_hunk": "@@ -0,0 +1,463 @@\n+/**\n+ * @file Wrapper around Google Charts API chart-drawing features\n+ *\n+ * @see https://developers.google.com/chart/\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+/* global google */\n+\n+var Promise = require('es6-promise').Promise;\n+require('../utils');\n+\n+/**\n+ * Abstract base type for Google Charts API charts.\n+ *\n+ * @example\n+ *   var chart = new PieChart(targetDiv);\n+ *   Promise.resolve(function () {\n+ *     return chart.loadDependencies();\n+ *   }).then(function () {\n+ *     return chart.loadData(data[, columns]);\n+ *   }).then(function () {\n+ *     return chart.drawChart([options]);\n+ *   });\n+ *\n+ * May optionally omit the loadDependencies() step; if so, it will automatically\n+ * occur as needed prior to another asynchronous step.  It's exposed here to\n+ * facilitate asynchronous loading.\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ */\n+var GoogleChart = module.exports = function (targetDiv) {\n+  // Define this late so we can overwrite it in tests.\n+  if (!GoogleChart.lib) {\n+    GoogleChart.lib = google;\n+  }\n+\n+  /** @private {Element} */\n+  this.targetDiv_ = targetDiv;\n+\n+  /** @private {google.visualization.DataTable} */\n+  this.dataTable_ = null;\n+\n+  /**\n+   * List of all warnings logged while performing operations with this chart\n+   * instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+/**\n+ * Loads the required libraries for this particular chart type.\n+ * Safe to call multiple times - Google's loader caches dependencies.\n+ * @returns {Promise} that resolves when dependencies have been loaded.\n+ */\n+GoogleChart.prototype.loadDependencies = function () {\n+  return new Promise(function (resolve, reject) {\n+    try {\n+      GoogleChart.lib.load('visualization', '1', {\n+        packages: this.getDependencies(),\n+        callback: resolve\n+      });\n+    } catch (e) {\n+      // We catch and return a different error so that we don't surface Google\n+      // API errors to students.\n+      reject(new Error('Unable to load Charts API.  Please try again later.'));\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * Validates and prepares the provided data to be displayed by the chart.\n+ *\n+ * Must be called prior to drawChart().  If loadDependencies() has not been\n+ * called before this method, dependencies will be loaded now.\n+ *\n+ * @param {Object[]} rawData - data to display in chart, formatted as an array\n+ *        of objects where each object represents a row, and the object keys\n+ *        are column names.\n+ * @param {string[]} [columnList] - Ordered list of column names to use as source\n+ *        data for the chart.  Column names must match keys in rawData.  If\n+ *        omitted, column names will be inferred from rawData.\n+ * @returns {Promise} that resolves when the chart data has been loaded and\n+ *          the chart is ready for drawChart().\n+ */\n+GoogleChart.prototype.loadData = function (rawData, columnList) {\n+  // If columnList is not provided, infer it from raw data\n+  if (columnList === undefined) {",
+    "path": "apps/src/applab/GoogleChart.js",
+    "position": null,
+    "original_position": 101,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "What is the desired behavior when columnList is empty? It seems like we might want to print a warning rather than displaying an empty chart (assuming that's what happens when you pass Google Charts an empty list of columns).\n",
+    "created_at": "2015-09-30T00:07:41Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746331",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746331"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746331"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 101,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746385",
+    "pull_request_review_id": null,
+    "id": 40746385,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ2Mzg1",
+    "diff_hunk": "@@ -1388,3 +1389,132 @@ applabCommands.getUserId = function (opts) {\n   }\n   return Applab.user.applabUserId;\n };\n+\n+/**\n+ * How to execute the 'drawChartFromRecords' function.\n+ * Delegates most work to ChartApi.drawChartFromRecords, but a few things are\n+ * handled directly at this layer:\n+ *   - Type validation (before execution)\n+ *   - Queueing callbacks (after execution)\n+ *   - Reporting errors and warnings (after execution)\n+ * @see {ChartApi}\n+ * @param {Object} opts\n+ * @param {string} opts.chartId\n+ * @param {ChartType} opts.chartType\n+ * @param {string} opts.tableName\n+ * @param {string[]} opts.columns\n+ * @param {Object} opts.options\n+ * @param {function} opts.callback\n+ */\n+applabCommands.drawChartFromRecords = function (opts) {\n+  apiValidateType(opts, 'drawChartFromRecords', 'chartId', opts.chartId, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'chartType', opts.chartType, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'tableName', opts.tableName, 'string');\n+  apiValidateType(opts, 'drawChartFromRecords', 'columns', opts.columns, 'array');",
+    "path": "apps/src/applab/commands.js",
+    "position": 33,
+    "original_position": 33,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This is me anticipating the next step (maybe too much) which is that we'll want a `drawChart(chartId, chartType, data[, options[, callback]])` method.  For that one I think we'll want to infer columns.\n",
+    "created_at": "2015-09-30T00:08:20Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746385",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746385"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746385"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 1413,
+    "original_line": 1413,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746597",
+    "pull_request_review_id": null,
+    "id": 40746597,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ2NTk3",
+    "diff_hunk": "@@ -0,0 +1,463 @@\n+/**\n+ * @file Wrapper around Google Charts API chart-drawing features\n+ *\n+ * @see https://developers.google.com/chart/\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+/* global google */\n+\n+var Promise = require('es6-promise').Promise;\n+require('../utils');\n+\n+/**\n+ * Abstract base type for Google Charts API charts.\n+ *\n+ * @example\n+ *   var chart = new PieChart(targetDiv);\n+ *   Promise.resolve(function () {\n+ *     return chart.loadDependencies();\n+ *   }).then(function () {\n+ *     return chart.loadData(data[, columns]);\n+ *   }).then(function () {\n+ *     return chart.drawChart([options]);\n+ *   });\n+ *\n+ * May optionally omit the loadDependencies() step; if so, it will automatically\n+ * occur as needed prior to another asynchronous step.  It's exposed here to\n+ * facilitate asynchronous loading.\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ */\n+var GoogleChart = module.exports = function (targetDiv) {\n+  // Define this late so we can overwrite it in tests.\n+  if (!GoogleChart.lib) {\n+    GoogleChart.lib = google;\n+  }\n+\n+  /** @private {Element} */\n+  this.targetDiv_ = targetDiv;\n+\n+  /** @private {google.visualization.DataTable} */\n+  this.dataTable_ = null;\n+\n+  /**\n+   * List of all warnings logged while performing operations with this chart\n+   * instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+/**\n+ * Loads the required libraries for this particular chart type.\n+ * Safe to call multiple times - Google's loader caches dependencies.\n+ * @returns {Promise} that resolves when dependencies have been loaded.\n+ */\n+GoogleChart.prototype.loadDependencies = function () {\n+  return new Promise(function (resolve, reject) {\n+    try {\n+      GoogleChart.lib.load('visualization', '1', {\n+        packages: this.getDependencies(),\n+        callback: resolve\n+      });\n+    } catch (e) {\n+      // We catch and return a different error so that we don't surface Google\n+      // API errors to students.\n+      reject(new Error('Unable to load Charts API.  Please try again later.'));\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * Validates and prepares the provided data to be displayed by the chart.\n+ *\n+ * Must be called prior to drawChart().  If loadDependencies() has not been\n+ * called before this method, dependencies will be loaded now.\n+ *\n+ * @param {Object[]} rawData - data to display in chart, formatted as an array\n+ *        of objects where each object represents a row, and the object keys\n+ *        are column names.\n+ * @param {string[]} [columnList] - Ordered list of column names to use as source\n+ *        data for the chart.  Column names must match keys in rawData.  If\n+ *        omitted, column names will be inferred from rawData.\n+ * @returns {Promise} that resolves when the chart data has been loaded and\n+ *          the chart is ready for drawChart().\n+ */\n+GoogleChart.prototype.loadData = function (rawData, columnList) {\n+  // If columnList is not provided, infer it from raw data\n+  if (columnList === undefined) {",
+    "path": "apps/src/applab/GoogleChart.js",
+    "position": null,
+    "original_position": 101,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "We actually raise an error if there are less than two columns, [implemented here](https://github.com/code-dot-org/code-dot-org/pull/4184/files#diff-cfb0ef5d8d2609de79b1510822620cc3R179).\n",
+    "created_at": "2015-09-30T00:11:40Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746597",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746597"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746597"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 101,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746771",
+    "pull_request_review_id": null,
+    "id": 40746771,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ2Nzcx",
+    "diff_hunk": "@@ -0,0 +1,463 @@\n+/**\n+ * @file Wrapper around Google Charts API chart-drawing features\n+ *\n+ * @see https://developers.google.com/chart/\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+/* global google */\n+\n+var Promise = require('es6-promise').Promise;\n+require('../utils');\n+\n+/**\n+ * Abstract base type for Google Charts API charts.\n+ *\n+ * @example\n+ *   var chart = new PieChart(targetDiv);\n+ *   Promise.resolve(function () {\n+ *     return chart.loadDependencies();\n+ *   }).then(function () {\n+ *     return chart.loadData(data[, columns]);\n+ *   }).then(function () {\n+ *     return chart.drawChart([options]);\n+ *   });\n+ *\n+ * May optionally omit the loadDependencies() step; if so, it will automatically\n+ * occur as needed prior to another asynchronous step.  It's exposed here to\n+ * facilitate asynchronous loading.\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ */\n+var GoogleChart = module.exports = function (targetDiv) {\n+  // Define this late so we can overwrite it in tests.\n+  if (!GoogleChart.lib) {\n+    GoogleChart.lib = google;\n+  }\n+\n+  /** @private {Element} */\n+  this.targetDiv_ = targetDiv;\n+\n+  /** @private {google.visualization.DataTable} */\n+  this.dataTable_ = null;\n+\n+  /**\n+   * List of all warnings logged while performing operations with this chart\n+   * instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+/**\n+ * Loads the required libraries for this particular chart type.\n+ * Safe to call multiple times - Google's loader caches dependencies.\n+ * @returns {Promise} that resolves when dependencies have been loaded.\n+ */\n+GoogleChart.prototype.loadDependencies = function () {\n+  return new Promise(function (resolve, reject) {\n+    try {\n+      GoogleChart.lib.load('visualization', '1', {\n+        packages: this.getDependencies(),\n+        callback: resolve\n+      });\n+    } catch (e) {\n+      // We catch and return a different error so that we don't surface Google\n+      // API errors to students.\n+      reject(new Error('Unable to load Charts API.  Please try again later.'));\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * Validates and prepares the provided data to be displayed by the chart.\n+ *\n+ * Must be called prior to drawChart().  If loadDependencies() has not been\n+ * called before this method, dependencies will be loaded now.\n+ *\n+ * @param {Object[]} rawData - data to display in chart, formatted as an array\n+ *        of objects where each object represents a row, and the object keys\n+ *        are column names.\n+ * @param {string[]} [columnList] - Ordered list of column names to use as source\n+ *        data for the chart.  Column names must match keys in rawData.  If\n+ *        omitted, column names will be inferred from rawData.\n+ * @returns {Promise} that resolves when the chart data has been loaded and\n+ *          the chart is ready for drawChart().\n+ */\n+GoogleChart.prototype.loadData = function (rawData, columnList) {\n+  // If columnList is not provided, infer it from raw data\n+  if (columnList === undefined) {\n+    columnList = GoogleChart.inferColumnsFromRawData(rawData);",
+    "path": "apps/src/applab/GoogleChart.js",
+    "position": null,
+    "original_position": 102,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Oooh... Yes I do, _if_ we are loading AppStorage API table data, which this layer knows nothing about.  For now, while `columns` is required for `drawChartFromRecords` I'm not sure that's helpful, but if we ever make it optional we may want to scrub \"id\" from the data up at the `ChartApi` level.\n",
+    "created_at": "2015-09-30T00:14:26Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746771",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746771"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746771"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 102,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746830",
+    "pull_request_review_id": null,
+    "id": 40746830,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ2ODMw",
+    "diff_hunk": "@@ -0,0 +1,217 @@\n+/**\n+ * @file Core implementation of Applab commands related to the Chart design element.\n+ *\n+ * For now, uses Google charts.\n+ * @see {GoogleChart}\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+\n+var AppStorage = require('./appStorage');\n+var Promise = require('es6-promise').Promise;\n+var GoogleChart = require('./GoogleChart');\n+\n+/**\n+ * API for requesting/generating charts in Applab.\n+ *\n+ * @constructor\n+ * @param {Document} [docContext] - default is 'document'\n+ * @param [appStorage] - default is AppStorage\n+ */\n+var ChartApi = module.exports = function (docContext, appStorage) {\n+  this.document_ = docContext || document;\n+  this.appStorage_ = appStorage || AppStorage;\n+\n+  /**\n+   * List of all warnings generated while performing operations through this\n+   * API instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+// When adding a new type, provide an entry in the string enum (for clean code)\n+// and an entry in the TypeNameToType map (allows us to easily remap different\n+// implementations to the same type name).\n+\n+/** @enum {string} */\n+ChartApi.ChartType = {\n+  BAR: 'bar',\n+  PIE: 'pie',\n+  LINE: 'line',\n+  SCATTER: 'scatter'\n+};\n+\n+/** @type {Object.<string, GoogleChart>} */\n+ChartApi.TypeNameToType = {\n+  'bar': GoogleChart.MaterialBarChart,\n+  'pie': GoogleChart.PieChart,\n+  'line': GoogleChart.MaterialLineChart,\n+  'scatter': GoogleChart.MaterialScatterChart\n+};\n+\n+/**\n+ * Get an array of all the chart type strings.\n+ * @returns {string[]}\n+ */\n+ChartApi.getChartTypeNames = function () {\n+  return Object.getOwnPropertyNames(ChartApi.TypeNameToType);\n+};\n+\n+/**\n+ * @param {ChartType} chartType\n+ * @returns {boolean} TRUE if the given type is in the known list of chart types.\n+ */\n+ChartApi.supportsType = function (chartType) {\n+  return ChartApi.getChartTypeNames().indexOf(chartType.toLowerCase()) !== -1;\n+};\n+\n+/**\n+ * @return {string[]} a quoted, sorted list of chart types for use in the\n+ *         Droplet parameter dropdown.\n+ */\n+ChartApi.getChartTypeDropdown = function () {\n+  return ChartApi.getChartTypeNames().map(quote).sort();\n+};\n+\n+function quote(str) {\n+  return '\"' + str + '\"';\n+}\n+\n+/**\n+ * Render a chart into an Applab chart element.\n+ * @param {string} chartId - ID of the destination chart element.\n+ * @param {ChartType} chartType - Desired chart type.\n+ * @param {Object[]} chartData - Data to populate the chart.\n+ * @param {Object} options - passed through to the API.\n+ * @returns {Promise} which resolves when the chart has been rendered, or\n+ *          rejects if there are any problems along the way.\n+ */\n+ChartApi.prototype.drawChart = function (chartId, chartType, chartData, options) {\n+  try {\n+    var chart = this.createChart_(chartId, chartType);\n+    chart.loadData(chartData).then(function () {\n+      return chart.drawChart(options);\n+    }).then(function () {\n+      this.mergeWarnings_(chart.warnings);\n+    }.bind(this));\n+  } catch (e) {\n+    return Promise.reject(e);\n+  }\n+};\n+\n+/**\n+ * Render a chart into an Applab chart element using data from an AppStorage\n+ * API table.\n+ * @param {string} chartId - ID of the destination chart element.\n+ * @param {ChartType} chartType - Desired chart type.\n+ * @param {string} tableName - AppStorage API table name to source data from\n+ *                 for the chart.\n+ * @param {string[]} columns - Columns to use from the table data for the chart,\n+ *        in order (required order dependent on chart type).\n+ * @param {Object} options - passed through to the API.\n+ * @returns {Promise} resolves when the chart has been rendered, or rejects if\n+ *          there are any problems along the way.\n+ */\n+ChartApi.prototype.drawChartFromRecords = function (chartId, chartType,\n+    tableName, columns, options) {\n+  try {\n+    var chart = this.createChart_(chartId, chartType);\n+    return Promise.all([\n+      chart.loadDependencies(),\n+      this.fetchTableData_(tableName)\n+    ]).then(function (results) {\n+      return chart.loadData(results[1], columns);",
+    "path": "apps/src/applab/ChartApi.js",
+    "position": null,
+    "original_position": 135,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "...right here.  If `columns` is not defined, I should strip \"id\" from the table data here?\n",
+    "created_at": "2015-09-30T00:15:32Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746830",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40746830"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40746830"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 135,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40749791",
+    "pull_request_review_id": null,
+    "id": 40749791,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzQ5Nzkx",
+    "diff_hunk": "@@ -0,0 +1,463 @@\n+/**\n+ * @file Wrapper around Google Charts API chart-drawing features\n+ *\n+ * @see https://developers.google.com/chart/\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+/* global google */\n+\n+var Promise = require('es6-promise').Promise;\n+require('../utils');\n+\n+/**\n+ * Abstract base type for Google Charts API charts.\n+ *\n+ * @example\n+ *   var chart = new PieChart(targetDiv);\n+ *   Promise.resolve(function () {\n+ *     return chart.loadDependencies();\n+ *   }).then(function () {\n+ *     return chart.loadData(data[, columns]);\n+ *   }).then(function () {\n+ *     return chart.drawChart([options]);\n+ *   });\n+ *\n+ * May optionally omit the loadDependencies() step; if so, it will automatically\n+ * occur as needed prior to another asynchronous step.  It's exposed here to\n+ * facilitate asynchronous loading.\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ */\n+var GoogleChart = module.exports = function (targetDiv) {\n+  // Define this late so we can overwrite it in tests.\n+  if (!GoogleChart.lib) {\n+    GoogleChart.lib = google;\n+  }\n+\n+  /** @private {Element} */\n+  this.targetDiv_ = targetDiv;\n+\n+  /** @private {google.visualization.DataTable} */\n+  this.dataTable_ = null;\n+\n+  /**\n+   * List of all warnings logged while performing operations with this chart\n+   * instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+/**\n+ * Loads the required libraries for this particular chart type.\n+ * Safe to call multiple times - Google's loader caches dependencies.\n+ * @returns {Promise} that resolves when dependencies have been loaded.\n+ */\n+GoogleChart.prototype.loadDependencies = function () {\n+  return new Promise(function (resolve, reject) {\n+    try {\n+      GoogleChart.lib.load('visualization', '1', {\n+        packages: this.getDependencies(),\n+        callback: resolve\n+      });\n+    } catch (e) {\n+      // We catch and return a different error so that we don't surface Google\n+      // API errors to students.\n+      reject(new Error('Unable to load Charts API.  Please try again later.'));\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * Validates and prepares the provided data to be displayed by the chart.\n+ *\n+ * Must be called prior to drawChart().  If loadDependencies() has not been\n+ * called before this method, dependencies will be loaded now.\n+ *\n+ * @param {Object[]} rawData - data to display in chart, formatted as an array\n+ *        of objects where each object represents a row, and the object keys\n+ *        are column names.\n+ * @param {string[]} [columnList] - Ordered list of column names to use as source\n+ *        data for the chart.  Column names must match keys in rawData.  If\n+ *        omitted, column names will be inferred from rawData.\n+ * @returns {Promise} that resolves when the chart data has been loaded and\n+ *          the chart is ready for drawChart().\n+ */\n+GoogleChart.prototype.loadData = function (rawData, columnList) {\n+  // If columnList is not provided, infer it from raw data\n+  if (columnList === undefined) {\n+    columnList = GoogleChart.inferColumnsFromRawData(rawData);\n+  }\n+\n+  // Must load dependencies to construct a DataTable.\n+  return this.loadDependencies().then(function () {\n+    this.verifyData_(rawData, columnList);\n+    this.dataTable_ = GoogleChart.dataTableFromRowsAndColumns(rawData, columnList);\n+  }.bind(this));\n+};\n+\n+/**\n+ * Renders the chart into the target container using the specified options.active\n+ *\n+ * Must be called after drawChart().\n+ *\n+ * @param {Object} options - Plain options object that gets passed through to\n+ *        the Charts API.\n+ * @returns {Promise} that resolves when the chart has been rendered to the\n+ *          target container.\n+ * @throws {Error} if called before a valid data table has been loaded.\n+ */\n+GoogleChart.prototype.drawChart = function (options) {\n+  if (!this.dataTable_) {\n+    throw new Error('Unable to draw chart: No data loaded.');\n+  }\n+\n+  return this.loadDependencies().then(function () {\n+    return this.render_(this.dataTable_, options);\n+  }.bind(this));\n+};\n+\n+/**\n+ * Array of packages the chart needs to load to render.\n+ * @returns {string[]}\n+ */\n+GoogleChart.prototype.getDependencies = function () {\n+  return ['corechart'];\n+};\n+\n+/**\n+ * Pushes the provided warning message into a collection of warnings for this\n+ * chart, which can be parsed and displayed later.\n+ * @param {string} warningMessage\n+ */\n+GoogleChart.prototype.warn = function (warningMessage) {\n+  this.warnings.push(new Error(warningMessage));\n+};\n+\n+/**\n+ * @param {Object[]} rawData\n+ * @returns {string[]} column names found as keys in the row objects in the\n+ *          rawData, (hopefully) in the order they were defined in the row\n+ *          objects.\n+ */\n+GoogleChart.inferColumnsFromRawData = function (rawData) {\n+  return Object.getOwnPropertyNames(rawData.reduce(function (memo, row) {\n+    Object.getOwnPropertyNames(row).forEach(function (key) {\n+      memo[key] = true;\n+    });\n+    return memo;\n+  }, {}));\n+};\n+\n+/**\n+ * Makes sure data looks okay, throws errors and logs warnings as appropriate.\n+ * @param {string[]} columns\n+ * @param {Object[]} data\n+ * @private\n+ */\n+GoogleChart.prototype.verifyData_ = function (data, columns) {\n+  // Warn when no rows are present\n+  if (data.length === 0) {\n+    this.warn('No data.');\n+  }\n+\n+  // Error when not enough columns are provided\n+  if (columns.length < 2) {\n+    throw new Error('Not enough columns for chart; expected at least 2.');\n+  }\n+\n+  // Warn on empty columns?\n+  columns.forEach(function (colName) {\n+    var exists = data.some(function (row) {\n+      return row[colName] !== undefined;\n+    });\n+    if (!exists) {\n+      this.warn('No data found for column \"' + colName + '\".');\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * @param {Object[]} rows - Rows as POJOs with keys.\n+ * @param {string[]} columns - Column names which must correspond to keys\n+ *        in the row objects.\n+ * @return {google.visualization.DataTable}\n+ */\n+GoogleChart.dataTableFromRowsAndColumns = function (rows, columns) {\n+  var dataArray = rows.map(function (row) {\n+    return columns.map(function (key) {\n+      return row[key];\n+    });\n+  });\n+  return GoogleChart.lib.visualization.arrayToDataTable([columns].concat(dataArray));\n+};\n+\n+/* jshint unused: false */\n+/**\n+ * Internal 'abstract' method that subclasses should use to implement the actual\n+ * rendering step.\n+ *\n+ * @param {google.visualzation.DataTable} dataTable\n+ * @param {Object} options\n+ * @returns {Promise}\n+ * @private\n+ */\n+GoogleChart.prototype.render_ = function (dataTable, options) {\n+  return Promise.reject(new Error('Rendering unimplemented for chart type.'));\n+};\n+/* jshint unused: true */\n+\n+/**\n+ * Google Charts API Pie Chart\n+ *\n+ * @see https://developers.google.com/chart/interactive/docs/gallery/piechart\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ * @extends GoogleChart\n+ */\n+var PieChart = function (targetDiv) {\n+  GoogleChart.call(this, targetDiv);\n+};\n+PieChart.inherits(GoogleChart);\n+GoogleChart.PieChart = PieChart;\n+\n+\n+PieChart.prototype.render_ = function (dataTable, options) {\n+  var apiChart = new GoogleChart.lib.visualization.PieChart(this.targetDiv_);\n+  apiChart.draw(dataTable, options);\n+  return Promise.resolve();\n+};\n+\n+/**\n+ *\n+ * @param {string[]} columns\n+ * @param {Object[]} data\n+ * @private\n+ * @override\n+ */\n+PieChart.prototype.verifyData_ = function (data, columns) {\n+  PieChart.superPrototype.verifyData_.call(this, data, columns);\n+\n+  if (columns.length > 2) {\n+    this.warn('Too many columns for pie chart; only using the first 2.');",
+    "path": "apps/src/applab/GoogleChart.js",
+    "position": 206,
+    "original_position": 256,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "We need to give this same warning for scatter charts too.\n",
+    "created_at": "2015-09-30T01:06:00Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40749791",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40749791"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40749791"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 206,
+    "original_line": 256,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40750992",
+    "pull_request_review_id": null,
+    "id": 40750992,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzUwOTky",
+    "diff_hunk": "@@ -0,0 +1,463 @@\n+/**\n+ * @file Wrapper around Google Charts API chart-drawing features\n+ *\n+ * @see https://developers.google.com/chart/\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+/* global google */\n+\n+var Promise = require('es6-promise').Promise;\n+require('../utils');\n+\n+/**\n+ * Abstract base type for Google Charts API charts.\n+ *\n+ * @example\n+ *   var chart = new PieChart(targetDiv);\n+ *   Promise.resolve(function () {\n+ *     return chart.loadDependencies();\n+ *   }).then(function () {\n+ *     return chart.loadData(data[, columns]);\n+ *   }).then(function () {\n+ *     return chart.drawChart([options]);\n+ *   });\n+ *\n+ * May optionally omit the loadDependencies() step; if so, it will automatically\n+ * occur as needed prior to another asynchronous step.  It's exposed here to\n+ * facilitate asynchronous loading.\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ */\n+var GoogleChart = module.exports = function (targetDiv) {\n+  // Define this late so we can overwrite it in tests.\n+  if (!GoogleChart.lib) {\n+    GoogleChart.lib = google;\n+  }\n+\n+  /** @private {Element} */\n+  this.targetDiv_ = targetDiv;\n+\n+  /** @private {google.visualization.DataTable} */\n+  this.dataTable_ = null;\n+\n+  /**\n+   * List of all warnings logged while performing operations with this chart\n+   * instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+/**\n+ * Loads the required libraries for this particular chart type.\n+ * Safe to call multiple times - Google's loader caches dependencies.\n+ * @returns {Promise} that resolves when dependencies have been loaded.\n+ */\n+GoogleChart.prototype.loadDependencies = function () {\n+  return new Promise(function (resolve, reject) {\n+    try {\n+      GoogleChart.lib.load('visualization', '1', {\n+        packages: this.getDependencies(),\n+        callback: resolve\n+      });\n+    } catch (e) {\n+      // We catch and return a different error so that we don't surface Google\n+      // API errors to students.\n+      reject(new Error('Unable to load Charts API.  Please try again later.'));\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * Validates and prepares the provided data to be displayed by the chart.\n+ *\n+ * Must be called prior to drawChart().  If loadDependencies() has not been\n+ * called before this method, dependencies will be loaded now.\n+ *\n+ * @param {Object[]} rawData - data to display in chart, formatted as an array\n+ *        of objects where each object represents a row, and the object keys\n+ *        are column names.\n+ * @param {string[]} [columnList] - Ordered list of column names to use as source\n+ *        data for the chart.  Column names must match keys in rawData.  If\n+ *        omitted, column names will be inferred from rawData.\n+ * @returns {Promise} that resolves when the chart data has been loaded and\n+ *          the chart is ready for drawChart().\n+ */\n+GoogleChart.prototype.loadData = function (rawData, columnList) {\n+  // If columnList is not provided, infer it from raw data\n+  if (columnList === undefined) {\n+    columnList = GoogleChart.inferColumnsFromRawData(rawData);\n+  }\n+\n+  // Must load dependencies to construct a DataTable.\n+  return this.loadDependencies().then(function () {\n+    this.verifyData_(rawData, columnList);\n+    this.dataTable_ = GoogleChart.dataTableFromRowsAndColumns(rawData, columnList);\n+  }.bind(this));\n+};\n+\n+/**\n+ * Renders the chart into the target container using the specified options.active\n+ *\n+ * Must be called after drawChart().\n+ *\n+ * @param {Object} options - Plain options object that gets passed through to\n+ *        the Charts API.\n+ * @returns {Promise} that resolves when the chart has been rendered to the\n+ *          target container.\n+ * @throws {Error} if called before a valid data table has been loaded.\n+ */\n+GoogleChart.prototype.drawChart = function (options) {\n+  if (!this.dataTable_) {\n+    throw new Error('Unable to draw chart: No data loaded.');\n+  }\n+\n+  return this.loadDependencies().then(function () {\n+    return this.render_(this.dataTable_, options);\n+  }.bind(this));\n+};\n+\n+/**\n+ * Array of packages the chart needs to load to render.\n+ * @returns {string[]}\n+ */\n+GoogleChart.prototype.getDependencies = function () {\n+  return ['corechart'];\n+};\n+\n+/**\n+ * Pushes the provided warning message into a collection of warnings for this\n+ * chart, which can be parsed and displayed later.\n+ * @param {string} warningMessage\n+ */\n+GoogleChart.prototype.warn = function (warningMessage) {\n+  this.warnings.push(new Error(warningMessage));\n+};\n+\n+/**\n+ * @param {Object[]} rawData\n+ * @returns {string[]} column names found as keys in the row objects in the\n+ *          rawData, (hopefully) in the order they were defined in the row\n+ *          objects.\n+ */\n+GoogleChart.inferColumnsFromRawData = function (rawData) {\n+  return Object.getOwnPropertyNames(rawData.reduce(function (memo, row) {\n+    Object.getOwnPropertyNames(row).forEach(function (key) {\n+      memo[key] = true;\n+    });\n+    return memo;\n+  }, {}));\n+};\n+\n+/**\n+ * Makes sure data looks okay, throws errors and logs warnings as appropriate.\n+ * @param {string[]} columns\n+ * @param {Object[]} data\n+ * @private\n+ */\n+GoogleChart.prototype.verifyData_ = function (data, columns) {\n+  // Warn when no rows are present\n+  if (data.length === 0) {\n+    this.warn('No data.');\n+  }\n+\n+  // Error when not enough columns are provided\n+  if (columns.length < 2) {\n+    throw new Error('Not enough columns for chart; expected at least 2.');\n+  }\n+\n+  // Warn on empty columns?\n+  columns.forEach(function (colName) {\n+    var exists = data.some(function (row) {\n+      return row[colName] !== undefined;\n+    });\n+    if (!exists) {\n+      this.warn('No data found for column \"' + colName + '\".');\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * @param {Object[]} rows - Rows as POJOs with keys.\n+ * @param {string[]} columns - Column names which must correspond to keys\n+ *        in the row objects.\n+ * @return {google.visualization.DataTable}\n+ */\n+GoogleChart.dataTableFromRowsAndColumns = function (rows, columns) {\n+  var dataArray = rows.map(function (row) {\n+    return columns.map(function (key) {\n+      return row[key];\n+    });\n+  });\n+  return GoogleChart.lib.visualization.arrayToDataTable([columns].concat(dataArray));\n+};\n+\n+/* jshint unused: false */\n+/**\n+ * Internal 'abstract' method that subclasses should use to implement the actual\n+ * rendering step.\n+ *\n+ * @param {google.visualzation.DataTable} dataTable\n+ * @param {Object} options\n+ * @returns {Promise}\n+ * @private\n+ */\n+GoogleChart.prototype.render_ = function (dataTable, options) {\n+  return Promise.reject(new Error('Rendering unimplemented for chart type.'));\n+};\n+/* jshint unused: true */\n+\n+/**\n+ * Google Charts API Pie Chart\n+ *\n+ * @see https://developers.google.com/chart/interactive/docs/gallery/piechart\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ * @extends GoogleChart\n+ */\n+var PieChart = function (targetDiv) {\n+  GoogleChart.call(this, targetDiv);\n+};\n+PieChart.inherits(GoogleChart);\n+GoogleChart.PieChart = PieChart;\n+\n+\n+PieChart.prototype.render_ = function (dataTable, options) {\n+  var apiChart = new GoogleChart.lib.visualization.PieChart(this.targetDiv_);\n+  apiChart.draw(dataTable, options);\n+  return Promise.resolve();\n+};\n+\n+/**\n+ *\n+ * @param {string[]} columns\n+ * @param {Object[]} data\n+ * @private\n+ * @override\n+ */\n+PieChart.prototype.verifyData_ = function (data, columns) {\n+  PieChart.superPrototype.verifyData_.call(this, data, columns);\n+\n+  if (columns.length > 2) {\n+    this.warn('Too many columns for pie chart; only using the first 2.');",
+    "path": "apps/src/applab/GoogleChart.js",
+    "position": 206,
+    "original_position": 256,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why? You can use _N_ columns to represent _N-1_ series on a scatter chart ([API reference](https://developers.google.com/chart/interactive/docs/gallery/scatterchart?hl=en#data-format)).\n",
+    "created_at": "2015-09-30T01:34:08Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40750992",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40750992"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40750992"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 206,
+    "original_line": 256,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40751339",
+    "pull_request_review_id": null,
+    "id": 40751339,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzUxMzM5",
+    "diff_hunk": "@@ -0,0 +1,367 @@\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true\n+ */\n+'use strict';\n+/* global describe, beforeEach, it */\n+\n+var assert = require('./util/testUtils').assert;\n+var ChartApi = require('@cdo/apps/applab/ChartApi');\n+var GoogleChart = require('@cdo/apps/applab/GoogleChart');\n+var Promise = require('es6-promise').Promise;\n+\n+var fakeDiv = document.createElement('div');\n+var fakeImg = document.createElement('img');\n+\n+/**\n+ * Fake a document context for testing.\n+ * @type {Document}\n+ */\n+var fakeDocument = {\n+  getElementById: function (id) {\n+    if (id === 'fakeDiv') {\n+      return fakeDiv;\n+    } else if (id === 'fakeImg') {\n+      return fakeImg;\n+    }\n+    return null;\n+  }\n+};\n+\n+/**\n+ * Stub chart type for our fake google API.\n+ * @constructor\n+ */\n+var NullChart = function () {};\n+NullChart.convertOptions = function (x) { return x; };\n+NullChart.prototype.draw = function () {};\n+\n+/**\n+ * Fake the google loader/visualization API for testing.\n+ * @type {{}}\n+ */\n+var fakeGoogle = {\n+  load: function (library, version, options) {\n+    if (options && options.callback) {\n+      options.callback();\n+    }\n+  },\n+  charts: {\n+    Bar: NullChart,\n+    Line: NullChart,\n+    Scatter: NullChart\n+  },\n+  visualization: {\n+    arrayToDataTable: function (array) { return array; },\n+    PieChart: NullChart\n+  }\n+};\n+\n+var FakeAppStorage = function () {\n+  this.fakeRecords = [];\n+};\n+FakeAppStorage.prototype.readRecords = function (table, filter, onSuccess) {\n+  onSuccess(this.fakeRecords);\n+};\n+\n+describe(\"GoogleChart\", function () {\n+  it(\"extracts all columns from data\", function () {\n+    GoogleChart.lib = fakeGoogle;\n+    var rawData = [\n+      {'x': 12},\n+      {'x': 10, 'y': 14},\n+      {'z': 144}\n+    ];\n+    assert.deepEqual(GoogleChart.inferColumnsFromRawData(rawData), ['x', 'y', 'z']);\n+  });\n+});\n+\n+describe(\"ChartApi\", function () {\n+  var ChartType = ChartApi.ChartType;\n+  var fakeAppStorage;\n+\n+  beforeEach(function () {\n+    GoogleChart.lib = fakeGoogle;\n+    fakeAppStorage = new FakeAppStorage();\n+  });\n+\n+  describe(\"ChartType enum\", function () {\n+\n+    it(\"only contains supported types\", function () {\n+      Object.getOwnPropertyNames(ChartType).forEach(function (key) {\n+        var typeName = ChartType[key];\n+        assert.isTrue(ChartApi.supportsType(typeName), \"Supports type '\" +\n+            typeName + \"'.\");\n+      });\n+    });\n+\n+    it(\"contains all supported types\", function () {\n+      var supportedTypes = Object.getOwnPropertyNames(ChartApi.TypeNameToType);\n+      var enumTypeNames = Object.getOwnPropertyNames(ChartType).map(function (key) {\n+        return ChartType[key];\n+      });\n+\n+      supportedTypes.forEach(function (typeName) {\n+        assert.isTrue(enumTypeNames.some(function (enumName) {\n+          return enumName === typeName;\n+        }), \"Found supported type '\" + typeName + \"' in enum.\");\n+      });\n+    });\n+  });\n+\n+  it(\"supports type BAR\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.BAR));\n+    assert.isTrue(ChartApi.supportsType('BAR'));\n+    assert.isTrue(ChartApi.supportsType('Bar'));\n+    assert.isTrue(ChartApi.supportsType('bar'));\n+  });\n+\n+  it(\"supports type PIE\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.PIE));\n+    assert.isTrue(ChartApi.supportsType('PIE'));\n+    assert.isTrue(ChartApi.supportsType('Pie'));\n+    assert.isTrue(ChartApi.supportsType('pie'));\n+  });\n+\n+  it(\"supports type LINE\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.LINE));\n+    assert.isTrue(ChartApi.supportsType('LINE'));\n+    assert.isTrue(ChartApi.supportsType('Line'));\n+    assert.isTrue(ChartApi.supportsType('line'));\n+  });\n+\n+  it(\"supports type SCATTER\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.SCATTER));\n+    assert.isTrue(ChartApi.supportsType('SCATTER'));\n+    assert.isTrue(ChartApi.supportsType('Scatter'));\n+    assert.isTrue(ChartApi.supportsType('scatter'));\n+  });\n+\n+  it(\"quotes and alphabetizes types for dropdown\", function () {\n+    assert.deepEqual(ChartApi.getChartTypeDropdown(), [\n+        '\"bar\"',\n+        '\"line\"',\n+        '\"pie\"',\n+        '\"scatter\"'\n+    ]);\n+  });\n+\n+  describe(\"drawChartFromRecords\", function () {\n+    var chartApi, result, rejection;\n+\n+    beforeEach(function () {\n+      chartApi = new ChartApi(fakeDocument, fakeAppStorage);\n+      result = null;\n+      rejection = null;\n+    });\n+\n+    function onResolve(r) {\n+      result = r;\n+    }\n+\n+    function onReject(e) {\n+      rejection = e;\n+    }\n+\n+    var assertWarns = function (chartApi, warningRegexp) {\n+      assert.isNull(rejection);\n+      var warningFound = chartApi.warnings.some(function (e) {\n+        return warningRegexp.test(e.message);\n+      });\n+      assert(warningFound, 'Expected warning ' +\n+          warningRegexp.toString() + \"\\n\\Got warnings:\\n\" +\n+          chartApi.warnings.map(function (e) {\n+            return e.message;\n+          }).join(\"\\n\"));\n+    };\n+\n+    var assertNotWarns = function (chartApi, warningRegexp) {\n+      assert.isNull(rejection);\n+      var warningFound = chartApi.warnings.some(function (e) {\n+        return warningRegexp.test(e.message);\n+      });\n+      assert(!warningFound, 'Expected no warning ' +\n+          warningRegexp.toString() + \"\\n\\Got warnings:\\n\" +\n+          chartApi.warnings.map(function (e) {\n+            return e.message;\n+          }).join(\"\\n\"));\n+    };\n+\n+    it(\"returns a Promise\", function () {\n+      assert.instanceOf(chartApi.drawChartFromRecords(), Promise);\n+    });\n+\n+    it (\"rejects if element is not found\", function (testDone) {\n+      chartApi.drawChartFromRecords('missingId')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unable to render chart into element \"missingId\".');\n+          }));\n+    });\n+\n+    it (\"rejects if element is wrong type\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeImg')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unable to render chart into element \"fakeImg\".');\n+          }));\n+    });\n+\n+    it (\"rejects if chart type is not supported\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', 'badType')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unsupported chart type \"badType\".');\n+          }));\n+    });\n+\n+    it (\"rejects if no columns array provided\", function (testDone) {",
+    "path": "apps/test/ChartApiTest.js",
+    "position": null,
+    "original_position": 228,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I would propose changing this line to \"rejects if no columns array provided and no columns found in the data\". Otherwise, this test is confusing because it suggests that `columns` must always be present, whereas in reality `columns` do not need to be present if they can be inferred from the data.\n",
+    "created_at": "2015-09-30T01:41:00Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40751339",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40751339"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40751339"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 228,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40751514",
+    "pull_request_review_id": null,
+    "id": 40751514,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzUxNTE0",
+    "diff_hunk": "@@ -0,0 +1,367 @@\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true\n+ */\n+'use strict';\n+/* global describe, beforeEach, it */\n+\n+var assert = require('./util/testUtils').assert;\n+var ChartApi = require('@cdo/apps/applab/ChartApi');\n+var GoogleChart = require('@cdo/apps/applab/GoogleChart');\n+var Promise = require('es6-promise').Promise;\n+\n+var fakeDiv = document.createElement('div');\n+var fakeImg = document.createElement('img');\n+\n+/**\n+ * Fake a document context for testing.\n+ * @type {Document}\n+ */\n+var fakeDocument = {\n+  getElementById: function (id) {\n+    if (id === 'fakeDiv') {\n+      return fakeDiv;\n+    } else if (id === 'fakeImg') {\n+      return fakeImg;\n+    }\n+    return null;\n+  }\n+};\n+\n+/**\n+ * Stub chart type for our fake google API.\n+ * @constructor\n+ */\n+var NullChart = function () {};\n+NullChart.convertOptions = function (x) { return x; };\n+NullChart.prototype.draw = function () {};\n+\n+/**\n+ * Fake the google loader/visualization API for testing.\n+ * @type {{}}\n+ */\n+var fakeGoogle = {\n+  load: function (library, version, options) {\n+    if (options && options.callback) {\n+      options.callback();\n+    }\n+  },\n+  charts: {\n+    Bar: NullChart,\n+    Line: NullChart,\n+    Scatter: NullChart\n+  },\n+  visualization: {\n+    arrayToDataTable: function (array) { return array; },\n+    PieChart: NullChart\n+  }\n+};\n+\n+var FakeAppStorage = function () {\n+  this.fakeRecords = [];\n+};\n+FakeAppStorage.prototype.readRecords = function (table, filter, onSuccess) {\n+  onSuccess(this.fakeRecords);\n+};\n+\n+describe(\"GoogleChart\", function () {\n+  it(\"extracts all columns from data\", function () {\n+    GoogleChart.lib = fakeGoogle;\n+    var rawData = [\n+      {'x': 12},\n+      {'x': 10, 'y': 14},\n+      {'z': 144}\n+    ];\n+    assert.deepEqual(GoogleChart.inferColumnsFromRawData(rawData), ['x', 'y', 'z']);\n+  });\n+});\n+\n+describe(\"ChartApi\", function () {\n+  var ChartType = ChartApi.ChartType;\n+  var fakeAppStorage;\n+\n+  beforeEach(function () {\n+    GoogleChart.lib = fakeGoogle;\n+    fakeAppStorage = new FakeAppStorage();\n+  });\n+\n+  describe(\"ChartType enum\", function () {\n+\n+    it(\"only contains supported types\", function () {\n+      Object.getOwnPropertyNames(ChartType).forEach(function (key) {\n+        var typeName = ChartType[key];\n+        assert.isTrue(ChartApi.supportsType(typeName), \"Supports type '\" +\n+            typeName + \"'.\");\n+      });\n+    });\n+\n+    it(\"contains all supported types\", function () {\n+      var supportedTypes = Object.getOwnPropertyNames(ChartApi.TypeNameToType);\n+      var enumTypeNames = Object.getOwnPropertyNames(ChartType).map(function (key) {\n+        return ChartType[key];\n+      });\n+\n+      supportedTypes.forEach(function (typeName) {\n+        assert.isTrue(enumTypeNames.some(function (enumName) {\n+          return enumName === typeName;\n+        }), \"Found supported type '\" + typeName + \"' in enum.\");\n+      });\n+    });\n+  });\n+\n+  it(\"supports type BAR\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.BAR));\n+    assert.isTrue(ChartApi.supportsType('BAR'));\n+    assert.isTrue(ChartApi.supportsType('Bar'));\n+    assert.isTrue(ChartApi.supportsType('bar'));\n+  });\n+\n+  it(\"supports type PIE\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.PIE));\n+    assert.isTrue(ChartApi.supportsType('PIE'));\n+    assert.isTrue(ChartApi.supportsType('Pie'));\n+    assert.isTrue(ChartApi.supportsType('pie'));\n+  });\n+\n+  it(\"supports type LINE\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.LINE));\n+    assert.isTrue(ChartApi.supportsType('LINE'));\n+    assert.isTrue(ChartApi.supportsType('Line'));\n+    assert.isTrue(ChartApi.supportsType('line'));\n+  });\n+\n+  it(\"supports type SCATTER\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.SCATTER));\n+    assert.isTrue(ChartApi.supportsType('SCATTER'));\n+    assert.isTrue(ChartApi.supportsType('Scatter'));\n+    assert.isTrue(ChartApi.supportsType('scatter'));\n+  });\n+\n+  it(\"quotes and alphabetizes types for dropdown\", function () {\n+    assert.deepEqual(ChartApi.getChartTypeDropdown(), [\n+        '\"bar\"',\n+        '\"line\"',\n+        '\"pie\"',\n+        '\"scatter\"'\n+    ]);\n+  });\n+\n+  describe(\"drawChartFromRecords\", function () {\n+    var chartApi, result, rejection;\n+\n+    beforeEach(function () {\n+      chartApi = new ChartApi(fakeDocument, fakeAppStorage);\n+      result = null;\n+      rejection = null;\n+    });\n+\n+    function onResolve(r) {\n+      result = r;\n+    }\n+\n+    function onReject(e) {\n+      rejection = e;\n+    }\n+\n+    var assertWarns = function (chartApi, warningRegexp) {\n+      assert.isNull(rejection);\n+      var warningFound = chartApi.warnings.some(function (e) {\n+        return warningRegexp.test(e.message);\n+      });\n+      assert(warningFound, 'Expected warning ' +\n+          warningRegexp.toString() + \"\\n\\Got warnings:\\n\" +\n+          chartApi.warnings.map(function (e) {\n+            return e.message;\n+          }).join(\"\\n\"));\n+    };\n+\n+    var assertNotWarns = function (chartApi, warningRegexp) {\n+      assert.isNull(rejection);\n+      var warningFound = chartApi.warnings.some(function (e) {\n+        return warningRegexp.test(e.message);\n+      });\n+      assert(!warningFound, 'Expected no warning ' +\n+          warningRegexp.toString() + \"\\n\\Got warnings:\\n\" +\n+          chartApi.warnings.map(function (e) {\n+            return e.message;\n+          }).join(\"\\n\"));\n+    };\n+\n+    it(\"returns a Promise\", function () {\n+      assert.instanceOf(chartApi.drawChartFromRecords(), Promise);\n+    });\n+\n+    it (\"rejects if element is not found\", function (testDone) {\n+      chartApi.drawChartFromRecords('missingId')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unable to render chart into element \"missingId\".');\n+          }));\n+    });\n+\n+    it (\"rejects if element is wrong type\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeImg')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unable to render chart into element \"fakeImg\".');\n+          }));\n+    });\n+\n+    it (\"rejects if chart type is not supported\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', 'badType')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unsupported chart type \"badType\".');\n+          }));\n+    });\n+\n+    it (\"rejects if no columns array provided\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                \"Not enough columns for chart; expected at least 2.\");\n+          }));\n+    });\n+\n+    it (\"rejects if zero columns provided\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable', [])\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Not enough columns for chart; expected at least 2.');\n+          }));\n+    });\n+\n+    it (\"rejects if only one column provided\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable', ['column1'])\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Not enough columns for chart; expected at least 2.');\n+          }));\n+    });\n+\n+    it (\"when fulfilled, makes API calls\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable', ['column1', 'column2'])\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.isNull(rejection);\n+          }));\n+    });\n+\n+    it (\"warns about empty dataset\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable',\n+          ['column1', 'column2'])\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assertWarns(chartApi, /No data\\./);\n+          }));\n+    });\n+\n+    it (\"does not warn about empty dataset when given data\", function (testDone) {",
+    "path": "apps/test/ChartApiTest.js",
+    "position": 300,
+    "original_position": 275,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "How about adding a similar test to this one but without the `columns` parameter, which does `assertNotWarns(..., \"Not enough columns...\")` ? To verify that columns can be inferred.\n",
+    "created_at": "2015-09-30T01:43:53Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40751514",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40751514"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40751514"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 300,
+    "original_line": 275,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40751572",
+    "pull_request_review_id": null,
+    "id": 40751572,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzUxNTcy",
+    "diff_hunk": "@@ -0,0 +1,463 @@\n+/**\n+ * @file Wrapper around Google Charts API chart-drawing features\n+ *\n+ * @see https://developers.google.com/chart/\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+/* global google */\n+\n+var Promise = require('es6-promise').Promise;\n+require('../utils');\n+\n+/**\n+ * Abstract base type for Google Charts API charts.\n+ *\n+ * @example\n+ *   var chart = new PieChart(targetDiv);\n+ *   Promise.resolve(function () {\n+ *     return chart.loadDependencies();\n+ *   }).then(function () {\n+ *     return chart.loadData(data[, columns]);\n+ *   }).then(function () {\n+ *     return chart.drawChart([options]);\n+ *   });\n+ *\n+ * May optionally omit the loadDependencies() step; if so, it will automatically\n+ * occur as needed prior to another asynchronous step.  It's exposed here to\n+ * facilitate asynchronous loading.\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ */\n+var GoogleChart = module.exports = function (targetDiv) {\n+  // Define this late so we can overwrite it in tests.\n+  if (!GoogleChart.lib) {\n+    GoogleChart.lib = google;\n+  }\n+\n+  /** @private {Element} */\n+  this.targetDiv_ = targetDiv;\n+\n+  /** @private {google.visualization.DataTable} */\n+  this.dataTable_ = null;\n+\n+  /**\n+   * List of all warnings logged while performing operations with this chart\n+   * instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+/**\n+ * Loads the required libraries for this particular chart type.\n+ * Safe to call multiple times - Google's loader caches dependencies.\n+ * @returns {Promise} that resolves when dependencies have been loaded.\n+ */\n+GoogleChart.prototype.loadDependencies = function () {\n+  return new Promise(function (resolve, reject) {\n+    try {\n+      GoogleChart.lib.load('visualization', '1', {\n+        packages: this.getDependencies(),\n+        callback: resolve\n+      });\n+    } catch (e) {\n+      // We catch and return a different error so that we don't surface Google\n+      // API errors to students.\n+      reject(new Error('Unable to load Charts API.  Please try again later.'));\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * Validates and prepares the provided data to be displayed by the chart.\n+ *\n+ * Must be called prior to drawChart().  If loadDependencies() has not been\n+ * called before this method, dependencies will be loaded now.\n+ *\n+ * @param {Object[]} rawData - data to display in chart, formatted as an array\n+ *        of objects where each object represents a row, and the object keys\n+ *        are column names.\n+ * @param {string[]} [columnList] - Ordered list of column names to use as source\n+ *        data for the chart.  Column names must match keys in rawData.  If\n+ *        omitted, column names will be inferred from rawData.\n+ * @returns {Promise} that resolves when the chart data has been loaded and\n+ *          the chart is ready for drawChart().\n+ */\n+GoogleChart.prototype.loadData = function (rawData, columnList) {\n+  // If columnList is not provided, infer it from raw data\n+  if (columnList === undefined) {\n+    columnList = GoogleChart.inferColumnsFromRawData(rawData);\n+  }\n+\n+  // Must load dependencies to construct a DataTable.\n+  return this.loadDependencies().then(function () {\n+    this.verifyData_(rawData, columnList);\n+    this.dataTable_ = GoogleChart.dataTableFromRowsAndColumns(rawData, columnList);\n+  }.bind(this));\n+};\n+\n+/**\n+ * Renders the chart into the target container using the specified options.active\n+ *\n+ * Must be called after drawChart().\n+ *\n+ * @param {Object} options - Plain options object that gets passed through to\n+ *        the Charts API.\n+ * @returns {Promise} that resolves when the chart has been rendered to the\n+ *          target container.\n+ * @throws {Error} if called before a valid data table has been loaded.\n+ */\n+GoogleChart.prototype.drawChart = function (options) {\n+  if (!this.dataTable_) {\n+    throw new Error('Unable to draw chart: No data loaded.');\n+  }\n+\n+  return this.loadDependencies().then(function () {\n+    return this.render_(this.dataTable_, options);\n+  }.bind(this));\n+};\n+\n+/**\n+ * Array of packages the chart needs to load to render.\n+ * @returns {string[]}\n+ */\n+GoogleChart.prototype.getDependencies = function () {\n+  return ['corechart'];\n+};\n+\n+/**\n+ * Pushes the provided warning message into a collection of warnings for this\n+ * chart, which can be parsed and displayed later.\n+ * @param {string} warningMessage\n+ */\n+GoogleChart.prototype.warn = function (warningMessage) {\n+  this.warnings.push(new Error(warningMessage));\n+};\n+\n+/**\n+ * @param {Object[]} rawData\n+ * @returns {string[]} column names found as keys in the row objects in the\n+ *          rawData, (hopefully) in the order they were defined in the row\n+ *          objects.\n+ */\n+GoogleChart.inferColumnsFromRawData = function (rawData) {\n+  return Object.getOwnPropertyNames(rawData.reduce(function (memo, row) {\n+    Object.getOwnPropertyNames(row).forEach(function (key) {\n+      memo[key] = true;\n+    });\n+    return memo;\n+  }, {}));\n+};\n+\n+/**\n+ * Makes sure data looks okay, throws errors and logs warnings as appropriate.\n+ * @param {string[]} columns\n+ * @param {Object[]} data\n+ * @private\n+ */\n+GoogleChart.prototype.verifyData_ = function (data, columns) {\n+  // Warn when no rows are present\n+  if (data.length === 0) {\n+    this.warn('No data.');\n+  }\n+\n+  // Error when not enough columns are provided\n+  if (columns.length < 2) {\n+    throw new Error('Not enough columns for chart; expected at least 2.');\n+  }\n+\n+  // Warn on empty columns?\n+  columns.forEach(function (colName) {\n+    var exists = data.some(function (row) {\n+      return row[colName] !== undefined;\n+    });\n+    if (!exists) {\n+      this.warn('No data found for column \"' + colName + '\".');\n+    }\n+  }.bind(this));\n+};\n+\n+/**\n+ * @param {Object[]} rows - Rows as POJOs with keys.\n+ * @param {string[]} columns - Column names which must correspond to keys\n+ *        in the row objects.\n+ * @return {google.visualization.DataTable}\n+ */\n+GoogleChart.dataTableFromRowsAndColumns = function (rows, columns) {\n+  var dataArray = rows.map(function (row) {\n+    return columns.map(function (key) {\n+      return row[key];\n+    });\n+  });\n+  return GoogleChart.lib.visualization.arrayToDataTable([columns].concat(dataArray));\n+};\n+\n+/* jshint unused: false */\n+/**\n+ * Internal 'abstract' method that subclasses should use to implement the actual\n+ * rendering step.\n+ *\n+ * @param {google.visualzation.DataTable} dataTable\n+ * @param {Object} options\n+ * @returns {Promise}\n+ * @private\n+ */\n+GoogleChart.prototype.render_ = function (dataTable, options) {\n+  return Promise.reject(new Error('Rendering unimplemented for chart type.'));\n+};\n+/* jshint unused: true */\n+\n+/**\n+ * Google Charts API Pie Chart\n+ *\n+ * @see https://developers.google.com/chart/interactive/docs/gallery/piechart\n+ *\n+ * @param {Element} targetDiv\n+ * @constructor\n+ * @extends GoogleChart\n+ */\n+var PieChart = function (targetDiv) {\n+  GoogleChart.call(this, targetDiv);\n+};\n+PieChart.inherits(GoogleChart);\n+GoogleChart.PieChart = PieChart;\n+\n+\n+PieChart.prototype.render_ = function (dataTable, options) {\n+  var apiChart = new GoogleChart.lib.visualization.PieChart(this.targetDiv_);\n+  apiChart.draw(dataTable, options);\n+  return Promise.resolve();\n+};\n+\n+/**\n+ *\n+ * @param {string[]} columns\n+ * @param {Object[]} data\n+ * @private\n+ * @override\n+ */\n+PieChart.prototype.verifyData_ = function (data, columns) {\n+  PieChart.superPrototype.verifyData_.call(this, data, columns);\n+\n+  if (columns.length > 2) {\n+    this.warn('Too many columns for pie chart; only using the first 2.');",
+    "path": "apps/src/applab/GoogleChart.js",
+    "position": 206,
+    "original_position": 256,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "You are correct! I based this off of my own comment in the spec which I see now is wrong.\n",
+    "created_at": "2015-09-30T01:45:16Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40751572",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40751572"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40751572"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 206,
+    "original_line": 256,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40751956",
+    "pull_request_review_id": null,
+    "id": 40751956,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzUxOTU2",
+    "diff_hunk": "@@ -1616,30 +1616,75 @@ Applab.getAssetDropdown = function (typeFilter) {\n /**\n  * Return droplet dropdown options representing a list of ids currently present\n  * in the DOM, optionally limiting the result to a certain HTML element tagName.\n- * @param {string} [tagFilter] Optional HTML element tagName to filter for.\n+ * @param {string} [filterSelector] Optional selector to filter for.\n  * @returns {Array}\n  */\n-Applab.getIdDropdown = function (tagFilter) {\n-  var elements = $('#divApplab').children().toArray().concat(\n-      $('#divApplab').children().children().toArray());\n-\n-  var filteredIds = [];\n-  elements.forEach(function (element) {\n-    if (!tagFilter || element.tagName.toUpperCase() === tagFilter.toUpperCase()) {\n-      filteredIds.push(element.id);\n-    }\n-  });\n-  filteredIds.sort();\n+Applab.getIdDropdown = function (filterSelector) {\n+  return Applab.getIdDropdownFromDom_($(document), filterSelector);\n+};\n \n-  return filteredIds.map(function(id) {\n-    return {\n-      text: quote(id),\n-      display: quote(id)\n-    };\n-  });\n+/**\n+ * Internal version of getIdDropdownFromDom_, which takes a documentRoot",
+    "path": "apps/src/applab/applab.js",
+    "position": null,
+    "original_position": 30,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I don't understand the beginning of this comment, since there is no corresponding external version of getIdDropdownFromDom_. \"Internal version of getIdDropdownFromDom_\" --> \"Internal helper for getIdDropdown\", perhaps?\n",
+    "created_at": "2015-09-30T01:53:24Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40751956",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40751956"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40751956"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1627,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40752412",
+    "pull_request_review_id": null,
+    "id": 40752412,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzUyNDEy",
+    "diff_hunk": "@@ -1616,30 +1616,75 @@ Applab.getAssetDropdown = function (typeFilter) {\n /**\n  * Return droplet dropdown options representing a list of ids currently present\n  * in the DOM, optionally limiting the result to a certain HTML element tagName.\n- * @param {string} [tagFilter] Optional HTML element tagName to filter for.\n+ * @param {string} [filterSelector] Optional selector to filter for.\n  * @returns {Array}\n  */\n-Applab.getIdDropdown = function (tagFilter) {\n-  var elements = $('#divApplab').children().toArray().concat(\n-      $('#divApplab').children().children().toArray());\n-\n-  var filteredIds = [];\n-  elements.forEach(function (element) {\n-    if (!tagFilter || element.tagName.toUpperCase() === tagFilter.toUpperCase()) {\n-      filteredIds.push(element.id);\n-    }\n-  });\n-  filteredIds.sort();\n+Applab.getIdDropdown = function (filterSelector) {\n+  return Applab.getIdDropdownFromDom_($(document), filterSelector);\n+};\n \n-  return filteredIds.map(function(id) {\n-    return {\n-      text: quote(id),\n-      display: quote(id)\n-    };\n-  });\n+/**\n+ * Internal version of getIdDropdownFromDom_, which takes a documentRoot\n+ * argument to remove its global dependency and make it testable.\n+ * @param {jQuery} documentRoot\n+ * @param {string} filterSelector\n+ * @returns {Array}\n+ * @private\n+ */\n+Applab.getIdDropdownFromDom_ = function (documentRoot, filterSelector) {\n+  var divApplabChildren = documentRoot.find('#divApplab').children();\n+  var elements = divApplabChildren.toArray().concat(\n+      divApplabChildren.children().toArray());\n+\n+  return elements\n+      .filter(makeElementFilterFunction(filterSelector))",
+    "path": "apps/src/applab/applab.js",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I am scared of rolling our own element selector in production when jQuery can do it for us.  jQuery works in our test environment, right? so can we just do: `$(elements).filter(filterSelector)` ?\n",
+    "created_at": "2015-09-30T02:03:56Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40752412",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40752412"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40752412"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1640,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40752521",
+    "pull_request_review_id": null,
+    "id": 40752521,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzUyNTIx",
+    "diff_hunk": "@@ -50,7 +68,8 @@ module.exports = function (callback) {\n         .then(loadSource('ace/mode-javascript'))\n         .then(loadSource('ace/ext-language_tools'))\n         .then(loadSource('droplet/droplet-full'))\n-        .then(loadSource('tooltipster/jquery.tooltipster'));\n+        .then(loadSource('tooltipster/jquery.tooltipster'))\n+        .then(loadExternalSource('https://www.google.com/jsapi'));",
+    "path": "shared/js/loadApp.js",
+    "position": 31,
+    "original_position": 31,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "do we have any idea how much code this is loading? it looks like it makes a bunch of other calls to obfuscated members of `google.loader`.\n",
+    "created_at": "2015-09-30T02:06:49Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40752521",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40752521"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40752521"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 72,
+    "original_line": 72,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40752708",
+    "pull_request_review_id": null,
+    "id": 40752708,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwNzUyNzA4",
+    "diff_hunk": "@@ -48,3 +49,71 @@ describe('designMode.addScreenIfNecessary', function () {\n     assert.equal(converted, html);\n   });\n });\n+\n+describe('getIdDropdown filtering modes', function () {\n+  var documentRoot;\n+\n+  beforeEach(function () {\n+    // Create a sample DOM to test against\n+    var sampleDom =\n+        '<div>' +\n+          '<div id=\"divApplab\" class=\"appModern\">' +\n+            '<div class=\"screen\" id=\"screen1\">' +\n+              '<div class=\"chart\" id=\"chart9\"></div>' +\n+              '<img src=\"\" class=\"chart-friend\" id=\"image1\">' +\n+            '</div>' +\n+          '</div>' +\n+        '</div>';\n+    documentRoot = $(sampleDom);\n+  });\n+\n+  it('produces all IDs when no filter is given', function () {\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot), [\n+      { \"display\": '\"chart9\"', \"text\": '\"chart9\"' },\n+      { \"display\": '\"image1\"', \"text\": '\"image1\"' },\n+      { \"display\": '\"screen1\"', \"text\": '\"screen1\"' }\n+    ]);\n+  });\n+\n+  it('can filter on tag type', function () {\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, 'div'), [\n+      { \"display\": '\"chart9\"', \"text\": '\"chart9\"' },\n+      { \"display\": '\"screen1\"', \"text\": '\"screen1\"' }\n+    ]);\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, 'img'), [\n+      { \"display\": '\"image1\"', \"text\": '\"image1\"' }\n+    ]);\n+  });\n+\n+  it('can filter on class', function () {\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '.chart'), [\n+      { \"display\": '\"chart9\"', \"text\": '\"chart9\"' }\n+    ]);\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '.screen'), [\n+      { \"display\": '\"screen1\"', \"text\": '\"screen1\"' }\n+    ]);\n+  });\n+\n+  it('can filter on ID', function () {\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '#screen1'), [\n+      { \"display\": '\"screen1\"', \"text\": '\"screen1\"' }\n+    ]);\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '#chart9'), [\n+      { \"display\": '\"chart9\"', \"text\": '\"chart9\"' }\n+    ]);\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '#image1'), [\n+      { \"display\": '\"image1\"', \"text\": '\"image1\"' }\n+    ]);\n+  });\n+\n+  it('does not accidentally pick up superset classes', function () {",
+    "path": "apps/test/applabTest.js",
+    "position": 69,
+    "original_position": 69,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "FWIW, this test case is an example of something we wouldn't have to worry about if we rely on jQuery to filter elements for us.\n",
+    "created_at": "2015-09-30T02:11:38Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40752708",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40752708"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40752708"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 109,
+    "original_line": 109,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40836753",
+    "pull_request_review_id": null,
+    "id": 40836753,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwODM2NzUz",
+    "diff_hunk": "@@ -50,7 +68,8 @@ module.exports = function (callback) {\n         .then(loadSource('ace/mode-javascript'))\n         .then(loadSource('ace/ext-language_tools'))\n         .then(loadSource('droplet/droplet-full'))\n-        .then(loadSource('tooltipster/jquery.tooltipster'));\n+        .then(loadSource('tooltipster/jquery.tooltipster'))\n+        .then(loadExternalSource('https://www.google.com/jsapi'));",
+    "path": "shared/js/loadApp.js",
+    "position": 31,
+    "original_position": 31,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "It looks like this loads 5.8 KB of JavaScript, which stacks up favorably against dependencies like ace (330 KB minified) or just the qTip jQuery extension (43.5 KB minified).  It's close to md5.js at 6.5 KB.\n\nI can't find evidence that it does anything else until you invoke `google.load` to pull in packages you need, which we do right before rendering the chart.\n\n![screenshot from 2015-09-30 11 22 21](https://cloud.githubusercontent.com/assets/1615761/10203656/2dbed27c-676c-11e5-9211-c2e3703ac690.png)\n",
+    "created_at": "2015-09-30T19:04:05Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40836753",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40836753"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40836753"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 72,
+    "original_line": 72,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40838883",
+    "pull_request_review_id": null,
+    "id": 40838883,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwODM4ODgz",
+    "diff_hunk": "@@ -1616,30 +1616,75 @@ Applab.getAssetDropdown = function (typeFilter) {\n /**\n  * Return droplet dropdown options representing a list of ids currently present\n  * in the DOM, optionally limiting the result to a certain HTML element tagName.\n- * @param {string} [tagFilter] Optional HTML element tagName to filter for.\n+ * @param {string} [filterSelector] Optional selector to filter for.\n  * @returns {Array}\n  */\n-Applab.getIdDropdown = function (tagFilter) {\n-  var elements = $('#divApplab').children().toArray().concat(\n-      $('#divApplab').children().children().toArray());\n-\n-  var filteredIds = [];\n-  elements.forEach(function (element) {\n-    if (!tagFilter || element.tagName.toUpperCase() === tagFilter.toUpperCase()) {\n-      filteredIds.push(element.id);\n-    }\n-  });\n-  filteredIds.sort();\n+Applab.getIdDropdown = function (filterSelector) {\n+  return Applab.getIdDropdownFromDom_($(document), filterSelector);\n+};\n \n-  return filteredIds.map(function(id) {\n-    return {\n-      text: quote(id),\n-      display: quote(id)\n-    };\n-  });\n+/**\n+ * Internal version of getIdDropdownFromDom_, which takes a documentRoot",
+    "path": "apps/src/applab/applab.js",
+    "position": null,
+    "original_position": 30,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Comment bugs `//`:bug::beetle::bug: nice catch\n",
+    "created_at": "2015-09-30T19:21:11Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40838883",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40838883"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40838883"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1627,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40839011",
+    "pull_request_review_id": null,
+    "id": 40839011,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwODM5MDEx",
+    "diff_hunk": "@@ -1616,30 +1616,75 @@ Applab.getAssetDropdown = function (typeFilter) {\n /**\n  * Return droplet dropdown options representing a list of ids currently present\n  * in the DOM, optionally limiting the result to a certain HTML element tagName.\n- * @param {string} [tagFilter] Optional HTML element tagName to filter for.\n+ * @param {string} [filterSelector] Optional selector to filter for.\n  * @returns {Array}\n  */\n-Applab.getIdDropdown = function (tagFilter) {\n-  var elements = $('#divApplab').children().toArray().concat(\n-      $('#divApplab').children().children().toArray());\n-\n-  var filteredIds = [];\n-  elements.forEach(function (element) {\n-    if (!tagFilter || element.tagName.toUpperCase() === tagFilter.toUpperCase()) {\n-      filteredIds.push(element.id);\n-    }\n-  });\n-  filteredIds.sort();\n+Applab.getIdDropdown = function (filterSelector) {\n+  return Applab.getIdDropdownFromDom_($(document), filterSelector);\n+};\n \n-  return filteredIds.map(function(id) {\n-    return {\n-      text: quote(id),\n-      display: quote(id)\n-    };\n-  });\n+/**\n+ * Internal version of getIdDropdownFromDom_, which takes a documentRoot\n+ * argument to remove its global dependency and make it testable.\n+ * @param {jQuery} documentRoot\n+ * @param {string} filterSelector\n+ * @returns {Array}\n+ * @private\n+ */\n+Applab.getIdDropdownFromDom_ = function (documentRoot, filterSelector) {\n+  var divApplabChildren = documentRoot.find('#divApplab').children();\n+  var elements = divApplabChildren.toArray().concat(\n+      divApplabChildren.children().toArray());\n+\n+  return elements\n+      .filter(makeElementFilterFunction(filterSelector))",
+    "path": "apps/src/applab/applab.js",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Sounds good.  Have we officially decided we're cool with jQuery in Applab?  I thought we were avoiding it, but now I see it already exists in this file.\n",
+    "created_at": "2015-09-30T19:22:11Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40839011",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40839011"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40839011"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1640,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40839071",
+    "pull_request_review_id": null,
+    "id": 40839071,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwODM5MDcx",
+    "diff_hunk": "@@ -0,0 +1,367 @@\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true\n+ */\n+'use strict';\n+/* global describe, beforeEach, it */\n+\n+var assert = require('./util/testUtils').assert;\n+var ChartApi = require('@cdo/apps/applab/ChartApi');\n+var GoogleChart = require('@cdo/apps/applab/GoogleChart');\n+var Promise = require('es6-promise').Promise;\n+\n+var fakeDiv = document.createElement('div');\n+var fakeImg = document.createElement('img');\n+\n+/**\n+ * Fake a document context for testing.\n+ * @type {Document}\n+ */\n+var fakeDocument = {\n+  getElementById: function (id) {\n+    if (id === 'fakeDiv') {\n+      return fakeDiv;\n+    } else if (id === 'fakeImg') {\n+      return fakeImg;\n+    }\n+    return null;\n+  }\n+};\n+\n+/**\n+ * Stub chart type for our fake google API.\n+ * @constructor\n+ */\n+var NullChart = function () {};\n+NullChart.convertOptions = function (x) { return x; };\n+NullChart.prototype.draw = function () {};\n+\n+/**\n+ * Fake the google loader/visualization API for testing.\n+ * @type {{}}\n+ */\n+var fakeGoogle = {\n+  load: function (library, version, options) {\n+    if (options && options.callback) {\n+      options.callback();\n+    }\n+  },\n+  charts: {\n+    Bar: NullChart,\n+    Line: NullChart,\n+    Scatter: NullChart\n+  },\n+  visualization: {\n+    arrayToDataTable: function (array) { return array; },\n+    PieChart: NullChart\n+  }\n+};\n+\n+var FakeAppStorage = function () {\n+  this.fakeRecords = [];\n+};\n+FakeAppStorage.prototype.readRecords = function (table, filter, onSuccess) {\n+  onSuccess(this.fakeRecords);\n+};\n+\n+describe(\"GoogleChart\", function () {\n+  it(\"extracts all columns from data\", function () {\n+    GoogleChart.lib = fakeGoogle;\n+    var rawData = [\n+      {'x': 12},\n+      {'x': 10, 'y': 14},\n+      {'z': 144}\n+    ];\n+    assert.deepEqual(GoogleChart.inferColumnsFromRawData(rawData), ['x', 'y', 'z']);\n+  });\n+});\n+\n+describe(\"ChartApi\", function () {\n+  var ChartType = ChartApi.ChartType;\n+  var fakeAppStorage;\n+\n+  beforeEach(function () {\n+    GoogleChart.lib = fakeGoogle;\n+    fakeAppStorage = new FakeAppStorage();\n+  });\n+\n+  describe(\"ChartType enum\", function () {\n+\n+    it(\"only contains supported types\", function () {\n+      Object.getOwnPropertyNames(ChartType).forEach(function (key) {\n+        var typeName = ChartType[key];\n+        assert.isTrue(ChartApi.supportsType(typeName), \"Supports type '\" +\n+            typeName + \"'.\");\n+      });\n+    });\n+\n+    it(\"contains all supported types\", function () {\n+      var supportedTypes = Object.getOwnPropertyNames(ChartApi.TypeNameToType);\n+      var enumTypeNames = Object.getOwnPropertyNames(ChartType).map(function (key) {\n+        return ChartType[key];\n+      });\n+\n+      supportedTypes.forEach(function (typeName) {\n+        assert.isTrue(enumTypeNames.some(function (enumName) {\n+          return enumName === typeName;\n+        }), \"Found supported type '\" + typeName + \"' in enum.\");\n+      });\n+    });\n+  });\n+\n+  it(\"supports type BAR\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.BAR));\n+    assert.isTrue(ChartApi.supportsType('BAR'));\n+    assert.isTrue(ChartApi.supportsType('Bar'));\n+    assert.isTrue(ChartApi.supportsType('bar'));\n+  });\n+\n+  it(\"supports type PIE\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.PIE));\n+    assert.isTrue(ChartApi.supportsType('PIE'));\n+    assert.isTrue(ChartApi.supportsType('Pie'));\n+    assert.isTrue(ChartApi.supportsType('pie'));\n+  });\n+\n+  it(\"supports type LINE\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.LINE));\n+    assert.isTrue(ChartApi.supportsType('LINE'));\n+    assert.isTrue(ChartApi.supportsType('Line'));\n+    assert.isTrue(ChartApi.supportsType('line'));\n+  });\n+\n+  it(\"supports type SCATTER\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.SCATTER));\n+    assert.isTrue(ChartApi.supportsType('SCATTER'));\n+    assert.isTrue(ChartApi.supportsType('Scatter'));\n+    assert.isTrue(ChartApi.supportsType('scatter'));\n+  });\n+\n+  it(\"quotes and alphabetizes types for dropdown\", function () {\n+    assert.deepEqual(ChartApi.getChartTypeDropdown(), [\n+        '\"bar\"',\n+        '\"line\"',\n+        '\"pie\"',\n+        '\"scatter\"'\n+    ]);\n+  });\n+\n+  describe(\"drawChartFromRecords\", function () {\n+    var chartApi, result, rejection;\n+\n+    beforeEach(function () {\n+      chartApi = new ChartApi(fakeDocument, fakeAppStorage);\n+      result = null;\n+      rejection = null;\n+    });\n+\n+    function onResolve(r) {\n+      result = r;\n+    }\n+\n+    function onReject(e) {\n+      rejection = e;\n+    }\n+\n+    var assertWarns = function (chartApi, warningRegexp) {\n+      assert.isNull(rejection);\n+      var warningFound = chartApi.warnings.some(function (e) {\n+        return warningRegexp.test(e.message);\n+      });\n+      assert(warningFound, 'Expected warning ' +\n+          warningRegexp.toString() + \"\\n\\Got warnings:\\n\" +\n+          chartApi.warnings.map(function (e) {\n+            return e.message;\n+          }).join(\"\\n\"));\n+    };\n+\n+    var assertNotWarns = function (chartApi, warningRegexp) {\n+      assert.isNull(rejection);\n+      var warningFound = chartApi.warnings.some(function (e) {\n+        return warningRegexp.test(e.message);\n+      });\n+      assert(!warningFound, 'Expected no warning ' +\n+          warningRegexp.toString() + \"\\n\\Got warnings:\\n\" +\n+          chartApi.warnings.map(function (e) {\n+            return e.message;\n+          }).join(\"\\n\"));\n+    };\n+\n+    it(\"returns a Promise\", function () {\n+      assert.instanceOf(chartApi.drawChartFromRecords(), Promise);\n+    });\n+\n+    it (\"rejects if element is not found\", function (testDone) {\n+      chartApi.drawChartFromRecords('missingId')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unable to render chart into element \"missingId\".');\n+          }));\n+    });\n+\n+    it (\"rejects if element is wrong type\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeImg')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unable to render chart into element \"fakeImg\".');\n+          }));\n+    });\n+\n+    it (\"rejects if chart type is not supported\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', 'badType')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unsupported chart type \"badType\".');\n+          }));\n+    });\n+\n+    it (\"rejects if no columns array provided\", function (testDone) {",
+    "path": "apps/test/ChartApiTest.js",
+    "position": null,
+    "original_position": 228,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":+1: \n",
+    "created_at": "2015-09-30T19:22:32Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40839071",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40839071"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40839071"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 228,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40839157",
+    "pull_request_review_id": null,
+    "id": 40839157,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwODM5MTU3",
+    "diff_hunk": "@@ -0,0 +1,367 @@\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true\n+ */\n+'use strict';\n+/* global describe, beforeEach, it */\n+\n+var assert = require('./util/testUtils').assert;\n+var ChartApi = require('@cdo/apps/applab/ChartApi');\n+var GoogleChart = require('@cdo/apps/applab/GoogleChart');\n+var Promise = require('es6-promise').Promise;\n+\n+var fakeDiv = document.createElement('div');\n+var fakeImg = document.createElement('img');\n+\n+/**\n+ * Fake a document context for testing.\n+ * @type {Document}\n+ */\n+var fakeDocument = {\n+  getElementById: function (id) {\n+    if (id === 'fakeDiv') {\n+      return fakeDiv;\n+    } else if (id === 'fakeImg') {\n+      return fakeImg;\n+    }\n+    return null;\n+  }\n+};\n+\n+/**\n+ * Stub chart type for our fake google API.\n+ * @constructor\n+ */\n+var NullChart = function () {};\n+NullChart.convertOptions = function (x) { return x; };\n+NullChart.prototype.draw = function () {};\n+\n+/**\n+ * Fake the google loader/visualization API for testing.\n+ * @type {{}}\n+ */\n+var fakeGoogle = {\n+  load: function (library, version, options) {\n+    if (options && options.callback) {\n+      options.callback();\n+    }\n+  },\n+  charts: {\n+    Bar: NullChart,\n+    Line: NullChart,\n+    Scatter: NullChart\n+  },\n+  visualization: {\n+    arrayToDataTable: function (array) { return array; },\n+    PieChart: NullChart\n+  }\n+};\n+\n+var FakeAppStorage = function () {\n+  this.fakeRecords = [];\n+};\n+FakeAppStorage.prototype.readRecords = function (table, filter, onSuccess) {\n+  onSuccess(this.fakeRecords);\n+};\n+\n+describe(\"GoogleChart\", function () {\n+  it(\"extracts all columns from data\", function () {\n+    GoogleChart.lib = fakeGoogle;\n+    var rawData = [\n+      {'x': 12},\n+      {'x': 10, 'y': 14},\n+      {'z': 144}\n+    ];\n+    assert.deepEqual(GoogleChart.inferColumnsFromRawData(rawData), ['x', 'y', 'z']);\n+  });\n+});\n+\n+describe(\"ChartApi\", function () {\n+  var ChartType = ChartApi.ChartType;\n+  var fakeAppStorage;\n+\n+  beforeEach(function () {\n+    GoogleChart.lib = fakeGoogle;\n+    fakeAppStorage = new FakeAppStorage();\n+  });\n+\n+  describe(\"ChartType enum\", function () {\n+\n+    it(\"only contains supported types\", function () {\n+      Object.getOwnPropertyNames(ChartType).forEach(function (key) {\n+        var typeName = ChartType[key];\n+        assert.isTrue(ChartApi.supportsType(typeName), \"Supports type '\" +\n+            typeName + \"'.\");\n+      });\n+    });\n+\n+    it(\"contains all supported types\", function () {\n+      var supportedTypes = Object.getOwnPropertyNames(ChartApi.TypeNameToType);\n+      var enumTypeNames = Object.getOwnPropertyNames(ChartType).map(function (key) {\n+        return ChartType[key];\n+      });\n+\n+      supportedTypes.forEach(function (typeName) {\n+        assert.isTrue(enumTypeNames.some(function (enumName) {\n+          return enumName === typeName;\n+        }), \"Found supported type '\" + typeName + \"' in enum.\");\n+      });\n+    });\n+  });\n+\n+  it(\"supports type BAR\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.BAR));\n+    assert.isTrue(ChartApi.supportsType('BAR'));\n+    assert.isTrue(ChartApi.supportsType('Bar'));\n+    assert.isTrue(ChartApi.supportsType('bar'));\n+  });\n+\n+  it(\"supports type PIE\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.PIE));\n+    assert.isTrue(ChartApi.supportsType('PIE'));\n+    assert.isTrue(ChartApi.supportsType('Pie'));\n+    assert.isTrue(ChartApi.supportsType('pie'));\n+  });\n+\n+  it(\"supports type LINE\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.LINE));\n+    assert.isTrue(ChartApi.supportsType('LINE'));\n+    assert.isTrue(ChartApi.supportsType('Line'));\n+    assert.isTrue(ChartApi.supportsType('line'));\n+  });\n+\n+  it(\"supports type SCATTER\", function () {\n+    assert.isTrue(ChartApi.supportsType(ChartApi.ChartType.SCATTER));\n+    assert.isTrue(ChartApi.supportsType('SCATTER'));\n+    assert.isTrue(ChartApi.supportsType('Scatter'));\n+    assert.isTrue(ChartApi.supportsType('scatter'));\n+  });\n+\n+  it(\"quotes and alphabetizes types for dropdown\", function () {\n+    assert.deepEqual(ChartApi.getChartTypeDropdown(), [\n+        '\"bar\"',\n+        '\"line\"',\n+        '\"pie\"',\n+        '\"scatter\"'\n+    ]);\n+  });\n+\n+  describe(\"drawChartFromRecords\", function () {\n+    var chartApi, result, rejection;\n+\n+    beforeEach(function () {\n+      chartApi = new ChartApi(fakeDocument, fakeAppStorage);\n+      result = null;\n+      rejection = null;\n+    });\n+\n+    function onResolve(r) {\n+      result = r;\n+    }\n+\n+    function onReject(e) {\n+      rejection = e;\n+    }\n+\n+    var assertWarns = function (chartApi, warningRegexp) {\n+      assert.isNull(rejection);\n+      var warningFound = chartApi.warnings.some(function (e) {\n+        return warningRegexp.test(e.message);\n+      });\n+      assert(warningFound, 'Expected warning ' +\n+          warningRegexp.toString() + \"\\n\\Got warnings:\\n\" +\n+          chartApi.warnings.map(function (e) {\n+            return e.message;\n+          }).join(\"\\n\"));\n+    };\n+\n+    var assertNotWarns = function (chartApi, warningRegexp) {\n+      assert.isNull(rejection);\n+      var warningFound = chartApi.warnings.some(function (e) {\n+        return warningRegexp.test(e.message);\n+      });\n+      assert(!warningFound, 'Expected no warning ' +\n+          warningRegexp.toString() + \"\\n\\Got warnings:\\n\" +\n+          chartApi.warnings.map(function (e) {\n+            return e.message;\n+          }).join(\"\\n\"));\n+    };\n+\n+    it(\"returns a Promise\", function () {\n+      assert.instanceOf(chartApi.drawChartFromRecords(), Promise);\n+    });\n+\n+    it (\"rejects if element is not found\", function (testDone) {\n+      chartApi.drawChartFromRecords('missingId')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unable to render chart into element \"missingId\".');\n+          }));\n+    });\n+\n+    it (\"rejects if element is wrong type\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeImg')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unable to render chart into element \"fakeImg\".');\n+          }));\n+    });\n+\n+    it (\"rejects if chart type is not supported\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', 'badType')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Unsupported chart type \"badType\".');\n+          }));\n+    });\n+\n+    it (\"rejects if no columns array provided\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable')\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                \"Not enough columns for chart; expected at least 2.\");\n+          }));\n+    });\n+\n+    it (\"rejects if zero columns provided\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable', [])\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Not enough columns for chart; expected at least 2.');\n+          }));\n+    });\n+\n+    it (\"rejects if only one column provided\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable', ['column1'])\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.equal(\n+                rejection.message,\n+                'Not enough columns for chart; expected at least 2.');\n+          }));\n+    });\n+\n+    it (\"when fulfilled, makes API calls\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable', ['column1', 'column2'])\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assert.isNull(rejection);\n+          }));\n+    });\n+\n+    it (\"warns about empty dataset\", function (testDone) {\n+      chartApi.drawChartFromRecords('fakeDiv', ChartType.PIE, 'fakeTable',\n+          ['column1', 'column2'])\n+          .then(onResolve, onReject)\n+          .then(ensureDone(testDone, function () {\n+            assertWarns(chartApi, /No data\\./);\n+          }));\n+    });\n+\n+    it (\"does not warn about empty dataset when given data\", function (testDone) {",
+    "path": "apps/test/ChartApiTest.js",
+    "position": 300,
+    "original_position": 275,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":+1: although I may want to change this assertion based on what we talked about (warning and displaying possible column names).\n",
+    "created_at": "2015-09-30T19:23:12Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40839157",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40839157"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40839157"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 300,
+    "original_line": 275,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40939730",
+    "pull_request_review_id": null,
+    "id": 40939730,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwOTM5NzMw",
+    "diff_hunk": "@@ -0,0 +1,217 @@\n+/**\n+ * @file Core implementation of Applab commands related to the Chart design element.\n+ *\n+ * For now, uses Google charts.\n+ * @see {GoogleChart}\n+ */\n+/* jshint\n+ funcscope: true,\n+ newcap: true,\n+ nonew: true,\n+ shadow: false,\n+ unused: true,\n+ eqeqeq: true,\n+\n+ maxlen: 90,\n+ maxparams: 6,\n+ maxstatements: 200\n+ */\n+'use strict';\n+\n+var AppStorage = require('./appStorage');\n+var Promise = require('es6-promise').Promise;\n+var GoogleChart = require('./GoogleChart');\n+\n+/**\n+ * API for requesting/generating charts in Applab.\n+ *\n+ * @constructor\n+ * @param {Document} [docContext] - default is 'document'\n+ * @param [appStorage] - default is AppStorage\n+ */\n+var ChartApi = module.exports = function (docContext, appStorage) {\n+  this.document_ = docContext || document;\n+  this.appStorage_ = appStorage || AppStorage;\n+\n+  /**\n+   * List of all warnings generated while performing operations through this\n+   * API instance.\n+   * @type {Error[]}\n+   */\n+  this.warnings = [];\n+};\n+\n+// When adding a new type, provide an entry in the string enum (for clean code)\n+// and an entry in the TypeNameToType map (allows us to easily remap different\n+// implementations to the same type name).\n+\n+/** @enum {string} */\n+ChartApi.ChartType = {\n+  BAR: 'bar',\n+  PIE: 'pie',\n+  LINE: 'line',\n+  SCATTER: 'scatter'\n+};\n+\n+/** @type {Object.<string, GoogleChart>} */\n+ChartApi.TypeNameToType = {\n+  'bar': GoogleChart.MaterialBarChart,\n+  'pie': GoogleChart.PieChart,\n+  'line': GoogleChart.MaterialLineChart,\n+  'scatter': GoogleChart.MaterialScatterChart\n+};\n+\n+/**\n+ * Get an array of all the chart type strings.\n+ * @returns {string[]}\n+ */\n+ChartApi.getChartTypeNames = function () {\n+  return Object.getOwnPropertyNames(ChartApi.TypeNameToType);\n+};\n+\n+/**\n+ * @param {ChartType} chartType\n+ * @returns {boolean} TRUE if the given type is in the known list of chart types.\n+ */\n+ChartApi.supportsType = function (chartType) {\n+  return ChartApi.getChartTypeNames().indexOf(chartType.toLowerCase()) !== -1;\n+};\n+\n+/**\n+ * @return {string[]} a quoted, sorted list of chart types for use in the\n+ *         Droplet parameter dropdown.\n+ */\n+ChartApi.getChartTypeDropdown = function () {\n+  return ChartApi.getChartTypeNames().map(quote).sort();\n+};\n+\n+function quote(str) {\n+  return '\"' + str + '\"';\n+}\n+\n+/**\n+ * Render a chart into an Applab chart element.\n+ * @param {string} chartId - ID of the destination chart element.\n+ * @param {ChartType} chartType - Desired chart type.\n+ * @param {Object[]} chartData - Data to populate the chart.\n+ * @param {Object} options - passed through to the API.\n+ * @returns {Promise} which resolves when the chart has been rendered, or\n+ *          rejects if there are any problems along the way.\n+ */\n+ChartApi.prototype.drawChart = function (chartId, chartType, chartData, options) {\n+  try {\n+    var chart = this.createChart_(chartId, chartType);\n+    chart.loadData(chartData).then(function () {\n+      return chart.drawChart(options);\n+    }).then(function () {\n+      this.mergeWarnings_(chart.warnings);\n+    }.bind(this));\n+  } catch (e) {\n+    return Promise.reject(e);\n+  }\n+};\n+\n+/**\n+ * Render a chart into an Applab chart element using data from an AppStorage\n+ * API table.\n+ * @param {string} chartId - ID of the destination chart element.\n+ * @param {ChartType} chartType - Desired chart type.\n+ * @param {string} tableName - AppStorage API table name to source data from\n+ *                 for the chart.\n+ * @param {string[]} columns - Columns to use from the table data for the chart,\n+ *        in order (required order dependent on chart type).\n+ * @param {Object} options - passed through to the API.\n+ * @returns {Promise} resolves when the chart has been rendered, or rejects if\n+ *          there are any problems along the way.\n+ */\n+ChartApi.prototype.drawChartFromRecords = function (chartId, chartType,\n+    tableName, columns, options) {\n+  try {\n+    var chart = this.createChart_(chartId, chartType);\n+    return Promise.all([\n+      chart.loadDependencies(),\n+      this.fetchTableData_(tableName)\n+    ]).then(function (results) {\n+      return chart.loadData(results[1], columns);",
+    "path": "apps/src/applab/ChartApi.js",
+    "position": null,
+    "original_position": 135,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "That's better but still not great, because then students are prevented from explicitly including `id` as a column. I would recommend extracting the call to inferColumnsFromData out of loadData and into `ChartApi.prototype.drawChartFromRecords` here. \n",
+    "created_at": "2015-10-01T17:13:22Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40939730",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40939730"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40939730"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 135,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40940370",
+    "pull_request_review_id": null,
+    "id": 40940370,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwOTQwMzcw",
+    "diff_hunk": "@@ -1616,30 +1616,75 @@ Applab.getAssetDropdown = function (typeFilter) {\n /**\n  * Return droplet dropdown options representing a list of ids currently present\n  * in the DOM, optionally limiting the result to a certain HTML element tagName.\n- * @param {string} [tagFilter] Optional HTML element tagName to filter for.\n+ * @param {string} [filterSelector] Optional selector to filter for.\n  * @returns {Array}\n  */\n-Applab.getIdDropdown = function (tagFilter) {\n-  var elements = $('#divApplab').children().toArray().concat(\n-      $('#divApplab').children().children().toArray());\n-\n-  var filteredIds = [];\n-  elements.forEach(function (element) {\n-    if (!tagFilter || element.tagName.toUpperCase() === tagFilter.toUpperCase()) {\n-      filteredIds.push(element.id);\n-    }\n-  });\n-  filteredIds.sort();\n+Applab.getIdDropdown = function (filterSelector) {\n+  return Applab.getIdDropdownFromDom_($(document), filterSelector);\n+};\n \n-  return filteredIds.map(function(id) {\n-    return {\n-      text: quote(id),\n-      display: quote(id)\n-    };\n-  });\n+/**\n+ * Internal version of getIdDropdownFromDom_, which takes a documentRoot\n+ * argument to remove its global dependency and make it testable.\n+ * @param {jQuery} documentRoot\n+ * @param {string} filterSelector\n+ * @returns {Array}\n+ * @private\n+ */\n+Applab.getIdDropdownFromDom_ = function (documentRoot, filterSelector) {\n+  var divApplabChildren = documentRoot.find('#divApplab').children();\n+  var elements = divApplabChildren.toArray().concat(\n+      divApplabChildren.children().toArray());\n+\n+  return elements\n+      .filter(makeElementFilterFunction(filterSelector))",
+    "path": "apps/src/applab/applab.js",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "davidsbailey",
+      "id": 8001765,
+      "node_id": "MDQ6VXNlcjgwMDE3NjU=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/8001765?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/davidsbailey",
+      "html_url": "https://github.com/davidsbailey",
+      "followers_url": "https://api.github.com/users/davidsbailey/followers",
+      "following_url": "https://api.github.com/users/davidsbailey/following{/other_user}",
+      "gists_url": "https://api.github.com/users/davidsbailey/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/davidsbailey/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/davidsbailey/subscriptions",
+      "organizations_url": "https://api.github.com/users/davidsbailey/orgs",
+      "repos_url": "https://api.github.com/users/davidsbailey/repos",
+      "events_url": "https://api.github.com/users/davidsbailey/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/davidsbailey/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "A lot of applab was written without jQuery, partially because our `grunt dev` and mochaTest environments couldn't handle it. Since those have been fixed, jQuery in applab is allowed and encouraged. @Bjvanminnen can chime in if he disagrees.\n",
+    "created_at": "2015-10-01T17:18:46Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40940370",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40940370"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40940370"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1640,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40940676",
+    "pull_request_review_id": null,
+    "id": 40940676,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwOTQwNjc2",
+    "diff_hunk": "@@ -1616,30 +1616,75 @@ Applab.getAssetDropdown = function (typeFilter) {\n /**\n  * Return droplet dropdown options representing a list of ids currently present\n  * in the DOM, optionally limiting the result to a certain HTML element tagName.\n- * @param {string} [tagFilter] Optional HTML element tagName to filter for.\n+ * @param {string} [filterSelector] Optional selector to filter for.\n  * @returns {Array}\n  */\n-Applab.getIdDropdown = function (tagFilter) {\n-  var elements = $('#divApplab').children().toArray().concat(\n-      $('#divApplab').children().children().toArray());\n-\n-  var filteredIds = [];\n-  elements.forEach(function (element) {\n-    if (!tagFilter || element.tagName.toUpperCase() === tagFilter.toUpperCase()) {\n-      filteredIds.push(element.id);\n-    }\n-  });\n-  filteredIds.sort();\n+Applab.getIdDropdown = function (filterSelector) {\n+  return Applab.getIdDropdownFromDom_($(document), filterSelector);\n+};\n \n-  return filteredIds.map(function(id) {\n-    return {\n-      text: quote(id),\n-      display: quote(id)\n-    };\n-  });\n+/**\n+ * Internal version of getIdDropdownFromDom_, which takes a documentRoot\n+ * argument to remove its global dependency and make it testable.\n+ * @param {jQuery} documentRoot\n+ * @param {string} filterSelector\n+ * @returns {Array}\n+ * @private\n+ */\n+Applab.getIdDropdownFromDom_ = function (documentRoot, filterSelector) {\n+  var divApplabChildren = documentRoot.find('#divApplab').children();\n+  var elements = divApplabChildren.toArray().concat(\n+      divApplabChildren.children().toArray());\n+\n+  return elements\n+      .filter(makeElementFilterFunction(filterSelector))",
+    "path": "apps/src/applab/applab.js",
+    "position": null,
+    "original_position": 43,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "Bjvanminnen",
+      "id": 1767466,
+      "node_id": "MDQ6VXNlcjE3Njc0NjY=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1767466?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Bjvanminnen",
+      "html_url": "https://github.com/Bjvanminnen",
+      "followers_url": "https://api.github.com/users/Bjvanminnen/followers",
+      "following_url": "https://api.github.com/users/Bjvanminnen/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Bjvanminnen/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Bjvanminnen/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Bjvanminnen/subscriptions",
+      "organizations_url": "https://api.github.com/users/Bjvanminnen/orgs",
+      "repos_url": "https://api.github.com/users/Bjvanminnen/repos",
+      "events_url": "https://api.github.com/users/Bjvanminnen/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Bjvanminnen/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "jQuery should be fine.\n",
+    "created_at": "2015-10-01T17:21:41Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40940676",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40940676"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40940676"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1640,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40967673",
+    "pull_request_review_id": null,
+    "id": 40967673,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQwOTY3Njcz",
+    "diff_hunk": "@@ -48,3 +49,71 @@ describe('designMode.addScreenIfNecessary', function () {\n     assert.equal(converted, html);\n   });\n });\n+\n+describe('getIdDropdown filtering modes', function () {\n+  var documentRoot;\n+\n+  beforeEach(function () {\n+    // Create a sample DOM to test against\n+    var sampleDom =\n+        '<div>' +\n+          '<div id=\"divApplab\" class=\"appModern\">' +\n+            '<div class=\"screen\" id=\"screen1\">' +\n+              '<div class=\"chart\" id=\"chart9\"></div>' +\n+              '<img src=\"\" class=\"chart-friend\" id=\"image1\">' +\n+            '</div>' +\n+          '</div>' +\n+        '</div>';\n+    documentRoot = $(sampleDom);\n+  });\n+\n+  it('produces all IDs when no filter is given', function () {\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot), [\n+      { \"display\": '\"chart9\"', \"text\": '\"chart9\"' },\n+      { \"display\": '\"image1\"', \"text\": '\"image1\"' },\n+      { \"display\": '\"screen1\"', \"text\": '\"screen1\"' }\n+    ]);\n+  });\n+\n+  it('can filter on tag type', function () {\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, 'div'), [\n+      { \"display\": '\"chart9\"', \"text\": '\"chart9\"' },\n+      { \"display\": '\"screen1\"', \"text\": '\"screen1\"' }\n+    ]);\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, 'img'), [\n+      { \"display\": '\"image1\"', \"text\": '\"image1\"' }\n+    ]);\n+  });\n+\n+  it('can filter on class', function () {\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '.chart'), [\n+      { \"display\": '\"chart9\"', \"text\": '\"chart9\"' }\n+    ]);\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '.screen'), [\n+      { \"display\": '\"screen1\"', \"text\": '\"screen1\"' }\n+    ]);\n+  });\n+\n+  it('can filter on ID', function () {\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '#screen1'), [\n+      { \"display\": '\"screen1\"', \"text\": '\"screen1\"' }\n+    ]);\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '#chart9'), [\n+      { \"display\": '\"chart9\"', \"text\": '\"chart9\"' }\n+    ]);\n+    assert.deepEqual(AppLab.getIdDropdownFromDom_(documentRoot, '#image1'), [\n+      { \"display\": '\"image1\"', \"text\": '\"image1\"' }\n+    ]);\n+  });\n+\n+  it('does not accidentally pick up superset classes', function () {",
+    "path": "apps/test/applabTest.js",
+    "position": 69,
+    "original_position": 69,
+    "commit_id": "6d2c4c4fb40d620a93c526bfcb782cfd7203dcc5",
+    "original_commit_id": "5fc92f8905f4feffb93b213e2048fe37dd957cb4",
+    "user": {
+      "login": "islemaster",
+      "id": 1615761,
+      "node_id": "MDQ6VXNlcjE2MTU3NjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1615761?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/islemaster",
+      "html_url": "https://github.com/islemaster",
+      "followers_url": "https://api.github.com/users/islemaster/followers",
+      "following_url": "https://api.github.com/users/islemaster/following{/other_user}",
+      "gists_url": "https://api.github.com/users/islemaster/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/islemaster/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/islemaster/subscriptions",
+      "organizations_url": "https://api.github.com/users/islemaster/orgs",
+      "repos_url": "https://api.github.com/users/islemaster/repos",
+      "events_url": "https://api.github.com/users/islemaster/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/islemaster/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "FYI, I'm leaving these tests in even though we're switching to the jQuery implementation.  It never hurts to prove that your libraries do what you expect them to :wink:.\n",
+    "created_at": "2015-10-01T21:18:54Z",
+    "updated_at": "2015-10-01T23:32:33Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40967673",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/40967673"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/4184#discussion_r40967673"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/4184"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 109,
+    "original_line": 109,
+    "side": "RIGHT"
+  }
+]

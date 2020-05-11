@@ -1,0 +1,1212 @@
+[
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/37476530",
+    "pull_request_review_id": null,
+    "id": 37476530,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDc2NTMw",
+    "diff_hunk": "@@ -103,6 +103,19 @@ var setupCoffeeCache = function(cacheDir) {\n   CoffeeCache.register();\n }\n \n+var isPortableMode = function() {\n+  // No portable mode on non-Windows\n+  if (process.platform !== 'win32') return false;\n+  \n+  // DevMode? Nope\n+  var devMode = loadSettings.devMode || !loadSettings.resourcePath.startsWith(process.resourcesPath + path.sep);\n+  if (devMode) return false;\n+  \n+  // Compare our EXE's path to where it would normally be in an installed app\n+  var ourPath = process.execPath.toLowerCase();\n+  return (ourPath.indexOf(process.env.USERPROFILE.toLowerCase()) === 0);",
+    "path": "static/index.js",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "b7095874d663540f5dbdfdbe7af26d9acf9bf6f4",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Should this comparison include a trailing slash on `USERPROFILE`?\n\nCurrently this check will pass for the following `process.execPath`/`USERPROFILE` right?\n\n`process.execPath = C:\\Users\\KevinSawicki\\atom\\atom.exe`\n`USERPROFILE = C:\\Users\\Kevin`\n",
+    "created_at": "2015-08-19T22:27:24Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r37476530",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/37476530"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r37476530"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 116,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/37476644",
+    "pull_request_review_id": null,
+    "id": 37476644,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NDc2NjQ0",
+    "diff_hunk": "@@ -103,6 +103,19 @@ var setupCoffeeCache = function(cacheDir) {\n   CoffeeCache.register();\n }\n \n+var isPortableMode = function() {\n+  // No portable mode on non-Windows\n+  if (process.platform !== 'win32') return false;\n+  \n+  // DevMode? Nope\n+  var devMode = loadSettings.devMode || !loadSettings.resourcePath.startsWith(process.resourcesPath + path.sep);",
+    "path": "static/index.js",
+    "position": null,
+    "original_position": 9,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "b7095874d663540f5dbdfdbe7af26d9acf9bf6f4",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "`loadSettings` might be null, see `isRunningCoreSpecs` for an example of guards typically around it.\n",
+    "created_at": "2015-08-19T22:28:38Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r37476644",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/37476644"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r37476644"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 111,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/37651948",
+    "pull_request_review_id": null,
+    "id": 37651948,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjUxOTQ4",
+    "diff_hunk": "@@ -103,6 +103,19 @@ var setupCoffeeCache = function(cacheDir) {\n   CoffeeCache.register();\n }\n \n+var isPortableMode = function() {\n+  // No portable mode on non-Windows\n+  if (process.platform !== 'win32') return false;\n+  \n+  // DevMode? Nope\n+  var devMode = loadSettings.devMode || !loadSettings.resourcePath.startsWith(process.resourcesPath + path.sep);\n+  if (devMode) return false;\n+  \n+  // Compare our EXE's path to where it would normally be in an installed app\n+  var ourPath = process.execPath.toLowerCase();\n+  return (ourPath.indexOf(process.env.USERPROFILE.toLowerCase()) === 0);",
+    "path": "static/index.js",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "b7095874d663540f5dbdfdbe7af26d9acf9bf6f4",
+    "user": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This is a typo that I fixed but didn't push apparently, this should be `LOCALAPPDATA`, which makes _way_ more sense :)\n",
+    "created_at": "2015-08-21T16:34:35Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r37651948",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/37651948"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r37651948"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 116,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/37652270",
+    "pull_request_review_id": null,
+    "id": 37652270,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjUyMjcw",
+    "diff_hunk": "@@ -103,6 +103,19 @@ var setupCoffeeCache = function(cacheDir) {\n   CoffeeCache.register();\n }\n \n+var isPortableMode = function() {\n+  // No portable mode on non-Windows\n+  if (process.platform !== 'win32') return false;\n+  \n+  // DevMode? Nope\n+  var devMode = loadSettings.devMode || !loadSettings.resourcePath.startsWith(process.resourcesPath + path.sep);\n+  if (devMode) return false;\n+  \n+  // Compare our EXE's path to where it would normally be in an installed app\n+  var ourPath = process.execPath.toLowerCase();\n+  return (ourPath.indexOf(process.env.USERPROFILE.toLowerCase()) === 0);",
+    "path": "static/index.js",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "b7095874d663540f5dbdfdbe7af26d9acf9bf6f4",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Yeah, totally :+1: \n",
+    "created_at": "2015-08-21T16:38:20Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r37652270",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/37652270"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r37652270"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 116,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/37656998",
+    "pull_request_review_id": null,
+    "id": 37656998,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM3NjU2OTk4",
+    "diff_hunk": "@@ -103,6 +103,19 @@ var setupCoffeeCache = function(cacheDir) {\n   CoffeeCache.register();\n }\n \n+var isPortableMode = function() {\n+  // No portable mode on non-Windows\n+  if (process.platform !== 'win32') return false;\n+  \n+  // DevMode? Nope\n+  var devMode = loadSettings.devMode || !loadSettings.resourcePath.startsWith(process.resourcesPath + path.sep);",
+    "path": "static/index.js",
+    "position": null,
+    "original_position": 9,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "b7095874d663540f5dbdfdbe7af26d9acf9bf6f4",
+    "user": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":+1:, will fix\n",
+    "created_at": "2015-08-21T17:28:03Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r37656998",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/37656998"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r37656998"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 111,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38936435",
+    "pull_request_review_id": null,
+    "id": 38936435,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4OTM2NDM1",
+    "diff_hunk": "@@ -56,11 +56,24 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+isPortableInstall = (args) ->\n+  return false unless process.platform is 'win32'\n+  return false unless (process and process.type)",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 24,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "477559581e74e0a7c74511e1981f12dd130b97bf",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I don't think you need the `process and` check here, since the line before already calls `process.platform` without checking `process`.\n",
+    "created_at": "2015-09-08T15:04:09Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r38936435",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38936435"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r38936435"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 61,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38936875",
+    "pull_request_review_id": null,
+    "id": 38936875,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4OTM2ODc1",
+    "diff_hunk": "@@ -56,11 +56,24 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+isPortableInstall = (args) ->\n+  return false unless process.platform is 'win32'\n+  return false unless (process and process.type)\n+  return false if args.devMode or args.testMode\n+\n+  ourPath = process.execPath.toLowerCase()",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 27,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "477559581e74e0a7c74511e1981f12dd130b97bf",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Could you add a comment above this line that just adds some example paths and says which ones are considered portable and which ones are not?\n",
+    "created_at": "2015-09-08T15:07:24Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r38936875",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38936875"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r38936875"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 64,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/38943022",
+    "pull_request_review_id": null,
+    "id": 38943022,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM4OTQzMDIy",
+    "diff_hunk": "@@ -56,11 +56,24 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+isPortableInstall = (args) ->\n+  return false unless process.platform is 'win32'\n+  return false unless (process and process.type)",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 24,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "477559581e74e0a7c74511e1981f12dd130b97bf",
+    "user": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This is copy-pasta from the apm version, will fix\n",
+    "created_at": "2015-09-08T15:52:53Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r38943022",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/38943022"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r38943022"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 61,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/39327424",
+    "pull_request_review_id": null,
+    "id": 39327424,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM5MzI3NDI0",
+    "diff_hunk": "@@ -56,11 +56,24 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+isPortableInstall = (args) ->\n+  return false unless process.platform is 'win32'\n+  return false unless (process and process.type)",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 24,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "477559581e74e0a7c74511e1981f12dd130b97bf",
+    "user": {
+      "login": "PikachuEXE",
+      "id": 1018543,
+      "node_id": "MDQ6VXNlcjEwMTg1NDM=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1018543?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/PikachuEXE",
+      "html_url": "https://github.com/PikachuEXE",
+      "followers_url": "https://api.github.com/users/PikachuEXE/followers",
+      "following_url": "https://api.github.com/users/PikachuEXE/following{/other_user}",
+      "gists_url": "https://api.github.com/users/PikachuEXE/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/PikachuEXE/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/PikachuEXE/subscriptions",
+      "organizations_url": "https://api.github.com/users/PikachuEXE/orgs",
+      "repos_url": "https://api.github.com/users/PikachuEXE/repos",
+      "events_url": "https://api.github.com/users/PikachuEXE/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/PikachuEXE/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "What is the use of checking `process.type` here?\nI am newbie :P\n",
+    "created_at": "2015-09-11T23:11:35Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r39327424",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "NONE",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/39327424"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r39327424"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 61,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/39332771",
+    "pull_request_review_id": null,
+    "id": 39332771,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDM5MzMyNzcx",
+    "diff_hunk": "@@ -56,11 +56,24 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+isPortableInstall = (args) ->\n+  return false unless process.platform is 'win32'\n+  return false unless (process and process.type)",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 24,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "477559581e74e0a7c74511e1981f12dd130b97bf",
+    "user": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "@PikachuEXE No use in this case, copy pasta from apm\n",
+    "created_at": "2015-09-12T02:22:54Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r39332771",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/39332771"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r39332771"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 61,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/41678311",
+    "pull_request_review_id": null,
+    "id": 41678311,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNjc4MzEx",
+    "diff_hunk": "@@ -57,11 +57,14 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+setupAtomHome = (args) ->\n   return if process.env.ATOM_HOME\n   atomHome = path.join(app.getHomeDir(), '.atom')\n-  try\n-    atomHome = fs.realpathSync(atomHome)\n+  AtomPortable = require './atom-portable'\n+  atomHome = AtomPortable.portableAtomHomePath() if AtomPortable.isPortableInstall process.platform, process.env.ATOM_HOME\n+  atomHome = fs.realpathSync(atomHome)\n+  fs.statSync(atomHome)",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 32,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Is this line needed? The return value doesn't appear to be used\n",
+    "created_at": "2015-10-09T21:09:12Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r41678311",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/41678311"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r41678311"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 66,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/41678418",
+    "pull_request_review_id": null,
+    "id": 41678418,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNjc4NDE4",
+    "diff_hunk": "@@ -57,11 +57,14 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+setupAtomHome = (args) ->\n   return if process.env.ATOM_HOME\n   atomHome = path.join(app.getHomeDir(), '.atom')\n-  try\n-    atomHome = fs.realpathSync(atomHome)\n+  AtomPortable = require './atom-portable'\n+  atomHome = AtomPortable.portableAtomHomePath() if AtomPortable.isPortableInstall process.platform, process.env.ATOM_HOME\n+  atomHome = fs.realpathSync(atomHome)",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 31,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I think `fs.realpathSync` throws an error when it doesn't exist so I think we might still want to have a `try` statement around it and just ignore the error when it doesn't exist.\n",
+    "created_at": "2015-10-09T21:10:31Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r41678418",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/41678418"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r41678418"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 65,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/41678518",
+    "pull_request_review_id": null,
+    "id": 41678518,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQxNjc4NTE4",
+    "diff_hunk": "@@ -0,0 +1,15 @@\n+fs = require 'fs-plus'\n+path = require 'path'\n+\n+module.exports =\n+class AtomPortable\n+  @portableAtomHomePath: ->\n+    execDirectoryPath = path.dirname(process.execPath)\n+    return path.join(execDirectoryPath, \"../.atom\")",
+    "path": "src/browser/atom-portable.coffee",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I think we usually write this as `path.join(execDirectoryPath, '..', '.atom')` so that the `/` isn't hard-coded\n",
+    "created_at": "2015-10-09T21:11:44Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r41678518",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/41678518"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r41678518"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 8,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42141526",
+    "pull_request_review_id": null,
+    "id": 42141526,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMTQxNTI2",
+    "diff_hunk": "@@ -0,0 +1,71 @@\n+path = require \"path\"\n+fs = require 'fs-plus'\n+temp = require \"temp\"\n+rimraf = require \"rimraf\"\n+AtomPortable = require \"../src/browser/atom-portable\"\n+\n+describe \"Set Portable Mode\", ->\n+  portableAtomHomePath = path.join(path.dirname(process.execPath), \"../.atom\").toString()",
+    "path": "spec/atom-portable-spec.coffee",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "`path.join` always returns a string so I don't think you need the `toString` here.\n",
+    "created_at": "2015-10-15T15:45:20Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r42141526",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42141526"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r42141526"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 8,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42143124",
+    "pull_request_review_id": null,
+    "id": 42143124,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMTQzMTI0",
+    "diff_hunk": "@@ -80,24 +77,6 @@\n     require('ipc').sendChannel('window-command', 'window:loaded')\n   }\n \n-  function setupAtomHome () {",
+    "path": "static/index.js",
+    "position": null,
+    "original_position": 14,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I should have left a comment above this line originally about this but I think this is still needed on Linux based on this comment: https://github.com/atom/atom/issues/5412#issuecomment-73119795\n\nMaybe we can pass `atomHome` as a load setting and set it as an env var still which would remove the code duplication.\n",
+    "created_at": "2015-10-15T15:57:20Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r42143124",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42143124"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r42143124"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 83,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42270370",
+    "pull_request_review_id": null,
+    "id": 42270370,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyMjcwMzcw",
+    "diff_hunk": "@@ -14,6 +14,8 @@\n       })\n \n       // Ensure ATOM_HOME is always set before anything else is required\n+      // This is because of a difference in Linux not inherited between browser and render processes\n+      // issue #5142",
+    "path": "static/index.js",
+    "position": 5,
+    "original_position": 5,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "03faddd7ae4c2796b803bb44865338ff88ca0ed2",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": ":heart: \n",
+    "created_at": "2015-10-16T17:52:13Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r42270370",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42270370"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r42270370"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 18,
+    "original_line": 18,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42573831",
+    "pull_request_review_id": null,
+    "id": 42573831,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNTczODMx",
+    "diff_hunk": "@@ -57,11 +57,14 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+setupAtomHome = (args) ->",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 24,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "86528909588a925d8deb3cb6da7a872504a5664b",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "It looks like args is no longer used here so would you mind backing out this change here?\n",
+    "created_at": "2015-10-21T01:05:00Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r42573831",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42573831"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r42573831"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 60,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42620734",
+    "pull_request_review_id": null,
+    "id": 42620734,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNjIwNzM0",
+    "diff_hunk": "@@ -57,11 +57,14 @@ handleStartupEventWithSquirrel = ->\n setupCrashReporter = ->\n   crashReporter.start(productName: 'Atom', companyName: 'GitHub')\n \n-setupAtomHome = ->\n+setupAtomHome = (args) ->",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 24,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "86528909588a925d8deb3cb6da7a872504a5664b",
+    "user": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "done\n",
+    "created_at": "2015-10-21T13:15:23Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r42620734",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42620734"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r42620734"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 60,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42753242",
+    "pull_request_review_id": null,
+    "id": 42753242,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNzUzMjQy",
+    "diff_hunk": "@@ -0,0 +1,32 @@\n+fs = require 'fs-plus'\n+path = require 'path'\n+ipc = require 'ipc'\n+\n+module.exports =\n+class AtomPortable\n+  @getPortableAtomHomePath: ->\n+    execDirectoryPath = path.dirname(process.execPath)\n+    path.join(execDirectoryPath, '..', '.atom')\n+\n+  @isPortableInstall: (platform, environmentAtomHome, defaultHome) ->\n+    return false unless platform is 'win32'\n+    return false if environmentAtomHome\n+    return false if not fs.existsSync(@getPortableAtomHomePath())\n+    # currently checking only that the directory exists  and is writable,\n+    # probably want to do some integrity checks on contents in future\n+    @portableAtomHomePathWritable(defaultHome)\n+\n+  @portableAtomHomePathWritable: (defaultHome) ->",
+    "path": "src/browser/atom-portable.coffee",
+    "position": null,
+    "original_position": 19,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Could you rename this to `isPortableAtomHomePathWritable` to match the style of `isPortableInstall`?\n",
+    "created_at": "2015-10-22T14:19:21Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r42753242",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42753242"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r42753242"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 19,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42753298",
+    "pull_request_review_id": null,
+    "id": 42753298,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNzUzMjk4",
+    "diff_hunk": "@@ -0,0 +1,32 @@\n+fs = require 'fs-plus'\n+path = require 'path'\n+ipc = require 'ipc'\n+\n+module.exports =\n+class AtomPortable\n+  @getPortableAtomHomePath: ->\n+    execDirectoryPath = path.dirname(process.execPath)\n+    path.join(execDirectoryPath, '..', '.atom')\n+\n+  @isPortableInstall: (platform, environmentAtomHome, defaultHome) ->\n+    return false unless platform is 'win32'\n+    return false if environmentAtomHome\n+    return false if not fs.existsSync(@getPortableAtomHomePath())\n+    # currently checking only that the directory exists  and is writable,\n+    # probably want to do some integrity checks on contents in future\n+    @portableAtomHomePathWritable(defaultHome)\n+\n+  @portableAtomHomePathWritable: (defaultHome) ->\n+    writable = false\n+    message = \"\"\n+    try\n+      writePermissionTestFile = path.join(@getPortableAtomHomePath(), \"write.test\")\n+      fs.writeFileSync(writePermissionTestFile, \"test\") if not fs.existsSync(writePermissionTestFile)\n+      fs.removeSync(writePermissionTestFile)\n+      writable = true\n+    catch error\n+      message = \"Failed to use portable Atom home directory (#{@getPortableAtomHomePath()}).  Using the default instead (#{defaultHome}).  #{error.message}\"\n+\n+    ipc.on 'check-portable-home-writable', (event, arg) ->",
+    "path": "src/browser/atom-portable.coffee",
+    "position": null,
+    "original_position": 30,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "`arg` appears to be unused here so it looks like it is save to just remove it.\n",
+    "created_at": "2015-10-22T14:19:46Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r42753298",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42753298"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r42753298"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 30,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/42753362",
+    "pull_request_review_id": null,
+    "id": 42753362,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQyNzUzMzYy",
+    "diff_hunk": "@@ -12,6 +12,8 @@ yargs = require 'yargs'\n console.log = require 'nslog'\n \n start = ->\n+  args = parseCommandLine()",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 4,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Does this need to be moved here in this pull request? Or could it go back to under the `app.setAppUserModelId('com.squirrel.atom.atom')` line?\n",
+    "created_at": "2015-10-22T14:20:14Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r42753362",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/42753362"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r42753362"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 15,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/43157814",
+    "pull_request_review_id": null,
+    "id": 43157814,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMTU3ODE0",
+    "diff_hunk": "@@ -18,7 +18,7 @@ start = ->\n \n   # NB: This prevents Win10 from showing dupe items in the taskbar\n   app.setAppUserModelId('com.squirrel.atom.atom')\n-\n+  ",
+    "path": "src/browser/main.coffee",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "original_commit_id": "b1d10ef4dcc953df6afa0dc1895d594d8f46f313",
+    "user": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": ":fire: looks like some trailing whitespace here\n",
+    "created_at": "2015-10-27T17:41:26Z",
+    "updated_at": "2015-10-27T17:45:48Z",
+    "html_url": "https://github.com/atom/atom/pull/8442#discussion_r43157814",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/8442",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/43157814"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/8442#discussion_r43157814"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/8442"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 21,
+    "side": "RIGHT"
+  }
+]

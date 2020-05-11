@@ -1,0 +1,2372 @@
+[
+  {
+    "sha": "2710c06313f3aafdd0d31f58113a278268acd25c",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyNzEwYzA2MzEzZjNhYWZkZDBkMzFmNTgxMTNhMjc4MjY4YWNkMjVj",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-17T18:12:28Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:33Z"
+      },
+      "message": "WIP: First stab at custom element for panes\n\nStill need to create a SpacePen shim for access via `atom.workspaceView`\nproperty so we’re backward compatible with packages, but it basically\nworks.",
+      "tree": {
+        "sha": "9075ed1c5afbbcc0e10ece8263bbd262b3ad3468",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/9075ed1c5afbbcc0e10ece8263bbd262b3ad3468"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/2710c06313f3aafdd0d31f58113a278268acd25c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/2710c06313f3aafdd0d31f58113a278268acd25c",
+    "html_url": "https://github.com/atom/atom/commit/2710c06313f3aafdd0d31f58113a278268acd25c",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/2710c06313f3aafdd0d31f58113a278268acd25c/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "7d71eeedf4886cda30adfabb6bebc71d310c7999",
+        "url": "https://api.github.com/repos/atom/atom/commits/7d71eeedf4886cda30adfabb6bebc71d310c7999",
+        "html_url": "https://github.com/atom/atom/commit/7d71eeedf4886cda30adfabb6bebc71d310c7999"
+      }
+    ]
+  },
+  {
+    "sha": "4ba3162f3e2c0972f546cbc11217d4ca889af82c",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0YmEzMTYyZjNlMmMwOTcyZjU0NmNiYzExMjE3ZDRjYTg4OWFmODJj",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-17T20:55:32Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:33Z"
+      },
+      "message": "Handle pane commands on PaneElement via command registry",
+      "tree": {
+        "sha": "c6d29e3aaecd4322eaf8e0603f4dab6045d474ca",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c6d29e3aaecd4322eaf8e0603f4dab6045d474ca"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/4ba3162f3e2c0972f546cbc11217d4ca889af82c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/4ba3162f3e2c0972f546cbc11217d4ca889af82c",
+    "html_url": "https://github.com/atom/atom/commit/4ba3162f3e2c0972f546cbc11217d4ca889af82c",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/4ba3162f3e2c0972f546cbc11217d4ca889af82c/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "2710c06313f3aafdd0d31f58113a278268acd25c",
+        "url": "https://api.github.com/repos/atom/atom/commits/2710c06313f3aafdd0d31f58113a278268acd25c",
+        "html_url": "https://github.com/atom/atom/commit/2710c06313f3aafdd0d31f58113a278268acd25c"
+      }
+    ]
+  },
+  {
+    "sha": "de29ca690633a19327af5b4e325fb79f2fdda480",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkZTI5Y2E2OTA2MzNhMTkzMjdhZjViNGUzMjVmYjc5ZjJmZGRhNDgw",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-17T22:30:02Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:33Z"
+      },
+      "message": "Keep existing PaneView SpacePen API working as before\n\nWe will eventually deprecate all access to views via\n`atom.workspaceView`, which is the only way to get a reference to\ninstances of PaneView. Draining the swamp!",
+      "tree": {
+        "sha": "0a7ee8efb23f99ed11929b05a8eb3cdc8dbc08c0",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/0a7ee8efb23f99ed11929b05a8eb3cdc8dbc08c0"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/de29ca690633a19327af5b4e325fb79f2fdda480",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/de29ca690633a19327af5b4e325fb79f2fdda480",
+    "html_url": "https://github.com/atom/atom/commit/de29ca690633a19327af5b4e325fb79f2fdda480",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/de29ca690633a19327af5b4e325fb79f2fdda480/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "4ba3162f3e2c0972f546cbc11217d4ca889af82c",
+        "url": "https://api.github.com/repos/atom/atom/commits/4ba3162f3e2c0972f546cbc11217d4ca889af82c",
+        "html_url": "https://github.com/atom/atom/commit/4ba3162f3e2c0972f546cbc11217d4ca889af82c"
+      }
+    ]
+  },
+  {
+    "sha": "cf8dc29cc587ade6698469b2c76b7e81e0c9dd6f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpjZjhkYzI5Y2M1ODdhZGU2Njk4NDY5YjJjNzZiN2U4MWUwYzlkZDZm",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-17T22:52:02Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:33Z"
+      },
+      "message": "Use Pane::onDidAddItem instead of ::observeItems\n\nThe former includes the index at which the item was added and the latter\ndoes not.",
+      "tree": {
+        "sha": "32f3a38a47cdc4aec49d80d3ab3f2936561b6d7a",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/32f3a38a47cdc4aec49d80d3ab3f2936561b6d7a"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/cf8dc29cc587ade6698469b2c76b7e81e0c9dd6f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/cf8dc29cc587ade6698469b2c76b7e81e0c9dd6f",
+    "html_url": "https://github.com/atom/atom/commit/cf8dc29cc587ade6698469b2c76b7e81e0c9dd6f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/cf8dc29cc587ade6698469b2c76b7e81e0c9dd6f/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "de29ca690633a19327af5b4e325fb79f2fdda480",
+        "url": "https://api.github.com/repos/atom/atom/commits/de29ca690633a19327af5b4e325fb79f2fdda480",
+        "html_url": "https://github.com/atom/atom/commit/de29ca690633a19327af5b4e325fb79f2fdda480"
+      }
+    ]
+  },
+  {
+    "sha": "df37d7789502d14c44f405d2b552f134413ff2f9",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkZjM3ZDc3ODk1MDJkMTRjNDRmNDA1ZDJiNTUyZjEzNDQxM2ZmMmY5",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-17T23:17:53Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Remove Pane::getViewClass as we now use a view provider",
+      "tree": {
+        "sha": "e9691a621f05dafd46e9f196f434daf98b293c8b",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e9691a621f05dafd46e9f196f434daf98b293c8b"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/df37d7789502d14c44f405d2b552f134413ff2f9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/df37d7789502d14c44f405d2b552f134413ff2f9",
+    "html_url": "https://github.com/atom/atom/commit/df37d7789502d14c44f405d2b552f134413ff2f9",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/df37d7789502d14c44f405d2b552f134413ff2f9/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "cf8dc29cc587ade6698469b2c76b7e81e0c9dd6f",
+        "url": "https://api.github.com/repos/atom/atom/commits/cf8dc29cc587ade6698469b2c76b7e81e0c9dd6f",
+        "html_url": "https://github.com/atom/atom/commit/cf8dc29cc587ade6698469b2c76b7e81e0c9dd6f"
+      }
+    ]
+  },
+  {
+    "sha": "887a7bcaf4a5aef57567d179fc10866b2fdf4f5d",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4ODdhN2JjYWY0YTVhZWY1NzU2N2QxNzlmYzEwODY2YjJmZGY0ZjVk",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-17T23:32:45Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Restore $.fn.element property\n\nWe define element in certain space-pen views, but this makes it\navailable for all jQuery objects. Can’t remove it from the prototype.",
+      "tree": {
+        "sha": "32e526fd0a16ecda957d263e0afc4de5b016caea",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/32e526fd0a16ecda957d263e0afc4de5b016caea"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/887a7bcaf4a5aef57567d179fc10866b2fdf4f5d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/887a7bcaf4a5aef57567d179fc10866b2fdf4f5d",
+    "html_url": "https://github.com/atom/atom/commit/887a7bcaf4a5aef57567d179fc10866b2fdf4f5d",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/887a7bcaf4a5aef57567d179fc10866b2fdf4f5d/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "df37d7789502d14c44f405d2b552f134413ff2f9",
+        "url": "https://api.github.com/repos/atom/atom/commits/df37d7789502d14c44f405d2b552f134413ff2f9",
+        "html_url": "https://github.com/atom/atom/commit/df37d7789502d14c44f405d2b552f134413ff2f9"
+      }
+    ]
+  },
+  {
+    "sha": "2cc6c9e4c0776d9868428c88c55a47bd5efff706",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyY2M2YzllNGMwNzc2ZDk4Njg0MjhjODhjNTVhNDdiZDVlZmZmNzA2",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-18T01:11:53Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": ":lipstick:",
+      "tree": {
+        "sha": "a2df979fdfe1d82fa027d98c4d0fff19c1e50f4f",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/a2df979fdfe1d82fa027d98c4d0fff19c1e50f4f"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/2cc6c9e4c0776d9868428c88c55a47bd5efff706",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/2cc6c9e4c0776d9868428c88c55a47bd5efff706",
+    "html_url": "https://github.com/atom/atom/commit/2cc6c9e4c0776d9868428c88c55a47bd5efff706",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/2cc6c9e4c0776d9868428c88c55a47bd5efff706/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "887a7bcaf4a5aef57567d179fc10866b2fdf4f5d",
+        "url": "https://api.github.com/repos/atom/atom/commits/887a7bcaf4a5aef57567d179fc10866b2fdf4f5d",
+        "html_url": "https://github.com/atom/atom/commit/887a7bcaf4a5aef57567d179fc10866b2fdf4f5d"
+      }
+    ]
+  },
+  {
+    "sha": "11ede2d436923c7d5d42d9646b1df6dfe865f0ea",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxMWVkZTJkNDM2OTIzYzdkNWQ0MmQ5NjQ2YjFkZjZkZmU4NjVmMGVh",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-18T01:12:23Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Upgrade autosave to fix specs",
+      "tree": {
+        "sha": "3133d1cbb5e7b85edb8f2c61237a3987f1f59c81",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/3133d1cbb5e7b85edb8f2c61237a3987f1f59c81"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/11ede2d436923c7d5d42d9646b1df6dfe865f0ea",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/11ede2d436923c7d5d42d9646b1df6dfe865f0ea",
+    "html_url": "https://github.com/atom/atom/commit/11ede2d436923c7d5d42d9646b1df6dfe865f0ea",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/11ede2d436923c7d5d42d9646b1df6dfe865f0ea/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "2cc6c9e4c0776d9868428c88c55a47bd5efff706",
+        "url": "https://api.github.com/repos/atom/atom/commits/2cc6c9e4c0776d9868428c88c55a47bd5efff706",
+        "html_url": "https://github.com/atom/atom/commit/2cc6c9e4c0776d9868428c88c55a47bd5efff706"
+      }
+    ]
+  },
+  {
+    "sha": "da87f321e86d2a79bcc080bc68c49315e312a1dd",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkYTg3ZjMyMWU4NmQyYTc5YmNjMDgwYmM2OGM0OTMxNWUzMTJhMWRk",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-18T17:53:56Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Add PaneAxisElement",
+      "tree": {
+        "sha": "b09663e0db22ddf4cd7413276f5566c719515d7b",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b09663e0db22ddf4cd7413276f5566c719515d7b"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/da87f321e86d2a79bcc080bc68c49315e312a1dd",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/da87f321e86d2a79bcc080bc68c49315e312a1dd",
+    "html_url": "https://github.com/atom/atom/commit/da87f321e86d2a79bcc080bc68c49315e312a1dd",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/da87f321e86d2a79bcc080bc68c49315e312a1dd/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "11ede2d436923c7d5d42d9646b1df6dfe865f0ea",
+        "url": "https://api.github.com/repos/atom/atom/commits/11ede2d436923c7d5d42d9646b1df6dfe865f0ea",
+        "html_url": "https://github.com/atom/atom/commit/11ede2d436923c7d5d42d9646b1df6dfe865f0ea"
+      }
+    ]
+  },
+  {
+    "sha": "f76f7e17d35fb442aac49e2f3de0ef45b8938590",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmNzZmN2UxN2QzNWZiNDQyYWFjNDllMmYzZGUwZWY0NWI4OTM4NTkw",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-18T19:06:29Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Upgrade space-pen for simulated dom attachment bug fix",
+      "tree": {
+        "sha": "3b2e0f24dd1dda0a413339ed993458e5fddd1b89",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/3b2e0f24dd1dda0a413339ed993458e5fddd1b89"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/f76f7e17d35fb442aac49e2f3de0ef45b8938590",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/f76f7e17d35fb442aac49e2f3de0ef45b8938590",
+    "html_url": "https://github.com/atom/atom/commit/f76f7e17d35fb442aac49e2f3de0ef45b8938590",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/f76f7e17d35fb442aac49e2f3de0ef45b8938590/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "da87f321e86d2a79bcc080bc68c49315e312a1dd",
+        "url": "https://api.github.com/repos/atom/atom/commits/da87f321e86d2a79bcc080bc68c49315e312a1dd",
+        "html_url": "https://github.com/atom/atom/commit/da87f321e86d2a79bcc080bc68c49315e312a1dd"
+      }
+    ]
+  },
+  {
+    "sha": "60a551b308d44d1d11e2411246f19231d92558b8",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo2MGE1NTFiMzA4ZDQ0ZDFkMTFlMjQxMTI0NmYxOTIzMWQ5MjU1OGI4",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-18T19:34:18Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Only dispose PaneElement subscriptions when pane is destroyed\n\nNot when the element is detached, because it might be reattached.",
+      "tree": {
+        "sha": "bcb9d4b25ac3b6a4010530d88d9b47c8e5976b38",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/bcb9d4b25ac3b6a4010530d88d9b47c8e5976b38"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/60a551b308d44d1d11e2411246f19231d92558b8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/60a551b308d44d1d11e2411246f19231d92558b8",
+    "html_url": "https://github.com/atom/atom/commit/60a551b308d44d1d11e2411246f19231d92558b8",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/60a551b308d44d1d11e2411246f19231d92558b8/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "f76f7e17d35fb442aac49e2f3de0ef45b8938590",
+        "url": "https://api.github.com/repos/atom/atom/commits/f76f7e17d35fb442aac49e2f3de0ef45b8938590",
+        "html_url": "https://github.com/atom/atom/commit/f76f7e17d35fb442aac49e2f3de0ef45b8938590"
+      }
+    ]
+  },
+  {
+    "sha": "32f0eb4f7646b7cfe30c46acc7c5d1a1e3d6c3c4",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozMmYwZWI0Zjc2NDZiN2NmZTMwYzQ2YWNjN2M1ZDFhMWUzZDZjM2M0",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-18T19:41:48Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Don’t emit repeated attached events for the same PaneView",
+      "tree": {
+        "sha": "76d4ef67c0f10cf955ad9c45f51b5f5c2fd5e9e5",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/76d4ef67c0f10cf955ad9c45f51b5f5c2fd5e9e5"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/32f0eb4f7646b7cfe30c46acc7c5d1a1e3d6c3c4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/32f0eb4f7646b7cfe30c46acc7c5d1a1e3d6c3c4",
+    "html_url": "https://github.com/atom/atom/commit/32f0eb4f7646b7cfe30c46acc7c5d1a1e3d6c3c4",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/32f0eb4f7646b7cfe30c46acc7c5d1a1e3d6c3c4/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "60a551b308d44d1d11e2411246f19231d92558b8",
+        "url": "https://api.github.com/repos/atom/atom/commits/60a551b308d44d1d11e2411246f19231d92558b8",
+        "html_url": "https://github.com/atom/atom/commit/60a551b308d44d1d11e2411246f19231d92558b8"
+      }
+    ]
+  },
+  {
+    "sha": "465d2afd95072adfc624453eaef3349d6b77ba70",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0NjVkMmFmZDk1MDcyYWRmYzYyNDQ1M2VhZWYzMzQ5ZDZiNzdiYTcw",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-18T19:42:13Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Remove the old root view properly",
+      "tree": {
+        "sha": "4d1ee4371dc4cf5eb6be9c40cc77b9e5ca02f9fd",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/4d1ee4371dc4cf5eb6be9c40cc77b9e5ca02f9fd"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/465d2afd95072adfc624453eaef3349d6b77ba70",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/465d2afd95072adfc624453eaef3349d6b77ba70",
+    "html_url": "https://github.com/atom/atom/commit/465d2afd95072adfc624453eaef3349d6b77ba70",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/465d2afd95072adfc624453eaef3349d6b77ba70/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "32f0eb4f7646b7cfe30c46acc7c5d1a1e3d6c3c4",
+        "url": "https://api.github.com/repos/atom/atom/commits/32f0eb4f7646b7cfe30c46acc7c5d1a1e3d6c3c4",
+        "html_url": "https://github.com/atom/atom/commit/32f0eb4f7646b7cfe30c46acc7c5d1a1e3d6c3c4"
+      }
+    ]
+  },
+  {
+    "sha": "368ef59b8534a2bb2fdd1095dcbca6fa7408c516",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozNjhlZjU5Yjg1MzRhMmJiMmZkZDEwOTVkY2JjYTZmYTc0MDhjNTE2",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:05:45Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:34Z"
+      },
+      "message": "Remove stray log",
+      "tree": {
+        "sha": "79d06db09e8dc5fcd7b8b6c53910e8a968b7f7a6",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/79d06db09e8dc5fcd7b8b6c53910e8a968b7f7a6"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/368ef59b8534a2bb2fdd1095dcbca6fa7408c516",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/368ef59b8534a2bb2fdd1095dcbca6fa7408c516",
+    "html_url": "https://github.com/atom/atom/commit/368ef59b8534a2bb2fdd1095dcbca6fa7408c516",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/368ef59b8534a2bb2fdd1095dcbca6fa7408c516/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "465d2afd95072adfc624453eaef3349d6b77ba70",
+        "url": "https://api.github.com/repos/atom/atom/commits/465d2afd95072adfc624453eaef3349d6b77ba70",
+        "html_url": "https://github.com/atom/atom/commit/465d2afd95072adfc624453eaef3349d6b77ba70"
+      }
+    ]
+  },
+  {
+    "sha": "3e0477ffcb9824fd90a5eadbc79157bc582430e6",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozZTA0NzdmZmNiOTgyNGZkOTBhNWVhZGJjNzkxNTdiYzU4MjQzMGU2",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:05:55Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:28:35Z"
+      },
+      "message": "Move shell command installation to workspace model",
+      "tree": {
+        "sha": "1691277ff5d1890ae5eb5ddf0a61d9c1a923ecab",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/1691277ff5d1890ae5eb5ddf0a61d9c1a923ecab"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/3e0477ffcb9824fd90a5eadbc79157bc582430e6",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/3e0477ffcb9824fd90a5eadbc79157bc582430e6",
+    "html_url": "https://github.com/atom/atom/commit/3e0477ffcb9824fd90a5eadbc79157bc582430e6",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/3e0477ffcb9824fd90a5eadbc79157bc582430e6/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "368ef59b8534a2bb2fdd1095dcbca6fa7408c516",
+        "url": "https://api.github.com/repos/atom/atom/commits/368ef59b8534a2bb2fdd1095dcbca6fa7408c516",
+        "html_url": "https://github.com/atom/atom/commit/368ef59b8534a2bb2fdd1095dcbca6fa7408c516"
+      }
+    ]
+  },
+  {
+    "sha": "1c584381241d6fda97ee58d7a828e3639946a021",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxYzU4NDM4MTI0MWQ2ZmRhOTdlZTU4ZDdhODI4ZTM2Mzk5NDZhMDIx",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:46:01Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:46:01Z"
+      },
+      "message": "Move PaneContainerView::confirmClose to the model layer",
+      "tree": {
+        "sha": "578230732d8dfcbaa6d577857d6eb066e9f433ad",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/578230732d8dfcbaa6d577857d6eb066e9f433ad"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/1c584381241d6fda97ee58d7a828e3639946a021",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/1c584381241d6fda97ee58d7a828e3639946a021",
+    "html_url": "https://github.com/atom/atom/commit/1c584381241d6fda97ee58d7a828e3639946a021",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/1c584381241d6fda97ee58d7a828e3639946a021/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "3e0477ffcb9824fd90a5eadbc79157bc582430e6",
+        "url": "https://api.github.com/repos/atom/atom/commits/3e0477ffcb9824fd90a5eadbc79157bc582430e6",
+        "html_url": "https://github.com/atom/atom/commit/3e0477ffcb9824fd90a5eadbc79157bc582430e6"
+      }
+    ]
+  },
+  {
+    "sha": "186335d6191e5b2760d25b96ffb4c35db9c05412",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxODYzMzVkNjE5MWU1YjI3NjBkMjViOTZmZmI0YzM1ZGI5YzA1NDEy",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:56:50Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T21:56:50Z"
+      },
+      "message": "Mock out document.title with Object.defineProperty\n\n\nPreviously the WorkspaceView::setTitle was mocked in specs to prevent\nthe title from changing. But I would like to move the title update logic\nwithout breaking assertions, so now we can assert directly on\ndocument.title.",
+      "tree": {
+        "sha": "8b10c8b1117665ee8ef2a24bc0999fb5d10cf8bc",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/8b10c8b1117665ee8ef2a24bc0999fb5d10cf8bc"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/186335d6191e5b2760d25b96ffb4c35db9c05412",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/186335d6191e5b2760d25b96ffb4c35db9c05412",
+    "html_url": "https://github.com/atom/atom/commit/186335d6191e5b2760d25b96ffb4c35db9c05412",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/186335d6191e5b2760d25b96ffb4c35db9c05412/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "1c584381241d6fda97ee58d7a828e3639946a021",
+        "url": "https://api.github.com/repos/atom/atom/commits/1c584381241d6fda97ee58d7a828e3639946a021",
+        "html_url": "https://github.com/atom/atom/commit/1c584381241d6fda97ee58d7a828e3639946a021"
+      }
+    ]
+  },
+  {
+    "sha": "28deb9dec57c36ba506e8dd892d03eb21cee29bf",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyOGRlYjlkZWM1N2MzNmJhNTA2ZThkZDg5MmQwM2ViMjFjZWUyOWJm",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T22:26:54Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T22:26:54Z"
+      },
+      "message": "Maintain document.title in the workspace model, not the view",
+      "tree": {
+        "sha": "d4640641b89f152dbed3ab601ec3dc85a5c2b775",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/d4640641b89f152dbed3ab601ec3dc85a5c2b775"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/28deb9dec57c36ba506e8dd892d03eb21cee29bf",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/28deb9dec57c36ba506e8dd892d03eb21cee29bf",
+    "html_url": "https://github.com/atom/atom/commit/28deb9dec57c36ba506e8dd892d03eb21cee29bf",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/28deb9dec57c36ba506e8dd892d03eb21cee29bf/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "186335d6191e5b2760d25b96ffb4c35db9c05412",
+        "url": "https://api.github.com/repos/atom/atom/commits/186335d6191e5b2760d25b96ffb4c35db9c05412",
+        "html_url": "https://github.com/atom/atom/commit/186335d6191e5b2760d25b96ffb4c35db9c05412"
+      }
+    ]
+  },
+  {
+    "sha": "ae488fc7fe2f73f824243a69ed7f4f51a4389f85",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphZTQ4OGZjN2ZlMmY3M2Y4MjQyNDNhNjllZDdmNGY1MWE0Mzg5Zjg1",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T23:00:05Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-24T23:00:25Z"
+      },
+      "message": "Update document edited status in workspace model\n\nThis also fixes a previous oversight where the status wasn’t updated\nwhen switching between pane items with different modified status.",
+      "tree": {
+        "sha": "ebf4c35176f3d37cbde4a4b887ce49e026906363",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ebf4c35176f3d37cbde4a4b887ce49e026906363"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/ae488fc7fe2f73f824243a69ed7f4f51a4389f85",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/ae488fc7fe2f73f824243a69ed7f4f51a4389f85",
+    "html_url": "https://github.com/atom/atom/commit/ae488fc7fe2f73f824243a69ed7f4f51a4389f85",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/ae488fc7fe2f73f824243a69ed7f4f51a4389f85/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "28deb9dec57c36ba506e8dd892d03eb21cee29bf",
+        "url": "https://api.github.com/repos/atom/atom/commits/28deb9dec57c36ba506e8dd892d03eb21cee29bf",
+        "html_url": "https://github.com/atom/atom/commit/28deb9dec57c36ba506e8dd892d03eb21cee29bf"
+      }
+    ]
+  },
+  {
+    "sha": "670f3e4946e17a5fde9fcbdb5d73f025c6360ff7",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo2NzBmM2U0OTQ2ZTE3YTVmZGU5ZmNiZGI1ZDczZjAyNWM2MzYwZmY3",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T01:42:36Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T17:41:09Z"
+      },
+      "message": "Add WorkspaceElement",
+      "tree": {
+        "sha": "54ed52172cded62e239dd26562629267b7809b44",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/54ed52172cded62e239dd26562629267b7809b44"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/670f3e4946e17a5fde9fcbdb5d73f025c6360ff7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/670f3e4946e17a5fde9fcbdb5d73f025c6360ff7",
+    "html_url": "https://github.com/atom/atom/commit/670f3e4946e17a5fde9fcbdb5d73f025c6360ff7",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/670f3e4946e17a5fde9fcbdb5d73f025c6360ff7/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "ae488fc7fe2f73f824243a69ed7f4f51a4389f85",
+        "url": "https://api.github.com/repos/atom/atom/commits/ae488fc7fe2f73f824243a69ed7f4f51a4389f85",
+        "html_url": "https://github.com/atom/atom/commit/ae488fc7fe2f73f824243a69ed7f4f51a4389f85"
+      }
+    ]
+  },
+  {
+    "sha": "187e30016799e6d4ea01a12c01d6fbfe59baae57",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxODdlMzAwMTY3OTllNmQ0ZWEwMWExMmMwMWQ2ZmJmZTU5YmFhZTU3",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T17:56:29Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T17:56:29Z"
+      },
+      "message": "Apply workaround for clearing of focus upon loading of window\n\nAfter the first window focus event, the focus is getting cleared back\nto document.body regardless of the prior active element. Refocusing\nworkspace on a delay after the first window focus event works around\nthe problem.",
+      "tree": {
+        "sha": "e0ec652d6ead96838c9707b257044632a8f21644",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e0ec652d6ead96838c9707b257044632a8f21644"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/187e30016799e6d4ea01a12c01d6fbfe59baae57",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/187e30016799e6d4ea01a12c01d6fbfe59baae57",
+    "html_url": "https://github.com/atom/atom/commit/187e30016799e6d4ea01a12c01d6fbfe59baae57",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/187e30016799e6d4ea01a12c01d6fbfe59baae57/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "670f3e4946e17a5fde9fcbdb5d73f025c6360ff7",
+        "url": "https://api.github.com/repos/atom/atom/commits/670f3e4946e17a5fde9fcbdb5d73f025c6360ff7",
+        "html_url": "https://github.com/atom/atom/commit/670f3e4946e17a5fde9fcbdb5d73f025c6360ff7"
+      }
+    ]
+  },
+  {
+    "sha": "eaa90e61587f96fce800f5f66a1ff9c3caeded03",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplYWE5MGU2MTU4N2Y5NmZjZTgwMGY1ZjY2YTFmZjljM2NhZWRlZDAz",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:33:05Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:33:05Z"
+      },
+      "message": "Clean up debugging",
+      "tree": {
+        "sha": "458b10894747fae9da5b5c39e6a15960aee72081",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/458b10894747fae9da5b5c39e6a15960aee72081"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/eaa90e61587f96fce800f5f66a1ff9c3caeded03",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/eaa90e61587f96fce800f5f66a1ff9c3caeded03",
+    "html_url": "https://github.com/atom/atom/commit/eaa90e61587f96fce800f5f66a1ff9c3caeded03",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/eaa90e61587f96fce800f5f66a1ff9c3caeded03/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "187e30016799e6d4ea01a12c01d6fbfe59baae57",
+        "url": "https://api.github.com/repos/atom/atom/commits/187e30016799e6d4ea01a12c01d6fbfe59baae57",
+        "html_url": "https://github.com/atom/atom/commit/187e30016799e6d4ea01a12c01d6fbfe59baae57"
+      }
+    ]
+  },
+  {
+    "sha": "9d2bb7110919fb232c6e0c3ed4e43c3926b4438f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo5ZDJiYjcxMTA5MTlmYjIzMmM2ZTBjM2VkNGU0M2MzOTI2YjQ0Mzhm",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:35:08Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:35:08Z"
+      },
+      "message": "More cleanup",
+      "tree": {
+        "sha": "f77be146468bfb194cfc3146e226c66cb37b5321",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/f77be146468bfb194cfc3146e226c66cb37b5321"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/9d2bb7110919fb232c6e0c3ed4e43c3926b4438f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/9d2bb7110919fb232c6e0c3ed4e43c3926b4438f",
+    "html_url": "https://github.com/atom/atom/commit/9d2bb7110919fb232c6e0c3ed4e43c3926b4438f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/9d2bb7110919fb232c6e0c3ed4e43c3926b4438f/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "eaa90e61587f96fce800f5f66a1ff9c3caeded03",
+        "url": "https://api.github.com/repos/atom/atom/commits/eaa90e61587f96fce800f5f66a1ff9c3caeded03",
+        "html_url": "https://github.com/atom/atom/commit/eaa90e61587f96fce800f5f66a1ff9c3caeded03"
+      }
+    ]
+  },
+  {
+    "sha": "a5781d65c3674d0635ddee3db8f20248c90d945e",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphNTc4MWQ2NWMzNjc0ZDA2MzVkZGVlM2RiOGYyMDI0OGM5MGQ5NDVl",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:36:44Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:36:44Z"
+      },
+      "message": "Remove methods carried over from old view",
+      "tree": {
+        "sha": "4a937011ddc7354695a79ba420085273cee9b482",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/4a937011ddc7354695a79ba420085273cee9b482"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/a5781d65c3674d0635ddee3db8f20248c90d945e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/a5781d65c3674d0635ddee3db8f20248c90d945e",
+    "html_url": "https://github.com/atom/atom/commit/a5781d65c3674d0635ddee3db8f20248c90d945e",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/a5781d65c3674d0635ddee3db8f20248c90d945e/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "9d2bb7110919fb232c6e0c3ed4e43c3926b4438f",
+        "url": "https://api.github.com/repos/atom/atom/commits/9d2bb7110919fb232c6e0c3ed4e43c3926b4438f",
+        "html_url": "https://github.com/atom/atom/commit/9d2bb7110919fb232c6e0c3ed4e43c3926b4438f"
+      }
+    ]
+  },
+  {
+    "sha": "4207752a082a0f5111993e1756d1f4ef4f256759",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0MjA3NzUyYTA4MmEwZjUxMTE5OTNlMTc1NmQxZjRlZjRmMjU2NzU5",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:42:12Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:42:12Z"
+      },
+      "message": "Rename deprecatedViewEvents to deprecateViewEvents",
+      "tree": {
+        "sha": "9f7ac554b30f015720e1278d9d4936a57cf78635",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/9f7ac554b30f015720e1278d9d4936a57cf78635"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/4207752a082a0f5111993e1756d1f4ef4f256759",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/4207752a082a0f5111993e1756d1f4ef4f256759",
+    "html_url": "https://github.com/atom/atom/commit/4207752a082a0f5111993e1756d1f4ef4f256759",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/4207752a082a0f5111993e1756d1f4ef4f256759/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "a5781d65c3674d0635ddee3db8f20248c90d945e",
+        "url": "https://api.github.com/repos/atom/atom/commits/a5781d65c3674d0635ddee3db8f20248c90d945e",
+        "html_url": "https://github.com/atom/atom/commit/a5781d65c3674d0635ddee3db8f20248c90d945e"
+      }
+    ]
+  },
+  {
+    "sha": "442223f97b26fa2947a706342e6be0323511cd74",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0NDIyMjNmOTdiMjZmYTI5NDdhNzA2MzQyZTZiZTAzMjM1MTFjZDc0",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:44:06Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T18:44:53Z"
+      },
+      "message": ":lipstick: spec language",
+      "tree": {
+        "sha": "1c27b705c72026bca2fed72f9b57596419f96ce4",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/1c27b705c72026bca2fed72f9b57596419f96ce4"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/442223f97b26fa2947a706342e6be0323511cd74",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/442223f97b26fa2947a706342e6be0323511cd74",
+    "html_url": "https://github.com/atom/atom/commit/442223f97b26fa2947a706342e6be0323511cd74",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/442223f97b26fa2947a706342e6be0323511cd74/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "4207752a082a0f5111993e1756d1f4ef4f256759",
+        "url": "https://api.github.com/repos/atom/atom/commits/4207752a082a0f5111993e1756d1f4ef4f256759",
+        "html_url": "https://github.com/atom/atom/commit/4207752a082a0f5111993e1756d1f4ef4f256759"
+      }
+    ]
+  },
+  {
+    "sha": "4b746deb7314035ae107697df9c00fc822f80ff3",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0Yjc0NmRlYjczMTQwMzVhZTEwNzY5N2RmOWMwMGZjODIyZjgwZmYz",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T19:11:15Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-25T19:11:15Z"
+      },
+      "message": "Move shell command installation entirely into CommandInstaller",
+      "tree": {
+        "sha": "0961cede454b3d74d39e7520d5086be1ad38f325",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/0961cede454b3d74d39e7520d5086be1ad38f325"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/4b746deb7314035ae107697df9c00fc822f80ff3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/4b746deb7314035ae107697df9c00fc822f80ff3",
+    "html_url": "https://github.com/atom/atom/commit/4b746deb7314035ae107697df9c00fc822f80ff3",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/4b746deb7314035ae107697df9c00fc822f80ff3/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "442223f97b26fa2947a706342e6be0323511cd74",
+        "url": "https://api.github.com/repos/atom/atom/commits/442223f97b26fa2947a706342e6be0323511cd74",
+        "html_url": "https://github.com/atom/atom/commit/442223f97b26fa2947a706342e6be0323511cd74"
+      }
+    ]
+  },
+  {
+    "sha": "edaf1e2ced65490da5b9f54e6a380e27131e21dd",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplZGFmMWUyY2VkNjU0OTBkYTViOWY1NGU2YTM4MGUyNzEzMWUyMWRk",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-26T02:16:40Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-26T02:16:40Z"
+      },
+      "message": "Make $::view return __spacePenView from the first element if present",
+      "tree": {
+        "sha": "b4d192a629e51fba5293d065250e5fcb2d14f75b",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b4d192a629e51fba5293d065250e5fcb2d14f75b"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/edaf1e2ced65490da5b9f54e6a380e27131e21dd",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/edaf1e2ced65490da5b9f54e6a380e27131e21dd",
+    "html_url": "https://github.com/atom/atom/commit/edaf1e2ced65490da5b9f54e6a380e27131e21dd",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/edaf1e2ced65490da5b9f54e6a380e27131e21dd/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "4b746deb7314035ae107697df9c00fc822f80ff3",
+        "url": "https://api.github.com/repos/atom/atom/commits/4b746deb7314035ae107697df9c00fc822f80ff3",
+        "html_url": "https://github.com/atom/atom/commit/4b746deb7314035ae107697df9c00fc822f80ff3"
+      }
+    ]
+  },
+  {
+    "sha": "039d87caa0e60b12afe3e5d471a82197c2e02539",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowMzlkODdjYWEwZTYwYjEyYWZlM2U1ZDQ3MWE4MjE5N2MyZTAyNTM5",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-26T02:17:04Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-26T02:17:04Z"
+      },
+      "message": "Allow WorkspaceView to be instantiated directly for compatibility",
+      "tree": {
+        "sha": "7f435e68d57db53bd38f98a37d668e6cc2b9096b",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/7f435e68d57db53bd38f98a37d668e6cc2b9096b"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/039d87caa0e60b12afe3e5d471a82197c2e02539",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/039d87caa0e60b12afe3e5d471a82197c2e02539",
+    "html_url": "https://github.com/atom/atom/commit/039d87caa0e60b12afe3e5d471a82197c2e02539",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/039d87caa0e60b12afe3e5d471a82197c2e02539/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "edaf1e2ced65490da5b9f54e6a380e27131e21dd",
+        "url": "https://api.github.com/repos/atom/atom/commits/edaf1e2ced65490da5b9f54e6a380e27131e21dd",
+        "html_url": "https://github.com/atom/atom/commit/edaf1e2ced65490da5b9f54e6a380e27131e21dd"
+      }
+    ]
+  },
+  {
+    "sha": "3442157e16785b882a73c5102b0d9f9edf8cad04",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozNDQyMTU3ZTE2Nzg1Yjg4MmE3M2M1MTAyYjBkOWY5ZWRmOGNhZDA0",
+    "commit": {
+      "author": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-26T02:39:04Z"
+      },
+      "committer": {
+        "name": "Nathan Sobo",
+        "email": "nathan@github.com",
+        "date": "2014-09-26T02:39:04Z"
+      },
+      "message": "Fix command-installer-spec",
+      "tree": {
+        "sha": "8227ccef7d1a517342ce206882e132768a90fa2b",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/8227ccef7d1a517342ce206882e132768a90fa2b"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/3442157e16785b882a73c5102b0d9f9edf8cad04",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/3442157e16785b882a73c5102b0d9f9edf8cad04",
+    "html_url": "https://github.com/atom/atom/commit/3442157e16785b882a73c5102b0d9f9edf8cad04",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/3442157e16785b882a73c5102b0d9f9edf8cad04/comments",
+    "author": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "039d87caa0e60b12afe3e5d471a82197c2e02539",
+        "url": "https://api.github.com/repos/atom/atom/commits/039d87caa0e60b12afe3e5d471a82197c2e02539",
+        "html_url": "https://github.com/atom/atom/commit/039d87caa0e60b12afe3e5d471a82197c2e02539"
+      }
+    ]
+  }
+]

@@ -1,0 +1,552 @@
+[
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58222453",
+    "pull_request_review_id": null,
+    "id": 58222453,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MjIyNDUz",
+    "diff_hunk": "@@ -41,6 +42,7 @@\n     \"mocha\": \"^2.4.5\",\n     \"moment\": \"^2.12.0\",\n     \"mozilla-download\": \"^1.1.1\",\n+    \"nightmare\": \"^2.2.0\",\n     \"phantomjs-prebuilt\": \"^2.1.5\",",
+    "path": "package.json",
+    "position": null,
+    "original_position": 13,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "2680656eca4a6a895b0e2d9bdb22de11c1c5d159",
+    "user": {
+      "login": "dontcallmedom",
+      "id": 216410,
+      "node_id": "MDQ6VXNlcjIxNjQxMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/216410?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dontcallmedom",
+      "html_url": "https://github.com/dontcallmedom",
+      "followers_url": "https://api.github.com/users/dontcallmedom/followers",
+      "following_url": "https://api.github.com/users/dontcallmedom/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dontcallmedom/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dontcallmedom/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dontcallmedom/subscriptions",
+      "organizations_url": "https://api.github.com/users/dontcallmedom/orgs",
+      "repos_url": "https://api.github.com/users/dontcallmedom/repos",
+      "events_url": "https://api.github.com/users/dontcallmedom/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dontcallmedom/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "shouldn't this go? or is phantom still used elsewhere?\n",
+    "created_at": "2016-04-01T15:30:08Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58222453",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58222453"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58222453"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 46,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58222787",
+    "pull_request_review_id": null,
+    "id": 58222787,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MjIyNzg3",
+    "diff_hunk": "@@ -41,6 +42,7 @@\n     \"mocha\": \"^2.4.5\",\n     \"moment\": \"^2.12.0\",\n     \"mozilla-download\": \"^1.1.1\",\n+    \"nightmare\": \"^2.2.0\",\n     \"phantomjs-prebuilt\": \"^2.1.5\",",
+    "path": "package.json",
+    "position": null,
+    "original_position": 13,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "2680656eca4a6a895b0e2d9bdb22de11c1c5d159",
+    "user": {
+      "login": "marcoscaceres",
+      "id": 870154,
+      "node_id": "MDQ6VXNlcjg3MDE1NA==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/870154?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/marcoscaceres",
+      "html_url": "https://github.com/marcoscaceres",
+      "followers_url": "https://api.github.com/users/marcoscaceres/followers",
+      "following_url": "https://api.github.com/users/marcoscaceres/following{/other_user}",
+      "gists_url": "https://api.github.com/users/marcoscaceres/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/marcoscaceres/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/marcoscaceres/subscriptions",
+      "organizations_url": "https://api.github.com/users/marcoscaceres/orgs",
+      "repos_url": "https://api.github.com/users/marcoscaceres/repos",
+      "events_url": "https://api.github.com/users/marcoscaceres/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/marcoscaceres/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think you are right. Squeee!!! Will double check. \n",
+    "created_at": "2016-04-01T15:32:12Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58222787",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58222787"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58222787"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 46,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58223673",
+    "pull_request_review_id": null,
+    "id": 58223673,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MjIzNjcz",
+    "diff_hunk": "@@ -41,6 +42,7 @@\n     \"mocha\": \"^2.4.5\",\n     \"moment\": \"^2.12.0\",\n     \"mozilla-download\": \"^1.1.1\",\n+    \"nightmare\": \"^2.2.0\",\n     \"phantomjs-prebuilt\": \"^2.1.5\",",
+    "path": "package.json",
+    "position": null,
+    "original_position": 13,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "2680656eca4a6a895b0e2d9bdb22de11c1c5d159",
+    "user": {
+      "login": "marcoscaceres",
+      "id": 870154,
+      "node_id": "MDQ6VXNlcjg3MDE1NA==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/870154?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/marcoscaceres",
+      "html_url": "https://github.com/marcoscaceres",
+      "followers_url": "https://api.github.com/users/marcoscaceres/followers",
+      "following_url": "https://api.github.com/users/marcoscaceres/following{/other_user}",
+      "gists_url": "https://api.github.com/users/marcoscaceres/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/marcoscaceres/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/marcoscaceres/subscriptions",
+      "organizations_url": "https://api.github.com/users/marcoscaceres/orgs",
+      "repos_url": "https://api.github.com/users/marcoscaceres/repos",
+      "events_url": "https://api.github.com/users/marcoscaceres/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/marcoscaceres/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Ok, removed :dancer: :dancer: :dancer: :dancers:! \n",
+    "created_at": "2016-04-01T15:38:12Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58223673",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58223673"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58223673"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 46,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58224479",
+    "pull_request_review_id": null,
+    "id": 58224479,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MjI0NDc5",
+    "diff_hunk": "@@ -1,141 +1,150 @@\n-#!/usr/bin/env phantomjs --ssl-protocol=any\n-\n-/*global phantom, respecEvents, respecConfig, require*/\n-// respec2html is a command line utility that converts a ReSpec source file to an HTML file.\n-// Depends on PhantomJS <http://phantomjs.org>.\n-\n+#!/usr/local/bin/node\n+/*jshint node: true, browser: false*/\n \"use strict\";\n-var page = require(\"webpage\").create();\n-var args = require(\"system\").args.slice();\n-var fs = require(\"fs\");\n-var timer;\n-var reportErrors = false;\n-var reportWarnings = false;\n-var ignoreScripts = false;\n-var errors = [];\n-var warnings = [];\n-var delay = 0;\n-\n-// report console.error on stderr\n-console.error = function() {\n-  require(\"system\").stderr.write(Array.prototype.join.call(arguments, \" \") + \"\\n\");\n-};\n-\n-var eOption = args.indexOf(\"-e\");\n-if (eOption !== -1) {\n-  args.splice(args.indexOf(\"-e\"), 1);\n-  reportErrors = true;\n-}\n-\n-if (args.indexOf(\"-w\") !== -1) {\n-  args.splice(args.indexOf(\"-w\"), 1);\n-  reportWarnings = true;\n-}\n-\n-if (args.indexOf(\"--delay\") !== -1) {\n-  delay = args.splice(args.indexOf(\"--delay\"), 2)[1];\n-}\n-\n-if (args.indexOf(\"--exclude-script\") !== -1) {",
+    "path": "tools/respec2html.js",
+    "position": 130,
+    "original_position": 41,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "9e10a5bba618f965b3278c74b09298d45fb0392d",
+    "user": {
+      "login": "dontcallmedom",
+      "id": 216410,
+      "node_id": "MDQ6VXNlcjIxNjQxMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/216410?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dontcallmedom",
+      "html_url": "https://github.com/dontcallmedom",
+      "followers_url": "https://api.github.com/users/dontcallmedom/followers",
+      "following_url": "https://api.github.com/users/dontcallmedom/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dontcallmedom/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dontcallmedom/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dontcallmedom/subscriptions",
+      "organizations_url": "https://api.github.com/users/dontcallmedom/orgs",
+      "repos_url": "https://api.github.com/users/dontcallmedom/repos",
+      "events_url": "https://api.github.com/users/dontcallmedom/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dontcallmedom/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "looks like you didn't replicate this feature — it is needed for the spec generator\n",
+    "created_at": "2016-04-01T15:43:29Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58224479",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58224479"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58224479"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 39,
+    "original_line": 39,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58224587",
+    "pull_request_review_id": null,
+    "id": 58224587,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MjI0NTg3",
+    "diff_hunk": "@@ -1,141 +1,150 @@\n-#!/usr/bin/env phantomjs --ssl-protocol=any\n-\n-/*global phantom, respecEvents, respecConfig, require*/\n-// respec2html is a command line utility that converts a ReSpec source file to an HTML file.\n-// Depends on PhantomJS <http://phantomjs.org>.\n-\n+#!/usr/local/bin/node\n+/*jshint node: true, browser: false*/\n \"use strict\";\n-var page = require(\"webpage\").create();\n-var args = require(\"system\").args.slice();\n-var fs = require(\"fs\");\n-var timer;\n-var reportErrors = false;\n-var reportWarnings = false;\n-var ignoreScripts = false;\n-var errors = [];\n-var warnings = [];\n-var delay = 0;\n-\n-// report console.error on stderr\n-console.error = function() {\n-  require(\"system\").stderr.write(Array.prototype.join.call(arguments, \" \") + \"\\n\");\n-};\n-\n-var eOption = args.indexOf(\"-e\");\n-if (eOption !== -1) {\n-  args.splice(args.indexOf(\"-e\"), 1);\n-  reportErrors = true;\n-}\n-\n-if (args.indexOf(\"-w\") !== -1) {\n-  args.splice(args.indexOf(\"-w\"), 1);\n-  reportWarnings = true;\n-}\n-\n-if (args.indexOf(\"--delay\") !== -1) {\n-  delay = args.splice(args.indexOf(\"--delay\"), 2)[1];\n-}\n-\n-if (args.indexOf(\"--exclude-script\") !== -1) {\n-  var idx = args.indexOf(\"--exclude-script\");\n-  var values = args.splice(idx, 2);\n-  ignoreScripts = values[1];\n-}\n-\n-// Reading other parameters\n-var source = args[1];\n-var output = args[2];\n-var timeout = isNaN(args[3]) ? 5 : parseInt(args[3], 10);\n-\n-if (args.length < 2 || args.length > 4) {\n-  var usage = \"Usage:\\n   phantomjs --ssl-protocol=any respec2html.js [-e] [-w] \" +\n-      \"[--exclude-script url] respec-source [html-output] [timeout]\\n\" +\n-      \"   respec-source  ReSpec source file, or an URL to the file\\n\" +\n-      \"   [-e]                    Report ReSpec errors on stderr\\n\" +\n-      \"   [-w]                    Report ReSpec warnings on stderr\\n\" +\n-      \"   [--exclude-script url]  Do not load scripts whose source\\n\" +\n-      \"                           starts with the passed URL\\n\" +\n-      \"   [html-output]           Name for the HTML file to be generated,\\n\" +\n-      \"                           defaults to stdout\\n\" +\n-      \"   [timeout]               An optional timeout in seconds, default is 10\\n\";\n-  console.error(usage);\n-  phantom.exit(2);\n-}\n+const async = require(\"marcosc-async\");\n+const colors = require(\"colors\");\n+colors.setTheme({\n+  data: \"grey\",\n+  debug: \"cyan\",\n+  error: \"red\",\n+  help: \"cyan\",\n+  info: \"green\",\n+  important: \"red\",\n+  input: \"grey\",\n+  prompt: \"grey\",\n+  verbose: \"cyan\",\n+  warn: \"yellow\",\n+});\n+const optionDefinitions = [{\n+  alias: \"h\",\n+  defaultValue: false,\n+  description: \"Display this usage guide.\",\n+  name: \"help\",\n+  type: Boolean,\n+}, {\n+  defaultOption: true,\n+  description: \"URL to ReSpec source file.\",\n+  multiple: false,\n+  name: \"src\",\n+  type: String,\n+},{\n+  alias: \"o\",\n+  defaultOption: false,\n+  description: \"Path to output file. When omitted, just stdout.\",\n+  multiple: false,\n+  name: \"out\",\n+  type: String,\n+}, {\n+  alias: \"t\",\n+  defaultValue: 10,\n+  name: \"timeout\",\n+  type: Number,\n+}, {\n+  alias: \"e\",\n+  default: true,\n+  description: \"Report ReSpec errors on stderr.\",\n+  name: \"output-errors\",\n+  type: Boolean,\n+}, {\n+  alias: \"w\",\n+  default: false,\n+  description: \"Report ReSpec warnings on stderr.\",\n+  name: \"output-warnings\",\n+  type: Boolean,\n+}];\n \n-// Dealing with ReSpec source being loaded with scheme-relative link\n-// i.e. <script src='//www.w3.org/Tools/respec/respec-w3c-common'>\n-page.onResourceRequested = function(requestData, networkRequest) {\n-  if (requestData.url === \"file://www.w3.org/Tools/respec/respec-w3c-common\") {\n-    networkRequest.changeUrl(\"https://www.w3.org/Tools/respec/respec-w3c-common\");\n-  } else if (ignoreScripts && requestData.url.indexOf(ignoreScripts) === 0) {\n-    networkRequest.abort();\n+const tasks = {\n+  showHelp() {\n+    const getUsage = require(\"command-line-usage\");\n+    const appDetails = {\n+      title: \"respec2html\",\n+      description: \"Converts a ReSpec source file to HTML and prints to std out.\",\n+      footer: \"Project home: [underline]{https://github.com/w3c/respec}\"\n+    };\n+    console.log(getUsage(optionDefinitions, appDetails));\n+  },\n+  writeTo(outPath, data){\n+    const fsp = require(\"fs-promise\");\n+    const path = require(\"path\");\n+    return async.task(function*(){\n+      let newFilePath = \"\";\n+      if(path.isAbsolute(outPath)){\n+        newFilePath = outPath;\n+      } else {\n+        newFilePath = path.resolve(process.cwd(), outPath); \n+      }\n+      try {\n+        yield fsp.writeFile(newFilePath, data, \"utf-8\");\n+      } catch(err) {\n+        console.error(err, err.stack);\n+        process.exit(1);\n+      }\n+    });\n   }\n };\n \n-page.onConsoleMessage = function(msg) {\n-  if (msg.match(/^ERROR: /)) {\n-    errors.push(msg);\n-  } else if (msg.match(/^WARN: /)) {\n-    warnings.push(msg);\n+async.task(function* run() {\n+  const cli = require(\"command-line-args\")(optionDefinitions);\n+  let parsedArgs;\n+  try {\n+    parsedArgs = cli.parse();\n+  } catch (err) {\n+    console.error(err.stack);\n+    tasks.showHelp();\n+    process.exit(2);\n   }\n-};\n-\n-page.onError = function(msg) {\n-  errors.push(msg);\n-};\n-\n-page.open(source, function(status) {\n-  if (status !== \"success\") {\n-    console.error(\"Unable to access ReSpec source file.\");\n-    return phantom.exit(1);\n+  if (parsedArgs.help || !parsedArgs.src) {\n+    tasks.showHelp();\n+    return;\n   }\n-  setTimeout(function() {\n-    page.evaluateAsync(function() {\n-      $.ajaxSetup({\n-        timeout: 4000\n-      });\n-\n-      function saveToPhantom() {\n-        require([\"core/ui\", \"ui/save-html\"], function(ui, saver) {\n-          saver.show(ui, respecConfig, document, respecEvents);\n-          window.callPhantom({\n-            html: saver.toString()\n-          });\n-        });\n+  const Nightmare = require(\"nightmare\");\n+  const nightmare = new Nightmare({\n+    show: false,\n+    timeout: parsedArgs.timeout,\n+  });\n+  const URLParser = require(\"url\");\n+  const url = URLParser.parse(parsedArgs.src).href\n+    .concat(`?cache-bust=${Math.random()}`);",
+    "path": "tools/respec2html.js",
+    "position": null,
+    "original_position": 204,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "9e10a5bba618f965b3278c74b09298d45fb0392d",
+    "user": {
+      "login": "dontcallmedom",
+      "id": 216410,
+      "node_id": "MDQ6VXNlcjIxNjQxMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/216410?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dontcallmedom",
+      "html_url": "https://github.com/dontcallmedom",
+      "followers_url": "https://api.github.com/users/dontcallmedom/followers",
+      "following_url": "https://api.github.com/users/dontcallmedom/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dontcallmedom/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dontcallmedom/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dontcallmedom/subscriptions",
+      "organizations_url": "https://api.github.com/users/dontcallmedom/orgs",
+      "repos_url": "https://api.github.com/users/dontcallmedom/repos",
+      "events_url": "https://api.github.com/users/dontcallmedom/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dontcallmedom/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "does this work only for http urls? the current script works with local files\n",
+    "created_at": "2016-04-01T15:44:06Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58224587",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58224587"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58224587"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58226927",
+    "pull_request_review_id": null,
+    "id": 58226927,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MjI2OTI3",
+    "diff_hunk": "@@ -1,141 +1,150 @@\n-#!/usr/bin/env phantomjs --ssl-protocol=any\n-\n-/*global phantom, respecEvents, respecConfig, require*/\n-// respec2html is a command line utility that converts a ReSpec source file to an HTML file.\n-// Depends on PhantomJS <http://phantomjs.org>.\n-\n+#!/usr/local/bin/node\n+/*jshint node: true, browser: false*/\n \"use strict\";\n-var page = require(\"webpage\").create();\n-var args = require(\"system\").args.slice();\n-var fs = require(\"fs\");\n-var timer;\n-var reportErrors = false;\n-var reportWarnings = false;\n-var ignoreScripts = false;\n-var errors = [];\n-var warnings = [];\n-var delay = 0;\n-\n-// report console.error on stderr\n-console.error = function() {\n-  require(\"system\").stderr.write(Array.prototype.join.call(arguments, \" \") + \"\\n\");\n-};\n-\n-var eOption = args.indexOf(\"-e\");\n-if (eOption !== -1) {\n-  args.splice(args.indexOf(\"-e\"), 1);\n-  reportErrors = true;\n-}\n-\n-if (args.indexOf(\"-w\") !== -1) {\n-  args.splice(args.indexOf(\"-w\"), 1);\n-  reportWarnings = true;\n-}\n-\n-if (args.indexOf(\"--delay\") !== -1) {\n-  delay = args.splice(args.indexOf(\"--delay\"), 2)[1];\n-}\n-\n-if (args.indexOf(\"--exclude-script\") !== -1) {\n-  var idx = args.indexOf(\"--exclude-script\");\n-  var values = args.splice(idx, 2);\n-  ignoreScripts = values[1];\n-}\n-\n-// Reading other parameters\n-var source = args[1];\n-var output = args[2];\n-var timeout = isNaN(args[3]) ? 5 : parseInt(args[3], 10);\n-\n-if (args.length < 2 || args.length > 4) {\n-  var usage = \"Usage:\\n   phantomjs --ssl-protocol=any respec2html.js [-e] [-w] \" +\n-      \"[--exclude-script url] respec-source [html-output] [timeout]\\n\" +\n-      \"   respec-source  ReSpec source file, or an URL to the file\\n\" +\n-      \"   [-e]                    Report ReSpec errors on stderr\\n\" +\n-      \"   [-w]                    Report ReSpec warnings on stderr\\n\" +\n-      \"   [--exclude-script url]  Do not load scripts whose source\\n\" +\n-      \"                           starts with the passed URL\\n\" +\n-      \"   [html-output]           Name for the HTML file to be generated,\\n\" +\n-      \"                           defaults to stdout\\n\" +\n-      \"   [timeout]               An optional timeout in seconds, default is 10\\n\";\n-  console.error(usage);\n-  phantom.exit(2);\n-}\n+const async = require(\"marcosc-async\");\n+const colors = require(\"colors\");\n+colors.setTheme({\n+  data: \"grey\",\n+  debug: \"cyan\",\n+  error: \"red\",\n+  help: \"cyan\",\n+  info: \"green\",\n+  important: \"red\",\n+  input: \"grey\",\n+  prompt: \"grey\",\n+  verbose: \"cyan\",\n+  warn: \"yellow\",\n+});\n+const optionDefinitions = [{\n+  alias: \"h\",\n+  defaultValue: false,\n+  description: \"Display this usage guide.\",\n+  name: \"help\",\n+  type: Boolean,\n+}, {\n+  defaultOption: true,\n+  description: \"URL to ReSpec source file.\",\n+  multiple: false,\n+  name: \"src\",\n+  type: String,\n+},{\n+  alias: \"o\",\n+  defaultOption: false,\n+  description: \"Path to output file. When omitted, just stdout.\",\n+  multiple: false,\n+  name: \"out\",\n+  type: String,\n+}, {\n+  alias: \"t\",\n+  defaultValue: 10,\n+  name: \"timeout\",\n+  type: Number,\n+}, {\n+  alias: \"e\",\n+  default: true,\n+  description: \"Report ReSpec errors on stderr.\",\n+  name: \"output-errors\",\n+  type: Boolean,\n+}, {\n+  alias: \"w\",\n+  default: false,\n+  description: \"Report ReSpec warnings on stderr.\",\n+  name: \"output-warnings\",\n+  type: Boolean,\n+}];\n \n-// Dealing with ReSpec source being loaded with scheme-relative link\n-// i.e. <script src='//www.w3.org/Tools/respec/respec-w3c-common'>\n-page.onResourceRequested = function(requestData, networkRequest) {\n-  if (requestData.url === \"file://www.w3.org/Tools/respec/respec-w3c-common\") {\n-    networkRequest.changeUrl(\"https://www.w3.org/Tools/respec/respec-w3c-common\");\n-  } else if (ignoreScripts && requestData.url.indexOf(ignoreScripts) === 0) {\n-    networkRequest.abort();\n+const tasks = {\n+  showHelp() {\n+    const getUsage = require(\"command-line-usage\");\n+    const appDetails = {\n+      title: \"respec2html\",\n+      description: \"Converts a ReSpec source file to HTML and prints to std out.\",\n+      footer: \"Project home: [underline]{https://github.com/w3c/respec}\"\n+    };\n+    console.log(getUsage(optionDefinitions, appDetails));\n+  },\n+  writeTo(outPath, data){\n+    const fsp = require(\"fs-promise\");\n+    const path = require(\"path\");\n+    return async.task(function*(){\n+      let newFilePath = \"\";\n+      if(path.isAbsolute(outPath)){\n+        newFilePath = outPath;\n+      } else {\n+        newFilePath = path.resolve(process.cwd(), outPath); \n+      }\n+      try {\n+        yield fsp.writeFile(newFilePath, data, \"utf-8\");\n+      } catch(err) {\n+        console.error(err, err.stack);\n+        process.exit(1);\n+      }\n+    });\n   }\n };\n \n-page.onConsoleMessage = function(msg) {\n-  if (msg.match(/^ERROR: /)) {\n-    errors.push(msg);\n-  } else if (msg.match(/^WARN: /)) {\n-    warnings.push(msg);\n+async.task(function* run() {\n+  const cli = require(\"command-line-args\")(optionDefinitions);\n+  let parsedArgs;\n+  try {\n+    parsedArgs = cli.parse();\n+  } catch (err) {\n+    console.error(err.stack);\n+    tasks.showHelp();\n+    process.exit(2);\n   }\n-};\n-\n-page.onError = function(msg) {\n-  errors.push(msg);\n-};\n-\n-page.open(source, function(status) {\n-  if (status !== \"success\") {\n-    console.error(\"Unable to access ReSpec source file.\");\n-    return phantom.exit(1);\n+  if (parsedArgs.help || !parsedArgs.src) {\n+    tasks.showHelp();\n+    return;\n   }\n-  setTimeout(function() {\n-    page.evaluateAsync(function() {\n-      $.ajaxSetup({\n-        timeout: 4000\n-      });\n-\n-      function saveToPhantom() {\n-        require([\"core/ui\", \"ui/save-html\"], function(ui, saver) {\n-          saver.show(ui, respecConfig, document, respecEvents);\n-          window.callPhantom({\n-            html: saver.toString()\n-          });\n-        });\n+  const Nightmare = require(\"nightmare\");\n+  const nightmare = new Nightmare({\n+    show: false,\n+    timeout: parsedArgs.timeout,\n+  });\n+  const URLParser = require(\"url\");\n+  const url = URLParser.parse(parsedArgs.src).href\n+    .concat(`?cache-bust=${Math.random()}`);",
+    "path": "tools/respec2html.js",
+    "position": null,
+    "original_position": 204,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "9e10a5bba618f965b3278c74b09298d45fb0392d",
+    "user": {
+      "login": "marcoscaceres",
+      "id": 870154,
+      "node_id": "MDQ6VXNlcjg3MDE1NA==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/870154?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/marcoscaceres",
+      "html_url": "https://github.com/marcoscaceres",
+      "followers_url": "https://api.github.com/users/marcoscaceres/followers",
+      "following_url": "https://api.github.com/users/marcoscaceres/following{/other_user}",
+      "gists_url": "https://api.github.com/users/marcoscaceres/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/marcoscaceres/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/marcoscaceres/subscriptions",
+      "organizations_url": "https://api.github.com/users/marcoscaceres/orgs",
+      "repos_url": "https://api.github.com/users/marcoscaceres/repos",
+      "events_url": "https://api.github.com/users/marcoscaceres/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/marcoscaceres/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Nightmare can't intercept network events, I think. I don't think it's worth supporting doing that, tbh. \n",
+    "created_at": "2016-04-01T15:58:53Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58226927",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58226927"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58226927"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58227420",
+    "pull_request_review_id": null,
+    "id": 58227420,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MjI3NDIw",
+    "diff_hunk": "@@ -1,141 +1,150 @@\n-#!/usr/bin/env phantomjs --ssl-protocol=any\n-\n-/*global phantom, respecEvents, respecConfig, require*/\n-// respec2html is a command line utility that converts a ReSpec source file to an HTML file.\n-// Depends on PhantomJS <http://phantomjs.org>.\n-\n+#!/usr/local/bin/node\n+/*jshint node: true, browser: false*/\n \"use strict\";\n-var page = require(\"webpage\").create();\n-var args = require(\"system\").args.slice();\n-var fs = require(\"fs\");\n-var timer;\n-var reportErrors = false;\n-var reportWarnings = false;\n-var ignoreScripts = false;\n-var errors = [];\n-var warnings = [];\n-var delay = 0;\n-\n-// report console.error on stderr\n-console.error = function() {\n-  require(\"system\").stderr.write(Array.prototype.join.call(arguments, \" \") + \"\\n\");\n-};\n-\n-var eOption = args.indexOf(\"-e\");\n-if (eOption !== -1) {\n-  args.splice(args.indexOf(\"-e\"), 1);\n-  reportErrors = true;\n-}\n-\n-if (args.indexOf(\"-w\") !== -1) {\n-  args.splice(args.indexOf(\"-w\"), 1);\n-  reportWarnings = true;\n-}\n-\n-if (args.indexOf(\"--delay\") !== -1) {\n-  delay = args.splice(args.indexOf(\"--delay\"), 2)[1];\n-}\n-\n-if (args.indexOf(\"--exclude-script\") !== -1) {\n-  var idx = args.indexOf(\"--exclude-script\");\n-  var values = args.splice(idx, 2);\n-  ignoreScripts = values[1];\n-}\n-\n-// Reading other parameters\n-var source = args[1];\n-var output = args[2];\n-var timeout = isNaN(args[3]) ? 5 : parseInt(args[3], 10);\n-\n-if (args.length < 2 || args.length > 4) {\n-  var usage = \"Usage:\\n   phantomjs --ssl-protocol=any respec2html.js [-e] [-w] \" +\n-      \"[--exclude-script url] respec-source [html-output] [timeout]\\n\" +\n-      \"   respec-source  ReSpec source file, or an URL to the file\\n\" +\n-      \"   [-e]                    Report ReSpec errors on stderr\\n\" +\n-      \"   [-w]                    Report ReSpec warnings on stderr\\n\" +\n-      \"   [--exclude-script url]  Do not load scripts whose source\\n\" +\n-      \"                           starts with the passed URL\\n\" +\n-      \"   [html-output]           Name for the HTML file to be generated,\\n\" +\n-      \"                           defaults to stdout\\n\" +\n-      \"   [timeout]               An optional timeout in seconds, default is 10\\n\";\n-  console.error(usage);\n-  phantom.exit(2);\n-}\n+const async = require(\"marcosc-async\");\n+const colors = require(\"colors\");\n+colors.setTheme({\n+  data: \"grey\",\n+  debug: \"cyan\",\n+  error: \"red\",\n+  help: \"cyan\",\n+  info: \"green\",\n+  important: \"red\",\n+  input: \"grey\",\n+  prompt: \"grey\",\n+  verbose: \"cyan\",\n+  warn: \"yellow\",\n+});\n+const optionDefinitions = [{\n+  alias: \"h\",\n+  defaultValue: false,\n+  description: \"Display this usage guide.\",\n+  name: \"help\",\n+  type: Boolean,\n+}, {\n+  defaultOption: true,\n+  description: \"URL to ReSpec source file.\",\n+  multiple: false,\n+  name: \"src\",\n+  type: String,\n+},{\n+  alias: \"o\",\n+  defaultOption: false,\n+  description: \"Path to output file. When omitted, just stdout.\",\n+  multiple: false,\n+  name: \"out\",\n+  type: String,\n+}, {\n+  alias: \"t\",\n+  defaultValue: 10,\n+  name: \"timeout\",\n+  type: Number,\n+}, {\n+  alias: \"e\",\n+  default: true,\n+  description: \"Report ReSpec errors on stderr.\",\n+  name: \"output-errors\",\n+  type: Boolean,\n+}, {\n+  alias: \"w\",\n+  default: false,\n+  description: \"Report ReSpec warnings on stderr.\",\n+  name: \"output-warnings\",\n+  type: Boolean,\n+}];\n \n-// Dealing with ReSpec source being loaded with scheme-relative link\n-// i.e. <script src='//www.w3.org/Tools/respec/respec-w3c-common'>\n-page.onResourceRequested = function(requestData, networkRequest) {\n-  if (requestData.url === \"file://www.w3.org/Tools/respec/respec-w3c-common\") {\n-    networkRequest.changeUrl(\"https://www.w3.org/Tools/respec/respec-w3c-common\");\n-  } else if (ignoreScripts && requestData.url.indexOf(ignoreScripts) === 0) {\n-    networkRequest.abort();\n+const tasks = {\n+  showHelp() {\n+    const getUsage = require(\"command-line-usage\");\n+    const appDetails = {\n+      title: \"respec2html\",\n+      description: \"Converts a ReSpec source file to HTML and prints to std out.\",\n+      footer: \"Project home: [underline]{https://github.com/w3c/respec}\"\n+    };\n+    console.log(getUsage(optionDefinitions, appDetails));\n+  },\n+  writeTo(outPath, data){\n+    const fsp = require(\"fs-promise\");\n+    const path = require(\"path\");\n+    return async.task(function*(){\n+      let newFilePath = \"\";\n+      if(path.isAbsolute(outPath)){\n+        newFilePath = outPath;\n+      } else {\n+        newFilePath = path.resolve(process.cwd(), outPath); \n+      }\n+      try {\n+        yield fsp.writeFile(newFilePath, data, \"utf-8\");\n+      } catch(err) {\n+        console.error(err, err.stack);\n+        process.exit(1);\n+      }\n+    });\n   }\n };\n \n-page.onConsoleMessage = function(msg) {\n-  if (msg.match(/^ERROR: /)) {\n-    errors.push(msg);\n-  } else if (msg.match(/^WARN: /)) {\n-    warnings.push(msg);\n+async.task(function* run() {\n+  const cli = require(\"command-line-args\")(optionDefinitions);\n+  let parsedArgs;\n+  try {\n+    parsedArgs = cli.parse();\n+  } catch (err) {\n+    console.error(err.stack);\n+    tasks.showHelp();\n+    process.exit(2);\n   }\n-};\n-\n-page.onError = function(msg) {\n-  errors.push(msg);\n-};\n-\n-page.open(source, function(status) {\n-  if (status !== \"success\") {\n-    console.error(\"Unable to access ReSpec source file.\");\n-    return phantom.exit(1);\n+  if (parsedArgs.help || !parsedArgs.src) {\n+    tasks.showHelp();\n+    return;\n   }\n-  setTimeout(function() {\n-    page.evaluateAsync(function() {\n-      $.ajaxSetup({\n-        timeout: 4000\n-      });\n-\n-      function saveToPhantom() {\n-        require([\"core/ui\", \"ui/save-html\"], function(ui, saver) {\n-          saver.show(ui, respecConfig, document, respecEvents);\n-          window.callPhantom({\n-            html: saver.toString()\n-          });\n-        });\n+  const Nightmare = require(\"nightmare\");\n+  const nightmare = new Nightmare({\n+    show: false,\n+    timeout: parsedArgs.timeout,\n+  });\n+  const URLParser = require(\"url\");\n+  const url = URLParser.parse(parsedArgs.src).href\n+    .concat(`?cache-bust=${Math.random()}`);",
+    "path": "tools/respec2html.js",
+    "position": null,
+    "original_position": 204,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "9e10a5bba618f965b3278c74b09298d45fb0392d",
+    "user": {
+      "login": "dontcallmedom",
+      "id": 216410,
+      "node_id": "MDQ6VXNlcjIxNjQxMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/216410?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dontcallmedom",
+      "html_url": "https://github.com/dontcallmedom",
+      "followers_url": "https://api.github.com/users/dontcallmedom/followers",
+      "following_url": "https://api.github.com/users/dontcallmedom/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dontcallmedom/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dontcallmedom/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dontcallmedom/subscriptions",
+      "organizations_url": "https://api.github.com/users/dontcallmedom/orgs",
+      "repos_url": "https://api.github.com/users/dontcallmedom/repos",
+      "events_url": "https://api.github.com/users/dontcallmedom/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dontcallmedom/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "hmmm... the trouble is that when e.g. a spec imports MathJax, it doesn't want to be saved with the MathJax export, but with the MathJax script ready to run on execution.\nThere are probably other ways to solve this than network interception, but we need it before we can make the switch.\n",
+    "created_at": "2016-04-01T16:02:05Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58227420",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58227420"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58227420"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58227662",
+    "pull_request_review_id": null,
+    "id": 58227662,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MjI3NjYy",
+    "diff_hunk": "@@ -1,141 +1,150 @@\n-#!/usr/bin/env phantomjs --ssl-protocol=any\n-\n-/*global phantom, respecEvents, respecConfig, require*/\n-// respec2html is a command line utility that converts a ReSpec source file to an HTML file.\n-// Depends on PhantomJS <http://phantomjs.org>.\n-\n+#!/usr/local/bin/node\n+/*jshint node: true, browser: false*/\n \"use strict\";\n-var page = require(\"webpage\").create();\n-var args = require(\"system\").args.slice();\n-var fs = require(\"fs\");\n-var timer;\n-var reportErrors = false;\n-var reportWarnings = false;\n-var ignoreScripts = false;\n-var errors = [];\n-var warnings = [];\n-var delay = 0;\n-\n-// report console.error on stderr\n-console.error = function() {\n-  require(\"system\").stderr.write(Array.prototype.join.call(arguments, \" \") + \"\\n\");\n-};\n-\n-var eOption = args.indexOf(\"-e\");\n-if (eOption !== -1) {\n-  args.splice(args.indexOf(\"-e\"), 1);\n-  reportErrors = true;\n-}\n-\n-if (args.indexOf(\"-w\") !== -1) {\n-  args.splice(args.indexOf(\"-w\"), 1);\n-  reportWarnings = true;\n-}\n-\n-if (args.indexOf(\"--delay\") !== -1) {\n-  delay = args.splice(args.indexOf(\"--delay\"), 2)[1];\n-}\n-\n-if (args.indexOf(\"--exclude-script\") !== -1) {\n-  var idx = args.indexOf(\"--exclude-script\");\n-  var values = args.splice(idx, 2);\n-  ignoreScripts = values[1];\n-}\n-\n-// Reading other parameters\n-var source = args[1];\n-var output = args[2];\n-var timeout = isNaN(args[3]) ? 5 : parseInt(args[3], 10);\n-\n-if (args.length < 2 || args.length > 4) {\n-  var usage = \"Usage:\\n   phantomjs --ssl-protocol=any respec2html.js [-e] [-w] \" +\n-      \"[--exclude-script url] respec-source [html-output] [timeout]\\n\" +\n-      \"   respec-source  ReSpec source file, or an URL to the file\\n\" +\n-      \"   [-e]                    Report ReSpec errors on stderr\\n\" +\n-      \"   [-w]                    Report ReSpec warnings on stderr\\n\" +\n-      \"   [--exclude-script url]  Do not load scripts whose source\\n\" +\n-      \"                           starts with the passed URL\\n\" +\n-      \"   [html-output]           Name for the HTML file to be generated,\\n\" +\n-      \"                           defaults to stdout\\n\" +\n-      \"   [timeout]               An optional timeout in seconds, default is 10\\n\";\n-  console.error(usage);\n-  phantom.exit(2);\n-}\n+const async = require(\"marcosc-async\");\n+const colors = require(\"colors\");\n+colors.setTheme({\n+  data: \"grey\",\n+  debug: \"cyan\",\n+  error: \"red\",\n+  help: \"cyan\",\n+  info: \"green\",\n+  important: \"red\",\n+  input: \"grey\",\n+  prompt: \"grey\",\n+  verbose: \"cyan\",\n+  warn: \"yellow\",\n+});\n+const optionDefinitions = [{\n+  alias: \"h\",\n+  defaultValue: false,\n+  description: \"Display this usage guide.\",\n+  name: \"help\",\n+  type: Boolean,\n+}, {\n+  defaultOption: true,\n+  description: \"URL to ReSpec source file.\",\n+  multiple: false,\n+  name: \"src\",\n+  type: String,\n+},{\n+  alias: \"o\",\n+  defaultOption: false,\n+  description: \"Path to output file. When omitted, just stdout.\",\n+  multiple: false,\n+  name: \"out\",\n+  type: String,\n+}, {\n+  alias: \"t\",\n+  defaultValue: 10,\n+  name: \"timeout\",\n+  type: Number,\n+}, {\n+  alias: \"e\",\n+  default: true,\n+  description: \"Report ReSpec errors on stderr.\",\n+  name: \"output-errors\",\n+  type: Boolean,\n+}, {\n+  alias: \"w\",\n+  default: false,\n+  description: \"Report ReSpec warnings on stderr.\",\n+  name: \"output-warnings\",\n+  type: Boolean,\n+}];\n \n-// Dealing with ReSpec source being loaded with scheme-relative link\n-// i.e. <script src='//www.w3.org/Tools/respec/respec-w3c-common'>\n-page.onResourceRequested = function(requestData, networkRequest) {\n-  if (requestData.url === \"file://www.w3.org/Tools/respec/respec-w3c-common\") {\n-    networkRequest.changeUrl(\"https://www.w3.org/Tools/respec/respec-w3c-common\");\n-  } else if (ignoreScripts && requestData.url.indexOf(ignoreScripts) === 0) {\n-    networkRequest.abort();\n+const tasks = {\n+  showHelp() {\n+    const getUsage = require(\"command-line-usage\");\n+    const appDetails = {\n+      title: \"respec2html\",\n+      description: \"Converts a ReSpec source file to HTML and prints to std out.\",\n+      footer: \"Project home: [underline]{https://github.com/w3c/respec}\"\n+    };\n+    console.log(getUsage(optionDefinitions, appDetails));\n+  },\n+  writeTo(outPath, data){\n+    const fsp = require(\"fs-promise\");\n+    const path = require(\"path\");\n+    return async.task(function*(){\n+      let newFilePath = \"\";\n+      if(path.isAbsolute(outPath)){\n+        newFilePath = outPath;\n+      } else {\n+        newFilePath = path.resolve(process.cwd(), outPath); \n+      }\n+      try {\n+        yield fsp.writeFile(newFilePath, data, \"utf-8\");\n+      } catch(err) {\n+        console.error(err, err.stack);\n+        process.exit(1);\n+      }\n+    });\n   }\n };\n \n-page.onConsoleMessage = function(msg) {\n-  if (msg.match(/^ERROR: /)) {\n-    errors.push(msg);\n-  } else if (msg.match(/^WARN: /)) {\n-    warnings.push(msg);\n+async.task(function* run() {\n+  const cli = require(\"command-line-args\")(optionDefinitions);\n+  let parsedArgs;\n+  try {\n+    parsedArgs = cli.parse();\n+  } catch (err) {\n+    console.error(err.stack);\n+    tasks.showHelp();\n+    process.exit(2);\n   }\n-};\n-\n-page.onError = function(msg) {\n-  errors.push(msg);\n-};\n-\n-page.open(source, function(status) {\n-  if (status !== \"success\") {\n-    console.error(\"Unable to access ReSpec source file.\");\n-    return phantom.exit(1);\n+  if (parsedArgs.help || !parsedArgs.src) {\n+    tasks.showHelp();\n+    return;\n   }\n-  setTimeout(function() {\n-    page.evaluateAsync(function() {\n-      $.ajaxSetup({\n-        timeout: 4000\n-      });\n-\n-      function saveToPhantom() {\n-        require([\"core/ui\", \"ui/save-html\"], function(ui, saver) {\n-          saver.show(ui, respecConfig, document, respecEvents);\n-          window.callPhantom({\n-            html: saver.toString()\n-          });\n-        });\n+  const Nightmare = require(\"nightmare\");\n+  const nightmare = new Nightmare({\n+    show: false,\n+    timeout: parsedArgs.timeout,\n+  });\n+  const URLParser = require(\"url\");\n+  const url = URLParser.parse(parsedArgs.src).href\n+    .concat(`?cache-bust=${Math.random()}`);",
+    "path": "tools/respec2html.js",
+    "position": null,
+    "original_position": 204,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "9e10a5bba618f965b3278c74b09298d45fb0392d",
+    "user": {
+      "login": "dontcallmedom",
+      "id": 216410,
+      "node_id": "MDQ6VXNlcjIxNjQxMA==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/216410?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dontcallmedom",
+      "html_url": "https://github.com/dontcallmedom",
+      "followers_url": "https://api.github.com/users/dontcallmedom/followers",
+      "following_url": "https://api.github.com/users/dontcallmedom/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dontcallmedom/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dontcallmedom/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dontcallmedom/subscriptions",
+      "organizations_url": "https://api.github.com/users/dontcallmedom/orgs",
+      "repos_url": "https://api.github.com/users/dontcallmedom/repos",
+      "events_url": "https://api.github.com/users/dontcallmedom/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dontcallmedom/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "(I assume your comment was related to \"--exclude-script\", not loading from HTTP only)\n",
+    "created_at": "2016-04-01T16:03:47Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58227662",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58227662"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58227662"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58288562",
+    "pull_request_review_id": null,
+    "id": 58288562,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4Mjg4NTYy",
+    "diff_hunk": "@@ -1,141 +1,150 @@\n-#!/usr/bin/env phantomjs --ssl-protocol=any\n-\n-/*global phantom, respecEvents, respecConfig, require*/\n-// respec2html is a command line utility that converts a ReSpec source file to an HTML file.\n-// Depends on PhantomJS <http://phantomjs.org>.\n-\n+#!/usr/local/bin/node\n+/*jshint node: true, browser: false*/\n \"use strict\";\n-var page = require(\"webpage\").create();\n-var args = require(\"system\").args.slice();\n-var fs = require(\"fs\");\n-var timer;\n-var reportErrors = false;\n-var reportWarnings = false;\n-var ignoreScripts = false;\n-var errors = [];\n-var warnings = [];\n-var delay = 0;\n-\n-// report console.error on stderr\n-console.error = function() {\n-  require(\"system\").stderr.write(Array.prototype.join.call(arguments, \" \") + \"\\n\");\n-};\n-\n-var eOption = args.indexOf(\"-e\");\n-if (eOption !== -1) {\n-  args.splice(args.indexOf(\"-e\"), 1);\n-  reportErrors = true;\n-}\n-\n-if (args.indexOf(\"-w\") !== -1) {\n-  args.splice(args.indexOf(\"-w\"), 1);\n-  reportWarnings = true;\n-}\n-\n-if (args.indexOf(\"--delay\") !== -1) {\n-  delay = args.splice(args.indexOf(\"--delay\"), 2)[1];\n-}\n-\n-if (args.indexOf(\"--exclude-script\") !== -1) {\n-  var idx = args.indexOf(\"--exclude-script\");\n-  var values = args.splice(idx, 2);\n-  ignoreScripts = values[1];\n-}\n-\n-// Reading other parameters\n-var source = args[1];\n-var output = args[2];\n-var timeout = isNaN(args[3]) ? 5 : parseInt(args[3], 10);\n-\n-if (args.length < 2 || args.length > 4) {\n-  var usage = \"Usage:\\n   phantomjs --ssl-protocol=any respec2html.js [-e] [-w] \" +\n-      \"[--exclude-script url] respec-source [html-output] [timeout]\\n\" +\n-      \"   respec-source  ReSpec source file, or an URL to the file\\n\" +\n-      \"   [-e]                    Report ReSpec errors on stderr\\n\" +\n-      \"   [-w]                    Report ReSpec warnings on stderr\\n\" +\n-      \"   [--exclude-script url]  Do not load scripts whose source\\n\" +\n-      \"                           starts with the passed URL\\n\" +\n-      \"   [html-output]           Name for the HTML file to be generated,\\n\" +\n-      \"                           defaults to stdout\\n\" +\n-      \"   [timeout]               An optional timeout in seconds, default is 10\\n\";\n-  console.error(usage);\n-  phantom.exit(2);\n-}\n+const async = require(\"marcosc-async\");\n+const colors = require(\"colors\");\n+colors.setTheme({\n+  data: \"grey\",\n+  debug: \"cyan\",\n+  error: \"red\",\n+  help: \"cyan\",\n+  info: \"green\",\n+  important: \"red\",\n+  input: \"grey\",\n+  prompt: \"grey\",\n+  verbose: \"cyan\",\n+  warn: \"yellow\",\n+});\n+const optionDefinitions = [{\n+  alias: \"h\",\n+  defaultValue: false,\n+  description: \"Display this usage guide.\",\n+  name: \"help\",\n+  type: Boolean,\n+}, {\n+  defaultOption: true,\n+  description: \"URL to ReSpec source file.\",\n+  multiple: false,\n+  name: \"src\",\n+  type: String,\n+},{\n+  alias: \"o\",\n+  defaultOption: false,\n+  description: \"Path to output file. When omitted, just stdout.\",\n+  multiple: false,\n+  name: \"out\",\n+  type: String,\n+}, {\n+  alias: \"t\",\n+  defaultValue: 10,\n+  name: \"timeout\",\n+  type: Number,\n+}, {\n+  alias: \"e\",\n+  default: true,\n+  description: \"Report ReSpec errors on stderr.\",\n+  name: \"output-errors\",\n+  type: Boolean,\n+}, {\n+  alias: \"w\",\n+  default: false,\n+  description: \"Report ReSpec warnings on stderr.\",\n+  name: \"output-warnings\",\n+  type: Boolean,\n+}];\n \n-// Dealing with ReSpec source being loaded with scheme-relative link\n-// i.e. <script src='//www.w3.org/Tools/respec/respec-w3c-common'>\n-page.onResourceRequested = function(requestData, networkRequest) {\n-  if (requestData.url === \"file://www.w3.org/Tools/respec/respec-w3c-common\") {\n-    networkRequest.changeUrl(\"https://www.w3.org/Tools/respec/respec-w3c-common\");\n-  } else if (ignoreScripts && requestData.url.indexOf(ignoreScripts) === 0) {\n-    networkRequest.abort();\n+const tasks = {\n+  showHelp() {\n+    const getUsage = require(\"command-line-usage\");\n+    const appDetails = {\n+      title: \"respec2html\",\n+      description: \"Converts a ReSpec source file to HTML and prints to std out.\",\n+      footer: \"Project home: [underline]{https://github.com/w3c/respec}\"\n+    };\n+    console.log(getUsage(optionDefinitions, appDetails));\n+  },\n+  writeTo(outPath, data){\n+    const fsp = require(\"fs-promise\");\n+    const path = require(\"path\");\n+    return async.task(function*(){\n+      let newFilePath = \"\";\n+      if(path.isAbsolute(outPath)){\n+        newFilePath = outPath;\n+      } else {\n+        newFilePath = path.resolve(process.cwd(), outPath); \n+      }\n+      try {\n+        yield fsp.writeFile(newFilePath, data, \"utf-8\");\n+      } catch(err) {\n+        console.error(err, err.stack);\n+        process.exit(1);\n+      }\n+    });\n   }\n };\n \n-page.onConsoleMessage = function(msg) {\n-  if (msg.match(/^ERROR: /)) {\n-    errors.push(msg);\n-  } else if (msg.match(/^WARN: /)) {\n-    warnings.push(msg);\n+async.task(function* run() {\n+  const cli = require(\"command-line-args\")(optionDefinitions);\n+  let parsedArgs;\n+  try {\n+    parsedArgs = cli.parse();\n+  } catch (err) {\n+    console.error(err.stack);\n+    tasks.showHelp();\n+    process.exit(2);\n   }\n-};\n-\n-page.onError = function(msg) {\n-  errors.push(msg);\n-};\n-\n-page.open(source, function(status) {\n-  if (status !== \"success\") {\n-    console.error(\"Unable to access ReSpec source file.\");\n-    return phantom.exit(1);\n+  if (parsedArgs.help || !parsedArgs.src) {\n+    tasks.showHelp();\n+    return;\n   }\n-  setTimeout(function() {\n-    page.evaluateAsync(function() {\n-      $.ajaxSetup({\n-        timeout: 4000\n-      });\n-\n-      function saveToPhantom() {\n-        require([\"core/ui\", \"ui/save-html\"], function(ui, saver) {\n-          saver.show(ui, respecConfig, document, respecEvents);\n-          window.callPhantom({\n-            html: saver.toString()\n-          });\n-        });\n+  const Nightmare = require(\"nightmare\");\n+  const nightmare = new Nightmare({\n+    show: false,\n+    timeout: parsedArgs.timeout,\n+  });\n+  const URLParser = require(\"url\");\n+  const url = URLParser.parse(parsedArgs.src).href\n+    .concat(`?cache-bust=${Math.random()}`);",
+    "path": "tools/respec2html.js",
+    "position": null,
+    "original_position": 204,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "9e10a5bba618f965b3278c74b09298d45fb0392d",
+    "user": {
+      "login": "marcoscaceres",
+      "id": 870154,
+      "node_id": "MDQ6VXNlcjg3MDE1NA==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/870154?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/marcoscaceres",
+      "html_url": "https://github.com/marcoscaceres",
+      "followers_url": "https://api.github.com/users/marcoscaceres/followers",
+      "following_url": "https://api.github.com/users/marcoscaceres/following{/other_user}",
+      "gists_url": "https://api.github.com/users/marcoscaceres/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/marcoscaceres/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/marcoscaceres/subscriptions",
+      "organizations_url": "https://api.github.com/users/marcoscaceres/orgs",
+      "repos_url": "https://api.github.com/users/marcoscaceres/repos",
+      "events_url": "https://api.github.com/users/marcoscaceres/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/marcoscaceres/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "It seems very strange that MathJax would cause issues. Which spec is using it? \n",
+    "created_at": "2016-04-02T04:53:01Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58288562",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58288562"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58288562"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 107,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/w3c/respec/pulls/comments/58309157",
+    "pull_request_review_id": null,
+    "id": 58309157,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDU4MzA5MTU3",
+    "diff_hunk": "@@ -1,141 +1,150 @@\n-#!/usr/bin/env phantomjs --ssl-protocol=any\n-\n-/*global phantom, respecEvents, respecConfig, require*/\n-// respec2html is a command line utility that converts a ReSpec source file to an HTML file.\n-// Depends on PhantomJS <http://phantomjs.org>.\n-\n+#!/usr/local/bin/node\n+/*jshint node: true, browser: false*/\n \"use strict\";\n-var page = require(\"webpage\").create();\n-var args = require(\"system\").args.slice();\n-var fs = require(\"fs\");\n-var timer;\n-var reportErrors = false;\n-var reportWarnings = false;\n-var ignoreScripts = false;\n-var errors = [];\n-var warnings = [];\n-var delay = 0;\n-\n-// report console.error on stderr\n-console.error = function() {\n-  require(\"system\").stderr.write(Array.prototype.join.call(arguments, \" \") + \"\\n\");\n-};\n-\n-var eOption = args.indexOf(\"-e\");\n-if (eOption !== -1) {\n-  args.splice(args.indexOf(\"-e\"), 1);\n-  reportErrors = true;\n-}\n-\n-if (args.indexOf(\"-w\") !== -1) {\n-  args.splice(args.indexOf(\"-w\"), 1);\n-  reportWarnings = true;\n-}\n-\n-if (args.indexOf(\"--delay\") !== -1) {\n-  delay = args.splice(args.indexOf(\"--delay\"), 2)[1];\n-}\n-\n-if (args.indexOf(\"--exclude-script\") !== -1) {",
+    "path": "tools/respec2html.js",
+    "position": 130,
+    "original_position": 41,
+    "commit_id": "524389417334810e0c69070b63f1ef5780225151",
+    "original_commit_id": "9e10a5bba618f965b3278c74b09298d45fb0392d",
+    "user": {
+      "login": "marcoscaceres",
+      "id": 870154,
+      "node_id": "MDQ6VXNlcjg3MDE1NA==",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/870154?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/marcoscaceres",
+      "html_url": "https://github.com/marcoscaceres",
+      "followers_url": "https://api.github.com/users/marcoscaceres/followers",
+      "following_url": "https://api.github.com/users/marcoscaceres/following{/other_user}",
+      "gists_url": "https://api.github.com/users/marcoscaceres/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/marcoscaceres/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/marcoscaceres/subscriptions",
+      "organizations_url": "https://api.github.com/users/marcoscaceres/orgs",
+      "repos_url": "https://api.github.com/users/marcoscaceres/repos",
+      "events_url": "https://api.github.com/users/marcoscaceres/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/marcoscaceres/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "@dontcallmedom, which scripts need to be excluded? \n",
+    "created_at": "2016-04-03T12:07:49Z",
+    "updated_at": "2016-04-04T04:28:07Z",
+    "html_url": "https://github.com/w3c/respec/pull/678#discussion_r58309157",
+    "pull_request_url": "https://api.github.com/repos/w3c/respec/pulls/678",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/comments/58309157"
+      },
+      "html": {
+        "href": "https://github.com/w3c/respec/pull/678#discussion_r58309157"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/w3c/respec/pulls/678"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 39,
+    "original_line": 39,
+    "side": "RIGHT"
+  }
+]

@@ -1,0 +1,2397 @@
+[
+  {
+    "sha": "500e77dbd9a3756cf3747cf10c4880f95f87a768",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo1MDBlNzdkYmQ5YTM3NTZjZjM3NDdjZjEwYzQ4ODBmOTVmODdhNzY4",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-10-30T16:37:53Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-10-30T16:37:53Z"
+      },
+      "message": "Start async spec over in JS",
+      "tree": {
+        "sha": "0e84df334e909310afa9af69261e622a223df7c4",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/0e84df334e909310afa9af69261e622a223df7c4"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/500e77dbd9a3756cf3747cf10c4880f95f87a768",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/500e77dbd9a3756cf3747cf10c4880f95f87a768",
+    "html_url": "https://github.com/atom/atom/commit/500e77dbd9a3756cf3747cf10c4880f95f87a768",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/500e77dbd9a3756cf3747cf10c4880f95f87a768/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "13d51c54bbca5a29cfa0c9c7504029cead537d7e",
+        "url": "https://api.github.com/repos/atom/atom/commits/13d51c54bbca5a29cfa0c9c7504029cead537d7e",
+        "html_url": "https://github.com/atom/atom/commit/13d51c54bbca5a29cfa0c9c7504029cead537d7e"
+      }
+    ]
+  },
+  {
+    "sha": "41d3d7a0c037a72afd22eff2980d03d6c9d20211",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0MWQzZDdhMGMwMzdhNzJhZmQyMmVmZjI5ODBkMDNkNmM5ZDIwMjEx",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-10-30T18:11:28Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-10-30T18:11:28Z"
+      },
+      "message": "Start adding the troublesome buffer-events first",
+      "tree": {
+        "sha": "74b492988f2ffabfa54d8ddf8944b5778f8c5815",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/74b492988f2ffabfa54d8ddf8944b5778f8c5815"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/41d3d7a0c037a72afd22eff2980d03d6c9d20211",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/41d3d7a0c037a72afd22eff2980d03d6c9d20211",
+    "html_url": "https://github.com/atom/atom/commit/41d3d7a0c037a72afd22eff2980d03d6c9d20211",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/41d3d7a0c037a72afd22eff2980d03d6c9d20211/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "500e77dbd9a3756cf3747cf10c4880f95f87a768",
+        "url": "https://api.github.com/repos/atom/atom/commits/500e77dbd9a3756cf3747cf10c4880f95f87a768",
+        "html_url": "https://github.com/atom/atom/commit/500e77dbd9a3756cf3747cf10c4880f95f87a768"
+      }
+    ]
+  },
+  {
+    "sha": "9081a891e6629f79e47986f4bacadf7ca2f8b56a",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo5MDgxYTg5MWU2NjI5Zjc5ZTQ3OTg2ZjRiYWNhZGY3Y2EyZjhiNTZh",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-10-30T19:19:12Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-10-30T19:19:12Z"
+      },
+      "message": "add status-changed on reload spec",
+      "tree": {
+        "sha": "8e42061520034b4fd8c734426a2c0f8684b5f7f3",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/8e42061520034b4fd8c734426a2c0f8684b5f7f3"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/9081a891e6629f79e47986f4bacadf7ca2f8b56a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/9081a891e6629f79e47986f4bacadf7ca2f8b56a",
+    "html_url": "https://github.com/atom/atom/commit/9081a891e6629f79e47986f4bacadf7ca2f8b56a",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/9081a891e6629f79e47986f4bacadf7ca2f8b56a/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "41d3d7a0c037a72afd22eff2980d03d6c9d20211",
+        "url": "https://api.github.com/repos/atom/atom/commits/41d3d7a0c037a72afd22eff2980d03d6c9d20211",
+        "html_url": "https://github.com/atom/atom/commit/41d3d7a0c037a72afd22eff2980d03d6c9d20211"
+      }
+    ]
+  },
+  {
+    "sha": "0c965f94390c4827018384a9ff83e3a017e6e689",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowYzk2NWY5NDM5MGM0ODI3MDE4Mzg0YTlmZjgzZTNhMDE3ZTZlNjg5",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-02T11:59:50Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-02T11:59:50Z"
+      },
+      "message": "Flesh out ::destroy()",
+      "tree": {
+        "sha": "e4f94587d65caa7def8068e85d627d048575b6fe",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e4f94587d65caa7def8068e85d627d048575b6fe"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/0c965f94390c4827018384a9ff83e3a017e6e689",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/0c965f94390c4827018384a9ff83e3a017e6e689",
+    "html_url": "https://github.com/atom/atom/commit/0c965f94390c4827018384a9ff83e3a017e6e689",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/0c965f94390c4827018384a9ff83e3a017e6e689/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9081a891e6629f79e47986f4bacadf7ca2f8b56a",
+        "url": "https://api.github.com/repos/atom/atom/commits/9081a891e6629f79e47986f4bacadf7ca2f8b56a",
+        "html_url": "https://github.com/atom/atom/commit/9081a891e6629f79e47986f4bacadf7ca2f8b56a"
+      }
+    ]
+  },
+  {
+    "sha": "da0b129c83147d7bb8799398218089c272bb5bb6",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkYTBiMTI5YzgzMTQ3ZDdiYjg3OTkzOTgyMTgwODljMjcyYmI1YmI2",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-03T15:36:24Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-03T15:36:24Z"
+      },
+      "message": "Add standardjs config to package.json",
+      "tree": {
+        "sha": "7a2baf76d14155fb13cde625c709af15f569500d",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/7a2baf76d14155fb13cde625c709af15f569500d"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/da0b129c83147d7bb8799398218089c272bb5bb6",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/da0b129c83147d7bb8799398218089c272bb5bb6",
+    "html_url": "https://github.com/atom/atom/commit/da0b129c83147d7bb8799398218089c272bb5bb6",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/da0b129c83147d7bb8799398218089c272bb5bb6/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0c965f94390c4827018384a9ff83e3a017e6e689",
+        "url": "https://api.github.com/repos/atom/atom/commits/0c965f94390c4827018384a9ff83e3a017e6e689",
+        "html_url": "https://github.com/atom/atom/commit/0c965f94390c4827018384a9ff83e3a017e6e689"
+      }
+    ]
+  },
+  {
+    "sha": "47edd1b9849e123c42e29398e0f77ffbfe2644d9",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0N2VkZDFiOTg0OWUxMjNjNDJlMjkzOThlMGY3N2ZmYmZlMjY0NGQ5",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-03T15:39:01Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-03T15:39:01Z"
+      },
+      "message": "Use async’s destroy callback in repo provider.",
+      "tree": {
+        "sha": "8957619cf9871654d286b02a7f58e25f36f7ca49",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/8957619cf9871654d286b02a7f58e25f36f7ca49"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/47edd1b9849e123c42e29398e0f77ffbfe2644d9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/47edd1b9849e123c42e29398e0f77ffbfe2644d9",
+    "html_url": "https://github.com/atom/atom/commit/47edd1b9849e123c42e29398e0f77ffbfe2644d9",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/47edd1b9849e123c42e29398e0f77ffbfe2644d9/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "da0b129c83147d7bb8799398218089c272bb5bb6",
+        "url": "https://api.github.com/repos/atom/atom/commits/da0b129c83147d7bb8799398218089c272bb5bb6",
+        "html_url": "https://github.com/atom/atom/commit/da0b129c83147d7bb8799398218089c272bb5bb6"
+      }
+    ]
+  },
+  {
+    "sha": "4f06509fde3ae23e214a8c8f9102acc9fa20fa1a",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0ZjA2NTA5ZmRlM2FlMjNlMjE0YThjOGY5MTAyYWNjOWZhMjBmYTFh",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-03T15:39:26Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-03T15:39:26Z"
+      },
+      "message": "Destroy async repo from sync repo",
+      "tree": {
+        "sha": "660db61c08503130eeae04f5d6dee540a1fe3d31",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/660db61c08503130eeae04f5d6dee540a1fe3d31"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/4f06509fde3ae23e214a8c8f9102acc9fa20fa1a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/4f06509fde3ae23e214a8c8f9102acc9fa20fa1a",
+    "html_url": "https://github.com/atom/atom/commit/4f06509fde3ae23e214a8c8f9102acc9fa20fa1a",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/4f06509fde3ae23e214a8c8f9102acc9fa20fa1a/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "47edd1b9849e123c42e29398e0f77ffbfe2644d9",
+        "url": "https://api.github.com/repos/atom/atom/commits/47edd1b9849e123c42e29398e0f77ffbfe2644d9",
+        "html_url": "https://github.com/atom/atom/commit/47edd1b9849e123c42e29398e0f77ffbfe2644d9"
+      }
+    ]
+  },
+  {
+    "sha": "a8da39b90c7c979dfd875c17ca045707ea9263a8",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphOGRhMzliOTBjN2M5NzlkZmQ4NzVjMTdjYTA0NTcwN2VhOTI2M2E4",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-06T16:43:37Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-06T16:43:37Z"
+      },
+      "message": "Merge branch 'master' into dh-async-repo",
+      "tree": {
+        "sha": "2f792b028c4dc1e4a5af402d15d93ecc37e1f938",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/2f792b028c4dc1e4a5af402d15d93ecc37e1f938"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/a8da39b90c7c979dfd875c17ca045707ea9263a8",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/a8da39b90c7c979dfd875c17ca045707ea9263a8",
+    "html_url": "https://github.com/atom/atom/commit/a8da39b90c7c979dfd875c17ca045707ea9263a8",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/a8da39b90c7c979dfd875c17ca045707ea9263a8/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "4f06509fde3ae23e214a8c8f9102acc9fa20fa1a",
+        "url": "https://api.github.com/repos/atom/atom/commits/4f06509fde3ae23e214a8c8f9102acc9fa20fa1a",
+        "html_url": "https://github.com/atom/atom/commit/4f06509fde3ae23e214a8c8f9102acc9fa20fa1a"
+      },
+      {
+        "sha": "537c0af97091e16fb757cfa4a190317dcf1e0c1e",
+        "url": "https://api.github.com/repos/atom/atom/commits/537c0af97091e16fb757cfa4a190317dcf1e0c1e",
+        "html_url": "https://github.com/atom/atom/commit/537c0af97091e16fb757cfa4a190317dcf1e0c1e"
+      }
+    ]
+  },
+  {
+    "sha": "009951e757ced8d4927d049ebdd210dfd16df525",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowMDk5NTFlNzU3Y2VkOGQ0OTI3ZDA0OWViZGQyMTBkZmQxNmRmNTI1",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-06T19:18:59Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-06T19:18:59Z"
+      },
+      "message": "Get these tests going.",
+      "tree": {
+        "sha": "36720f56c9f896f72cb463a4157cb0e22b685406",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/36720f56c9f896f72cb463a4157cb0e22b685406"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/009951e757ced8d4927d049ebdd210dfd16df525",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/009951e757ced8d4927d049ebdd210dfd16df525",
+    "html_url": "https://github.com/atom/atom/commit/009951e757ced8d4927d049ebdd210dfd16df525",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/009951e757ced8d4927d049ebdd210dfd16df525/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "a8da39b90c7c979dfd875c17ca045707ea9263a8",
+        "url": "https://api.github.com/repos/atom/atom/commits/a8da39b90c7c979dfd875c17ca045707ea9263a8",
+        "html_url": "https://github.com/atom/atom/commit/a8da39b90c7c979dfd875c17ca045707ea9263a8"
+      }
+    ]
+  },
+  {
+    "sha": "d5181361a0509ac59afa6f4c6e9479e7a8953f1c",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkNTE4MTM2MWEwNTA5YWM1OWFmYTZmNGM2ZTk0NzllN2E4OTUzZjFj",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-07T02:39:23Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-07T02:39:23Z"
+      },
+      "message": "Async/await a lot of things.",
+      "tree": {
+        "sha": "ea26d495eb2271ed4916b2a74e720a396b89f269",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ea26d495eb2271ed4916b2a74e720a396b89f269"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/d5181361a0509ac59afa6f4c6e9479e7a8953f1c",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/d5181361a0509ac59afa6f4c6e9479e7a8953f1c",
+    "html_url": "https://github.com/atom/atom/commit/d5181361a0509ac59afa6f4c6e9479e7a8953f1c",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/d5181361a0509ac59afa6f4c6e9479e7a8953f1c/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "009951e757ced8d4927d049ebdd210dfd16df525",
+        "url": "https://api.github.com/repos/atom/atom/commits/009951e757ced8d4927d049ebdd210dfd16df525",
+        "html_url": "https://github.com/atom/atom/commit/009951e757ced8d4927d049ebdd210dfd16df525"
+      }
+    ]
+  },
+  {
+    "sha": "c076a047e4b021aec2bc6337b7bab896819816d5",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpjMDc2YTA0N2U0YjAyMWFlYzJiYzYzMzdiN2JhYjg5NjgxOTgxNmQ1",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-07T06:31:04Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-07T06:31:04Z"
+      },
+      "message": "Async harder.",
+      "tree": {
+        "sha": "4a1261ee3b47f64879e6fb7e3414498d31ba0425",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/4a1261ee3b47f64879e6fb7e3414498d31ba0425"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/c076a047e4b021aec2bc6337b7bab896819816d5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/c076a047e4b021aec2bc6337b7bab896819816d5",
+    "html_url": "https://github.com/atom/atom/commit/c076a047e4b021aec2bc6337b7bab896819816d5",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/c076a047e4b021aec2bc6337b7bab896819816d5/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "d5181361a0509ac59afa6f4c6e9479e7a8953f1c",
+        "url": "https://api.github.com/repos/atom/atom/commits/d5181361a0509ac59afa6f4c6e9479e7a8953f1c",
+        "html_url": "https://github.com/atom/atom/commit/d5181361a0509ac59afa6f4c6e9479e7a8953f1c"
+      }
+    ]
+  },
+  {
+    "sha": "247d4d4785d54c1fd9bc07ac4e65f991956dc2f3",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyNDdkNGQ0Nzg1ZDU0YzFmZDliYzA3YWM0ZTY1Zjk5MTk1NmRjMmYz",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-07T06:35:48Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-07T06:35:48Z"
+      },
+      "message": "Merge branch 'master' into dh-async-repo",
+      "tree": {
+        "sha": "c6252f56ce65c9bbe0a0dc3fbccf26b8210665c4",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c6252f56ce65c9bbe0a0dc3fbccf26b8210665c4"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/247d4d4785d54c1fd9bc07ac4e65f991956dc2f3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/247d4d4785d54c1fd9bc07ac4e65f991956dc2f3",
+    "html_url": "https://github.com/atom/atom/commit/247d4d4785d54c1fd9bc07ac4e65f991956dc2f3",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/247d4d4785d54c1fd9bc07ac4e65f991956dc2f3/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "c076a047e4b021aec2bc6337b7bab896819816d5",
+        "url": "https://api.github.com/repos/atom/atom/commits/c076a047e4b021aec2bc6337b7bab896819816d5",
+        "html_url": "https://github.com/atom/atom/commit/c076a047e4b021aec2bc6337b7bab896819816d5"
+      },
+      {
+        "sha": "09fa41fb588dfa9b7f4aa13e64ef8ee9e3c86657",
+        "url": "https://api.github.com/repos/atom/atom/commits/09fa41fb588dfa9b7f4aa13e64ef8ee9e3c86657",
+        "html_url": "https://github.com/atom/atom/commit/09fa41fb588dfa9b7f4aa13e64ef8ee9e3c86657"
+      }
+    ]
+  },
+  {
+    "sha": "87da3579e8a0ac8f831660b89eeeeb7d1ebc98ed",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4N2RhMzU3OWU4YTBhYzhmODMxNjYwYjg5ZWVlZWI3ZDFlYmM5OGVk",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-07T06:35:57Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-07T06:35:57Z"
+      },
+      "message": "Cite it.",
+      "tree": {
+        "sha": "15389f1b179ba208c8c2629f2f3f324f354fed04",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/15389f1b179ba208c8c2629f2f3f324f354fed04"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/87da3579e8a0ac8f831660b89eeeeb7d1ebc98ed",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/87da3579e8a0ac8f831660b89eeeeb7d1ebc98ed",
+    "html_url": "https://github.com/atom/atom/commit/87da3579e8a0ac8f831660b89eeeeb7d1ebc98ed",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/87da3579e8a0ac8f831660b89eeeeb7d1ebc98ed/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "247d4d4785d54c1fd9bc07ac4e65f991956dc2f3",
+        "url": "https://api.github.com/repos/atom/atom/commits/247d4d4785d54c1fd9bc07ac4e65f991956dc2f3",
+        "html_url": "https://github.com/atom/atom/commit/247d4d4785d54c1fd9bc07ac4e65f991956dc2f3"
+      }
+    ]
+  },
+  {
+    "sha": "e2a1337b848f5c33495fb87c94c025a86f2e616e",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplMmExMzM3Yjg0OGY1YzMzNDk1ZmI4N2M5NGMwMjVhODZmMmU2MTZl",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T12:08:23Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T12:08:23Z"
+      },
+      "message": "Merge branch 'master' into dh-async-repo",
+      "tree": {
+        "sha": "6747ff24750da6664a46fbea9070f990d66688d7",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/6747ff24750da6664a46fbea9070f990d66688d7"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/e2a1337b848f5c33495fb87c94c025a86f2e616e",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/e2a1337b848f5c33495fb87c94c025a86f2e616e",
+    "html_url": "https://github.com/atom/atom/commit/e2a1337b848f5c33495fb87c94c025a86f2e616e",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/e2a1337b848f5c33495fb87c94c025a86f2e616e/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "87da3579e8a0ac8f831660b89eeeeb7d1ebc98ed",
+        "url": "https://api.github.com/repos/atom/atom/commits/87da3579e8a0ac8f831660b89eeeeb7d1ebc98ed",
+        "html_url": "https://github.com/atom/atom/commit/87da3579e8a0ac8f831660b89eeeeb7d1ebc98ed"
+      },
+      {
+        "sha": "e077f8a24b24569c3998183305dfe7e802ddfa9d",
+        "url": "https://api.github.com/repos/atom/atom/commits/e077f8a24b24569c3998183305dfe7e802ddfa9d",
+        "html_url": "https://github.com/atom/atom/commit/e077f8a24b24569c3998183305dfe7e802ddfa9d"
+      }
+    ]
+  },
+  {
+    "sha": "995d912d760d54401a001edb419c6031a7e21192",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo5OTVkOTEyZDc2MGQ1NDQwMWEwMDFlZGI0MTljNjAzMWE3ZTIxMTky",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T12:35:31Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T12:35:31Z"
+      },
+      "message": "remove devDependencies due to license issues",
+      "tree": {
+        "sha": "abe2ff38c2b67031d4ffc6aa5a6ad3104baa5561",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/abe2ff38c2b67031d4ffc6aa5a6ad3104baa5561"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/995d912d760d54401a001edb419c6031a7e21192",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/995d912d760d54401a001edb419c6031a7e21192",
+    "html_url": "https://github.com/atom/atom/commit/995d912d760d54401a001edb419c6031a7e21192",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/995d912d760d54401a001edb419c6031a7e21192/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e2a1337b848f5c33495fb87c94c025a86f2e616e",
+        "url": "https://api.github.com/repos/atom/atom/commits/e2a1337b848f5c33495fb87c94c025a86f2e616e",
+        "html_url": "https://github.com/atom/atom/commit/e2a1337b848f5c33495fb87c94c025a86f2e616e"
+      }
+    ]
+  },
+  {
+    "sha": "60f9180ec36550f0b2e8d00dcd606bf7733b8804",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo2MGY5MTgwZWMzNjU1MGYwYjJlOGQwMGRjZDYwNmJmNzczM2I4ODA0",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T13:26:24Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T13:26:24Z"
+      },
+      "message": "add license overrides for shelljs and log-driver",
+      "tree": {
+        "sha": "31d9cb6564f9dbd89688b393522065ad940f6bca",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/31d9cb6564f9dbd89688b393522065ad940f6bca"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/60f9180ec36550f0b2e8d00dcd606bf7733b8804",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/60f9180ec36550f0b2e8d00dcd606bf7733b8804",
+    "html_url": "https://github.com/atom/atom/commit/60f9180ec36550f0b2e8d00dcd606bf7733b8804",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/60f9180ec36550f0b2e8d00dcd606bf7733b8804/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "995d912d760d54401a001edb419c6031a7e21192",
+        "url": "https://api.github.com/repos/atom/atom/commits/995d912d760d54401a001edb419c6031a7e21192",
+        "html_url": "https://github.com/atom/atom/commit/995d912d760d54401a001edb419c6031a7e21192"
+      }
+    ]
+  },
+  {
+    "sha": "7598be861bb6531599a50d8fe4ee0e9d53ac7ca3",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo3NTk4YmU4NjFiYjY1MzE1OTlhNTBkOGZlNGVlMGU5ZDUzYWM3Y2Ez",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T14:08:03Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T14:08:03Z"
+      },
+      "message": "Add empty ignore array to standard config\n\n- This version of grunt-standard requires SOMETHING to be set here, or it dies\n  hard because it tries to push undefined into the array of ignored paths",
+      "tree": {
+        "sha": "98c70781d57b7a99f977778760fd527feb1f813e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/98c70781d57b7a99f977778760fd527feb1f813e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/7598be861bb6531599a50d8fe4ee0e9d53ac7ca3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/7598be861bb6531599a50d8fe4ee0e9d53ac7ca3",
+    "html_url": "https://github.com/atom/atom/commit/7598be861bb6531599a50d8fe4ee0e9d53ac7ca3",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/7598be861bb6531599a50d8fe4ee0e9d53ac7ca3/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "60f9180ec36550f0b2e8d00dcd606bf7733b8804",
+        "url": "https://api.github.com/repos/atom/atom/commits/60f9180ec36550f0b2e8d00dcd606bf7733b8804",
+        "html_url": "https://github.com/atom/atom/commit/60f9180ec36550f0b2e8d00dcd606bf7733b8804"
+      }
+    ]
+  },
+  {
+    "sha": "93046f550f56011130b4071dec54ce4723f8d282",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo5MzA0NmY1NTBmNTYwMTExMzBiNDA3MWRlYzU0Y2U0NzIzZjhkMjgy",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T14:13:00Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T14:13:00Z"
+      },
+      "message": "Clean up lint errors from `./script/grunt standard:src`",
+      "tree": {
+        "sha": "bd05d212ab801b99b37d7c0d1e7e9059c1522ff6",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/bd05d212ab801b99b37d7c0d1e7e9059c1522ff6"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/93046f550f56011130b4071dec54ce4723f8d282",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/93046f550f56011130b4071dec54ce4723f8d282",
+    "html_url": "https://github.com/atom/atom/commit/93046f550f56011130b4071dec54ce4723f8d282",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/93046f550f56011130b4071dec54ce4723f8d282/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "7598be861bb6531599a50d8fe4ee0e9d53ac7ca3",
+        "url": "https://api.github.com/repos/atom/atom/commits/7598be861bb6531599a50d8fe4ee0e9d53ac7ca3",
+        "html_url": "https://github.com/atom/atom/commit/7598be861bb6531599a50d8fe4ee0e9d53ac7ca3"
+      }
+    ]
+  },
+  {
+    "sha": "ff4f26e1ec7a8863d1be2ff0fdaf1c68135280ec",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmZjRmMjZlMWVjN2E4ODYzZDFiZTJmZjBmZGFmMWM2ODEzNTI4MGVj",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T14:38:24Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T14:38:24Z"
+      },
+      "message": "coffeelint fix",
+      "tree": {
+        "sha": "f8e10fb1d9170463b052fe6a2be2a733f07de431",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/f8e10fb1d9170463b052fe6a2be2a733f07de431"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/ff4f26e1ec7a8863d1be2ff0fdaf1c68135280ec",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/ff4f26e1ec7a8863d1be2ff0fdaf1c68135280ec",
+    "html_url": "https://github.com/atom/atom/commit/ff4f26e1ec7a8863d1be2ff0fdaf1c68135280ec",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/ff4f26e1ec7a8863d1be2ff0fdaf1c68135280ec/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "93046f550f56011130b4071dec54ce4723f8d282",
+        "url": "https://api.github.com/repos/atom/atom/commits/93046f550f56011130b4071dec54ce4723f8d282",
+        "html_url": "https://github.com/atom/atom/commit/93046f550f56011130b4071dec54ce4723f8d282"
+      }
+    ]
+  },
+  {
+    "sha": "14d470a5e5e554b6c39c16653bb7f1db436c7c5a",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxNGQ0NzBhNWU1ZTU1NGI2YzM5YzE2NjUzYmI3ZjFkYjQzNmM3YzVh",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:01:35Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:01:35Z"
+      },
+      "message": "unforce spec",
+      "tree": {
+        "sha": "5040686c72406638bc0564bec24a72d033e74d56",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/5040686c72406638bc0564bec24a72d033e74d56"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/14d470a5e5e554b6c39c16653bb7f1db436c7c5a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/14d470a5e5e554b6c39c16653bb7f1db436c7c5a",
+    "html_url": "https://github.com/atom/atom/commit/14d470a5e5e554b6c39c16653bb7f1db436c7c5a",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/14d470a5e5e554b6c39c16653bb7f1db436c7c5a/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ff4f26e1ec7a8863d1be2ff0fdaf1c68135280ec",
+        "url": "https://api.github.com/repos/atom/atom/commits/ff4f26e1ec7a8863d1be2ff0fdaf1c68135280ec",
+        "html_url": "https://github.com/atom/atom/commit/ff4f26e1ec7a8863d1be2ff0fdaf1c68135280ec"
+      }
+    ]
+  },
+  {
+    "sha": "bdc8a38045f75da7b8491dfff854db8fe722ebf2",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiZGM4YTM4MDQ1Zjc1ZGE3Yjg0OTFkZmZmODU0ZGI4ZmU3MjJlYmYy",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:15:55Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:15:55Z"
+      },
+      "message": "add final buffer event spec",
+      "tree": {
+        "sha": "8b90c379bb8688da1bb14407cc09a9f9a6969493",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/8b90c379bb8688da1bb14407cc09a9f9a6969493"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/bdc8a38045f75da7b8491dfff854db8fe722ebf2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/bdc8a38045f75da7b8491dfff854db8fe722ebf2",
+    "html_url": "https://github.com/atom/atom/commit/bdc8a38045f75da7b8491dfff854db8fe722ebf2",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/bdc8a38045f75da7b8491dfff854db8fe722ebf2/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "14d470a5e5e554b6c39c16653bb7f1db436c7c5a",
+        "url": "https://api.github.com/repos/atom/atom/commits/14d470a5e5e554b6c39c16653bb7f1db436c7c5a",
+        "html_url": "https://github.com/atom/atom/commit/14d470a5e5e554b6c39c16653bb7f1db436c7c5a"
+      }
+    ]
+  },
+  {
+    "sha": "a9dae48ac4a64eb075d2eb0ebd47201fe7dafcf2",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphOWRhZTQ4YWM0YTY0ZWIwNzVkMmViMGViZDQ3MjAxZmU3ZGFmY2Yy",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-09T15:39:02Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-09T15:39:02Z"
+      },
+      "message": "It's better if we actually run the tests.",
+      "tree": {
+        "sha": "55e5b5ed95f2277821ebd663b1d8ab1a9db4b3e3",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/55e5b5ed95f2277821ebd663b1d8ab1a9db4b3e3"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/a9dae48ac4a64eb075d2eb0ebd47201fe7dafcf2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/a9dae48ac4a64eb075d2eb0ebd47201fe7dafcf2",
+    "html_url": "https://github.com/atom/atom/commit/a9dae48ac4a64eb075d2eb0ebd47201fe7dafcf2",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/a9dae48ac4a64eb075d2eb0ebd47201fe7dafcf2/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "14d470a5e5e554b6c39c16653bb7f1db436c7c5a",
+        "url": "https://api.github.com/repos/atom/atom/commits/14d470a5e5e554b6c39c16653bb7f1db436c7c5a",
+        "html_url": "https://github.com/atom/atom/commit/14d470a5e5e554b6c39c16653bb7f1db436c7c5a"
+      }
+    ]
+  },
+  {
+    "sha": "0745348bcf98b6c1548a2cfb5437edc1e88f41f9",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowNzQ1MzQ4YmNmOThiNmMxNTQ4YTJjZmI1NDM3ZWRjMWU4OGY0MWY5",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-09T15:39:31Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-09T15:39:31Z"
+      },
+      "message": "Merge remote-tracking branch 'origin/dh-async-repo' into dh-async-repo",
+      "tree": {
+        "sha": "55e5b5ed95f2277821ebd663b1d8ab1a9db4b3e3",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/55e5b5ed95f2277821ebd663b1d8ab1a9db4b3e3"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/0745348bcf98b6c1548a2cfb5437edc1e88f41f9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/0745348bcf98b6c1548a2cfb5437edc1e88f41f9",
+    "html_url": "https://github.com/atom/atom/commit/0745348bcf98b6c1548a2cfb5437edc1e88f41f9",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/0745348bcf98b6c1548a2cfb5437edc1e88f41f9/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "a9dae48ac4a64eb075d2eb0ebd47201fe7dafcf2",
+        "url": "https://api.github.com/repos/atom/atom/commits/a9dae48ac4a64eb075d2eb0ebd47201fe7dafcf2",
+        "html_url": "https://github.com/atom/atom/commit/a9dae48ac4a64eb075d2eb0ebd47201fe7dafcf2"
+      },
+      {
+        "sha": "bdc8a38045f75da7b8491dfff854db8fe722ebf2",
+        "url": "https://api.github.com/repos/atom/atom/commits/bdc8a38045f75da7b8491dfff854db8fe722ebf2",
+        "html_url": "https://github.com/atom/atom/commit/bdc8a38045f75da7b8491dfff854db8fe722ebf2"
+      }
+    ]
+  },
+  {
+    "sha": "e3af723c9b1fc093a65785835396576119a30ac7",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplM2FmNzIzYzliMWZjMDkzYTY1Nzg1ODM1Mzk2NTc2MTE5YTMwYWM3",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:40:44Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:40:44Z"
+      },
+      "message": "Copy relativize and getPathStatus from #9469",
+      "tree": {
+        "sha": "a480d78f1114f1cdd6450d8e58ea7a84bd20b007",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/a480d78f1114f1cdd6450d8e58ea7a84bd20b007"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/e3af723c9b1fc093a65785835396576119a30ac7",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/e3af723c9b1fc093a65785835396576119a30ac7",
+    "html_url": "https://github.com/atom/atom/commit/e3af723c9b1fc093a65785835396576119a30ac7",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/e3af723c9b1fc093a65785835396576119a30ac7/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "bdc8a38045f75da7b8491dfff854db8fe722ebf2",
+        "url": "https://api.github.com/repos/atom/atom/commits/bdc8a38045f75da7b8491dfff854db8fe722ebf2",
+        "html_url": "https://github.com/atom/atom/commit/bdc8a38045f75da7b8491dfff854db8fe722ebf2"
+      }
+    ]
+  },
+  {
+    "sha": "0322d8d3dada0334edba74768ce4b54725ca7757",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowMzIyZDhkM2RhZGEwMzM0ZWRiYTc0NzY4Y2U0YjU0NzI1Y2E3NzU3",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:48:02Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:48:02Z"
+      },
+      "message": "Use our own ::relativize\n\nThis allows us to remove the git-utils import.",
+      "tree": {
+        "sha": "d94a02fa9215e03b1e866af553c744cb3c819b88",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/d94a02fa9215e03b1e866af553c744cb3c819b88"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/0322d8d3dada0334edba74768ce4b54725ca7757",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/0322d8d3dada0334edba74768ce4b54725ca7757",
+    "html_url": "https://github.com/atom/atom/commit/0322d8d3dada0334edba74768ce4b54725ca7757",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/0322d8d3dada0334edba74768ce4b54725ca7757/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e3af723c9b1fc093a65785835396576119a30ac7",
+        "url": "https://api.github.com/repos/atom/atom/commits/e3af723c9b1fc093a65785835396576119a30ac7",
+        "html_url": "https://github.com/atom/atom/commit/e3af723c9b1fc093a65785835396576119a30ac7"
+      }
+    ]
+  },
+  {
+    "sha": "60c6dc4da334ec53645aca5a0ab5774ab2ebad33",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo2MGM2ZGM0ZGEzMzRlYzUzNjQ1YWNhNWEwYWI1Nzc0YWIyZWJhZDMz",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:48:16Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:48:16Z"
+      },
+      "message": "Merge branch 'dh-async-repo' of github.com:atom/atom into dh-async-repo",
+      "tree": {
+        "sha": "b242f899edb3078291ea93e0cf03e44749397e41",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b242f899edb3078291ea93e0cf03e44749397e41"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/60c6dc4da334ec53645aca5a0ab5774ab2ebad33",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/60c6dc4da334ec53645aca5a0ab5774ab2ebad33",
+    "html_url": "https://github.com/atom/atom/commit/60c6dc4da334ec53645aca5a0ab5774ab2ebad33",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/60c6dc4da334ec53645aca5a0ab5774ab2ebad33/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0322d8d3dada0334edba74768ce4b54725ca7757",
+        "url": "https://api.github.com/repos/atom/atom/commits/0322d8d3dada0334edba74768ce4b54725ca7757",
+        "html_url": "https://github.com/atom/atom/commit/0322d8d3dada0334edba74768ce4b54725ca7757"
+      },
+      {
+        "sha": "0745348bcf98b6c1548a2cfb5437edc1e88f41f9",
+        "url": "https://api.github.com/repos/atom/atom/commits/0745348bcf98b6c1548a2cfb5437edc1e88f41f9",
+        "html_url": "https://github.com/atom/atom/commit/0745348bcf98b6c1548a2cfb5437edc1e88f41f9"
+      }
+    ]
+  },
+  {
+    "sha": "d8985c8175f25e6f40026c07980846c68d4da935",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkODk4NWM4MTc1ZjI1ZTZmNDAwMjZjMDc5ODA4NDZjNjhkNGRhOTM1",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:51:02Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:51:02Z"
+      },
+      "message": "await getCachedPathStatus in specs",
+      "tree": {
+        "sha": "c51b34946a3595686478101414ec538cc2c8740e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c51b34946a3595686478101414ec538cc2c8740e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/d8985c8175f25e6f40026c07980846c68d4da935",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/d8985c8175f25e6f40026c07980846c68d4da935",
+    "html_url": "https://github.com/atom/atom/commit/d8985c8175f25e6f40026c07980846c68d4da935",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/d8985c8175f25e6f40026c07980846c68d4da935/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "60c6dc4da334ec53645aca5a0ab5774ab2ebad33",
+        "url": "https://api.github.com/repos/atom/atom/commits/60c6dc4da334ec53645aca5a0ab5774ab2ebad33",
+        "html_url": "https://github.com/atom/atom/commit/60c6dc4da334ec53645aca5a0ab5774ab2ebad33"
+      }
+    ]
+  },
+  {
+    "sha": "8f59693d839f11f8f792c4271648d9e83d4541ba",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4ZjU5NjkzZDgzOWYxMWY4Zjc5MmM0MjcxNjQ4ZDllODNkNDU0MWJh",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-09T15:41:17Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-09T15:51:31Z"
+      },
+      "message": "Use asyncIt here too.",
+      "tree": {
+        "sha": "ba83ba7273a8738e752372f548674b0d7accebb4",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/ba83ba7273a8738e752372f548674b0d7accebb4"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/8f59693d839f11f8f792c4271648d9e83d4541ba",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/8f59693d839f11f8f792c4271648d9e83d4541ba",
+    "html_url": "https://github.com/atom/atom/commit/8f59693d839f11f8f792c4271648d9e83d4541ba",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/8f59693d839f11f8f792c4271648d9e83d4541ba/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "d8985c8175f25e6f40026c07980846c68d4da935",
+        "url": "https://api.github.com/repos/atom/atom/commits/d8985c8175f25e6f40026c07980846c68d4da935",
+        "html_url": "https://github.com/atom/atom/commit/d8985c8175f25e6f40026c07980846c68d4da935"
+      }
+    ]
+  },
+  {
+    "sha": "cbc3dfb555d4b73901676f5610eb7733fd5fccf3",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpjYmMzZGZiNTU1ZDRiNzM5MDE2NzZmNTYxMGViNzczM2ZkNWZjY2Yz",
+    "commit": {
+      "author": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-09T15:51:28Z"
+      },
+      "committer": {
+        "name": "joshaber",
+        "email": "joshaber@gmail.com",
+        "date": "2015-11-09T15:51:31Z"
+      },
+      "message": ":fire: terribleWait.",
+      "tree": {
+        "sha": "d8d8abf4d2acfebf24e83bcece2f8db701f9bef4",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/d8d8abf4d2acfebf24e83bcece2f8db701f9bef4"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/cbc3dfb555d4b73901676f5610eb7733fd5fccf3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/cbc3dfb555d4b73901676f5610eb7733fd5fccf3",
+    "html_url": "https://github.com/atom/atom/commit/cbc3dfb555d4b73901676f5610eb7733fd5fccf3",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/cbc3dfb555d4b73901676f5610eb7733fd5fccf3/comments",
+    "author": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "joshaber",
+      "id": 13760,
+      "node_id": "MDQ6VXNlcjEzNzYw",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13760?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshaber",
+      "html_url": "https://github.com/joshaber",
+      "followers_url": "https://api.github.com/users/joshaber/followers",
+      "following_url": "https://api.github.com/users/joshaber/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshaber/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshaber/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshaber/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshaber/orgs",
+      "repos_url": "https://api.github.com/users/joshaber/repos",
+      "events_url": "https://api.github.com/users/joshaber/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshaber/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "8f59693d839f11f8f792c4271648d9e83d4541ba",
+        "url": "https://api.github.com/repos/atom/atom/commits/8f59693d839f11f8f792c4271648d9e83d4541ba",
+        "html_url": "https://github.com/atom/atom/commit/8f59693d839f11f8f792c4271648d9e83d4541ba"
+      }
+    ]
+  },
+  {
+    "sha": "3d2ed074707cc3e8983850e5cdf2a108ddceabf1",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozZDJlZDA3NDcwN2NjM2U4OTgzODUwZTVjZGYyYTEwOGRkY2VhYmYx",
+    "commit": {
+      "author": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:56:51Z"
+      },
+      "committer": {
+        "name": "Daniel Hengeveld",
+        "email": "danielwh@gmail.com",
+        "date": "2015-11-09T15:56:51Z"
+      },
+      "message": "Revert \"Use our own ::relativize\"\n\nThis reverts commit 0322d8d3dada0334edba74768ce4b54725ca7757.",
+      "tree": {
+        "sha": "48e471c2827296fdee03da91e4b169fb50a15bf5",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/48e471c2827296fdee03da91e4b169fb50a15bf5"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/3d2ed074707cc3e8983850e5cdf2a108ddceabf1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/3d2ed074707cc3e8983850e5cdf2a108ddceabf1",
+    "html_url": "https://github.com/atom/atom/commit/3d2ed074707cc3e8983850e5cdf2a108ddceabf1",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/3d2ed074707cc3e8983850e5cdf2a108ddceabf1/comments",
+    "author": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "thedaniel",
+      "id": 1476,
+      "node_id": "MDQ6VXNlcjE0NzY=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1476?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/thedaniel",
+      "html_url": "https://github.com/thedaniel",
+      "followers_url": "https://api.github.com/users/thedaniel/followers",
+      "following_url": "https://api.github.com/users/thedaniel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/thedaniel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/thedaniel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/thedaniel/subscriptions",
+      "organizations_url": "https://api.github.com/users/thedaniel/orgs",
+      "repos_url": "https://api.github.com/users/thedaniel/repos",
+      "events_url": "https://api.github.com/users/thedaniel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/thedaniel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "cbc3dfb555d4b73901676f5610eb7733fd5fccf3",
+        "url": "https://api.github.com/repos/atom/atom/commits/cbc3dfb555d4b73901676f5610eb7733fd5fccf3",
+        "html_url": "https://github.com/atom/atom/commit/cbc3dfb555d4b73901676f5610eb7733fd5fccf3"
+      }
+    ]
+  }
+]

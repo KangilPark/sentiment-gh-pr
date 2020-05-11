@@ -1,0 +1,950 @@
+[
+  {
+    "sha": "d4bf5cd9cee49640e253f7d32a4d173a1b249bbc",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6ZDRiZjVjZDljZWU0OTY0MGUyNTNmN2QzMmE0ZDE3M2ExYjI0OWJiYw==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2014-12-19T21:38:20Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2014-12-19T21:38:20Z"
+      },
+      "message": "Replace FINAL_11 with final.",
+      "tree": {
+        "sha": "60032cd4c566ea51b86a71bdadc51169bfd382c1",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/60032cd4c566ea51b86a71bdadc51169bfd382c1"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/d4bf5cd9cee49640e253f7d32a4d173a1b249bbc",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/d4bf5cd9cee49640e253f7d32a4d173a1b249bbc",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/d4bf5cd9cee49640e253f7d32a4d173a1b249bbc",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/d4bf5cd9cee49640e253f7d32a4d173a1b249bbc/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "9ebc9eab12e9f625dcf9de51b72b58cda5496e0b",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/9ebc9eab12e9f625dcf9de51b72b58cda5496e0b",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/9ebc9eab12e9f625dcf9de51b72b58cda5496e0b"
+      }
+    ]
+  },
+  {
+    "sha": "1f3c6e688167698570ea3bb1e4b8fbe9326f7ffd",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6MWYzYzZlNjg4MTY3Njk4NTcwZWEzYmIxZTRiOGZiZTkzMjZmN2ZmZA==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2014-12-19T22:26:34Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2014-12-19T22:26:34Z"
+      },
+      "message": "Comment about a TODO when moving to SWIG 3.",
+      "tree": {
+        "sha": "b4e23e76e612ee8b3416b04fbeb6c1291a326027",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/b4e23e76e612ee8b3416b04fbeb6c1291a326027"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/1f3c6e688167698570ea3bb1e4b8fbe9326f7ffd",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/1f3c6e688167698570ea3bb1e4b8fbe9326f7ffd",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/1f3c6e688167698570ea3bb1e4b8fbe9326f7ffd",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/1f3c6e688167698570ea3bb1e4b8fbe9326f7ffd/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d4bf5cd9cee49640e253f7d32a4d173a1b249bbc",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/d4bf5cd9cee49640e253f7d32a4d173a1b249bbc",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/d4bf5cd9cee49640e253f7d32a4d173a1b249bbc"
+      }
+    ]
+  },
+  {
+    "sha": "e9b0d4e5bd651cb5181b17458be2a39aeec0ba96",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6ZTliMGQ0ZTViZDY1MWNiNTE4MWIxNzQ1OGJlMmEzOWFlZWMwYmE5Ng==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2014-12-19T22:51:56Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2014-12-19T22:51:56Z"
+      },
+      "message": "override final -> final",
+      "tree": {
+        "sha": "9531b49046fd2d968272e678dd29410b62f759d5",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/9531b49046fd2d968272e678dd29410b62f759d5"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/e9b0d4e5bd651cb5181b17458be2a39aeec0ba96",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/e9b0d4e5bd651cb5181b17458be2a39aeec0ba96",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/e9b0d4e5bd651cb5181b17458be2a39aeec0ba96",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/e9b0d4e5bd651cb5181b17458be2a39aeec0ba96/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "1f3c6e688167698570ea3bb1e4b8fbe9326f7ffd",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/1f3c6e688167698570ea3bb1e4b8fbe9326f7ffd",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/1f3c6e688167698570ea3bb1e4b8fbe9326f7ffd"
+      }
+    ]
+  },
+  {
+    "sha": "34858db7df0bc6a09dd7d53aa9fa358effac277a",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6MzQ4NThkYjdkZjBiYzZhMDlkZDdkNTNhYTlmYTM1OGVmZmFjMjc3YQ==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2014-12-19T22:52:28Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2014-12-19T22:52:28Z"
+      },
+      "message": "override final -> final",
+      "tree": {
+        "sha": "93cb4a50f05e6f9fe77440160ec4dfc514369b52",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/93cb4a50f05e6f9fe77440160ec4dfc514369b52"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/34858db7df0bc6a09dd7d53aa9fa358effac277a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/34858db7df0bc6a09dd7d53aa9fa358effac277a",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/34858db7df0bc6a09dd7d53aa9fa358effac277a",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/34858db7df0bc6a09dd7d53aa9fa358effac277a/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e9b0d4e5bd651cb5181b17458be2a39aeec0ba96",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/e9b0d4e5bd651cb5181b17458be2a39aeec0ba96",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/e9b0d4e5bd651cb5181b17458be2a39aeec0ba96"
+      }
+    ]
+  },
+  {
+    "sha": "10388b692dd2a17a8b313bf7834bdd2bb2047851",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6MTAzODhiNjkyZGQyYTE3YThiMzEzYmY3ODM0YmRkMmJiMjA0Nzg1MQ==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-22T20:39:43Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-22T20:39:43Z"
+      },
+      "message": "Use override final instead of just final.",
+      "tree": {
+        "sha": "8281013972a61ac05e398fbe08926798fd526e9f",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/8281013972a61ac05e398fbe08926798fd526e9f"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/10388b692dd2a17a8b313bf7834bdd2bb2047851",
+      "comment_count": 3,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/10388b692dd2a17a8b313bf7834bdd2bb2047851",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/10388b692dd2a17a8b313bf7834bdd2bb2047851",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/10388b692dd2a17a8b313bf7834bdd2bb2047851/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "34858db7df0bc6a09dd7d53aa9fa358effac277a",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/34858db7df0bc6a09dd7d53aa9fa358effac277a",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/34858db7df0bc6a09dd7d53aa9fa358effac277a"
+      }
+    ]
+  },
+  {
+    "sha": "97d85beb181b0e7bd21e9bfc732ce192ac78cbc0",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6OTdkODViZWIxODFiMGU3YmQyMWU5YmZjNzMyY2UxOTJhYzc4Y2JjMA==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-22T20:40:03Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-22T20:40:03Z"
+      },
+      "message": "Make (Object|Simple)Property into final classes.",
+      "tree": {
+        "sha": "a7d5edc4bafb5dd978b19dc6bceb4ddfae68ca38",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/a7d5edc4bafb5dd978b19dc6bceb4ddfae68ca38"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/97d85beb181b0e7bd21e9bfc732ce192ac78cbc0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/97d85beb181b0e7bd21e9bfc732ce192ac78cbc0",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/97d85beb181b0e7bd21e9bfc732ce192ac78cbc0",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/97d85beb181b0e7bd21e9bfc732ce192ac78cbc0/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "10388b692dd2a17a8b313bf7834bdd2bb2047851",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/10388b692dd2a17a8b313bf7834bdd2bb2047851",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/10388b692dd2a17a8b313bf7834bdd2bb2047851"
+      }
+    ]
+  },
+  {
+    "sha": "eca051f3e32ebd6eb9dc97c5e2e8d4ce704e54ff",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6ZWNhMDUxZjNlMzJlYmQ2ZWI5ZGM5N2M1ZTJlOGQ0Y2U3MDRlNTRmZg==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-22T23:29:55Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-22T23:29:55Z"
+      },
+      "message": "Revert \"Make (Object|Simple)Property into final classes.\"\n\nThis reverts commit 97d85beb181b0e7bd21e9bfc732ce192ac78cbc0.",
+      "tree": {
+        "sha": "8281013972a61ac05e398fbe08926798fd526e9f",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/8281013972a61ac05e398fbe08926798fd526e9f"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/eca051f3e32ebd6eb9dc97c5e2e8d4ce704e54ff",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/eca051f3e32ebd6eb9dc97c5e2e8d4ce704e54ff",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/eca051f3e32ebd6eb9dc97c5e2e8d4ce704e54ff",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/eca051f3e32ebd6eb9dc97c5e2e8d4ce704e54ff/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "97d85beb181b0e7bd21e9bfc732ce192ac78cbc0",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/97d85beb181b0e7bd21e9bfc732ce192ac78cbc0",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/97d85beb181b0e7bd21e9bfc732ce192ac78cbc0"
+      }
+    ]
+  },
+  {
+    "sha": "f201a97b6e2d06e9ce8ddcb21af4264b322531c3",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6ZjIwMWE5N2I2ZTJkMDZlOWNlOGRkY2IyMWFmNDI2NGIzMjI1MzFjMw==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-22T23:38:25Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-22T23:38:25Z"
+      },
+      "message": "final -> override final in Property.",
+      "tree": {
+        "sha": "4da1bc49e934dc3c23dfb9d8a084baa3f4bebbd3",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/4da1bc49e934dc3c23dfb9d8a084baa3f4bebbd3"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/f201a97b6e2d06e9ce8ddcb21af4264b322531c3",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/f201a97b6e2d06e9ce8ddcb21af4264b322531c3",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/f201a97b6e2d06e9ce8ddcb21af4264b322531c3",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/f201a97b6e2d06e9ce8ddcb21af4264b322531c3/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "eca051f3e32ebd6eb9dc97c5e2e8d4ce704e54ff",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/eca051f3e32ebd6eb9dc97c5e2e8d4ce704e54ff",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/eca051f3e32ebd6eb9dc97c5e2e8d4ce704e54ff"
+      }
+    ]
+  },
+  {
+    "sha": "066c70e2106f1463e824358f8ff31af98fc0f7b1",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6MDY2YzcwZTIxMDZmMTQ2M2U4MjQzNThmOGZmMzFhZjk4ZmMwZjdiMQ==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-23T06:39:20Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-23T06:39:20Z"
+      },
+      "message": "Remove virtual when overring virtual methods.",
+      "tree": {
+        "sha": "05e5d708b3a04c16545d05b5ec5bc6489096e58c",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/05e5d708b3a04c16545d05b5ec5bc6489096e58c"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/066c70e2106f1463e824358f8ff31af98fc0f7b1",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/066c70e2106f1463e824358f8ff31af98fc0f7b1",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/066c70e2106f1463e824358f8ff31af98fc0f7b1",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/066c70e2106f1463e824358f8ff31af98fc0f7b1/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f201a97b6e2d06e9ce8ddcb21af4264b322531c3",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/f201a97b6e2d06e9ce8ddcb21af4264b322531c3",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/f201a97b6e2d06e9ce8ddcb21af4264b322531c3"
+      }
+    ]
+  },
+  {
+    "sha": "bd73922ee232ad18a0fe1f5ea9d4aac6c8efd3d0",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6YmQ3MzkyMmVlMjMyYWQxOGEwZmUxZjVlYTlkNGFhYzZjOGVmZDNkMA==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-23T06:40:35Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-23T06:40:35Z"
+      },
+      "message": "Millard muscles, remove unnecessary virtual.",
+      "tree": {
+        "sha": "c91cab73714e240831e1a897abde1fdfa3408acf",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/c91cab73714e240831e1a897abde1fdfa3408acf"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/bd73922ee232ad18a0fe1f5ea9d4aac6c8efd3d0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/bd73922ee232ad18a0fe1f5ea9d4aac6c8efd3d0",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/bd73922ee232ad18a0fe1f5ea9d4aac6c8efd3d0",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/bd73922ee232ad18a0fe1f5ea9d4aac6c8efd3d0/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "066c70e2106f1463e824358f8ff31af98fc0f7b1",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/066c70e2106f1463e824358f8ff31af98fc0f7b1",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/066c70e2106f1463e824358f8ff31af98fc0f7b1"
+      }
+    ]
+  },
+  {
+    "sha": "f3cfd0aca8907ec9c1166c9cbcfec168934c5c39",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6ZjNjZmQwYWNhODkwN2VjOWMxMTY2YzljYmNmZWMxNjg5MzRjNWMzOQ==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-23T06:41:56Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-23T06:41:56Z"
+      },
+      "message": "Millard muscle remove unnecessary virtual.",
+      "tree": {
+        "sha": "3ee839625769c89a0aba5cf923b1d74928ff74d0",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/3ee839625769c89a0aba5cf923b1d74928ff74d0"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/f3cfd0aca8907ec9c1166c9cbcfec168934c5c39",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/f3cfd0aca8907ec9c1166c9cbcfec168934c5c39",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/f3cfd0aca8907ec9c1166c9cbcfec168934c5c39",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/f3cfd0aca8907ec9c1166c9cbcfec168934c5c39/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "bd73922ee232ad18a0fe1f5ea9d4aac6c8efd3d0",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/bd73922ee232ad18a0fe1f5ea9d4aac6c8efd3d0",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/bd73922ee232ad18a0fe1f5ea9d4aac6c8efd3d0"
+      }
+    ]
+  },
+  {
+    "sha": "1274131d82529c368ceb81a7409e1d336b589a32",
+    "node_id": "MDY6Q29tbWl0MjA3NzU2MDA6MTI3NDEzMWQ4MjUyOWMzNjhjZWI4MWE3NDA5ZTFkMzM2YjU4OWEzMg==",
+    "commit": {
+      "author": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-23T06:47:23Z"
+      },
+      "committer": {
+        "name": "Christopher Dembia",
+        "email": "cld72@cornell.edu",
+        "date": "2015-01-23T06:47:23Z"
+      },
+      "message": "Component measure \"final\" -> \"override final\".",
+      "tree": {
+        "sha": "1a341ec0b9a5ba58436c411d192271223f9f9169",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/git/trees/1a341ec0b9a5ba58436c411d192271223f9f9169"
+      },
+      "url": "https://api.github.com/repos/opensim-org/opensim-core/git/commits/1274131d82529c368ceb81a7409e1d336b589a32",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/1274131d82529c368ceb81a7409e1d336b589a32",
+    "html_url": "https://github.com/opensim-org/opensim-core/commit/1274131d82529c368ceb81a7409e1d336b589a32",
+    "comments_url": "https://api.github.com/repos/opensim-org/opensim-core/commits/1274131d82529c368ceb81a7409e1d336b589a32/comments",
+    "author": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "chrisdembia",
+      "id": 846001,
+      "node_id": "MDQ6VXNlcjg0NjAwMQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/846001?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/chrisdembia",
+      "html_url": "https://github.com/chrisdembia",
+      "followers_url": "https://api.github.com/users/chrisdembia/followers",
+      "following_url": "https://api.github.com/users/chrisdembia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/chrisdembia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/chrisdembia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/chrisdembia/subscriptions",
+      "organizations_url": "https://api.github.com/users/chrisdembia/orgs",
+      "repos_url": "https://api.github.com/users/chrisdembia/repos",
+      "events_url": "https://api.github.com/users/chrisdembia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/chrisdembia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f3cfd0aca8907ec9c1166c9cbcfec168934c5c39",
+        "url": "https://api.github.com/repos/opensim-org/opensim-core/commits/f3cfd0aca8907ec9c1166c9cbcfec168934c5c39",
+        "html_url": "https://github.com/opensim-org/opensim-core/commit/f3cfd0aca8907ec9c1166c9cbcfec168934c5c39"
+      }
+    ]
+  }
+]

@@ -1,0 +1,160 @@
+[
+  {
+    "sha": "acb19c1fe1d1baacbb7f797d5a54f97276b58cf9",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTphY2IxOWMxZmUxZDFiYWFjYmI3Zjc5N2Q1YTU0Zjk3Mjc2YjU4Y2Y5",
+    "commit": {
+      "author": {
+        "name": "Lee Dohm",
+        "email": "lee@lee-dohm.com",
+        "date": "2015-01-10T00:33:48Z"
+      },
+      "committer": {
+        "name": "Lee Dohm",
+        "email": "lee@lee-dohm.com",
+        "date": "2015-01-10T00:33:48Z"
+      },
+      "message": "Log scopes to notification instead of console\n\nFixes #4969",
+      "tree": {
+        "sha": "0cd35f0151880ed39cbcc1644055f3a81ff00f16",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/0cd35f0151880ed39cbcc1644055f3a81ff00f16"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/acb19c1fe1d1baacbb7f797d5a54f97276b58cf9",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/acb19c1fe1d1baacbb7f797d5a54f97276b58cf9",
+    "html_url": "https://github.com/atom/atom/commit/acb19c1fe1d1baacbb7f797d5a54f97276b58cf9",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/acb19c1fe1d1baacbb7f797d5a54f97276b58cf9/comments",
+    "author": {
+      "login": "lee-dohm",
+      "id": 1038121,
+      "node_id": "MDQ6VXNlcjEwMzgxMjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1038121?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lee-dohm",
+      "html_url": "https://github.com/lee-dohm",
+      "followers_url": "https://api.github.com/users/lee-dohm/followers",
+      "following_url": "https://api.github.com/users/lee-dohm/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lee-dohm/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lee-dohm/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lee-dohm/subscriptions",
+      "organizations_url": "https://api.github.com/users/lee-dohm/orgs",
+      "repos_url": "https://api.github.com/users/lee-dohm/repos",
+      "events_url": "https://api.github.com/users/lee-dohm/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lee-dohm/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "lee-dohm",
+      "id": 1038121,
+      "node_id": "MDQ6VXNlcjEwMzgxMjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1038121?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lee-dohm",
+      "html_url": "https://github.com/lee-dohm",
+      "followers_url": "https://api.github.com/users/lee-dohm/followers",
+      "following_url": "https://api.github.com/users/lee-dohm/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lee-dohm/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lee-dohm/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lee-dohm/subscriptions",
+      "organizations_url": "https://api.github.com/users/lee-dohm/orgs",
+      "repos_url": "https://api.github.com/users/lee-dohm/repos",
+      "events_url": "https://api.github.com/users/lee-dohm/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lee-dohm/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "495a45e723deac2c3d5a83726ff896c909ebe461",
+        "url": "https://api.github.com/repos/atom/atom/commits/495a45e723deac2c3d5a83726ff896c909ebe461",
+        "html_url": "https://github.com/atom/atom/commit/495a45e723deac2c3d5a83726ff896c909ebe461"
+      }
+    ]
+  },
+  {
+    "sha": "ef97197681b69909748077db5b0f76c100c9a5d4",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplZjk3MTk3NjgxYjY5OTA5NzQ4MDc3ZGI1YjBmNzZjMTAwYzlhNWQ0",
+    "commit": {
+      "author": {
+        "name": "Lee Dohm",
+        "email": "lee@lee-dohm.com",
+        "date": "2015-01-10T00:42:16Z"
+      },
+      "committer": {
+        "name": "Lee Dohm",
+        "email": "lee@lee-dohm.com",
+        "date": "2015-01-10T00:42:16Z"
+      },
+      "message": "Use list.map instead of _.map list",
+      "tree": {
+        "sha": "06ab2803a5734202b0c255d73009e607165991d0",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/06ab2803a5734202b0c255d73009e607165991d0"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/ef97197681b69909748077db5b0f76c100c9a5d4",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/ef97197681b69909748077db5b0f76c100c9a5d4",
+    "html_url": "https://github.com/atom/atom/commit/ef97197681b69909748077db5b0f76c100c9a5d4",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/ef97197681b69909748077db5b0f76c100c9a5d4/comments",
+    "author": {
+      "login": "lee-dohm",
+      "id": 1038121,
+      "node_id": "MDQ6VXNlcjEwMzgxMjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1038121?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lee-dohm",
+      "html_url": "https://github.com/lee-dohm",
+      "followers_url": "https://api.github.com/users/lee-dohm/followers",
+      "following_url": "https://api.github.com/users/lee-dohm/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lee-dohm/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lee-dohm/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lee-dohm/subscriptions",
+      "organizations_url": "https://api.github.com/users/lee-dohm/orgs",
+      "repos_url": "https://api.github.com/users/lee-dohm/repos",
+      "events_url": "https://api.github.com/users/lee-dohm/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lee-dohm/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "lee-dohm",
+      "id": 1038121,
+      "node_id": "MDQ6VXNlcjEwMzgxMjE=",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1038121?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lee-dohm",
+      "html_url": "https://github.com/lee-dohm",
+      "followers_url": "https://api.github.com/users/lee-dohm/followers",
+      "following_url": "https://api.github.com/users/lee-dohm/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lee-dohm/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lee-dohm/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lee-dohm/subscriptions",
+      "organizations_url": "https://api.github.com/users/lee-dohm/orgs",
+      "repos_url": "https://api.github.com/users/lee-dohm/repos",
+      "events_url": "https://api.github.com/users/lee-dohm/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lee-dohm/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "acb19c1fe1d1baacbb7f797d5a54f97276b58cf9",
+        "url": "https://api.github.com/repos/atom/atom/commits/acb19c1fe1d1baacbb7f797d5a54f97276b58cf9",
+        "html_url": "https://github.com/atom/atom/commit/acb19c1fe1d1baacbb7f797d5a54f97276b58cf9"
+      }
+    ]
+  }
+]

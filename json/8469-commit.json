@@ -1,0 +1,318 @@
+[
+  {
+    "sha": "0cd007dfb18d608be497971e942695243dff60c2",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowY2QwMDdkZmIxOGQ2MDhiZTQ5Nzk3MWU5NDI2OTUyNDNkZmY2MGMy",
+    "commit": {
+      "author": {
+        "name": "Ivan Zuzak",
+        "email": "izuzak@gmail.com",
+        "date": "2015-08-16T12:28:49Z"
+      },
+      "committer": {
+        "name": "Ivan Zuzak",
+        "email": "izuzak@gmail.com",
+        "date": "2015-08-21T14:08:21Z"
+      },
+      "message": "Add section on issue and pull request labels to contributing guide",
+      "tree": {
+        "sha": "e23f9d861cb8a65e24c52151274379e3bfec4c01",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e23f9d861cb8a65e24c52151274379e3bfec4c01"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/0cd007dfb18d608be497971e942695243dff60c2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/0cd007dfb18d608be497971e942695243dff60c2",
+    "html_url": "https://github.com/atom/atom/commit/0cd007dfb18d608be497971e942695243dff60c2",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/0cd007dfb18d608be497971e942695243dff60c2/comments",
+    "author": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "dfb31d7d50eae1738f6df9beb7e7446843f69c0e",
+        "url": "https://api.github.com/repos/atom/atom/commits/dfb31d7d50eae1738f6df9beb7e7446843f69c0e",
+        "html_url": "https://github.com/atom/atom/commit/dfb31d7d50eae1738f6df9beb7e7446843f69c0e"
+      }
+    ]
+  },
+  {
+    "sha": "d5c5b6ba1f60480580a9e9658041d6606a6c8084",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkNWM1YjZiYTFmNjA0ODA1ODBhOWU5NjU4MDQxZDY2MDZhNmM4MDg0",
+    "commit": {
+      "author": {
+        "name": "Ivan Zuzak",
+        "email": "izuzak@gmail.com",
+        "date": "2015-08-25T15:08:31Z"
+      },
+      "committer": {
+        "name": "Ivan Zuzak",
+        "email": "izuzak@gmail.com",
+        "date": "2015-08-25T15:08:31Z"
+      },
+      "message": "Clarify where issues regarding labels should be opened",
+      "tree": {
+        "sha": "efd999b7ee8c1d720a04c4296c69b71592e57344",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/efd999b7ee8c1d720a04c4296c69b71592e57344"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/d5c5b6ba1f60480580a9e9658041d6606a6c8084",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/d5c5b6ba1f60480580a9e9658041d6606a6c8084",
+    "html_url": "https://github.com/atom/atom/commit/d5c5b6ba1f60480580a9e9658041d6606a6c8084",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/d5c5b6ba1f60480580a9e9658041d6606a6c8084/comments",
+    "author": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "0cd007dfb18d608be497971e942695243dff60c2",
+        "url": "https://api.github.com/repos/atom/atom/commits/0cd007dfb18d608be497971e942695243dff60c2",
+        "html_url": "https://github.com/atom/atom/commit/0cd007dfb18d608be497971e942695243dff60c2"
+      }
+    ]
+  },
+  {
+    "sha": "7ea71a94a5478e81524760ecec4f49950465f279",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo3ZWE3MWE5NGE1NDc4ZTgxNTI0NzYwZWNlYzRmNDk5NTA0NjVmMjc5",
+    "commit": {
+      "author": {
+        "name": "Ivan Zuzak",
+        "email": "izuzak@gmail.com",
+        "date": "2015-08-25T15:09:36Z"
+      },
+      "committer": {
+        "name": "Ivan Zuzak",
+        "email": "izuzak@gmail.com",
+        "date": "2015-08-25T15:09:36Z"
+      },
+      "message": "Fix typos",
+      "tree": {
+        "sha": "71a8c9badf483be27e8db159b6c0b5ea52fef43c",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/71a8c9badf483be27e8db159b6c0b5ea52fef43c"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/7ea71a94a5478e81524760ecec4f49950465f279",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/7ea71a94a5478e81524760ecec4f49950465f279",
+    "html_url": "https://github.com/atom/atom/commit/7ea71a94a5478e81524760ecec4f49950465f279",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/7ea71a94a5478e81524760ecec4f49950465f279/comments",
+    "author": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "d5c5b6ba1f60480580a9e9658041d6606a6c8084",
+        "url": "https://api.github.com/repos/atom/atom/commits/d5c5b6ba1f60480580a9e9658041d6606a6c8084",
+        "html_url": "https://github.com/atom/atom/commit/d5c5b6ba1f60480580a9e9658041d6606a6c8084"
+      }
+    ]
+  },
+  {
+    "sha": "7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo3YTRhMDAyMDdhOGY3ZjVlYWJhMTM4MjQ4M2NlMDk1YzAwOGM0NzM0",
+    "commit": {
+      "author": {
+        "name": "Ivan Zuzak",
+        "email": "izuzak@gmail.com",
+        "date": "2015-09-04T11:58:50Z"
+      },
+      "committer": {
+        "name": "Ivan Zuzak",
+        "email": "izuzak@gmail.com",
+        "date": "2015-09-04T11:58:50Z"
+      },
+      "message": ":art: :wrench: :hammer: :scissors: words",
+      "tree": {
+        "sha": "24ad1defc0bda97561d17a1e87d60b8388358e33",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/24ad1defc0bda97561d17a1e87d60b8388358e33"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/7a4a00207a8f7f5eaba1382483ce095c008c4734",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "html_url": "https://github.com/atom/atom/commit/7a4a00207a8f7f5eaba1382483ce095c008c4734",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/7a4a00207a8f7f5eaba1382483ce095c008c4734/comments",
+    "author": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "7ea71a94a5478e81524760ecec4f49950465f279",
+        "url": "https://api.github.com/repos/atom/atom/commits/7ea71a94a5478e81524760ecec4f49950465f279",
+        "html_url": "https://github.com/atom/atom/commit/7ea71a94a5478e81524760ecec4f49950465f279"
+      }
+    ]
+  }
+]

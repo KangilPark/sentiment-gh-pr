@@ -1,0 +1,222 @@
+[
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/43386092",
+    "pull_request_review_id": null,
+    "id": 43386092,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMzg2MDky",
+    "diff_hunk": "@@ -71,30 +71,91 @@ For more information on how to work with Atom's official packages, see [Contribu\n Also, because Atom is so extensible, it's possible that a feature you've become accustomed to in Atom or an issue you're encountering aren't coming from a bundled package at all, but rather a [community package](https://atom.io/packages) you've installed.\n Each community package has its own repository too, and you should be able to find it in Settings > Packages for the packages you installed and contribute there.\n \n-## How can I contribute?\n-\n-### Submitting Issues\n-\n-* You can create an issue [here](https://github.com/atom/atom/issues/new), but\n-  before doing that please read the notes below on debugging and submitting issues,\n-  and include as many details as possible with your report.\n-* Check the [debugging guide](https://atom.io/docs/latest/hacking-atom-debugging) for tips\n-  on debugging. You might be able to find the cause of the problem and fix\n-  things yourself.\n-* Include the version of Atom you are using and the OS.\n-* Include screenshots and animated GIFs whenever possible; they are immensely\n-  helpful.\n-* Include the behavior you expected and other places you've seen that behavior\n-  such as Emacs, vi, Xcode, etc.\n-* Check the dev tools (`alt-cmd-i`) for errors to include. If the dev tools\n-  are open _before_ the error is triggered, a full stack trace for the error\n-  will be logged. If you can reproduce the error, use this approach to get the\n-  full stack trace and include it in the issue.\n-* On Mac, check Console.app for stack traces to include if reporting a crash.\n-* Perform a [cursory search](https://github.com/issues?q=+is%3Aissue+user%3Aatom)\n-  to see if a similar issue has already been submitted.\n-* Please setup a [profile picture](https://help.github.com/articles/how-do-i-set-up-my-profile-picture)\n-  to make yourself recognizable and so we can all get to know each other better.\n+## How Can I Contribute?\n+\n+### Reporting Bugs\n+\n+This section guides you through submitting a bug report for Atom. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.\n+\n+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). If you'd like, you can use [this template](#template-for-submitting-bug-reports) to structure the information.\n+\n+#### Before Submitting A Bug Report\n+\n+* **Check the [debugging guide](https://atom.io/docs/latest/hacking-atom-debugging).** You might be able to find the cause of the problem and fix things yourself. Most importantly, check if you can reproduce the problem [in the latest version of Atom](https://atom.io/docs/latest/hacking-atom-debugging#update-to-the-latest-version), if the problem happens when you run Atom in [safe mode](https://atom.io/docs/latest/hacking-atom-debugging#check-if-the-problem-shows-up-in-safe-mode), and if you can get the desired behavior by changing [Atom's or packages' config settings](https://atom.io/docs/latest/hacking-atom-debugging#check-atom-and-package-settings).\n+* **Check the [FAQs on the forum](https://discuss.atom.io/c/faq)** for a list of common questions and problems.\n+* **Determine [which repository the problem should be reported in](#atom-and-packages)**.\n+* **Perform a [cursory search](https://github.com/issues?q=+is%3Aissue+user%3Aatom)** to see if the problem has already been reported. If it has, add a comment to the existing issue instead of opening a new one.\n+\n+#### How Do I Submit A (Good) Bug Report?\n+\n+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which repository](#atom-and-packages) your bug is related to, create an issue on that repository and provide the following information.\n+\n+Explain the problem and include additional information to help maintainers reproduce the problem:\n+\n+* **Use a clear and descriptive title** for the issue to identify the problem.\n+* **Describe the exact steps which reproduce the problem** in as many details as possible. For example, start by explaining how you started Atom, e.g. which command exactly you used in the terminal, or how you started Atom otherwise. When listing steps, **don't just say what you did, but explain how you did it**. For example, if you moved the cursor to the end of a line, explain if you used the mouse, or a keyboard shortcut or an Atom command, and if so which one?\n+* **Provide specific examples to demonstrate the steps**. Include links to files or GitHub projects, or copy/pasteable snippets, which you use in those examples. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).\n+* **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.\n+* **Explain which behavior you expected to see instead and why.**\n+* **Include screenshots and animated GIFs** which show you following the described steps and clearly demonstrate the problem. If you use the keyboard while following the steps, **record the GIF with the [Keybinding Resolver](https://github.com/atom/keybinding-resolver) shown**. You can use [this tool](http://www.cockos.com/licecap/) to record GIFs on OSX and Windows.\n+* **If you're reporting that Atom crashed**, include a crash report with a stack trace from the operating system. On OSX, the crash report will be available in `Console.app` under \"Diagnostic and usage information\" > \"User diagnostic reports\". Include the crash report in the issue in a [code block](https://help.github.com/articles/markdown-basics/#multiple-lines) or put it in a [gist](https://gist.github.com/) and provide link to that gist.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 64,
+    "commit_id": "e711e5e3ef93da1c14a52ea8a4eba744b01ea70a",
+    "original_commit_id": "ee53bbf348e24a04fcfe67b6d7507c267dcc7678",
+    "user": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "How does one obtain crash reports on Windows and Linux? I have no idea, but would love to add links :link: or instructions :memo: here.\n",
+    "created_at": "2015-10-29T13:51:23Z",
+    "updated_at": "2015-11-08T21:12:09Z",
+    "html_url": "https://github.com/atom/atom/pull/9333#discussion_r43386092",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9333",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/43386092"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9333#discussion_r43386092"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9333"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 101,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/43386290",
+    "pull_request_review_id": null,
+    "id": 43386290,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzMzg2Mjkw",
+    "diff_hunk": "@@ -71,30 +71,91 @@ For more information on how to work with Atom's official packages, see [Contribu\n Also, because Atom is so extensible, it's possible that a feature you've become accustomed to in Atom or an issue you're encountering aren't coming from a bundled package at all, but rather a [community package](https://atom.io/packages) you've installed.\n Each community package has its own repository too, and you should be able to find it in Settings > Packages for the packages you installed and contribute there.\n \n-## How can I contribute?\n-\n-### Submitting Issues\n-\n-* You can create an issue [here](https://github.com/atom/atom/issues/new), but\n-  before doing that please read the notes below on debugging and submitting issues,\n-  and include as many details as possible with your report.\n-* Check the [debugging guide](https://atom.io/docs/latest/hacking-atom-debugging) for tips\n-  on debugging. You might be able to find the cause of the problem and fix\n-  things yourself.\n-* Include the version of Atom you are using and the OS.\n-* Include screenshots and animated GIFs whenever possible; they are immensely\n-  helpful.\n-* Include the behavior you expected and other places you've seen that behavior\n-  such as Emacs, vi, Xcode, etc.\n-* Check the dev tools (`alt-cmd-i`) for errors to include. If the dev tools\n-  are open _before_ the error is triggered, a full stack trace for the error\n-  will be logged. If you can reproduce the error, use this approach to get the\n-  full stack trace and include it in the issue.\n-* On Mac, check Console.app for stack traces to include if reporting a crash.\n-* Perform a [cursory search](https://github.com/issues?q=+is%3Aissue+user%3Aatom)\n-  to see if a similar issue has already been submitted.\n-* Please setup a [profile picture](https://help.github.com/articles/how-do-i-set-up-my-profile-picture)\n-  to make yourself recognizable and so we can all get to know each other better.\n+## How Can I Contribute?\n+\n+### Reporting Bugs\n+\n+This section guides you through submitting a bug report for Atom. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.\n+\n+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). If you'd like, you can use [this template](#template-for-submitting-bug-reports) to structure the information.\n+\n+#### Before Submitting A Bug Report\n+\n+* **Check the [debugging guide](https://atom.io/docs/latest/hacking-atom-debugging).** You might be able to find the cause of the problem and fix things yourself. Most importantly, check if you can reproduce the problem [in the latest version of Atom](https://atom.io/docs/latest/hacking-atom-debugging#update-to-the-latest-version), if the problem happens when you run Atom in [safe mode](https://atom.io/docs/latest/hacking-atom-debugging#check-if-the-problem-shows-up-in-safe-mode), and if you can get the desired behavior by changing [Atom's or packages' config settings](https://atom.io/docs/latest/hacking-atom-debugging#check-atom-and-package-settings).\n+* **Check the [FAQs on the forum](https://discuss.atom.io/c/faq)** for a list of common questions and problems.\n+* **Determine [which repository the problem should be reported in](#atom-and-packages)**.\n+* **Perform a [cursory search](https://github.com/issues?q=+is%3Aissue+user%3Aatom)** to see if the problem has already been reported. If it has, add a comment to the existing issue instead of opening a new one.\n+\n+#### How Do I Submit A (Good) Bug Report?\n+\n+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which repository](#atom-and-packages) your bug is related to, create an issue on that repository and provide the following information.\n+\n+Explain the problem and include additional information to help maintainers reproduce the problem:\n+\n+* **Use a clear and descriptive title** for the issue to identify the problem.\n+* **Describe the exact steps which reproduce the problem** in as many details as possible. For example, start by explaining how you started Atom, e.g. which command exactly you used in the terminal, or how you started Atom otherwise. When listing steps, **don't just say what you did, but explain how you did it**. For example, if you moved the cursor to the end of a line, explain if you used the mouse, or a keyboard shortcut or an Atom command, and if so which one?\n+* **Provide specific examples to demonstrate the steps**. Include links to files or GitHub projects, or copy/pasteable snippets, which you use in those examples. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).\n+* **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.\n+* **Explain which behavior you expected to see instead and why.**\n+* **Include screenshots and animated GIFs** which show you following the described steps and clearly demonstrate the problem. If you use the keyboard while following the steps, **record the GIF with the [Keybinding Resolver](https://github.com/atom/keybinding-resolver) shown**. You can use [this tool](http://www.cockos.com/licecap/) to record GIFs on OSX and Windows.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 63,
+    "commit_id": "e711e5e3ef93da1c14a52ea8a4eba744b01ea70a",
+    "original_commit_id": "ee53bbf348e24a04fcfe67b6d7507c267dcc7678",
+    "user": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Is there an easy-to-use tool (similar to licecap) for recording GIFs on Linux? \n",
+    "created_at": "2015-10-29T13:53:01Z",
+    "updated_at": "2015-11-08T21:12:09Z",
+    "html_url": "https://github.com/atom/atom/pull/9333#discussion_r43386290",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9333",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/43386290"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9333#discussion_r43386290"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9333"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 100,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/43910413",
+    "pull_request_review_id": null,
+    "id": 43910413,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQzOTEwNDEz",
+    "diff_hunk": "@@ -71,30 +71,91 @@ For more information on how to work with Atom's official packages, see [Contribu\n Also, because Atom is so extensible, it's possible that a feature you've become accustomed to in Atom or an issue you're encountering aren't coming from a bundled package at all, but rather a [community package](https://atom.io/packages) you've installed.\n Each community package has its own repository too, and you should be able to find it in Settings > Packages for the packages you installed and contribute there.\n \n-## How can I contribute?\n-\n-### Submitting Issues\n-\n-* You can create an issue [here](https://github.com/atom/atom/issues/new), but\n-  before doing that please read the notes below on debugging and submitting issues,\n-  and include as many details as possible with your report.\n-* Check the [debugging guide](https://atom.io/docs/latest/hacking-atom-debugging) for tips\n-  on debugging. You might be able to find the cause of the problem and fix\n-  things yourself.\n-* Include the version of Atom you are using and the OS.\n-* Include screenshots and animated GIFs whenever possible; they are immensely\n-  helpful.\n-* Include the behavior you expected and other places you've seen that behavior\n-  such as Emacs, vi, Xcode, etc.\n-* Check the dev tools (`alt-cmd-i`) for errors to include. If the dev tools\n-  are open _before_ the error is triggered, a full stack trace for the error\n-  will be logged. If you can reproduce the error, use this approach to get the\n-  full stack trace and include it in the issue.\n-* On Mac, check Console.app for stack traces to include if reporting a crash.\n-* Perform a [cursory search](https://github.com/issues?q=+is%3Aissue+user%3Aatom)\n-  to see if a similar issue has already been submitted.\n-* Please setup a [profile picture](https://help.github.com/articles/how-do-i-set-up-my-profile-picture)\n-  to make yourself recognizable and so we can all get to know each other better.\n+## How Can I Contribute?\n+\n+### Reporting Bugs\n+\n+This section guides you through submitting a bug report for Atom. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.\n+\n+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). If you'd like, you can use [this template](#template-for-submitting-bug-reports) to structure the information.\n+\n+#### Before Submitting A Bug Report\n+\n+* **Check the [debugging guide](https://atom.io/docs/latest/hacking-atom-debugging).** You might be able to find the cause of the problem and fix things yourself. Most importantly, check if you can reproduce the problem [in the latest version of Atom](https://atom.io/docs/latest/hacking-atom-debugging#update-to-the-latest-version), if the problem happens when you run Atom in [safe mode](https://atom.io/docs/latest/hacking-atom-debugging#check-if-the-problem-shows-up-in-safe-mode), and if you can get the desired behavior by changing [Atom's or packages' config settings](https://atom.io/docs/latest/hacking-atom-debugging#check-atom-and-package-settings).\n+* **Check the [FAQs on the forum](https://discuss.atom.io/c/faq)** for a list of common questions and problems.\n+* **Determine [which repository the problem should be reported in](#atom-and-packages)**.\n+* **Perform a [cursory search](https://github.com/issues?q=+is%3Aissue+user%3Aatom)** to see if the problem has already been reported. If it has, add a comment to the existing issue instead of opening a new one.\n+\n+#### How Do I Submit A (Good) Bug Report?\n+\n+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which repository](#atom-and-packages) your bug is related to, create an issue on that repository and provide the following information.\n+\n+Explain the problem and include additional information to help maintainers reproduce the problem:\n+\n+* **Use a clear and descriptive title** for the issue to identify the problem.\n+* **Describe the exact steps which reproduce the problem** in as many details as possible. For example, start by explaining how you started Atom, e.g. which command exactly you used in the terminal, or how you started Atom otherwise. When listing steps, **don't just say what you did, but explain how you did it**. For example, if you moved the cursor to the end of a line, explain if you used the mouse, or a keyboard shortcut or an Atom command, and if so which one?\n+* **Provide specific examples to demonstrate the steps**. Include links to files or GitHub projects, or copy/pasteable snippets, which you use in those examples. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).\n+* **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.\n+* **Explain which behavior you expected to see instead and why.**\n+* **Include screenshots and animated GIFs** which show you following the described steps and clearly demonstrate the problem. If you use the keyboard while following the steps, **record the GIF with the [Keybinding Resolver](https://github.com/atom/keybinding-resolver) shown**. You can use [this tool](http://www.cockos.com/licecap/) to record GIFs on OSX and Windows.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 63,
+    "commit_id": "e711e5e3ef93da1c14a52ea8a4eba744b01ea70a",
+    "original_commit_id": "ee53bbf348e24a04fcfe67b6d7507c267dcc7678",
+    "user": {
+      "login": "mnquintana",
+      "id": 823545,
+      "node_id": "MDQ6VXNlcjgyMzU0NQ==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/823545?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mnquintana",
+      "html_url": "https://github.com/mnquintana",
+      "followers_url": "https://api.github.com/users/mnquintana/followers",
+      "following_url": "https://api.github.com/users/mnquintana/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mnquintana/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mnquintana/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mnquintana/subscriptions",
+      "organizations_url": "https://api.github.com/users/mnquintana/orgs",
+      "repos_url": "https://api.github.com/users/mnquintana/repos",
+      "events_url": "https://api.github.com/users/mnquintana/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mnquintana/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I think I used [byzanz](https://github.com/GNOME/byzanz) on Ubuntu, but it's nowhere near as easy to use as LICEcap. Most Linux solutions for this are rather janky Bash scripts that require you to manually figure out the exact pixel position of the window you want to capture.\n",
+    "created_at": "2015-11-04T17:24:06Z",
+    "updated_at": "2015-11-08T21:12:09Z",
+    "html_url": "https://github.com/atom/atom/pull/9333#discussion_r43910413",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9333",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/43910413"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9333#discussion_r43910413"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9333"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 100,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44229298",
+    "pull_request_review_id": null,
+    "id": 44229298,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0MjI5Mjk4",
+    "diff_hunk": "@@ -71,30 +71,91 @@ For more information on how to work with Atom's official packages, see [Contribu\n Also, because Atom is so extensible, it's possible that a feature you've become accustomed to in Atom or an issue you're encountering aren't coming from a bundled package at all, but rather a [community package](https://atom.io/packages) you've installed.\n Each community package has its own repository too, and you should be able to find it in Settings > Packages for the packages you installed and contribute there.\n \n-## How can I contribute?\n-\n-### Submitting Issues\n-\n-* You can create an issue [here](https://github.com/atom/atom/issues/new), but\n-  before doing that please read the notes below on debugging and submitting issues,\n-  and include as many details as possible with your report.\n-* Check the [debugging guide](https://atom.io/docs/latest/hacking-atom-debugging) for tips\n-  on debugging. You might be able to find the cause of the problem and fix\n-  things yourself.\n-* Include the version of Atom you are using and the OS.\n-* Include screenshots and animated GIFs whenever possible; they are immensely\n-  helpful.\n-* Include the behavior you expected and other places you've seen that behavior\n-  such as Emacs, vi, Xcode, etc.\n-* Check the dev tools (`alt-cmd-i`) for errors to include. If the dev tools\n-  are open _before_ the error is triggered, a full stack trace for the error\n-  will be logged. If you can reproduce the error, use this approach to get the\n-  full stack trace and include it in the issue.\n-* On Mac, check Console.app for stack traces to include if reporting a crash.\n-* Perform a [cursory search](https://github.com/issues?q=+is%3Aissue+user%3Aatom)\n-  to see if a similar issue has already been submitted.\n-* Please setup a [profile picture](https://help.github.com/articles/how-do-i-set-up-my-profile-picture)\n-  to make yourself recognizable and so we can all get to know each other better.\n+## How Can I Contribute?\n+\n+### Reporting Bugs\n+\n+This section guides you through submitting a bug report for Atom. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.\n+\n+Before creating bug reports, please check [this list](#before-submitting-a-bug-report) as you might find out that you don't need to create one. When you are creating a bug report, please [include as many details as possible](#how-do-i-submit-a-good-bug-report). If you'd like, you can use [this template](#template-for-submitting-bug-reports) to structure the information.\n+\n+#### Before Submitting A Bug Report\n+\n+* **Check the [debugging guide](https://atom.io/docs/latest/hacking-atom-debugging).** You might be able to find the cause of the problem and fix things yourself. Most importantly, check if you can reproduce the problem [in the latest version of Atom](https://atom.io/docs/latest/hacking-atom-debugging#update-to-the-latest-version), if the problem happens when you run Atom in [safe mode](https://atom.io/docs/latest/hacking-atom-debugging#check-if-the-problem-shows-up-in-safe-mode), and if you can get the desired behavior by changing [Atom's or packages' config settings](https://atom.io/docs/latest/hacking-atom-debugging#check-atom-and-package-settings).\n+* **Check the [FAQs on the forum](https://discuss.atom.io/c/faq)** for a list of common questions and problems.\n+* **Determine [which repository the problem should be reported in](#atom-and-packages)**.\n+* **Perform a [cursory search](https://github.com/issues?q=+is%3Aissue+user%3Aatom)** to see if the problem has already been reported. If it has, add a comment to the existing issue instead of opening a new one.\n+\n+#### How Do I Submit A (Good) Bug Report?\n+\n+Bugs are tracked as [GitHub issues](https://guides.github.com/features/issues/). After you've determined [which repository](#atom-and-packages) your bug is related to, create an issue on that repository and provide the following information.\n+\n+Explain the problem and include additional information to help maintainers reproduce the problem:\n+\n+* **Use a clear and descriptive title** for the issue to identify the problem.\n+* **Describe the exact steps which reproduce the problem** in as many details as possible. For example, start by explaining how you started Atom, e.g. which command exactly you used in the terminal, or how you started Atom otherwise. When listing steps, **don't just say what you did, but explain how you did it**. For example, if you moved the cursor to the end of a line, explain if you used the mouse, or a keyboard shortcut or an Atom command, and if so which one?\n+* **Provide specific examples to demonstrate the steps**. Include links to files or GitHub projects, or copy/pasteable snippets, which you use in those examples. If you're providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).\n+* **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.\n+* **Explain which behavior you expected to see instead and why.**\n+* **Include screenshots and animated GIFs** which show you following the described steps and clearly demonstrate the problem. If you use the keyboard while following the steps, **record the GIF with the [Keybinding Resolver](https://github.com/atom/keybinding-resolver) shown**. You can use [this tool](http://www.cockos.com/licecap/) to record GIFs on OSX and Windows.",
+    "path": "CONTRIBUTING.md",
+    "position": null,
+    "original_position": 63,
+    "commit_id": "e711e5e3ef93da1c14a52ea8a4eba744b01ea70a",
+    "original_commit_id": "ee53bbf348e24a04fcfe67b6d7507c267dcc7678",
+    "user": {
+      "login": "izuzak",
+      "id": 38924,
+      "node_id": "MDQ6VXNlcjM4OTI0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/38924?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/izuzak",
+      "html_url": "https://github.com/izuzak",
+      "followers_url": "https://api.github.com/users/izuzak/followers",
+      "following_url": "https://api.github.com/users/izuzak/following{/other_user}",
+      "gists_url": "https://api.github.com/users/izuzak/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/izuzak/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/izuzak/subscriptions",
+      "organizations_url": "https://api.github.com/users/izuzak/orgs",
+      "repos_url": "https://api.github.com/users/izuzak/repos",
+      "events_url": "https://api.github.com/users/izuzak/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/izuzak/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": ">  think I used byzanz on Ubuntu, but it's nowhere near as easy to use as LICEcap. \n\nThanks for that link, @mnquintana :bow:. I added that and another tool to the list. Hopefully, that will help at least a bit.\n",
+    "created_at": "2015-11-08T19:47:19Z",
+    "updated_at": "2015-11-08T21:12:09Z",
+    "html_url": "https://github.com/atom/atom/pull/9333#discussion_r44229298",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9333",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44229298"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9333#discussion_r44229298"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9333"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 100,
+    "side": "RIGHT"
+  }
+]

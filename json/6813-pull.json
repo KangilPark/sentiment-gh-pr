@@ -1,0 +1,1652 @@
+[
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108423",
+    "pull_request_review_id": null,
+    "id": 53108423,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTA4NDIz",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 1,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "why use Plc sometimes and spell out ProfessionalLearningCourses sometimes? Would it make sense to namespace all of these controllers?\n",
+    "created_at": "2016-02-17T01:18:01Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108423",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108423"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108423"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108661",
+    "pull_request_review_id": null,
+    "id": 53108661,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTA4NjYx",
+    "diff_hunk": "@@ -0,0 +1,10 @@\n+class CreatePlcEnrollmentEvaluations < ActiveRecord::Migration\n+  def change\n+    create_table :plc_enrollment_evaluations do |t|\n+      t.references :user_professional_learning_course_enrollment, index: {name: 'enrollment_evaluation_index'}\n+      t.text :plc_evaluation_answers",
+    "path": "dashboard/db/migrate/20160211190954_create_plc_enrollment_evaluations.rb",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "what is this column for?\n",
+    "created_at": "2016-02-17T01:20:55Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108661",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108661"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108661"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 5,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108721",
+    "pull_request_review_id": null,
+    "id": 53108721,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTA4NzIx",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 1,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Long term - yes. There's a tech debt item to namespace the models and controllers.\n",
+    "created_at": "2016-02-17T01:21:41Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108721",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108721"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108721"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 1,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108730",
+    "pull_request_review_id": null,
+    "id": 53108730,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTA4NzMw",
+    "diff_hunk": "@@ -0,0 +1,10 @@\n+class CreatePlcEnrollmentEvaluations < ActiveRecord::Migration\n+  def change\n+    create_table :plc_enrollment_evaluations do |t|\n+      t.references :user_professional_learning_course_enrollment, index: {name: 'enrollment_evaluation_index'}\n+      t.text :plc_evaluation_answers",
+    "path": "dashboard/db/migrate/20160211190954_create_plc_enrollment_evaluations.rb",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I should drop it\n",
+    "created_at": "2016-02-17T01:21:47Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108730",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108730"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108730"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 5,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108872",
+    "pull_request_review_id": null,
+    "id": 53108872,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTA4ODcy",
+    "diff_hunk": "@@ -0,0 +1,10 @@\n+class CreatePlcEnrollmentEvaluations < ActiveRecord::Migration\n+  def change\n+    create_table :plc_enrollment_evaluations do |t|\n+      t.references :user_professional_learning_course_enrollment, index: {name: 'enrollment_evaluation_index'}\n+      t.text :plc_evaluation_answers",
+    "path": "dashboard/db/migrate/20160211190954_create_plc_enrollment_evaluations.rb",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Or rather - I should drop the entire table. I don't need it anymore.\n",
+    "created_at": "2016-02-17T01:23:46Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108872",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53108872"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53108872"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 5,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53109200",
+    "pull_request_review_id": null,
+    "id": 53109200,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTA5MjAw",
+    "diff_hunk": "@@ -0,0 +1,100 @@\n+require 'test_helper'\n+\n+class PlcEnrollmentEvaluationsControllerTest < ActionController::TestCase\n+  setup do\n+    #Questions/Answers taken from Monty Python and the Holy Grail in case it wasn't obvious. Figured it would be easier\n+    #then a bunch of strings with names like 'Answer 1'\n+\n+    #Rather then break up testing into each of the modules, I figure its easier to test the evaluation end-to-end\n+    #experience in this one file\n+\n+    #I used the dialogue from Monty Python because it's actually a decent example of an evaluation quiz that isn't\n+    #the same for everyone. Not all users taking an examination will answer the exact same questions.\n+    @course = create(:professional_learning_course)\n+    @module1 = create(:professional_learning_module, name: 'Getting thrown off cliffs')\n+    @module2 = create(:professional_learning_module, name: 'Advanced Ornithology')\n+    @module3 = create(:professional_learning_module, name: 'Answering questions honestly')\n+    @module4 = create(:professional_learning_module, name: 'Admitting ignorance')\n+\n+    @task1 = create(:professional_learning_task, name: 'Answering with your name', professional_learning_module: @module3)\n+    @task2 = create(:professional_learning_task, name: 'Answering with your quest', professional_learning_module: @module3)\n+    @task3 = create(:professional_learning_task, name: 'Answering with your favorite color', professional_learning_module: @module3)\n+    @task4 = create(:professional_learning_task, name: 'Learn some Assyrian geography', professional_learning_module: @module4)\n+    @task5 = create(:professional_learning_task, name: 'Get clarification on Swallow Species', professional_learning_module: @module2)\n+    @task6 = create(:professional_learning_task, name: 'Not getting your favorite color right', professional_learning_module: @module1)\n+\n+    @question1 = create(:plc_evaluation_question, question: 'What is your name', professional_learning_course: @course)\n+    @question2 = create(:plc_evaluation_question, question: 'What is your quest', professional_learning_course: @course)\n+    @question3 = create(:plc_evaluation_question, question: 'What is your favorite color?', professional_learning_course: @course)\n+    @question4 = create(:plc_evaluation_question, question: 'What is the capital of Assyria?', professional_learning_course: @course)\n+    @question5 = create(:plc_evaluation_question, question: 'What is the airspeed velocity of an unladen swallow', professional_learning_course: @course)\n+\n+    @answer1_1 = create(:plc_evaluation_answer, answer: 'Sir Lancelot', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_2 = create(:plc_evaluation_answer, answer: 'Sir Robin', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_3 = create(:plc_evaluation_answer, answer: 'Sir Galahad', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_4 = create(:plc_evaluation_answer, answer: 'King Arthur', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_5 = create(:plc_evaluation_answer, answer: 'Sir Edgecase', plc_evaluation_question: @question1, professional_learning_task: nil)\n+\n+    @answer2_1 = create(:plc_evaluation_answer, answer: 'I seek the Grail', plc_evaluation_question: @question2, professional_learning_task: @task2)\n+    #Not all answers are guaranteed to have associated tasks\n+    @answer2_2 = create(:plc_evaluation_answer, answer: 'I seek something else Grail', plc_evaluation_question: @question2, professional_learning_task: nil)\n+\n+    @answer3_1 = create(:plc_evaluation_answer, answer: 'Blue', plc_evaluation_question: @question3, professional_learning_task: @task3)\n+    @answer3_2 = create(:plc_evaluation_answer, answer: 'Yellow - no, blue', plc_evaluation_question: @question3, professional_learning_task: @task6)\n+    @answer3_3= create(:plc_evaluation_answer, answer: 'No preference', plc_evaluation_question: @question3, professional_learning_task: nil)\n+\n+    @answer4_1 = create(:plc_evaluation_answer, answer: 'I don\\t know that', plc_evaluation_question: @question4, professional_learning_task: @task4)\n+    @answer4_2 = create(:plc_evaluation_answer, answer: 'Nineveh', plc_evaluation_question: @question4, professional_learning_task: nil)\n+\n+    @answer5_1 = create(:plc_evaluation_answer, answer: 'What do you mean, an African or European Swallow', plc_evaluation_question: @question5, professional_learning_task: @task5)\n+    @answer5_2 = create(:plc_evaluation_answer, answer: '15 m/s', plc_evaluation_question: @question5, professional_learning_task: nil)\n+\n+    @plc_enrollment = create(:user_professional_learning_course_enrollment, user: @user, professional_learning_course: @course)\n+  end\n+\n+  test \"perform_evaluation retrieves all questions and answers\" do\n+    get :perform_evaluation, enrollment_id: @plc_enrollment.id\n+    questions = @controller.instance_variable_get(:@questions)\n+\n+    assert_equal 5, questions.count, 'There should be five questions'\n+    assert_equal 5, questions.first.plc_evaluation_answer.count, 'The first question should have three answers'\n+    assert_equal 2, questions.second.plc_evaluation_answer.count, 'The second question should have two answers'\n+    assert_equal 3, questions.third.plc_evaluation_answer.count, 'The third question should have three answers'\n+    assert_equal 2, questions.fourth.plc_evaluation_answer.count, 'The fourth question should have two answers'\n+    assert_equal 2, questions.fifth.plc_evaluation_answer.count, 'The fifth question should have two answers'\n+  end\n+\n+  test \"submit evaluation enrolls user in appropriate modules\" do\n+    #This can get simplified once I start using the hidden field in user submission\n+\n+    #Sir Lancelot says that his name is Lancelot, his quest is to seek the grail, and that his favorite color is blue.\n+    #He should be enrolled only in \"Answering questions honestly\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_1.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer3_1.professional_learning_task_id].to_s, [@module3])\n+\n+    #Sir Robin says that his name is Robin, his quest is to seek the grail, and that he doesn't know the capital of Assyria\n+    #He should be enrolled in \"Answering questions honestly\" and \"Admitting Ignorance\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_2.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer4_1.professional_learning_task_id].to_s, [@module3, @module4])\n+\n+    #Sir Galahad says that his name is Galahad, his quest is to seek the grail, and that his favorite color is blue - no, yellow\n+    #He should be enrolled in \"Answering questions honestly\" and \"Getting thrown off cliffs\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_3.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer3_2.professional_learning_task_id].to_s, [@module3, @module1])\n+\n+    #King Arthur says that his name is Arthur, his quest is to seek the grail, and needs clarification on swallow speed\n+    #He should be enrolled in \"Answering questions honestly\" and \"Advanced Ornitholoy\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_4.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer5_1.professional_learning_task_id].to_s, [@module3, @module2])\n+\n+    #Sir Edgecase of Edgecaseville should be enrolled in no modules\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_5.professional_learning_task_id, @answer3_3.professional_learning_task_id, @answer5_2.professional_learning_task_id].to_s, [])\n+  end\n+\n+  private\n+  def do_expected_answers_yield_expected_module_enrollments(answers, expected_module_enrollments)\n+    post :submit_evaluation, enrollment_id: @plc_enrollment.id, answerTaskList: answers\n+    assert_equal expected_module_enrollments.collect {|m| m.id}, @plc_enrollment.user_enrollment_module_assignment.all.collect {|m| m.professional_learning_module_id}",
+    "path": "dashboard/test/controllers/plc_enrollment_evaluations_controller_test.rb",
+    "position": null,
+    "original_position": 98,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "style guide prefers map over collect. you can also use `&:`, oh, and .all is not necessary if you use Enumerable methods like map because it will know that you want to resolve the query:\n\n```\nassert_equal expected_module_enrollments.map(&:id), @plc_enrollment.user_enrollment_module_assignment.map(&:professional_learning_module_id)\n```\n\nOh, and for any future cases where you care enough about performance to not want to load the other columns of the table you can use pluck to accomplish this.\n",
+    "created_at": "2016-02-17T01:27:25Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53109200",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53109200"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53109200"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 98,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53109607",
+    "pull_request_review_id": null,
+    "id": 53109607,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTA5NjA3",
+    "diff_hunk": "@@ -0,0 +1,11 @@\n+module ProfessionalLearningCourseHelper\n+  def options_for_user_enrollment_courses\n+    options = []\n+\n+    ProfessionalLearningCourse.all.each do |course|",
+    "path": "dashboard/app/helpers/professional_learning_course_helper.rb",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "these might be cleaner (or at least shorter and mappier) as a map\n",
+    "created_at": "2016-02-17T01:32:27Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53109607",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53109607"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53109607"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 5,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53110539",
+    "pull_request_review_id": null,
+    "id": 53110539,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEwNTM5",
+    "diff_hunk": "@@ -16,21 +16,22 @@\n class UserProfessionalLearningCourseEnrollment < ActiveRecord::Base\n   belongs_to :user\n   belongs_to :professional_learning_course\n-  has_many :user_enrollment_module_assignment\n+  has_many :user_enrollment_module_assignment, dependent: :destroy\n   has_many :user_module_task_assignment, through: :user_enrollment_module_assignment\n \n-  def self.enroll_user_in_course_with_learning_modules(user, course, learning_modules)\n-    enrollment = UserProfessionalLearningCourseEnrollment.find_or_create_by(user: user, professional_learning_course: course, status: :in_progress)\n+  def enroll_user_in_course_with_learning_modules(learning_modules)\n+    self.user_enrollment_module_assignment.destroy_all\n \n     learning_modules.each do |learning_module|\n-      module_assignment = UserEnrollmentModuleAssignment.find_or_create_by(user_professional_learning_course_enrollment: enrollment, professional_learning_module: learning_module)\n+      module_assignment = UserEnrollmentModuleAssignment.find_or_create_by(user_professional_learning_course_enrollment: self, professional_learning_module: learning_module)\n \n       learning_module.professional_learning_tasks.each do |task|\n         UserModuleTaskAssignment.find_or_create_by(user_enrollment_module_assignment: module_assignment, professional_learning_task: task, status: :not_started)\n       end\n     end\n \n-    enrollment\n+    self.status = :in_progress",
+    "path": "dashboard/app/models/user_professional_learning_course_enrollment.rb",
+    "position": null,
+    "original_position": 23,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Should these states be part of an enum somewhere?\n",
+    "created_at": "2016-02-17T01:44:14Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53110539",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53110539"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53110539"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53111366",
+    "pull_request_review_id": null,
+    "id": 53111366,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTExMzY2",
+    "diff_hunk": "@@ -0,0 +1,100 @@\n+require 'test_helper'\n+\n+class PlcEnrollmentEvaluationsControllerTest < ActionController::TestCase\n+  setup do\n+    #Questions/Answers taken from Monty Python and the Holy Grail in case it wasn't obvious. Figured it would be easier\n+    #then a bunch of strings with names like 'Answer 1'\n+\n+    #Rather then break up testing into each of the modules, I figure its easier to test the evaluation end-to-end\n+    #experience in this one file\n+\n+    #I used the dialogue from Monty Python because it's actually a decent example of an evaluation quiz that isn't\n+    #the same for everyone. Not all users taking an examination will answer the exact same questions.\n+    @course = create(:professional_learning_course)\n+    @module1 = create(:professional_learning_module, name: 'Getting thrown off cliffs')\n+    @module2 = create(:professional_learning_module, name: 'Advanced Ornithology')\n+    @module3 = create(:professional_learning_module, name: 'Answering questions honestly')\n+    @module4 = create(:professional_learning_module, name: 'Admitting ignorance')\n+\n+    @task1 = create(:professional_learning_task, name: 'Answering with your name', professional_learning_module: @module3)\n+    @task2 = create(:professional_learning_task, name: 'Answering with your quest', professional_learning_module: @module3)\n+    @task3 = create(:professional_learning_task, name: 'Answering with your favorite color', professional_learning_module: @module3)\n+    @task4 = create(:professional_learning_task, name: 'Learn some Assyrian geography', professional_learning_module: @module4)\n+    @task5 = create(:professional_learning_task, name: 'Get clarification on Swallow Species', professional_learning_module: @module2)\n+    @task6 = create(:professional_learning_task, name: 'Not getting your favorite color right', professional_learning_module: @module1)\n+\n+    @question1 = create(:plc_evaluation_question, question: 'What is your name', professional_learning_course: @course)\n+    @question2 = create(:plc_evaluation_question, question: 'What is your quest', professional_learning_course: @course)\n+    @question3 = create(:plc_evaluation_question, question: 'What is your favorite color?', professional_learning_course: @course)\n+    @question4 = create(:plc_evaluation_question, question: 'What is the capital of Assyria?', professional_learning_course: @course)\n+    @question5 = create(:plc_evaluation_question, question: 'What is the airspeed velocity of an unladen swallow', professional_learning_course: @course)\n+\n+    @answer1_1 = create(:plc_evaluation_answer, answer: 'Sir Lancelot', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_2 = create(:plc_evaluation_answer, answer: 'Sir Robin', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_3 = create(:plc_evaluation_answer, answer: 'Sir Galahad', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_4 = create(:plc_evaluation_answer, answer: 'King Arthur', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_5 = create(:plc_evaluation_answer, answer: 'Sir Edgecase', plc_evaluation_question: @question1, professional_learning_task: nil)\n+\n+    @answer2_1 = create(:plc_evaluation_answer, answer: 'I seek the Grail', plc_evaluation_question: @question2, professional_learning_task: @task2)\n+    #Not all answers are guaranteed to have associated tasks\n+    @answer2_2 = create(:plc_evaluation_answer, answer: 'I seek something else Grail', plc_evaluation_question: @question2, professional_learning_task: nil)\n+\n+    @answer3_1 = create(:plc_evaluation_answer, answer: 'Blue', plc_evaluation_question: @question3, professional_learning_task: @task3)\n+    @answer3_2 = create(:plc_evaluation_answer, answer: 'Yellow - no, blue', plc_evaluation_question: @question3, professional_learning_task: @task6)\n+    @answer3_3= create(:plc_evaluation_answer, answer: 'No preference', plc_evaluation_question: @question3, professional_learning_task: nil)\n+\n+    @answer4_1 = create(:plc_evaluation_answer, answer: 'I don\\t know that', plc_evaluation_question: @question4, professional_learning_task: @task4)\n+    @answer4_2 = create(:plc_evaluation_answer, answer: 'Nineveh', plc_evaluation_question: @question4, professional_learning_task: nil)\n+\n+    @answer5_1 = create(:plc_evaluation_answer, answer: 'What do you mean, an African or European Swallow', plc_evaluation_question: @question5, professional_learning_task: @task5)\n+    @answer5_2 = create(:plc_evaluation_answer, answer: '15 m/s', plc_evaluation_question: @question5, professional_learning_task: nil)\n+\n+    @plc_enrollment = create(:user_professional_learning_course_enrollment, user: @user, professional_learning_course: @course)\n+  end\n+\n+  test \"perform_evaluation retrieves all questions and answers\" do\n+    get :perform_evaluation, enrollment_id: @plc_enrollment.id\n+    questions = @controller.instance_variable_get(:@questions)\n+\n+    assert_equal 5, questions.count, 'There should be five questions'\n+    assert_equal 5, questions.first.plc_evaluation_answer.count, 'The first question should have three answers'\n+    assert_equal 2, questions.second.plc_evaluation_answer.count, 'The second question should have two answers'\n+    assert_equal 3, questions.third.plc_evaluation_answer.count, 'The third question should have three answers'\n+    assert_equal 2, questions.fourth.plc_evaluation_answer.count, 'The fourth question should have two answers'\n+    assert_equal 2, questions.fifth.plc_evaluation_answer.count, 'The fifth question should have two answers'\n+  end\n+\n+  test \"submit evaluation enrolls user in appropriate modules\" do\n+    #This can get simplified once I start using the hidden field in user submission\n+\n+    #Sir Lancelot says that his name is Lancelot, his quest is to seek the grail, and that his favorite color is blue.\n+    #He should be enrolled only in \"Answering questions honestly\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_1.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer3_1.professional_learning_task_id].to_s, [@module3])\n+\n+    #Sir Robin says that his name is Robin, his quest is to seek the grail, and that he doesn't know the capital of Assyria\n+    #He should be enrolled in \"Answering questions honestly\" and \"Admitting Ignorance\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_2.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer4_1.professional_learning_task_id].to_s, [@module3, @module4])\n+\n+    #Sir Galahad says that his name is Galahad, his quest is to seek the grail, and that his favorite color is blue - no, yellow\n+    #He should be enrolled in \"Answering questions honestly\" and \"Getting thrown off cliffs\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_3.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer3_2.professional_learning_task_id].to_s, [@module3, @module1])\n+\n+    #King Arthur says that his name is Arthur, his quest is to seek the grail, and needs clarification on swallow speed\n+    #He should be enrolled in \"Answering questions honestly\" and \"Advanced Ornitholoy\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_4.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer5_1.professional_learning_task_id].to_s, [@module3, @module2])\n+\n+    #Sir Edgecase of Edgecaseville should be enrolled in no modules\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_5.professional_learning_task_id, @answer3_3.professional_learning_task_id, @answer5_2.professional_learning_task_id].to_s, [])\n+  end\n+\n+  private\n+  def do_expected_answers_yield_expected_module_enrollments(answers, expected_module_enrollments)\n+    post :submit_evaluation, enrollment_id: @plc_enrollment.id, answerTaskList: answers\n+    assert_equal expected_module_enrollments.collect {|m| m.id}, @plc_enrollment.user_enrollment_module_assignment.all.collect {|m| m.professional_learning_module_id}",
+    "path": "dashboard/test/controllers/plc_enrollment_evaluations_controller_test.rb",
+    "position": null,
+    "original_position": 98,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I tried this out. I still need all - plc_enrollment.user_enrollment_module_assignment doesn't return a collection, it returns a single object that represents the active record collection. \n\nSo I did\n`assert_equal expected_module_enrollments.map(&:id), @plc_enrollment.user_enrollment_module_assignment.all.map(&:professional_learning_module_id)`\n",
+    "created_at": "2016-02-17T01:54:55Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53111366",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53111366"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53111366"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 98,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53111496",
+    "pull_request_review_id": null,
+    "id": 53111496,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTExNDk2",
+    "diff_hunk": "@@ -16,21 +16,22 @@\n class UserProfessionalLearningCourseEnrollment < ActiveRecord::Base\n   belongs_to :user\n   belongs_to :professional_learning_course\n-  has_many :user_enrollment_module_assignment\n+  has_many :user_enrollment_module_assignment, dependent: :destroy\n   has_many :user_module_task_assignment, through: :user_enrollment_module_assignment\n \n-  def self.enroll_user_in_course_with_learning_modules(user, course, learning_modules)\n-    enrollment = UserProfessionalLearningCourseEnrollment.find_or_create_by(user: user, professional_learning_course: course, status: :in_progress)\n+  def enroll_user_in_course_with_learning_modules(learning_modules)\n+    self.user_enrollment_module_assignment.destroy_all\n \n     learning_modules.each do |learning_module|\n-      module_assignment = UserEnrollmentModuleAssignment.find_or_create_by(user_professional_learning_course_enrollment: enrollment, professional_learning_module: learning_module)\n+      module_assignment = UserEnrollmentModuleAssignment.find_or_create_by(user_professional_learning_course_enrollment: self, professional_learning_module: learning_module)\n \n       learning_module.professional_learning_tasks.each do |task|\n         UserModuleTaskAssignment.find_or_create_by(user_enrollment_module_assignment: module_assignment, professional_learning_task: task, status: :not_started)\n       end\n     end\n \n-    enrollment\n+    self.status = :in_progress",
+    "path": "dashboard/app/models/user_professional_learning_course_enrollment.rb",
+    "position": null,
+    "original_position": 23,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Eventually. I don't know what the final state is going to be (in progress, pending review, autosubmitted, etc), so I'm holding off for now.\n",
+    "created_at": "2016-02-17T01:55:58Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53111496",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53111496"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53111496"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 33,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53111700",
+    "pull_request_review_id": null,
+    "id": 53111700,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTExNzAw",
+    "diff_hunk": "@@ -116,4 +116,15 @@ def level_info(user, script_level, user_levels)\n       0\n     end\n   end\n+\n+  def options_for_user_enrollment_users\n+    options = []\n+\n+    User.all.each do |course|",
+    "path": "dashboard/app/helpers/users_helper.rb",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "This query will make the db very sad on a non-dev environment :grin:.\n",
+    "created_at": "2016-02-17T01:58:10Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53111700",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53111700"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53111700"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 123,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53111916",
+    "pull_request_review_id": null,
+    "id": 53111916,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTExOTE2",
+    "diff_hunk": "@@ -30,7 +30,14 @@ def initialize(user)\n         District,\n         Workshop,\n         Cohort,\n-        WorkshopAttendance\n+        WorkshopAttendance,\n+        # PLC Stuff\n+        ProfessionalLearningCourse,\n+        ProfessionalLearningModule,\n+        ProfessionalLearningTask,\n+        PlcEvaluationQuestion,\n+        PlcEvaluationAnswer,\n+        UserProfessionalLearningCourseEnrollment",
+    "path": "dashboard/app/models/ability.rb",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Same feedback as Laurel above -- I'd like to see the naming resolved before merge.\n",
+    "created_at": "2016-02-17T02:00:38Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53111916",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53111916"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53111916"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 40,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53112307",
+    "pull_request_review_id": null,
+    "id": 53112307,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEyMzA3",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController\n+  # Get /plc_enrollment_evaluations/:enrollment_id/perform_evaluation/\n+  def perform_evaluation\n+    @user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    @questions = @user_professional_learning_course_enrollment.professional_learning_course.plc_evaluation_question\n+    @user = @user_professional_learning_course_enrollment.user\n+    @course = @user_professional_learning_course_enrollment.professional_learning_course\n+  end\n+\n+  def submit_evaluation\n+    question_responses = params[:answerTaskList].split(',')\n+    user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    modules_to_enroll_in = []\n+\n+    ProfessionalLearningTask.where(id: question_responses).each do |task|\n+      modules_to_enroll_in << task.professional_learning_module\n+    end",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Nit: `.each` -> `.map`\n",
+    "created_at": "2016-02-17T02:05:52Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53112307",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53112307"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53112307"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 17,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53112367",
+    "pull_request_review_id": null,
+    "id": 53112367,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEyMzY3",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController\n+  # Get /plc_enrollment_evaluations/:enrollment_id/perform_evaluation/\n+  def perform_evaluation\n+    @user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    @questions = @user_professional_learning_course_enrollment.professional_learning_course.plc_evaluation_question\n+    @user = @user_professional_learning_course_enrollment.user\n+    @course = @user_professional_learning_course_enrollment.professional_learning_course\n+  end\n+\n+  def submit_evaluation\n+    question_responses = params[:answerTaskList].split(',')\n+    user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    modules_to_enroll_in = []\n+\n+    ProfessionalLearningTask.where(id: question_responses).each do |task|\n+      modules_to_enroll_in << task.professional_learning_module\n+    end",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Actually it's probably better to move this to a model scope or method.\n",
+    "created_at": "2016-02-17T02:06:40Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53112367",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53112367"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53112367"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 17,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53112971",
+    "pull_request_review_id": null,
+    "id": 53112971,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEyOTcx",
+    "diff_hunk": "@@ -116,4 +116,15 @@ def level_info(user, script_level, user_levels)\n       0\n     end\n   end\n+\n+  def options_for_user_enrollment_users\n+    options = []\n+\n+    User.all.each do |course|",
+    "path": "dashboard/app/helpers/users_helper.rb",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "True. Might restrict this just to admins on prod.\n",
+    "created_at": "2016-02-17T02:14:43Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53112971",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53112971"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53112971"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 123,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53112989",
+    "pull_request_review_id": null,
+    "id": 53112989,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEyOTg5",
+    "diff_hunk": "@@ -30,7 +30,14 @@ def initialize(user)\n         District,\n         Workshop,\n         Cohort,\n-        WorkshopAttendance\n+        WorkshopAttendance,\n+        # PLC Stuff\n+        ProfessionalLearningCourse,\n+        ProfessionalLearningModule,\n+        ProfessionalLearningTask,\n+        PlcEvaluationQuestion,\n+        PlcEvaluationAnswer,\n+        UserProfessionalLearningCourseEnrollment",
+    "path": "dashboard/app/models/ability.rb",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Hmm - okay, I'll go ahead and make this verbose\n",
+    "created_at": "2016-02-17T02:15:02Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53112989",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53112989"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53112989"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 40,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113140",
+    "pull_request_review_id": null,
+    "id": 53113140,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEzMTQw",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController\n+  # Get /plc_enrollment_evaluations/:enrollment_id/perform_evaluation/\n+  def perform_evaluation\n+    @user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    @questions = @user_professional_learning_course_enrollment.professional_learning_course.plc_evaluation_question\n+    @user = @user_professional_learning_course_enrollment.user\n+    @course = @user_professional_learning_course_enrollment.professional_learning_course\n+  end\n+\n+  def submit_evaluation\n+    question_responses = params[:answerTaskList].split(',')\n+    user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    modules_to_enroll_in = []\n+\n+    ProfessionalLearningTask.where(id: question_responses).each do |task|\n+      modules_to_enroll_in << task.professional_learning_module\n+    end",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Why is each better than map? I don't want anything returned here\n",
+    "created_at": "2016-02-17T02:17:04Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113140",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113140"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113140"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 17,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113186",
+    "pull_request_review_id": null,
+    "id": 53113186,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEzMTg2",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController\n+  # Get /plc_enrollment_evaluations/:enrollment_id/perform_evaluation/\n+  def perform_evaluation\n+    @user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    @questions = @user_professional_learning_course_enrollment.professional_learning_course.plc_evaluation_question\n+    @user = @user_professional_learning_course_enrollment.user\n+    @course = @user_professional_learning_course_enrollment.professional_learning_course\n+  end\n+\n+  def submit_evaluation\n+    question_responses = params[:answerTaskList].split(',')\n+    user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    modules_to_enroll_in = []\n+\n+    ProfessionalLearningTask.where(id: question_responses).each do |task|\n+      modules_to_enroll_in << task.professional_learning_module\n+    end\n+\n+    user_professional_learning_course_enrollment.enroll_user_in_course_with_learning_modules(modules_to_enroll_in)\n+    redirect_to '/user_professional_learning_course_enrollments/' + params[:enrollment_id]",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 20,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Nit:\n\n``` ruby\nredirect_to controller: UserProfessionalLearningCourseEnrollmentsController, action: :show, id: params[:enrollment_id]\n```\n",
+    "created_at": "2016-02-17T02:17:38Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113186",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113186"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113186"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 20,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113495",
+    "pull_request_review_id": null,
+    "id": 53113495,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEzNDk1",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController\n+  # Get /plc_enrollment_evaluations/:enrollment_id/perform_evaluation/\n+  def perform_evaluation\n+    @user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    @questions = @user_professional_learning_course_enrollment.professional_learning_course.plc_evaluation_question\n+    @user = @user_professional_learning_course_enrollment.user\n+    @course = @user_professional_learning_course_enrollment.professional_learning_course\n+  end\n+\n+  def submit_evaluation\n+    question_responses = params[:answerTaskList].split(',')\n+    user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    modules_to_enroll_in = []\n+\n+    ProfessionalLearningTask.where(id: question_responses).each do |task|\n+      modules_to_enroll_in << task.professional_learning_module\n+    end",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "``` ruby\nmodules_to_enroll_in = ProfessionalLearningTask.where(id: question_responses).map(&:professional_learning_module)\n```\n",
+    "created_at": "2016-02-17T02:21:40Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113495",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113495"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113495"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 17,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113821",
+    "pull_request_review_id": null,
+    "id": 53113821,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEzODIx",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController\n+  # Get /plc_enrollment_evaluations/:enrollment_id/perform_evaluation/\n+  def perform_evaluation\n+    @user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    @questions = @user_professional_learning_course_enrollment.professional_learning_course.plc_evaluation_question\n+    @user = @user_professional_learning_course_enrollment.user\n+    @course = @user_professional_learning_course_enrollment.professional_learning_course\n+  end\n+\n+  def submit_evaluation\n+    question_responses = params[:answerTaskList].split(',')\n+    user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    modules_to_enroll_in = []\n+\n+    ProfessionalLearningTask.where(id: question_responses).each do |task|\n+      modules_to_enroll_in << task.professional_learning_module\n+    end",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 17,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Ah got it\n",
+    "created_at": "2016-02-17T02:25:59Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113821",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113821"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113821"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 17,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113852",
+    "pull_request_review_id": null,
+    "id": 53113852,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTEzODUy",
+    "diff_hunk": "@@ -0,0 +1,22 @@\n+class PlcEnrollmentEvaluationsController < ApplicationController\n+  # Get /plc_enrollment_evaluations/:enrollment_id/perform_evaluation/\n+  def perform_evaluation\n+    @user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    @questions = @user_professional_learning_course_enrollment.professional_learning_course.plc_evaluation_question\n+    @user = @user_professional_learning_course_enrollment.user\n+    @course = @user_professional_learning_course_enrollment.professional_learning_course\n+  end\n+\n+  def submit_evaluation\n+    question_responses = params[:answerTaskList].split(',')\n+    user_professional_learning_course_enrollment = UserProfessionalLearningCourseEnrollment.find(params[:enrollment_id])\n+    modules_to_enroll_in = []\n+\n+    ProfessionalLearningTask.where(id: question_responses).each do |task|\n+      modules_to_enroll_in << task.professional_learning_module\n+    end\n+\n+    user_professional_learning_course_enrollment.enroll_user_in_course_with_learning_modules(modules_to_enroll_in)\n+    redirect_to '/user_professional_learning_course_enrollments/' + params[:enrollment_id]",
+    "path": "dashboard/app/controllers/plc_enrollment_evaluations_controller.rb",
+    "position": null,
+    "original_position": 20,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Will do\n",
+    "created_at": "2016-02-17T02:26:25Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113852",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53113852"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53113852"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 20,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53114303",
+    "pull_request_review_id": null,
+    "id": 53114303,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTE0MzAz",
+    "diff_hunk": "@@ -30,7 +30,14 @@ def initialize(user)\n         District,\n         Workshop,\n         Cohort,\n-        WorkshopAttendance\n+        WorkshopAttendance,\n+        # PLC Stuff\n+        ProfessionalLearningCourse,\n+        ProfessionalLearningModule,\n+        ProfessionalLearningTask,\n+        PlcEvaluationQuestion,\n+        PlcEvaluationAnswer,\n+        UserProfessionalLearningCourseEnrollment",
+    "path": "dashboard/app/models/ability.rb",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "It might be easier to do the namespacing now?  `Plc::Module`, `Plc::EvaluationAnswer`, etc. seems more readable.  I was having trouble above knowing which controller I was in b/c the names are so long =/\n",
+    "created_at": "2016-02-17T02:33:05Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53114303",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53114303"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53114303"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 40,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53117214",
+    "pull_request_review_id": null,
+    "id": 53117214,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTE3MjE0",
+    "diff_hunk": "@@ -30,7 +30,14 @@ def initialize(user)\n         District,\n         Workshop,\n         Cohort,\n-        WorkshopAttendance\n+        WorkshopAttendance,\n+        # PLC Stuff\n+        ProfessionalLearningCourse,\n+        ProfessionalLearningModule,\n+        ProfessionalLearningTask,\n+        PlcEvaluationQuestion,\n+        PlcEvaluationAnswer,\n+        UserProfessionalLearningCourseEnrollment",
+    "path": "dashboard/app/models/ability.rb",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I might suggest that even if ruby lets you name something Plc::Module you shouldn't. :)\n\n> On Feb 16, 2016, at 19:33, Josh Lory notifications@github.com wrote:\n> \n> In dashboard/app/models/ability.rb:\n> \n> > @@ -30,7 +30,14 @@ def initialize(user)\n> >          District,\n> >          Workshop,\n> >          Cohort,\n> > -        WorkshopAttendance\n> > -        WorkshopAttendance,\n> > -        # PLC Stuff\n> > -        ProfessionalLearningCourse,\n> > -        ProfessionalLearningModule,\n> > -        ProfessionalLearningTask,\n> > -        PlcEvaluationQuestion,\n> > -        PlcEvaluationAnswer,\n> > -        UserProfessionalLearningCourseEnrollment\n> >   It might be easier to do the namespacing now? Plc::Module, Plc::EvaluationAnswer, etc. seems way more readable. I was having trouble above knowing which controller I was in b/c the names are so long =/\n> \n> —\n> Reply to this email directly or view it on GitHub.\n",
+    "created_at": "2016-02-17T03:29:28Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53117214",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53117214"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53117214"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 40,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53117726",
+    "pull_request_review_id": null,
+    "id": 53117726,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTE3NzI2",
+    "diff_hunk": "@@ -116,4 +116,15 @@ def level_info(user, script_level, user_levels)\n       0\n     end\n   end\n+\n+  def options_for_user_enrollment_users\n+    options = []\n+\n+    User.all.each do |course|",
+    "path": "dashboard/app/helpers/users_helper.rb",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I don't know if the admin column is indexed so that might be :crying_cat_face: too. And it looks like you copy/pasted the proc from course and meant to do `|user|` here\n",
+    "created_at": "2016-02-17T03:41:17Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53117726",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53117726"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53117726"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 123,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53117882",
+    "pull_request_review_id": null,
+    "id": 53117882,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTE3ODgy",
+    "diff_hunk": "@@ -16,21 +16,22 @@\n class UserProfessionalLearningCourseEnrollment < ActiveRecord::Base\n   belongs_to :user\n   belongs_to :professional_learning_course\n-  has_many :user_enrollment_module_assignment\n+  has_many :user_enrollment_module_assignment, dependent: :destroy",
+    "path": "dashboard/app/models/user_professional_learning_course_enrollment.rb",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Oh, the convention for a has many is to pluralize the name -- so it is usually `has_many :user_enrollment_module_assignments`. Maybe that's why you have to do things like `user_module_task_assignment.all.map`.\n",
+    "created_at": "2016-02-17T03:44:19Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53117882",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53117882"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53117882"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 19,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53118068",
+    "pull_request_review_id": null,
+    "id": 53118068,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMTE4MDY4",
+    "diff_hunk": "@@ -0,0 +1,100 @@\n+require 'test_helper'\n+\n+class PlcEnrollmentEvaluationsControllerTest < ActionController::TestCase\n+  setup do\n+    #Questions/Answers taken from Monty Python and the Holy Grail in case it wasn't obvious. Figured it would be easier\n+    #then a bunch of strings with names like 'Answer 1'\n+\n+    #Rather then break up testing into each of the modules, I figure its easier to test the evaluation end-to-end\n+    #experience in this one file\n+\n+    #I used the dialogue from Monty Python because it's actually a decent example of an evaluation quiz that isn't\n+    #the same for everyone. Not all users taking an examination will answer the exact same questions.\n+    @course = create(:professional_learning_course)\n+    @module1 = create(:professional_learning_module, name: 'Getting thrown off cliffs')\n+    @module2 = create(:professional_learning_module, name: 'Advanced Ornithology')\n+    @module3 = create(:professional_learning_module, name: 'Answering questions honestly')\n+    @module4 = create(:professional_learning_module, name: 'Admitting ignorance')\n+\n+    @task1 = create(:professional_learning_task, name: 'Answering with your name', professional_learning_module: @module3)\n+    @task2 = create(:professional_learning_task, name: 'Answering with your quest', professional_learning_module: @module3)\n+    @task3 = create(:professional_learning_task, name: 'Answering with your favorite color', professional_learning_module: @module3)\n+    @task4 = create(:professional_learning_task, name: 'Learn some Assyrian geography', professional_learning_module: @module4)\n+    @task5 = create(:professional_learning_task, name: 'Get clarification on Swallow Species', professional_learning_module: @module2)\n+    @task6 = create(:professional_learning_task, name: 'Not getting your favorite color right', professional_learning_module: @module1)\n+\n+    @question1 = create(:plc_evaluation_question, question: 'What is your name', professional_learning_course: @course)\n+    @question2 = create(:plc_evaluation_question, question: 'What is your quest', professional_learning_course: @course)\n+    @question3 = create(:plc_evaluation_question, question: 'What is your favorite color?', professional_learning_course: @course)\n+    @question4 = create(:plc_evaluation_question, question: 'What is the capital of Assyria?', professional_learning_course: @course)\n+    @question5 = create(:plc_evaluation_question, question: 'What is the airspeed velocity of an unladen swallow', professional_learning_course: @course)\n+\n+    @answer1_1 = create(:plc_evaluation_answer, answer: 'Sir Lancelot', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_2 = create(:plc_evaluation_answer, answer: 'Sir Robin', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_3 = create(:plc_evaluation_answer, answer: 'Sir Galahad', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_4 = create(:plc_evaluation_answer, answer: 'King Arthur', plc_evaluation_question: @question1, professional_learning_task: @task1)\n+    @answer1_5 = create(:plc_evaluation_answer, answer: 'Sir Edgecase', plc_evaluation_question: @question1, professional_learning_task: nil)\n+\n+    @answer2_1 = create(:plc_evaluation_answer, answer: 'I seek the Grail', plc_evaluation_question: @question2, professional_learning_task: @task2)\n+    #Not all answers are guaranteed to have associated tasks\n+    @answer2_2 = create(:plc_evaluation_answer, answer: 'I seek something else Grail', plc_evaluation_question: @question2, professional_learning_task: nil)\n+\n+    @answer3_1 = create(:plc_evaluation_answer, answer: 'Blue', plc_evaluation_question: @question3, professional_learning_task: @task3)\n+    @answer3_2 = create(:plc_evaluation_answer, answer: 'Yellow - no, blue', plc_evaluation_question: @question3, professional_learning_task: @task6)\n+    @answer3_3= create(:plc_evaluation_answer, answer: 'No preference', plc_evaluation_question: @question3, professional_learning_task: nil)\n+\n+    @answer4_1 = create(:plc_evaluation_answer, answer: 'I don\\t know that', plc_evaluation_question: @question4, professional_learning_task: @task4)\n+    @answer4_2 = create(:plc_evaluation_answer, answer: 'Nineveh', plc_evaluation_question: @question4, professional_learning_task: nil)\n+\n+    @answer5_1 = create(:plc_evaluation_answer, answer: 'What do you mean, an African or European Swallow', plc_evaluation_question: @question5, professional_learning_task: @task5)\n+    @answer5_2 = create(:plc_evaluation_answer, answer: '15 m/s', plc_evaluation_question: @question5, professional_learning_task: nil)\n+\n+    @plc_enrollment = create(:user_professional_learning_course_enrollment, user: @user, professional_learning_course: @course)\n+  end\n+\n+  test \"perform_evaluation retrieves all questions and answers\" do\n+    get :perform_evaluation, enrollment_id: @plc_enrollment.id\n+    questions = @controller.instance_variable_get(:@questions)\n+\n+    assert_equal 5, questions.count, 'There should be five questions'\n+    assert_equal 5, questions.first.plc_evaluation_answer.count, 'The first question should have three answers'\n+    assert_equal 2, questions.second.plc_evaluation_answer.count, 'The second question should have two answers'\n+    assert_equal 3, questions.third.plc_evaluation_answer.count, 'The third question should have three answers'\n+    assert_equal 2, questions.fourth.plc_evaluation_answer.count, 'The fourth question should have two answers'\n+    assert_equal 2, questions.fifth.plc_evaluation_answer.count, 'The fifth question should have two answers'\n+  end\n+\n+  test \"submit evaluation enrolls user in appropriate modules\" do\n+    #This can get simplified once I start using the hidden field in user submission\n+\n+    #Sir Lancelot says that his name is Lancelot, his quest is to seek the grail, and that his favorite color is blue.\n+    #He should be enrolled only in \"Answering questions honestly\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_1.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer3_1.professional_learning_task_id].to_s, [@module3])\n+\n+    #Sir Robin says that his name is Robin, his quest is to seek the grail, and that he doesn't know the capital of Assyria\n+    #He should be enrolled in \"Answering questions honestly\" and \"Admitting Ignorance\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_2.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer4_1.professional_learning_task_id].to_s, [@module3, @module4])\n+\n+    #Sir Galahad says that his name is Galahad, his quest is to seek the grail, and that his favorite color is blue - no, yellow\n+    #He should be enrolled in \"Answering questions honestly\" and \"Getting thrown off cliffs\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_3.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer3_2.professional_learning_task_id].to_s, [@module3, @module1])\n+\n+    #King Arthur says that his name is Arthur, his quest is to seek the grail, and needs clarification on swallow speed\n+    #He should be enrolled in \"Answering questions honestly\" and \"Advanced Ornitholoy\"\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_4.professional_learning_task_id, @answer2_1.professional_learning_task_id, @answer5_1.professional_learning_task_id].to_s, [@module3, @module2])\n+\n+    #Sir Edgecase of Edgecaseville should be enrolled in no modules\n+    do_expected_answers_yield_expected_module_enrollments(\n+        [@answer1_5.professional_learning_task_id, @answer3_3.professional_learning_task_id, @answer5_2.professional_learning_task_id].to_s, [])\n+  end\n+\n+  private\n+  def do_expected_answers_yield_expected_module_enrollments(answers, expected_module_enrollments)\n+    post :submit_evaluation, enrollment_id: @plc_enrollment.id, answerTaskList: answers\n+    assert_equal expected_module_enrollments.collect {|m| m.id}, @plc_enrollment.user_enrollment_module_assignment.all.collect {|m| m.professional_learning_module_id}",
+    "path": "dashboard/test/controllers/plc_enrollment_evaluations_controller_test.rb",
+    "position": null,
+    "original_position": 98,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "hm, that's broken. a has_many association should return a proxy object that delegates most of its methods to an Array\n",
+    "created_at": "2016-02-17T03:47:46Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53118068",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53118068"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53118068"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 98,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53212106",
+    "pull_request_review_id": null,
+    "id": 53212106,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMjEyMTA2",
+    "diff_hunk": "@@ -30,7 +30,14 @@ def initialize(user)\n         District,\n         Workshop,\n         Cohort,\n-        WorkshopAttendance\n+        WorkshopAttendance,\n+        # PLC Stuff\n+        ProfessionalLearningCourse,\n+        ProfessionalLearningModule,\n+        ProfessionalLearningTask,\n+        PlcEvaluationQuestion,\n+        PlcEvaluationAnswer,\n+        UserProfessionalLearningCourseEnrollment",
+    "path": "dashboard/app/models/ability.rb",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "joshlory",
+      "id": 413693,
+      "node_id": "MDQ6VXNlcjQxMzY5Mw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/413693?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/joshlory",
+      "html_url": "https://github.com/joshlory",
+      "followers_url": "https://api.github.com/users/joshlory/followers",
+      "following_url": "https://api.github.com/users/joshlory/following{/other_user}",
+      "gists_url": "https://api.github.com/users/joshlory/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/joshlory/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/joshlory/subscriptions",
+      "organizations_url": "https://api.github.com/users/joshlory/orgs",
+      "repos_url": "https://api.github.com/users/joshlory/repos",
+      "events_url": "https://api.github.com/users/joshlory/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/joshlory/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Ah, good point :smile:\n",
+    "created_at": "2016-02-17T18:55:52Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53212106",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "COLLABORATOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53212106"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53212106"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 40,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53217322",
+    "pull_request_review_id": null,
+    "id": 53217322,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMjE3MzIy",
+    "diff_hunk": "@@ -30,7 +30,14 @@ def initialize(user)\n         District,\n         Workshop,\n         Cohort,\n-        WorkshopAttendance\n+        WorkshopAttendance,\n+        # PLC Stuff\n+        ProfessionalLearningCourse,\n+        ProfessionalLearningModule,\n+        ProfessionalLearningTask,\n+        PlcEvaluationQuestion,\n+        PlcEvaluationAnswer,\n+        UserProfessionalLearningCourseEnrollment",
+    "path": "dashboard/app/models/ability.rb",
+    "position": null,
+    "original_position": 12,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "laurelfan",
+      "id": 7763,
+      "node_id": "MDQ6VXNlcjc3NjM=",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/7763?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurelfan",
+      "html_url": "https://github.com/laurelfan",
+      "followers_url": "https://api.github.com/users/laurelfan/followers",
+      "following_url": "https://api.github.com/users/laurelfan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurelfan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurelfan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurelfan/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurelfan/orgs",
+      "repos_url": "https://api.github.com/users/laurelfan/repos",
+      "events_url": "https://api.github.com/users/laurelfan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurelfan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I'm kind of curious about what would happen now:\n\n```\nirb(main):001:0> module Plc\nirb(main):002:1> class Module\nirb(main):003:2> def a_method\nirb(main):004:3>   puts \"hey\"\nirb(main):005:3> end\nirb(main):006:2> end\nirb(main):007:1> end\n=> :a_method\nirb(main):008:0> m = Plc::Module.new\n=> #<Plc::Module:0x007fda94af2f50>\nirb(main):011:0> m.a_method\nhey\n```\n\nhm I guess it works ok so far... still, it might be confusing should you ever want ::Module while in the Plc namespace\n",
+    "created_at": "2016-02-17T19:29:10Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53217322",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53217322"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53217322"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 40,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53220186",
+    "pull_request_review_id": null,
+    "id": 53220186,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMjIwMTg2",
+    "diff_hunk": "@@ -116,4 +116,15 @@ def level_info(user, script_level, user_levels)\n       0\n     end\n   end\n+\n+  def options_for_user_enrollment_users\n+    options = []\n+\n+    User.all.each do |course|",
+    "path": "dashboard/app/helpers/users_helper.rb",
+    "position": null,
+    "original_position": 8,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Actually - I'll just make the user type in their email for now and use that. Easier.\n",
+    "created_at": "2016-02-17T19:47:48Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53220186",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53220186"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53220186"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 123,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53221615",
+    "pull_request_review_id": null,
+    "id": 53221615,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDUzMjIxNjE1",
+    "diff_hunk": "@@ -0,0 +1,11 @@\n+module ProfessionalLearningCourseHelper\n+  def options_for_user_enrollment_courses\n+    options = []\n+\n+    ProfessionalLearningCourse.all.each do |course|",
+    "path": "dashboard/app/helpers/professional_learning_course_helper.rb",
+    "position": null,
+    "original_position": 5,
+    "commit_id": "6da24c2759f2f678cb86adfc7e25ed8b17b919c3",
+    "original_commit_id": "c79bcb5838cf433b1460b8288d13632796a2fb57",
+    "user": {
+      "login": "mehalshah",
+      "id": 14246419,
+      "node_id": "MDQ6VXNlcjE0MjQ2NDE5",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14246419?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehalshah",
+      "html_url": "https://github.com/mehalshah",
+      "followers_url": "https://api.github.com/users/mehalshah/followers",
+      "following_url": "https://api.github.com/users/mehalshah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehalshah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehalshah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehalshah/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehalshah/orgs",
+      "repos_url": "https://api.github.com/users/mehalshah/repos",
+      "events_url": "https://api.github.com/users/mehalshah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehalshah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Mappified\n",
+    "created_at": "2016-02-17T19:56:43Z",
+    "updated_at": "2016-02-22T23:19:30Z",
+    "html_url": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53221615",
+    "pull_request_url": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/comments/53221615"
+      },
+      "html": {
+        "href": "https://github.com/code-dot-org/code-dot-org/pull/6813#discussion_r53221615"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/code-dot-org/code-dot-org/pulls/6813"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 5,
+    "side": "RIGHT"
+  }
+]

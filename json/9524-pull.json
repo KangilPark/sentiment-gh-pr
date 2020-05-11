@@ -1,0 +1,222 @@
+[
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44569642",
+    "pull_request_review_id": null,
+    "id": 44569642,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NTY5NjQy",
+    "diff_hunk": "@@ -677,6 +677,34 @@ class Config\n     finally\n       @endTransaction()\n \n+  ###\n+  Section: Internal methods used by core\n+  ###\n+\n+  # Private: Suppress calls to handler functions registered with {::onDidChange}\n+  # and {::observe} for the duration of the {Promise} returned by `callback`.\n+  # After the {Promise} is either resolved or rejected, handlers will be called\n+  # once if the value for their key-path has changed.\n+  #\n+  # * `callback` {Function} that returns a {Promise}, which will be executed\n+  #   while suppressing calls to handlers.\n+  #\n+  # Returns a {Promise} that is either resolved or rejected according to the\n+  # `{Promise}` returned by `callback`. If `callback` throws an error, a\n+  # rejected {Promise} will be returned instead.\n+  transactAsync: (callback) ->\n+    @beginTransaction()\n+    try\n+      endTransaction = (fn) => (args...) =>",
+    "path": "src/config.coffee",
+    "position": 22,
+    "original_position": 22,
+    "commit_id": "c6cb37ac88151ad234c079ad80b7167128f8f30c",
+    "original_commit_id": "b895baacbfdbb1c7eaa4a54739708215795c8f4e",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Are the multiple arguments needed here? Seems like you only call `resolve` or `reject`.\n",
+    "created_at": "2015-11-11T18:50:55Z",
+    "updated_at": "2015-11-12T07:26:38Z",
+    "html_url": "https://github.com/atom/atom/pull/9524#discussion_r44569642",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9524",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44569642"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9524#discussion_r44569642"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9524"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 698,
+    "original_line": 698,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44572170",
+    "pull_request_review_id": null,
+    "id": 44572170,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NTcyMTcw",
+    "diff_hunk": "@@ -677,6 +677,34 @@ class Config\n     finally\n       @endTransaction()\n \n+  ###\n+  Section: Internal methods used by core\n+  ###\n+\n+  # Private: Suppress calls to handler functions registered with {::onDidChange}\n+  # and {::observe} for the duration of the {Promise} returned by `callback`.\n+  # After the {Promise} is either resolved or rejected, handlers will be called\n+  # once if the value for their key-path has changed.\n+  #\n+  # * `callback` {Function} that returns a {Promise}, which will be executed\n+  #   while suppressing calls to handlers.\n+  #\n+  # Returns a {Promise} that is either resolved or rejected according to the\n+  # `{Promise}` returned by `callback`. If `callback` throws an error, a\n+  # rejected {Promise} will be returned instead.\n+  transactAsync: (callback) ->\n+    @beginTransaction()\n+    try\n+      endTransaction = (fn) => (args...) =>",
+    "path": "src/config.coffee",
+    "position": 22,
+    "original_position": 22,
+    "commit_id": "c6cb37ac88151ad234c079ad80b7167128f8f30c",
+    "original_commit_id": "b895baacbfdbb1c7eaa4a54739708215795c8f4e",
+    "user": {
+      "login": "as-cii",
+      "id": 482957,
+      "node_id": "MDQ6VXNlcjQ4Mjk1Nw==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/482957?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/as-cii",
+      "html_url": "https://github.com/as-cii",
+      "followers_url": "https://api.github.com/users/as-cii/followers",
+      "following_url": "https://api.github.com/users/as-cii/following{/other_user}",
+      "gists_url": "https://api.github.com/users/as-cii/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/as-cii/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/as-cii/subscriptions",
+      "organizations_url": "https://api.github.com/users/as-cii/orgs",
+      "repos_url": "https://api.github.com/users/as-cii/repos",
+      "events_url": "https://api.github.com/users/as-cii/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/as-cii/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Yeah, I guess so: this is a function that returns a function (i.e. curried), so when called with `endTransaction(resolve)`, for instance, will return a function that:\n- Ends the transaction.\n- Calls `resolve` with all the passed arguments.\n\nWhen used like `result.then(endTransaction(resolve))`, `resolve` will be invoked with all the arguments available in `then`'s callback. This means that a potential client could use this API like the following:\n\n``` coffee\natom.config.transactAsync(-> Promise.resolve(1)).then((n) -> console.log(\"Output: #{n}\"))\n#=> Output: 1\n```\n\nAlthough we're not using it in our production code, it seemed reasonable to follow the `Promise` API semantics when I implemented this. What do you think?\n",
+    "created_at": "2015-11-11T19:09:15Z",
+    "updated_at": "2015-11-12T07:26:38Z",
+    "html_url": "https://github.com/atom/atom/pull/9524#discussion_r44572170",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9524",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44572170"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9524#discussion_r44572170"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9524"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 698,
+    "original_line": 698,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44572524",
+    "pull_request_review_id": null,
+    "id": 44572524,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NTcyNTI0",
+    "diff_hunk": "@@ -677,6 +677,34 @@ class Config\n     finally\n       @endTransaction()\n \n+  ###\n+  Section: Internal methods used by core\n+  ###\n+\n+  # Private: Suppress calls to handler functions registered with {::onDidChange}\n+  # and {::observe} for the duration of the {Promise} returned by `callback`.\n+  # After the {Promise} is either resolved or rejected, handlers will be called\n+  # once if the value for their key-path has changed.\n+  #\n+  # * `callback` {Function} that returns a {Promise}, which will be executed\n+  #   while suppressing calls to handlers.\n+  #\n+  # Returns a {Promise} that is either resolved or rejected according to the\n+  # `{Promise}` returned by `callback`. If `callback` throws an error, a\n+  # rejected {Promise} will be returned instead.\n+  transactAsync: (callback) ->\n+    @beginTransaction()\n+    try\n+      endTransaction = (fn) => (args...) =>",
+    "path": "src/config.coffee",
+    "position": 22,
+    "original_position": 22,
+    "commit_id": "c6cb37ac88151ad234c079ad80b7167128f8f30c",
+    "original_commit_id": "b895baacbfdbb1c7eaa4a54739708215795c8f4e",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Ah, I missed the currying. So long as you test it I'm cool having the functionality.\n",
+    "created_at": "2015-11-11T19:12:12Z",
+    "updated_at": "2015-11-12T07:26:38Z",
+    "html_url": "https://github.com/atom/atom/pull/9524#discussion_r44572524",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9524",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44572524"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9524#discussion_r44572524"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9524"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 698,
+    "original_line": 698,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/44627916",
+    "pull_request_review_id": null,
+    "id": 44627916,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDQ0NjI3OTE2",
+    "diff_hunk": "@@ -677,6 +677,34 @@ class Config\n     finally\n       @endTransaction()\n \n+  ###\n+  Section: Internal methods used by core\n+  ###\n+\n+  # Private: Suppress calls to handler functions registered with {::onDidChange}\n+  # and {::observe} for the duration of the {Promise} returned by `callback`.\n+  # After the {Promise} is either resolved or rejected, handlers will be called\n+  # once if the value for their key-path has changed.\n+  #\n+  # * `callback` {Function} that returns a {Promise}, which will be executed\n+  #   while suppressing calls to handlers.\n+  #\n+  # Returns a {Promise} that is either resolved or rejected according to the\n+  # `{Promise}` returned by `callback`. If `callback` throws an error, a\n+  # rejected {Promise} will be returned instead.\n+  transactAsync: (callback) ->\n+    @beginTransaction()\n+    try\n+      endTransaction = (fn) => (args...) =>",
+    "path": "src/config.coffee",
+    "position": 22,
+    "original_position": 22,
+    "commit_id": "c6cb37ac88151ad234c079ad80b7167128f8f30c",
+    "original_commit_id": "b895baacbfdbb1c7eaa4a54739708215795c8f4e",
+    "user": {
+      "login": "as-cii",
+      "id": 482957,
+      "node_id": "MDQ6VXNlcjQ4Mjk1Nw==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/482957?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/as-cii",
+      "html_url": "https://github.com/as-cii",
+      "followers_url": "https://api.github.com/users/as-cii/followers",
+      "following_url": "https://api.github.com/users/as-cii/following{/other_user}",
+      "gists_url": "https://api.github.com/users/as-cii/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/as-cii/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/as-cii/subscriptions",
+      "organizations_url": "https://api.github.com/users/as-cii/orgs",
+      "repos_url": "https://api.github.com/users/as-cii/repos",
+      "events_url": "https://api.github.com/users/as-cii/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/as-cii/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": ":white_check_mark: I tested this behavior in c6cb37a :+1:\n\nI am going to :shipit: as soon as the build gets :green_heart:\n",
+    "created_at": "2015-11-12T07:32:21Z",
+    "updated_at": "2015-11-12T07:32:21Z",
+    "html_url": "https://github.com/atom/atom/pull/9524#discussion_r44627916",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/9524",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/44627916"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/9524#discussion_r44627916"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/9524"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 698,
+    "original_line": 698,
+    "side": "RIGHT"
+  }
+]

@@ -1,0 +1,937 @@
+[
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25037116",
+    "pull_request_review_id": null,
+    "id": 25037116,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDM3MTE2",
+    "diff_hunk": "@@ -39,6 +39,14 @@ class Project extends Model\n     @emitter = new Emitter\n     @buffers ?= []\n \n+    @directoryProviders = [new DefaultDirectoryProvider()]\n+    atom.packages.serviceHub.consume(\n+      'atom.directory-provider',\n+      '^0.1.0',\n+      # New providers are added to the front of @directoryProviders because\n+      # DefaultDirectoryProvider is a catch-all that will always provide a Directory.\n+      (provider) => @directoryProviders.splice(0, 0, provider))",
+    "path": "src/project.coffee",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "d3b9641fa43e9d9e873dd5c4b0ade53807ffb71d",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "``` coffee\n@directoryProviders.unshift(provider)\n```\n",
+    "created_at": "2015-02-19T23:28:54Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25037116",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25037116"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25037116"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 48,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25038258",
+    "pull_request_review_id": null,
+    "id": 25038258,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDM4MjU4",
+    "diff_hunk": "@@ -39,6 +39,14 @@ class Project extends Model\n     @emitter = new Emitter\n     @buffers ?= []\n \n+    @directoryProviders = [new DefaultDirectoryProvider()]\n+    atom.packages.serviceHub.consume(\n+      'atom.directory-provider',\n+      '^0.1.0',\n+      # New providers are added to the front of @directoryProviders because\n+      # DefaultDirectoryProvider is a catch-all that will always provide a Directory.\n+      (provider) => @directoryProviders.splice(0, 0, provider))",
+    "path": "src/project.coffee",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "d3b9641fa43e9d9e873dd5c4b0ade53807ffb71d",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Do we need to be able to define alternative `Directory` implementations for local paths? Because it'd be nice to have the most common case be first in line, rather than last. We would just have to have `DefaultDirectoryProvider` return `null` if the `uri` argument had a protocol other than `file://`.\n\nThat way the `Project` would be able to tell if a given path was usable or not, possibly throwing an exception like this:\n\n```\nCould not open a directory for the URI 'ftp://some-host/some/path'.\nYou need to install a package which implements the 'atom.directory-provider' service for that URI.\n```\n\nAlso, we could then rename `DefaultDirectoryProvider` to `LocalDirectoryProvider`, which seems more descriptive to me.\n\n@bolinfest, @atom/core thoughts?\n",
+    "created_at": "2015-02-19T23:48:48Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25038258",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25038258"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25038258"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 48,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25039254",
+    "pull_request_review_id": null,
+    "id": 25039254,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDM5MjU0",
+    "diff_hunk": "@@ -39,6 +39,14 @@ class Project extends Model\n     @emitter = new Emitter\n     @buffers ?= []\n \n+    @directoryProviders = [new DefaultDirectoryProvider()]\n+    atom.packages.serviceHub.consume(\n+      'atom.directory-provider',\n+      '^0.1.0',\n+      # New providers are added to the front of @directoryProviders because\n+      # DefaultDirectoryProvider is a catch-all that will always provide a Directory.\n+      (provider) => @directoryProviders.splice(0, 0, provider))",
+    "path": "src/project.coffee",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "d3b9641fa43e9d9e873dd5c4b0ade53807ffb71d",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": ":+1: @maxbrunsfeld I agree with your thoughts on this. It also ties into @bolinfest's idea about having package metadata for the service provider prefix. Another wild thought... could we use the provider's service name make the protocol explicit? `atom.directory-provider.webdav`? Not sure it's a good idea.\n",
+    "created_at": "2015-02-20T00:04:32Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25039254",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25039254"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25039254"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 48,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25039366",
+    "pull_request_review_id": null,
+    "id": 25039366,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDM5MzY2",
+    "diff_hunk": "@@ -39,6 +39,14 @@ class Project extends Model\n     @emitter = new Emitter\n     @buffers ?= []\n \n+    @directoryProviders = [new DefaultDirectoryProvider()]\n+    atom.packages.serviceHub.consume(\n+      'atom.directory-provider',\n+      '^0.1.0',\n+      # New providers are added to the front of @directoryProviders because\n+      # DefaultDirectoryProvider is a catch-all that will always provide a Directory.\n+      (provider) => @directoryProviders.splice(0, 0, provider))",
+    "path": "src/project.coffee",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "d3b9641fa43e9d9e873dd5c4b0ade53807ffb71d",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "My gut says it's better to let the provider perform ad-hoc logic to decide if it can open the URI or not. For example, our default directory provider can work with `/the/path` or `file://the/path`.\n",
+    "created_at": "2015-02-20T00:06:32Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25039366",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25039366"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25039366"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 48,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25039685",
+    "pull_request_review_id": null,
+    "id": 25039685,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDM5Njg1",
+    "diff_hunk": "@@ -39,6 +39,14 @@ class Project extends Model\n     @emitter = new Emitter\n     @buffers ?= []\n \n+    @directoryProviders = [new DefaultDirectoryProvider()]\n+    atom.packages.serviceHub.consume(\n+      'atom.directory-provider',\n+      '^0.1.0',\n+      # New providers are added to the front of @directoryProviders because\n+      # DefaultDirectoryProvider is a catch-all that will always provide a Directory.\n+      (provider) => @directoryProviders.splice(0, 0, provider))",
+    "path": "src/project.coffee",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "d3b9641fa43e9d9e873dd5c4b0ade53807ffb71d",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "@bolinfest You're largely responsible for pushing me toward avoiding the requirement of running code to make these kinds of decisions. What do you think?\n",
+    "created_at": "2015-02-20T00:12:23Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25039685",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25039685"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25039685"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 48,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25039795",
+    "pull_request_review_id": null,
+    "id": 25039795,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDM5Nzk1",
+    "diff_hunk": "@@ -39,6 +39,14 @@ class Project extends Model\n     @emitter = new Emitter\n     @buffers ?= []\n \n+    @directoryProviders = [new DefaultDirectoryProvider()]\n+    atom.packages.serviceHub.consume(\n+      'atom.directory-provider',\n+      '^0.1.0',\n+      # New providers are added to the front of @directoryProviders because\n+      # DefaultDirectoryProvider is a catch-all that will always provide a Directory.\n+      (provider) => @directoryProviders.splice(0, 0, provider))",
+    "path": "src/project.coffee",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "d3b9641fa43e9d9e873dd5c4b0ade53807ffb71d",
+    "user": {
+      "login": "bolinfest",
+      "id": 655869,
+      "node_id": "MDQ6VXNlcjY1NTg2OQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/655869?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bolinfest",
+      "html_url": "https://github.com/bolinfest",
+      "followers_url": "https://api.github.com/users/bolinfest/followers",
+      "following_url": "https://api.github.com/users/bolinfest/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bolinfest/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bolinfest/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bolinfest/subscriptions",
+      "organizations_url": "https://api.github.com/users/bolinfest/orgs",
+      "repos_url": "https://api.github.com/users/bolinfest/repos",
+      "events_url": "https://api.github.com/users/bolinfest/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bolinfest/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "I agree with @maxbrunsfeld that if this put is in a spot where you had to\nuse a file:// uri instead of a path everywhere, that would be very\nfrustrating.\n\nOn Thursday, February 19, 2015, Nathan Sobo notifications@github.com\nwrote:\n\n> In src/project.coffee\n> https://github.com/atom/atom/pull/5535#discussion_r25039685:\n> \n> > @@ -39,6 +39,14 @@ class Project extends Model\n> >      @emitter = new Emitter\n> >      @buffers ?= []\n> > -    @directoryProviders = [new DefaultDirectoryProvider()]\n> > -    atom.packages.serviceHub.consume(\n> > -      'atom.directory-provider',\n> > -      '^0.1.0',\n> > -      # New providers are added to the front of @directoryProviders because\n> > -      # DefaultDirectoryProvider is a catch-all that will always provide a Directory.\n> > -      (provider) => @directoryProviders.splice(0, 0, provider))\n> \n> @bolinfest https://github.com/bolinfest You're largely responsible for\n> pushing me toward avoiding the requirement of running code to make these\n> kinds of decisions. What do you think?\n> \n> —\n> Reply to this email directly or view it on GitHub\n> https://github.com/atom/atom/pull/5535/files#r25039685.\n",
+    "created_at": "2015-02-20T00:14:18Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25039795",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25039795"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25039795"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 48,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25039936",
+    "pull_request_review_id": null,
+    "id": 25039936,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDM5OTM2",
+    "diff_hunk": "@@ -39,6 +39,14 @@ class Project extends Model\n     @emitter = new Emitter\n     @buffers ?= []\n \n+    @directoryProviders = [new DefaultDirectoryProvider()]\n+    atom.packages.serviceHub.consume(\n+      'atom.directory-provider',\n+      '^0.1.0',\n+      # New providers are added to the front of @directoryProviders because\n+      # DefaultDirectoryProvider is a catch-all that will always provide a Directory.\n+      (provider) => @directoryProviders.splice(0, 0, provider))",
+    "path": "src/project.coffee",
+    "position": null,
+    "original_position": 21,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "d3b9641fa43e9d9e873dd5c4b0ade53807ffb71d",
+    "user": {
+      "login": "nathansobo",
+      "id": 1789,
+      "node_id": "MDQ6VXNlcjE3ODk=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1789?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/nathansobo",
+      "html_url": "https://github.com/nathansobo",
+      "followers_url": "https://api.github.com/users/nathansobo/followers",
+      "following_url": "https://api.github.com/users/nathansobo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nathansobo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nathansobo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nathansobo/subscriptions",
+      "organizations_url": "https://api.github.com/users/nathansobo/orgs",
+      "repos_url": "https://api.github.com/users/nathansobo/repos",
+      "events_url": "https://api.github.com/users/nathansobo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nathansobo/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Alright, we can use some other metadata mechanism if we need to. I'm a go on this.\n",
+    "created_at": "2015-02-20T00:16:43Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25039936",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25039936"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25039936"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 48,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25042856",
+    "pull_request_review_id": null,
+    "id": 25042856,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDQyODU2",
+    "diff_hunk": "@@ -0,0 +1,42 @@\n+{Directory} = require 'pathwatcher'\n+fs = require 'fs-plus'\n+path = require 'path'\n+\n+module.exports =\n+class DefaultDirectoryProvider\n+\n+  # Public: Create a Directory that corresponds to the specified URI.\n+  #\n+  # * `uri` {String} The path to the directory to add.\n+  # * `existingPaths` {Array} The existing paths in atom.project.\n+  # Returns:\n+  # * {Directory} if the given URI is compatible with this provider.\n+  # * {string} if the uri maps to a path an existingPath, in which case\n+  #     the path in existingPaths is returned.",
+    "path": "src/default-directory-provider.coffee",
+    "position": null,
+    "original_position": 15,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "664de741d8b4833239a272e43679dc537fb7a48f",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I think this `String` return value makes the method interface a little too complex. What's the use case that you're thinking of where this uniqueness check needs to defined by the provider, rather than just being done inside the project? Maybe we can solve the problem a different way.\n",
+    "created_at": "2015-02-20T01:12:48Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25042856",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25042856"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25042856"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 15,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25043038",
+    "pull_request_review_id": null,
+    "id": 25043038,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDQzMDM4",
+    "diff_hunk": "@@ -0,0 +1,42 @@\n+{Directory} = require 'pathwatcher'\n+fs = require 'fs-plus'\n+path = require 'path'\n+\n+module.exports =\n+class DefaultDirectoryProvider\n+\n+  # Public: Create a Directory that corresponds to the specified URI.\n+  #\n+  # * `uri` {String} The path to the directory to add.\n+  # * `existingPaths` {Array} The existing paths in atom.project.\n+  # Returns:\n+  # * {Directory} if the given URI is compatible with this provider.\n+  # * {string} if the uri maps to a path an existingPath, in which case\n+  #     the path in existingPaths is returned.",
+    "path": "src/default-directory-provider.coffee",
+    "position": null,
+    "original_position": 15,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "664de741d8b4833239a272e43679dc537fb7a48f",
+    "user": {
+      "login": "bolinfest",
+      "id": 655869,
+      "node_id": "MDQ6VXNlcjY1NTg2OQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/655869?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bolinfest",
+      "html_url": "https://github.com/bolinfest",
+      "followers_url": "https://api.github.com/users/bolinfest/followers",
+      "following_url": "https://api.github.com/users/bolinfest/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bolinfest/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bolinfest/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bolinfest/subscriptions",
+      "organizations_url": "https://api.github.com/users/bolinfest/orgs",
+      "repos_url": "https://api.github.com/users/bolinfest/repos",
+      "events_url": "https://api.github.com/users/bolinfest/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bolinfest/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "The problem is that normalize() was being called on the path before the directory provider was being consulted, which is not appropriate for URIs. It's not clear to me that `Project` should be responsible for knowing when there is already an appropriate root folder.\n\nThere's also the special check for `(directoryPath.indexOf(path.join(existingPath, path.sep)) is 0)`, which seems specific to `DefaultDirectoryProvider`. The idea of `contains()` is specific to a `Directory`, which is the thing we're trying to create, so it doesn't exist yet.\n",
+    "created_at": "2015-02-20T01:17:09Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25043038",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25043038"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25043038"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 15,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25043503",
+    "pull_request_review_id": null,
+    "id": 25043503,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDQzNTAz",
+    "diff_hunk": "@@ -0,0 +1,42 @@\n+{Directory} = require 'pathwatcher'\n+fs = require 'fs-plus'\n+path = require 'path'\n+\n+module.exports =\n+class DefaultDirectoryProvider\n+\n+  # Public: Create a Directory that corresponds to the specified URI.\n+  #\n+  # * `uri` {String} The path to the directory to add.\n+  # * `existingPaths` {Array} The existing paths in atom.project.\n+  # Returns:\n+  # * {Directory} if the given URI is compatible with this provider.\n+  # * {string} if the uri maps to a path an existingPath, in which case\n+  #     the path in existingPaths is returned.",
+    "path": "src/default-directory-provider.coffee",
+    "position": null,
+    "original_position": 15,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "664de741d8b4833239a272e43679dc537fb7a48f",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "But we have the list of existing `Directory` objects, so can we check whether any of them `contains` the new path/URI?\n",
+    "created_at": "2015-02-20T01:26:23Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25043503",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25043503"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25043503"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 15,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25043700",
+    "pull_request_review_id": null,
+    "id": 25043700,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDQzNzAw",
+    "diff_hunk": "@@ -0,0 +1,42 @@\n+{Directory} = require 'pathwatcher'\n+fs = require 'fs-plus'\n+path = require 'path'\n+\n+module.exports =\n+class DefaultDirectoryProvider\n+\n+  # Public: Create a Directory that corresponds to the specified URI.\n+  #\n+  # * `uri` {String} The path to the directory to add.\n+  # * `existingPaths` {Array} The existing paths in atom.project.\n+  # Returns:\n+  # * {Directory} if the given URI is compatible with this provider.\n+  # * {string} if the uri maps to a path an existingPath, in which case\n+  #     the path in existingPaths is returned.",
+    "path": "src/default-directory-provider.coffee",
+    "position": null,
+    "original_position": 15,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "664de741d8b4833239a272e43679dc537fb7a48f",
+    "user": {
+      "login": "bolinfest",
+      "id": 655869,
+      "node_id": "MDQ6VXNlcjY1NTg2OQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/655869?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bolinfest",
+      "html_url": "https://github.com/bolinfest",
+      "followers_url": "https://api.github.com/users/bolinfest/followers",
+      "following_url": "https://api.github.com/users/bolinfest/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bolinfest/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bolinfest/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bolinfest/subscriptions",
+      "organizations_url": "https://api.github.com/users/bolinfest/orgs",
+      "repos_url": "https://api.github.com/users/bolinfest/repos",
+      "events_url": "https://api.github.com/users/bolinfest/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bolinfest/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Sure. I'll have to see if `Directory.contains(arg)` does the right thing when `arg` is not normalized.\n",
+    "created_at": "2015-02-20T01:30:46Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25043700",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25043700"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25043700"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 15,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25043786",
+    "pull_request_review_id": null,
+    "id": 25043786,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDQzNzg2",
+    "diff_hunk": "@@ -0,0 +1,42 @@\n+{Directory} = require 'pathwatcher'\n+fs = require 'fs-plus'\n+path = require 'path'\n+\n+module.exports =\n+class DefaultDirectoryProvider\n+\n+  # Public: Create a Directory that corresponds to the specified URI.\n+  #\n+  # * `uri` {String} The path to the directory to add.\n+  # * `existingPaths` {Array} The existing paths in atom.project.\n+  # Returns:\n+  # * {Directory} if the given URI is compatible with this provider.\n+  # * {string} if the uri maps to a path an existingPath, in which case\n+  #     the path in existingPaths is returned.",
+    "path": "src/default-directory-provider.coffee",
+    "position": null,
+    "original_position": 15,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "664de741d8b4833239a272e43679dc537fb7a48f",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "Yeah, good point. If not, I'd like to implement said behavior so that we can simplify the `DirectoryProvider` interface.\n",
+    "created_at": "2015-02-20T01:32:47Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25043786",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25043786"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25043786"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 15,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25049666",
+    "pull_request_review_id": null,
+    "id": 25049666,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDQ5NjY2",
+    "diff_hunk": "@@ -14,6 +14,76 @@ describe \"Project\", ->\n     atom.project.setPaths([atom.project.getDirectories()[0]?.resolve('dir')])\n \n   describe \"constructor\", ->\n+    it \"enables a custom DirectoryProvider to supersede the DefaultDirectoryProvider\", ->\n+      remotePath = \"ssh://foreign-directory:8080/\"\n+      class DummyDirectory\n+        constructor: (@path) ->\n+        getPath: -> @path\n+        getFile: -> existsSync: -> false\n+        getSubdirectory: -> existsSync: -> false\n+        isRoot: -> true\n+        off: ->\n+        contains: (filePath) -> filePath.startsWith(remotePath)\n+\n+      directoryProvider =\n+        directoryForURISync: (uri) ->\n+          if uri.startsWith(\"ssh://\")\n+            new DummyDirectory(uri)\n+          else\n+            null\n+        directoryForURI: (uri) -> throw new Error(\"This should not be called.\")\n+      atom.packages.serviceHub.provide(\n+        \"atom.directory-provider\", \"0.1.0\", directoryProvider)\n+\n+      expect(atom.project.directoryProviders.length).toBe 2\n+      expect(atom.project.directoryProviders[0]).toBe directoryProvider",
+    "path": "spec/project-spec.coffee",
+    "position": null,
+    "original_position": 26,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "bf9c4132b217d75a7d7c6275d88a14ff04444c48",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I would say :fire: these assertions about `.directoryProviders`, as that property is private.\n",
+    "created_at": "2015-02-20T05:09:44Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25049666",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25049666"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25049666"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 39,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25049745",
+    "pull_request_review_id": null,
+    "id": 25049745,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDQ5NzQ1",
+    "diff_hunk": "@@ -182,22 +190,22 @@ class Project extends Model\n     Grim.deprecate(\"Use ::setPaths instead\")\n     @setPaths([path])\n \n-  # Public: Add a path the project's list of root paths\n+  # Public: Add a path to the project's list of root paths\n   #\n   # * `projectPath` {String} The path to the directory to add.\n   addPath: (projectPath, options) ->\n-    projectPath = path.normalize(projectPath)\n-\n-    directoryPath = if fs.isDirectorySync(projectPath)\n-      projectPath\n-    else\n-      path.dirname(projectPath)\n-\n-    return if @getPaths().some (existingPath) ->\n-      (directoryPath is existingPath) or\n-      (directoryPath.indexOf(path.join(existingPath, path.sep)) is 0)\n-\n-    directory = new Directory(directoryPath)\n+    for directory in @getDirectories()\n+      # Apparently a Directory does not believe it can contain itself, so we\n+      # must also check whether the paths match.\n+      return if directory.contains(projectPath) or directory.getPath() is projectPath\n+\n+    directory = null\n+    for provider in @directoryProviders\n+      break if directory = provider.directoryForURISync?(projectPath)\n+    if directory is null\n+      # This should never happen because DefaultDirectoryProvider should always\n+      # return a Directory.",
+    "path": "src/project.coffee",
+    "position": 66,
+    "original_position": 66,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "bf9c4132b217d75a7d7c6275d88a14ff04444c48",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "I still think that if an unrecognized URI is given, this _should_ happen. The `DefaultDirectoryProvider` should return `null` unless the URI is for a local file. That way, this would actually be a useful error.\n\nI also still think the `DefaultDirectoryProvider` should be tried first, not last, and that it should simply be called `LocalDirectoryProvider`. Do you have concerns with always using that provider for local files?\n",
+    "created_at": "2015-02-20T05:13:50Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25049745",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25049745"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25049745"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 207,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25050113",
+    "pull_request_review_id": null,
+    "id": 25050113,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDUwMTEz",
+    "diff_hunk": "@@ -14,6 +14,70 @@ describe \"Project\", ->\n     atom.project.setPaths([atom.project.getDirectories()[0]?.resolve('dir')])\n \n   describe \"constructor\", ->\n+    it \"enables a custom DirectoryProvider to supersede the DefaultDirectoryProvider\", ->\n+      remotePath = \"ssh://foreign-directory:8080/\"\n+      class DummyDirectory\n+        constructor: (@path) ->\n+        getPath: -> @path\n+        getFile: -> existsSync: -> false\n+        getSubdirectory: -> existsSync: -> false\n+        isRoot: -> true\n+        off: ->\n+        contains: (filePath) -> filePath.startsWith(remotePath)\n+\n+      directoryProvider =\n+        directoryForURISync: (uri) ->\n+          if uri.startsWith(\"ssh://\")\n+            new DummyDirectory(uri)\n+          else\n+            null\n+        directoryForURI: (uri) -> throw new Error(\"This should not be called.\")\n+      atom.packages.serviceHub.provide(\n+        \"atom.directory-provider\", \"0.1.0\", directoryProvider)\n+\n+      tmp = temp.mkdirSync()\n+      atom.project.setPaths([tmp, remotePath])\n+      directories = atom.project.getDirectories()\n+      expect(directories.length).toBe 2\n+\n+      localDirectory = directories[0]\n+      expect(localDirectory.getPath()).toBe tmp\n+      expect(localDirectory instanceof Directory).toBe true\n+\n+      dummyDirectory = directories[1]\n+      expect(dummyDirectory.getPath()).toBe remotePath\n+      expect(dummyDirectory instanceof DummyDirectory).toBe true\n+\n+      expect(atom.project.getPaths()).toEqual([tmp, remotePath])\n+\n+      # Make sure that DummyDirectory.contains() is honored.\n+      remotePathSubdirectory = remotePath + \"a/subdirectory\"\n+      atom.project.addPath(remotePathSubdirectory)\n+      expect(atom.project.getDirectories().length).toBe 2\n+\n+      # Make sure that a new DummyDirectory that is not contained by the first\n+      # DummyDirectory can be added.\n+      otherRemotePath = \"ssh://other-foreign-directory:8080/\"\n+      atom.project.addPath(otherRemotePath)\n+      newDirectories = atom.project.getDirectories()\n+      expect(newDirectories.length).toBe 3\n+      otherDummyDirectory = newDirectories[2]\n+      expect(otherDummyDirectory.getPath()).toBe otherRemotePath\n+      expect(otherDummyDirectory instanceof DummyDirectory).toBe true\n+\n+    it \"a custom DirectoryProvider that returns null defaults to the DefaultDirectoryProvider\", ->",
+    "path": "spec/project-spec.coffee",
+    "position": null,
+    "original_position": 55,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "54c70706480a2f67a3a7ddb2c16fd0f9506cc362",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": "For readability with the `it`, I'd say:\n\n``` coffee\nit \"uses the default directory provider if no custom provider can handle the URI\", ->\n```\n",
+    "created_at": "2015-02-20T05:32:07Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25050113",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25050113"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25050113"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 68,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25050138",
+    "pull_request_review_id": null,
+    "id": 25050138,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDUwMTM4",
+    "diff_hunk": "@@ -182,22 +190,22 @@ class Project extends Model\n     Grim.deprecate(\"Use ::setPaths instead\")\n     @setPaths([path])\n \n-  # Public: Add a path the project's list of root paths\n+  # Public: Add a path to the project's list of root paths\n   #\n   # * `projectPath` {String} The path to the directory to add.\n   addPath: (projectPath, options) ->\n-    projectPath = path.normalize(projectPath)\n-\n-    directoryPath = if fs.isDirectorySync(projectPath)\n-      projectPath\n-    else\n-      path.dirname(projectPath)\n-\n-    return if @getPaths().some (existingPath) ->\n-      (directoryPath is existingPath) or\n-      (directoryPath.indexOf(path.join(existingPath, path.sep)) is 0)\n-\n-    directory = new Directory(directoryPath)\n+    for directory in @getDirectories()\n+      # Apparently a Directory does not believe it can contain itself, so we\n+      # must also check whether the paths match.\n+      return if directory.contains(projectPath) or directory.getPath() is projectPath\n+\n+    directory = null\n+    for provider in @directoryProviders\n+      break if directory = provider.directoryForURISync?(projectPath)\n+    if directory is null\n+      # This should never happen because DefaultDirectoryProvider should always\n+      # return a Directory.",
+    "path": "src/project.coffee",
+    "position": 66,
+    "original_position": 66,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "bf9c4132b217d75a7d7c6275d88a14ff04444c48",
+    "user": {
+      "login": "maxbrunsfeld",
+      "id": 326587,
+      "node_id": "MDQ6VXNlcjMyNjU4Nw==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/326587?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/maxbrunsfeld",
+      "html_url": "https://github.com/maxbrunsfeld",
+      "followers_url": "https://api.github.com/users/maxbrunsfeld/followers",
+      "following_url": "https://api.github.com/users/maxbrunsfeld/following{/other_user}",
+      "gists_url": "https://api.github.com/users/maxbrunsfeld/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/maxbrunsfeld/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/maxbrunsfeld/subscriptions",
+      "organizations_url": "https://api.github.com/users/maxbrunsfeld/orgs",
+      "repos_url": "https://api.github.com/users/maxbrunsfeld/repos",
+      "events_url": "https://api.github.com/users/maxbrunsfeld/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/maxbrunsfeld/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "body": ":cyclone: As per conversation with @bolinfest, I think this current approach is actually better.\n",
+    "created_at": "2015-02-20T05:33:15Z",
+    "updated_at": "2015-02-20T05:35:21Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25050138",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25050138"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25050138"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 207,
+    "original_line": 207,
+    "side": "RIGHT"
+  },
+  {
+    "url": "https://api.github.com/repos/atom/atom/pulls/comments/25050177",
+    "pull_request_review_id": null,
+    "id": 25050177,
+    "node_id": "MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDI1MDUwMTc3",
+    "diff_hunk": "@@ -14,6 +14,70 @@ describe \"Project\", ->\n     atom.project.setPaths([atom.project.getDirectories()[0]?.resolve('dir')])\n \n   describe \"constructor\", ->\n+    it \"enables a custom DirectoryProvider to supersede the DefaultDirectoryProvider\", ->\n+      remotePath = \"ssh://foreign-directory:8080/\"\n+      class DummyDirectory\n+        constructor: (@path) ->\n+        getPath: -> @path\n+        getFile: -> existsSync: -> false\n+        getSubdirectory: -> existsSync: -> false\n+        isRoot: -> true\n+        off: ->\n+        contains: (filePath) -> filePath.startsWith(remotePath)\n+\n+      directoryProvider =\n+        directoryForURISync: (uri) ->\n+          if uri.startsWith(\"ssh://\")\n+            new DummyDirectory(uri)\n+          else\n+            null\n+        directoryForURI: (uri) -> throw new Error(\"This should not be called.\")\n+      atom.packages.serviceHub.provide(\n+        \"atom.directory-provider\", \"0.1.0\", directoryProvider)\n+\n+      tmp = temp.mkdirSync()\n+      atom.project.setPaths([tmp, remotePath])\n+      directories = atom.project.getDirectories()\n+      expect(directories.length).toBe 2\n+\n+      localDirectory = directories[0]\n+      expect(localDirectory.getPath()).toBe tmp\n+      expect(localDirectory instanceof Directory).toBe true\n+\n+      dummyDirectory = directories[1]\n+      expect(dummyDirectory.getPath()).toBe remotePath\n+      expect(dummyDirectory instanceof DummyDirectory).toBe true\n+\n+      expect(atom.project.getPaths()).toEqual([tmp, remotePath])\n+\n+      # Make sure that DummyDirectory.contains() is honored.\n+      remotePathSubdirectory = remotePath + \"a/subdirectory\"\n+      atom.project.addPath(remotePathSubdirectory)\n+      expect(atom.project.getDirectories().length).toBe 2\n+\n+      # Make sure that a new DummyDirectory that is not contained by the first\n+      # DummyDirectory can be added.\n+      otherRemotePath = \"ssh://other-foreign-directory:8080/\"\n+      atom.project.addPath(otherRemotePath)\n+      newDirectories = atom.project.getDirectories()\n+      expect(newDirectories.length).toBe 3\n+      otherDummyDirectory = newDirectories[2]\n+      expect(otherDummyDirectory.getPath()).toBe otherRemotePath\n+      expect(otherDummyDirectory instanceof DummyDirectory).toBe true\n+\n+    it \"a custom DirectoryProvider that returns null defaults to the DefaultDirectoryProvider\", ->",
+    "path": "spec/project-spec.coffee",
+    "position": null,
+    "original_position": 55,
+    "commit_id": "d5abd8764352f1ad62c40003f05638d6bc06e5c8",
+    "original_commit_id": "54c70706480a2f67a3a7ddb2c16fd0f9506cc362",
+    "user": {
+      "login": "bolinfest",
+      "id": 655869,
+      "node_id": "MDQ6VXNlcjY1NTg2OQ==",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/655869?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bolinfest",
+      "html_url": "https://github.com/bolinfest",
+      "followers_url": "https://api.github.com/users/bolinfest/followers",
+      "following_url": "https://api.github.com/users/bolinfest/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bolinfest/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bolinfest/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bolinfest/subscriptions",
+      "organizations_url": "https://api.github.com/users/bolinfest/orgs",
+      "repos_url": "https://api.github.com/users/bolinfest/repos",
+      "events_url": "https://api.github.com/users/bolinfest/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bolinfest/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "so rewritten\n",
+    "created_at": "2015-02-20T05:35:32Z",
+    "updated_at": "2015-02-20T05:35:32Z",
+    "html_url": "https://github.com/atom/atom/pull/5535#discussion_r25050177",
+    "pull_request_url": "https://api.github.com/repos/atom/atom/pulls/5535",
+    "author_association": "CONTRIBUTOR",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/comments/25050177"
+      },
+      "html": {
+        "href": "https://github.com/atom/atom/pull/5535#discussion_r25050177"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/atom/atom/pulls/5535"
+      }
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": null,
+    "original_line": 68,
+    "side": "RIGHT"
+  }
+]

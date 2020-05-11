@@ -1,0 +1,1992 @@
+[
+  {
+    "sha": "d620da33f2dd57ef574c6c76535fa45f46569b23",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkNjIwZGEzM2YyZGQ1N2VmNTc0YzZjNzY1MzVmYTQ1ZjQ2NTY5YjIz",
+    "commit": {
+      "author": {
+        "name": "Paul Betts",
+        "email": "paul@paulbetts.org",
+        "date": "2015-08-19T14:50:11Z"
+      },
+      "committer": {
+        "name": "Paul Betts",
+        "email": "paul@paulbetts.org",
+        "date": "2015-09-07T18:35:28Z"
+      },
+      "message": "Enable Portable Mode\n\nThis PR sets the default ATOM_HOME to be relative to atom.exe, if the\nfollowing cases are true:\n\n1. We're not in DevMode\n1. We're on Windows\n1. The EXE path is not in the normal installed location\n\nThis allows users to take the entire Atom folder and use it as a\n\"Portable\" application (i.e. portableapps.com)",
+      "tree": {
+        "sha": "6fb530abd5d36e33536140d43036fe826fd51967",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/6fb530abd5d36e33536140d43036fe826fd51967"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/d620da33f2dd57ef574c6c76535fa45f46569b23",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/d620da33f2dd57ef574c6c76535fa45f46569b23",
+    "html_url": "https://github.com/atom/atom/commit/d620da33f2dd57ef574c6c76535fa45f46569b23",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/d620da33f2dd57ef574c6c76535fa45f46569b23/comments",
+    "author": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "fef79a6b4937e37a4b9731218223112ad8b01ec4",
+        "url": "https://api.github.com/repos/atom/atom/commits/fef79a6b4937e37a4b9731218223112ad8b01ec4",
+        "html_url": "https://github.com/atom/atom/commit/fef79a6b4937e37a4b9731218223112ad8b01ec4"
+      }
+    ]
+  },
+  {
+    "sha": "4a536197800b7d08cf63d5b58047589db800c740",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0YTUzNjE5NzgwMGI3ZDA4Y2Y2M2Q1YjU4MDQ3NTg5ZGI4MDBjNzQw",
+    "commit": {
+      "author": {
+        "name": "Paul Betts",
+        "email": "paul@paulbetts.org",
+        "date": "2015-09-07T18:42:18Z"
+      },
+      "committer": {
+        "name": "Paul Betts",
+        "email": "paul@paulbetts.org",
+        "date": "2015-09-07T18:56:46Z"
+      },
+      "message": "Patch the browser process too",
+      "tree": {
+        "sha": "5775c603fe51ce466e0990392a8aded884375c59",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/5775c603fe51ce466e0990392a8aded884375c59"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/4a536197800b7d08cf63d5b58047589db800c740",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/4a536197800b7d08cf63d5b58047589db800c740",
+    "html_url": "https://github.com/atom/atom/commit/4a536197800b7d08cf63d5b58047589db800c740",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/4a536197800b7d08cf63d5b58047589db800c740/comments",
+    "author": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d620da33f2dd57ef574c6c76535fa45f46569b23",
+        "url": "https://api.github.com/repos/atom/atom/commits/d620da33f2dd57ef574c6c76535fa45f46569b23",
+        "html_url": "https://github.com/atom/atom/commit/d620da33f2dd57ef574c6c76535fa45f46569b23"
+      }
+    ]
+  },
+  {
+    "sha": "477559581e74e0a7c74511e1981f12dd130b97bf",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0Nzc1NTk1ODFlNzRlMGE3Yzc0NTExZTE5ODFmMTJkZDEzMGI5N2Jm",
+    "commit": {
+      "author": {
+        "name": "Paul Betts",
+        "email": "paul@paulbetts.org",
+        "date": "2015-09-07T19:08:32Z"
+      },
+      "committer": {
+        "name": "Paul Betts",
+        "email": "paul@paulbetts.org",
+        "date": "2015-09-07T19:13:34Z"
+      },
+      "message": "Correctly handle devMode",
+      "tree": {
+        "sha": "c55e4f2868aa26703f56deb14f19c082126e7275",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c55e4f2868aa26703f56deb14f19c082126e7275"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/477559581e74e0a7c74511e1981f12dd130b97bf",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/477559581e74e0a7c74511e1981f12dd130b97bf",
+    "html_url": "https://github.com/atom/atom/commit/477559581e74e0a7c74511e1981f12dd130b97bf",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/477559581e74e0a7c74511e1981f12dd130b97bf/comments",
+    "author": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "anaisbetts",
+      "id": 1396,
+      "node_id": "MDQ6VXNlcjEzOTY=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1396?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/anaisbetts",
+      "html_url": "https://github.com/anaisbetts",
+      "followers_url": "https://api.github.com/users/anaisbetts/followers",
+      "following_url": "https://api.github.com/users/anaisbetts/following{/other_user}",
+      "gists_url": "https://api.github.com/users/anaisbetts/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/anaisbetts/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/anaisbetts/subscriptions",
+      "organizations_url": "https://api.github.com/users/anaisbetts/orgs",
+      "repos_url": "https://api.github.com/users/anaisbetts/repos",
+      "events_url": "https://api.github.com/users/anaisbetts/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/anaisbetts/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4a536197800b7d08cf63d5b58047589db800c740",
+        "url": "https://api.github.com/repos/atom/atom/commits/4a536197800b7d08cf63d5b58047589db800c740",
+        "html_url": "https://github.com/atom/atom/commit/4a536197800b7d08cf63d5b58047589db800c740"
+      }
+    ]
+  },
+  {
+    "sha": "2f6b6781f7f0b07da961749849018c5a804b649f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyZjZiNjc4MWY3ZjBiMDdkYTk2MTc0OTg0OTAxOGM1YTgwNGI2NDlm",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-05T18:20:50Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-05T18:20:50Z"
+      },
+      "message": "Merge remote-tracking branch 'atom/master'",
+      "tree": {
+        "sha": "1f9b812c1099e62db4f6da2f825595b53d5fa18c",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/1f9b812c1099e62db4f6da2f825595b53d5fa18c"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/2f6b6781f7f0b07da961749849018c5a804b649f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/2f6b6781f7f0b07da961749849018c5a804b649f",
+    "html_url": "https://github.com/atom/atom/commit/2f6b6781f7f0b07da961749849018c5a804b649f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/2f6b6781f7f0b07da961749849018c5a804b649f/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5a4f79c5056e51d0ca41424fc9be2760fd8ce23f",
+        "url": "https://api.github.com/repos/atom/atom/commits/5a4f79c5056e51d0ca41424fc9be2760fd8ce23f",
+        "html_url": "https://github.com/atom/atom/commit/5a4f79c5056e51d0ca41424fc9be2760fd8ce23f"
+      },
+      {
+        "sha": "4b507be99769a38e0b8e9b26a950fc408951f986",
+        "url": "https://api.github.com/repos/atom/atom/commits/4b507be99769a38e0b8e9b26a950fc408951f986",
+        "html_url": "https://github.com/atom/atom/commit/4b507be99769a38e0b8e9b26a950fc408951f986"
+      }
+    ]
+  },
+  {
+    "sha": "f067fdb7cd8e9991b0ac921712697b8e5fec3dd5",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpmMDY3ZmRiN2NkOGU5OTkxYjBhYzkyMTcxMjY5N2I4ZTVmZWMzZGQ1",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-06T20:28:10Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-06T20:28:10Z"
+      },
+      "message": "Merge branch 'master' into portable-mode\n\nConflicts:\n\tsrc/browser/main.coffee",
+      "tree": {
+        "sha": "b2d658cbf48fb35066785b6f07dd62f399198da3",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b2d658cbf48fb35066785b6f07dd62f399198da3"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/f067fdb7cd8e9991b0ac921712697b8e5fec3dd5",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/f067fdb7cd8e9991b0ac921712697b8e5fec3dd5",
+    "html_url": "https://github.com/atom/atom/commit/f067fdb7cd8e9991b0ac921712697b8e5fec3dd5",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/f067fdb7cd8e9991b0ac921712697b8e5fec3dd5/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "477559581e74e0a7c74511e1981f12dd130b97bf",
+        "url": "https://api.github.com/repos/atom/atom/commits/477559581e74e0a7c74511e1981f12dd130b97bf",
+        "html_url": "https://github.com/atom/atom/commit/477559581e74e0a7c74511e1981f12dd130b97bf"
+      },
+      {
+        "sha": "2f6b6781f7f0b07da961749849018c5a804b649f",
+        "url": "https://api.github.com/repos/atom/atom/commits/2f6b6781f7f0b07da961749849018c5a804b649f",
+        "html_url": "https://github.com/atom/atom/commit/2f6b6781f7f0b07da961749849018c5a804b649f"
+      }
+    ]
+  },
+  {
+    "sha": "b8a153781e89ef1812fac7fe6db05569ac0bc404",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiOGExNTM3ODFlODllZjE4MTJmYWM3ZmU2ZGIwNTU2OWFjMGJjNDA0",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-09T16:54:30Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-09T17:20:41Z"
+      },
+      "message": "Implement Portable Mode\n\nAccording to these specifications:\nPortable mode only applies to Windows (for now)\nPortable mode only applies if ATOM_HOME is not set\nIf there is a .atom directory as sibling to directory with running process\n\tuse that as ATOM_HOME",
+      "tree": {
+        "sha": "2ec76b4f8766d8c47f0cc27b1adbaa25044f6d3a",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/2ec76b4f8766d8c47f0cc27b1adbaa25044f6d3a"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/b8a153781e89ef1812fac7fe6db05569ac0bc404",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/b8a153781e89ef1812fac7fe6db05569ac0bc404",
+    "html_url": "https://github.com/atom/atom/commit/b8a153781e89ef1812fac7fe6db05569ac0bc404",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/b8a153781e89ef1812fac7fe6db05569ac0bc404/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f067fdb7cd8e9991b0ac921712697b8e5fec3dd5",
+        "url": "https://api.github.com/repos/atom/atom/commits/f067fdb7cd8e9991b0ac921712697b8e5fec3dd5",
+        "html_url": "https://github.com/atom/atom/commit/f067fdb7cd8e9991b0ac921712697b8e5fec3dd5"
+      }
+    ]
+  },
+  {
+    "sha": "db57479bf92474bf9bfb832c70a2c5c947238e8d",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpkYjU3NDc5YmY5MjQ3NGJmOWJmYjgzMmM3MGEyYzVjOTQ3MjM4ZThk",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-09T17:21:41Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-09T17:21:41Z"
+      },
+      "message": "Remove superfluous check on ATOM_HOME\n\nalways set at the process level, so always set here",
+      "tree": {
+        "sha": "5b75e361cb39871f22d2ca43c3ce0f598f2269f4",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/5b75e361cb39871f22d2ca43c3ce0f598f2269f4"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/db57479bf92474bf9bfb832c70a2c5c947238e8d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/db57479bf92474bf9bfb832c70a2c5c947238e8d",
+    "html_url": "https://github.com/atom/atom/commit/db57479bf92474bf9bfb832c70a2c5c947238e8d",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/db57479bf92474bf9bfb832c70a2c5c947238e8d/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b8a153781e89ef1812fac7fe6db05569ac0bc404",
+        "url": "https://api.github.com/repos/atom/atom/commits/b8a153781e89ef1812fac7fe6db05569ac0bc404",
+        "html_url": "https://github.com/atom/atom/commit/b8a153781e89ef1812fac7fe6db05569ac0bc404"
+      }
+    ]
+  },
+  {
+    "sha": "28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyOGMzMjJhNGNmYjk3YmY2NjAxMTY3YTk4ZmNkM2ExYzQ0OTFjNTEy",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-09T17:32:56Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-09T17:32:56Z"
+      },
+      "message": "Fix broken focused suite in spec",
+      "tree": {
+        "sha": "611377280fb8d1b262cbefb54fe03deee719ad34",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/611377280fb8d1b262cbefb54fe03deee719ad34"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+    "html_url": "https://github.com/atom/atom/commit/28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/28c322a4cfb97bf6601167a98fcd3a1c4491c512/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "db57479bf92474bf9bfb832c70a2c5c947238e8d",
+        "url": "https://api.github.com/repos/atom/atom/commits/db57479bf92474bf9bfb832c70a2c5c947238e8d",
+        "html_url": "https://github.com/atom/atom/commit/db57479bf92474bf9bfb832c70a2c5c947238e8d"
+      }
+    ]
+  },
+  {
+    "sha": "4312f76ed7162b85cc10a6caa044c8881045a666",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo0MzEyZjc2ZWQ3MTYyYjg1Y2MxMGE2Y2FhMDQ0Yzg4ODEwNDVhNjY2",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-13T11:21:54Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-13T11:43:01Z"
+      },
+      "message": "Added command line parameter to set portable\n\nIf parameter included, home directory will be copied to the portable\nlocation to make this a portable install",
+      "tree": {
+        "sha": "76c7ceca31a66dd9535ec6b37063f7b5abfcf67d",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/76c7ceca31a66dd9535ec6b37063f7b5abfcf67d"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/4312f76ed7162b85cc10a6caa044c8881045a666",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/4312f76ed7162b85cc10a6caa044c8881045a666",
+    "html_url": "https://github.com/atom/atom/commit/4312f76ed7162b85cc10a6caa044c8881045a666",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/4312f76ed7162b85cc10a6caa044c8881045a666/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+        "url": "https://api.github.com/repos/atom/atom/commits/28c322a4cfb97bf6601167a98fcd3a1c4491c512",
+        "html_url": "https://github.com/atom/atom/commit/28c322a4cfb97bf6601167a98fcd3a1c4491c512"
+      }
+    ]
+  },
+  {
+    "sha": "16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToxNmMyMzkxYjE0NDdjNjZiMDdlOWZhNWEyYTYwM2JjOWY2ZDMwYzdm",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-14T19:49:04Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-14T20:03:32Z"
+      },
+      "message": "Add notification if Portable Home not writable",
+      "tree": {
+        "sha": "7e7dc95d0864f6fdde898de5ed9c8b8d0953f88d",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/7e7dc95d0864f6fdde898de5ed9c8b8d0953f88d"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f",
+    "html_url": "https://github.com/atom/atom/commit/16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "4312f76ed7162b85cc10a6caa044c8881045a666",
+        "url": "https://api.github.com/repos/atom/atom/commits/4312f76ed7162b85cc10a6caa044c8881045a666",
+        "html_url": "https://github.com/atom/atom/commit/4312f76ed7162b85cc10a6caa044c8881045a666"
+      }
+    ]
+  },
+  {
+    "sha": "265ee01c1dc5d68e67101fa4584e8e63f8b9a29f",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyNjVlZTAxYzFkYzVkNjhlNjcxMDFmYTQ1ODRlOGU2M2Y4YjlhMjlm",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-15T20:32:33Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-15T20:32:33Z"
+      },
+      "message": "Clean convention inconsistencies for portable mode",
+      "tree": {
+        "sha": "fd73748b1d8fa1fe8251a875a0226b535eea005c",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/fd73748b1d8fa1fe8251a875a0226b535eea005c"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/265ee01c1dc5d68e67101fa4584e8e63f8b9a29f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/265ee01c1dc5d68e67101fa4584e8e63f8b9a29f",
+    "html_url": "https://github.com/atom/atom/commit/265ee01c1dc5d68e67101fa4584e8e63f8b9a29f",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/265ee01c1dc5d68e67101fa4584e8e63f8b9a29f/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f",
+        "url": "https://api.github.com/repos/atom/atom/commits/16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f",
+        "html_url": "https://github.com/atom/atom/commit/16c2391b1447c66b07e9fa5a2a603bc9f6d30c7f"
+      }
+    ]
+  },
+  {
+    "sha": "28a1bbf9a2a214183bd744d5e097d7fd1641cc9b",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNToyOGExYmJmOWEyYTIxNDE4M2JkNzQ0ZDVlMDk3ZDdmZDE2NDFjYzli",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-15T20:35:04Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-15T20:35:04Z"
+      },
+      "message": "Fix function names - consistent with convention",
+      "tree": {
+        "sha": "c497bf7758d6cf649ad86e9b62bb5598f59c29a6",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c497bf7758d6cf649ad86e9b62bb5598f59c29a6"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/28a1bbf9a2a214183bd744d5e097d7fd1641cc9b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/28a1bbf9a2a214183bd744d5e097d7fd1641cc9b",
+    "html_url": "https://github.com/atom/atom/commit/28a1bbf9a2a214183bd744d5e097d7fd1641cc9b",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/28a1bbf9a2a214183bd744d5e097d7fd1641cc9b/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "265ee01c1dc5d68e67101fa4584e8e63f8b9a29f",
+        "url": "https://api.github.com/repos/atom/atom/commits/265ee01c1dc5d68e67101fa4584e8e63f8b9a29f",
+        "html_url": "https://github.com/atom/atom/commit/265ee01c1dc5d68e67101fa4584e8e63f8b9a29f"
+      }
+    ]
+  },
+  {
+    "sha": "ef71211b8255c78ae60aa7821795ac26c3f24fbe",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplZjcxMjExYjgyNTVjNzhhZTYwYWE3ODIxNzk1YWMyNmMzZjI0ZmJl",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-15T22:35:35Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-15T22:35:35Z"
+      },
+      "message": "Always include portable home path in warning\n\nwhen warning that portable home path not writable",
+      "tree": {
+        "sha": "1988eaeab25a2f622b6e64121dfbefcdcfe38531",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/1988eaeab25a2f622b6e64121dfbefcdcfe38531"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/ef71211b8255c78ae60aa7821795ac26c3f24fbe",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/ef71211b8255c78ae60aa7821795ac26c3f24fbe",
+    "html_url": "https://github.com/atom/atom/commit/ef71211b8255c78ae60aa7821795ac26c3f24fbe",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/ef71211b8255c78ae60aa7821795ac26c3f24fbe/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "28a1bbf9a2a214183bd744d5e097d7fd1641cc9b",
+        "url": "https://api.github.com/repos/atom/atom/commits/28a1bbf9a2a214183bd744d5e097d7fd1641cc9b",
+        "html_url": "https://github.com/atom/atom/commit/28a1bbf9a2a214183bd744d5e097d7fd1641cc9b"
+      }
+    ]
+  },
+  {
+    "sha": "bcfb6ab4079a10b5bb2a5ecd3c927fee37ea2ead",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiY2ZiNmFiNDA3OWExMGI1YmIyYTVlY2QzYzkyN2ZlZTM3ZWEyZWFk",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-15T22:57:12Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-15T22:57:12Z"
+      },
+      "message": "Remove explicit returns",
+      "tree": {
+        "sha": "906996482e85a1f5fc191d2677ef6abfd3d23a26",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/906996482e85a1f5fc191d2677ef6abfd3d23a26"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/bcfb6ab4079a10b5bb2a5ecd3c927fee37ea2ead",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/bcfb6ab4079a10b5bb2a5ecd3c927fee37ea2ead",
+    "html_url": "https://github.com/atom/atom/commit/bcfb6ab4079a10b5bb2a5ecd3c927fee37ea2ead",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/bcfb6ab4079a10b5bb2a5ecd3c927fee37ea2ead/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "ef71211b8255c78ae60aa7821795ac26c3f24fbe",
+        "url": "https://api.github.com/repos/atom/atom/commits/ef71211b8255c78ae60aa7821795ac26c3f24fbe",
+        "html_url": "https://github.com/atom/atom/commit/ef71211b8255c78ae60aa7821795ac26c3f24fbe"
+      }
+    ]
+  },
+  {
+    "sha": "82f5e81cec2727013d3291907ddd04cc7ffd7a37",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4MmY1ZTgxY2VjMjcyNzAxM2QzMjkxOTA3ZGRkMDRjYzdmZmQ3YTM3",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-16T10:24:57Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-16T10:24:57Z"
+      },
+      "message": "Restore check on ATOM_HOME\n\n(undo db57479bf92474bf9bfb832c70a2c5c947238e8d)\nCheck on ATOM_HOME is not superfluous - needed on Linux because of\ndifference in inheriting environment variables between browser and render\nprocesses",
+      "tree": {
+        "sha": "52b9343c0a9b81600f106a90792438841b7b18ff",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/52b9343c0a9b81600f106a90792438841b7b18ff"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/82f5e81cec2727013d3291907ddd04cc7ffd7a37",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/82f5e81cec2727013d3291907ddd04cc7ffd7a37",
+    "html_url": "https://github.com/atom/atom/commit/82f5e81cec2727013d3291907ddd04cc7ffd7a37",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/82f5e81cec2727013d3291907ddd04cc7ffd7a37/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "bcfb6ab4079a10b5bb2a5ecd3c927fee37ea2ead",
+        "url": "https://api.github.com/repos/atom/atom/commits/bcfb6ab4079a10b5bb2a5ecd3c927fee37ea2ead",
+        "html_url": "https://github.com/atom/atom/commit/bcfb6ab4079a10b5bb2a5ecd3c927fee37ea2ead"
+      }
+    ]
+  },
+  {
+    "sha": "03faddd7ae4c2796b803bb44865338ff88ca0ed2",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowM2ZhZGRkN2FlNGMyNzk2YjgwM2JiNDQ4NjUzMzhmZjg4Y2EwZWQy",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-16T13:02:53Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-16T13:02:53Z"
+      },
+      "message": "Undo add command line parameter to set portable\n\nundo 4312f76ed7162b85cc10a6caa044c8881045a666 to include this in a pull\nrequest of its own",
+      "tree": {
+        "sha": "c0b3a436b9db98a1b648a9bc0827ca84865cc119",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c0b3a436b9db98a1b648a9bc0827ca84865cc119"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/03faddd7ae4c2796b803bb44865338ff88ca0ed2",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/03faddd7ae4c2796b803bb44865338ff88ca0ed2",
+    "html_url": "https://github.com/atom/atom/commit/03faddd7ae4c2796b803bb44865338ff88ca0ed2",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/03faddd7ae4c2796b803bb44865338ff88ca0ed2/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "82f5e81cec2727013d3291907ddd04cc7ffd7a37",
+        "url": "https://api.github.com/repos/atom/atom/commits/82f5e81cec2727013d3291907ddd04cc7ffd7a37",
+        "html_url": "https://github.com/atom/atom/commit/82f5e81cec2727013d3291907ddd04cc7ffd7a37"
+      }
+    ]
+  },
+  {
+    "sha": "6d4105ac97f2e6dcb0ce34d1281a1f23050d2f2e",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo2ZDQxMDVhYzk3ZjJlNmRjYjBjZTM0ZDEyODFhMWYyMzA1MGQyZjJl",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-20T13:09:58Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-20T13:09:58Z"
+      },
+      "message": "Escape characters is portable path not writable\n\nwarning to resolve missing backslash and other potential problems\nresulting from the markdown-parsed nature of the display of notifications.",
+      "tree": {
+        "sha": "e93c452766dc4ceb3097cad74be06152e8e487e5",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/e93c452766dc4ceb3097cad74be06152e8e487e5"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/6d4105ac97f2e6dcb0ce34d1281a1f23050d2f2e",
+      "comment_count": 1,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/6d4105ac97f2e6dcb0ce34d1281a1f23050d2f2e",
+    "html_url": "https://github.com/atom/atom/commit/6d4105ac97f2e6dcb0ce34d1281a1f23050d2f2e",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/6d4105ac97f2e6dcb0ce34d1281a1f23050d2f2e/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "03faddd7ae4c2796b803bb44865338ff88ca0ed2",
+        "url": "https://api.github.com/repos/atom/atom/commits/03faddd7ae4c2796b803bb44865338ff88ca0ed2",
+        "html_url": "https://github.com/atom/atom/commit/03faddd7ae4c2796b803bb44865338ff88ca0ed2"
+      }
+    ]
+  },
+  {
+    "sha": "86528909588a925d8deb3cb6da7a872504a5664b",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4NjUyODkwOTU4OGE5MjVkOGRlYjNjYjZkYTdhODcyNTA0YTU2NjRi",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-20T15:45:01Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-20T16:32:12Z"
+      },
+      "message": "Simplify markdown escaping for warning\n\nby using a regular expression instead of multiple replaces",
+      "tree": {
+        "sha": "abb6991ee4812ebf741a6ce6649208241e13b6ea",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/abb6991ee4812ebf741a6ce6649208241e13b6ea"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/86528909588a925d8deb3cb6da7a872504a5664b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/86528909588a925d8deb3cb6da7a872504a5664b",
+    "html_url": "https://github.com/atom/atom/commit/86528909588a925d8deb3cb6da7a872504a5664b",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/86528909588a925d8deb3cb6da7a872504a5664b/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "6d4105ac97f2e6dcb0ce34d1281a1f23050d2f2e",
+        "url": "https://api.github.com/repos/atom/atom/commits/6d4105ac97f2e6dcb0ce34d1281a1f23050d2f2e",
+        "html_url": "https://github.com/atom/atom/commit/6d4105ac97f2e6dcb0ce34d1281a1f23050d2f2e"
+      }
+    ]
+  },
+  {
+    "sha": "e0697ecc7fc6961b1c2e531f56e76a98b1a50010",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplMDY5N2VjYzdmYzY5NjFiMWMyZTUzMWY1NmU3NmE5OGIxYTUwMDEw",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-21T02:58:14Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-21T02:58:14Z"
+      },
+      "message": "Merge branch 'master' into portable-mode\n\nConflicts:\n\tsrc/atom-environment.coffee",
+      "tree": {
+        "sha": "516f6102c06c900cd757970475df953c0af70a23",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/516f6102c06c900cd757970475df953c0af70a23"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/e0697ecc7fc6961b1c2e531f56e76a98b1a50010",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/e0697ecc7fc6961b1c2e531f56e76a98b1a50010",
+    "html_url": "https://github.com/atom/atom/commit/e0697ecc7fc6961b1c2e531f56e76a98b1a50010",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/e0697ecc7fc6961b1c2e531f56e76a98b1a50010/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "86528909588a925d8deb3cb6da7a872504a5664b",
+        "url": "https://api.github.com/repos/atom/atom/commits/86528909588a925d8deb3cb6da7a872504a5664b",
+        "html_url": "https://github.com/atom/atom/commit/86528909588a925d8deb3cb6da7a872504a5664b"
+      },
+      {
+        "sha": "8321c9f52ee8f05e128a7a8c3af89bd0b341eb7a",
+        "url": "https://api.github.com/repos/atom/atom/commits/8321c9f52ee8f05e128a7a8c3af89bd0b341eb7a",
+        "html_url": "https://github.com/atom/atom/commit/8321c9f52ee8f05e128a7a8c3af89bd0b341eb7a"
+      }
+    ]
+  },
+  {
+    "sha": "e93b013059821712f89d18da2a668228dfbf53ff",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTplOTNiMDEzMDU5ODIxNzEyZjg5ZDE4ZGEyYTY2ODIyOGRmYmY1M2Zm",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-21T10:40:05Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-21T10:40:05Z"
+      },
+      "message": "Remove unused function parameter\n\nfor setupAtomHome function no longer needing args",
+      "tree": {
+        "sha": "b55021bbe46c2e9c951d6837bbb7802160dccb3e",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/b55021bbe46c2e9c951d6837bbb7802160dccb3e"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/e93b013059821712f89d18da2a668228dfbf53ff",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/e93b013059821712f89d18da2a668228dfbf53ff",
+    "html_url": "https://github.com/atom/atom/commit/e93b013059821712f89d18da2a668228dfbf53ff",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/e93b013059821712f89d18da2a668228dfbf53ff/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e0697ecc7fc6961b1c2e531f56e76a98b1a50010",
+        "url": "https://api.github.com/repos/atom/atom/commits/e0697ecc7fc6961b1c2e531f56e76a98b1a50010",
+        "html_url": "https://github.com/atom/atom/commit/e0697ecc7fc6961b1c2e531f56e76a98b1a50010"
+      }
+    ]
+  },
+  {
+    "sha": "810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4MTBmMGU0NTgzNmI5YjBkZTVkY2I1ZTJhMzgwYTg2MmE2ZWQ0YjNk",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-21T15:47:33Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-21T15:47:33Z"
+      },
+      "message": "Fix merge problem and missing function call\n\nMerge resulted in a missing require and change to remove unused function\nparameters resulted in not calling function",
+      "tree": {
+        "sha": "c345ff80c170532b1482be1d57a9f24512ec1cea",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/c345ff80c170532b1482be1d57a9f24512ec1cea"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+    "html_url": "https://github.com/atom/atom/commit/810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e93b013059821712f89d18da2a668228dfbf53ff",
+        "url": "https://api.github.com/repos/atom/atom/commits/e93b013059821712f89d18da2a668228dfbf53ff",
+        "html_url": "https://github.com/atom/atom/commit/e93b013059821712f89d18da2a668228dfbf53ff"
+      }
+    ]
+  },
+  {
+    "sha": "35345893fcad7a628bf5d17d68109ef25aaa0f8a",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTozNTM0NTg5M2ZjYWQ3YTYyOGJmNWQxN2Q2ODEwOWVmMjVhYWEwZjhh",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-22T14:49:08Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-22T14:49:08Z"
+      },
+      "message": "Fix function name to be consistent with convention",
+      "tree": {
+        "sha": "6e442bbee9440a87de49b133af6704a160b1f527",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/6e442bbee9440a87de49b133af6704a160b1f527"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/35345893fcad7a628bf5d17d68109ef25aaa0f8a",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/35345893fcad7a628bf5d17d68109ef25aaa0f8a",
+    "html_url": "https://github.com/atom/atom/commit/35345893fcad7a628bf5d17d68109ef25aaa0f8a",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/35345893fcad7a628bf5d17d68109ef25aaa0f8a/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+        "url": "https://api.github.com/repos/atom/atom/commits/810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d",
+        "html_url": "https://github.com/atom/atom/commit/810f0e45836b9b0de5dcb5e2a380a862a6ed4b3d"
+      }
+    ]
+  },
+  {
+    "sha": "8acb2af055d618d80b15facecc4dcfe5a3639a21",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTo4YWNiMmFmMDU1ZDYxOGQ4MGIxNWZhY2VjYzRkY2ZlNWEzNjM5YTIx",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-22T14:58:39Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-22T14:58:39Z"
+      },
+      "message": "Remove unused parameter\n\nto keep the code clean and readable",
+      "tree": {
+        "sha": "5601842728d141923f88af2b9dcc943d4b964116",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/5601842728d141923f88af2b9dcc943d4b964116"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/8acb2af055d618d80b15facecc4dcfe5a3639a21",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/8acb2af055d618d80b15facecc4dcfe5a3639a21",
+    "html_url": "https://github.com/atom/atom/commit/8acb2af055d618d80b15facecc4dcfe5a3639a21",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/8acb2af055d618d80b15facecc4dcfe5a3639a21/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "35345893fcad7a628bf5d17d68109ef25aaa0f8a",
+        "url": "https://api.github.com/repos/atom/atom/commits/35345893fcad7a628bf5d17d68109ef25aaa0f8a",
+        "html_url": "https://github.com/atom/atom/commit/35345893fcad7a628bf5d17d68109ef25aaa0f8a"
+      }
+    ]
+  },
+  {
+    "sha": "b1d10ef4dcc953df6afa0dc1895d594d8f46f313",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTpiMWQxMGVmNGRjYzk1M2RmNmFmYTBkYzE4OTVkNTk0ZDhmNDZmMzEz",
+    "commit": {
+      "author": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-22T15:01:56Z"
+      },
+      "committer": {
+        "name": "Dave Rael",
+        "email": "dave@raelyard.com",
+        "date": "2015-10-22T15:01:56Z"
+      },
+      "message": "Revert moving parse of command line\n\nto the first line of start function because the move is not necessary\nwithout having the code for using a command line parameter to set Atom to\nportable mode.  This belongs on that branch and in that pull request.",
+      "tree": {
+        "sha": "0a4f40c27eefb60fcd3a660115af4a3c3a6a69c9",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/0a4f40c27eefb60fcd3a660115af4a3c3a6a69c9"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/b1d10ef4dcc953df6afa0dc1895d594d8f46f313",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/b1d10ef4dcc953df6afa0dc1895d594d8f46f313",
+    "html_url": "https://github.com/atom/atom/commit/b1d10ef4dcc953df6afa0dc1895d594d8f46f313",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/b1d10ef4dcc953df6afa0dc1895d594d8f46f313/comments",
+    "author": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "raelyard",
+      "id": 879480,
+      "node_id": "MDQ6VXNlcjg3OTQ4MA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/879480?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/raelyard",
+      "html_url": "https://github.com/raelyard",
+      "followers_url": "https://api.github.com/users/raelyard/followers",
+      "following_url": "https://api.github.com/users/raelyard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/raelyard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/raelyard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/raelyard/subscriptions",
+      "organizations_url": "https://api.github.com/users/raelyard/orgs",
+      "repos_url": "https://api.github.com/users/raelyard/repos",
+      "events_url": "https://api.github.com/users/raelyard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/raelyard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8acb2af055d618d80b15facecc4dcfe5a3639a21",
+        "url": "https://api.github.com/repos/atom/atom/commits/8acb2af055d618d80b15facecc4dcfe5a3639a21",
+        "html_url": "https://github.com/atom/atom/commit/8acb2af055d618d80b15facecc4dcfe5a3639a21"
+      }
+    ]
+  },
+  {
+    "sha": "02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "node_id": "MDY6Q29tbWl0MzIyODUwNTowMmZlMmNmNjE4NTBmMTA3MjljNDljZjU5YzZhM2RmYWViYjU5YTc3",
+    "commit": {
+      "author": {
+        "name": "Kevin Sawicki",
+        "email": "kevin@github.com",
+        "date": "2015-10-27T17:44:02Z"
+      },
+      "committer": {
+        "name": "Kevin Sawicki",
+        "email": "kevin@github.com",
+        "date": "2015-10-27T17:45:35Z"
+      },
+      "message": ":art:",
+      "tree": {
+        "sha": "2933188859ba286ba67fa500a1a8b82bba1f0008",
+        "url": "https://api.github.com/repos/atom/atom/git/trees/2933188859ba286ba67fa500a1a8b82bba1f0008"
+      },
+      "url": "https://api.github.com/repos/atom/atom/git/commits/02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null
+      }
+    },
+    "url": "https://api.github.com/repos/atom/atom/commits/02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "html_url": "https://github.com/atom/atom/commit/02fe2cf61850f10729c49cf59c6a3dfaebb59a77",
+    "comments_url": "https://api.github.com/repos/atom/atom/commits/02fe2cf61850f10729c49cf59c6a3dfaebb59a77/comments",
+    "author": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "committer": {
+      "login": "kevinsawicki",
+      "id": 671378,
+      "node_id": "MDQ6VXNlcjY3MTM3OA==",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/671378?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kevinsawicki",
+      "html_url": "https://github.com/kevinsawicki",
+      "followers_url": "https://api.github.com/users/kevinsawicki/followers",
+      "following_url": "https://api.github.com/users/kevinsawicki/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kevinsawicki/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kevinsawicki/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kevinsawicki/subscriptions",
+      "organizations_url": "https://api.github.com/users/kevinsawicki/orgs",
+      "repos_url": "https://api.github.com/users/kevinsawicki/repos",
+      "events_url": "https://api.github.com/users/kevinsawicki/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kevinsawicki/received_events",
+      "type": "User",
+      "site_admin": true
+    },
+    "parents": [
+      {
+        "sha": "b1d10ef4dcc953df6afa0dc1895d594d8f46f313",
+        "url": "https://api.github.com/repos/atom/atom/commits/b1d10ef4dcc953df6afa0dc1895d594d8f46f313",
+        "html_url": "https://github.com/atom/atom/commit/b1d10ef4dcc953df6afa0dc1895d594d8f46f313"
+      }
+    ]
+  }
+]
