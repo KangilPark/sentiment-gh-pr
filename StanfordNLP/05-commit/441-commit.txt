@@ -1,0 +1,2 @@
+Add -p switch to runner.rb for running UI tests in parallelUsage: `./runner.rb -p 3` will run UI tests 3 at a time.
+Switch from threads to processes so ENV vars aren't shared

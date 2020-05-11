@@ -1,0 +1,17 @@
+Changed Force to Actuation for all relevant Actuator's member functions(to make naming more consistent and descriptive; including fcns as getForce, setForce,computeOverrideForce, overrideForce, isForceOverriden, setOverrideForce, getOverrideForce)
+Merge latest master to ForceToActuationRename branch
+Added more explanation to getStress comments.
+  Negative
+Adjusted some spacing
+Renamed variable force to actuation in TorqueActuator::computeForce(to clarify actuation is being overridden not force)
+Removed comments left to check QueryPerformanceCounter(as it's not used anymore and we just use e.g. std::clock_t startTime = std::clock();)
+Renamed output actuation to use lowercase(to be compatible with conventions)
+Removed doxygen-style comments in Actuator.cpp and kept only internal comments.
+  Negative
+Updated ScalarActuator comments to reflect the Rename
+Updated actuation signals to actuation.
+  Negative
+changed some API references to get/set Force()
+replaced setForce with setActuation
+changed back to getForce
+  Negative

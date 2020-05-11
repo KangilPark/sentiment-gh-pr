@@ -1,0 +1,3 @@
+Back all App Lab levels with channels, not the LevelSource table
+Code review feedbackRemove milestone image and add unit test.
+Try fixing applab factory for rake test

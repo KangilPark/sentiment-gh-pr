@@ -1,0 +1,6 @@
+Client nodes have a name on initial creation
+Localize default node name
+Remove node update that's unnecessary now that status is not stored
+Rename getTable_ => getTable and heartbeat_ => heartbeat
+Rename buildRow_ => buildRow
+Rename onFailedHeartbeat_ => onFailedHeartbeat

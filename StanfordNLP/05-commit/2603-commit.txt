@@ -1,0 +1,2 @@
+scroll student list in teacher answer viewer panel
+teacher answer viewer: stay in section when viewing answer or trying yourself, clean up resizing js

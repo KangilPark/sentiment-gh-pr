@@ -1,0 +1,6 @@
+Added handling to only define used rfc2119 termsAddresses the issues presented in #345
+Fixed formatting of else clauses
+Added braces to scope if clauses.
+  Negative
+Added a note about how the counter is not used.
+  Neutral

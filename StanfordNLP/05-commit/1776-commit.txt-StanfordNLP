@@ -1,0 +1,27 @@
+First version of throughput-limited routing.
+  Neutral
+Router will pick up packet on first tick it appears if bandwidth is infinite.
+  Negative
+Router scheduling multiple packets, batch-processing packets when they fit within bandwidth.
+  Negative
+Adjust packet scheduling to happen on message queue change instead of on tick, and add test to demonstrate pessimistic scheduling.
+  Negative
+Add log2 scale slider control to UI, not hooked up to anything yet.
+  Negative
+Attach bandwidth control to shared router property.
+  Negative
+Remove unused method in NetSimRouterNode
+Add options to level configuration for hiding the bandwidth control and for setting its default value.
+  Negative
+Levelbuilder support for router bandwidth options.
+  Negative
+Use lodash find instead of unsupported Array.prototype.find.
+  Negative
+Oops
+Test simplification
+Clean up code that selects messages past their scheduled time and ready to route.
+  Negative
+Throw on bad method call
+Style changes, reduce nesting
+Further style adjustments, this time on utility methods.
+  Negative

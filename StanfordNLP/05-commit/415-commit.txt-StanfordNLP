@@ -1,0 +1,4 @@
+Fix copy, paste and input deselect in secondary block spaces
+Code review feedback, and deselect call block when clicking edit
+Be defensive in case activeElement doesn't exist or won't blur
+  Negative

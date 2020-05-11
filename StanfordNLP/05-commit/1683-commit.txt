@@ -1,0 +1,13 @@
+Allow composing many packets at once.
+Remove packet button
+Improve router handling of multi-packet messages
+Clean up local client handling of multiple messages.  Extract multi-entity deletion to NetSimEntity.
+Routing test
+Change remove packet button to an 'X', only show it if more than one packet is present.
+Add level config option to show/hide the 'add packet' button
+Use font-awesome icon for remove-packet button
+Don't hide packet info columns in log
+Rename keypress handler generator, stricter check for default values
+Annotate rowType list.
+Remove unneeded TODO
+Use correct array-clearing idiom

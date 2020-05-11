@@ -1,0 +1,5 @@
+Support built-in context menu items
+Add cut/copy/paste built-in context menu items
+:lipstick: simplify assignment using coffeescript magic
+Add undo, redo, delete and select all commands to context menu
+  Negative

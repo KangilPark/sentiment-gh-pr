@@ -1,0 +1,30 @@
+Add line-ending-selector to packageDependencies
+Compile babel files in place during compile task
+convert-tabs-to-spaces
+Write babel-compiled JS files to app dir
+Honor /** use babel */ in addition to 'use babel'
+Don't use Buffer::equalsNode 0.10 doesn't have it
+Use same babel options for compiling bundled packages
+Merge remote-tracking branch 'origin/master' into mb-bundle-line-ending-selector
+Use source-map-support to handle stack trace conversionPreviously, our Error.convertStackTrace function was provided by coffeestack,which only works for coffee-script. This adds a dependency on 'source-map-support',which works for any source file with inline source maps.This also refactors the code for registering our compilers (coffee-script,typescript, and babel) so that caching logic is shared.
+Move babel config to a separate file in static directory
+Map line numbers in onerror handler w/ source-map-support
+Don't match newlines when finding source-map data
+Replace 'use babel' -> '@babel' in comment directive
+:arrow_up: grim to drop its custom CoffeeScript stack trace supportIt’s interfering with our global stack trace support.
+Merge branch 'master' into mb-bundle-line-ending-selector
+:art:Signed-off-by: Max Brunsfeld <maxbrunsfeld@gmail.com>
+Fix inline source map regexNeed to enable multi-line mode after allSigned-off-by: Max Brunsfeld <maxbrunsfeld@gmail.com>
+Generate sourceFiles in CoffeeScript source maps correctly
+Use compile-cache in browser process (for dev mode)
+Don't use es6 features in compile-cacheAPM requires it directly, and it uses an older version of node
+Merge branch 'master' into mb-bundle-line-ending-selector
+Add sourceURL comment to all compiled js files
+:art:
+:fire: Unnecessary joining and splitting
+:racehorse: Minimize dependencies loaded before the module-cache
+Defer coffee-script require, prevent it from reassigning prepareStackTrace
+Add CompileCache spec
+Don't make prepareStackTrace unwritableThis breaks other code (such as Grim) that may want to temporarilyuse a different prepareStackTrace function.
+Catch errors when retrieving source maps
+:fire: File extension

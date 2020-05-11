@@ -1,0 +1,30 @@
+Start async spec over in JS
+Start adding the troublesome buffer-events first
+add status-changed on reload spec
+Flesh out ::destroy()
+Add standardjs config to package.json
+Use async’s destroy callback in repo provider.
+Destroy async repo from sync repo
+Merge branch 'master' into dh-async-repo
+Get these tests going.
+Async/await a lot of things.
+Async harder.
+Merge branch 'master' into dh-async-repo
+Cite it.
+Merge branch 'master' into dh-async-repo
+remove devDependencies due to license issues
+add license overrides for shelljs and log-driver
+Add empty ignore array to standard config- This version of grunt-standard requires SOMETHING to be set here, or it dies  hard because it tries to push undefined into the array of ignored paths
+Clean up lint errors from `./script/grunt standard:src`
+coffeelint fix
+unforce spec
+add final buffer event spec
+It's better if we actually run the tests.
+Merge remote-tracking branch 'origin/dh-async-repo' into dh-async-repo
+Copy relativize and getPathStatus from #9469
+Use our own ::relativizeThis allows us to remove the git-utils import.
+Merge branch 'dh-async-repo' of github.com:atom/atom into dh-async-repo
+await getCachedPathStatus in specs
+Use asyncIt here too.
+:fire: terribleWait.
+Revert "Use our own ::relativize"This reverts commit 0322d8d3dada0334edba74768ce4b54725ca7757.

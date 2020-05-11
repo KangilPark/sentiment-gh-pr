@@ -1,0 +1,28 @@
+Move internal things into an internal section
+Basic scoped settings in Config works
+Reorganize private methods into section
+fix value and default value object checks
+Shift the args before coercing the value
+Remove unused method
+Syntax calls into atom.config for scoped properties
+Add deprecations to the syntax scoped property methods
+Fix specs for settings view.
+Use config in spec helper
+rename method
+Use config rather than syntax for scoped properties
+Use disposables for removing properties
+Remove special method for language mode
+Fix specs
+Remove +default junk
+Ugh, add settingsForScopeDescriptor back It’s used by language mode and autocomplete for different things
+Can remove the clearing of scoped propertiesConfig is being created on each spec run!
+addScopedDefaults -> addScopedSettings
+Pull observing out into special methods for global config
+Implement observing on scoped properties
+:memo: Update docs for scoped settings
+Add schemas for scoped configs
+Moar :memo:
+:lipstick:
+Fix warnings from schema incorrectness
+Clean up docs
+addRawScopedValue -> setRawScopedValue

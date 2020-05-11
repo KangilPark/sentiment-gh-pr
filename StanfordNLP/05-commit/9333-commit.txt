@@ -1,0 +1,5 @@
+Add section on reporting bugs to contributing guide
+Fix typo
+Add GIF recording tools for Linux
+Use consistent order and clarify screenshots and gifs item
+:art: :hammer: words

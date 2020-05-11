@@ -1,0 +1,9 @@
+Only focus when the component is mounted
+Add `will-insert-text` and `did-insert-text` to `insertText()`
+::getModel() returns the editor
+Sometimes there might not be a selection.
+Need to return a range when the text is inserted
+Remove duplicate getModel()
+preventDefault -> cancel()
+Fix specs
+Revert "Sometimes there might not be a selection."This reverts commit a73e6e5bd07e07f38ee5295a33d919a92e2e2635.

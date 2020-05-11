@@ -1,0 +1,6 @@
+Introduce atom.directory-provider service.A `Project` will always have a `DefaultDirectoryProvider` thatwill be used if there are no other `DirectoryProvider` objectsthat can produce a `Directory` for a path.
+Introduce atom.directory-provider service.A `Project` will always have a `DefaultDirectoryProvider` thatwill be used if there are no other `DirectoryProvider` objectsthat can produce a `Directory` for a path.
+formatting fixes
+Create a comprehensive test for the new behavior in Project.
+kill assertions about directoryProviders
+reword it() message

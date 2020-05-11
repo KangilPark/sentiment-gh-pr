@@ -1,0 +1,51 @@
+WIP: First stab at custom element for panesStill need to create a SpacePen shim for access via `atom.workspaceView`property so we?re backward compatible with packages, but it basicallyworks.
+  Negative
+Handle pane commands on PaneElement via command registry
+Keep existing PaneView SpacePen API working as beforeWe will eventually deprecate all access to views via`atom.
+  Negative
+workspaceView`, which is the only way to get a reference toinstances of PaneView.
+  Negative
+Draining the swamp!
+  Positive
+Use Pane::onDidAddItem instead of ::observeItemsThe former includes the index at which the item was added and the latterdoes not.
+  Negative
+Remove Pane::getViewClass as we now use a view provider
+Restore $.
+  Negative
+fn.element propertyWe define element in certain space-pen views, but this makes itavailable for all jQuery objects.
+  Negative
+Can?t remove it from the prototype.
+  Neutral
+:lipstick:
+Upgrade autosave to fix specs
+Add PaneAxisElement
+Upgrade space-pen for simulated dom attachment bug fix
+Only dispose PaneElement subscriptions when pane is destroyedNot when the element is detached, because it might be reattached.
+  Negative
+Don?t emit repeated attached events for the same PaneView
+Remove the old root view properly
+Remove stray log
+Move shell command installation to workspace model
+Move PaneContainerView::confirmClose to the model layer
+Mock out document.title with Object.definePropertyPreviously the WorkspaceView::setTitle was mocked in specs to preventthe title from changing.
+  Negative
+But I would like to move the title update logicwithout breaking assertions, so now we can assert directly ondocument.title.
+  Negative
+Maintain document.title in the workspace model, not the view
+Update document edited status in workspace modelThis also fixes a previous oversight where the status wasn?t updatedwhen switching between pane items with different modified status.
+  Negative
+Add WorkspaceElement
+Apply workaround for clearing of focus upon loading of windowAfter the first window focus event, the focus is getting cleared backto document.body regardless of the prior active element.
+  Negative
+Refocusingworkspace on a delay after the first window focus event works aroundthe problem.
+  Negative
+Clean up debugging
+More cleanup
+Remove methods carried over from old view
+Rename deprecatedViewEvents to deprecateViewEvents
+:lipstick: spec language
+Move shell command installation entirely into CommandInstaller
+Make $::view return __spacePenView from the first element if present
+Allow WorkspaceView to be instantiated directly for compatibility
+Fix command-installer-spec
+  Negative

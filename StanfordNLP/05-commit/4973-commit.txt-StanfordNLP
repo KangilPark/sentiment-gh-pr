@@ -1,0 +1,5 @@
+Log scopes to notification instead of consoleFixes #4969
+Use list.map instead of _.
+  Negative
+map list
+  Neutral

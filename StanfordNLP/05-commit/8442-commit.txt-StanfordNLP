@@ -1,0 +1,42 @@
+Enable Portable ModeThis PR sets the default ATOM_HOME to be relative to atom.exe, if thefollowing cases are true:1.
+  Negative
+We're not in DevMode1.
+  Negative
+We're on Windows1.
+  Negative
+The EXE path is not in the normal installed locationThis allows users to take the entire Atom folder and use it as a"Portable" application (i.e. portableapps.com)
+Patch the browser process too
+Correctly handle devMode
+Merge remote-tracking branch 'atom/master'
+Merge branch 'master' into portable-modeConflicts:	src/browser/main.
+  Negative
+coffee
+Implement Portable ModeAccording to these specifications:Portable mode only applies to Windows (for now)Portable mode only applies if ATOM_HOME is not setIf there is a .
+  Negative
+atom directory as sibling to directory with running process	use that as ATOM_HOME
+Remove superfluous check on ATOM_HOMEalways set at the process level, so always set here
+Fix broken focused suite in spec
+Added command line parameter to set portableIf parameter included, home directory will be copied to the portablelocation to make this a portable install
+Add notification if Portable Home not writable
+Clean convention inconsistencies for portable mode
+Fix function names - consistent with convention
+Always include portable home path in warningwhen warning that portable home path not writable
+Remove explicit returns
+Restore check on ATOM_HOME(undo db57479bf92474bf9bfb832c70a2c5c947238e8d)Check on ATOM_HOME is not superfluous - needed on Linux because ofdifference in inheriting environment variables between browser and renderprocesses
+Undo add command line parameter to set portableundo 4312f76ed7162b85cc10a6caa044c8881045a666 to include this in a pullrequest of its own
+Escape characters is portable path not writablewarning to resolve missing backslash and other potential problemsresulting from the markdown-parsed nature of the display of notifications.
+  Very negative
+Simplify markdown escaping for warningby using a regular expression instead of multiple replaces
+Merge branch 'master' into portable-modeConflicts:	src/atom-environment.
+  Negative
+coffee
+Remove unused function parameterfor setupAtomHome function no longer needing args
+Fix merge problem and missing function callMerge resulted in a missing require and change to remove unused functionparameters resulted in not calling function
+Fix function name to be consistent with convention
+Remove unused parameterto keep the code clean and readable
+Revert moving parse of command lineto the first line of start function because the move is not necessarywithout having the code for using a command line parameter to set Atom toportable mode.
+  Very negative
+This belongs on that branch and in that pull request.
+  Positive
+:art:
+  Neutral

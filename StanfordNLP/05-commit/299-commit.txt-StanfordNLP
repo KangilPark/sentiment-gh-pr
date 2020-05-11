@@ -1,0 +1,24 @@
+Replace FINAL_11 with final.
+  Neutral
+Comment about a TODO when moving to SWIG 3.
+  Neutral
+override final -> final
+override final -> final
+Use override final instead of just final.
+  Negative
+Make (Object|Simple)Property into final classes.
+  Neutral
+Revert "Make (Object|Simple)Property into final classes.
+  Neutral
+"This reverts commit 97d85beb181b0e7bd21e9bfc732ce192ac78cbc0.
+  Negative
+final -> override final in Property.
+  Neutral
+Remove virtual when overring virtual methods.
+  Neutral
+Millard muscles, remove unnecessary virtual.
+  Negative
+Millard muscle remove unnecessary virtual.
+  Negative
+Component measure "final" -> "override final".
+  Positive

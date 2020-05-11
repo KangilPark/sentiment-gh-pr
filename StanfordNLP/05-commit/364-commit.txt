@@ -1,0 +1,3 @@
+SecurityTokenDescriptor.Claims changed to ClaimsIdentity.Fixed WriteToken
+Added override for CreateToken.Use C#6 syntax.
+Use 'nameof'Add negative tests

@@ -1,0 +1,20 @@
+Add verify-requirements util
+Use verifyRequirements in script/bootstrap
+Update bootstrap requires
+Add better python path description
+Merge remote-tracking branch 'origin/master' into cj-add-python-check
+:checkered_flag: Verify python version for buildReferences:https://github.com/TooTallNate/node-gyp/blob/56dcb889091a6a0594854ccc517e498b21078d5f/lib/configure.js
+Merge branch 'jugglingnutcase-exec-python-for-version' into cj-add-python-check
+Rename postVerification method to bootstrap
+Mimic Atom?s if/else style convention
+Reuse pythonExecutable variable
+Update error messages
+Assume the PYTHON env points to python.exe
+Make all verify requirements methods take callbacksThis moves the error handling to bootstrap and also allows us to display a success message.
+  Negative
+Add better python error message
+:lipstick:
+Use childProcess directly
+Use process.exit
+Reorder if/else check
+  Negative

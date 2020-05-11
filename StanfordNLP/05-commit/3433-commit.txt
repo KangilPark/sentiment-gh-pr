@@ -1,0 +1,7 @@
+Select row when clicking the gutter
+Support selecting multiple rows with meta-click
+Fix indentation to make coffeelint happy
+Dont propagate fold icon clicks to editor component
+Preserve folds when selecting rows by clicking the gutter
+Respect preserveFolds attribute when creating selections from markers
+Merge branch 'master' into iz-gutter-click-select-line
