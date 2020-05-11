@@ -1,0 +1,17 @@
+changes in this file are important because, in dev, we have lots of rawlses that fiddle with groups that may already have members we are trying to add or not have members we are trying to delete. It will also come in handy when blowing away an existing database.
+had to switch to a future transaction because addUsersToAllUsersGroup is a future
+changes here and below in this file are refactoring to enable reuse
+the old way makes the next line unreachable
+Shouldn't this go to a logger? (not println)
+What happens if I try to create my own group called this? Or update it?
+What's the difference between  `toFutureTry(Future(dataSource.inTransaction() { blah` and  `toFutureTry(dataSource.inFutureTransaction(){ Future( blah`?(i.e. what does the combination of inFutureTransaction and pushing the Future into the txn achieve)
+Oh, maybe you explained below.`Future( inTx` is "equivalent" to `inFutureTx( Future` ?
+Can you document the arguments to this function? My guess would be that `users` go into the `group` but without reading the code I don't know what `subGroups` is for or what that bool does.
+:-1: bool to distinguish add and remove. Can we have an OPERATION enum or something?
+more descriptive variable name than `list` please
+oops. debug code
+only admins can create or update groups and they should not do naughty things but they have full control
+you would user inFutureTx if the tx needs to be shared across multiple futures. If it is only required in 1 future it is probably better to use Future { inTx...
+this is prior code so I am not going to fiddle with it. I don't really like it either but have not really thought of something better. I don't think a 2 value enum is really any better.
+Willing to accept that a naughty admin could mess with the group. Can you confirm that trying to create your own group called All_Users results in an HTTP Conflict?
+confirmed

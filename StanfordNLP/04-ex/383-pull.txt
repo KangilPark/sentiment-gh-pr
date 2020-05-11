@@ -1,0 +1,30 @@
+this was just some unrelated confusion clean up
+this is an unrelated bug fix
+this is pretty much completely rewritten, the diff is not helpful
+Can this match be moved up to queryExecutionServiceForStatus?  It would be a little clearer if this method took a WorkflowRecord without the Option.
+If the get is moved to getWorkspace (so it returns `ReadAction[Workspace]`) then any None.get errors will be closer to the immediate cause, so easier to debug if it ever happens.
+Was this intentional? (probably doesn't matter either way)
+is it worth pulling the duration out into config, so we can tune it per-environment? (brainstorming here, not suggesting)
+potentially add a debug log statement here, noting the date/time that we marked the submission finished? (I'd love to see that in the db table, but that's way out of scope for this PR)
+typo on "outputExprepressions" ... should be "outputExpressions"
+what happens on error in one of these three updates? Can/should this be transaction-ized?
+I can do it in the first instance mentioned but not here because the for comprehension is unwrapping things so getWorkspace(dataAccess) is not actually of type Option (although I could map it...) 
+I hate vars :)```val (partitionEntity, partitionWorkspace) = workflowOutputs.partition({ case (k, v) => k.startsWith("this.") })val entityAttributes = partitionEntity.map({ case (k, v) => (k.stripPrefix("this."), v) })val workspaceAttributes = partitionWorkspace.map({ case (k, v) => (k.stripPrefix("workspace."), v) })```
+it was intentional, the name overlaps with another method config in the test fixture
+it is written to be configurable but has not been a priority to push it all the way into config
+there is a debug log in the receive of the actor... do you think that is good enough?
+it is in a transaction, the transaction demarcation is in handleStatusResponses
+this is actually copied from the old code, it works so I left it alone but if you want me to change it I will
+this is a pretty small query ... but I think it's doing a table scan. Potentially we would benefit from an index on the STATUS column.Will mysql use the foreign key index (WORKFLOW.SUBMISSION_ID->SUBMISSION.ID) when querying on submissionId, without the join to the submission table?
+spelling
+explain plan shows it is using the FK index:```MySQL [rawls]> explain select `ID`, `EXTERNAL_ID`, `SUBMISSION_ID`, `STATUS`, `STATUS_LAST_CHANGED`, `ENTITY_ID` from `WORKFLOW` where `SUBMISSION_ID` = 0x043AE84815084E74A7C027ECC3308B6C and STATUS in ("Submitted", "Running", "Aborting");+----+-------------+----------+------+---------------+-----------+---------+-------+------+------------------------------------+| id | select_type | table    | type | possible_keys | key       | key_len | ref   | rows | Extra                              |+----+-------------+----------+------+---------------+-----------+---------+-------+------+------------------------------------+|  1 | SIMPLE      | WORKFLOW | ref  | FK_WF_SUB     | FK_WF_SUB | 16      | const |   37 | Using index condition; Using where |+----+-------------+----------+------+---------------+-----------+---------+-------+------+------------------------------------+```
+:-1: 
+Be consistent for all 3 about collecting here vs. collect in the function - either way is fine
+Should this be configurable?  If so, make a JIRA to do it later rather than bothering for now.
+ok
+spelling
+(fixed, thanks!)
+Try doing the explain, but leaving out the `SUBMISSION_ID = 0x043AE84815084E74A7C027ECC3308B6C` clause - in other words, just filtering by status. Explain shows it's doing a full scan on that. I suspect with both clauses, it filters first to the submissionId, then does a scan over the remainder of records. I don't know how much another index would optimize this, but I know for sure the statuses are not indexed.
+the actor receive log message just states that the actor is checking to see if a submission can be finished (""handling execution service response ..."). I'd like to see - not super urgent - a message that the monitor actually did close a submission, and with which status.
+Scala does have StringLike ... JavaScript has truthy/falsey ... SubmissionMonitory sounds like fun
+I am sure it would do a full table scan without the submission id but what does that prove? The query that we run uses the submission id.Anyway, there is probably benefit to having it so we can query for all running workflows, etc.

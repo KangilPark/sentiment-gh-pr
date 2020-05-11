@@ -1,0 +1,76 @@
+Allows the student to compose multiple packets at once, and send them all together.
+  Negative
+Can be enabled/disabled from level configuration.
+  Neutral
+Note: Since the above screencast was taken, I updated this PR to show the packet info columns in the log, and to use a font-awesome icon for the "remove packet" button instead of the letter X.
+  Negative
+The big hairy part of this change is extracting most of NetSimSendPanel into a NetSimPacketEditor, and creating a one-to-many relationship between the two.
+  Negative
+Along the way I did some cleanup to the sending/receiving/processing logic of both the LocalClientNode and the RouterNode, adding a few helpers for running a series of asynchronous requests (e.g. NetSimEntity.deleteEntities) and adding new tests around that behavior as well.
+  Negative
+It's like continuously feeding a caterpillar into a guillotine
+That's depressing.
+  Negative
+How did YOU learn recursion?
+  Neutral
+I usually like to flatten my recursive methods (shallower stack and all that) but this is an asynchronous operation.
+  Negative
+That said, do you suppose I ought to find a way to kick off all of these requests at once and wait for all of their promises to fill, rather than doing them in sequence?
+  Negative
+This seems clear enough and it's working, I'd only change if it would cause a (1) much better average-case experience [and likely not significantly higher performance needs on the backend] or (2) less-bad worse edge-case user experience [i.e., would leaving the tail of a list un-deleted be a better/worse state than leaving N/10 items undeleted?]
+  Negative
+Seems perfectly fine the way it is to me assuming the user-effect difference is not likely significant.
+  Negative
+Also something that could be revisited if things crop up in testing
+That gives me two reasons to leave this the way it is: I'd rather leave the tail of the list un-deleted on error.
+  Negative
+Un-deleted messages will be left "on the wire" and picked up again on the next tableChange event.
+  Negative
+Leaving any N/10 items on the wire would produce out-of-order routing, which IS something we want to explore, but it should be done intentionally by the simulation, not accidentally as a result of a network error.
+  Very negative
+At some point we're going to animate the messages being sent, a process that will scale up with the number of packets going out, at a higher coefficient than the actual sequential sending is likely to.
+  Negative
+We might even want to start each packet send as the animation for the previous send completes.
+  Negative
+This model sticks closer to that eventual outcome.
+  Positive
+Would you ever want a packet index of 0?
+  Negative
+Ditto packet count
+Hm... right now they start at 1, but you're correct that I could future-proof this with a more explicit check.
+  Neutral
+This is neat!
+  Positive
+The name sounds a bit too much like a collection for a generator, maybe something like keypressHandlerWithWhitelist(whitelistRegex)?
+  Negative
+Maybe new struct type?
+  Neutral
+Or if there is one, could @type annotate the list
+Interesting, so for keypresses it gets /first/ reformatted on key up, then for right-click-to-paste it gets reformatted once focus changes to elsewhere (or immediately on paste)?
+  Neutral
+Just curious, do keyboard-based pastes ctrl+C and ctrl+V hit the keypress handler?
+  Negative
+Yes, keyboard-based pastes do hit the keyboard handler.
+  Negative
+We do some double-work on this one, for sure, but I'd rather it be over-active and then tone it down as performance issues come up, than feel unresponsive.
+  Negative
+Also note that we skip updating the field currently being edited on the keyup handler, but we don't on the blur handler.
+  Negative
+Is watermark the hint text that shows up in gray for the field and goes away on user input?
+  Negative
+Yep.
+  Neutral
+TODO
+Does a reference to this array ever get stored?
+  Neutral
+If so, I think we may use the idiom this.packets_.
+  Negative
+length = 0 elsewhere (where goog.array.clear is not available).
+  Neutral
+If not, all good
+Nice catch.
+  Negative
+I don't store a reference to this array anywhere, but I'll adopt that pattern just in case.
+  Negative
+LGTM, nice testing!
+  Positive

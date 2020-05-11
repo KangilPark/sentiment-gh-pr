@@ -1,0 +1,5 @@
+I think this should be named `foldsIntersectingBufferRowRange`, based on the query.
+Great job here. Querying every single line is insane. Definitely leftover from the dark ages.
+Yeah, I thought to this as well but this _seems_ inconsistent with the method below (`::foldsContainingBufferRow`) which performs a similar query. What do you think?
+Makes sense, but in that case, if a fold intersects a single row it also contains it. In this case it's a range of rows, and we know these folds don't fully contain the range, otherwise there would only be one big fold. I'd be down renaming the other method for clarity/consistent if it isn't being used by packages (it's private but still might as well avoid breakages just in case).
+A cursory search showed up that there's some reference to `foldsContainingBufferRow` in packages (some typescript header files), so I think it's just better to rename the new one only (7d97241). Thanks! :sparkles: 

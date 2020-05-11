@@ -1,0 +1,174 @@
+This is super in-progress.
+  Positive
+A lot of this information is sort of tribal knowledge, but I wanted to get it in out in the open and us on the same page.
+  Neutral
+This should give us somewhere to look when we're like "how should I name that method/event?"
+  Neutral
+, or "how do I doc a method that takes a callback that takes an options hash."
+  Neutral
+Event naming is hard.
+  Negative
+The other day @nathansobo said something like "I dont like how our events are named", and we talked a bit about naming.
+  Negative
+Right now they are all past tense: contents-modified, markers-updated, etc. and they are pretty consistently named.
+  Negative
+We talked about how preemptive events should be named.
+  Negative
+We came up with will-insert-text and did-insert-text.
+  Negative
+If we went down that route, then all the events would need to be renamed to be in this format: did-modify-contents, did-update-markers.
+  Negative
+I dont think we want to rename all the events (I dont, man, I dont).
+  Negative
+But I would like to have a story for preemptive events like will-insert-text.
+  Negative
+Thoughts?
+  Neutral
+I definitely like the consistency of will- and did-.
+  Positive
+We could probably add a feature to Emissary to allow events to be deprecated and warn people at subscription time.
+  Negative
+Talking it out with myself, I like the will-x, x and did-x pattern also.
+  Negative
+No matter what is decided, adding the feature to Emissary is probably a good idea.
+  Positive
+I'm working out all these now, experimenting with biscotto and the tomdoc parser.
+  Negative
+@subscribe
+Might be worth mentioning "one clear way to unsubscribe"
+Perhaps this isn't the best place to raise it, but what about inverse access?
+  Negative
+In other words, getting the view (or views) from the model?
+  Neutral
+Is there going to be support for this in the API?
+  Negative
+Or is it considered a smell?
+  Neutral
+That's currently our plan.
+  Neutral
+We want to deprecate workspaceView and have all access go through the model to eliminate the confusion of which to use.
+  Negative
+If you absolutely need a view object (which you should only need if you need to do unsafe things to the DOM) then you'll call workspace.getView(model) to get the view corresponding to the model.
+  Negative
+I bloody that!
+  Neutral
+What about the will-x event and x event being cancelable?
+  Negative
+For example the following scenario: The will-x event is raised My listener does something in response to the will-x event The x event is raised In the process of handling the x event, it is canceled Should the "something" in step two be "rolled back"?
+  Negative
+Or should we say that one can only cancel things from the will-x event?
+  Neutral
+Once the x starts, it is going to complete unless there's an error.
+  Negative
+I'm wondering if preventDefault is actually the correct name here.
+  Negative
+That makes sense in the context of a browser having a "default action" for a bubbled DOM event, but for us a simpler word like cancel seems more appropriate.
+  Negative
+I think there would only be will-x and did-x.
+  Neutral
+The will-x event is cancelable, but not did-x.
+  Negative
+I'd like to think we can get away with not informing preceding event handlers that the action was cancelled.
+  Negative
+I can't think of a way to do it that's not fairly ornate.
+  Negative
+Perhaps in situations where it's needed the object could emit an x-cancelled event as well.
+  Negative
+I agree on the preventDefault thing, I was going to mention something about that but my brain got stuck on the future/present/past tense event naming stuff.
+  Negative
+Ok, just will-/did-x where will-x is cancelable makes sense.
+  Negative
+Noted.
+  Neutral
+I like cancel rather than preventDefault.
+  Negative
+You cool changing event names in text-buffer, et al. as well?
+  Neutral
+Yeah so long as we deprecate the old ones.
+  Negative
+We need to add that as an emissary feature.
+  Negative
+Another idea that crossed my mind.
+  Neutral
+I wonder if we should bite the bullet and prefix private instance methods with _ to discourage public access as is the norm in many JS codebases.
+  Negative
+I think it looks ugly as hell which is why we didn't do it originally, but the practical concerns of maintaining a big ecosystem are starting to outweigh my sense of aesthetics.
+  Negative
+I'm not super strong on this, but thought I'd raise it.
+  Negative
+@nathansobo I agree on the ugliness.
+  Negative
+I really don't like the "name decoration" kind of practice in general ... but ... I believe the two most palatable options are: Decorating the names of private instance methods Exclude private instance methods from the official API documentation and understand that (when things become more solid) people who go code spelunking aren't going to be discouraged by an underscore I wonder if there is a way to do some sort of static checking on https://atom.io or low-cost run-time checking within the app a la Timecop for accesses of private instance methods of API classes?
+  Negative
+Put up some sort of warning to the package user, "This package depends on private API voodoo, it could break at any time!"
+  Negative
+I like this idea.
+  Neutral
+And regarding the performance aspect, perhaps it would be enough to this check during installation, unless manually invoked from e.g. the Developer submenu?
+  Negative
+And maybe even add a note along the lines of "Let the developers of the package know", to encourage them to file a report.
+  Negative
+Quick question then: If users are to be allowed to spelunk as they please, would it be possible to create a kind of "atom-lint" core package, whose purpose it is to warn developers if they start breaking conventions you guys have set out?
+  Negative
+This way all guidelines and naming conventions etc, might be pushed into this custom package, which can be updated when needed so developers would always get lint-type decorations on code that you wouldn't approve of.
+  Negative
+It would be a gentle reminder while writing code, without being restricted from doing whatever one wants.
+  Neutral
+Plus, it's centrally manageable.
+  Negative
+But I don't know how hard it would be to write such a custom linter.
+  Negative
+@batjko It would definitely be possible, but with regard to the use of private instance methods, I was talking about code that would be in other people's packages ... which the Atom team wouldn't necessarily have a say in how it is written.
+  Negative
+@lee-dohm Yes, but I figured using a linter for this would allow you to "suggest" following certain guidelines to package developers (core and third party), if they do use Atom for their development of course, without forcing them one way or another.
+  Negative
+And they could always disable it if they get tired of it.
+  Negative
+It's probably not unreasonable to offer guidance to everyone creating anything for Atom.
+  Negative
+Just a thought though.
+  Neutral
+I just imagine this to be a very user-friendly and neat way of making these conventions and guidelines directly available to developers, as opposed to just pointing to an online location to read documents.
+  Positive
+I think the costs here outweigh the benefits.
+  Neutral
+We would have to do it everywhere.
+  Negative
+We would need to decide which methods on internal classes are private, and protected, and prefix those.
+  Negative
+I really dont think we'll gain much by doing it.
+  Negative
+I totally agree with this: @batjko an atom linter is interesting.
+  Positive
+At the moment biscotto is bugged and does not show these nice little badges that say 'internal' and 'private'.
+  Negative
+Once it does again I feel it would sufficient to mark private/Internal methods as what they are and make sure the API discourages the user to use them directly.
+  Negative
+Also, +1 on the model thingy.
+  Negative
+BTW isn't there a new package named api for the sole purpose of discussions like that?
+  Negative
+:)
+@benogle just looking at old PRs and came across this, it this something we want to or ?
+  Neutral
+It would be nice to eventually update it and ship it.
+  Neutral
+Sorry for an off-topic stupid question, but what does the snowflake mean?
+  Negative
+Ice.
+  Neutral
+Put it on ice, stop working on it.
+  Neutral
+So icing means what?
+  Neutral
+I thought an issue could only be open or closed.
+  Neutral
+Yeah, he was asking if we wanted to close it.
+  Neutral
+the opposite of essentially
+This still something we want to ship or should this be closed?
+  Negative
+Ugh, maybe it doesnt matter now.
+  Neutral
+Would be nice, but not a big deal.
+  Neutral

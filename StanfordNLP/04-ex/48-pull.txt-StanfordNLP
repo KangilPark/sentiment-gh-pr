@@ -1,0 +1,112 @@
+Can we get a javadoc for the class?
+  Neutral
+Should add javadocs explaining the format that this is expected to be in, referencing the fact that `ClientBatchJob` is what populates the JobParameters with this as a single string.
+  Negative
+Given that I am anal when it comes to immutability and such: This Tasklet is meant to be immutable, so these values should all be passed into the constructor, not setters.
+  Negative
+``` xml<constructor-arg name="jobPath" value="#{jobParameters[path]}"/>```
+There should be a "then" joining those two lines.
+  Negative
+Actually, given the example in the javadoc, this would mess things up.
+  Negative
+"foo/bar/doo" -> {"foobar", "/doo"}
+Safer:``` groovyfinal thisPath = path.startsWith('/') ?
+  Negative
+path.substring(1) : path```
+Either make this immutable (which I see from line 112 it is not) or explicitly declare that it's expected to mutate.
+  Negative
+This is better replaced by``` groovydef jobPathSlash = jobPath + '/'if (excludePaths.any {!
+  Negative
+it.startsWith(jobPathSlash)})    throw new IllegalArgumentException("Not all exclude paths start with \"${jobPathSlash}\": ${excludePaths}")```because then (assuming things have been changed over to constructor form and the valid format of `jobPath` has been assured) the real purpose of this check (that the exclude paths are all absolute) will be met, as well as guaranteeing that they are all relative to the jobPath.
+  Negative
+Grammar Nazi: "just add it to it is paths?"
+  Negative
+:speak_no_evil: 
+Even better, as I continue to think through this, would be``` groovydef theExcludePaths = thisPathsString.split("\\*") as Collection<String>def jobPathSlash = jobPath + '/'if (theExcludePaths.any {!
+  Negative
+it.startsWith(jobPathSlash)}) throw new IllegalStateException("Not all exclude paths start with \"${jobPath}\": ${theExcludePaths}")this.excludePaths = theExcludePaths.collect { it.substring(jobPathSlash.length()) }```then you can always treat the exclude paths as relative (since later they are converted that way anyway) **_and_** you've already validated that they are legit for the job path.
+  Negative
+This is no longer needed if `excludePaths` is transformed to be relative when set.
+  Negative
+More efficient than the `minus(.
+  Negative
+.)
+  Neutral
+```` groovyfinal node = thisPath.substring(0, slashIndex)```also a bit clearer as to the intent and less likely to get caught on subtle bugs like `remainingPath` happening to be a substring in what is supposed to be `node`
+If you add 1 to the index then you're guaranteed to get a true relative path for the remaining path``` groovyfinal remainingPath = thisPath.substring(slashIndex+1)```
+If `remainingPath` below, and `excludePaths` above are both guaranteed to be relative, then this whole piece about removing a leading `/` is no longer needed.
+  Negative
+May want to add``` groovythisJobPath = (thisJobPath[-1] !
+  Negative
+= '/') ?
+  Neutral
+thisJobPath : thisJobPath[0..-2]```to guard against `/foo/` being passed in.
+  Negative
+Do we need a new session here?
+  Neutral
+Can we not use the one persisted in `ThreadLocal`?
+  Neutral
+(ClientBatchJobContext) ?
+  Neutral
+`clientWofkflowOff` is VERY lightweight step.
+  Negative
+Having said that, even if it is light weight, it actually does manage concurrency internally (so there is already multi-threading handling involved in the actual step and on that we are spawning different thread for the step it self).
+  Negative
+Do we know this split of steps is going to give us tangible benefits?If not, then I vote we keep it simple and have the steps be sequential.
+  Negative
+If there are no tangible benefits, I think this way will be harder to maintain (as you know we already have 1 Thread Per Path in the config)cc: @jdigger 
+I feel `and deleting any nodes adjacent except adjacent corresponding nodes form relativeExcludePaths` is a bit confusing and could be clearer :-)
+This is just a suggestion (and open for discussion too :) )but you could implement a `DeleteBeforeWriteStepExecutionListener` that prepares (in this case, I guess there's nothing much to prepare; but you can do anything in it) and cleans up after the step (in this case would be `session.save()`)May be it will be cleaner?
+  Negative
+:) (example : https://github.com/TWCable/grabbit/blob/master/grabbit/src/main/groovy/com/twcable/grabbit/client/batch/steps/jcrnodes/JcrNodesStepExecutionListener.groovy )
+Wondering if there is a preference / difference between `node.remove()` and `session.removeItem(/path)` ?
+  Negative
+Performance benefits are marginal at this point; but any small wins are great, especially since the complexity is managed by Spring Batch.
+  Positive
+That said it's more to establish the pattern, that we should be doing independent tasks concurrently.I hope to move namespaceSync into preFlowSync eventually, but for the sake of keeping the PR small...This will make this change will make performance gains more significant.
+  Positive
+Oops, typo.
+  Neutral
+Open to suggestions :-).
+  Neutral
+I'll try to make it more clear 
+This isn't managed by SimpleSynchronousTaskExecutioner (default) like clientJcrNodes, and namespaceSync are.
+  Negative
+It's managed by it's async counterpart, so we can't rely on our ThreadLocal "hack".
+  Negative
+The session really only needs to be shared in clientJcrNodes in my opinion.
+  Negative
+You probably know best with your research, but wondering if there is a better way to manage a session within clientJcrNodes ( Setting as a task executioner property maybe?)
+  Negative
+It's sort of an unfortunate leaky abstraction we have to rely on 
+Yes I know using ThreadLocal is kind of a last resort general but there were several things that made us use ThreadLocal instead of anything else.1.
+  Negative
+The design was simpler to have 1 session per path and we had to share the incoming input stream between steps anyways (not just `clientJcrNodes`)2.
+  Neutral
+Originally, I was trying to use Spring Batch's `ExecutionContext` to store the session (and the input stream).
+  Negative
+But, Spring Batch discourages placing large objects in its ExecutionContext, which is understandable since ExecutionContext is one of the objects persisted in the `Spring Batch's Job Repository`.
+  Negative
+.
+  Neutral
+which for our case, we have our `JcrJobRepository` layer.3.
+  Negative
+Hence, ThreadLocal was the last resort and if done properly, we know that it would always work and as mentioned above, we had to share the `inputStream` amongst the steps anyways.
+  Negative
+I do think that using the feature will make sense in some cases, but I still don't think that parallelizing `clientWorkflowOffTasklet` and `deleteBeforeWriteTasklet` makes sense (and may be its not safe either).
+  Neutral
+For example : I think its perfectly reasonable to have a workflow that will trigger when a DAM Asset is removed (may be to remove `custom renditions` for that Asset or something).
+  Negative
+For such a scenario, if we parallellize the two tasks above, it is possible that the nodes are removed before the corresponding workflows are turned off, which will result in undesirable effects.I could however see `nameSpaceSync` and `clientWorkflowOff` tasks being parallelized.
+  Negative
+I think that will be safe, but the current structure I do not think is safe in all the cases.What do others think @jdigger @jazeren1 @sikarwarvimal Paul?
+  Negative
+Although unlikely, I could see a case for that.
+  Negative
+I'll revert it back to synchronous, and we can explore making nameSpaceSync, and deleteBeforeWrite concurrent at a later date.
+  Positive
+https://github.com/TWCable/grabbit/issues/54
+Cool.
+  Positive
+The revert will be done in a separate PR I presume?
+  Negative

@@ -1,0 +1,30 @@
+If you also write the specs in ES6, `async/await` syntax could really clean up these async tests...``` jsit('does something async', function () {  waitsForPromise(async function() {    expect(await repo.getPath()).toBe('/some/path')  })})```
+What's this used for?
+Is `pathIsIgnored` synchronous?
+V8 supports the new ES6 `Array.prototype.every` method, which would be clearer and save you allocation of a new array.
+:lipstick: :art: What do you think about removing the spaces in front of the arguments? https://github.com/airbnb/javascript#18.3 Just about style. Really good work! Love the ES6 :heart: 
+Good catch - this currently conforms to [JS Standard Style](https://github.com/feross/standard) (a very presumptuous name, isn't it?) rather than AirBnB style and I'm happy with Standard. 
+Thanks for the resource. Didn't knew about it! Looks of course also good :+1: Just important that there is one style over the whole repository :+1: :clap: 
+If you want a boolean value from `refreshOnWindowFocus`, then use `refreshOnWindowFocus = Boolean(refreshOnWindowFocus)`. It'll turn `false`, `null` and others to `false` and `true` remains the same.
+in ES6, if you are only getting one parameter, you can write `(repo) => { }` as just `repo => { }`
+You don't necessarily have to return a promise from `Promise.prototype.then`
+May I suggest the eslint [`no-var`](http://eslint.org/docs/rules/no-var.html) clause?
+I actually want to check undefined here, because it should default to `true` - that is to say, `true` is `true` and `undefined` is `true`, but only explicitly set`false` is `false`, which isn't quite how the Boolean constructor works.
+That's not a bad idea. There's a bunch of other JS in the repo that won't comply to this, but we don't need to have CI fail on eslint failures right away..
+You might want to replace most of these `Promise.resolve`s here with just values.
+This should be `let` (or `const`), doesn't look like we want or need hoisting here.
+This can be changed into``` jsreturn statuses.filter(status => status.isModified())```You should probably also be able to rewrite the whole block as``` jsreturn this._filterStatusesByPath(_path).then(statuses => statuses.filter(status => status.isModified()))```
+Same deal here with the `var`, and collapsing the single return function.
+`let`
+Can be collapsed.
+`let`
+Can be collapsed.
+`let`
+`let`s, and collapses :smiley: 
+I had been trying to only use `=>` where I needed lexical this (though it snuck in here), is it typical to just use it everywhere?
+They are typically used everywhere. I use them just as I use skinny arrows in CS.
+I think that's ES7+ only
+Yes, which we have access to :smile: 
+@nathansobo ended up adding functions like these in [async-spec-helpers.coffee](https://github.com/atom/atom/blob/master/spec/async-spec-helpers.coffee). They detect if a promise is returned from the `it` function, so you can just shadow `it` and friends.
+I don't like that we have to put this here and in package.json. Anyone have ideas about how we could not do that?
+Maybe set the environment variable from within bootstrap? Or something?

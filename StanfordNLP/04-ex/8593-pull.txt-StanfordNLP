@@ -1,0 +1,13 @@
+I'd _really_ like to do this for jQuery too, but that's a big enough task that I'm saving it for another PR.
+  Negative
+Here's one of the places we no longer need to put these on the global namespace :tada:
+Pretty sure this TODO is outdated now.
+  Negative
+This was a little tricky; the `browserify-shim` entry for Radium here is now redundant with the `browserify-global-shim` entry in apps/package.
+  Negative
+json, and this was shimming Radium in tests when we don't want to anymore.
+  Negative
+Here's the second kludge we get to (mostly) remove by doing this - tests don't depend on having these on window anymore.
+  Negative
+yep
+  Neutral

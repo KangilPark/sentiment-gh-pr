@@ -1,0 +1,30 @@
+We should test those queries on stage, running `EXPLAIN` on them to make sure `MySQL` properly chooses the right index without our help.
+Why? It should be done via `pre_save` on models using translations.
+lol, I read this function definition often and never caught that...
+Not really nicer, but https://github.com/mozilla/zamboni/blob/master/mkt/search/serializers.py#L9
+mmm? does this mean that changing the field to use django's `UUIDField` is not backwards-compatible ?
+nitpick (I know it was already like this before) `id_` to avoid confusion ?
+Just commenting to remember that we need to double-check that it's working properly.
+Shouldn't this be `upload.uuid.hex` ?
+Shouldn't this be `upload.uuid.hex` ? Worried about backwards-compatibility, the API needs to accept/return uuids without dashes IMHO.
+Actually I stole that from marketplace and it's not the case regarding `pre_save` - the problem is that `save` checks for any m2n relation to have the parent saved and only after that saves the actual model so we get an error.
+hehe, yeah, it probably never hurt us but better safe than sorry.
+hmm, to be honest, drf strips microseconds when serializing - maybe we should just expect no microseconds here and fix the code that's calling it. But that also feels wrong somehow.
+I still have this explicit change on my list to check and re-check - it should be backwards compatible so this change should not happen. Forgot about it.
+Ugh. Add a comment then.
+I'd totally be in favor of stripping microseconds FWIW
+good call, will do. Although I'm a strong believer that this complicates code but too many people aren't on my side of this anyway :laughing: 
+gosh, good call - I was under the impression the signing api returned with the dashes - checked docs and that's not the case. I'll fix this.
+At least there were tests failing when I removed the other part of it and had to re-add it here to make them pass.
+Stripping them now and added a test in 989cdd5. I figured it'd be best to do that here than to strip that everytime on the input-side.
+Any particular reason for 75?  
+that was the default length of the `EmailField` in Django 1.7 and earlier, they increased that value in 1.8 but I'd like to do that separately from the general 1.8 upgrade.
+We don't want to merge this
+typo `hypheh` :)
+Why do collections even have uuids...
+Fun project : remove this field, if it's deprecated...
+eh, yeah we don't - but it's unfortunately neccessary to get circleci builds working (which actually helped finding a few issues here) so I'd remove it right before merging
+This should be done using the [override](https://docs.djangoproject.com/en/1.8/ref/utils/#django.utils.translation.override) context manager instead to avoid changing anything in the caller if there is one.
+See above.
+I have no idea but they're being used to some degreee it seems :(
+yeah, but not in this PR :laughing: - it appears `nickname` is not much used but in some interesting places so maybe not too easy to remove or maybe it is, not sure.

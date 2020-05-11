@@ -1,0 +1,90 @@
+Do you propose removing (or hiding) the existing mechanism for connecting?EDIT: Sorry; I now see your message about this below.
+  Negative
+I think we should only allow one of the two: the thing satisfying the dependency should always be on the left.
+  Positive
+I think this is necessary, otherwise it gets _really_ confusing to read code like `connect(frame, actuator)`.
+  Negative
+What about connecting components?
+  Neutral
+(i.e., Connectors)?
+  Negative
+EDIT I understand now that that's what the first signature is for.
+  Neutral
+Components can require a connection to Objects, but Objects cannot require a connection to other Objects.
+  Negative
+So you would want `static void connect(const Object& object, Component& object)`.
+  Negative
+IIRC I have used static functions in both python and MATLAB.
+  Negative
+They should be automatically wrapped without any special treatment.
+>
+  Neutral
+I now see your message about this below.Based on the template, my understanding is that we are supposed to list only the needs in the "Requirements" section, with the strategy for meeting these needs discussed in later sections.
+>
+  Neutral
+I think we should only allow one of the twoThat sounds okay in theory, but I think @aseth1 prefers the input first ("satisfy this input with this output") whereas I prefer the output first ("plug this output into this input").
+  Negative
+It wasn't clear that we would be able to agree on one or the other.
+>
+  Neutral
+Components can require a connection to Objects, but Objects cannot require a connection to other Objects.Correct.
+  Negative
+Yeah I think you're right.
+  Positive
+Oops.
+  Neutral
+Then we have redundancy, violating the requirements.
+  Neutral
+I prefer the latter (output -> input).
+  Negative
+Would it make it clearer if we call the methods connectInputToOutput & connectOutputToInput respectively?
+  Neutral
+Sorry, but I think we have enough "finalize" methods, it feels quite diluted.
+  Negative
+If we want to call it topLevel, or root or world or any other connotation to indicate actual distinction from Component level that would be clearer to users I think.
+>
+  Neutral
+Would it make it clearer if we call the methods connectInputToOutput & connectOutputToInput respectively?That could work for Inputs and Outputs.
+  Neutral
+What about Connectors like [these](https://github.com/opensim-org/opensim-core/blob/master/OpenSim/Sandbox/ExampleHopperDevice/defineDeviceAndController_answers.h#L184)?
+  Negative
+Aha, good one.
+  Positive
+The input/output relation seems like a dataflow diagram.
+  Negative
+The example here is a different kind of connection (like a depends on) at least conceptually, does that warrant a different presentation/API?
+  Negative
+I was unsure about `finalize` here but I think @tkuchida is trying to achieve something important.
+  Negative
+There are two distinct operations: (i) model-developers specifying what should be connected to what, and (ii) model-consumers telling their model to "find the things that the model-developer said you're supposed to be connected to".
+  Negative
+Right now, we use the word `connect()` for both of these operations, and that is confusing.
+  Negative
+I personally am fine with `finalizeConnections()` since it reduces the number of verbs in our interface, and the operation is similar to `finalizeFromProperties()`.
+  Negative
+One option: remove this method altogether (perhaps make it internal/private), and include "satisfying connections" as part of "finalizing from properties."
+  Positive
+This would be a larger project I think, though.
+  Negative
+We could either have a separate proposal for that, or have this proposal cover multiple PRs.
+>
+  Negative
+The input/output relation seems like a dataflow diagram.
+  Negative
+The example here is a different kind of connection (like a depends on) at least conceptually, does that warrant a different presentation/API?
+  Negative
+I think the distinction between Inputs and Connectors is somewhat artificial because both must be satisfied (just by different types).
+  Negative
+On a block diagram, Inputs and Connectors would both look like "inputs", so perhaps Connector should be renamed.
+  Negative
+Also, "input" implies directionality whereas "connector" does not, which could lead to further confusion.
+  Negative
+This proposal does not attempt to address this issue.I've updated the proposal, replacing the single `connect()` method with separate `connectToInput()` and `connectToConnector()` methods.
+>
+  Negative
+One option: remove this method altogether (perhaps make it internal/private), and include "satisfying connections" as part of "finalizing from properties."
+  Positive
+This would be a larger project I think, though.
+  Negative
+We could either have a separate proposal for that, or have this proposal cover multiple PRs.Worth exploring, but perhaps as a separate DevProp for discussing user workflow and disciplined model-building "stages".
+  Negative

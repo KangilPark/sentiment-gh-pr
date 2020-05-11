@@ -1,0 +1,30 @@
+no curlies?
+  Negative
+<U+0001F622> 
+So which one of these is a build file?
+  Negative
+Is there a corresponding commit to the non-built files in the piskel repo?
+  Negative
+I wonder if there is any value in using the react pattern of rewriting all the instance methods to be prebound to the instance?
+  Neutral
+i.e.`this.onSelectedAnimationChange = this.onSelectedAnimationChange.bind(this);`and then just referring to `this.onSelectedAnimationChange` everywhere instead of having these special `bound*` variables.
+  Negative
+You can use `Array.find` in es6 to avoid the index 0 lookup: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+In what scenario would there be no iframe or no iframeWindow?
+  Negative
+Would that not be an error case?
+  Negative
+Whoops.
+  Neutral
+Everything in [cdo]/apps/lib/piskel is from [piskel]/dest/prod after a build.
+  Negative
+I suspect what you're getting at is that we should record which piskel commit we've built somehow.
+  Negative
+Hmm... I'm being overlay paranoid because this is sort of an event handler, and I'm concerned that it might get called before the initial render.
+  Negative
+I suppose we should make sure our initialization doesn't allow that, though.
+  Negative
+paranoia is good, but if this is a "this should never happen case" then we should probably at least log an error?
+  Negative
+I guess I'm just not a fan of committing build artifacts into a repository, for a variety of reasons including the difficulty of figuring out where the build artifacts came from and how to recreate them.
+  Negative

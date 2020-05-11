@@ -1,0 +1,114 @@
+Style/MultilineIfThen: Do not use `then` for multi-line `if`.
+  Negative
+Style/IndentationWidth: Use 2 (not -13) spaces for indentation.
+  Negative
+Style/ElseAlignment: Align `else` with `if`.
+  Neutral
+Lint/EndAlignment: `end` at 212, 4 is not aligned with `if` at 208, 19
+Could you document the allowed POST body formats, now that this is getting more complicated.
+  Negative
+Good call.Is there a style guide we're using for this kind of documentation?
+  Negative
+This is a little tricky.
+  Neutral
+Since we are only checking the length here, this seems like a way that bugs could sneak in (length matches but values are different), especially since we use valid_values below.I believe the following is clearer.
+  Negative
+Add a value_valid?
+  Neutral
+method that takes the shard, table_name, and value and use all?
+  Neutral
+to make sure all values are valid:all_values_valid = values.all?
+  Negative
+{ |value| value_valid?
+  Negative
+(shard_id, table_name, value } json_bad_request unless all_values_validThen value_valid?
+  Negative
+can be as follows which will scale nicely as we add validation for other table types.def value_valid?
+  Neutral
+(shard_id, table_name, value)   case table_name       when TABLE_NAMES[:message]          message_valid(shard_id, value)      else         true     endend
+Please add a test case for an empty array, which should succeed and do nothing (I think!)
+  Negative
+Please verify that it returns an error if the array contains something that is not a hash, or the top level thing is neither a hash nor an array.
+  Negative
+I think documentation by example is fine for the JSON body.
+  Positive
+Lint/UselessAssignment: Useless assignment to variable - `record_create_response`.
+  Negative
+Lint/UselessAssignment: Useless assignment to variable - `record_create_response`.
+  Negative
+The type of the payload _must_ be a binary `{!
+  Negative
+string}` right?
+  Neutral
+Shouldn't `extraHopsRemaining` and `visitedNodeIDs` be documented in this type too?
+  Negative
+Potentially inconsistent use of the non-nullable type indicator `!
+  Negative
+` in these two typedefs ([see JSDoc @type docs here](http://usejsdoc.org/tags-type.html)).
+  Negative
+It looks like you intentionally left `extraHopsRemaining` and `visitedNodeIDs` optional in `MessageData` but should probably mirror matching non-nullable indicators into `MessageRow`.
+  Negative
+:+1: Yay so much cleaner!
+  Positive
+Suggest `{!
+  Neutral
+MessageData}` here.
+  Neutral
+:confused: `{MessageDatum[]} messageData`?
+  Negative
+Just kidding, this is fine.
+  Positive
+Gotta love nested pluralization.
+  Neutral
+Ah, I see this is my own omission, as this was moved up from the end of the file and was already out-of-date.
+  Negative
+Wait... does `NetSimMessage` [@implements](http://usejsdoc.org/tags-implements.html) `MessageData`?
+  Negative
+I'm not sure `MessageData` needs to be an [@interface](http://usejsdoc.org/tags-interface.html) but I do think we should document this relationship if we want to preserve it.
+  Negative
+I'd argue they should be nullable in `MessageData` but non-nullable in `MessageRow`, since `buildRowFromData` is using `utils.valueOr` to provide reasonable defaults.
+  Negative
+[Array.prototype.map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) takes _thisArg_, preferred over `.
+  Negative
+bind(this)`.
+  Positive
+Hmmm.
+  Neutral
+I'm not sure.
+  Negative
+`MessageData` is just a datatype.
+  Negative
+One of the two datatypes used by `NetSimMessage`.
+  Neutral
+I wonder if we'd be better off just requiring that all inserts be formed as multi-inserts, and sending an array of one any time we only have one row to insert - less branching, less 'surface area' so to speak.
+  Negative
+Probably not much added cost.I say this hypocritically because I haven't finished this clean-up with deletes, myself.
+  Negative
+I think the client is only using multi-delete at this point but I haven't torn out the single-delete endpoint from the API.@philbogle thoughts?
+  Negative
+Do you feel we should address this `TODO` before merging?
+  Negative
+I thought about that.
+  Neutral
+Supporting both multi- and single-inserts means something somewhere is going to have to normalize one into the other to compensate.
+  Positive
+I'd rather that something be the one endpoint than every client who wants to implement the endpoint.That being said, I feel guilty about how far this endpoint has gotten from the clean and elegant endpoint I first met.
+  Negative
+I can do it either now or when I address the other TODO in the next couple of weeks.
+  Positive
+Please add a client-side test around sendMany and make sure our fake API (in netsimTestUtils.js) can handle this operation.
+  Negative
+I don't see any corresponding change to `NetSimTable.prototype.create` that supports passing an array as the first argument.
+  Negative
+Does this work?
+  Neutral
+I wouldn't expect it to, I think `addRowToCache_` would do bad things in this situation.
+  Negative
+Sounds good.
+  Positive
+Let's document as such.
+  Neutral
+I ask because you're passing `this` (which is `NetSimMessage`) to a method that expects `MessageData`, requiring that the one implements the other.
+  Negative
+I think the `NetSimMessage` tests already have some tests that ensure certain members exist - might want to double-check that they cover all `MessageData` properties.
+  Negative

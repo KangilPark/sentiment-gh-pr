@@ -1,0 +1,7 @@
+you don't need this if it's the negation of the loop condition
+update this comment
+:-1: overkill to get all the workspaces when you're only looking for one
+getProperty breaks encapsulation of the serialization code (maybe one day we'll base64encode our property names???) but i'm not sure i can recommend `loadObject[Workspace](vertex).workspaceId` as an alternative and keep my dignity
+I don't think there is an actual difference, all the gremlin pipelines execute locally (not on the orient server) so we are pulling back all those vertices anyway only to discard them.
+you're still doing all the work to build permissions lists for a bunch of workspaces you don't care about
+you could probably make us both happy by making the loop emit function a parameter or something.

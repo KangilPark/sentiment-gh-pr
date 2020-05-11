@@ -1,0 +1,10 @@
+shouldn't this go? or is phantom still used elsewhere?
+I think you are right. Squeee!!! Will double check. 
+Ok, removed :dancer: :dancer: :dancer: :dancers:! 
+looks like you didn't replicate this feature — it is needed for the spec generator
+does this work only for http urls? the current script works with local files
+Nightmare can't intercept network events, I think. I don't think it's worth supporting doing that, tbh. 
+hmmm... the trouble is that when e.g. a spec imports MathJax, it doesn't want to be saved with the MathJax export, but with the MathJax script ready to run on execution.There are probably other ways to solve this than network interception, but we need it before we can make the switch.
+(I assume your comment was related to "--exclude-script", not loading from HTTP only)
+It seems very strange that MathJax would cause issues. Which spec is using it? 
+@dontcallmedom, which scripts need to be excluded? 

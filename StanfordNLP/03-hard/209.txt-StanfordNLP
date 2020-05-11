@@ -1,0 +1,219 @@
+(to make naming more consistent and descriptive; including functions such as getForce, setForce, computeOverrideForce, overrideForce, isForceOverriden, setOverrideForce, getOverrideForce)
+Could we change this to This is the force or torque provided by this actuator divided by its optimal force.
+  Negative
+Actuation signal can get confusing with Controller's, which send control signals.
+  Negative
+So I think we might should avoid using actuation with signal.
+  Negative
+Sounds good Chris!
+  Positive
+and for not using signal with actuation here, sure!
+  Neutral
+That makes sense and makes it less confusing (also mentioned by Ajay).
+  Negative
+So, I'll remove it from here and all other places it's used.
+  Negative
+@chrisdembia
+It's very nice to see spaces after commas
+:) Should we apply it to all the codes at some point.
+  Negative
+.
+  Neutral
+to keep the format consistent.
+  Positive
+So, the way an Actautor works is that you override computeForce and you call setActuation to set that force/torque?
+  Negative
+I think this is fine for this PR, but this way of writing Actuators seems somewhat confusing.
+  Negative
+We actually do not override computeForce.
+  Negative
+The way it works is that we override computeActuation if it is flagged to.
+  Positive
+Then we use the given value to setActuation and then use it to compute the torque/force which is going to be applied by the actuator.
+  Neutral
+I guess renaming the variable force to actuation here makes it less confusing.
+  Negative
+Thanks for pointing it out.
+  Neutral
+?
+These comments are funny.
+  Positive
+Ah, right!
+  Positive
+Should we remove them?
+  Neutral
+Sherm do you have any input here?
+  Neutral
+;) @sherm1
+If time isn't being used in this method all this is mute.
+  Negative
+I would delete it.
+  Negative
+Instrumenting the compute time seems useful for testing but we don't use QueryPerformanceCounter anymore- we just use std::clock_t startTime = std::clock();, for example.
+  Negative
+I would delete the commented out code.
+  Negative
+lower case A
+Somewhere we agreed that outputs are named lower case with underscores.
+  Neutral
+Ah, sure, good point!
+  Positive
+@sohapouya Did you change the code wherever these 3 (option, cache, discrete) were used elsewhere in the code?
+  Negative
+Yep.
+  Neutral
+I checked wherever these three were used together.
+  Neutral
+Just to remind we need to go through all examples on confluence to make sure they are also compatible with the new naming convention!
+  Positive
+can we avoid using signal to avoid confusion with Controller's?
+  Negative
+Sure.
+  Neutral
+.
+  Neutral
+makes sense.
+  Neutral
+Will do.
+  Neutral
+for editing comments as well.
+  Neutral
+As mentioned elsewhere, can we avoid using signal?
+  Negative
+Maybe this is for discussion?
+  Neutral
+Actuator should maybe be ScalarActuator here?
+  Neutral
+Are the comments in ScalarActuator updated to reflect the rename?
+  Negative
+Right!
+  Positive
+Apparently remnant from Actuator branch.
+  Negative
+Will rename them all to ScalarActuator.
+  Neutral
+Can we just delete this comment from the cpp file?
+  Negative
+These comments outside of the method bodies will just serve to confuse people I think, since they are hardly maintained.
+  Negative
+Sounds fine.
+  Positive
+What would you suggest Ajay?
+  Neutral
+@aseth1
+Doxygen style comments in the .
+  Positive
+cpp file don't make any sense.
+  Negative
+Internal comments describing implementation details would be OK.
+  Negative
+These are legacy, so feel free to delete!
+  Positive
+I went through all changes.
+  Neutral
+I loosely checked to ensure that the arguments to the renamed methods did not change.
+  Negative
+This looks pretty good, but I did make some comments on minor things.
+  Positive
+One problem I foresee: we have a class named Actuation.
+  Neutral
+People could confuse ScalarActuation's actuation attribute with our Actuation class.
+  Negative
+Can we just add a comment in the ScalarActuation comments somewhere saying actuation is not the same as the Actuation class?
+  Negative
+Thanks Chris for reviewing this PR.
+  Neutral
+That's a good point.
+  Positive
+It could be confusing.
+  Negative
+We should make sure we provide good explanations in any of the places this keyword is used.
+  Negative
+If anyone can think of a less confusing naming convention for them, it's the right time to bring it up!
+  Positive
+@chrisdembia @aseth1
+The plan is for Actuation (analysis) to be gone in 4.0.
+  Negative
+If the Actuators have Outputs for their actuation then there is no reason for the separate analysis.
+  Negative
+Its another good reason for us to use "actuation" since the "force" output is an actual body or mobility force now (or should be!)
+  Positive
+.
+  Neutral
+Sounds very good Ajay.
+  Positive
+We're then better to stick to this new naming and if Actuation is going to be removed in 4.0.
+  Negative
+, then better not to add any comment about it in ScalarActuator, to avoid later confusions.
+  Negative
+@aseth1 @chrisdembia Btw, Chris's corrections applied.
+  Negative
+Let's have a second review this week and if ready, merge it.
+  Neutral
+It's ahead of master commits right now.
+  Positive
+get/setActuation should not be virtual.
+  Negative
+You are implementing the caching here, so it is unnecessary for other scalar actuators to override.
+  Negative
+Same is also true for speed.
+  Neutral
+Compute actuation should setSpeed.
+  Negative
+It doesn't make sense for a caller to set the speed of the actuator.
+  Negative
+This was all inherited from code where the difference between a public interface and the extensibility (developer) interface were completely blurred.
+  Neutral
+This is would be a good first step at correcting.
+  Positive
+It would be better if the interface was defined by Actuator and not ScalarActuator.
+  Negative
+computeActuation(state) should be what all actuators have to implement.
+  Negative
+I avoided a templated Actuator class, to avoid confusion/difficulting in creating new Actuators, but now I feel the base does not provide enough structure and support.
+  Negative
+If the base where template <int M, int N> class Actuator where M was the number of controls and N was the actuation dimension then base Actuator could have all the machinery for specifying the actuation and speed cache variable as define power as Vec actuation dot Vec speed, as well as max and min controls.
+  Negative
+ScalarActutor would simply be an Actuator<1,1>.
+  Negative
+BodyActuator would be an Actuator<6,6>.
+  Negative
+The main reason for templating would be to enforce that whatever you call actuation and speed their product is guaranteed to produce power in Watts.
+  Negative
+For a muscle this would be tendon tension and the MTU lengthening speed.
+  Negative
+We are in a position to exploit Inputs and Outputs so that we have controls as Input<Vector<double>> and make the actuation and speed Output<Vector>'s having the same size (but potentially different from the controls).
+  Very negative
+The question is should these controls be Vec and Outputs Vec where the size is defined at compile time?
+  Negative
+Alternatively.
+  Neutral
+we could have Actuator where we keep the controls structure as a Vector of controls sized at runtime (say by asking how many mobilities there are) and the Outputs are T where they can be double, SpatialVec (BodyActuator) or Vector (mobility forces) defined/specialized by the concrete type.
+  Negative
+This would enable having actuators that take two controls and create double actuation and speed.
+  Negative
+There are some scripting examples that call GetForce() methods on the Actuator.
+  Negative
+These should be changed to GetActuation().
+  Negative
+@jimmyDunne can you investigate?
+  Neutral
+will do
+Thanks @jimmyDunne.
+  Positive
+Can you make a card to track on the Trello Doc and Example board?
+  Neutral
+(if you haven't already).
+  Negative
+@jenhicks There doesn't seem to be any scripting examples (matlab, gui-scripts) that use GetForce().
+  Negative
+@jenhicks there are some references to it in the API examples (C++).
+  Negative
+Will work on now
+This will cause a failure.
+  Negative
+The method the ForceSubsystem is getForce(ForceIndex)
+  Thanks Ajay for merging!
+  Negative
+@aseth1
+  Neutral

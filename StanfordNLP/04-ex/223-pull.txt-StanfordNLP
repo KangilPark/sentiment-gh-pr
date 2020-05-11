@@ -1,0 +1,37 @@
+Use a different variable name besides `member` here in case it is confused with the previous line.Also, you can use the pattern-matched variable directly instead of `memberToAdd.left.get`
+make comment plural
+I'd prefer `listAdmins()` to make it explicit that this is a method call
+I didn't write this, just moved it out of WorkspaceService.
+  Negative
+If we decide to keep them here and not remove them altogether then I'm sure that can be taken care of.
+  Negative
+On a related note, I should probably either close the other PR that does exactly this, or not do it in this PR since it seems that we need to discuss it as a group a bit more.
+  Negative
+Why is adding an already-admin successful, but deleting a non-admin an error?
+  Negative
+I'm not seeing any changes to WorkspaceService as part of this PR.
+  Negative
+Do you need to commit those?
+  Neutral
+The group is loaded and saved once per new member.
+  Neutral
+It would be better to collect the new members so they can be added all at once.
+  Positive
+This is not testing the correct endpoint.
+  Negative
+Change to `/admin/groups` with appropriate JSON entity.
+  Neutral
+Add a member to the subgroup to show that list members doesn't show it because it only goes down one level.
+  Negative
+How is this different from the "when listing the members of a group" test?
+  Neutral
+put into main group
+Yeah this test is redundant and can be removed.
+  Negative
+:-1: return statements, this should map each list of emails to load the object, concatenate those 2 lists then return  !
+  Very negative
+list.exists(None)
+use ErrorReport
+comment what this function does in the case of failures
+is there any commonality between add and remove that can be factored out... the code looks virtually identical
+  Very negative

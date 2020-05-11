@@ -1,0 +1,30 @@
+why use Plc sometimes and spell out ProfessionalLearningCourses sometimes? Would it make sense to namespace all of these controllers?
+what is this column for?
+Long term - yes. There's a tech debt item to namespace the models and controllers.
+I should drop it
+Or rather - I should drop the entire table. I don't need it anymore.
+style guide prefers map over collect. you can also use `&:`, oh, and .all is not necessary if you use Enumerable methods like map because it will know that you want to resolve the query:```assert_equal expected_module_enrollments.map(&:id), @plc_enrollment.user_enrollment_module_assignment.map(&:professional_learning_module_id)```Oh, and for any future cases where you care enough about performance to not want to load the other columns of the table you can use pluck to accomplish this.
+these might be cleaner (or at least shorter and mappier) as a map
+Should these states be part of an enum somewhere?
+I tried this out. I still need all - plc_enrollment.user_enrollment_module_assignment doesn't return a collection, it returns a single object that represents the active record collection. So I did`assert_equal expected_module_enrollments.map(&:id), @plc_enrollment.user_enrollment_module_assignment.all.map(&:professional_learning_module_id)`
+Eventually. I don't know what the final state is going to be (in progress, pending review, autosubmitted, etc), so I'm holding off for now.
+This query will make the db very sad on a non-dev environment :grin:.
+Same feedback as Laurel above -- I'd like to see the naming resolved before merge.
+Nit: `.each` -> `.map`
+Actually it's probably better to move this to a model scope or method.
+True. Might restrict this just to admins on prod.
+Hmm - okay, I'll go ahead and make this verbose
+Why is each better than map? I don't want anything returned here
+Nit:``` rubyredirect_to controller: UserProfessionalLearningCourseEnrollmentsController, action: :show, id: params[:enrollment_id]```
+``` rubymodules_to_enroll_in = ProfessionalLearningTask.where(id: question_responses).map(&:professional_learning_module)```
+Ah got it
+Will do
+It might be easier to do the namespacing now?  `Plc::Module`, `Plc::EvaluationAnswer`, etc. seems more readable.  I was having trouble above knowing which controller I was in b/c the names are so long =/
+I might suggest that even if ruby lets you name something Plc::Module you shouldn't. :)> On Feb 16, 2016, at 19:33, Josh Lory notifications@github.com wrote:> > In dashboard/app/models/ability.rb:> > > @@ -30,7 +30,14 @@ def initialize(user)> >          District,> >          Workshop,> >          Cohort,> > -        WorkshopAttendance> > -        WorkshopAttendance,> > -        # PLC Stuff> > -        ProfessionalLearningCourse,> > -        ProfessionalLearningModule,> > -        ProfessionalLearningTask,> > -        PlcEvaluationQuestion,> > -        PlcEvaluationAnswer,> > -        UserProfessionalLearningCourseEnrollment> >   It might be easier to do the namespacing now? Plc::Module, Plc::EvaluationAnswer, etc. seems way more readable. I was having trouble above knowing which controller I was in b/c the names are so long =/> > —> Reply to this email directly or view it on GitHub.
+I don't know if the admin column is indexed so that might be :crying_cat_face: too. And it looks like you copy/pasted the proc from course and meant to do `|user|` here
+Oh, the convention for a has many is to pluralize the name -- so it is usually `has_many :user_enrollment_module_assignments`. Maybe that's why you have to do things like `user_module_task_assignment.all.map`.
+hm, that's broken. a has_many association should return a proxy object that delegates most of its methods to an Array
+Ah, good point :smile:
+I'm kind of curious about what would happen now:```irb(main):001:0> module Plcirb(main):002:1> class Moduleirb(main):003:2> def a_methodirb(main):004:3>   puts "hey"irb(main):005:3> endirb(main):006:2> endirb(main):007:1> end=> :a_methodirb(main):008:0> m = Plc::Module.new=> #<Plc::Module:0x007fda94af2f50>irb(main):011:0> m.a_methodhey```hm I guess it works ok so far... still, it might be confusing should you ever want ::Module while in the Plc namespace
+Actually - I'll just make the user type in their email for now and use that. Easier.
+Mappified

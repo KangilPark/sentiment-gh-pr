@@ -1,0 +1,22 @@
+Right now if we have just short instructions (true of some course1 levels). We'll end up using these as long instructions too, and our less/more toggle will essentially just hide the resizer. Long term we'll probably just want to show without the resizer/toggle button in this case.
+Not importing runState bc it's not an ES6 module yet.
+Diff in this file is confusing, but basically I co-opted TopInstructions to be a wrapper class that gives you either a TopInstructionsCSF or TopInstructionsCSP. Once CSF instructions are more polished, it might be we can combine these back into one without too much difficulty
+Did you mean to switch to full lodash here?
+Might be nice to name the reducer as you did in pageConstants.js
+`isRtl` is unused.
+`isCsf` doesn't strike me as particularly descriptive.  Can prop be renamed to better represent what it actually affects?
+s/it's/its
+Since `detailsDOM` is a jQuery object, you shouldn't need to check its length here - I think just calling `details()` on an empty set would be idiomatic.
+Does this operation need to happen on `componentDidUpdate` as well as `componentDidMount`, to handle later rendering operations?
+Bwuh?
+Should handle this TODO now, or later?
+TODO, and what's a "HOC" in this context?
+Again, binding handlers with jQuery, do we need to do maintenance on componentDidUpdate?
+Nope. A mistake a seem to keep making :(
+Yeah. While topInstructions were CSP only, we didn't need to worry about this. In CSF we will going forward. I'm not using this yet, but will need to eventually (hence the TODO)
+Later, but I didn't actually have this task tracked in my pivotal item, and should
+high order component
+Equivalent to `const props = this.props`; Might be clearer to just do that in this cas.e
+Any suggestions? Originally it was just `csf`. I spent some time trying to come up with a better name, and the best I could do was `isCsf` :-P Maybe some terse way of saying "instructions that collapse to a header" vs. "instructions that collapse to a smaller version of themselves"
+You know, it'd be a lot harder to make this mistake if we just used stock lodash everywhere :wink: 
+`headerWhenCollapsed` and/or `shortInstructionsWhenCollapsed`?

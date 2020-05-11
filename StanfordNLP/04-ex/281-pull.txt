@@ -1,0 +1,28 @@
+@bartonjs Does this look right to you? ECDsaSecurityKey is a wrapper class for creating keys to be used for ECDsaCng algo.
+we can have the var inside the #if since #if is a compiler switch.
+I think it would be cleaner to throw inside Resolve...
+we should put '_' in instance variables.
+We are not consistent with LogHelper. Sometimes we use it sometimes we don't. Is there any reason not to use it?
+As above I think we should just throw inside here.
+As above I think we should just throw inside here.
+What will a user do with this?
+What will a user do with this?
+When I changed throw => LogHelper, some of them were missed. All of them should be LogHelper.
+If they want to access the private part of the blob. Once a private blob is used to generate a CngKey, they can only export the public blob.
+This is the blob format used to generate the CngKey. It is basically a string wrapper. This is used to identify the blob format used to create the cngkey -  eccpublic or eccprivate or generic. Users might be able to get to this using CngKey.GetProperty but I think its useful to have it as first class property.
+extra line
+Do we need to make this call to GetHashAlgorithm for ECD?
+No, not for EC. I moved the statement to if blocks of rsa and x509.
+We don't need to create the hash if clr returns RSACryptoServiceProvider because Sign and VerifyData take the hash.Name. Is there a way to just use the name?
+It does not create an hashAlgorithm object. HashAlgorithmName is only a struct (more like a string wrapper), and is not as expensive as SHA1.Create(). I looked through the .net code and it seems, we should not create an "HashAlgorithm" object in any case since .net creates an HashAlgorithm again. We should always pass the string representation to .net.
+Have you considered removing these fields and using private-set properties?
+I think a constructor directly taking the `CngKey` might be useful.
+nit: the case used in file name differs from the one used for the class name :trollface: 
+I guess it depends on whether the key was marked as exportable or not when instantiating the key (using `ExportPolicy = CngExportPolicies.AllowPlaintextExport`).I think it might be a good idea to remove this `Blob` property and let the user decide whether he/she wants the private part to be exportable via `CngKey.Export(CngKeyBlobFormat.EccPrivateBlob)`.
+:+1: 
+thanks, we should fix this.
+Sounds good. will add that.
+If you're just sticking with blobs; those are the two that exist right now.  I don't know how to determine if an already open handle has a private key, though (other than to just use it and see).
+Makes sense. I will remove this property.
+We are going to add one more constructor that takes a CngKey so blobs won't be available then.@AtsushiKan do you have any insights into how we can determine whether a CngKey has privateKey or just publicey?
+Nothing comes to mind. Might want to ask the WinCrypto guys on an internal email.

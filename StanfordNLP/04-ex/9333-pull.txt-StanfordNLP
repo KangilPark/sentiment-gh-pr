@@ -1,0 +1,19 @@
+How does one obtain crash reports on Windows and Linux?
+  Neutral
+I have no idea, but would love to add links :link: or instructions :memo: here.
+  Negative
+Is there an easy-to-use tool (similar to licecap) for recording GIFs on Linux?
+  Negative
+I think I used [byzanz](https://github.com/GNOME/byzanz) on Ubuntu, but it's nowhere near as easy to use as LICEcap.
+  Negative
+Most Linux solutions for this are rather janky Bash scripts that require you to manually figure out the exact pixel position of the window you want to capture.
+>
+  Negative
+think I used byzanz on Ubuntu, but it's nowhere near as easy to use as LICEcap.
+  Negative
+Thanks for that link, @mnquintana :bow:.
+  Positive
+I added that and another tool to the list.
+  Negative
+Hopefully, that will help at least a bit.
+  Positive

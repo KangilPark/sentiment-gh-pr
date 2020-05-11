@@ -1,0 +1,25 @@
+s/change/changed maybe
+Style: missing a space `function(name` => `function (name`
+Is it valid to have multiple params of the same name? If so, should we be changing them all or just one?
+should commented code be deleted?
+Do we expect multiple entries in `parameterNames_` to match `name`?  If not, can we break out of this loop after we find one match?
+removed
+Oh, sorry; this may not be the convention in blockly-core.
+Right now, that's correct. I think it'll make sense to eventually change them by ID instead, but IIRC it'll take a hefty change on the block space operation side to disambiguate for blocks already on the main blockspace (there's no global, persistent unique ID)
+s/==/===?
+Is this commented code redundant with the method call above?
+change**d** :)
+Fixed. :-1: habit from Swift
+Should JSDoc type the member variables here, too?
+Types?
+`XButton` isn't super clear to me as a name, and the class description above doesn't help much.  Is this a `CloseButton`?  Or something more specific?
+Good call
+I've been seeing a lot of this sort of pattern (if function exists, call function) between this PR and the one I recently did for Brad.. What do we think of instead writing this as:```this.onButtonPressed && this.onButtonPressed();```Def more concise, I'm not sure if it makes it more or less clear.
+Why childNodes[1]?
+I like that style, though we might want a rule of limit-1-null-check for one-liners to prevent really long chains of those (I've seen them become unreadable and difficult to debug when there are multiple null checks leading a function call)
+added
+Clarified by introducing a couple of examples and sample XML.
+I'd like to eventually move this to use closure tools' xpath since this is pretty brittle
+FYI for @islemaster There were also a bunch of opportunities for you to use this sort of pattern in your most recent PR if this is something you like.
+This should really be made a "text button", and actually the "Add" button used at the top-level contract editor could then be an instance of this. I'll track this
+Might be worth checking linter compatibility

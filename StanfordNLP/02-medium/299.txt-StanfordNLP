@@ -1,0 +1,127 @@
+The changes to OpenSim/Wrapping/SWIGSimTK/common.h should be discussed.
+  Neutral
+See some discussion over at simbody here.
+  Positive
+This common.h file in simbody was just updated by @sherm1.
+  Negative
+I believe that override final (while allowed) means the same thing as final.
+  Negative
+I would prefer to see just final here to avoid confusion.
+  Negative
+I think I disagree.
+  Negative
+Check this out (http://ideone.com/NYDQPu): This code compiles without warning, but I want the warning I'd get from override.
+  Negative
+The difference is that I made foops() virtual, which I know I did not need to do, but people are bound to do it anyway.
+  Negative
+By playing around with ideone, I learned that final can be applied so long as the method is virtual.
+  Negative
+So, if I removed the virtual from foops(), then indeed, final would give me a similar warning as would override.
+  Negative
+BTW, I'm pretty happy about coming up with "foops".
+  Positive
+foops: Yes, I understand that behavior.
+  Positive
+But the problem there is that one should not use the word virtual when overriding.
+  Negative
+And if you don't say virtual then final and override do the same thing.
+  Negative
+And if you're saying the person will make the mistake of using virtual there (which I agree they will), then I don't think we can also depend on them to use override as well.
+  Negative
+Just final.
+  Neutral
+Can we leave these out now and depend on a smarter version of SWIG?
+  Neutral
+@aymanhab 's call.
+  Neutral
+The wrapping compiles successfully with 3.0.2, but it's possible that functionality has changed.
+  Positive
+I could understand wanting to wait until the GUI is built again before moving to 3.0.2.
+  Negative
+Yep, me too.
+  Neutral
+How about adding a comment then saying "these should be removed when we go to SWIG 3".
+  Neutral
+Done.
+  Neutral
+Reviewed -- looks good to me except for the override finals.
+  Negative
+Mergeable if the build succeeds.
+  Positive
+K ready to merge pending tests.
+  Negative
+On further thought, I'm not totally opposed to the use of override final (it is very clear), but if we use it I would want to use it everywhere.
+  Negative
+Then the rules would be use virtual only when declaring a new (base) virtual method in a derived class, always use override if that's your intention optionally append final if you don't want anyone else overriding Then we would consider it an error if we see final without override.
+  Negative
+Before adopting this rule we should probably consider how it interacts with class final; my guess is that we shouldn't allow that at all.
+  Negative
+I think it is better to follow the consistent standard as you have it in this PR now: final alone means override final and neither of those should appear in a line that has virtual as well.
+  Negative
+What happens when a reviewer does not notice that there IS a virtual on the same line that neglects override?
+  Neutral
+The override final policy seems safer, and less prone to incomplete reviews (reviewers won't catch everything).
+  Negative
+I think you're right.
+  Neutral
+Feel like fixing all the finals?
+  Negative
+I'll do Simbody but that's easy -- it's only used once!
+  Positive
+Well @aseth1 expressed in person that he prefers final over override final, so I'll wait on word from him first.
+  Negative
+I'm willing to make any changes though.
+  Neutral
+I made a change that needs discussion.
+  Positive
+It seemed like most of the virtual methods in SimpleProperty and ObjectProperty were declared final.
+  Neutral
+So I decided to make these final classes instead of declaring all the virtual methods as final.
+  Negative
+Is this okay?
+  Neutral
+Shouldn't have both "virtual" and "override" (or final).
+  Negative
+virtual + override again
+That's interesting.
+  Positive
+I'm not sure why I wanted those final in the first place but I think it was because there is no reasonable way to further override those methods.
+  Negative
+It isn't as clear that the whole class should be final, though.
+  Negative
+It makes sense to derive from a class even without overriding any of its methods -- it is very common to do it to provide defaults on construction, or just to add some more stuff to the class.
+  Negative
+So making a class final is not the same thing as making all its overridden methods final -- class final is much more restrictive.
+  Negative
+I understand there was big argument about it among the standards committee folks and many people are uncomfortable with the whole idea.
+  Negative
+Anyway in this case I wouldn't use it because I don't think the intent was to prevent derivation from the class, just to prevent overriding of methods that can't reasonably be overridden again.
+  Negative
+I reverted that change.
+  Neutral
+Completely makes sense now that class final vs final on all virtual methods is different.
+  Negative
+I also removed a handful of unnecessary "virtual" keywords from the old property system.
+  Negative
+Ready for review.
+  Neutral
+Looks great -- it's especially nice to see all those spurious virtual keywords gone!
+  Positive
+Ready to merge IMO.
+  Neutral
+Needs one more reviewer I think.
+  Negative
+Free granola bar to anyone else willing to review :)
+bump
+Bonus marks
+my editor did this automatically I think
+For what it's worth (which admittedly isn't much), I didn't find anything awry (except for this).
+  Negative
+FINAL_11 was changed to final, and I confirmed that virtual doesn't appear on the same line as override, as per Sherm's comment.
+  Negative
+That's two reviews.
+  Neutral
+Would anyone like to merge?
+  Neutral
+Thank you!
+  Positive

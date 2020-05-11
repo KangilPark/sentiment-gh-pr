@@ -1,0 +1,158 @@
+Closes #982.
+  Neutral
+This adds support for: selecting entire rows by clicking the gutter.
+  Negative
+Previously, the whole row was selected only when the gutter was shift-clicked.
+  Negative
+See 8c36d26 for this change.
+  Positive
+selecting multiple disjoint rows by meta-clicking (and dragging) over the gutter.
+  Negative
+Previously, this ability was not available.
+  Negative
+See 7f14965 for this change.
+  Positive
+time: cc @nathansobo @benogle for
+I wasn't able to find a single function in Editor or Selection which allowed me to handle dragging in the way I expected the feature to work.
+  Negative
+Specifically, if wanted multiple overlapped selections to be merged into one, and clicking and dragging to always keep the initially clicked row completely selected.
+  Negative
+To make that happen, I ended up manually setting the selected region, triggering selection merging, and updating the selection reference after the merge.
+  Negative
+I added some comments which explain this -- I think they will be useful to Future Atom Hacker who looks at this part of code.
+  Negative
+Let me know if there's an easier way to do this, or if this needs more clarification in comments.
+  Negative
+See #3433 (comment) for some notes on this (the comment was hidden by another commit I needed to make to make coffeelint happy).
+  Negative
+@izuzak This looks reasonable for now, but I'm wondering if we should revisit the way in which selections are merged after certain API interactions.
+  Negative
+Maybe adding or updating a selection should always favor the new/modified selection when merging.
+  Neutral
+Or maybe you could call mergeIntersectingSelections on the selection itself so your reference remains stable.
+  Neutral
+@nathansobo I wanted to respond to this since I haven't before.
+  Negative
+While working on these changes, I felt like there was a method missing in the Editor or Selection API which would allow this code to be more elegant in the EditorComponent.
+  Negative
+Since I'm new to these APIs -- I'm not really sure what would work best, but the having a mergeIntersectingSelections method on Selections themselves sounds like a good idea to me.
+  Negative
+I found one slightly unexpected interaction.
+  Positive
+When you cmd-click the line above a selected line, it gets deselected.
+  Positive
+@nathansobo Ahhh, thanks for pointing that out.
+  Positive
+I think I can explain that behavior, and perhaps you can help me in figuring out if I'm right and what the right thing to do is.
+  Positive
+The GIF below demonstrates the same problem, but within a single line: Selecting a row means selecting the range [[row, 0], [row+1,0]] (this is a link from master, not my PR).
+  Negative
+So, when you selected row 10 in your GIF, the tail of the selection reached the beginning of a previous selection -- point [11, 0].
+  Negative
+At that moment, merging kicks in and because of how merging works currently -- the second selection was essentially removed.
+  Positive
+I'm not sure I understand how exactly merging works, but I think the situations are the same.
+  Negative
+I do agree that the behavior is unexpected, but I'm wondering if this is something related to this change or in general to how merging works?
+  Negative
+@izuzak Yeah, that sounds like it could be it.
+  Negative
+Merging should expand the first selection to cover the range of both selections.
+  Neutral
+I'm not sure why that's not happening.
+  Negative
+We could potentially create another issue for that and move forward with this PR.
+  Negative
+I'm investigating what we can do about selection merging.
+  Neutral
+After thinking about this some more, it might be the case that merging is working as expected here.
+  Negative
+However, what we do after selections are merged is not.
+  Neutral
+So, after two selections are merged -- notice that you're still dragging.
+  Negative
+As a result, we update the selection so that the cursor is at the head or tail of the selection.
+  Negative
+I'm not sure what would be a more intuitive UX -- the current behavior or having the cursor in the middle of a selection while still dragging.
+  Negative
+It seems that SublimeText3 does the latter (i.e. it merges selections and keeps the cursor in the middle of the selection, rather than updating the selection so that it's head or tails is at the cursor).
+  Negative
+In another branch, I'm going to only merge if the actual intersection is non empty.
+  Negative
+Another way of putting this is that we will determine intersection exclusive of endpoints.
+  Negative
+That's enough to give more intuitive behavior in your demonstrated cases.
+  Neutral
+I'm not ready to go down the path of making the selection head inside the selection just yet, but we can discuss that in the future.
+  Neutral
+I fixed the merging behavior for adjacent selections in #3440.
+  Negative
+As far as I can see this is good to
+I just gave that a test drive locally (merged your branch into this one) and the behavior now looks more natural to me: I like it!
+  Negative
+Thanks again
+Hmm, just discovered that unfolding doesn't work if I click on the gutter icon (but does if I click somewhere else in the gutter, or if I click the unfold marker in the editor): Looking into this ... 
+@izuzak Good catch.
+  Negative
+We might need to stop propagation when the fold marker is clicked.
+  Negative
+@nathansobo Yep, just looking into that.
+  Negative
+Another thing related to this -- if you click on the number a folded row in the gutter (not the fold marker), the folded row will be both unfolded and selected (i.e. all the rows which were folded will be shown and selected).
+  Negative
+I'm guessing that this is not expected behavior, and we want to just select the folded row while maintaining folds?
+  Negative
+(That's what ST3 does.)
+  Neutral
+Yeah, I think selection and folding should be mutually-exclusive.
+  Negative
+If you click the fold indicator, it changes the fold but doesn't select.
+  Negative
+@nathansobo I made some changes to address that.
+  Positive
+First, 29ad748 changes the gutter component to detect clicks on the fold icon.
+  Neutral
+If that happens, those mouseDown events are not propagated to the editor component -- this prevents the wacky behavior from before.
+  Negative
+Second, ebbfaa2 adds a bunch of preserveFolds: true options to editor component which makes row selections behave as expected -- clicking on and dragging over rows in the gutter will not expand folds.
+  Negative
+I've been playing with this for a while, and things seem to be behaving as expected now.
+  Negative
+However, I have found one problem which I can't seem to figure out.
+  Neutral
+If I click the gutter of a folded row -- the folded row is selected and stays folded.
+  Positive
+However, if I then cmd-click the gutter of that row again, the row unfolds: This doesn't happen if I just cmd-click the folded row to select it -- only happens on the second cmd-click.
+  Negative
+My expectations were that unfolding wouldn't happen in this case either.
+  Neutral
+I'll try to figure this out, but just wanted to mention this in case you see the problem right away.
+  Negative
+I don't have a solution off the top of my head.
+  Negative
+I can help investigate if you can't figure it out though.
+  Neutral
+@nathansobo I think I found it!
+  Positive
+Fixed it in 8a6e72f, but would love it if you could take a quick look as a sanity check.
+  Negative
+In short, here's what was happening: A cmd-click invokes addSelectionForBufferRange to add a new selection Somewhere down the line, this causes an invocation to addSelection Within addSelection there's a call to mergeIntersectingSelections.
+  Negative
+This call won't do anything if the selection being added is not overlapping with an existing selection.
+  Negative
+However, if it is -- it will trigger the merge process, and we need to tell that process to respect folds explicitly.
+  Neutral
+That's the reason why the unexpected unfolding behavior I described above was triggered only if cmd-click was used on a folded row which was already selected -- only in that case would the merging happen.
+  Negative
+This looks reasonable to me.
+  Neutral
+I kind of wish adding a selection were more straightforward.
+  Negative
+I switched things to rely on the marker attributes when we were doing collaboration.
+  Negative
+Now that it's been shelved we could potentially pass those options through directly rather than via the marker, but don't worry about that in this PR.
+  Negative
+I've spent some time making crazy selections with this and haven't been able to find any other problems.
+  Negative
+I'll merge this if there are no other comments/suggestions.
+  Negative

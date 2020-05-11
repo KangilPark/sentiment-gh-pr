@@ -1,0 +1,41 @@
+Where should one open an Issue?
+  Neutral
+Should they all just be opened on atom/atom?
+  Negative
+Should we have a `label` label?
+  Neutral
+:laughing:
+Super minor, but there's an extra space between `GitHub` and `search` :art:
+`pull request` -> `pull requests`?
+  Negative
+:art: `that every issue has a label` -> `that every issue have a label`?
+  Neutral
+:art: I think there's an extra space between `discussed` and `for`
+`at next meeting` -> `at the next meeting`?
+  Neutral
+`or Atom core team member` maybe?
+  Neutral
+How about `Most labels are used across all atom repositories, but some are specific to atom/atom`?
+  Negative
+`[...]or something that is very likely to be a bug`
+:art: issue -> issuesSo `Less complex issues which would be good places to start for users[...]`?
+  Negative
+This label has never been used yet, so perhaps :fire:?
+  Neutral
+has decided
+It might be better to be more specific here, eg `a bug related to the settings view was reported on atom/atom`.
+  Negative
+`Issues created for any uncaught exceptions, ...`?
+  Neutral
+Problems-->Situations
+This could also be a candidate for removal - it's only been used once.
+  Negative
+:art: `The Atom core team's roadmap post version 1.0.0`
+atom/atom is missing `:mag_right:`
+Both are missing `:mag_right:`
+> This could also be a candidate for removal - it's only been used once.Thanks for pointing this out, @50Wliu, and that `triage-help-needed` label.
+  Negative
+I removed the latter, but decided to keep this one for now, since it's been used once :one:.
+  Neutral
+One of my motivations for documenting _everything_ (or as much of everything as possible :smile:) was a hope that users who read this might have ideas and suggest better labels/workflows for the project.
+  Negative

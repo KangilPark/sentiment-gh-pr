@@ -1,0 +1,162 @@
+Part of Pivotal item #89656936.
+  Positive
+Lots more to do, but this is already pretty hairy and it seems like a good stable place to pull.
+  Positive
+One of the things NetSim needs to do is simulate limited bandwidth, and routers running out of memory and dropping packets.
+  Negative
+This is just the limited-bandwidth part.
+  Neutral
+This involves a significant change to how the router tracks and processes messages.
+  Negative
+Before, the local simulation only had to worry about messages that it was sending, and could process them as soon as they were detected.
+  Negative
+Now each local simulation looks at ALL of the messages queued for the router (even the ones it won't be processing locally) to estimate when the router would be done processing each message, based on the current bandwidth, and introduces an artificial delay.
+  Neutral
+In detail: When my client (acting as the router) gets a message_table_changed notification I filter the message table down to all messages headed toward the router node, and store that in a local cache I call the message queue.
+  Negative
+I search the new message queue for messages that my LOCAL router simulation will handle, that have not been scheduled yet.
+  Negative
+For each local, unscheduled message m I add an entry to the routing schedule for t time from now, where t is the sum of the processing durations of all messages prior to and including m in the message queue.
+  Negative
+Note: This is pessimistic scheduling; it does not take into account partially-completed processing on the message at the head of the queue, because that message could be handled by a different simulation and we won't know how far along it is.
+  Very negative
+This means the set bandwidth should be interpreted as a "maximum possible bandwidth" - which, let's face it, is what happens in the real world.
+  Positive
+When my client (acting as the router) has a tick event I gather the set of schedule entries that are at or past their scheduled time, removing them from the schedule.
+  Negative
+If that set is not empty, I use a chain of asynchronous calls to route each message to its intended destination.
+  Negative
+Other things of note in this PR: The Auto-DNS logic still lives in NetSimRouterNode as part of the router simulation, but it's been significantly disentangled from the routing code.
+  Negative
+Added a user-facing bandwidth control and a couple of levelbuilder configuration options for this control.
+  Negative
+Because I want "Infinity" bandwidth to be an option, I wrote some utilities for serializing typically unsupported number values into JSON.
+  Negative
+Known limitation: An orphaned message queued up for the router will slow down all other messages but never get processed (because the responsible client is gone).
+  Negative
+I've got a task in Pivotal to implement TTL (Time-To-Live) for packets which will recover from this scenario.
+  Negative
+Known limitation: Changing the bandwidth setting will affect timing for new messages but not for those already scheduled.
+  Negative
+This can introduce out-of-order routing.
+  Positive
+I have a pivotal task to reschedule queued messages on bandwidth changes.
+  Neutral
+Recommended starting point: NetSimRouterNode tests.
+  Neutral
+For later?
+  Neutral
+Yes; that's further down my todo list on my current Pivotal item.
+  Negative
+Moved adjacent to NetSimRouterNode.prototype.buildRow_ since this method should be a parallel to that out (serialize out/serialize in).
+  Negative
+This method was killed, and sort-of resurrected below as localSimulationOwnsMessageRow_
+  Negative
+What's the argument for breaking this into three different its?
+  Neutral
+I'd have only done it in one.
+  Neutral
+Not saying my way is better, but curious about the thinking.
+  Neutral
+It's true, there's not actually a need to test these in isolation.
+  Negative
+Maybe I just wanted to see the field names in my test output ? I'll do a pass and clean this pattern up across my entity tests.
+  Positive
+Ugh, 1300 lines... I should definitely break auto-DNS out of this file.
+  Negative
+:)
+I finally remembered!
+  Positive
+This is kludgy.
+  Neutral
+Is there a better way for me to bring in a "number or Infinity" value from levelbuilder, when Infinity is not a real value in JSON?
+  Negative
+You might be able to do this by providing JSON.parse a reviver method.
+  Neutral
+I seem to remember trying to play with revivers before and it being more difficult than I expected however.
+  Negative
+Broke this method into its own files because I hit a circular dependency between NetSimRouterNode.js and netsimUtils.js.
+  Negative
+Wanted utils to be a low-dependency file and this seemed like a 'factory' behavior, so it moved here.
+  Negative
+Just realized that in these cases I should reduce this to one tick; tick({time: 0}) should be a beforeEach step.
+  Negative
+Might seem weird to have this separate, but it caught a problem with undefined that the above tests didn't.
+  Negative
+This function name doesnt seem very clear to me.
+  Negative
+Maybe something like routeMessagesIfDue_?
+  Neutral
+How about routeOverdueMessages_?
+  Neutral
+It's imprecise ("DueOrOverdue" would be more correct) but 99% of the time we're not going to hit the exact millisecond anyway.
+  Negative
+I'm having trouble finding an adjective for "a thing whose appointed time has arrived."
+  Negative
+"Ready?"
+  Neutral
+Could invert logic to reduce nesting.
+  Negative
+Interesting way of doing this.
+  Positive
+I can't decide if I like it or not.
+  Negative
+Another way you could approach it is to have two arrays dueForRouting and notDueForRouting, then forEach localRoutingSchedule put it in one or the other, then at the end set localRoutingSchedule_ = notDueForRouting.
+  Negative
+Might be a little clearer exactly what's happening.
+  Neutral
+Up to you which you prefer.
+  Positive
+Could use valueOr, but that might be more confusing in this context.
+  Negative
+I feel like this might be easier to parse as _.
+  Negative
+find(...) !
+  Neutral
+== undefined, but that might just be personal preference.
+  Neutral
+Up to you.
+  Positive
+I wonder if there's a clean way to generalize this behavior of "run this function only while your not already doing it".
+  Neutral
+Not necessary to change anything, but if you're feeling motivated at some point it feels like there might be a clever solution possible.
+  Negative
+Yeah... I worry that "clever" and "good" would be two different things here.
+  Negative
+I'm not going to touch this yet.
+  Negative
+Worth throwing if we do hit it?
+  Positive
+Had to look this method up.
+  Neutral
+Surprised they don't call it something like isDeepEqual.
+  Negative
+Neat that they have it though.
+  Neutral
+Could invert if there's going to be a lot of content in this block in the future
+I would just leave .
+  Negative
+map on the same line as rows here.
+  Neutral
+I also usually try to avoid having both foo and foos as variable names, since it makes it easy to typo and mix the two up.
+  Negative
+It seems scary depending on this.
+  Negative
+What about typeof(val) === "number" && val.isNan()?
+  Neutral
+(Don't know if that covers all cases)
+Ahh, this seems less weird when I look at it after seeing the usage in serializeNumber
+I'd use different variable names for your outer rule and your inner rule, otherwise this gets confusing.
+  Negative
+Again, I would rename one of your rules
+Looks good :)
+@Bjvanminnen would you scan this commit?
+  Negative
+I changed the code for picking overdue messages, but didn't go with your two-list suggestion.
+  Negative
+I realized that I don't want to remove entries from the schedule until I'm done routing them, so that they don't get rescheduled while they're being routed; but on the other hand, I want to stay open to the possibility that new schedule items can be added during routing.
+  Negative
+So I flag the items currently being routed, and when routing is done I wipe the flagged items from the schedule.
+  Negative
+lgtm
+  Neutral

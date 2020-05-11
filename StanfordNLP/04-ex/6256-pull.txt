@@ -1,0 +1,22 @@
+By convention I think we've been capitalizing our jsx classes (ie. HintsDisplay.jsx), though it might be super difficult to do change this now in git.
+Why not pass in the results of these funcs as props instead of passing in the funcs and storing the result as state?
+hmm...are we calling getInitialState multiple times over the lifetime of this component and expecting different results each time? That seems like an anti-pattern.
+Cause the idea is that clicking the button changes the results of these funcs
+I think that the way that I would structure this is as follows:props consist of seen hints, unseen hints, and a function recordViewedHintstate consist only of showViewHintButtonwhen i click view hint, it calls recordUserViewedHint, which I'm assuming updates which hints we have/haven't seen. it then calls React.Render again, which causes us to rerender the component using the new props
+Yeah, I wasn't sure whether to go with that or with``` javascriptsetState({  seenHints: this.props.getSeenHints(),  unseenHints: this.props.getUnseenHints(),  showViewHintButton: true});```Really what I want is a "refresh state" concept
+The alternative would of course be to pass in the lists of seen vs unseen hints as props and just modify them when the button is pressed to match the logic of the controller that's passing in those getters, but this seemed cleaner.
+Rerendering the component from the controller is simple enough, but what would you say is the advantage of doing that over state modification, allowing the component to rerender itself?
+In general, the React philosophy is that state is bad and makes things harder to reason about and to test. In a world without state, I can look at the incoming props and figure out exactly what the component will look like. In a world where these are state, I now need to understand a bunch more about how getSeenHints and getUnseenHints work
+Ah, perfect!In that case, since the Instructions component is using this one, I'd want to rerender the entire thing, yes?
+Yeah, with the idea that the virtual DOM is fast enough that there's minimal cost in rerendering the portions of the  DOM that didnt change
+How would the react philosophy feel about a world with a much simpler state; something just like``` javascript  getInitialState: function () {    return {      showNextUnseenHint: false    };  },  viewHint: function () {    this.props.onUserViewedHint();    this.setState({      showNextUnseenHint: true    });  },```
+I think this is acceptable
+Might be worth a file level comment explaining what this guy is about.
+I notice you often have this blank first link in a lot of your functions. Any argument for it? I don't necessarily have a problem with it.
+If you want, you could also do React.PropTypes. arrayOf(...)
+Could both these blocks of css live as inline styles in the Jsx component instead?
+I don't have a strong feeling either way about it, but I use it in larger functions to distinguish broad-scoping 'function initialization' stuff (config parsing and whatnot) from just jumping into the body of the function. So, ``` javascriptfunction (options) {  var options = options || {};  // start the body of the function}```Versus``` javascriptfunction (options) {  // first self-contained bit of logic  // second self-contained bit of logic  // and so on}```But it's mostly aesthetics plus an old habit, and it does violate our styleguide.
+They technically could right now, but the next item on my list is to restyle the "show hint" button for feedback blocks to match this, and I'll want the styles to live here when I do that.
+:cry: :panda_face: 
+It'll just have to wait until we Reactify the feedback dialog!
+:+1: 

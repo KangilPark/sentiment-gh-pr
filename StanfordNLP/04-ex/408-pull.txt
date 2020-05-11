@@ -1,0 +1,3 @@
+Nice, the XML documentation is now incorrect... maybe it was worth updating it? :sweat_smile: 
+Thanks, I'll fix it.
+See PR #410 

@@ -1,0 +1,20 @@
+Are the multiple arguments needed here?
+  Neutral
+Seems like you only call `resolve` or `reject`.
+  Negative
+Yeah, I guess so: this is a function that returns a function (i.e. curried), so when called with `endTransaction(resolve)`, for instance, will return a function that:- Ends the transaction.
+  Negative
+- Calls `resolve` with all the passed arguments.When used like `result.then(endTransaction(resolve))`, `resolve` will be invoked with all the arguments available in `then`'s callback.
+  Negative
+This means that a potential client could use this API like the following:``` coffeeatom.config.transactAsync(-> Promise.resolve(1)).
+  Negative
+then((n) -> console.log("Output: #{n}"))#=> Output: 1```Although we're not using it in our production code, it seemed reasonable to follow the `Promise` API semantics when I implemented this.
+  Negative
+What do you think?
+  Neutral
+Ah, I missed the currying.
+  Neutral
+So long as you test it I'm cool having the functionality.
+  Positive
+:white_check_mark: I tested this behavior in c6cb37a :+1:I am going to :shipit: as soon as the build gets :green_heart:
+  Negative

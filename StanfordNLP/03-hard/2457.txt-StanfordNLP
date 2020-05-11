@@ -1,0 +1,120 @@
+This moves the build verifications to a separate file.
+  Neutral
+It also allows Windows users to set the PYTHON env var if Python27 is not installed in SYSTEM_DRIVE:\Python27.
+  Negative
+The PYTHON env var is used by node-gpy to determine the python executable location.
+  Negative
+This issue doesn't fix #2212 and #2351 (I do really hope you know the problem of the bug reports... pls don't make me -maybe others- mad about that ;-)) where python could be in the environment variable $PATH, UNLESS you just give an error and NOT bail out.
+  Negative
+If you do that, you avoid false python-is-not-available errors.
+  Negative
+Just for clarity: this would require to remove this rule https://github.com/atom/atom/blob/cj-add-python-check/script/utils/verify-requirements.js#L29 Lets make the error not-fatal.
+  Negative
+My hope is that users still see the error (together with the vague errors).
+  Negative
+So you get the warning at front of the weird errors.
+  Negative
+If users then post a bug report, we can ask them if they installed python correctly.
+  Negative
+If you do need a test case... try installing python at a different location other than c:// (or whatever main system drive) python27.
+  Negative
+Make sure you add that binary in window's path variable.
+  Neutral
+Google can help you by that: https://www.google.com/search?q=windows%20add%20path If that's done, start the console (it has to be a new one because the open ones will stick to the $PATH before you changed it) and try building atom with and without the python checker.
+  Positive
+Please try this out if you can...
+Also, make sure there is no python at (system drive) python27 while testing...
+@avdg this should solve the problem for #2351.
+  Negative
+At least it did in the following case: Move C://Python27 to C://SecretPython script/bootstrap # Fails with error explaining that you need to set the PYTHON env var $env:PYTHON = 'C://SecretPython/python.exe' script/bootstrap # Everything bootstrapped correctly!
+  Negative
+Does that seem correct?
+  Neutral
+The one problem this PR still leaves is users with a non-python27 in their $PATH.
+  Negative
+Yeah, just make the error non-fatal... If we do that... We trust the build to fail (how bad can it actually be) We avoid false positives (grunt can handle few more python locations than the script does - we only get a false warning in this case which may be annoying but less severe than stopping the build) If users do fail, they might want to check python because of the error message I also like to mention python 3 which can cause a few problems... which may pass the checks and still get users into trouble... (like #2211, but this specific issue is linux related)
+Remember, we had no python checks before at all.
+  Very negative
+The only problems we had before are the vague errors.
+  Negative
+This code looks really nice, @probablycorey.
+  Positive
+This was the one that stumped me in my PR, so i deferred to @avdg's work.
+  Negative
+Is running the python executable with python --version, capturing, and testing the result feasible like node-gyp does?
+  Negative
+I'm actually wondering if we do have to check python... As mentioned in my previous comment using other words, I guess we're fine with better error messages.
+  Negative
+The error caused by strict checks making the build fail because it thinks it will get into trouble was simply caused by the checks we added to prevent the error messages from popping up... It's in my view an unfortunate overreaction.
+  Very negative
+The vague errors are the main reason this work was started.
+  Negative
+We get a lot of windows build errors reported and we want to help people fix their own problems.
+  Negative
+When python is uninstalled the errors don't explain that, so failing helps to solve that problem.
+  Negative
+This is feasible.
+  Neutral
+I'll give that a shot.
+  Positive
+I'm trying to run over as many cases as I can cover: This patch does 2 things in case it believes python is not installed: It gives a warning It fails the build It does not show the vague errors because node-gyp was not executed, even though node-gyp would be able to run it Before any patching was done, the users would see this: We didn't give a warning (there was nothing we added at that time) Vague error messages pops up Build fails because python couldn't be run (but they never saw the error message) If the build succeed and verifications matches, the user would not see an error.
+  Very negative
+What if we don't bail out given the checks, even though the script believes python was not installed: In some cases (not all) the user would get a warning Vague error messages pops up We tried to run node-gyp, ofcourse it failed (and we know it if we read the errors in the beginning) If we do lack the warning, the code should be changed.
+  Negative
+What if we don't bail out, because the script believes python was not installed, but we succeed: We get a warning Build succeed But we didn't bail out, and we succeed.
+  Negative
+Users would complain about the warning, but would not be frustrated as much when they discover node-gyp should have run correctly despite the error message (though many wouldn't know that).
+  Negative
+Hmm.
+  Neutral
+.
+  Neutral
+does this pull request mean that #2426 is out of the race?
+  Negative
+I have no unsolved complains so far from users so far...
+Much better, i didn't know what to call that function.
+  Negative
+Is that false something you want committed?
+  Negative
+nm, looks like it was outdated, i must've missed that.
+  Negative
+whoops, thanks for spotting that.
+  Positive
+I think this is ready to merge now.
+  Negative
+I tested it on OS X and on Windows.
+  Positive
+In windows I tested: No python installed fail Python installed in C:\Python27 pass Python installed in C:\PythonWOW fail PYTHON env set to C:\PythonWOW\python.exe pass PYTHON env set to C:\PythonSAD\python.exe fail Added C:\PythonWOW to PATH pass The only thing I didn't check was if python 3 is in the path.
+  Very negative
+Should be process.exit(1)?
+  Negative
+i get:
+Thanks!
+  Neutral
+LGTM!
+  Neutral
+(i didn't test Python 3 though, or just having Python in C:\Python27)
+Based on the succeed tests and that it should fix a bug with the verifier, it should be good.
+  Negative
+LGTM
+Not important at all, but I would prefer if (process.platform === 'win32') {} else {} so its easy to add more platforms.
+  Negative
+Good idea.
+  Positive
+Thanks, this took a lot of discussing and trying.
+  Positive
+I guess it was worth it... 
+@probablycorey I'm getting Python: <not verified> when trying to build now.
+  Negative
+@garand That is expected for now, it only verifies Python and Windows right now.
+  Negative
+Ah, ok.
+  Neutral
+Carry on.
+  Neutral
+@probablycorey how do you feel about just removing it on non-windows platforms?
+  Negative
+Seeing Python: <not verified> feels like an error or that your environment is wrong somehow.
+  Negative
+@kevinsawicki: Removing it makes sense.
+  Positive

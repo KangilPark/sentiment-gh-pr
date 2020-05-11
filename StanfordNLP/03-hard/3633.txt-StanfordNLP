@@ -1,0 +1,73 @@
+This is the next step in removing dependency on jQuery in core.
+  Negative
+It replaces all the SpacePen views with custom elements in the workspace.
+  Negative
+The SpacePen views are left in place as wrapper shims that we will deprecate, but they no longer contain essential logic.
+  Negative
+For now this uses the is attribute with the elements subclassing divs for styling compatibility.
+  Negative
+In another pass we will convert them to custom tag names.
+  Negative
+The following views have been converted: WorkspaceView => WorkspaceElement PaneContainerView => PaneContainerElement PaneColumnView and PaneRowView => PaneAxisElement PaneView => PaneElement
+Not in the api anymore, right?
+  Negative
+Forgot to delete these.
+  Negative
+Thanks.
+  Neutral
+Will this cause the workspace state to be lost when this gets released?
+  Negative
+What are these all about?
+  Neutral
+Oops.
+  Neutral
+This should have been deleted.
+  Negative
+Thanks.
+  Neutral
+?
+  Neutral
+Is the added ?
+  Neutral
+needed here since 416 already checks for getUri being a function?
+  Negative
+e doesn't seem to be used, maybe it?
+  Negative
+Thanks for the thorough review guys.
+  Positive
+This is awesome.
+  Positive
+Could this method be completely moved into the CommandInstaller class?
+  Positive
+I know it was just moved in this PR, but looking at it in the diff makes me want to just have it completely out of Workspace except for a call to CommandInstaller.installShellCommands when the command happens.
+  Negative
+Yeah, that sounds like a good idea.
+  Positive
+I'll move it.
+  Positive
+Did you have any thoughts about still using classes here instead of [is="atom-workspace"] style selectors now that the custom elements are done?
+  Negative
+Just curious, I could see a second pass changing these once it would be just atom-workspace as the selector, once it is no longer a div.
+  Negative
+I would be fine using [is="atom-workspace"].
+  Negative
+The main reason I didn't worry about it is that I plan to actually switch to the custom tag name instead of div in another pass.
+  Negative
+I'll probably leave .
+  Negative
+workspace on there just in case people are querying with that selector.
+  Negative
+If they specify div.workspace then they are out of luck but I think that's probably rare.
+  Neutral
+Yup, sounds good
+Quick thought: At my job we use attr style props for polymer.
+  Negative
+If you do will existing classes be decommissioned.
+  Neutral
+Can you give some buffer time for package developers to replace class based selectors?
+  Neutral
+Really excited about the custom elements stuff!
+  Positive
+Also, you guys probably already this:
+@DavidLGoldberg We would preserve the existing classes during the deprecation period, which will be at least several weeks following the completion of the 1.0-pre API.
+  Negative

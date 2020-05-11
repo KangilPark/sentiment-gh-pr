@@ -1,0 +1,40 @@
+This is the first part of a guide on debugging problems and errors in Atom.
+  Negative
+I'll add more stuff to this PR (e.g. starting Atom in safe mode), but there's enough text already in here to get some feedback.
+  Negative
+A bit about atom --safe would be rad
+The default key is Command+Comma cmd-, isn't it?
+  Negative
+Also, should we be using <kbd> instead of <code> for keyboard commands?
+  Negative
+to <kbd>
+It is -- good catch, thanks!
+  Very positive
+(This will allow me to drop the <code> tags and just use backticks)I'd be with that, but if we do decide to do that -- we should do it in other guides as well.
+  Negative
+For that reason, I'd rather see this change made in another PR.
+  Negative
+Agreed on the <code> to <kbd> change
+Looks great!
+  Positive
+And I second @benogle's suggestion about atom --safe.
+  Positive
+Are we still calling it beta, or are we calling it pre 1.0.
+  Negative
+You're right, we don't call it beta anymore, thanks!
+  Negative
+I think I'll remove that sentence altogether, it's not super useful.
+  Negative
+I'd say Another keybinding has precedence or there is another keybinding that took precedence
+Yup, much better!
+  Negative
+This looks great!
+  Positive
+I agree with adding a section on safe mode.
+  Negative
+Thanks for the feedback everyone!
+  Positive
+I made the suggested changes in 2cce366 and added a few more sections.
+  Positive
+Let me know what you think.
+  Neutral

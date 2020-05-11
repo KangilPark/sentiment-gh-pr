@@ -1,0 +1,86 @@
+Status: looking for feedback This moves the scoped properties from syntax into config and merges them with the 'global' config.
+  Negative
+TODO Add optional selectors to Config::get/set Forward deprecated writes to atom.syntax to atom.config Forward deprecated reads on atom.syntax to atom.config Read from atom.config instead of atom.syntax Register scoped properties with atom.config instead of atom.syntax when loading packages.
+  Negative
+Allow scoped settings to be observed Update docs to explain the scope descriptors Closes #3674
+This all works (provided tests pass).
+  Negative
+?
+  Neutral
+Dont need this anymore as Config is created on each spec
+Complicado.
+  Negative
+Cant wait til we remove deprecated stuff
+Here is the real new stuff.
+  Negative
+Please look over the method naming.
+  Neutral
+They are private, but just make sure they arent confusing.
+  Negative
+Maybe gnar to use another disposable to hook removal so we can notify?
+  Neutral
+No biggie to me to chain these.
+  Negative
+I hate this method.
+  Negative
+I want to come up with something better.
+  Positive
+As the comment says, it's being used in different ways.
+  Neutral
+It seems like useful data, but I dunno what the return value should be.
+  Negative
+Did you experiment with something like atom.config.getMultiple which takes an optional scope and a variable number of key paths to retrieve in that scope?
+  Negative
+atom.config.getMultiple only solves the language mode case, not the autocomplete case
+This is funny.
+  Negative
+scopedProperties was deprecated for settings view.
+  Negative
+Instead of fixing it, settings view worked around the deprecation by accessing the store itself.
+  Negative
+So we have to support this for now.
+  Neutral
+Without defaults, they wont show in the settings view.
+  Negative
+Wondering if this should be specified in a more explicit way, such as showInSettingsInterface: true.
+  Negative
+I'm down to do something along these lines, but in another unit of work.
+  Negative
+Just a heads up, I've bumped master to 0.11.0
+Maybe fold this into the it since there is no other it
+Not sure how helpful this is without the stack
+Maybe switch these to single quotes as well to match the changed on lines 36 & 37
+Looks good to me :shipit:
+Is this actually needed?
+  Negative
+Yeah, it wont assign [x, y] = arguments with arguments.
+  Negative
+A bit more description on what a scope descriptor is perhaps? "
+  Positive
+{Array} of {String}s describing a path from the root of the syntax tree to a token.
+  Negative
+Get one by calling ..."
+Ok.
+  Neutral
+These examples make me want to change the scope related method names to use the word scopeDescriptor as we're calling them scopes everywhere.
+  Negative
+Why add instead of set?
+  Negative
+My reasoning at the time: you arent really setting the value.
+  Positive
+You're sort of suggesting that this is the value for a given scope.
+  Neutral
+I'm down to change it to set for the sake of consistency, but it doesnt seem entirely accurate to me.
+  Negative
+Same here, why add instead of set.
+  Negative
+Looking pretty good overall!
+  Positive
+Don't be mad at me, but it seems like this method should probably be ::scopeDescriptorAtCursor for consistency.
+  Negative
+For sure.
+  Neutral
+There are ~3 methods that need to change names.
+  Negative
+Was going to do it in another unit of work.
+  Neutral

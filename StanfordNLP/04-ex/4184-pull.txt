@@ -1,0 +1,27 @@
+Opinions on doing this include cleanly?
+columns should be optional, right?
+you probably want to omit the `id` field from this list
+I see that the spec says `columns` is required, but I also see that you added logic to infer columns when they are not specified, so I'm not quite sure what the desired behavior is here.
+What is the desired behavior when columnList is empty? It seems like we might want to print a warning rather than displaying an empty chart (assuming that's what happens when you pass Google Charts an empty list of columns).
+This is me anticipating the next step (maybe too much) which is that we'll want a `drawChart(chartId, chartType, data[, options[, callback]])` method.  For that one I think we'll want to infer columns.
+We actually raise an error if there are less than two columns, [implemented here](https://github.com/code-dot-org/code-dot-org/pull/4184/files#diff-cfb0ef5d8d2609de79b1510822620cc3R179).
+Oooh... Yes I do, _if_ we are loading AppStorage API table data, which this layer knows nothing about.  For now, while `columns` is required for `drawChartFromRecords` I'm not sure that's helpful, but if we ever make it optional we may want to scrub "id" from the data up at the `ChartApi` level.
+...right here.  If `columns` is not defined, I should strip "id" from the table data here?
+We need to give this same warning for scatter charts too.
+Why? You can use _N_ columns to represent _N-1_ series on a scatter chart ([API reference](https://developers.google.com/chart/interactive/docs/gallery/scatterchart?hl=en#data-format)).
+I would propose changing this line to "rejects if no columns array provided and no columns found in the data". Otherwise, this test is confusing because it suggests that `columns` must always be present, whereas in reality `columns` do not need to be present if they can be inferred from the data.
+How about adding a similar test to this one but without the `columns` parameter, which does `assertNotWarns(..., "Not enough columns...")` ? To verify that columns can be inferred.
+You are correct! I based this off of my own comment in the spec which I see now is wrong.
+I don't understand the beginning of this comment, since there is no corresponding external version of getIdDropdownFromDom_. "Internal version of getIdDropdownFromDom_" --> "Internal helper for getIdDropdown", perhaps?
+I am scared of rolling our own element selector in production when jQuery can do it for us.  jQuery works in our test environment, right? so can we just do: `$(elements).filter(filterSelector)` ?
+do we have any idea how much code this is loading? it looks like it makes a bunch of other calls to obfuscated members of `google.loader`.
+FWIW, this test case is an example of something we wouldn't have to worry about if we rely on jQuery to filter elements for us.
+It looks like this loads 5.8 KB of JavaScript, which stacks up favorably against dependencies like ace (330 KB minified) or just the qTip jQuery extension (43.5 KB minified).  It's close to md5.js at 6.5 KB.I can't find evidence that it does anything else until you invoke `google.load` to pull in packages you need, which we do right before rendering the chart.![screenshot from 2015-09-30 11 22 21](https://cloud.githubusercontent.com/assets/1615761/10203656/2dbed27c-676c-11e5-9211-c2e3703ac690.png)
+Comment bugs `//`:bug::beetle::bug: nice catch
+Sounds good.  Have we officially decided we're cool with jQuery in Applab?  I thought we were avoiding it, but now I see it already exists in this file.
+:+1: 
+:+1: although I may want to change this assertion based on what we talked about (warning and displaying possible column names).
+That's better but still not great, because then students are prevented from explicitly including `id` as a column. I would recommend extracting the call to inferColumnsFromData out of loadData and into `ChartApi.prototype.drawChartFromRecords` here. 
+A lot of applab was written without jQuery, partially because our `grunt dev` and mochaTest environments couldn't handle it. Since those have been fixed, jQuery in applab is allowed and encouraged. @Bjvanminnen can chime in if he disagrees.
+jQuery should be fine.
+FYI, I'm leaving these tests in even though we're switching to the jQuery implementation.  It never hurts to prove that your libraries do what you expect them to :wink:.

@@ -1,0 +1,22 @@
+Should this comparison include a trailing slash on `USERPROFILE`?Currently this check will pass for the following `process.execPath`/`USERPROFILE` right?`process.execPath = C:\Users\KevinSawicki\atom\atom.exe``USERPROFILE = C:\Users\Kevin`
+`loadSettings` might be null, see `isRunningCoreSpecs` for an example of guards typically around it.
+This is a typo that I fixed but didn't push apparently, this should be `LOCALAPPDATA`, which makes _way_ more sense :)
+Yeah, totally :+1: 
+:+1:, will fix
+I don't think you need the `process and` check here, since the line before already calls `process.platform` without checking `process`.
+Could you add a comment above this line that just adds some example paths and says which ones are considered portable and which ones are not?
+This is copy-pasta from the apm version, will fix
+What is the use of checking `process.type` here?I am newbie :P
+@PikachuEXE No use in this case, copy pasta from apm
+Is this line needed? The return value doesn't appear to be used
+I think `fs.realpathSync` throws an error when it doesn't exist so I think we might still want to have a `try` statement around it and just ignore the error when it doesn't exist.
+I think we usually write this as `path.join(execDirectoryPath, '..', '.atom')` so that the `/` isn't hard-coded
+`path.join` always returns a string so I don't think you need the `toString` here.
+I should have left a comment above this line originally about this but I think this is still needed on Linux based on this comment: https://github.com/atom/atom/issues/5412#issuecomment-73119795Maybe we can pass `atomHome` as a load setting and set it as an env var still which would remove the code duplication.
+:heart: 
+It looks like args is no longer used here so would you mind backing out this change here?
+done
+Could you rename this to `isPortableAtomHomePathWritable` to match the style of `isPortableInstall`?
+`arg` appears to be unused here so it looks like it is save to just remove it.
+Does this need to be moved here in this pull request? Or could it go back to under the `app.setAppUserModelId('com.squirrel.atom.atom')` line?
+:fire: looks like some trailing whitespace here

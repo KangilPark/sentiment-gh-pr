@@ -1,0 +1,57 @@
+s/change/changed maybe
+Style: missing a space `function(name` => `function (name`
+Is it valid to have multiple params of the same name?
+  Negative
+If so, should we be changing them all or just one?
+  Neutral
+should commented code be deleted?
+  Neutral
+Do we expect multiple entries in `parameterNames_` to match `name`?
+  Neutral
+If not, can we break out of this loop after we find one match?
+  Negative
+removed
+Oh, sorry; this may not be the convention in blockly-core.
+  Negative
+Right now, that's correct.
+  Neutral
+I think it'll make sense to eventually change them by ID instead, but IIRC it'll take a hefty change on the block space operation side to disambiguate for blocks already on the main blockspace (there's no global, persistent unique ID)
+s/==/===?
+  Negative
+Is this commented code redundant with the method call above?
+  Negative
+change**d** :)
+Fixed.
+  Negative
+:-1: habit from Swift
+Should JSDoc type the member variables here, too?
+  Negative
+Types?
+  Neutral
+`XButton` isn't super clear to me as a name, and the class description above doesn't help much.
+  Negative
+Is this a `CloseButton`?
+  Neutral
+Or something more specific?
+  Neutral
+Good call
+I've been seeing a lot of this sort of pattern (if function exists, call function) between this PR and the one I recently did for Brad.
+  Negative
+.
+  Neutral
+What do we think of instead writing this as:```this.onButtonPressed && this.onButtonPressed();```Def more concise, I'm not sure if it makes it more or less clear.
+  Negative
+Why childNodes[1]?
+  Negative
+I like that style, though we might want a rule of limit-1-null-check for one-liners to prevent really long chains of those (I've seen them become unreadable and difficult to debug when there are multiple null checks leading a function call)
+added
+Clarified by introducing a couple of examples and sample XML.
+  Negative
+I'd like to eventually move this to use closure tools' xpath since this is pretty brittle
+FYI for @islemaster There were also a bunch of opportunities for you to use this sort of pattern in your most recent PR if this is something you like.
+  Negative
+This should really be made a "text button", and actually the "Add" button used at the top-level contract editor could then be an instance of this.
+  Negative
+I'll track this
+Might be worth checking linter compatibility
+  Positive

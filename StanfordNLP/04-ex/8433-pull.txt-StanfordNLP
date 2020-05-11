@@ -1,0 +1,103 @@
+Super minor, but this looks like a hard tab (`\t`) here
+Should this be `prefix is buffer.slice(0, prefix.length)`?
+  Negative
+is `equals` a String method?
+  Neutral
+Not familiar with it.
+  Neutral
+Oh, they are buffers, nevermind.
+  Negative
+Should this include any of the options in the `defaultOptions` object from `src/babel.
+  Negative
+coffee`?
+  Neutral
+Not sure what the default options are for source maps.
+  Negative
+Oh damn, thanks.
+  Positive
+I had turned of `softTabs` for testing something, and was accidentally sprinkling hard tabs everywhere.
+  Negative
+:+1: Yeah
+Ok, so I just grabbed the data by requiring `src/babel`, which is a bit weird.
+  Negative
+Do you think I should extract those options into some separate file, or just leave it like that for now?
+>
+  Negative
+Do you think I should extract those options into some separate file, or just leave it like that for now?I think leaving it for now is fine.
+  Positive
+`.
+  Neutral
+json` isn't needed here
+Might be nice to use consistent quotes on this line, looks like single is the pattern in this file
+Was there a reason not to follow this pattern for `.
+  Negative
+cson` files as well?
+  Negative
+JSON.parse handles Buffers, the `toString` isn't needed.
+  Negative
+Missing space before `{`
+Missing space before `{`
+It looks like this file is required before the module cache is set up in `index.js`.
+  Negative
+That means any libraries required here and downstream won't pass through it.
+  Negative
+It would be nice to address that so there aren't any performance regressions.
+  Neutral
+Just curious, how long does this require take in the browser process?
+  Neutral
+Just want to make sure the browser process load time is minimally impacted.
+  Negative
+Looks like the `convertedLines` are joined and then immediately split again now on the next line.
+  Negative
+Where are these covered now?
+  Neutral
+It would be nice to inline this into Atom's root mega `package.json` file since all other `.
+  Neutral
+json` and `.
+  Neutral
+cson` files are currently placed there instead of bundled separately.
+  Negative
+Are there specs for this file?
+  Negative
+I would imagine something similar to the babel/typescript ones
+:+1: Good call.
+  Negative
+It seems like this would be addressed if we did the following:1.
+  Negative
+Defer the require of `coffee-script` like we talked about2.
+  Negative
+Move the setup for CSON back _out_ of `compile-cache.
+  Negative
+js`, and into `index.js` after the `ModuleCache` is set up3.
+  Negative
+Don't use `underscore-plus` in `compile-cache.
+  Negative
+js` or `babel.js`That way, no new libraries will be required before the module cache.
+  Negative
+What do you think?
+  Neutral
+We had to change the code for typescript, coffee and babel to make source maps work properly.
+  Negative
+It would have been nice to refactor the CSON code to use the same pattern, but there wasn't a pressing need to touch `season`, so we left it as is for now.
+  Negative
+After thinking about this more, it probably isn't worth the effort/complexity, feel free to disregard.
+>
+  Negative
+What do you think?Sounds good.
+  Positive
+:see_no_evil: Thanks; I was kind of blindly hacking away there.
+  Negative
+I figured this was tested via the fact that the test suite loaded at all.
+  Negative
+It seemed kinda weird to add a coffee-script spec that tests that another coffee-script file can be required.
+  Neutral
+Yeah, would be nice though to somewhere test that cache files are written and files with the same content are only compiled once.Basically, what coffee-cash was testing now that that logic is being done here.
+  Negative
+This is going to require a change in https://github.com/atom/timecop/blob/master/lib/cache-panel-view.coffee to get timecop working again.
+  Negative
+Are read errors handled internally by `source-map-support` or would a read error here cause a notification?
+  Negative
+Woah thanks for the heads up.
+  Positive
+PR for that here: https://github.com/atom/timecop/pull/13
+  Negative
