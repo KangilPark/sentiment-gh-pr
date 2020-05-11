@@ -1,0 +1,64 @@
+Usage: .
+  Neutral
+/runner.rb -p 3 will run UI tests 3 at a time.
+  Negative
+I renamed all global variables to $name to differentiate them and put the thread-unsafe code inside a synchronized mutex.
+  Negative
+Keep an eye out for any thread-unsafe code I may have missed.
+  Neutral
+Open3.popen2 is needed because $?
+  Neutral
+won't be thread-safe when multiple cucumber processes are running in parallel.
+  Negative
+is the $ prefix a rubyism?
+  Neutral
+Yeah, denotes a global variable.
+  Negative
+(Which I think these acted as before the notation?)
+  Negative
+See also Josh's note in description
+Cool!
+  Positive
+Thanks to @geoffrey-elliott for this one!
+  Positive
+Out of curiosity, is this line where the bulk of the cucumber process execution happens?
+  Negative
+(i.e., where a debug stepper would highlight and wait during execution)
+Yeah I think .
+  Negative
+read blocks until the process closes the pipe.
+  Neutral
+My simple test program: It outputs 'waiting...' right away, then 'hi' after 1 second.
+  Positive
+These ENV variables are actually globals in disguise ?.
+  Negative
+I'll need to switch :in_threads to :in_processes and figure out how to convey success/failure from each process (processes can't write to global $suite_success_count and $suite_fail_count).
+  Negative
+Ah, good catch.
+  Neutral
+You could abuse the process' exit status to denote pass/fail (versus actual error) like we do at the bottom of this file.
+  Negative
+Fixed in 0babb7d
+LGTM overall, let me know if you'd like another look after finding a global ENV workaround.
+  Negative
+Are these not equivalent?
+  Negative
+I don't think puts is thread-safe (the arguments and the newline don't seem to be written atomically).
+  Negative
+I was seeing output like: Instead of: Using print seems to fix multiple outputs on one line, but I'm not 100% positive print is thread-safe either.
+  Negative
+nothing in ruby is thread safe, the behavior difference between print and puts is chance or some other undefined behavior.
+  Negative
+Ah okay, sounds reasonable then.
+  Neutral
+@geoffrey-elliott Is it worth wrapping writes to stdout inside a mutex?
+  Neutral
+FWIW, here's a stackoverflow thread that suggests that print is thread-safe (but puts is not)
+if you want the output to be perfect and you're using threads, definitely.
+  Negative
+but i think this is actually a place where Logger is the right answer, e.g.
+  Positive
+This has many advantages over puts, including dealing with interleaved output.
+  Positive
+LGTM
+  Neutral

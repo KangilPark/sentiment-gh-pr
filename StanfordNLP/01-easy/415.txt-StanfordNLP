@@ -1,0 +1,16 @@
+seems like the sort of thing that would be good to test cross browser if you havent already
+Good call, not all element in IE9 support .
+  Negative
+blur().
+  Neutral
+Fixed in ee7dd21.
+  Neutral
+Hadn't even realized you could copy paste blocks :) lgtm
+Maybe something like sourceBlockSpace just to differentiate from generated source code / DOM src attribute?
+  Negative
+Could make it easier to rename/search for object property later
+I had srcBlockSpace originally, then changed it for brevity ? Good call on searchability, I'll change it back.
+  Negative
+Fixed in 91b09e9
+LGTM
+  Neutral

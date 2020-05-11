@@ -1,0 +1,24 @@
+scroll student list in teacher answer viewer panel, autoresizably.
+  Negative
+Sounds neat, gif / screenshot?
+  Negative
+What does this do?
+  Neutral
+Calls it one frame after ready?
+  Neutral
+ah, I should probably just take out the debounce
+Hahah, any best guess of what this might grow/shrink?
+  Negative
+Maybe marginBelowScrollablePanel?
+  Neutral
+LGTM!
+  Neutral
+I like the use of outerHeight
+Actually, interesting, is there a reason this is height() versus the others using outerHeight()?
+  Negative
+My conspiracy theory is that that's where the magic pixels are going ?
+ooh, outerHeight() === height() for .
+  Negative
+teacher-panel ... but innerHeight() is 10px less and I think makes more sense
+I think the magic pixels are coming from margins of things that are lower in the hierarchy than what I'm using... what I want logically is innerHeight of div.content as if div.content's size was determined by its container rather than its contents.
+  Very negative

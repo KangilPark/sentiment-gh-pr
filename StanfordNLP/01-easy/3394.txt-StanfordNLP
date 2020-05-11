@@ -1,0 +1,29 @@
+Closes #1638 This change allows built-in context menu commands to be defined in Atom's menu config files (096255f) and adds the core copy/cut/paste commands to the context menu (776a8e9).
+  Negative
+The built-in context menu commands are defined in the same way as they are in packages -- there's a context-menu key, and commands scoped to a selector.
+  Negative
+Here's the menu in action: cc @kevinsawicki for ?
+The above change uses the same approach used in the MenuManager, see and
+I wish I had an idea about how to add tests for this change.
+  Negative
+If anyone has any suggestions -- I'd be happy to add them.
+  Positive
+I tried to find inspiration in tests for the MenuManager, but did not find a spec for the MenuManager.
+  Negative
+Yeah, this has always been a low-tested area
+? {resourcePath} = atom.getLoadSettings()
+Just a few more ideas to consider after looking at the context menu in Chrome for text areas undo redo delete select all
+Added some ? in 861dff1 and undo, redo, delete and select-all commands in 7b73d67 (love that idea -- thanks!)
+  Negative
+.
+  Neutral
+Ready for another look, @kevinsawicki
+This seems fine.
+  Positive
+I say ?
+?
+@dstroot It's probably a regression.
+  Negative
+I added a new issue here: #4623
+Thanks for the report.
+  Positive

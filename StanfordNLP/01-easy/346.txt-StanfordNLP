@@ -1,0 +1,34 @@
+Addresses the issues presented in #345
+I think that this should be on by default.
+  Negative
+What the currently released version of respec is doing is not accurate.
+  Negative
+It is on by default.
+  Neutral
+That conf.
+  Neutral
+bucket is an accumulator object for the used key words.
+  Neutral
+Ok, cool ?
+nit: we should get into the habit of including "{" and "}".
+  Negative
+Omitting them can lead to really hard to track down bugs.
+  Negative
+Yeah... The idiom here is used throughout the code but I can correct it in this module.
+  Negative
+Nit: Do we really need a counter?
+  Negative
+Don't we just want to know if it's true or false?
+  Negative
+The counter isn't used, but I thought it might be useful someday, and it cost nothing.
+  Negative
+Ok, maybe add a note in the code that it's currently unused?
+  Negative
+In case someone else reads the code later and wonders why it's a counter.
+  Negative
+nit: whitespace before function (ignore if this is convention, just looks strange to me)
+It is apparently a convention so I am going to leave it alone for now.
+  Negative
+np
+Apart from comments, looks ok to me.
+  Negative

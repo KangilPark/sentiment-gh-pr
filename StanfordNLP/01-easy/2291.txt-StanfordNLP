@@ -1,0 +1,33 @@
+Still post to /milestone but omit the program data (since it's already stored in a channel).
+  Neutral
+this is fixing an existing bug?
+  Neutral
+maybe add a test to avoid regressions?
+  Negative
+also, why is try necessary for project_template_level but not game (at first glance it seems to me that it's not necessary for either)?
+  Negative
+Yes, fixing an existing bug.
+  Positive
+Good call, I'll add a test.
+  Positive
+I'm not sure why, but game exists on all levels whereas project_template_level does not:
+project_template_level not project_level_template?
+  Negative
+The method is defined on Level so I don't see why it would say undefined method (it could certainly return nil but that should be fine)
+Ah you're totally right.
+  Negative
+If only I could type ?.
+  Neutral
+Disregard.
+  Neutral
+Fixed and added rake test in bbe93ce.
+  Negative
+are there other things that we should be deleting, like the image?
+  Negative
+(LevelSourceImages can't be saved without a LevelSource)
+Maybe it would be better to keep a list of things we do want to send back to the server?
+  Negative
+What is the minimal payload to create an Activity record?
+  Neutral
+Here (comments I added): Removed report.image in bbe93ce.
+  Negative

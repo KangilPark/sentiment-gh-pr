@@ -1,0 +1,51 @@
+A few changes to remove unnecessary calls to the storage API, especially around the lobby.
+  Negative
+We've been seeing "[New Node]" node names in the lobby quite a bit, which really shouldn't happen.
+  Negative
+As progress toward clearing this up, we remove an asynchronous step from node creation.
+  Negative
+Primarily related to pivotal #94600828 and #92718598.
+  Negative
+Here's an abridged version of the original, multi-step node creation process.
+  Negative
+To simplify things, I've made it so you can (actually, must) provide a display name when initially creating the node.
+  Negative
+Other than that, I remove a bunch of code around node status, because we expect clients to calculate each node status locally now and not depend on a stored status string, as of PR 2231.
+  Very negative
+I didn't realize how much cleanup I missed around that change.
+  Negative
+See NetSimWire or the implementation of NetSimEntity.create for other uses of this pattern of creating a template entity that we modify before pushing it to remote storage.
+  Negative
+Doesn't the trailing _ on getTable/buildRow imply that it's a private method we shouldn't be calling externally?
+  Negative
+Here I've used our faux-private naming convention as a class-level modifier (C-style) and not as an instance-level modifier (Ruby-style).
+  Negative
+Since templateNode is an instance of NetSimLocalClientNode I was okay with this static method on the same class using a private member.
+  Negative
+Some languages don't consider this a violation of encapsulation because the caller already has full knowledge of the callee's implementation.
+  Negative
+If you think this is just confusing from a readability point of view, maybe I should just name these (getTable_, heartbeat_, onFailedHeartbeat_) like public members?
+  Negative
+I think we've maybe had this discussion before :) I can understand the justification for accessing "privates" here.
+  Negative
+However, as soon as we allow this, it becomes more difficult for my internal linter to know when it is/isn't acceptable, as I now need to have an understanding of the class hierarchy to make a decision about whether or not this is a good usage.
+  Neutral
+For that reason, I think my preference would be to name these as publics, or come up with some alternative indicator for "protected" (which is probably overkill)
+We could always go all-out hungarian notation ? I'll go ahead and make all of these "public."
+  Negative
+I got to spend a bunch of time helping document.
+  Neutral
+the word binary document format, where they have things like this https://msdn.microsoft.com/en-us/library/dd944596(v=office.12).
+  Neutral
+aspx (almost certainly not the worst offender)
+This was being set twice in this method; expand a few lines above to see the other set.
+  Negative
+Removed because doing this notification during synchronous disconnect causes the client to try and recover/reconnect while you're navigating away from the page!
+  Negative
+Which is no good, and might have been the cause of a bunch of the extra "[New Node]" instances we were seeing.
+  Negative
+Downside of removing this line is that you don't see the simulator back out to the lobby as you're navigating away from the page, but I'm not sure there was a real benefit to that anyway.
+  Negative
+Same question about accessing privates members (heartbeat_/onFailedHeartbeat_) here
+Renamed: getTable_ buildRow_ (not mentioned, but subject to the same issue) heartbeat_ onFailedHeartbeat_
+  Neutral

@@ -1,0 +1,46 @@
+Includes Issues: #363 #361 #360
+
+You should add more C#6 love
+LGTM Quick remark: I can't see where JwtSecurityTokenHandler is overriding SecurityTokenHandler.CreateToken(SecurityTokenDescriptor).
+  Negative
+Is this an intentional omission?
+  Neutral
+@PinpointTownes We did intentional leave out STH.CreateToken(SecurityTokenDescriptor).
+  Negative
+We were planning on bringing it back when SAML shows up.
+  Negative
+But now that I think about it, might as well add it now.
+  Negative
+Yeah, specially since it would be trivial to implement.
+  Negative
+Note: you could simplify this method by simply calling CreateJwtSecurityToken(tokenDescriptor).
+  Negative
+I could, but it just adds another call on the stack.
+  Neutral
+BUT less likely to break in the future.
+  Negative
+nit: more nameof happiness to avoid the magic string?
+  Negative
+thanks, will do.
+  Positive
+:shipit:
+Why have both CreateJwtSecurityToken and CreateToken methods?
+  Negative
+It's confusing.
+  Negative
+I think we should just have CreateToken method, since that is the one on the base class.
+  Neutral
+Users deriving this class will have 2 overrides available for same purpose.
+  Negative
+AFAIK, you've decided to introduce CreateJwtSecurityToken to make directly dealing with JwtSecurityTokenHandler a bit easier.
+  Neutral
+Unlike CreateToken (defined by the base class), CreateJwtSecurityToken directly returns a JwtSecurityToken, which helps avoid casts.
+  Negative
+To reduce the risk of confusion, you could seal JwtSecurityToken.CreateToken.
+  Negative
+Not a big fan of sealed.
+  Neutral
+You are correct, the idea is to avoid the need for casting OR JwtSecurityToken.RawData OR the two step CreateJwtSecurityToken, WriteToken.
+  Negative
+These are remnants of XML.
+  Negative

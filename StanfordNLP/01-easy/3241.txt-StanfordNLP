@@ -1,0 +1,27 @@
+autocomplete and go-to-line both preempt the textInput event to prevent character insertion.
+  Negative
+This pull provides the editor with a will-insert-text event that passes a cancel() function as a param.
+  Positive
+The consumer can call cancel() when it wants to prevent the insertion.
+  Negative
+No more preempt!
+  Neutral
+This was originally in #3132, but was pulled out as it is necessary for proper mini-editor behavior.
+  Negative
+See atom-archive/autocomplete#40 and atom/go-to-line#9 for package fixes.
+  Positive
+Refs #3075
+Isn't there always a selection?
+  Negative
+No.
+  Neutral
+I cant remember the case, though.
+  Negative
+Thinking.
+  Neutral
+The issues I had with it may have been a side effect of not having written 9255889 yet.
+  Negative
+I can change it back.
+  Neutral
+Yeah, I thought that we usually assume that the editor always has at least one cursor and selection unless it is destroyed so I'd say ? it unless that assumption has changed.
+  Negative

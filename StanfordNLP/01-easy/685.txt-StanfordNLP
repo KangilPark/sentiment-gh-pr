@@ -1,0 +1,14 @@
+Change Shapeways icon to "3D" Add disclaimer step to Shapeways button flow
+Do these need to be localized?
+  Negative
+This is gated to US-only via && options.sendToPhone above
+intentional that we toggle here instead of hide/show.
+  Positive
+Also, is this the first time we use jquery in blockly?
+  Neutral
+Yup, intentional to toggle.
+  Negative
+Not the first time using jQuery in Blockly (see the "Share to Phone" feature just below this).
+  Negative
+May be the second ?
+  Neutral
